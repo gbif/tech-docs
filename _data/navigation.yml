@@ -2,8 +2,8 @@
 
 - text: About
   href: /about
-- text: Data
-  href: /data
+- text: Work programme
+  href: /work-programme
 - text: Links
   menu: # Dropdown menu (one level deep only)
   - text: Base theme demo
