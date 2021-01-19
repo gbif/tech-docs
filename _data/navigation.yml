@@ -2,6 +2,8 @@
 
 - text: About
   href: /about
+- text: Data
+  href: /data
 - text: Links
   menu: # Dropdown menu (one level deep only)
   - text: Base theme demo
@@ -14,5 +16,11 @@
     href: https://guides.github.com/features/mastering-markdown/
   - text: YAML tutorial
     href: https://dev.to/paulasantamaria/introduction-to-yaml-125f
-- text: Work programme
-  href: /work-programme
+  - text: News
+    href: /news/
+# You new page goes here
+- text: Hello world
+  href: /hello
+# And lets add an external link - could be to your Github repo
+- text: Report an issue
+  href: https://github.com/gbif/hp-template/issues/new/choose

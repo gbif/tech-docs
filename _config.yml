@@ -35,7 +35,7 @@ plugins:
   - jekyll-feed
   - jekyll-remote-theme
 
-remote_theme: MortenHofft/jekyll-hp-base-theme
+remote_theme: gbif/jekyll-hp-base-theme@docs
 
 algae:
   rootLang: en
