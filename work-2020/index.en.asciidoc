@@ -7,7 +7,7 @@ categories: [asciidoc, Climate, Shared category]
 toc: true
 permalink: /work-programme
 layout: documentation
-sideNavigation: guides # defined in _data/sideNavigation
+sideNavigation: sideNavigation.guides
 tocMaxDepth: 3
 ---
 
