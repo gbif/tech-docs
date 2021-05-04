@@ -1,6 +1,7 @@
 .cache
 build
 theme/node_modules
+theme/public
 
 # Mac OS X
 .DS_Store
