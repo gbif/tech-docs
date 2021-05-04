@@ -1,5 +1,5 @@
 .cache
-build
+build/*
 theme/node_modules
 theme/public
 
