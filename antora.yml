@@ -3,6 +3,3 @@ title: GBIF technical docs
 version: 'master'
 display_version: '5.0.4 (latest)'
 start_page: ROOT:index.adoc
-nav:
-  - modules/ROOT/nav.adoc
-  - modules/protocol/nav.adoc

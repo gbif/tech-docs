@@ -1,10 +1,11 @@
 site:
-  title: Antora Demo Site
+  title: GBIF Technical Documentation
   # the 404 page and sitemap files only get generated when the url property is set
-  url: https://antora.gitlab.io/demo/docs-site
-  start_page: component-b::index.adoc
+  url: https://tech-docs.gbif-dev.org
+  start_page: ROOT:index.adoc
 content:
   sources:
+  #- url: ./modules/ROOT
   - url: https://gitlab.com/antora/demo/demo-component-a.git
     branches: master
     # setting edit_url to false disables the Edit this Page link for any page that originates from this repository
