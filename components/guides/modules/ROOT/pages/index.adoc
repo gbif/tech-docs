@@ -1,0 +1,43 @@
+= What is the Lisk SDK?
+Mona Bärenfänger <mona@lightcurve.io>
+//Settings
+:description: The Lisk SDK introduction describes its components, architecture, and usage.
+:page-aliases: best-practices.adoc, resources.adoc, getting-started.adoc, master@lisk-protocol::index.adoc
+:toc: preamble
+:imagesdir: ../assets/images
+:experimental:
+:icons: font
+:page-no-previous: true
+//External URLs
+:url_github_core: https://github.com/liskhq/lisk-core
+:url_github_sdk: https://github.com/liskhq/lisk-sdk
+:url_github_sdk_examples: https://github.com/LiskHQ/lisk-sdk-examples
+//Project URLs
+:url_commander: references/lisk-commander/index.adoc
+:url_config: guides/app-development/configuration.adoc
+:url_elements: references/lisk-elements/index.adoc
+:url_elements_packages: references/lisk-elements/index.adoc
+:url_framework: architecture/index.adoc
+:url_explanations_communication: architecture/communication-architecture.adoc
+:url_explanations_consensus: consensus.adoc
+:url_explanations_onchain: architecture/on-chain-architecture.adoc
+:url_explanations_offchain: architecture/off-chain-architecture.adoc
+:url_guides_setup: guides/app-development/setup.adoc
+:url_guides_config: guides/app-development/configuration.adoc
+:url_guides_module: guides/app-development/module.adoc
+:url_guides_asset: guides/app-development/asset.adoc
+:url_guides_plugin: guides/app-development/plugin.adoc
+:url_guides_frontend: guides/app-development/frontend.adoc
+:url_protocol: protocol:index.adoc
+:url_quickstart: quickstart.adoc
+:url_tutorials: tutorials/index.adoc
+
+image::banner_sdk.png[Logo]
+
+The {url_github_sdk}[Lisk SDK^] is designed to provide an easy and reliable software development kit for building blockchain applications which are compatible with the xref:{url_protocol}[Lisk Protocol].
+
+The codebase is written entirely in JavaScript and TypeScript, which is highly beneficial for the majority of developers, as no significant change of tools are required to get started.
+
+The Lisk SDK makes every effort to ensure developers are easily able to focus purely and simply on writing the code that is required for their own blockchain application and nothing else.
+
+== The Lisk SDK ecosystem
