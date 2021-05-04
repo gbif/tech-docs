@@ -3,6 +3,8 @@ build/*
 theme/node_modules
 theme/public
 
+.idea
+
 # Mac OS X
 .DS_Store
 
