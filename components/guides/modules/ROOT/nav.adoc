@@ -1,0 +1,8 @@
+* xref:api.adoc[api]
+
+
+* Guides
+** xref:index.adoc[Bingo]
+** xref:index2.adoc[What goes here]
+** xref:index2.adoc[The one]
+** xref:index2.adoc[Ah yeah]

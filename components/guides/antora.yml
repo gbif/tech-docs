@@ -1,2 +1,5 @@
-name: gbif-tech
-title: GBIF technical docs
+name: guides
+title: Guides
+version: dev
+nav:
+  - modules/ROOT/nav.adoc

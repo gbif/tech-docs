@@ -1,4 +1,4 @@
-= Welcome to Component B!
+= Hello
 
 This is the automatic start page for version *{page-component-version}* of Component B.
 
