@@ -5,10 +5,10 @@ site:
 content:
   sources:
     #- url: ~/dev/git/gbif/tech-docs
-    - url: .
+    - url: ./
       start_path: components/test
       branches: main
-    - url: ~/dev/git/gbif/tech-docs
+    - url: ./
       start_path: components/guides
       branches: main
     - url: https://gitlab.com/antora/demo/demo-component-a.git
