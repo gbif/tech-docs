@@ -4,7 +4,8 @@ site:
   url: https://tech-docs.gbif-dev.org
 content:
   sources:
-    - url: ~/dev/git/gbif/tech-docs
+    #- url: ~/dev/git/gbif/tech-docs
+    - url: .
       start_path: components/test
       branches: main
     - url: ~/dev/git/gbif/tech-docs
