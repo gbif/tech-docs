@@ -2,5 +2,5 @@
 :description: The API specification describes all available API endpoints of Lisk Service, and also covers how to send requests to a node and receive live responses.
 :page-no-next: true
 :page-layout: swagger
-:page-swagger-url: http://labs.gbif.org:7012/openapi.yaml
+:page-swagger-url: ./_attachments/openapi.yaml
 //TODO: Base path is wrong
