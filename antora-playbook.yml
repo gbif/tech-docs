@@ -1,0 +1,23 @@
+site:
+  title: Antora Demo Site
+  # the 404 page and sitemap files only get generated when the url property is set
+  url: https://antora.gitlab.io/demo/docs-site
+  start_page: component-b::index.adoc
+content:
+  sources:
+  - url: https://gitlab.com/antora/demo/demo-component-a.git
+    branches: master
+    # setting edit_url to false disables the Edit this Page link for any page that originates from this repository
+    # the same thing can be achieved by adding empty credentials (i.e., @) in front of the domain in the URL
+    edit_url: false
+  - url: https://gitlab.com/antora/demo/demo-component-b.git
+    branches: [v2.0, v1.0]
+    start_path: docs
+  - url: git@github.com:LiskHQ/lisk-docs.git
+    branches: docs-sdk    
+ui:
+  bundle:
+    #url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    #snapshot: true  
+    url: ./theme/build/ui-bundle.zip
+    snapshot: true

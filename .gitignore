@@ -1,8 +1,6 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
+.cache
+build
+theme/node_modules
 
 # Mac OS X
 .DS_Store
