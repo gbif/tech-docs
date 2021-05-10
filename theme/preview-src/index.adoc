@@ -15,7 +15,7 @@ Vis no velit audiam, sonet <<dependencies,praesent>> eum ne.
 Integer diam enim, dignissim eget eros et, ultricies mattis odio.
 Vestibulum consectetur nec urna a luctus.
 Quisque pharetra tristique arcu fringilla dapibus.
-Curabitur ut massa aliquam, cursus enim et, accumsan lectus.
+https://example.org[Curabitur,role=unresolved] ut massa aliquam, cursus enim et, accumsan lectus.
 
 == Cu solet
 
@@ -69,6 +69,15 @@ vfs
 <2> Wrap each streaming file in a buffer so the files can be processed by uglify.
 Uglify can only work with buffers, not streams.
 
+Execute these commands to validate and build your site:
+
+ $ podman run -v $PWD:/antora:Z --rm -t antora/antora \
+   version
+ 3.0.0
+ $ podman run -v $PWD:/antora:Z --rm -it antora/antora \
+   --clean \
+   antora-playbook.yml
+
 Cum dicat #putant# ne.
 Est in <<inline,reque>> homero principes, meis deleniti mediocrem ad has.
 Altera atomorum his ex, has cu elitr melius propriae.
@@ -84,6 +93,22 @@ src/
     java/
       HelloWorldTest.java
 ....
+
+Eu mea munere vituperata constituam.
+
+[%autowidth]
+|===
+|Input | Output | Example
+
+m|"foo\nbar"
+l|foo
+bar
+a|
+[source,ruby]
+----
+puts "foo\nbar"
+----
+|===
 
 Select menu:File[Open Project] to open the project in your IDE.
 Per ea btn:[Cancel] inimicus.
@@ -105,6 +130,7 @@ No sea, at invenire voluptaria mnesarchum has.
 Ex nam suas nemore dignissim, vel apeirian democritum et.
 At ornatus splendide sed, phaedrum omittantur usu an, vix an noster voluptatibus.
 
+[upperalpha]
 . potenti donec cubilia tincidunt
 . etiam pulvinar inceptos velit quisque aptent himenaeos
 . lacus volutpat semper porttitor aliquet ornare primis nulla enim
@@ -112,6 +138,7 @@ At ornatus splendide sed, phaedrum omittantur usu an, vix an noster voluptatibus
 Natum facilisis theophrastus an duo.
 No sea, at invenire voluptaria mnesarchum has.
 
+[square]
 * ultricies sociosqu tristique integer
 * lacus volutpat semper porttitor aliquet ornare primis nulla enim
 * etiam pulvinar inceptos velit quisque aptent himenaeos
@@ -130,10 +157,19 @@ splendide sed
 mea::
 agam graeci
 
+Let's look at that another way.
+
+[horizontal]
+sed::
+splendide sed
+
+mea::
+agam graeci
+
 At ornatus splendide sed.
 
 .Library dependencies
-[#dependencies%autowidth]
+[#dependencies%autowidth%footer,stripes=hover]
 |===
 |Library |Version
 
@@ -154,6 +190,9 @@ At ornatus splendide sed.
 
 |jscs
 |^2.3.5
+
+h|Total
+|6
 |===
 
 Cum dicat putant ne.
@@ -230,6 +269,14 @@ Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
 Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae! Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
 Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
+____
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+[verse]
+____
+The fog comes
+on little cat feet.
 ____
 
 == Fin
