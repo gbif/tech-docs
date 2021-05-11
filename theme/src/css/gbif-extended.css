@@ -28,6 +28,7 @@
 .navbar-item.search-box {
   flex: 0 0 auto;
   padding: 0.8rem 1rem;
+  padding-right: 0;
 }
 
 .navbar-item.search-box input {
@@ -39,7 +40,6 @@
 
 .icon-github-2x {
   background-image: url(../img/git_16.svg);
-  margin-left: 1em;
   height: 1.75em;
   width: 1.75em;
   background-size: contain;
