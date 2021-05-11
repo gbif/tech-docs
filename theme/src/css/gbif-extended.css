@@ -19,6 +19,10 @@
   .navbar-brand {
     padding-left: 0.5rem;
   }
+
+  .nav-brand__name-area {
+    display: none;
+  }
 }
 
 .navbar-menu.navbar-end {
