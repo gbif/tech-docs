@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+{{> head defaultPageTitle='Untitled'}}
+  </head>
+  <body class="swagger">
+{{> header}}
+
+<redoc 
+  spec-url='http://petstore.swagger.io/v2/swagger.json'
+  scroll-y-offset="63"
+></redoc>
+<script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
+
+{{> footer}}
+  </body>
+</html>

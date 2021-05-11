@@ -1,0 +1,6 @@
+= API (HTTP)
+:description: The API specification describes all available API endpoints of Lisk Service, and also covers how to send requests to a node and receive live responses.
+:page-no-next: true
+:page-layout: swagger
+:page-swagger-url: https://petstore.swagger.io/v2/swagger.json
+//TODO: Base path is wrong
