@@ -11,6 +11,9 @@ content:
     - url: ./
       start_path: components/guides
       branches: main
+    - url: git@github.com:gbif/ipt.git
+      branches: ipt-2.4.2-docs
+      start_path: docs
     - url: https://gitlab.com/antora/demo/demo-component-a.git
       branches: master
       # setting edit_url to false disables the Edit this Page link for any page that originates from this repository
