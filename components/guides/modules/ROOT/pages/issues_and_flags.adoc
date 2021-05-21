@@ -1,0 +1,423 @@
+## Issues and flags
+
+More than *50 issues and flags* have been created to deal with common
+data quality problems. The following *long* section compiles all of them
+and offers a more clear description of each one. This section is
+intended to serve as a placeholder until more formal documentation can
+be written.
+
+### Geospatial Issues
+
+'''''
+
+*Zero coordinate* (geospatial)
+https://www.gbif.org/occurrence/search?issue=ZERO_COORDINATE[example] + 
+Coordinates are exactly 0/0, often indicating an actual null coordinate.*Terms*:
+dwc:decimalLatitude, dwc:decimalLongitude
+
+*Country coordinate mismatch* (geospatial)
+https://www.gbif.org/occurrence/search?issue=COUNTRY_COORDINATE_MISMATCH[example] + 
+The interpreted occurrence coordinates fall outside of the indicated
+country.*Terms*: dwc:countryCode, dwc:country, dwc:decimalLatitude,
+dwc:decimalLongitude
+
+*Coordinate invalid* (geospatial)
+https://www.gbif.org/occurrence/search?issue=COORDINATE_INVALID[example] + 
+A coordinate value is given in some form, but GBIF is unable to interpret
+it. Possible reasons include, i.a., coordinates that fall out of range
+(larger/lower than 90/-90 or 180/-180, depending) or text values that
+cannot be interpreted.*Terms*: dwc:decimalLatitude,
+dwc:decimalLongitude, dwc:verbatimCoordinates, dwc:verbatimLatitude,
+dwc:verbatimLongitude
+
+*Coordinate out of range* (geospatial)
+https://www.gbif.org/occurrence/search?issue=COORDINATE_OUT_OF_RANGE[example] + 
+The supplied coordinates lie outside of the range for decimal lat/lon values
+(-90/90, -180/180).*Terms*: dwc:decimalLatitude, dwc:decimalLongitude,
+dwc:verbatimCoordinates, dwc:verbatimLatitude, dwc:verbatimLongitude
+
+These 4 issues are removed by default when *including coordinates* and
+*not* clicking the check box:
+
+'''''
+
+*Geodetic datum assumed WGS84* (geospatial)
+https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_ASSUMED_WGS84[example] + 
+If the datum is null, data interpretation assumes the record coordinates
+are in WGS84.*Terms*: dwc:geodeticDatum
+
+*Geodetic datum invalid* (geospatial)
+https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_INVALID[example] + 
+The geodetic datum could not be interpreted, because the supplied term
+cannot be matched against the vocabulary of known values.*Terms*:
+dwc:geodeticDatum
+
+*Country mismatch* (geospatial)
+https://www.gbif.org/occurrence/search?issue=COUNTRY_MISMATCH[example]Interpreted
+Country and Country code contradict each other.*Terms*: dwc:countryCode,
+dwc:country
+
+*Country derived from coordinates* (geospatial)
+https://www.gbif.org/occurrence/search?issue=COUNTRY_DERIVED_FROM_COORDINATES[example]If
+the country and country code are not supplied or cannot be matched to
+known values, data interpretation derives their content from the decimal
+coordinates through a https://github.com/gbif/geocode[lookup
+service].*Terms*: dwc:countryCode, dwc:country, dwc:decimalLatitude,
+dwc:decimalLongitude
+
+*Country invalid* (geospatial)
+https://www.gbif.org/occurrence/search?issue=COUNTRY_INVALID[example]The
+country or countryCode given cannot be matched to the vocabulary for
+country names.*Terms*: dwc:country
+
+*Continent invalid* (geospatial)
+https://www.gbif.org/occurrence/search?issue=CONTINENT_INVALID[example]The
+continent given cannot be matched to the vocabulary for continent
+names**Terms**: dwc:continent
+
+*Coordinate rounded* (geospatial)
+https://www.gbif.org/occurrence/search?issue=COORDINATE_ROUNDED[example]In
+the data interpretation the original coordinates are rounded to 6
+decimals (~1m precision).*Terms*: dwc:decimalLatitude,
+dwc:decimalLongitude
+
+*Coordinate reprojected* (geospatial)
+https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTED[example]The
+original coordinates were successfully reprojected from a different
+geodetic datum to WGS84.*Terms*: dwc:geodeticDatum
+
+*Coordinate reprojection suspicious* (geospatial)
+https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_SUSPICIOUS[example]Indicates
+successful coordinate reprojection according to provided datum, but
+which results in a datum shift larger than 0.1 decimal degrees.*Terms*:
+dwc:geodeticDatum, dwc:decimalLatitude, dwc:decimalLongitude
+
+*Coordinate reprojection failed* (geospatial)
+https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_FAILED[example]The
+given decimal latitude and longitude could not be reprojected to WGS84
+based on the provided datum.*Terms*: dwc:geodeticDatum,
+dwc:decimalLatitude, dwc:decimalLongitude
+
+*Coordinate uncertainty meters invalid* (geospatial)
+https://www.gbif.org/occurrence/search?issue=COORDINATE_UNCERTAINTY_METERS_INVALID[example]The
+value given for Coordinate uncertainty in meters, indicating the radius
+of uncertainty around the given decimal coordinates, is not a valid
+number, or lies outside a plausible range.*Terms*:
+dwc:coordinateUncertaintyInMeters
+
+*Coordinate precision invalid* (geospatial)
+https://www.gbif.org/occurrence/search?issue=COORDINATE_PRECISION_INVALID[example]Indicates
+an invalid or very unlikely coordinates precision. The value is not a
+decimal number as expected, or it has an unusually low or high for a
+margin of uncertainty.*Terms*: dwc:coordinatePrecision
+
+*Presumed negated longitude* (geospatial)
+https://www.gbif.org/occurrence/search?issue=PRESUMED_NEGATED_LONGITUDE[example]The
+supplied longitude value places the coordinates outside of the indicated
+country. Negating the longitude value would result in a country
+match.*Terms*: dwc:decimalLongitude
+
+*Presumed negated latitude* (geospatial)
+https://www.gbif.org/occurrence/search?issue=PRESUMED_NEGATED_LATITUDE[example]The
+supplied latitude value places the coordinates outside of the indicated
+country. Negating the latitude value would result in a country
+match.*Terms*: dwc:decimalLatitude
+
+*Presumed swapped coordinate* (geospatial)
+https://www.gbif.org/occurrence/search?issue=PRESUMED_SWAPPED_COORDINATE[example]Coordinates
+seem to be swapped when testing against the interpreted country.*Terms*:
+dwc:decimalLatitude, dwc:decimalLongitude, dwc:country
+
+*Depth min max swapped* (geospatial)
+https://www.gbif.org/occurrence/search?issue=DEPTH_MIN_MAX_SWAPPED[example]The
+values for minimum and maximum depth appear to the swapped.*Terms*:
+dwc:minimumDepthInMeters, dwc:maximumDepthInMeters
+
+*Depth non numeric* (geospatial)
+https://www.gbif.org/occurrence/search?issue=DEPTH_NON_NUMERIC[example]The
+values for minimum and maximum depth are non-numeric values and cannot
+be interpreted.*Terms*: dwc:minimumDepthInMeters,
+dwc:maximumDepthInMeters
+
+*Depth unlikely* (geospatial)
+https://www.gbif.org/occurrence/search?issue=DEPTH_UNLIKELY[example]The
+values for minimum and maximum depth are negative or higher than 11000
+(Mariana Trench depth in meters).*Terms*: dwc:minimumDepthInMeters,
+dwc:maximumDepthInMeters
+
+*Depth not metric* (geospatial)
+https://www.gbif.org/occurrence/search?issue=DEPTH_NOT_METRIC[example]Set
+if supplied depth is not given in the metric system, for example using
+feet instead of meters.*Terms*: dwc:minimumDepthInMeters,
+dwc:maximumDepthInMeters
+
+*Elevation non numeric* (geospatial)
+https://www.gbif.org/occurrence/search?issue=ELEVATION_NON_NUMERIC[example]The
+values for minimum and maximum elevation are non-numeric values and
+cannot be interpreted.*Terms*: dwc:minimumElevationInMeters,
+dwc:maximumElevationMeters
+
+*Elevation min max swapped* (geospatial)
+https://www.gbif.org/occurrence/search?issue=ELEVATION_MIN_MAX_SWAPPED[example]The
+values for minimum and maximum elevation appear to the swapped.*Terms*:
+dwc:minimumElevationInMeters, dwc:maximumElevationInMeters
+
+*Elevation not metric* (geospatial)
+https://www.gbif.org/occurrence/search?issue=ELEVATION_NOT_METRIC[example]Set
+if supplied elevation is not given in the metric system, for example
+using feet instead of meters.*Terms*: dwc:minimumElevationInMeters,
+dwc:maximumElevationInMeters
+
+'''''
+
+*Zero* occurrence records are flagged with the following *geospatial
+issues* on GBIF as of the writing of this post.
+
+*Elevation unlikely* (geospatial)
+https://www.gbif.org/occurrence/search?issue=ELEVATION_UNLIKELY[example]The
+values for minimum and maximum elevation are above the troposphere
+(17000 m) or below Mariana Trench (11000 m).*Terms*:
+dwc:minimumElevationInMeters, dwc:maximumElevationInMeters
+
+*Continent country mismatch* (geospatial)
+https://www.gbif.org/occurrence/search?issue=CONTINENT_COUNTRY_MISMATCH[example]The
+interpreted continent and country do not match up.*Terms*:
+dwc:continent, dwc:countryCode, dwc:country
+
+*Continent derived from coordinates* (geospatial)
+https://www.gbif.org/occurrence/search?issue=CONTINENT_DERIVED_FROM_COORDINATES[example]If
+no value is supplied for the continent or if the values cannot be
+matched against a known vocabulary, data interpretation derives the
+continent from the decimal coordinates.*Terms*: dwc:continent,
+dwc:decimalLatitude, dwc:decimal Longitude
+
+'''''
+
+*Taxon match higherrank* (taxonomic)
+https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK[example]The
+record can be matched to the GBIF taxonomic backbone at a higher rank,
+but not with the scientific name given.*Terms*:
+dwc:scientificName,dwc:kingdom,dwc:phylum, dwc:class, dwc:order,
+dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet,
+dwc:infraspecificEpithet, dwc:taxonRank Reasons include:- The name is
+new, and not available in the taxonomic datasets yet- The name is
+missing in the backbone's taxonomic sources for others reasons-
+Formatting or spelling of the scientific name caused interpretation
+errors
+
+*Taxon match none* (taxonomic)
+https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_NONE[example]Matching
+to the taxonomic backbone cannot be done cause there was no match at all
+or several matches with too little information to keep them apart
+(homonyms).*Terms*: dwc:scientificName,dwc:kingdom,dwc:phylum,
+dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus,
+dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank
+
+*Taxon match fuzzy* (taxonomic)
+https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_FUZZY[example]Matching
+to the taxonomic backbone can only be done using a fuzzy, non exact
+match.*Terms*: dwc:scientificName,dwc:kingdom,dwc:phylum, dwc:class,
+dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet,
+dwc:infraspecificEpithet, dwc:taxonRank
+
+'''''
+
+*Recorded date invalid* (date)
+https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_INVALID[example]The
+recording date given cannot be intrepreted because is invalid.*Terms*:
+dwc:eventDate, dwc:year, dwc:month, dwc:day Reasons include:- A
+non-existing date (e.g "1995-04-34")- Missing date parts (e.g. Event
+date without year).- The date format does not follow the ISO 8601
+standard (YYYY-MM-DD)
+
+*Recorded date mismatch* (date)
+https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_MISMATCH[example]The
+recording date specified as the eventDate string and the individual
+year, month, day are contradicting.*Terms*: dwc:eventDate, dwc:year,
+dwc:month, dwc:day
+
+*Identified date unlikely* (date)
+https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_UNLIKELY[example]The
+identification date is in the future or before Linnean times
+(1700).*Terms*: dwc:dateIdentified
+
+*Recorded Date Unlikely* (date)
+https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_UNLIKELY[example]The
+recording date is highly unlikely, falling either into the future or
+representing a very old date before 1600 that predates modern
+taxonomy.*Terms*: dwc:eventDate, dwc:year, dwc:month, dwc:day
+
+*Multimedia date invalid* (date)
+https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_DATE_INVALID[example]The
+creation date given cannot be intrepreted because is invalid.*Terms*:
+dc:created Reasons include:- A non-existing date (e.g "1995-04-34")-
+Missing date parts (e.g. Event date without year).- The date format does
+not follow the ISO 8601 standard (YYYY-MM-DD)
+
+*Identified date invalid* (date)
+https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_INVALID[example]The
+identification date given cannot be intrepreted because is
+invalid.*Terms*: dwc:dateIdentifiedReasons include:- A non-existing date
+(e.g "1995-04-34")- Missing date parts (e.g. without year).- The date
+format does not follow the ISO 8601 standard (YYYY-MM-DD)
+
+*Modified date invalid* (date)
+https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_INVALID[example]A
+(partial) invalid modified date is given.*Terms*: dc:modifiedReasons
+include:- A non-existing date (e.g "1995-04-34")- Missing date parts
+(e.g. without year).- The date format does not follow the ISO 8601
+standard (YYYY-MM-DD)
+
+*Modified date unlikely* (date)
+https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_UNLIKELY[example]The
+modified date given is in the future or predates unix time
+(1970).*Terms*: dc:modified
+
+*Georeferenced date invalid* (date)
+https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_INVALID[example]The
+georeference date given cannot be intrepreted because it is invalid.
+**Terms**: dwc:georeferencedDate
+
+Reasons include:
+
+* A non-existing date (e.g "1995-04-34").
+* Missing date parts (e.g. without year).
+* The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
+
+*Georeferenced date unlikely* (date)
+https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_UNLIKELY[example]The
+georeference date given is in the future or before Linnean times
+(1700).*Terms*: dwc:georeferencedDate
+
+'''''
+
+*Basis of record invalid* (vocabulary)
+https://www.gbif.org/occurrence/search?issue=BASIS_OF_RECORD_INVALID[example]The
+given basis of record is impossible to interpret or very different from
+the recommended vocabulary:
+http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml[http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml]**Terms**:
+dwc:basisOfRecord
+
+*Type status invalid* (vocabulary)
+https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID[example]The
+given type status is impossible to interpret or very different from the
+recommended vocabulary:
+https://rs.gbif.org/vocabulary/gbif/type_status.xml[https://rs.gbif.org/vocabulary/gbif/type_status.xml]**Terms**:
+dwc:typeStatus
+
+*Occurrence status unparsable* (vocabulary)
+https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE[example]The
+given occurenceStatus value cannot be interpreted; it does not match any
+of the known (vocabulary) values that indicate the presence or absence
+of a species at collection or observation event.*Terms*:
+dwc:occurrenceStatus
+
+'''''
+
+*Ambiguous institution* (GRSciColl)
+https://www.gbif.org/occurrence/search?issue=AMBIGUOUS_INSTITUTION[example]Multiple
+institutions were found in https://www.gbif.org/grscicoll[GRSciColl]
+with the same level of confidence and it can't be determined which one
+should be accepted. For example, there are several institutions with the
+same code and country. See
+https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this
+FAQ] on how to avoid ambiguous matches.*Terms*: dwc:institutionCode,
+dwc:institutionID
+
+*Ambiguous collection* (GRSciColl)
+https://www.gbif.org/occurrence/search?issue=AMBIGUOUS_COLLECTION[example]Multiple
+collections were found in https://www.gbif.org/grscicoll[GRSciColl] with
+the same level of confidence and it can't be determined which one should
+be accepted. For example, there are several collections belonging to the
+same institution with the same code. See
+https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this
+FAQ] on how to avoid ambiguous matches.*Terms*: dwc:collectionCode,
+dwc:collectionID
+
+*Institution match none* (GRSciColl)
+https://www.gbif.org/occurrence/search?issue=INSTITUTION_MATCH_NONE[example]No
+macth was found in https://www.gbif.org/grscicoll[GRSciColl]. Either the
+entry doesn't exists in GRSciColl or it has a different code. Check
+https://www.gbif.org/grscicoll[GRSciColl] and request update if
+needed.*Terms*: dwc:institutionCode, dwc:institutionID
+
+*Collection match none* (GRSciColl)
+https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_NONE[example]No
+macth was found in https://www.gbif.org/grscicoll[GRSciColl]. Either the
+entry doesn't exists in GRSciColl or it has a different code. Check
+https://www.gbif.org/grscicoll[GRSciColl] and request update if
+needed.*Terms*: dwc:collectionCode, dwc:collectionID
+
+*Institution match fuzzy* (GRSciColl)
+https://www.gbif.org/occurrence/search?issue=INSTITUTION_MATCH_FUZZY[example]A
+match was found in https://www.gbif.org/grscicoll[GRSciColl] but it was
+matched fuzzily. To know more about why this has happened you can use
+the https://www.gbif.org/developer/registry#lookup[lookup API] to see
+see the "reasons" returned in the response. A common case is when the
+name is used instead of the code or the identifier. To avoid fuzzy
+matches, publishers should use identifiers in additon to codes. More
+details available in
+https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this
+FAQ].*Terms*: dwc:institutionCode, dwc:institutionID
+
+*Collection match fuzzy* (GRSciColl)
+https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_FUZZY[example]A
+match was found in https://www.gbif.org/grscicoll[GRSciColl] but it was
+matched fuzzily. To know more about why this has happened you can use
+the https://www.gbif.org/developer/registry#lookup[lookup API] to see
+see the "reasons" returned in the response. A common case is when the
+name is used instead of the code or the identifier. To avoid fuzzy
+matches, publishers should use identifiers in additon to codes. More
+details available in
+https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this
+FAQ].*Terms*: dwc:collectionCode, dwc:collectionID
+
+*Institution collection mismatch* (GRSciColl)
+https://www.gbif.org/occurrence/search?issue=INSTITUTION_COLLECTION_MISMATCH[example]At
+least one possible collection match was found in
+https://www.gbif.org/grscicoll[GRSciColl] but none of them belong to the
+institution matched.*Terms*: dwc:collectionCode, dwc:collectionID,
+dwc:institutionCode, dwc:institutionID
+
+*Different owner institution* (GRSciColl)
+https://www.gbif.org/occurrence/search?issue=DIFFERENT_OWNER_INSTITUTION[example]The
+institution doesn't match the owner institution.*Terms*:
+dwc:ownerInstitutionCode, dwc:institutionCode, dwc:institutionID
+
+'''''
+
+*Individual count invalid* (individual count)
+https://www.gbif.org/occurrence/search?issue=INDIVIDUAL_COUNT_INVALID[example]Individual
+count value not parsable into a positive integer.*Terms*:
+dwc:individualCount
+
+*Individual count conflicts with occurrence status* (individual count)
+https://www.gbif.org/occurrence/search?issue=INDIVIDUAL_COUNT_CONFLICTS_WITH_OCCURRENCE_STATUS[example]The
+values given for the individual count and for the status of the
+occurrence (present/absent) contradict each other (e.g. the count is 0
+but the status says "present").*Terms*: dwc:individualCount,
+dwc:occurrenceStatus
+
+*Occurrence status inferred from individual count* (occurrence status)
+https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_INFERRED_FROM_INDIVIDUAL_COUNT[example]The
+present/absent status of the occurrence was inferred from the individual
+count value because no status value was supplied explicitly. An
+individual count of 0 is interpreted as status="absent", a value > 0 as
+"present"*Terms*: dwc:individualCount, dwc:occurrenceStatus
+
+*References URI invalid* (uri)
+https://www.gbif.org/occurrence/search?issue=REFERENCES_URI_INVALID[example]The
+references URL cannot be resolved, and may be malformed or contain
+invalid characters. If there is more than one URL, the values have to be
+separated by a pipe symbol "|".*Terms*: dc:references
+
+*Multimedia URI invalid* (uri)
+https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_URI_INVALID[example]The
+multimedia URL cannot be resolved, and may be malformed or contain
+invalid characters. If there is more than one URL, the values have to be
+separated by a pipe symbol "|".*Terms*: dwc:associatedMedia
+
+*Interpretation error* (interpretation)
+https://www.gbif.org/occurrence/search?issue=INTERPRETATION_ERROR[example]An
+error occurred during interpretation, leaving the record interpretation
+incomplete.*Terms*: GBIF interpretation
