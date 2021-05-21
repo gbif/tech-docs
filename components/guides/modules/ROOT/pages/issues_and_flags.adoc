@@ -39,6 +39,23 @@ dwc:verbatimCoordinates, dwc:verbatimLatitude, dwc:verbatimLongitude
 These 4 issues are removed by default when *including coordinates* and
 *not* clicking the check box:
 
+.Geospatial issues
+|===
+|Flag name | Definition
+
+|*Zero coordinate*
+|Coordinates are exactly 0/0, often indicating an actual null coordinate. https://www.gbif.org/occurrence/search?issue=ZERO_COORDINATE[example] +
+
+_dwc:decimalLatitude, dwc:decimalLongitude_
+|*Country coordinate mismatch*
+|The interpreted occurrence coordinates fall outside of the indicated
+country. https://www.gbif.org/occurrence/search?issue=COUNTRY_COORDINATE_MISMATCH[example] +
+
+_dwc:countryCode, dwc:country, dwc:decimalLatitude_
+
+|===
+
+
 '''''
 
 *Geodetic datum assumed WGS84* (geospatial)
