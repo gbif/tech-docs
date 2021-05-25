@@ -268,14 +268,12 @@ Reasons include:
 |Flag name | Definition | Terms | Example
 
 |*Basis of record invalid*
-|The given basis of record is impossible to interpret or very different from the recommended vocabulary:
-http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml[http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml]
+|The given basis of record is impossible to interpret or very different from the recommended vocabulary: http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml[http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml]
 |dwc:basisOfRecord
 |https://www.gbif.org/occurrence/search?issue=BASIS_OF_RECORD_INVALID[example]
 
 |*Type status invalid*
-|The given type status is impossible to interpret or very different from the recommended vocabulary:
-|https://rs.gbif.org/vocabulary/gbif/type_status.xml[|https://rs.gbif.org/vocabulary/gbif/type_status.xml]**Terms**:
+|The given type status is impossible to interpret or very different from the recommended vocabulary: https://rs.gbif.org/vocabulary/gbif/type_status.xml[https://rs.gbif.org/vocabulary/gbif/type_status.xml]
 |dwc:typeStatus
 |https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID[example]
 
@@ -291,7 +289,7 @@ http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml[http://rs.gbif.org/vocabul
 |Flag name | Definition | Terms | Example
 
 |*Ambiguous institution*
-|Multiple institutions were found in |https://www.gbif.org/grscicoll[GRSciColl] with the same level of confidence and it can't be determined which one should be accepted. For example, there are several institutions with the same code and country. Seehttps://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ] on how to avoid ambiguous matches. 
+|Multiple institutions were found in https://www.gbif.org/grscicoll[GRSciColl] with the same level of confidence and it can't be determined which one should be accepted. For example, there are several institutions with the same code and country. Seehttps://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ] on how to avoid ambiguous matches. 
 |dwc:institutionCode, dwc:institutionID
 |https://www.gbif.org/occurrence/search?issue=AMBIGUOUS_INSTITUTION[example]
 
