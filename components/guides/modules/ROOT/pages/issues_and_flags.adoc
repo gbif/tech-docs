@@ -207,19 +207,19 @@ Reasons include: +
 |_dwc:dateIdentified_
 |https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_UNLIKELY[example]
 
-|*Recorded Date Unlikely* (date)
+|*Recorded Date Unlikely*
 |The recording date is highly unlikely, falling either into the future or representing a very old date before 1600 that predates modern taxonomy.
 |_dwc:eventDate, dwc:year, dwc:month, dwc:day_
 |https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_UNLIKELY[example]
 
-|*Multimedia date invalid* (date)
+|*Multimedia date invalid*
 |The creation date given cannot be intrepreted because is invalid.
 
 Reasons include: +
 - A non-existing date (e.g "1995-04-34") +
 - Missing date parts (e.g. Event date without year) +
 - The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
-|dwc:created 
+|_dwc:created_ 
 |https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_DATE_INVALID[example]
 
 |*Identified date invalid*
@@ -229,7 +229,7 @@ Reasons include:
 - A non-existing date (e.g "1995-04-34") +
 - Missing date parts (e.g. without year) +
 - The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
-|dwc:dateIdentified
+|_dwc:dateIdentified_
 |https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_INVALID[example]
 
 |*Modified date invalid*
@@ -239,12 +239,12 @@ Reasons include: +
 - A non-existing date (e.g "1995-04-34") +
 - Missing date parts (e.g. without year) +
 - The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
-|dc:modified
+|_dc:modified_
 |https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_INVALID[example]
 
 |*Modified date unlikely*
 |The modified date given is in the future or predates unix time (1970). 
-|dc:modified
+|_dc:modified_
 |https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_UNLIKELY[example]
 
 |*Georeferenced date invalid* (date)
@@ -254,12 +254,12 @@ Reasons include:
 - A non-existing date (e.g "1995-04-34") +
 - Missing date parts (e.g. without year) +
 - The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
-|dwc:georeferencedDate
+|_dwc:georeferencedDate_
 |https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_INVALID[example]
 
 |*Georeferenced date unlikely*
 |The georeference date given is in the future or before Linnean times (1700). 
-|dwc:georeferencedDate
+|_dwc:georeferencedDate_
 |https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_UNLIKELY[example]
 |===
 
@@ -269,17 +269,17 @@ Reasons include:
 
 |*Basis of record invalid*
 |The given basis of record is impossible to interpret or very different from the recommended vocabulary: http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml[http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml]
-|dwc:basisOfRecord
+|_dwc:basisOfRecord_
 |https://www.gbif.org/occurrence/search?issue=BASIS_OF_RECORD_INVALID[example]
 
 |*Type status invalid*
 |The given type status is impossible to interpret or very different from the recommended vocabulary: https://rs.gbif.org/vocabulary/gbif/type_status.xml[https://rs.gbif.org/vocabulary/gbif/type_status.xml]
-|dwc:typeStatus
+|_dwc:typeStatus_
 |https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID[example]
 
 |*Occurrence status unparsable*
 |The given occurenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at or observation event.
-|dwc:occurrenceStatus
+|_dwc:occurrenceStatus_
 |https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE[example]
 
 |===
@@ -305,27 +305,27 @@ Reasons include:
 
 |*Collection match none*
 |No match was found in https://www.gbif.org/grscicoll[GRSciColl]. Either the entry doesn't exists in GRSciColl or it has a different code. Check https://www.gbif.org/grscicoll[GRSciColl] and request update if needed. 
-|dwc:collectionCode, dwc:collectionID
+|_dwc:collectionCode, dwc:collectionID_
 |https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_NONE[example]
 
 |*Institution match fuzzy*
 |A match was found in https://www.gbif.org/grscicoll[GRSciColl] but it was matched fuzzily. To know more about why this has happened you can use the https://www.gbif.org/developer/registry#lookup[lookup API] to see see the "reasons" returned in the response. A common case is when the name is used instead of the code or the identifier. To avoid fuzzy matches, publishers should use identifiers in additon to codes. More details available in https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ]. 
-|dwc:institutionCode, dwc:institutionID
+|_dwc:institutionCode, dwc:institutionID_
 |https://www.gbif.org/occurrence/search?issue=INSTITUTION_MATCH_FUZZY[example]
 
 |*Collection match fuzzy*
 |A match was found in https://www.gbif.org/grscicoll[GRSciColl] but it was matched fuzzily. To know more about why this has happened you can use the https://www.gbif.org/developer/registry#lookup[lookup API] to see the "reasons" returned in the response. A common case is when the name is used instead of the code or the identifier. To avoid fuzzy matches, publishers should use identifiers in additon to codes. More details available in https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ]. 
-|dwc:collectionCode, dwc:collectionID
+|_dwc:collectionCode, dwc:collectionID_
 |https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_FUZZY[example]
 
 |*Institution collection mismatch*
 |At least one possible collection match was found in https://www.gbif.org/grscicoll[GRSciColl] but none of them belong to the institution matched. 
-|dwc:collectionCode, dwc:collectionID, dwc:institutionCode, dwc:institutionID
+|_dwc:collectionCode, dwc:collectionID, dwc:institutionCode, dwc:institutionID_
 |https://www.gbif.org/occurrence/search?issue=INSTITUTION_COLLECTION_MISMATCH[example]
 
 |*Different owner institution*
 |The institution doesn't match the owner institution.
-|dwc:ownerInstitutionCode, dwc:institutionCode, dwc:institutionID
+|_dwc:ownerInstitutionCode, dwc:institutionCode, dwc:institutionID_
 |https://www.gbif.org/occurrence/search?issue=DIFFERENT_OWNER_INSTITUTION[example]
 
 |===
