@@ -290,17 +290,17 @@ Reasons include:
 
 |*Ambiguous institution*
 |Multiple institutions were found in https://www.gbif.org/grscicoll[GRSciColl] with the same level of confidence and it can't be determined which one should be accepted. For example, there are several institutions with the same code and country. See https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ] on how to avoid ambiguous matches. 
-|dwc:institutionCode, dwc:institutionID
+|_dwc:institutionCode, dwc:institutionID_
 |https://www.gbif.org/occurrence/search?issue=AMBIGUOUS_INSTITUTION[example]
 
 |*Ambiguous collection*
 |Multiple collections were found in https://www.gbif.org/grscicoll[GRSciColl] with the same level of confidence and it can't be determined which one should be accepted. For example, there are several collections belonging to the same institution with the same code. See https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ] on how to avoid ambiguous matches. 
-|dwc:collectionCode, dwc:collectionID
+|_dwc:collectionCode, dwc:collectionID_
 |https://www.gbif.org/occurrence/search?issue=AMBIGUOUS_COLLECTION[example]
 
 |*Institution match none*
 |No match was found in https://www.gbif.org/grscicoll[GRSciColl]. Either the entry doesn't exists in GRSciColl or it has a different code. Check https://www.gbif.org/grscicoll[GRSciColl] and request update if needed. 
-|dwc:institutionCode, dwc:institutionID
+|_dwc:institutionCode, dwc:institutionID_
 |https://www.gbif.org/occurrence/search?issue=INSTITUTION_MATCH_NONE[example]
 
 |*Collection match none*
