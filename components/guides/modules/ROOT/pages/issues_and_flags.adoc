@@ -21,15 +21,6 @@ The interpreted occurrence coordinates fall outside of the indicated
 country.*Terms*: dwc:countryCode, dwc:country, dwc:decimalLatitude,
 dwc:decimalLongitude
 
-*Coordinate invalid* (geospatial)
-https://www.gbif.org/occurrence/search?issue=COORDINATE_INVALID[example] + 
-A coordinate value is given in some form, but GBIF is unable to interpret
-it. Possible reasons include, i.a., coordinates that fall out of range
-(larger/lower than 90/-90 or 180/-180, depending) or text values that
-cannot be interpreted.*Terms*: dwc:decimalLatitude,
-dwc:decimalLongitude, dwc:verbatimCoordinates, dwc:verbatimLatitude,
-dwc:verbatimLongitude
-
 *Coordinate out of range* (geospatial)
 https://www.gbif.org/occurrence/search?issue=COORDINATE_OUT_OF_RANGE[example] + 
 The supplied coordinates lie outside of the range for decimal lat/lon values
@@ -45,15 +36,26 @@ These 4 issues are removed by default when *including coordinates* and
 
 |*Zero coordinate*
 |Coordinates are exactly 0/0, often indicating an actual null coordinate. https://www.gbif.org/occurrence/search?issue=ZERO_COORDINATE[example] +
-
 _dwc:decimalLatitude, dwc:decimalLongitude_
+
 |*Country coordinate mismatch*
 |The interpreted occurrence coordinates fall outside of the indicated
 country. https://www.gbif.org/occurrence/search?issue=COUNTRY_COORDINATE_MISMATCH[example] +
-
 _dwc:countryCode, dwc:country, dwc:decimalLatitude_
 
+|*Coordinate invalid* 
+|A coordinate value is given in some form, but GBIF is unable to interpret
+it. Possible reasons include, i.a., coordinates that fall out of range
+(larger/lower than 90/-90 or 180/-180, depending) or text values that
+cannot be interpreted.
+https://www.gbif.org/occurrence/search?issue=COORDINATE_INVALID[example] +
+_dwc:decimalLatitude,dwc:decimalLongitude, dwc:verbatimCoordinates, dwc:verbatimLatitude,dwc:verbatimLongitude_
+
+
 |===
+
+
+
 
 
 '''''
