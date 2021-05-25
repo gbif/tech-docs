@@ -159,248 +159,212 @@ be written.
 |===
 
 
-.Geospatial issues
+.Taxonomic issues
 |===
 |Flag name | Definition | Terms | Example
 
 |*Taxon match higherrank* 
 |The record can be matched to the GBIF taxonomic backbone at a higher rank, but not with the scientific name given.
-Reasons include:
-- The name is new, and not available in the taxonomic datasets yet
-- The name is missing in the backbone's taxonomic sources for others reasons
-- Formatting or spelling of the scientific name caused interpretation errors
+
+Reasons include: +
+- The name is new, and not available in the taxonomic datasets yet +
+- The name is missing in the backbone's taxonomic sources for others reasons +
+- Formatting or spelling of the scientific name caused interpretation errors 
 |dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank 
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK[example]
 
 |*Taxon match none* 
+|Matching to the taxonomic backbone cannot be done cause there was no match at all or several matches with too little information to keep them apart(homonyms). 
+|dwc:scientificName,dwc:kingdom,dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_NONE[example]
-Matching to the taxonomic backbone cannot be done cause there was no match at all or several matches with too little information to keep them apart(homonyms). 
-dwc:scientificName,dwc:kingdom,dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank
 
 |*Taxon match fuzzy* 
+|Matching to the taxonomic backbone can only be done using a fuzzy, non exact match. 
+|dwc:scientificName,dwc:kingdom,dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_FUZZY[example]
-Matching to the taxonomic backbone can only be done using a fuzzy, non exact match. 
-dwc:scientificName,dwc:kingdom,dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank
 
 |===
 
+.Date issues
+|===
+|Flag name | Definition | Terms | Example
 
-|*Recorded date invalid* (date)
-|https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_INVALID[example]
-The recording date given cannot be intrepreted because is invalid.
-dwc:eventDate, dwc:year, dwc:month, dwc:day 
-Reasons include:
-- A non-existing date (e.g "1995-04-34")
-- Missing date parts (e.g. Event date without year).
+|*Recorded date invalid*
+|The recording date given cannot be intrepreted because is invalid. 
+
+Reasons include: +
+- A non-existing date (e.g "1995-04-34") +
+- Missing date parts (e.g. Event date without year). +
 - The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
+|_dwc:eventDate, dwc:year, dwc:month, dwc:day_
+|https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_INVALID[example]
 
-|*Recorded date mismatch* (date)
+|*Recorded date mismatch*
+|The recording date specified as the eventDate string and the individual year, month, day are contradicting. 
+|_dwc:eventDate, dwc:year, dwc:month, dwc:day_
 |https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_MISMATCH[example]
-The recording date specified as the eventDate string and the individual year, month, day are contradicting. 
-dwc:eventDate, dwc:year, dwc:month, dwc:day
 
-|*Identified date unlikely* (date)
+|*Identified date unlikely* 
+|The identification date is in the future or before Linnean times (1700). 
+|_dwc:dateIdentified_
 |https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_UNLIKELY[example]
-The identification date is in the future or before Linnean times (1700). 
-dwc:dateIdentified
 
 |*Recorded Date Unlikely* (date)
+|The recording date is highly unlikely, falling either into the future or representing a very old date before 1600 that predates modern taxonomy.
+|_dwc:eventDate, dwc:year, dwc:month, dwc:day_
 |https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_UNLIKELY[example]
-The recording date is highly unlikely, falling either into the future or representing a very old date before 1600 that predates modern taxonomy.
-dwc:eventDate, dwc:year, dwc:month, dwc:day
 
 |*Multimedia date invalid* (date)
+|The creation date given cannot be intrepreted because is invalid.
+
+Reasons include: +
+- A non-existing date (e.g "1995-04-34") +
+- Missing date parts (e.g. Event date without year) +
+- The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
+|dwc:created 
 |https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_DATE_INVALID[example]
-The creation date given cannot be intrepreted because is invalid.
-Reasons include:
-- A non-existing date (e.g "1995-04-34").
-- Missing date parts (e.g. Event date without year)
-- The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
-dwc:created 
 
-|*Identified date invalid* (date)
+|*Identified date invalid*
+|The identification date given cannot be intrepreted because is invalid. 
+
+Reasons include:
+- A non-existing date (e.g "1995-04-34") +
+- Missing date parts (e.g. without year) +
+- The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
+|dwc:dateIdentified
 |https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_INVALID[example]
-The identification date given cannot be intrepreted because is invalid. 
-dwc:dateIdentified
-Reasons include:
-- A non-existing date (e.g "1995-04-34")
-- Missing date parts (e.g. without year).
+
+|*Modified date invalid*
+|A (partial) invalid modified date is given. 
+
+Reasons include: +
+- A non-existing date (e.g "1995-04-34") +
+- Missing date parts (e.g. without year) +
 - The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
-
-|*Modified date invalid* (date)
+|dc:modified
 |https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_INVALID[example]
-A (partial) invalid modified date is given. dc:modifiedReasons
-include:- A non-existing date (e.g "1995-04-34")- Missing date parts
-(e.g. without year).- The date format does not follow the ISO 8601
-standard (YYYY-MM-DD)
 
-|*Modified date unlikely* (date)
+|*Modified date unlikely*
+|The modified date given is in the future or predates unix time (1970). 
+|dc:modified
 |https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_UNLIKELY[example]
-The
-modified date given is in the future or predates unix time
-(1970). dc:modified
 
 |*Georeferenced date invalid* (date)
-|https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_INVALID[example]
-The
-georeference date given cannot be intrepreted because it is invalid.
-|**Terms**: dwc:georeferencedDate
+|The georeference date given cannot be interpreted because it is invalid.
 
 Reasons include:
+- A non-existing date (e.g "1995-04-34") +
+- Missing date parts (e.g. without year) +
+- The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
+|dwc:georeferencedDate
+|https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_INVALID[example]
 
-* A non-existing date (e.g "1995-04-34").
-* Missing date parts (e.g. without year).
-* The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
-
-|*Georeferenced date unlikely* (date)
+|*Georeferenced date unlikely*
+|The georeference date given is in the future or before Linnean times (1700). 
+|dwc:georeferencedDate
 |https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_UNLIKELY[example]
-The
-georeference date given is in the future or before Linnean times
-(1700). dwc:georeferencedDate
+|===
 
-'''''
+.Date issues
+|===
+|Flag name | Definition | Terms | Example
 
-|*Basis of record invalid* (vocabulary)
+|*Basis of record invalid*
+|The given basis of record is impossible to interpret or very different from the recommended vocabulary:
+http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml[http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml]
+|dwc:basisOfRecord
 |https://www.gbif.org/occurrence/search?issue=BASIS_OF_RECORD_INVALID[example]
-The
-given basis of record is impossible to interpret or very different from
-the recommended vocabulary:
-http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml[http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml]**Terms**:
-dwc:basisOfRecord
 
-|*Type status invalid* (vocabulary)
-|https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID[example]
-The
-given type status is impossible to interpret or very different from the
-recommended vocabulary:
+|*Type status invalid*
+|The given type status is impossible to interpret or very different from the recommended vocabulary:
 |https://rs.gbif.org/vocabulary/gbif/type_status.xml[|https://rs.gbif.org/vocabulary/gbif/type_status.xml]**Terms**:
-dwc:typeStatus
+|dwc:typeStatus
+|https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID[example]
 
-|*Occurrence status unparsable* (vocabulary)
+|*Occurrence status unparsable*
+|The given occurenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at collection or observation event.
+|dwc:occurrenceStatus
 |https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE[example]
-The
-given occurenceStatus value cannot be interpreted; it does not match any
-of the known (vocabulary) values that indicate the presence or absence
-of a species at collection or observation event.
-dwc:occurrenceStatus
 
-'''''
+|===
 
-|*Ambiguous institution* (GRSciColl)
+.GRSciColl issues
+|===
+|Flag name | Definition | Terms | Example
+
+|*Ambiguous institution*
+|Multiple institutions were found in |https://www.gbif.org/grscicoll[GRSciColl] with the same level of confidence and it can't be determined which one should be accepted. For example, there are several institutions with the same code and country. Seehttps://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ] on how to avoid ambiguous matches. 
+|dwc:institutionCode, dwc:institutionID
 |https://www.gbif.org/occurrence/search?issue=AMBIGUOUS_INSTITUTION[example]
-Multiple
-institutions were found in |https://www.gbif.org/grscicoll[GRSciColl]
-with the same level of confidence and it can't be determined which one
-should be accepted. For example, there are several institutions with the
-same code and country. See
-|https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this
-FAQ] on how to avoid ambiguous matches. dwc:institutionCode,
-dwc:institutionID
 
-|*Ambiguous collection* (GRSciColl)
+|*Ambiguous collection*
 |https://www.gbif.org/occurrence/search?issue=AMBIGUOUS_COLLECTION[example]
-Multiple
-collections were found in |https://www.gbif.org/grscicoll[GRSciColl] with
-the same level of confidence and it can't be determined which one should
-be accepted. For example, there are several collections belonging to the
-same institution with the same code. See
-|https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this
-FAQ] on how to avoid ambiguous matches. dwc:collectionCode,
-dwc:collectionID
+|Multiple collections were found in https://www.gbif.org/grscicoll[GRSciColl] with the same level of confidence and it can't be determined which one should be accepted. For example, there are several collections belonging to the same institution with the same code. See https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ] on how to avoid ambiguous matches. 
+|dwc:collectionCode, dwc:collectionID
 
-|*Institution match none* (GRSciColl)
+|*Institution match none*
+|No match was found in |https://www.gbif.org/grscicoll[GRSciColl]. Either the entry doesn't exists in GRSciColl or it has a different code. Check https://www.gbif.org/grscicoll[GRSciColl] and request update if needed. 
+|dwc:institutionCode, dwc:institutionID
 |https://www.gbif.org/occurrence/search?issue=INSTITUTION_MATCH_NONE[example]
-No
-macth was found in |https://www.gbif.org/grscicoll[GRSciColl]. Either the
-entry doesn't exists in GRSciColl or it has a different code. Check
-|https://www.gbif.org/grscicoll[GRSciColl] and request update if
-needed. dwc:institutionCode, dwc:institutionID
 
-|*Collection match none* (GRSciColl)
+|*Collection match none*
+|No match was found in |https://www.gbif.org/grscicoll[GRSciColl]. Either the entry doesn't exists in GRSciColl or it has a different code. Check https://www.gbif.org/grscicoll[GRSciColl] and request update if needed. 
+|dwc:collectionCode, dwc:collectionID
 |https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_NONE[example]
-No
-macth was found in |https://www.gbif.org/grscicoll[GRSciColl]. Either the
-entry doesn't exists in GRSciColl or it has a different code. Check
-|https://www.gbif.org/grscicoll[GRSciColl] and request update if
-needed. dwc:collectionCode, dwc:collectionID
 
-|*Institution match fuzzy* (GRSciColl)
+|*Institution match fuzzy*
+|A match was found in https://www.gbif.org/grscicoll[GRSciColl] but it was matched fuzzily. To know more about why this has happened you can use the https://www.gbif.org/developer/registry#lookup[lookup API] to see see the "reasons" returned in the response. A common case is when the name is used instead of the code or the identifier. To avoid fuzzy matches, publishers should use identifiers in additon to codes. More details available in https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ]. 
+|dwc:institutionCode, dwc:institutionID
 |https://www.gbif.org/occurrence/search?issue=INSTITUTION_MATCH_FUZZY[example]
-A match was found in https://www.gbif.org/grscicoll[GRSciColl] but it was
-matched fuzzily. To know more about why this has happened you can use
-the https://www.gbif.org/developer/registry#lookup[lookup API] to see
-see the "reasons" returned in the response. A common case is when the
-name is used instead of the code or the identifier. To avoid fuzzy
-matches, publishers should use identifiers in additon to codes. More
-details available in
-https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this
-FAQ]. dwc:institutionCode, dwc:institutionID
 
-|*Collection match fuzzy* (GRSciColl)
+|*Collection match fuzzy*
+|A match was found in https://www.gbif.org/grscicoll[GRSciColl] but it was matched fuzzily. To know more about why this has happened you can use the https://www.gbif.org/developer/registry#lookup[lookup API] to see the "reasons" returned in the response. A common case is when the name is used instead of the code or the identifier. To avoid fuzzy matches, publishers should use identifiers in additon to codes. More details available in https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ]. 
+|dwc:collectionCode, dwc:collectionID
 |https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_FUZZY[example]
-A match was found in https://www.gbif.org/grscicoll[GRSciColl] but it was
-matched fuzzily. To know more about why this has happened you can use
-the https://www.gbif.org/developer/registry#lookup[lookup API] to see
-see the "reasons" returned in the response. A common case is when the
-name is used instead of the code or the identifier. To avoid fuzzy
-matches, publishers should use identifiers in additon to codes. More
-details available in
-https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this
-FAQ]. dwc:collectionCode, dwc:collectionID
 
-|*Institution collection mismatch* (GRSciColl)
+|*Institution collection mismatch*
+|At least one possible collection match was found in
+|https://www.gbif.org/grscicoll[GRSciColl] but none of them belong to the institution matched. 
+|dwc:collectionCode, dwc:collectionID, dwc:institutionCode, dwc:institutionID
 |https://www.gbif.org/occurrence/search?issue=INSTITUTION_COLLECTION_MISMATCH[example]
-At
-least one possible collection match was found in
-|https://www.gbif.org/grscicoll[GRSciColl] but none of them belong to the
-institution matched. dwc:collectionCode, dwc:collectionID,
-dwc:institutionCode, dwc:institutionID
 
-|*Different owner institution* (GRSciColl)
+|*Different owner institution*
+|The institution doesn't match the owner institution.
+|dwc:ownerInstitutionCode, dwc:institutionCode, dwc:institutionID
 |https://www.gbif.org/occurrence/search?issue=DIFFERENT_OWNER_INSTITUTION[example]
-The
-institution doesn't match the owner institution.
-dwc:ownerInstitutionCode, dwc:institutionCode, dwc:institutionID
 
-'''''
+|===
 
-|*Individual count invalid* (individual count)
+.Other Issues
+|===
+|Flag name | Definition | Terms | Example
+
+|*Individual count invalid*
+|Individual count value not parsable into a positive integer.
+|_dwc:individualCount_
 |https://www.gbif.org/occurrence/search?issue=INDIVIDUAL_COUNT_INVALID[example]
-Individual
-count value not parsable into a positive integer.
-dwc:individualCount
 
-|*Individual count conflicts with occurrence status* (individual count)
+|*Individual count conflicts with occurrence status*
+|The values given for the individual count and for the status of the occurrence (present/absent) contradict each other (e.g. the count is 0 but the status says "present"). 
+|_dwc:individualCount, dwc:occurrenceStatus_
 |https://www.gbif.org/occurrence/search?issue=INDIVIDUAL_COUNT_CONFLICTS_WITH_OCCURRENCE_STATUS[example]
-The
-values given for the individual count and for the status of the
-occurrence (present/absent) contradict each other (e.g. the count is 0
-but the status says "present"). dwc:individualCount,
-dwc:occurrenceStatus
 
-|*Occurrence status inferred from individual count* (occurrence status)
+|*Occurrence status inferred from individual count*
+|The present/absent status of the occurrence was inferred from the individual count value because no status value was supplied explicitly. An individual count of 0 is interpreted as status="absent", a value > 0 as "present". 
+|dwc:individualCount, dwc:occurrenceStatus
 |https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_INFERRED_FROM_INDIVIDUAL_COUNT[example]
-The
-present/absent status of the occurrence was inferred from the individual
-count value because no status value was supplied explicitly. An
-individual count of 0 is interpreted as status="absent", a value > 0 as
-"present" dwc:individualCount, dwc:occurrenceStatus
 
-|*References URI invalid* (uri)
+|*References URI invalid*
+|The references URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "|". 
+|dc:references
 |https://www.gbif.org/occurrence/search?issue=REFERENCES_URI_INVALID[example]
-The
-references URL cannot be resolved, and may be malformed or contain
-invalid characters. If there is more than one URL, the values have to be
-separated by a pipe symbol "|". dc:references
 
-|*Multimedia URI invalid* (uri)
+|*Multimedia URI invalid*
 |https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_URI_INVALID[example]
-The
-multimedia URL cannot be resolved, and may be malformed or contain
-invalid characters. If there is more than one URL, the values have to be
-separated by a pipe symbol "|". dwc:associatedMedia
+|The multimedia URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "|". 
+|dwc:associatedMedia
 
-|*Interpretation error* (interpretation)
+|*Interpretation error*
+|An error occurred during interpretation, leaving the record interpretation incomplete. 
+|
 |https://www.gbif.org/occurrence/search?issue=INTERPRETATION_ERROR[example]
-An error occurred during interpretation, leaving the record interpretation
-incomplete. GBIF interpretation
