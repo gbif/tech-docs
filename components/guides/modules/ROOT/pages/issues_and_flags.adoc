@@ -289,7 +289,7 @@ Reasons include:
 |Flag name | Definition | Terms | Example
 
 |*Ambiguous institution*
-|Multiple institutions were found in https://www.gbif.org/grscicoll[GRSciColl] with the same level of confidence and it can't be determined which one should be accepted. For example, there are several institutions with the same code and country. Seehttps://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ] on how to avoid ambiguous matches. 
+|Multiple institutions were found in https://www.gbif.org/grscicoll[GRSciColl] with the same level of confidence and it can't be determined which one should be accepted. For example, there are several institutions with the same code and country. See https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ] on how to avoid ambiguous matches. 
 |dwc:institutionCode, dwc:institutionID
 |https://www.gbif.org/occurrence/search?issue=AMBIGUOUS_INSTITUTION[example]
 
@@ -331,7 +331,7 @@ Reasons include:
 
 |===
 
-.Other Issues
+.Other issues
 |===
 |Flag name | Definition | Terms | Example
 
@@ -347,18 +347,18 @@ Reasons include:
 
 |*Occurrence status inferred from individual count*
 |The present/absent status of the occurrence was inferred from the individual count value because no status value was supplied explicitly. An individual count of 0 is interpreted as status="absent", a value > 0 as "present". 
-|dwc:individualCount, dwc:occurrenceStatus
+|_dwc:individualCount, dwc:occurrenceStatus_
 |https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_INFERRED_FROM_INDIVIDUAL_COUNT[example]
 
 |*References URI invalid*
 |The references URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "/|". 
-|dc:references
+|_dc:references_
 |https://www.gbif.org/occurrence/search?issue=REFERENCES_URI_INVALID[example]
 
 |*Multimedia URI invalid*
-|https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_URI_INVALID[example]
 |The multimedia URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "/|". 
-|dwc:associatedMedia
+|_dwc:associatedMedia_
+|https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_URI_INVALID[example]
 
 |*Interpretation error*
 |An error occurred during interpretation, leaving the record interpretation incomplete. 
