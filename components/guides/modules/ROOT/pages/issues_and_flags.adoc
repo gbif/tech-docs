@@ -6,14 +6,6 @@ and offers a more clear description of each one. This section is
 intended to serve as a placeholder until more formal documentation can
 be written.
 
-### Geospatial Issues
-
-'''''
-
-
-These 4 issues are removed by default when *including coordinates* and
-*not* clicking the check box:
-
 .Geospatial issues
 |===
 |Flag name | Definition | Terms | Example
@@ -74,46 +66,49 @@ country names.
 |_dwc:country_
 |https://www.gbif.org/occurrence/search?issue=COUNTRY_INVALID[example]
 
-*Continent invalid* (geospatial)
-https://www.gbif.org/occurrence/search?issue=CONTINENT_INVALID[example]The
-continent given cannot be matched to the vocabulary for continent
-names**Terms**: dwc:continent
+|*Continent invalid*
+|The continent given cannot be matched to the vocabulary for continent
+names.
+|_dwc:continent_
+|https://www.gbif.org/occurrence/search?issue=CONTINENT_INVALID[example]
 
-*Coordinate rounded* (geospatial)
-https://www.gbif.org/occurrence/search?issue=COORDINATE_ROUNDED[example]In
-the data interpretation the original coordinates are rounded to 6
-decimals (~1m precision).*Terms*: dwc:decimalLatitude,
-dwc:decimalLongitude
+|*Coordinate rounded*
+|In the data interpretation the original coordinates are rounded to 6
+decimals (~1m precision).
+|_dwc:decimalLatitude, dwc:decimalLongitude_
+|https://www.gbif.org/occurrence/search?issue=COORDINATE_ROUNDED[example]
 
-*Coordinate reprojected* (geospatial)
-https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTED[example]The
-original coordinates were successfully reprojected from a different
-geodetic datum to WGS84.*Terms*: dwc:geodeticDatum
+|*Coordinate reprojected*
+|The original coordinates were successfully reprojected from a different
+geodetic datum to WGS84.
+|_dwc:geodeticDatum_
+|https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTED[example]
 
-*Coordinate reprojection suspicious* (geospatial)
-https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_SUSPICIOUS[example]Indicates
-successful coordinate reprojection according to provided datum, but
-which results in a datum shift larger than 0.1 decimal degrees.*Terms*:
-dwc:geodeticDatum, dwc:decimalLatitude, dwc:decimalLongitude
+|*Coordinate reprojection suspicious*
+|Indicates successful coordinate reprojection according to provided datum, but
+which results in a datum shift larger than 0.1 decimal degrees.
+|_dwc:geodeticDatum, dwc:decimalLatitude, dwc:decimalLongitude_
+|https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_SUSPICIOUS[example]
 
-*Coordinate reprojection failed* (geospatial)
-https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_FAILED[example]The
-given decimal latitude and longitude could not be reprojected to WGS84
+|*Coordinate reprojection failed*
+|The given decimal latitude and longitude could not be reprojected to WGS84
 based on the provided datum.*Terms*: dwc:geodeticDatum,
-dwc:decimalLatitude, dwc:decimalLongitude
+|_dwc:decimalLatitude, dwc:decimalLongitude_
+|https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_FAILED[example]
 
-*Coordinate uncertainty meters invalid* (geospatial)
-https://www.gbif.org/occurrence/search?issue=COORDINATE_UNCERTAINTY_METERS_INVALID[example]The
-value given for Coordinate uncertainty in meters, indicating the radius
+|*Coordinate uncertainty meters invalid*
+|The value given for Coordinate uncertainty in meters, indicating the radius
 of uncertainty around the given decimal coordinates, is not a valid
 number, or lies outside a plausible range.*Terms*:
-dwc:coordinateUncertaintyInMeters
+|_dwc:coordinateUncertaintyInMeters_
+|https://www.gbif.org/occurrence/search?issue=COORDINATE_UNCERTAINTY_METERS_INVALID[example]
 
-*Coordinate precision invalid* (geospatial)
-https://www.gbif.org/occurrence/search?issue=COORDINATE_PRECISION_INVALID[example]Indicates
-an invalid or very unlikely coordinates precision. The value is not a
+|*Coordinate precision invalid*
+|Indicates an invalid or very unlikely coordinates precision. The value is not a
 decimal number as expected, or it has an unusually low or high for a
-margin of uncertainty.*Terms*: dwc:coordinatePrecision
+margin of uncertainty.
+|_dwc:coordinatePrecision_
+https://www.gbif.org/occurrence/search?issue=COORDINATE_PRECISION_INVALID[example]
 
 *Presumed negated longitude* (geospatial)
 https://www.gbif.org/occurrence/search?issue=PRESUMED_NEGATED_LONGITUDE[example]The
