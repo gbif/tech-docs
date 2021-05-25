@@ -350,12 +350,12 @@ Reasons include:
 |https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_INFERRED_FROM_INDIVIDUAL_COUNT[example]
 
 |*References URI invalid*
-|The references URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "/|". 
+|The references URL cannot be resolved, and may be malformed or contain invalid characters. 
 |_dc:references_
 |https://www.gbif.org/occurrence/search?issue=REFERENCES_URI_INVALID[example]
 
 |*Multimedia URI invalid*
-|The multimedia URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "/|". 
+|The multimedia URL cannot be resolved, and may be malformed or contain invalid characters. 
 |_dwc:associatedMedia_
 |https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_URI_INVALID[example]
 
