@@ -117,17 +117,17 @@ be written.
 
 |*Depth unlikely* 
 |The values for minimum and maximum depth are negative or higher than 11000 (Mariana Trench depth in meters). 
-|dwc:minimumDepthInMeters, dwc:maximumDepthInMeters
+|_dwc:minimumDepthInMeters, dwc:maximumDepthInMeters_
 |https://www.gbif.org/occurrence/search?issue=DEPTH_UNLIKELY[example]
 
 |*Depth not metric* 
 |Set if supplied depth is not given in the metric system, for example using feet instead of meters.
-|dwc:minimumDepthInMeters, dwc:maximumDepthInMeters
+|_dwc:minimumDepthInMeters, dwc:maximumDepthInMeters_
 |https://www.gbif.org/occurrence/search?issue=DEPTH_NOT_METRIC[example]
 
 |*Elevation non numeric* 
 |The values for minimum and maximum elevation are non-numeric values and cannot be interpreted. 
-|dwc:minimumElevationInMeters,dwc:maximumElevationMeters
+|_dwc:minimumElevationInMeters,dwc:maximumElevationMeters_
 |https://www.gbif.org/occurrence/search?issue=ELEVATION_NON_NUMERIC[example]
 
 |*Elevation min max swapped* 
@@ -137,27 +137,25 @@ be written.
 
 |*Elevation not metric* 
 |Set if supplied elevation is not given in the metric system, for example using feet instead of meters.
-|dwc:minimumElevationInMeters, dwc:maximumElevationInMeters
+|_dwc:minimumElevationInMeters, dwc:maximumElevationInMeters_
 |https://www.gbif.org/occurrence/search?issue=ELEVATION_NOT_METRIC[example]
 
 |*Elevation unlikely* 
 |The values for minimum and maximum elevation are above the troposphere (17000 m) or below Mariana Trench (11000 m).
-|dwc:minimumElevationInMeters, dwc:maximumElevationInMeters
+|_dwc:minimumElevationInMeters, dwc:maximumElevationInMeters_
 |https://www.gbif.org/occurrence/search?issue=ELEVATION_UNLIKELY[example]
 
 |*Continent country mismatch* 
 |The interpreted continent and country do not match up.
-|dwc:continent, dwc:countryCode, dwc:country
+|_dwc:continent, dwc:countryCode, dwc:country_
 |https://www.gbif.org/occurrence/search?issue=CONTINENT_COUNTRY_MISMATCH[example]
 
 |*Continent derived from coordinates* 
 |If no value is supplied for the continent or if the values cannot be matched against a known vocabulary, data interpretation derives the continent from the decimal coordinates. 
-|dwc:continent, dwc:decimalLatitude, dwc:decimal Longitude
+|_dwc:continent, dwc:decimalLatitude, dwc:decimal Longitude_
 |https://www.gbif.org/occurrence/search?issue=CONTINENT_DERIVED_FROM_COORDINATES[example]
 
-
 |===
-
 
 .Taxonomic issues
 |===
@@ -170,12 +168,12 @@ Reasons include: +
 - The name is new, and not available in the taxonomic datasets yet +
 - The name is missing in the backbone's taxonomic sources for others reasons +
 - Formatting or spelling of the scientific name caused interpretation errors 
-|dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank 
+|_dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank_
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK[example]
 
 |*Taxon match none* 
 |Matching to the taxonomic backbone cannot be done cause there was no match at all or several matches with too little information to keep them apart(homonyms). 
-|dwc:scientificName,dwc:kingdom,dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank
+|_dwc:scientificName,dwc:kingdom,dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank_
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_NONE[example]
 
 |*Taxon match fuzzy* 
@@ -355,13 +353,13 @@ http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml[http://rs.gbif.org/vocabul
 |https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_INFERRED_FROM_INDIVIDUAL_COUNT[example]
 
 |*References URI invalid*
-|The references URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "|". 
+|The references URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "/|". 
 |dc:references
 |https://www.gbif.org/occurrence/search?issue=REFERENCES_URI_INVALID[example]
 
 |*Multimedia URI invalid*
 |https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_URI_INVALID[example]
-|The multimedia URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "|". 
+|The multimedia URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "/|". 
 |dwc:associatedMedia
 
 |*Interpretation error*
