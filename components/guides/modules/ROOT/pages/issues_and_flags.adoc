@@ -52,13 +52,7 @@ https://www.gbif.org/occurrence/search?issue=COORDINATE_INVALID[example] +
 _dwc:decimalLatitude,dwc:decimalLongitude, dwc:verbatimCoordinates, dwc:verbatimLatitude,dwc:verbatimLongitude_
 
 
-|===
 
-
-
-
-
-'''''
 
 *Geodetic datum assumed WGS84* (geospatial)
 https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_ASSUMED_WGS84[example] + 
@@ -187,11 +181,6 @@ if supplied elevation is not given in the metric system, for example
 using feet instead of meters.*Terms*: dwc:minimumElevationInMeters,
 dwc:maximumElevationInMeters
 
-'''''
-
-*Zero* occurrence records are flagged with the following *geospatial
-issues* on GBIF as of the writing of this post.
-
 *Elevation unlikely* (geospatial)
 https://www.gbif.org/occurrence/search?issue=ELEVATION_UNLIKELY[example]The
 values for minimum and maximum elevation are above the troposphere
@@ -209,6 +198,9 @@ no value is supplied for the continent or if the values cannot be
 matched against a known vocabulary, data interpretation derives the
 continent from the decimal coordinates.*Terms*: dwc:continent,
 dwc:decimalLatitude, dwc:decimal Longitude
+
+
+|===
 
 '''''
 
