@@ -10,38 +10,30 @@ be written.
 
 '''''
 
-*Zero coordinate* (geospatial)
-https://www.gbif.org/occurrence/search?issue=ZERO_COORDINATE[example] + 
-Coordinates are exactly 0/0, often indicating an actual null coordinate.*Terms*:
-dwc:decimalLatitude, dwc:decimalLongitude
-
-*Country coordinate mismatch* (geospatial)
-https://www.gbif.org/occurrence/search?issue=COUNTRY_COORDINATE_MISMATCH[example] + 
-The interpreted occurrence coordinates fall outside of the indicated
-country.*Terms*: dwc:countryCode, dwc:country, dwc:decimalLatitude,
-dwc:decimalLongitude
-
-*Coordinate out of range* (geospatial)
-https://www.gbif.org/occurrence/search?issue=COORDINATE_OUT_OF_RANGE[example] + 
-The supplied coordinates lie outside of the range for decimal lat/lon values
-(-90/90, -180/180).*Terms*: dwc:decimalLatitude, dwc:decimalLongitude,
-dwc:verbatimCoordinates, dwc:verbatimLatitude, dwc:verbatimLongitude
 
 These 4 issues are removed by default when *including coordinates* and
 *not* clicking the check box:
 
 .Geospatial issues
 |===
-|Flag name | Definition
+|Flag name | Definition | Terms | Example
 
 |*Zero coordinate*
-|Coordinates are exactly 0/0, often indicating an actual null coordinate. https://www.gbif.org/occurrence/search?issue=ZERO_COORDINATE[example] +
-_dwc:decimalLatitude, dwc:decimalLongitude_
+|Coordinates are exactly 0/0, often indicating an actual null coordinate.  
+|_dwc:decimalLatitude, dwc:decimalLongitude_ 
+|https://www.gbif.org/occurrence/search?issue=ZERO_COORDINATE[example]
+
+|*Coordinate out of range*  
+|The supplied coordinates lie outside of the range for decimal lat/lon values
+(-90/90, -180/180).
+|_dwc:decimalLatitude, dwc:decimalLongitude, dwc:verbatimCoordinates, dwc:verbatimLatitude, dwc:verbatimLongitude_
+|https://www.gbif.org/occurrence/search?issue=COORDINATE_OUT_OF_RANGE[example] 
 
 |*Country coordinate mismatch*
 |The interpreted occurrence coordinates fall outside of the indicated
-country. https://www.gbif.org/occurrence/search?issue=COUNTRY_COORDINATE_MISMATCH[example] +
-_dwc:countryCode, dwc:country, dwc:decimalLatitude_
+country. 
+|_dwc:countryCode, dwc:country, dwc:decimalLatitude_
+|https://www.gbif.org/occurrence/search?issue=COUNTRY_COORDINATE_MISMATCH[example] 
 
 |*Coordinate invalid* 
 |A coordinate value is given in some form, but GBIF is unable to interpret
