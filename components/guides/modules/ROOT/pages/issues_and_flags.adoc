@@ -40,40 +40,39 @@ country.
 it. Possible reasons include, i.a., coordinates that fall out of range
 (larger/lower than 90/-90 or 180/-180, depending) or text values that
 cannot be interpreted.
-https://www.gbif.org/occurrence/search?issue=COORDINATE_INVALID[example] +
-_dwc:decimalLatitude,dwc:decimalLongitude, dwc:verbatimCoordinates, dwc:verbatimLatitude,dwc:verbatimLongitude_
+|_dwc:decimalLatitude,dwc:decimalLongitude, dwc:verbatimCoordinates, dwc:verbatimLatitude,dwc:verbatimLongitude_
+|https://www.gbif.org/occurrence/search?issue=COORDINATE_INVALID[example]
 
+|*Geodetic datum assumed WGS84* 
+|If the datum is null, data interpretation assumes the record coordinates
+are in WGS84.
+|_dwc:geodeticDatum_
+|https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_ASSUMED_WGS84[example]
 
+|*Geodetic datum invalid* 
+|The geodetic datum could not be interpreted, because the supplied term
+cannot be matched against the vocabulary of known values.
+|_dwc:geodeticDatum_
+|https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_INVALID[example] +
 
+|*Country mismatch* 
+|Interpreted Country and Country code contradict each other.
+|_dwc:countryCode, dwc:country_
+|https://www.gbif.org/occurrence/search?issue=COUNTRY_MISMATCH[example]
 
-*Geodetic datum assumed WGS84* (geospatial)
-https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_ASSUMED_WGS84[example] + 
-If the datum is null, data interpretation assumes the record coordinates
-are in WGS84.*Terms*: dwc:geodeticDatum
-
-*Geodetic datum invalid* (geospatial)
-https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_INVALID[example] + 
-The geodetic datum could not be interpreted, because the supplied term
-cannot be matched against the vocabulary of known values.*Terms*:
-dwc:geodeticDatum
-
-*Country mismatch* (geospatial)
-https://www.gbif.org/occurrence/search?issue=COUNTRY_MISMATCH[example]Interpreted
-Country and Country code contradict each other.*Terms*: dwc:countryCode,
-dwc:country
-
-*Country derived from coordinates* (geospatial)
-https://www.gbif.org/occurrence/search?issue=COUNTRY_DERIVED_FROM_COORDINATES[example]If
-the country and country code are not supplied or cannot be matched to
+|*Country derived from coordinates* 
+|If the country and country code are not supplied or cannot be matched to
 known values, data interpretation derives their content from the decimal
 coordinates through a https://github.com/gbif/geocode[lookup
-service].*Terms*: dwc:countryCode, dwc:country, dwc:decimalLatitude,
-dwc:decimalLongitude
+service].
+|_dwc:countryCode, dwc:country, dwc:decimalLatitude,dwc:decimalLongitude_
+|https://www.gbif.org/occurrence/search?issue=COUNTRY_DERIVED_FROM_COORDINATES[example]
 
-*Country invalid* (geospatial)
-https://www.gbif.org/occurrence/search?issue=COUNTRY_INVALID[example]The
-country or countryCode given cannot be matched to the vocabulary for
-country names.*Terms*: dwc:country
+|*Country invalid* 
+|The country or countryCode given cannot be matched to the vocabulary for
+country names.
+|_dwc:country_
+|https://www.gbif.org/occurrence/search?issue=COUNTRY_INVALID[example]
 
 *Continent invalid* (geospatial)
 https://www.gbif.org/occurrence/search?issue=CONTINENT_INVALID[example]The
