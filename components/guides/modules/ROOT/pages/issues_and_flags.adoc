@@ -136,40 +136,41 @@ be written.
 |https://www.gbif.org/occurrence/search?issue=ELEVATION_MIN_MAX_SWAPPED[example]
 
 |*Elevation not metric* 
-Set if supplied elevation is not given in the metric system, for example using feet instead of meters. 
-dwc:minimumElevationInMeters, dwc:maximumElevationInMeters
+|Set if supplied elevation is not given in the metric system, for example using feet instead of meters.
+|dwc:minimumElevationInMeters, dwc:maximumElevationInMeters
 |https://www.gbif.org/occurrence/search?issue=ELEVATION_NOT_METRIC[example]
 
 |*Elevation unlikely* 
+|The values for minimum and maximum elevation are above the troposphere (17000 m) or below Mariana Trench (11000 m).
+|dwc:minimumElevationInMeters, dwc:maximumElevationInMeters
 |https://www.gbif.org/occurrence/search?issue=ELEVATION_UNLIKELY[example]
-The values for minimum and maximum elevation are above the troposphere (17000 m) or below Mariana Trench (11000 m).
-dwc:minimumElevationInMeters, dwc:maximumElevationInMeters
 
 |*Continent country mismatch* 
+|The interpreted continent and country do not match up.
+|dwc:continent, dwc:countryCode, dwc:country
 |https://www.gbif.org/occurrence/search?issue=CONTINENT_COUNTRY_MISMATCH[example]
-The interpreted continent and country do not match up.
-dwc:continent, dwc:countryCode, dwc:country
 
 |*Continent derived from coordinates* 
+|If no value is supplied for the continent or if the values cannot be matched against a known vocabulary, data interpretation derives the continent from the decimal coordinates. 
+|dwc:continent, dwc:decimalLatitude, dwc:decimal Longitude
 |https://www.gbif.org/occurrence/search?issue=CONTINENT_DERIVED_FROM_COORDINATES[example]
-If no value is supplied for the continent or if the values cannot be matched against a known vocabulary, data interpretation derives the continent from the decimal coordinates. 
-dwc:continent, dwc:decimalLatitude, dwc:decimal Longitude
 
 
 |===
 
-'''''
+
+.Geospatial issues
+|===
+|Flag name | Definition | Terms | Example
 
 |*Taxon match higherrank* 
-|https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK[example]
-The record can be matched to the GBIF taxonomic backbone at a higher rank,
-but not with the scientific name given.
-dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank 
-|Reasons include:
+|The record can be matched to the GBIF taxonomic backbone at a higher rank, but not with the scientific name given.
+Reasons include:
 - The name is new, and not available in the taxonomic datasets yet
 - The name is missing in the backbone's taxonomic sources for others reasons
-- Formatting or spelling of the scientific name caused interpretation
-errors
+- Formatting or spelling of the scientific name caused interpretation errors
+|dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank 
+|https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK[example]
 
 |*Taxon match none* 
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_NONE[example]
@@ -181,7 +182,8 @@ dwc:scientificName,dwc:kingdom,dwc:phylum, dwc:class, dwc:order, dwc:family, dwc
 Matching to the taxonomic backbone can only be done using a fuzzy, non exact match. 
 dwc:scientificName,dwc:kingdom,dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank
 
-'''''
+|===
+
 
 |*Recorded date invalid* (date)
 |https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_INVALID[example]
