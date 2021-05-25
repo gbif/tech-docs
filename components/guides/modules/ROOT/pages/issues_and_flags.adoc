@@ -278,7 +278,7 @@ Reasons include:
 |https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID[example]
 
 |*Occurrence status unparsable*
-|The given occurenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at collection or observation event.
+|The given occurenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at or observation event.
 |dwc:occurrenceStatus
 |https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE[example]
 
@@ -319,8 +319,7 @@ Reasons include:
 |https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_FUZZY[example]
 
 |*Institution collection mismatch*
-|At least one possible collection match was found in
-|https://www.gbif.org/grscicoll[GRSciColl] but none of them belong to the institution matched. 
+|At least one possible collection match was found in https://www.gbif.org/grscicoll[GRSciColl] but none of them belong to the institution matched. 
 |dwc:collectionCode, dwc:collectionID, dwc:institutionCode, dwc:institutionID
 |https://www.gbif.org/occurrence/search?issue=INSTITUTION_COLLECTION_MISMATCH[example]
 
