@@ -301,12 +301,12 @@ http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml[http://rs.gbif.org/vocabul
 |dwc:collectionCode, dwc:collectionID
 
 |*Institution match none*
-|No match was found in |https://www.gbif.org/grscicoll[GRSciColl]. Either the entry doesn't exists in GRSciColl or it has a different code. Check https://www.gbif.org/grscicoll[GRSciColl] and request update if needed. 
+|No match was found in https://www.gbif.org/grscicoll[GRSciColl]. Either the entry doesn't exists in GRSciColl or it has a different code. Check https://www.gbif.org/grscicoll[GRSciColl] and request update if needed. 
 |dwc:institutionCode, dwc:institutionID
 |https://www.gbif.org/occurrence/search?issue=INSTITUTION_MATCH_NONE[example]
 
 |*Collection match none*
-|No match was found in |https://www.gbif.org/grscicoll[GRSciColl]. Either the entry doesn't exists in GRSciColl or it has a different code. Check https://www.gbif.org/grscicoll[GRSciColl] and request update if needed. 
+|No match was found in https://www.gbif.org/grscicoll[GRSciColl]. Either the entry doesn't exists in GRSciColl or it has a different code. Check https://www.gbif.org/grscicoll[GRSciColl] and request update if needed. 
 |dwc:collectionCode, dwc:collectionID
 |https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_NONE[example]
 
