@@ -263,7 +263,7 @@ Reasons include:
 |https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_UNLIKELY[example]
 |===
 
-.Date issues
+.Vocabulary issues
 |===
 |Flag name | Definition | Terms | Example
 
