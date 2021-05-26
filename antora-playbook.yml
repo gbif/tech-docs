@@ -12,7 +12,7 @@ content:
       branches: main
     - url: git@github.com:gbif/ipt.git
       branches: ipt-2.4.2-docs
-      start_path: docs
+      start_path: docs/en
 ui:
   bundle:
     # url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
