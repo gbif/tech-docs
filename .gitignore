@@ -1,5 +1,7 @@
 .cache
-build/*
+cache
+build
+output
 theme/node_modules
 theme/public
 
@@ -7,4 +9,3 @@ theme/public
 
 # Mac OS X
 .DS_Store
-

@@ -1,0 +1,25 @@
+site:
+  title: Manual del Usuario del IPT
+  url: /manual/es
+  start_page: ipt::index.adoc
+content:
+  sources:
+    - url: git@github.com:gbif/ipt.git
+      branches: [ipt-2.4.2-docs-translation-test]
+      start_path: docs/es
+ui:
+  bundle:
+    # url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    #snapshot: true
+    url: ./theme/build/ui-bundle.zip
+    snapshot: true
+  supplemental_files: ./supplemental_ui
+output:
+  clean: true
+  dir: ./output/es
+runtime:
+  fetch: true
+  cache_dir: ./cache
+urls:
+  html_extension_style: indexify
+  #redirect_facility: netlify

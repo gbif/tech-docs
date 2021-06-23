@@ -5,18 +5,21 @@
 // Build status badge
 https://builds.gbif.org/job/tech-docs/lastBuild/console[image:https://builds.gbif.org/job/tech-docs/badge/icon[Build status]]
 
-= GBIF Technical Documentation
+= GBIF IPT Documentation
 
-This is the playbook project for the GBIF Technical documentation.
+This is the playbook project for the GBIF IPT – until full integration with the technical documentation site.
 
-During development, it is visible at https://tech-docs.gbif-dev.org/
+It is visible at https://ipt.gbif.org/manual/.
 
 == Building
 
 The simplest approach to building is to use Docker:
 
 ----
-docker run -u $(id -u) -v $PWD:/antora:Z --rm -t antora/antora --cache-dir=./.cache/antora antora-playbook.yml
+for i in en es; do
+    docker run -u $(id -u) -v $PWD:/antora:Z -e ANTORA_LANGUAGE=$i --rm -t ggrossetie/antora-lunr docs-$i.yml
+    rsync -r --checksum --delete output/$i/ ipt.gbif.org:/var/www/html/ipt/manual/$i/
+done
 ----
 
 Please explore the Antora documentation for alternative methods for building.
