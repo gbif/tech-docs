@@ -22,4 +22,12 @@ for i in en es; do
 done
 ----
 
+For building from local sources, e.g. with `docs-development.yml`, try
+
+----
+docker run -u $(id -u) -v $PWD:/antora:Z -v ~Workspace/ipt:/ipt -e ANTORA_LANGUAGE=en --rm -it antora/antora ash
+antora docs-development.yml
+# (Repeat as required)
+----
+
 Please explore the Antora documentation for alternative methods for building.

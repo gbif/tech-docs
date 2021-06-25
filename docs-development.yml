@@ -1,0 +1,23 @@
+site:
+  title: GBIF IPT User Manual
+  url: /manual/en
+  start_page: ipt::index.adoc
+content:
+  sources:
+    - url: /ipt
+      branches: HEAD
+      start_path: docs/en
+ui:
+  bundle:
+    url: ./theme/build/ui-bundle.zip
+    snapshot: true
+  supplemental_files: ./supplemental_ui
+output:
+  clean: true
+  dir: ./output/en
+runtime:
+  fetch: true
+  cache_dir: ./cache
+#urls:
+#  #html_extension_style: indexify
+#  #redirect_facility: netlify
