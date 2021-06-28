@@ -20,7 +20,6 @@ runtime:
   cache_dir: ./cache
 #urls:
 #  html_extension_style: drop
-#  redirect_facility: httpd
 asciidoc:
   attributes:
     page-pagination: yes
