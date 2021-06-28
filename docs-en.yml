@@ -9,8 +9,6 @@ content:
       start_path: docs/en
 ui:
   bundle:
-    # url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
-    #snapshot: true
     url: ./theme/build/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental_ui
@@ -21,5 +19,11 @@ runtime:
   fetch: true
   cache_dir: ./cache
 urls:
-  html_extension_style: indexify
-  #redirect_facility: netlify
+  html_extension_style: drop
+  redirect_facility: httpd
+  # Requires Antora 3: https://gitlab.com/antora/antora/-/merge_requests/552
+  #latest_version_segment_strategy: redirect:to
+  #latest_version_segment: current
+asciidoc:
+  attributes:
+    page-pagination: yes

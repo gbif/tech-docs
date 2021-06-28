@@ -5,7 +5,7 @@ site:
 content:
   sources:
     - url: /ipt
-      branches: HEAD
+      branches: [ipt-2.4.2-docs, HEAD]
       start_path: docs/en
 ui:
   bundle:
@@ -19,5 +19,8 @@ runtime:
   fetch: true
   cache_dir: ./cache
 #urls:
-#  #html_extension_style: indexify
-#  #redirect_facility: netlify
+#  html_extension_style: drop
+#  redirect_facility: httpd
+asciidoc:
+  attributes:
+    page-pagination: yes
