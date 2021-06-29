@@ -5,8 +5,8 @@ site:
 content:
   edit_url: 'https://ipt.gbif.org/manual/es/ipt/2.5/translations'
   sources:
-    - url: git@github.com:gbif/ipt.git
-      branches: [ipt-2.4.2-docs, generated-translations-master]
+    - url: /ipt
+      branches: [ipt-2.4.2-docs, HEAD]
       start_path: docs/es
 ui:
   bundle:
@@ -19,11 +19,8 @@ output:
 runtime:
   fetch: true
   cache_dir: ./cache
-urls:
-  html_extension_style: drop
-  # Requires Antora 3: https://gitlab.com/antora/antora/-/merge_requests/552
-  #latest_version_segment_strategy: redirect:to
-  #latest_version_segment: current
+#urls:
+#  html_extension_style: drop
 asciidoc:
   attributes:
     page-pagination: yes
