@@ -1,13 +1,13 @@
 site:
-  title: Manual del Usuario del IPT
-  url: /manual/es
+  title: IPT用戶手冊
+  url: /manual/zh
   start_page: ipt::index.adoc
 content:
-  edit_url: 'https://ipt.gbif.org/manual/es/ipt/2.5/translations'
+  edit_url: 'https://ipt.gbif.org/manual/zh/ipt/2.5/translations'
   sources:
     - url: /ipt
-      branches: [ipt-2.4.2-docs, generated-translations-master]
-      start_path: docs/es
+      branches: [generated-translations-master]
+      start_path: docs/zh
 ui:
   bundle:
     url: ./theme/build/ui-bundle.zip
@@ -15,7 +15,7 @@ ui:
   supplemental_files: ./supplemental_ui
 output:
   clean: true
-  dir: ./output/es
+  dir: ./output/zh
 runtime:
   fetch: true
   cache_dir: ./cache
