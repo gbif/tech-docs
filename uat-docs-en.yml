@@ -1,11 +1,11 @@
 site:
-  title: GBIF IPT User Manual
+  title: GBIF IPT User Manual (UAT)
   url: /manual/en
   start_page: ipt::index.adoc
 content:
   sources:
     - url: git@github.com:gbif/ipt.git
-      branches: [ipt-2.4.2-docs, master]
+      branches: [ipt-2.4.2-docs, dev]
       start_path: docs/en
 ui:
   bundle:
