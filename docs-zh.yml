@@ -1,5 +1,5 @@
 site:
-  title: IPT用戶手冊
+  title: 整合式資料發布工具 IPT：使用手冊
   url: /manual/zh
   start_page: ipt::index.adoc
 content:
