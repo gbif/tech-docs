@@ -24,3 +24,4 @@ runtime:
 asciidoc:
   attributes:
     page-pagination: yes
+    language: es

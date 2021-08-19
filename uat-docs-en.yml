@@ -26,3 +26,4 @@ urls:
 asciidoc:
   attributes:
     page-pagination: yes
+    language: en
