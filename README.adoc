@@ -16,7 +16,7 @@ It is visible at https://ipt.gbif.org/manual/.
 The simplest approach to building is to use Docker:
 
 ----
-for i in en es zh; do
+for i in en es ja zh; do
     docker run --rm -t -u $(id -u) -v $PWD:/antora:Z \
       -e ANTORA_LANGUAGE=$i -e DOCSEARCH_LANGS=$i -e DOCSEARCH_INDEX_VERSION=latest \
       ggrossetie/antora-lunr docs-$i.yml
