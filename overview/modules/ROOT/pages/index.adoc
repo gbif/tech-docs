@@ -1,0 +1,13 @@
+= GBIF Technical Documentation
+
+This web site collates technical documentation about GBIF, the Global Biodiversity Information Facility.
+
+(Large buttons or icons or something.)
+
+* Occurrence ingestion, processing, indexing
+* Dependent systems (checklists, vocabularies, standards, georeference)
+* APIs
+* API clients (R, Python, Java)
+* Download formats
+* Cloud exports including examples of use
+* Data publishing
