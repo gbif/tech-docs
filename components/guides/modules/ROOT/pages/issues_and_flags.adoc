@@ -372,4 +372,4 @@ Reasons include:
 |
 |https://www.gbif.org/occurrence/search?issue=INTERPRETATION_ERROR[example]
 
-|==
+|===

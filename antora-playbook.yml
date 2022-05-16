@@ -2,14 +2,14 @@ site:
   title: GBIF Technical Documentation
   # the 404 page and sitemap files only get generated when the url property is set
   url: https://tech-docs.gbif-dev.org
-  start_page: ipt::index.adoc
+  start_page: overview::index.adoc
 content:
   sources:
     - url: ./
-      start_path: overview/
-      branches: main
+      start_path: components/overview
+      branches: HEAD
     - url: ./
-      start_path: components/test
+      start_path: components/openapi
       branches: main
     - url: ./
       start_path: components/guides
@@ -19,8 +19,5 @@ content:
       start_path: docs/en
 ui:
   bundle:
-    # url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
-    #snapshot: true
     url: ./theme/build/ui-bundle.zip
-    snapshot: true
   supplemental_files: ./supplemental_ui

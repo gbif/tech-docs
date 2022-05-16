@@ -1,2 +1,0 @@
-* xref:overview.adoc[Module 123 A]
-* xref:overview2.adoc[Module 123 B]

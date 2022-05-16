@@ -1,0 +1,5 @@
+name: openapi
+title: OpenAPI
+version: dev
+nav:
+- modules/ROOT/nav.adoc

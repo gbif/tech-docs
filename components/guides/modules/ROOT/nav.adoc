@@ -3,6 +3,6 @@
 
 * Guides
 ** xref:index.adoc[Bingo]
-** xref:index2.adoc[What goes here]
-** xref:index2.adoc[The one]
-** xref:index2.adoc[Ah yeah]
+** xref:index.adoc[What goes here]
+** xref:index.adoc[The one]
+** xref:index.adoc[Ah yeah]
