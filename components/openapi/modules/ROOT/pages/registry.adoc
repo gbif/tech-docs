@@ -1,6 +1,6 @@
 = API (HTTP)
-:description: The API specification describes all most of the GBIF API endpoints, with the exception of maps
+:description: The GBIF Registry API
 :page-no-next: true
 :page-layout: rapidoc
-:page-openapi-url: http://ws.gbif.org:8082/v3/api-docs
+:page-openapi-url: /openapi/registry.json
 :header: Registry API
