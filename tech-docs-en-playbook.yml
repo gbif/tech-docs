@@ -12,10 +12,10 @@ content:
       branches: HEAD
     - url: .
       start_path: ./openapi
-      branches: main
+      branches: HEAD
     - url: .
       start_path: ./guides
-      branches: main
+      branches: HEAD
     - url: git@github.com:gbif/ipt.git
       branches: [ipt-2.4.2-docs, dev]
       start_path: docs/en
