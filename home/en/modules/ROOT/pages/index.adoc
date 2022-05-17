@@ -5,13 +5,17 @@
 |image::datamodel-img-01.jpg[]
 xref:ipt::index.adoc[Data Publishing]
 |image::datamodel-img-07.jpg[]
-Data processing and quality checks
+xref:data-pipelines::index.adoc[Data processing and quality checks]
 |image::datamodel-img-11.jpg[]
-Using data downloads
+🏗 Data downloads
 |image::datamodel-img-12.jpg[]
-Using data with R, Python or cloud analysis
+🏗 R, Python or cloud analysis
 |image::datamodel-intro-04.jpg[]
 xref:openapi::index.adoc[Using data with the API]
 |image::datamodel-img-05.jpg[]
-Data standards
+🏗 Data standards
 |===
+
+For examples of what is possible with this Antora system (which uses AsciiDoctor, just like https://docs.gbif.org[docs.gbif.org]), see the https://gitlab.com/antora/antora.org/-/issues/20[Antora showcase].
+
+Much of the site is empty: links marked with 🏗 don't go anywhere.

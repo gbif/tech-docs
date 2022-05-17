@@ -7,7 +7,7 @@ https://builds.gbif.org/job/tech-docs/lastBuild/console[image:https://builds.gbi
 
 = GBIF Technical Documentation
 
-This is the playbook project for the GBIF Technical documentation.
+This is the the GBIF technical documentation site.
 
 During development, it is visible at https://tech-docs.gbif-dev.org/
 
@@ -16,7 +16,10 @@ During development, it is visible at https://tech-docs.gbif-dev.org/
 The simplest approach to building is to use Docker:
 
 ----
-docker run -u $(id -u) -v $PWD:/antora:Z --rm -t antora/antora --cache-dir=./.cache/antora antora-playbook.yml
+for lang in en es; do
+    rm -Rf output/$lang
+    docker run -u $(id -u) -v $PWD:/antora:Z --rm -t ggrossetie/antora-lunr tech-docs-$lang-playbook.yml
+done)
 ----
 
 Please explore the Antora documentation for alternative methods for building.

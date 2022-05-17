@@ -1,0 +1,5 @@
+= Data publishing – overview
+
+You can publish data in xref:ipt::darwin-core.adoc[Darwin Core Archive format] [this is a link to the IPT documentation].
+
+When publishing checklists, see xref:ipt::best-practices-checklists.adoc#publishing-synonymy[Publishing Synonymy] in the IPT documentation [this is a link to a specific section in the IPT documentation].

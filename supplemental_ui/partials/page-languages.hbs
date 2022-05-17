@@ -6,8 +6,6 @@
     {{~#if (ne page.version "2.4")}}<a class="language" href="{{siteRootPath}}/../es{{page.url}}">español</a>{{/if~}}
     {{~#if (ne env.ENVIRONMENT "prod")}}{{~#if (eq page.version "2.5")}}<a class="language" href="{{siteRootPath}}/../ja{{page.url}}">日本語</a>{{/if~}}{{/if~}}
     {{~#if (eq page.version "2.5")}}<a class="language" href="{{siteRootPath}}/../zh{{page.url}}">繁體中文</a>{{/if~}}
-
-    {{log 'page' page}}
   </div>
 </div>
 {{/if}}
