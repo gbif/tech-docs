@@ -1,6 +1,6 @@
 site:
   title: GBIF Technical Documentation
-  url: http://tech-docs.mb.gbif.org
+  url: http://tech-docs.gbif-dev.org
   start_page: home::index.adoc
   keys:
     language: es

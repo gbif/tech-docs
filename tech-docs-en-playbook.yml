@@ -1,6 +1,5 @@
 site:
   title: GBIF Technical Documentation
-  # the 404 page and sitemap files only get generated when the url property is set
   url: https://tech-docs.gbif-dev.org
   start_page: home::index.adoc
   keys:
