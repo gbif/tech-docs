@@ -2,17 +2,19 @@ site:
   title: GBIF Technical Documentation
   # the 404 page and sitemap files only get generated when the url property is set
   url: https://tech-docs.gbif-dev.org
-  start_page: overview::index.adoc
+  start_page: home::index.adoc
+  keys:
+    language: en
 content:
   sources:
     - url: .
-      start_path: components/overview
+      start_path: ./home/en
       branches: HEAD
     - url: .
-      start_path: components/openapi
+      start_path: ./openapi
       branches: main
     - url: .
-      start_path: components/guides
+      start_path: ./guides
       branches: main
     - url: git@github.com:gbif/ipt.git
       branches: [ipt-2.4.2-docs, dev]
@@ -36,3 +38,4 @@ urls:
 asciidoc:
   attributes:
     page-pagination: yes
+    language: en

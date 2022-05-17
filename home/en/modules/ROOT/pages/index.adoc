@@ -1,0 +1,17 @@
+= GBIF Technical Documentation
+
+[cols="3*^.<1a",frame=none,grid=none,stripes=none]
+|===
+|image::datamodel-img-01.jpg[]
+xref:ipt::index.adoc[Data Publishing]
+|image::datamodel-img-07.jpg[]
+Data processing and quality checks
+|image::datamodel-img-11.jpg[]
+Using data downloads
+|image::datamodel-img-12.jpg[]
+Using data with R, Python or cloud analysis
+|image::datamodel-intro-04.jpg[]
+xref:openapi::index.adoc[Using data with the API]
+|image::datamodel-img-05.jpg[]
+Data standards
+|===

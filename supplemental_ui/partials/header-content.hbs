@@ -18,44 +18,48 @@
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="">Using data</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="{{site.url}}/">rGBIF</a>
-            <a class="navbar-item" href="{{site.url}}/">Getting started with Python</a>
-            <a class="navbar-item" href="{{site.url}}/">Cloud services</a>
-            <a class="navbar-item" href="{{site.url}}/">Download formats</a>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="">API Reference</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item"><strong>Rest APIs</strong></a>
-            <a class="navbar-item" href="{{site.url}}/openapi/dev/registry.html">Registry</a>
-            <a class="navbar-item" href="{{site.url}}/">Species</a>
-            <a class="navbar-item" href="{{site.url}}/">Occurrence</a>
-            <a class="navbar-item" href="{{site.url}}/">Maps</a>
-            <a class="navbar-item" href="{{site.url}}/">News</a>
-            <a class="navbar-item" href="{{site.url}}/">Citation</a>
-            <a class="navbar-item" href="{{site.url}}/">Analytics</a>
-            <hr class="navbar-divider">
-            <a class="navbar-item" href="{{site.url}}/">DwC-A Format</a>
-            <a class="navbar-item" href="{{site.url}}/">Download formats</a>
-          </div>
-        </div>
+
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="">Publishing data</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="{{site.url}}/">Overview</a>
-            <a class="navbar-item" href="{{site.url}}/ipt/">IPT</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Overview</a>
+            {{#with (resolvePage 'ipt::index.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{attributes.component-title}}}</a>{{/with}}
           </div>
         </div>
+
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="">Data processing</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="{{site.url}}/">Overview</a>
-            <a class="navbar-item" href="{{site.url}}/">Occurrence data processing</a>
-            <a class="navbar-item" href="{{site.url}}/">Backbone assembly</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Overview</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Occurrence data processing</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Backbone assembly</a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="">Using data</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 rGBIF</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Getting started with Python</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Cloud services</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Download formats</a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="">API Reference</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item"><strong>REST APIs</strong></a>
+            <a class="navbar-item" href="{{siteRootPath}}/openapi/dev/registry.html">Registry</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Species</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Occurrence</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Maps</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 News</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Citation</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Analytics</a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 DwC-A Format</a>
+            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Download formats</a>
           </div>
         </div>
 

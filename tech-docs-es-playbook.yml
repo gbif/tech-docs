@@ -1,0 +1,41 @@
+site:
+  title: GBIF Technical Documentation
+  url: http://tech-docs.mb.gbif.org
+  start_page: home::index.adoc
+  keys:
+    language: es
+content:
+  sources:
+    - url: .
+      start_path: ./home/es
+      branches: HEAD
+    - url: .
+      start_path: ./openapi
+      branches: main
+    - url: .
+      start_path: ./guides
+      branches: main
+    - url: git@github.com:gbif/ipt.git
+      branches: [ipt-2.4.2-docs, generated-translations-master]
+      start_path: docs/es
+      edit_url: '/es/ipt/2.5/translations'
+output:
+  clean: true
+  dir: ./output/es
+runtime:
+  fetch: false
+  cache_dir: ./cache
+ui:
+  bundle:
+    url: https://builds.gbif.org/job/tech-docs-theme/lastSuccessfulBuild/artifact/build/ui-bundle.zip
+    snapshot: true
+  supplemental_files: ./supplemental_ui
+urls:
+  html_extension_style: drop
+  # Requires Antora 3: https://gitlab.com/antora/antora/-/merge_requests/552
+  #latest_version_segment_strategy: redirect:to
+  #latest_version_segment: current
+asciidoc:
+  attributes:
+    page-pagination: yes
+    language: es
