@@ -19,12 +19,14 @@ content:
       start_path: docs/en
 output:
   clean: true
+  dir: ./output/en
 runtime:
   fetch: false
   cache_dir: ./cache
 ui:
   bundle:
-    url: ./theme/build/ui-bundle.zip
+    url: https://builds.gbif.org/job/tech-docs-theme/lastSuccessfulBuild/artifact/build/ui-bundle.zip
+    snapshot: true
   supplemental_files: ./supplemental_ui
 urls:
   html_extension_style: drop
