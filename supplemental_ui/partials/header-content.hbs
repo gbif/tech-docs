@@ -22,8 +22,8 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="">Publishing data</a>
           <div class="navbar-dropdown">
-            {{#with (resolvePage 'guides::data-publishing.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{attributes.component-title}}}</a>{{/with}}
-            {{#with (resolvePage 'ipt::how-to-publish.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{attributes.component-title}}}</a>{{/with}}
+            {{#with (resolvePage 'guides::data-publishing.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
+            {{#with (resolvePage 'ipt::how-to-publish.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             {{#with (resolvePage 'dna-derived-data::index.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{attributes.component-title}}}</a>{{/with}}
             {{#with (resolvePage 'ipt::index.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{attributes.component-title}}}</a>{{/with}}
           </div>
@@ -52,7 +52,7 @@
           <a class="navbar-link" href="">API Reference</a>
           <div class="navbar-dropdown">
             <span class="navbar-item"><strong>REST APIs</strong></span>
-            <a class="navbar-item" href="{{siteRootPath}}/openapi/dev/registry.html">Registry</a>
+            {{#with (resolvePage 'openapi::registry.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Species</a>
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Occurrence</a>
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Maps</a>

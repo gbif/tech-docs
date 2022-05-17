@@ -3,7 +3,7 @@
 [cols="3*^.<1a",frame=none,grid=none,stripes=none]
 |===
 |image::datamodel-img-01.jpg[]
-xref:ipt::index.adoc[Data Publishing]
+xref:ipt::index.adoc[Data Publishing with the IPT]
 |image::datamodel-img-07.jpg[]
 xref:data-pipelines::index.adoc[Data processing and quality checks]
 |image::datamodel-img-11.jpg[]

@@ -1,4 +1,4 @@
-= API (HTTP)
+= Registry API
 :description: The GBIF Registry API
 :page-no-next: true
 :page-layout: rapidoc
