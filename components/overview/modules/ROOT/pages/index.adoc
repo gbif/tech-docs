@@ -1,13 +1,17 @@
 = GBIF Technical Documentation
 
-This web site collates technical documentation about GBIF, the Global Biodiversity Information Facility.
-
-(Large buttons or icons or something.)
-
-* Occurrence ingestion, processing, indexing
-* Dependent systems (checklists, vocabularies, standards, georeference)
-* APIs
-* API clients (R, Python, Java)
-* Download formats
-* Cloud exports including examples of use
-* Data publishing
+[cols="3*^.<1a",frame=none,grid=none,stripes=none]
+|===
+|image::datamodel-img-01.jpg[]
+Data Publishing
+|image::datamodel-img-07.jpg[]
+Data processing and quality checks
+|image::datamodel-img-11.jpg[]
+Using data downloads
+|image::datamodel-img-12.jpg[]
+Using data with R, Python or cloud analysis
+|image::datamodel-intro-04.jpg[]
+Using data with the API
+|image::datamodel-img-05.jpg[]
+Data standards
+|===

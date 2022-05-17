@@ -5,19 +5,32 @@ site:
   start_page: overview::index.adoc
 content:
   sources:
-    - url: ./
+    - url: .
       start_path: components/overview
       branches: HEAD
-    - url: ./
+    - url: .
       start_path: components/openapi
       branches: main
-    - url: ./
+    - url: .
       start_path: components/guides
       branches: main
     - url: git@github.com:gbif/ipt.git
       branches: [ipt-2.4.2-docs, dev]
       start_path: docs/en
+output:
+  clean: true
+runtime:
+  fetch: false
+  cache_dir: ./cache
 ui:
   bundle:
     url: ./theme/build/ui-bundle.zip
   supplemental_files: ./supplemental_ui
+urls:
+  html_extension_style: drop
+  # Requires Antora 3: https://gitlab.com/antora/antora/-/merge_requests/552
+  #latest_version_segment_strategy: redirect:to
+  #latest_version_segment: current
+asciidoc:
+  attributes:
+    page-pagination: yes
