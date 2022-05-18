@@ -56,7 +56,7 @@
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Species</a>
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Occurrence</a>
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Maps</a>
-            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Literature</a>
+            {{#with (resolvePage 'openapi::literature.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             <hr class="navbar-divider">
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Analytics</a>
           </div>

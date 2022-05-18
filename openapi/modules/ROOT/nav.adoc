@@ -1,1 +1,2 @@
 * xref:registry.adoc[Registry API]
+* xref:literature.adoc[Literature API]

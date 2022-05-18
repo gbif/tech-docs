@@ -1,0 +1,6 @@
+= Literature API
+:description: The GBIF Literature API
+:page-no-next: true
+:page-layout: rapidoc
+:page-openapi-url: _attachments/literature.json
+:header: Literature API
