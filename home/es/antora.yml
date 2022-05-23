@@ -1,5 +1,5 @@
-name: home
+name: ROOT
 title: GBIF Documentación Técnica
-version: current
+version: ~
 nav:
 - modules/ROOT/nav.adoc

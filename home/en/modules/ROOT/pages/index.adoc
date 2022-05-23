@@ -1,4 +1,5 @@
 = GBIF Technical Documentation
+:page-no-next: true
 
 [cols="3*^.<1a",frame=none,grid=none,stripes=none]
 |===
