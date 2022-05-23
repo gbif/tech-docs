@@ -17,8 +17,7 @@ The simplest approach to building is to use Docker:
 
 ----
 for lang in en es; do
-    rm -Rf output/$lang
-    docker run -u $(id -u) -v $PWD:/antora:Z --rm -t ggrossetie/antora-lunr tech-docs-$lang-playbook.yml
+    docker run -u $(id -u) -v $PWD:/antora:Z --rm -t antora/antora:3.0.1 tech-docs-$lang-playbook.yml
 done)
 ----
 
