@@ -3,10 +3,10 @@ site:
   url: /manual/es
   start_page: ipt::index.adoc
 content:
-  edit_url: 'https://ipt.gbif.org/manual/es/ipt/2.5/translations'
+  edit_url: 'https://ipt.gbif.org/manual/es/ipt/2.6/translations'
   sources:
     - url: /ipt
-      branches: [ipt-2.4.2-docs, generated-translations-master]
+      branches: [ipt-2.4-docs, generated-translations-ipt-2.5-docs, generated-translations-master]
       start_path: docs/es
 ui:
   bundle:

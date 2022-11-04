@@ -5,7 +5,7 @@ site:
 content:
   sources:
     - url: git@github.com:gbif/ipt.git
-      branches: [ipt-2.4.2-docs, dev]
+      branches: [ipt-2.4-docs, ipt-2.5-docs, dev]
       start_path: docs/en
 ui:
   bundle:
