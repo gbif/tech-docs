@@ -10,7 +10,7 @@ Welcome to GBIFs technical documentation!
 |image::datamodel-img-01.jpg[]
 xref:ipt::index.adoc[Data Publishing]
 |image::datamodel-img-07.jpg[]
-xref:data-pipelines::index.adoc[GBIF-mediated data processing]
+xref:data-pipelines::index.adoc[GBIF data processing & quality checks]
 |image::datamodel-img-11.jpg[]
 🏗 Data use
 |image::datamodel-img-12.jpg[]
