@@ -30,7 +30,7 @@ Each language has its own playbook.  Each playbook specifies which components an
 
 === Within a component version
 
-A version of a component is defined by its `antora.yml` descriptor file, which should be present at the location specified in `{url}/{start_path}` from the playbook's `content.sources` section.  For example, the https://tech-docs.gbif-dev.org/en/data-publishing/[_Data Publishing_] component has its descriptor file in this repository at link:./data-publishing/en/antora.yml[data-publishing/en/antora.yml]:
+A version of a component is defined by its `antora.yml` descriptor file, which should be present at the location specified in `{url}/{start_path}` from the playbook's `content.sources` section.  For example, the https://tech-docs.gbif-dev.org/en/data-publishing/[_Data Publishing_] component has its descriptor file in this repository at link:./en/data-publishing/antora.yml[en/data-publishing/antora.yml]:
 
 // If this were part of the real documentation, we could use an 'include:' directive to embed the file.  However, GitHub blocks these
 // for security reasons.  See https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/#using-include-directives-in-source-blocks
@@ -78,19 +78,21 @@ Changing the site menus (on the green bar) is done by overriding the theme.  Sta
 
 The site builds in Jenkins every time it is modified, see the https://builds.gbif.org/job/tech-docs/lastBuild/console[status] and badge above.  To build it locally, the simplest method is to use Docker.  See the https://docs.docker.com/[Docker documentation] for installation on https://docs.docker.com/desktop/install/linux-install/[Linux], https://docs.docker.com/desktop/install/mac-install/[Mac] and https://docs.docker.com/desktop/install/windows-install/[Windows].
 
-To build just the English documentation, run
+For routine use when authoring documentation, build just the English documentation and omit the search functionality. This uses a special cut-down playbook without some of the configuration suitable for a webserver:
 
-[,shell]
+[,sh]
 ----
-docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z antora/antora:3.0.1 tech-docs-en-playbook.yml
+docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z antora/antora:3.0.1 development-en-playbook.yml
 ----
 
-To build English and Spanish, run
+To build English and Spanish and with the search function, and suitable for a webserver, run:
 
+[,sh]
 ----
+docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z --env HOME=/antora antora/antora:3.0.1 npm i @antora/lunr-extension
 for lang in en es; do
     docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z antora/antora:3.0.1 tech-docs-$lang-playbook.yml
-done)
+done
 ----
 
 Please explore the Antora documentation for alternative methods for building, but they are all going to be more effort than installing Docker.

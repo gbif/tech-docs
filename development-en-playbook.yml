@@ -1,6 +1,5 @@
 site:
   title: GBIF Technical Documentation
-  url: https://tech-docs.gbif-dev.org
   start_page: ROOT::index.adoc
   keys:
     language: en
@@ -38,19 +37,8 @@ ui:
     url: https://builds.gbif.org/job/tech-docs-theme/lastSuccessfulBuild/artifact/build/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental_ui
-urls:
-  html_extension_style: drop
-  # TODO: Apache configuration
-  latest_version_segment_strategy: redirect:from
-  latest_version_segment: current
-  redirect_facility: httpd
 asciidoc:
   attributes:
     page-pagination: yes
     language: en
     null: ␀
-antora:
-  extensions:
-  - require: '@antora/lunr-extension'
-    index_latest_only: true
-    languages: [en]

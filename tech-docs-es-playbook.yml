@@ -7,13 +7,7 @@ site:
 content:
   sources:
     - url: .
-      start_path: ./home/es
-      branches: HEAD
-    - url: .
-      start_path: ./openapi
-      branches: HEAD
-    - url: .
-      start_path: ./guides
+      start_path: ./es/home
       branches: HEAD
     - url: git@github.com:gbif/ipt.git
       branches: [ipt-2.4.2-docs, generated-translations-master]
