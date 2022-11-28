@@ -1,0 +1,5 @@
+name: data-publishing
+title: Data Publishing
+version: ~
+nav:
+- modules/ROOT/nav.adoc

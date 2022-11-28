@@ -6,9 +6,9 @@ Welcome to GBIFs technical documentation!
 [cols="3*^.<1a",frame=none,grid=none,stripes=none]
 |===
 |image::datamodel-img-05.jpg[]
-🏗 Get started
+xref:get-started.adoc[Get Started]
 |image::datamodel-img-01.jpg[]
-xref:ipt::index.adoc[Data Publishing]
+xref:data-publishing::index.adoc[Data Publishing]
 |image::datamodel-img-07.jpg[]
 xref:data-pipelines::index.adoc[GBIF data processing & quality checks]
 |image::datamodel-img-11.jpg[]

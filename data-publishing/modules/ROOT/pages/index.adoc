@@ -1,0 +1,46 @@
+= Data publishing
+== Publishing
+=== Publishing through the IPT
+
+xref:ipt::index.adoc[IPT manual]
+
+xref:ipt::how-to-publish.adoc[How to publish]
+
+=== Publishing with the (registry) API (link to API topic)
+
+xref:openapi::registry.adoc[Registry]
+
+=== Other publishing methods
+
+Other publishing methods exist besides the IPT and the API. More information can be found in this https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/[blogpost]
+
+== Dataset classes
+
+Dataset can be published in four different formats:
+
+* Metadata-only
+* Checklist
+* Occurrence
+* Sampling event
+
+Generally, the data quality increases from metadata-only to sampling event datasets.
+
+=== Data quality recommendations
+
+You can familiarize yourself with the requirements of each dataset class https://www.gbif.org/data-quality-requirements[here]
+
+== Tools to quality check your publication
+=== Dataset validator
+
+The dataset validator can be used to https://www.gbif.org/tools/data-validator/about[validate] zipped Darwin core archive folders
+
+=== Species matching
+=== Species API (link to API topic)
+=== Test IPT
+
+== The meaning of flags and issues and how you should deal with them
+
+== Data publishing FAQ
+
+* change occurrence IDs
+* citations
