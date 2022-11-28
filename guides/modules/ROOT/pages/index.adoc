@@ -5,6 +5,16 @@ This is the automatic start page for version *{page-component-version}* of Compo
 Component B is one of two documentation components in the Antora Demo.
 The other docs component, Component A, can be accessed via the component selector menu (aka component drawer) at the bottom of the menu on the left side of the page.
 
+Link to <<Page source>> or to <<Page source,the same with another text>>.
+
+Or, I could xref:page-source[] or xref:page-source[the same].
+
+See the xref:issue-and-flags.adoc[] or xref:issues-and-flags.adoc[like this].
+
+See the xref:ipt:doi-workflow.adoc#workflows[] xref:ipt:doi-workflow.adoc#workflows[other text].
+
+See the xref:2.5@ipt:doi-workflow.adoc#workflows[] xref:2.5@ipt:doi-workflow.adoc#workflows[other text].
+
 == Page source
 
 This page is sourced from the AsciiDoc file named [.path]_index.adoc_ that is located at [.path]_demo-component-b/docs/modules/ROOT/pages_.
