@@ -1,1 +1,2 @@
 * xref:index.adoc[Data publishing]
+** xref:index.adoc[Publishing through the IPT]
