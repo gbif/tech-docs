@@ -1,21 +1,109 @@
-= Module One Overview
+= GBIF API
 
-This is version *{page-component-version}* of Module One in Component B.
+The GBIF API provide a programmatic way to query and publish data on GBIF.org.  It can be useful or necessary to use the API to
 
-== Page source
+* make advanced queries, not supported by the website,
+* include the results of GBIF queries in scripts, workflows or analyses, which can then be repeated reliably and automatically,
+* embed GBIF data into other websites.
 
-This page is sourced from [.path]_demo-component-b/docs/modules/module-one/pages/overview.adoc_.
+The GBIF API is RESTful and most queries return data in JSON format. The base URL is https://api.gbif.org/.
 
-== Cross reference syntax to target this page
+The API should be considered stable, as should this accompanying documentation.  Please report any issues you find with either the API itself or the documentation to https://github.com/gbif/portal-feedback/issues[GitHub] (generally preferred), by email to the mailto:helpdesk@gbif.org[Helpdesk] or using the "feedback" button on an appropriate page on gbif.org.  Suggested edits to the documentation can also be made with the "Edit this page" links on this site.
+
+This is version *{page-component-version}* of the documentation. #TODO: might not need versions, as old API isn't accessible anyway.#
+
+== API Sections
+
+The API is split into logical sections to ease understanding:
+
+* The xref:registry.adoc[*Registry*] provides means to create, edit, update and search for information about the datasets, publishing organizations, networks and the means to access them (technical endpoints). The registered content controls what is crawled and indexed in the GBIF data portal, but as a shared API may also be used for other initiatives
+* *Species* provides services to discover and access information about species and higher taxa, and utility services for interpreting names and looking up the identifiers and complete scientific names used for species in the GBIF portal.
+* xref:occurrence.adoc[*Occurrence*] provides access to occurrence information crawled and indexed by GBIF and search services to do real time paged search and asynchronous download services to do large batch downloads.
+* *Maps* provides simple services to show the maps of GBIF mobilized content on other sites.
+* xref:literature.adoc[*Literature*] provides access to peer-reviewed papers and other literature indexed by GBIF, citing GBIF datasets and downloads.
+
+== Communication
+
+You can sign up to the https://lists.gbif.org/mailman/listinfo/api-users[GBIF API users mailing list] to post your questions, and to keep informed about the API. We will announce new versions and scheduled maintenance downtimes before they happen.
+
+You can also post questions to the https://discourse.gbif.org/[GBIF Community Forum] or using the feedback buttons at the top of the pages on https://www.gbif.org/[GBIF.org].
+
+Bug reports should also be submitted using the feedback button.
+
+== Common operations
+
+The following details common cross-cutting parameters used in the API
+
+=== Paging
+
+For requests that support paging the following parameters are used:
+
+|===
+|Parameter |Details
+
+|`limit`
+|Controls the number of results in the page. Using too high a value will be overwritten with the default maximum threshold, depending on the service. Sensible defaults are used so this may be omitted.
+
+|`offset`
+|Determines the offset for the search results. A limit of 20 and offset of 40 will retrieve the third page of 20 results.
+|===
+
+=== Range queries
+
+Some search parameters support range queries, for example the year parameter in the occurrence search. In general ranges are given as a single parameter value by concatenating a lower and an upper value with a comma. For example: `https://api.gbif.org/v1/occurrence/search?year=1800,1899`
+
+=== Authentication
+
+POST, PUT, and DELETE requests require authentication. The GBIF API uses https://en.wikipedia.org/wiki/Basic_access_authentication[HTTP Basic Authentication] with any existing https://www.gbif.org/user/profile[GBIF user account].
+
+For example, to issue a new download programmatically using curl with a https://www.gbif.org/developer/occurrence#predicates[query filter as JSON #TODO#] in a file called filter.json:
+
+`$ curl -i --user yourUserName:yourPassword -H "Content-Type: application/json" -H "Accept: application/json" -X POST -d @filter.json https://api.gbif.org/v1/occurrence/download/request`
+
+=== Enumerations
+
+Many parts of the GBIF API make use of enumerations, i.e. controlled vocabularies for specific topics. Often these are based on existing standards such as ISO or https://www.tdwg.org/standards/[TDWG]. The enumerations are part of the https://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/package-summary.html[GBIF Java API], but the currently active version can also be dynamically accessed through our JSON webservices to support more dynamic clients.
+
+|===
+|Resource URL |Method |Response |Description
+
+|/enumeration/basic
+|GET
+|https://api.gbif.org/v1/enumeration/basic[Enumeration list]
+|Lists all available enumerations
+
+|/enumeration/basic/\{ENUMERATION}
+|GET
+|https://api.gbif.org/v1/enumeration/basic/TypeStatus[Enumeration values]
+|Lists all available values for a given enumeration
+
+|/enumeration/country
+|GET
+|https://api.gbif.org/v1/enumeration/country[Country and area list]
+|Lists all countries and areas with their code and title
+
+|/enumeration/license
+|GET
+|https://api.gbif.org/v1/enumeration/license[License list]
+|Lists all supported GBIF licenses using the License URL or just the enum name if no URL exists.
+|===
+
+
+== Roadmap to v2
+
+Most of the GBIF API is currently at version 1 which means:
+
+. The API is stable – we won't rename or remove any REST resources or response properties to ensure backwards compatibility, but we might add new resources to the API. Any additions will be announced via the API mailing list.
+. Any bug fixes or additions will result in minor version changes which are not reflected in the API URL, only in the documentation and our Java client code.
+. If and when the need for breaking changes arises we will document our intent here and on the mailing list, and give considerable warning before moving to a future v2.
+. The base URL includes the version as appropriate.
+
+The Maps API is at version 2, with the same expectations (as far as is possible, Maps API version 1 continues to work).
+
+Feedback from developers on the API can be sent to mailto:informatics@gbif.org[informatics@gbif.org]. (For questions and help <<communication,see above>>).
+
+== Cross references
 
 To create a cross reference *to this page from another page in Module One*, the xref syntax would be `\xref:overview.adoc[]`.
 
 To create a cross reference *to this page from a page in the ROOT module of Component B*, the xref syntax would be `\xref:module-one:overview.adoc[]`.
-
-=== Always target the latest version of this page
-
-To create a cross reference *to the latest version of this page from a page in Component A*, the xref syntax would be `\xref:component-b:module-one:overview.adoc[]`.
-
-=== Target a specific version of this page
-
-To create a cross reference *to version 1.0 of this page from a page in Component A*, the xref syntax would be `\xref:1.0@component-b:module-one:overview.adoc[]`.

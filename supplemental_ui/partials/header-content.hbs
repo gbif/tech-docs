@@ -51,10 +51,10 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="">API Reference</a>
           <div class="navbar-dropdown">
-            <span class="navbar-item"><strong>REST APIs</strong></span>
+            {{#with (resolvePage 'openapi::index.adoc')}}<a class="navbar-item" href="{{relativize url}}"><strong>REST APIs</strong></a>{{/with}}
             {{#with (resolvePage 'openapi::registry.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Species</a>
-            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Occurrence</a>
+            {{#with (resolvePage 'openapi::occurrence.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Maps</a>
             {{#with (resolvePage 'openapi::literature.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             <hr class="navbar-divider">
