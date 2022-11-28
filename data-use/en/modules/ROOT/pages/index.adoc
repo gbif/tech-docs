@@ -1,0 +1,13 @@
+= Data use
+
+== Downloads
+
+=== Download on GBIF.org
+
+=== Download with the API (link to API topic)
+
+=== Download with API wrapper
+
+==== rgbif
+
+==== pygbif
