@@ -10,6 +10,9 @@ content:
       start_path: ./home/en
       branches: HEAD
     - url: .
+      start_path: ./data-publishing/en
+      branches: HEAD
+    - url: .
       start_path: ./openapi
       branches: HEAD
     - url: .
