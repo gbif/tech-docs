@@ -1,0 +1,16 @@
+# EditorConfig
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+insert_final_newline = true
+trim_trailing_whitespace = true
+# (Not enabled, as I'm not sure how Windows editors work with Git nowadays.)
+#end_of_line = lf
+
+# 4-width tab indentation
+[*.{adoc,css,hbs,js,yaml,yml}]
+indent_style = space
+indent_size = 2

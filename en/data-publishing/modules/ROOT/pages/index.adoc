@@ -6,7 +6,7 @@ xref:ipt::index.adoc[IPT manual]
 
 xref:ipt::how-to-publish.adoc[How to publish]
 
-== Publishing with the (registry) API 
+== Publishing with the (registry) API
 
 (link to API component)
 
@@ -27,7 +27,7 @@ Dataset can be published in four different formats:
 
 Generally, the data quality increases from metadata-only to sampling event datasets.
 
-= Data quality recommendations
+=== Data quality recommendations
 
 You can familiarize yourself with the requirements of each dataset class https://www.gbif.org/data-quality-requirements[here]
 

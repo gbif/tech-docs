@@ -12,6 +12,9 @@ content:
       start_path: ./en/data-publishing
       branches: HEAD
     - url: .
+      start_path: ./en/data-use
+      branches: HEAD
+    - url: .
       start_path: ./en/openapi
       branches: HEAD
     - url: .
