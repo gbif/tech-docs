@@ -12,7 +12,7 @@ xref:data-publishing::index.adoc[Data Publishing]
 |image::datamodel-img-07.jpg[]
 xref:data-pipelines::index.adoc[GBIF data processing & quality checks]
 |image::datamodel-img-11.jpg[]
-🏗 Data use
+xref:data-use::index.adoc[Data Use]
 |image::datamodel-img-12.jpg[]
 🏗 API
 |image::datamodel-intro-04.jpg[]
