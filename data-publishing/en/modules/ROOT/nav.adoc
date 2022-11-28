@@ -1,4 +1,2 @@
 * xref:index.adoc[Data publishing]
-** xref:index.adoc[Publishing through the IPT]
-** xref:index.adoc[Publishing with the registry API]
-** xref:index.adoc[Other publishing methods]
+
