@@ -6,7 +6,9 @@ xref:ipt::index.adoc[IPT manual]
 
 xref:ipt::how-to-publish.adoc[How to publish]
 
-== Publishing with the (registry) API (link to API topic)
+== Publishing with the (registry) API 
+
+(link to API component)
 
 xref:openapi::registry.adoc[Registry]
 
