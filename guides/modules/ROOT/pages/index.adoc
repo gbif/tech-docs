@@ -9,11 +9,11 @@ Link to <<Page source>> or to <<Page source,the same with another text>>.
 
 Or, I could xref:page-source[] or xref:page-source[the same].
 
-See the xref:issue-and-flags.adoc[] or xref:issues-and-flags.adoc[like this].
+See the xref:issues_and_flags.adoc[] or xref:issues_and_flags.adoc[like this].
 
-See the xref:ipt:doi-workflow.adoc#workflows[] xref:ipt:doi-workflow.adoc#workflows[other text].
+See the xref:ipt:ROOT:doi-workflow.adoc#workflows[] xref:ipt:ROOT:doi-workflow.adoc#workflows[other text].
 
-See the xref:2.5@ipt:doi-workflow.adoc#workflows[] xref:2.5@ipt:doi-workflow.adoc#workflows[other text].
+See the xref:2.5@ipt:ROOT:doi-workflow.adoc#workflows[] xref:2.5@ipt:ROOT:doi-workflow.adoc#workflows[other text].
 
 == Page source
 
