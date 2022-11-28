@@ -11,14 +11,86 @@ This is the the GBIF technical documentation site.
 
 During development, it is visible at https://tech-docs.gbif-dev.org/
 
+NOTE: This file is documenting the documentation system, it's not shown on https://tech-docs.gbif-dev.org/.
+
+== Overall structure
+
+The document system uses https://docs.antora.org/[Antora], a framework for combining documentation written in https://docs.asciidoctor.org/asciidoc/latest/[Asciidoctor] from multiple Git repositories into a single documentation website.
+
+=== Languages, components, versions and modules
+
+Antora strictly defines how files and directories should be arranged, but flexible in allowing those files and directories to come from various sources.  There are four levels of content:
+
+Languages:: (GBIF addition, but following the https://gitlab.com/antora/antora/-/issues/208[suggestion on the Antora issue tracker]).  We don't expect all the manual to be translated into every language, so we should structure content to make it easy for translators to translate (and see progress) for suitable topics without being overwhelmed.
+Components:: The largest blocks of documentation.  Components we have include https://tech-docs.gbif-dev.org/en/data-publishing/[_Data Publishing_] and the https://tech-docs.gbif-dev.org/en/ipt/2.6/[_IPT_].
+Versions:: Each component can optionally have one or more versions.  We should only declare versions where it makes sense to keep documentation for the old version accessible online.
+Modules:: https://docs.antora.org/antora/latest/module-directories/[Antora describes] modules as "primarily an organization tool for the writer". So far we haven't used them, so everything is using the default `ROOT` module.
+
+Each language has its own playbook.  Each playbook specifies which components and versions are part of the documentation.  See link:./tech-docs-en-playbook.yml[tech-docs-en-playbook.yml] for the English playbook.  The `content.sources` with a `url` of `.` are in this Git repository, and `HEAD` shows the current (i.e. main) branch is used to provide a single version.  The other components (`git@github.com…`) are from other Git repositories, and some have multiple versions shown in `branches`.
+
+=== Within a component version
+
+A version of a component is defined by its `antora.yml` descriptor file, which should be present at the location specified in `{url}/{start_path}` from the playbook's `content.sources` section.  For example, the https://tech-docs.gbif-dev.org/en/data-publishing/[_Data Publishing_] component has its descriptor file in this repository at link:./data-publishing/en/antora.yml[data-publishing/en/antora.yml]:
+
+// If this were part of the real documentation, we could use an 'include:' directive to embed the file.  However, GitHub blocks these
+// for security reasons.  See https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/#using-include-directives-in-source-blocks
+
+[,yaml]
+----
+name: data-publishing
+title: Data Publishing
+version: ~
+nav:
+- modules/ROOT/nav.adoc
+----
+
+The `name` is the identifier for the component used in links and URLs.  The `title` is used for display.  A `version` of `~` means "no versions".
+
+`nav` sets the left-bar navigation menu.  The content of the linked file is an Asciidoctor unordered list.
+
+=== Further reading
+
+It's probably worth looking at these pages in the Antora and Asciidoctor documentation:
+
+* https://docs.antora.org/antora/latest/family-directories/[Family directories], to see where files for individual pages, images, attachments (downloads) etc. should be stored
+* https://docs.antora.org/antora/latest/page/xref/[Xref macros and page links] and https://docs.antora.org/antora/latest/page/page-links/[create page links] to see how to make links within a page, between pages in the same module, different modules, different versions and different components.
+* The https://docs.antora.org/[Antora documentation] and the https://docs.asciidoctor.org/asciidoc/latest/[Asciidoctor documentation].
+
+=== Special pages
+
+==== Home page
+
+The English home page, https://tech-docs.gbif-dev.org/en/, is a component called `ROOT`, which is a special name where `ROOT` doesn't show in links or URLs.  Reserve pages in this section for the home page and very general pages about the whole manual.
+
+(Exactly what belongs in the home module isn't very clear. It will be easier to work out once we have more documentation written.)
+
+==== OpenAPI
+
+Auto-generated pages from https://www.openapis.org/[OpenAPI] endpoints are generated for our webservices.
+
+=== Site theme
+
+The overall design of the site is controlled by a theme, https://github.com/gbif/tech-docs-theme[tech-docs-theme].  That sets the colours, fonts etc and adds the "Search docs" functionality.
+
+Changing the site menus (on the green bar) is done by overriding the theme.  Start at link:./supplemental_ui/partials/header-content.hbs[supplemental_ui/partials/header-content.hbs] and copy + paste until you have what you want :-) (but remember pushing changes rebuilds the live site).
+
 == Building
 
-The simplest approach to building is to use Docker:
+The site builds in Jenkins every time it is modified, see the https://builds.gbif.org/job/tech-docs/lastBuild/console[status] and badge above.  To build it locally, the simplest method is to use Docker.  See the https://docs.docker.com/[Docker documentation] for installation on https://docs.docker.com/desktop/install/linux-install/[Linux], https://docs.docker.com/desktop/install/mac-install/[Mac] and https://docs.docker.com/desktop/install/windows-install/[Windows].
+
+To build just the English documentation, run
+
+[,shell]
+----
+docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z antora/antora:3.0.1 tech-docs-en-playbook.yml
+----
+
+To build English and Spanish, run
 
 ----
 for lang in en es; do
-    docker run -u $(id -u) -v $PWD:/antora:Z --rm -t antora/antora:3.0.1 tech-docs-$lang-playbook.yml
+    docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z antora/antora:3.0.1 tech-docs-$lang-playbook.yml
 done)
 ----
 
-Please explore the Antora documentation for alternative methods for building.
+Please explore the Antora documentation for alternative methods for building, but they are all going to be more effort than installing Docker.
