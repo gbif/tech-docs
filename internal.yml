@@ -1,0 +1,30 @@
+# This is internal documentation visible only to GBIF staff.
+
+site:
+  title: GBIF Internal Technical Documentation
+  keys:
+    language: en
+content:
+  sources:
+    - url: https://github.com/gbif/informatics.git
+      start_path: docs
+      branches: HEAD
+git:
+  credentials:
+    path: .git-credentials
+output:
+  clean: true
+  dir: ./output/en
+runtime:
+  fetch: false
+  cache_dir: ./cache-internal
+ui:
+  bundle:
+    url: https://builds.gbif.org/job/tech-docs-theme/lastSuccessfulBuild/artifact/build/ui-bundle.zip
+    snapshot: true
+  supplemental_files: ./supplemental_ui
+asciidoc:
+  attributes:
+    page-pagination: yes
+    language: en
+    null: ␀

@@ -95,4 +95,6 @@ for lang in en es; do
 done
 ----
 
+There is also internal documentation defined in `internal.yml`.  This is built _before_ the public documentation, which overwrites the CSS/JS output but leaves the internal documentation folders in-place.  Therefore, the internal documentation doesn't appear in the public component selector.
+
 Please explore the Antora documentation for alternative methods for building, but they are all going to be more effort than installing Docker.

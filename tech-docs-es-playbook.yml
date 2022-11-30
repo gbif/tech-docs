@@ -9,7 +9,7 @@ content:
     - url: .
       start_path: ./es/home
       branches: HEAD
-    - url: git@github.com:gbif/ipt.git
+    - url: https://github.com/gbif/ipt.git
       branches: [ipt-2.4.2-docs, generated-translations-master]
       start_path: docs/es
       edit_url: '/es/ipt/2.5/translations'
