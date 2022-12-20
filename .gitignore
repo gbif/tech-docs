@@ -1,6 +1,8 @@
 .cache
+.npm/_cacache
+.npm/_logs
+.npm/_update-notifier-last-checked
 cache
-build
 output
 theme/node_modules
 theme/public

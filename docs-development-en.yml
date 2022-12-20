@@ -20,8 +20,6 @@ output:
 runtime:
   fetch: true
   cache_dir: ./cache
-#urls:
-#  html_extension_style: drop
 asciidoc:
   attributes:
     page-pagination: yes

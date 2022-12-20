@@ -38,3 +38,16 @@ antora docs-development-zh.yml
 ----
 
 Please explore the Antora documentation for alternative methods for building.
+
+== Search setup
+
+The Lunr extension was installed within Docker, to use the matched Node version.
+
+----
+docker run --rm -it -u $(id -u) -v $PWD:/antora:Z --entrypoint /bin/ash antora/antora:3.1.2
+
+export HOME=$PWD
+npm i @antora/lunr-extension
+----
+
+The Chinese extension seems to be broken right now (December 2022), but the current Chinese translation is so incomplete that I have just removed the search function.

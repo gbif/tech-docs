@@ -25,17 +25,32 @@
   }
 }
 
+.navbar-brand .navbar-item + .navbar-item {
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-brand {
+    flex-grow: 1;
+  }
+
+  .navbar-menu {
+    flex-grow: 0;
+  }
+}
+
 .navbar-menu.navbar-end {
   flex: 1 1 auto;
 }
 
-.navbar-item.search-box {
+.navbar-item.search-input {
   flex: 0 0 auto;
   padding: 0.8rem 1rem;
   padding-right: 0;
 }
 
-.navbar-item.search-box input {
+.navbar-item.search-input input {
   height: 2rem;
   padding: 0 12px;
   border: none;

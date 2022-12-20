@@ -3,7 +3,7 @@ site:
   url: /manual/es
   start_page: ipt::index.adoc
 content:
-  edit_url: 'https://ipt.gbif.org/manual/es/ipt/2.6/translations'
+  edit_url: 'https://ipt.gbif.org/manual/es/ipt/latest/translations'
   sources:
     - url: /ipt
       branches: [ipt-2.4-docs, generated-translations-ipt-2.5-docs, generated-translations-master]
@@ -19,9 +19,8 @@ output:
 runtime:
   fetch: true
   cache_dir: ./cache
-#urls:
-#  html_extension_style: drop
 asciidoc:
   attributes:
     page-pagination: yes
     language: es
+    page-edit-this-page: 'Traduzca esta página'
