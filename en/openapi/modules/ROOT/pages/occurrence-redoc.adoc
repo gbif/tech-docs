@@ -1,0 +1,6 @@
+= Occurrence API
+:description: The GBIF Occurrence API (redoc)
+:page-no-next: true
+:page-layout: redoc
+:page-openapi-url: _attachments/occurrence.json
+:header: Occurrence API
