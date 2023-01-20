@@ -10,8 +10,6 @@ The GBIF API is RESTful and most queries return data in JSON format. The base UR
 
 The API should be considered stable, as should this accompanying documentation.  Please report any issues you find with either the API itself or the documentation to https://github.com/gbif/portal-feedback/issues[GitHub] (generally preferred), by email to the mailto:helpdesk@gbif.org[Helpdesk] or using the "feedback" button on an appropriate page on gbif.org.  Suggested edits to the documentation can also be made with the "Edit this page" links on this site.
 
-This is version *{page-component-version}* of the documentation. #TODO: might not need versions, as old API isn't accessible anyway.#
-
 == API Sections
 
 The API is split into logical sections to ease understanding:
