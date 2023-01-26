@@ -7,7 +7,7 @@ content:
   edit_url: 'https://github.com/gbif/ipt/edit/master/{path}'
   sources:
     - url: git@github.com:gbif/ipt.git
-      branches: [ipt-2.4-docs, ipt-2.5-docs, dev]
+      branches: [ipt-2.4-docs, dev]
       start_path: docs/en
 ui:
   bundle:

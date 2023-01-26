@@ -6,7 +6,7 @@ content:
   edit_url: 'https://ipt.gbif.org/manual/es/ipt/latest/translations'
   sources:
     - url: git@github.com:gbif/ipt.git
-      branches: [ipt-2.4-docs, generated-translations-ipt-2.5-docs, generated-translations-translation_master]
+      branches: [ipt-2.4-docs, generated-translations-translation_master]
       start_path: docs/es
 ui:
   bundle:
