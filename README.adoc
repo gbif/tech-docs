@@ -17,9 +17,8 @@ The simplest approach to building is to use Docker:
 
 ----
 for i in en es ja zh; do
-    docker run --rm -t -u $(id -u) -v $PWD:/antora:Z \
-      -e ANTORA_LANGUAGE=$i -e DOCSEARCH_LANGS=$i -e DOCSEARCH_INDEX_VERSION=latest \
-      ggrossetie/antora-lunr docs-$i.yml
+    docker run --rm -t -u $(id -u) -v $PWD:/antora:Z -e ANTORA_LANGUAGE=$i \
+      antora/antora:3.1.2 docs-$i.yml
     rsync -r --checksum --delete output/$i/ ipt.gbif.org:/var/www/html/ipt/manual/$i/
 done
 ----
@@ -28,8 +27,7 @@ For building from local sources, e.g. with `docs-development-en.yml`, try
 
 ----
 docker run --rm -it -u $(id -u) -v $PWD:/antora:Z -v ~Workspace/ipt:/ipt \
-  -e ANTORA_LANGUAGE=en -e DOCSEARCH_LANGS=$i -e DOCSEARCH_INDEX_VERSION=latest \
-  antora/antora ash
+  -e ANTORA_LANGUAGE=en antora/antora:3.1.2 ash
 
 antora docs-development-en.yml
 antora docs-development-es.yml
