@@ -2,5 +2,5 @@
 :description: The GBIF Occurrence API
 :page-no-next: true
 :page-layout: swagger
-:page-openapi-url: _attachments/occurrence.json
+:page-openapi-url: /openapi/occurrence.json
 :header: Occurrence API
