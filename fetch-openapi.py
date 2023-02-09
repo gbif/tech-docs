@@ -48,18 +48,37 @@ for ws, url in urls.items():
         print("Response "+str(response.status_code)+" for "+ws+", ignoring while in dev.")
 
 # Special cases for registry and occurrence
-moveFromRegistryToOccurrence = [
+movePrefixFromRegistryToOccurrence = [
     '/occurrence/download/'
+]
+
+# Although these are @Hidden, they still end up being produced for some reason.
+removePrefixFromRegistry = [
+    '/event/download/'
 ]
 
 toRemove = []
 
 for path in registry["paths"]:
-    for prefix in moveFromRegistryToOccurrence:
+    for prefix in movePrefixFromRegistryToOccurrence:
         if path.startswith(prefix):
             occurrence["paths"][path] = registry["paths"][path]
             print("Added "+path+" to occurrence")
             toRemove.append(path)
+            json.dump(registry["paths"][path], sys.stdout, separators=(',', ':'), indent=indent)
+    for prefix in removePrefixFromRegistry:
+        if path.startswith(prefix):
+            toRemove.append(path)
+
+occurrence['components']['schemas']['PagingResponseDownloadStatistics'] = registry['components']['schemas']['PagingResponseDownloadStatistics']
+occurrence['components']['schemas']['DownloadStatistics'] = registry['components']['schemas']['DownloadStatistics']
+occurrence['components']['schemas']['PagingResponseDatasetOccurrenceDownloadUsage'] = registry['components']['schemas']['PagingResponseDatasetOccurrenceDownloadUsage']
+occurrence['components']['schemas']['DatasetOccurrenceDownloadUsage'] = registry['components']['schemas']['DatasetOccurrenceDownloadUsage']
+occurrence['components']['schemas']['DOI'] = registry['components']['schemas']['DOI']
+occurrence['components']['schemas']['Download'] = registry['components']['schemas']['Download']
+occurrence['components']['schemas']['PagingResponseDownload'] = registry['components']['schemas']['PagingResponseDownload']
+occurrence['components']['schemas']['DOI'] = registry['components']['schemas']['DOI']
+occurrence['components']['schemas']['DOI'] = registry['components']['schemas']['DOI']
 
 for path in toRemove:
     del registry["paths"][path]
