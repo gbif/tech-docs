@@ -54,7 +54,8 @@ movePrefixFromRegistryToOccurrence = [
 
 # Although these are @Hidden, they still end up being produced for some reason.
 removePrefixFromRegistry = [
-    '/event/download/'
+    '/event/download',
+    '/occurrence/download'
 ]
 
 toRemove = []
@@ -76,11 +77,13 @@ occurrence['components']['schemas']['PagingResponseDatasetOccurrenceDownloadUsag
 occurrence['components']['schemas']['DatasetOccurrenceDownloadUsage'] = registry['components']['schemas']['DatasetOccurrenceDownloadUsage']
 occurrence['components']['schemas']['DOI'] = registry['components']['schemas']['DOI']
 occurrence['components']['schemas']['Download'] = registry['components']['schemas']['Download']
+occurrence['components']['schemas']['DownloadRequest'] = registry['components']['schemas']['DownloadRequest']
 occurrence['components']['schemas']['PagingResponseDownload'] = registry['components']['schemas']['PagingResponseDownload']
 
 for path in toRemove:
-    del registry["paths"][path]
-    print("Removed "+path+" from registry")
+    if path in registry["paths"]:
+        del registry["paths"][path]
+        print("Removed "+path+" from registry")
 
 with open(output+"/registry.json", "w") as write_file:
     json.dump(registry, write_file, separators=(',', ':'), indent=indent)
