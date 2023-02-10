@@ -65,7 +65,7 @@ for path in registry["paths"]:
             occurrence["paths"][path] = registry["paths"][path]
             print("Added "+path+" to occurrence")
             toRemove.append(path)
-            json.dump(registry["paths"][path], sys.stdout, separators=(',', ':'), indent=indent)
+            #json.dump(registry["paths"][path], sys.stdout, separators=(',', ':'), indent=indent)
     for prefix in removePrefixFromRegistry:
         if path.startswith(prefix):
             toRemove.append(path)
@@ -77,8 +77,6 @@ occurrence['components']['schemas']['DatasetOccurrenceDownloadUsage'] = registry
 occurrence['components']['schemas']['DOI'] = registry['components']['schemas']['DOI']
 occurrence['components']['schemas']['Download'] = registry['components']['schemas']['Download']
 occurrence['components']['schemas']['PagingResponseDownload'] = registry['components']['schemas']['PagingResponseDownload']
-occurrence['components']['schemas']['DOI'] = registry['components']['schemas']['DOI']
-occurrence['components']['schemas']['DOI'] = registry['components']['schemas']['DOI']
 
 for path in toRemove:
     del registry["paths"][path]
