@@ -1,4 +1,5 @@
 = GBIF API
+:page-aliases: v1@openapi::index.adoc, v2@openapi::index.adoc
 
 The GBIF API provide a programmatic way to query and publish data on GBIF.org.  It can be useful or necessary to use the API to
 
@@ -14,11 +15,11 @@ The API should be considered stable, as should this accompanying documentation. 
 
 The API is split into logical sections to ease understanding:
 
-* The xref:registry.adoc[*Registry*] provides means to create, edit, update and search for information about the datasets, publishing organizations, networks and the means to access them (technical endpoints). The registered content controls what is crawled and indexed in the GBIF data portal, but as a shared API may also be used for other initiatives
-* *Species* provides services to discover and access information about species and higher taxa, and utility services for interpreting names and looking up the identifiers and complete scientific names used for species in the GBIF portal.
-* xref:occurrence.adoc[*Occurrence*] provides access to occurrence information crawled and indexed by GBIF and search services to do real time paged search and asynchronous download services to do large batch downloads.
-* *Maps* provides simple services to show the maps of GBIF mobilized content on other sites.
-* xref:literature.adoc[*Literature*] provides access to peer-reviewed papers and other literature indexed by GBIF, citing GBIF datasets and downloads.
+* The xref:v1@openapi::registry.adoc[*Registry*] provides means to create, edit, update and search for information about the datasets, publishing organizations, networks and the means to access them (technical endpoints). The registered content controls what is crawled and indexed in the GBIF data portal, but as a shared API may also be used for other initiatives
+* xref:v1@openapi::species.adoc[*Species*] provides services to discover and access information about species and higher taxa, and utility services for interpreting names and looking up the identifiers and complete scientific names used for species in the GBIF portal.
+* xref:v1@openapi::occurrence.adoc[*Occurrence*] provides access to occurrence information crawled and indexed by GBIF and search services to do real time paged search and asynchronous download services to do large batch downloads.
+* xref:v2@openapi::maps.adoc[*Maps*] provides simple services to show the maps of GBIF mobilized content on other sites.
+* xref:v1@openapi::literature.adoc[*Literature*] provides access to peer-reviewed papers and other literature indexed by GBIF, citing GBIF datasets and downloads.
 
 == Communication
 
@@ -96,12 +97,6 @@ Most of the GBIF API is currently at version 1 which means:
 . If and when the need for breaking changes arises we will document our intent here and on the mailing list, and give considerable warning before moving to a future v2.
 . The base URL includes the version as appropriate.
 
-The Maps API is at version 2, with the same expectations (as far as is possible, Maps API version 1 continues to work).
+The Maps API is at version 2, with the same expectations (as far as is possible, xref:v1@openapi::maps.adoc[Maps API version 1] continues to work).
 
 Feedback from developers on the API can be sent to mailto:informatics@gbif.org[informatics@gbif.org]. (For questions and help <<communication,see above>>).
-
-== Cross references
-
-To create a cross reference *to this page from another page in Module One*, the xref syntax would be `\xref:overview.adoc[]`.
-
-To create a cross reference *to this page from a page in the ROOT module of Component B*, the xref syntax would be `\xref:module-one:overview.adoc[]`.

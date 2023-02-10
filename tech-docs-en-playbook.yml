@@ -19,6 +19,12 @@ content:
       start_path: ./en/openapi
       branches: HEAD
     - url: .
+      start_path: ./en/openapi-v1
+      branches: HEAD
+    - url: .
+      start_path: ./en/openapi-v2
+      branches: HEAD
+    - url: .
       start_path: ./en/guides
       branches: HEAD
     - url: https://github.com/gbif/ipt.git

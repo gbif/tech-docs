@@ -10,7 +10,7 @@ xref:ipt::how-to-publish.adoc[How to publish]
 
 (link to API component)
 
-xref:openapi::registry.adoc[Registry]
+xref:v1@openapi::registry.adoc[Registry]
 
 == Other publishing methods
 

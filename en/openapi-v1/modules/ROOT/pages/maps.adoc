@@ -1,0 +1,6 @@
+= Maps API
+:description: The GBIF Maps API
+:page-no-next: true
+:page-layout: redoc
+:page-openapi-url: /openapi/maps.json
+:header: Maps API

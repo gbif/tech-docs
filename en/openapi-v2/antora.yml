@@ -1,5 +1,5 @@
 name: openapi
 title: GBIF API reference
-version: ~
+version: v2
 nav:
 - modules/ROOT/nav.adoc

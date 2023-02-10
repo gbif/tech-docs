@@ -28,6 +28,9 @@ Modules:: https://docs.antora.org/antora/latest/module-directories/[Antora descr
 
 Each language has its own playbook.  Each playbook specifies which components and versions are part of the documentation.  See link:./tech-docs-en-playbook.yml[tech-docs-en-playbook.yml] for the English playbook.  The `content.sources` with a `url` of `.` are in this Git repository, and `HEAD` shows the current (i.e. main) branch is used to provide a single version.  The other components (`git@github.com…`) are from other Git repositories, and some have multiple versions shown in `branches`.
 
+Determining how individual pages should be arranged into components (and potentially modules) is not clear.
+It may make translators' work easier if they can aim to translate entire components/modules.
+
 === Within a component version
 
 A version of a component is defined by its `antora.yml` descriptor file, which should be present at the location specified in `{url}/{start_path}` from the playbook's `content.sources` section.  For example, the https://tech-docs.gbif-dev.org/en/data-publishing/[_Data Publishing_] component has its descriptor file in this repository at link:./en/data-publishing/antora.yml[en/data-publishing/antora.yml]:
@@ -62,11 +65,19 @@ It's probably worth looking at these pages in the Antora and Asciidoctor documen
 
 The English home page, https://tech-docs.gbif-dev.org/en/, is a component called `ROOT`, which is a special name where `ROOT` doesn't show in links or URLs.  Reserve pages in this section for the home page and very general pages about the whole manual.
 
-(Exactly what belongs in the home module isn't very clear. It will be easier to work out once we have more documentation written.)
+Exactly what belongs in the home module isn't very clear.
+It will be easier to work out once we have more documentation written.
+Perhaps a small amount of key information that we'd expect to be fully translated into supported languages?
 
 ==== OpenAPI
 
 Auto-generated pages from https://www.openapis.org/[OpenAPI] endpoints are generated for our webservices.
+
+The script link:fetch-openapi.py[`fetch-openapi.py`] retrieves the OpenAPI definitions, and makes some rearrangements — some sections of the Registry are better documented as part of the Occurrences module.
+
+There are three versions of the `openapi` Antora module, stored in link:en/openapi[`en/openapi`], link:en/openapi-v1[`en/openapi-v1`] and link:en/openapi-v2[`en/openapi-v2`]. This structure is only visible to the user in the resulting URLs, and in Antora's version menu which allows access to the old Maps V1 documentation. This structure will be more useful during and after our transition to V2 for the other modules.
+
+It does mean links to the OpenAPI documentation need the version to be specified.  See link:en/openapi/modules/ROOT/nav.adoc[`nav.adoc`] for the current links.
 
 === Site theme
 

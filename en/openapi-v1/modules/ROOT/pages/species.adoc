@@ -1,0 +1,6 @@
+= Maps API
+:description: The GBIF Species API
+:page-no-next: true
+:page-layout: redoc
+:page-openapi-url: /openapi/checklistbank.json
+:header: Species API
