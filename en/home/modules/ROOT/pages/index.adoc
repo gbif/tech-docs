@@ -5,16 +5,16 @@ Welcome to GBIFs technical documentation!
 
 [cols="3*^.<1a",frame=none,grid=none,stripes=none]
 |===
-|image::datamodel-img-05.jpg[]
+|xref:get-started.adoc[image:datamodel-img-05.jpg[]]
 xref:get-started.adoc[Get Started]
-|image::datamodel-img-01.jpg[]
+|xref:data-publishing::index.adoc[image:datamodel-img-01.jpg[]]
 xref:data-publishing::index.adoc[Data Publishing]
-|image::datamodel-img-07.jpg[]
+|xref:data-pipelines::index.adoc[image:datamodel-img-07.jpg[]]
 xref:data-pipelines::index.adoc[GBIF data processing & quality checks]
-|image::datamodel-img-11.jpg[]
+|xref:data-use::index.adoc[image:datamodel-img-11.jpg[]]
 xref:data-use::index.adoc[Data Use]
-|image::datamodel-img-12.jpg[]
-🏗 API
+|xref:openapi::index.adoc[image:datamodel-img-12.jpg[]]
+xref:openapi::index.adoc[API Reference]
 |image::datamodel-intro-04.jpg[]
 🏗 Other GBIF services (registry, grscicoll and vocabulary server)
 |image::datamodel-img-05.jpg[]
