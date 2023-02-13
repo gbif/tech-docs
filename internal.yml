@@ -22,7 +22,7 @@ ui:
   bundle:
     url: https://builds.gbif.org/job/tech-docs-theme/lastSuccessfulBuild/artifact/build/ui-bundle.zip
     snapshot: true
-  supplemental_files: ./supplemental_ui
+  supplemental_files: ./internal-supplemental_ui
 asciidoc:
   attributes:
     page-pagination: yes

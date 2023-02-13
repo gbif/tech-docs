@@ -17,7 +17,7 @@ output:
   clean: true
   dir: ./output/es
 runtime:
-  fetch: false
+  fetch: true
   cache_dir: ./cache
 ui:
   bundle:

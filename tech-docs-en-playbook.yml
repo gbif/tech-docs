@@ -30,6 +30,7 @@ content:
     - url: https://github.com/gbif/ipt.git
       branches: [ipt-2.4-docs, master]
       start_path: docs/en
+      edit_url: 'https://github.com/gbif/ipt/edit/master/{path}'
     - url: https://github.com/MattBlissett/doc-data-pipelines-for-biodiversity-data.git
       start_path: en
       branches: HEAD
@@ -40,7 +41,7 @@ output:
   clean: false
   dir: ./output/en
 runtime:
-  fetch: false
+  fetch: true
   cache_dir: ./cache
 ui:
   bundle:
