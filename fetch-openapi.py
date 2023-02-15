@@ -13,9 +13,9 @@ output = sys.argv[1]
 env = sys.argv[2]
 
 if env == 'dev':
-    indent = None
-else:
     indent = 2
+else:
+    indent = None
 
 print("Output to "+output+" for environment "+env)
 
@@ -32,6 +32,7 @@ for s in services:
 # Retrieve the documentation
 for ws, url in urls.items():
     filename = output + '/' + ws.replace('-ws', '') + '.json'
+    print("Fetching documentation for "+ws)
     response = requests.get(url+"v3/api-docs")
     if response.status_code == 200:
         if ws == 'registry-ws':
