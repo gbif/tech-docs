@@ -41,18 +41,19 @@
         <div class="navbar-item has-dropdown is-hoverable">
           {{#with (resolvePage 'data-use::index.adoc')}}<a class="navbar-link" href="{{relativize url}}">Using data</a>{{/with}}
           <div class="navbar-dropdown">
+            {{#with (resolvePage 'data-use::download-formats.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             {{#with (resolvePage 'data-use::api-introduction.adoc')}}<a class="navbar-item" href="{{relativize url}}">API introduction</a>{{/with}}
             {{#with (resolvePage 'data-use::api-downloads.adoc')}}<a class="navbar-item" href="{{relativize url}}">API downloads</a>{{/with}}
             {{#with (resolvePage 'data-use::rgbif.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             {{#with (resolvePage 'data-use::pygbif.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
-            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Cloud services</a>
-            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Download formats</a>
+            {{#with (resolvePage 'data-use::cloud-services.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
           </div>
         </div>
 
         <div class="navbar-item has-dropdown is-hoverable">
           {{#with (resolvePage 'openapi::index.adoc')}}<a class="navbar-link" href="{{relativize url}}">API Reference</a>{{/with}}
           <div class="navbar-dropdown">
+            {{#with (resolvePage 'openapi::index.adoc')}}<a class="navbar-item" href="{{relativize url}}"><strong>Overview</strong></a>{{/with}}
             {{#with (resolvePage 'openapi::index.adoc')}}<a class="navbar-item" href="{{relativize url}}"><strong>REST APIs — Key methods</strong></a>{{/with}}
             {{#with (resolvePage 'v1@openapi::basic-occurrence.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             <hr class="navbar-divider">

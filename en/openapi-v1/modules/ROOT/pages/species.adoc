@@ -1,4 +1,4 @@
-= Maps API
+= Species API
 :description: The GBIF Species API
 :page-no-next: true
 :page-layout: redoc

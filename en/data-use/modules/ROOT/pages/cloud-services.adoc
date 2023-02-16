@@ -1,0 +1,9 @@
+= 🏗 Cloud computing services
+
+#TODO: Rewrite/write page, this is just a starter.#
+
+Describe what data are shared to which cloud computing services.
+
+Provide an overview of how to access them, and a quick tutorial — or link to the overviews and tutorials on the cloud service pages.
+
+A blog post: https://data-blog.gbif.org/post/microsoft-azure-and-gbif/
