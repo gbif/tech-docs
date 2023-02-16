@@ -1,9 +1,1 @@
-* xref:api.adoc[api]
-
-
-* Guides
-** xref:index.adoc[Bingo]
-** xref:index.adoc[What goes here]
-** xref:index.adoc[The one]
-** xref:index.adoc[Ah yeah]
-** xref:issues_and_flags.adoc[]
+** xref:data-publishing.adoc[]

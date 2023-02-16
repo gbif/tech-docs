@@ -1,4 +1,7 @@
+* xref:download-formats.adoc[]
+* xref:issues-and-flags.adoc[]
 * xref:api-introduction.adoc[API Introduction]
-* xref:api-downloads.adoc[API Downloads]
+* xref:api-downloads.adoc[]
+* xref:cloud-services.adoc[]
 * xref:rgbif.adoc[rgbif]
 * xref:pygbif.adoc[pygbif]

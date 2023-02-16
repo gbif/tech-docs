@@ -7,9 +7,7 @@ The other docs component, Component A, can be accessed via the component selecto
 
 Link to <<Page source>> or to <<Page source,the same with another text>>.
 
-Or, I could xref:page-source[] or xref:page-source[the same].
-
-See the xref:issues_and_flags.adoc[] or xref:issues_and_flags.adoc[like this].
+See the xref:data-publishing.adoc[] or xref:data-publishing.adoc[like this].
 
 See the xref:ipt:ROOT:doi-workflow.adoc#workflows[IPT workflow].
 

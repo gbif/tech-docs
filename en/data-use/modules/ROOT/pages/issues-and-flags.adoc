@@ -4,7 +4,7 @@ More than *50 issues and flags* have been created to deal with common
 data quality problems.
 
 .Geospatial issues
-[cols="2,6,1,1"]
+[cols="20%,60%,10%,10%"]
 |===
 |Flag name | Definition | Terms | Example
 
@@ -155,7 +155,7 @@ data quality problems.
 |===
 
 .Taxonomic issues
-[cols="2,6,1,1"]
+[cols="20%,60%,10%,10%"]
 |===
 |Flag name | Definition | Terms | Example
 
@@ -183,7 +183,7 @@ Reasons include:
 |===
 
 .Date issues
-[cols="2,6,1,1"]
+[cols="20%,60%,10%,10%"]
 |===
 |Flag name | Definition | Terms | Example
 
@@ -269,17 +269,17 @@ Reasons include:
 |===
 
 .Vocabulary issues
-[cols="2,6,1,1"]
+[cols="20%,60%,10%,10%"]
 |===
 |Flag name | Definition | Terms | Example
 
 |*Basis of record invalid*
-|The given basis of record is impossible to interpret or very different from the recommended vocabulary: http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml[http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml]
+|The given basis of record is impossible to interpret or very different from the recommended vocabulary: https://rs.gbif.org/vocabulary/dwc/basis_of_record
 |_dwc:basisOfRecord_
 |https://www.gbif.org/occurrence/search?issue=BASIS_OF_RECORD_INVALID[example]
 
 |*Type status invalid*
-|The given type status is impossible to interpret or very different from the recommended vocabulary: https://rs.gbif.org/vocabulary/gbif/type_status.xml[https://rs.gbif.org/vocabulary/gbif/type_status.xml]
+|The given type status is impossible to interpret or very different from the recommended vocabulary: https://rs.gbif.org/vocabulary/gbif/type_status
 |_dwc:typeStatus_
 |https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID[example]
 
@@ -291,7 +291,7 @@ Reasons include:
 |===
 
 .GRSciColl issues
-[cols="2,6,1,1"]
+[cols="20%,60%,10%,10%"]
 |===
 |Flag name | Definition | Terms | Example
 
@@ -338,7 +338,7 @@ Reasons include:
 |===
 
 .Other issues
-[cols="2,6,1,1"]
+[cols="20%,60%,10%,10%"]
 |===
 |Flag name | Definition | Terms | Example
 
