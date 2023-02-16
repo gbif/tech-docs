@@ -1,5 +1,6 @@
 * xref:registry.adoc[Registry API]
 * xref:species.adoc[Species API]
+* xref:basic-occurrence.adoc[Occurrence API (Basic usage)]
 * xref:occurrence.adoc[Occurrence API]
 * xref:literature.adoc[Literature API]
 * xref:maps.adoc[Maps API]

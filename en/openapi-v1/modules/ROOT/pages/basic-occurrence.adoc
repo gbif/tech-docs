@@ -1,0 +1,6 @@
+= Occurrence API (Basic usage)
+:description: The GBIF Occurrence API (Basic usage)
+:page-no-next: true
+:page-layout: redoc
+:page-openapi-url: /openapi/basic-occurrence.json
+:header: Occurrence API (Basic usage)

@@ -91,3 +91,24 @@ with open(output+"/registry.json", "w") as write_file:
 
 with open(output+"/occurrence.json", "w") as write_file:
     json.dump(occurrence, write_file, separators=(',', ':'), indent=indent)
+
+print("------")
+print()
+
+complicated = []
+
+for path in occurrence["paths"]:
+    for method in occurrence["paths"][path]:
+        if "x-Category" in occurrence["paths"][path][method]:
+            print("Keep "+method+" "+path)
+        else:
+            print("Discard "+method+" "+path)
+            complicated.append(path)
+
+for path in complicated:
+    if path in occurrence["paths"]:
+        del occurrence["paths"][path]
+        print("Removed "+path+" from basic occurrence")
+
+with open(output+"/basic-occurrence.json", "w") as write_file:
+    json.dump(occurrence, write_file, separators=(',', ':'), indent=indent)
