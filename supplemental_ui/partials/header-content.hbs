@@ -43,7 +43,7 @@
           <div class="navbar-dropdown">
             {{#with (resolvePage 'data-use::api-introduction.adoc')}}<a class="navbar-item" href="{{relativize url}}">API introduction</a>{{/with}}
             {{#with (resolvePage 'data-use::api-downloads.adoc')}}<a class="navbar-item" href="{{relativize url}}">API downloads</a>{{/with}}
-            <a class="navbar-item" href="{{siteRootPath}}/">🏗 rGBIF</a>
+            {{#with (resolvePage 'data-use::rgbif')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Getting started with Python</a>
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Cloud services</a>
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Download formats</a>

@@ -1,1 +1,3 @@
-xref:index.adoc[Data use]
+* xref:api-introduction.adoc[API Introduction]
+* xref:api-downloads.adoc[API Downloads]
+* xref:rgbif.adoc[rgbif]
