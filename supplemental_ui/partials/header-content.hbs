@@ -39,8 +39,10 @@
         </div>
 
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="">Using data</a>
+          {{#with (resolvePage 'data-use::index.adoc')}}<a class="navbar-link" href="{{relativize url}}">Using data</a>{{/with}}
           <div class="navbar-dropdown">
+            {{#with (resolvePage 'data-use::api-introduction.adoc')}}<a class="navbar-item" href="{{relativize url}}">API introduction</a>{{/with}}
+            {{#with (resolvePage 'data-use::api-downloads.adoc')}}<a class="navbar-item" href="{{relativize url}}">API downloads</a>{{/with}}
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 rGBIF</a>
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Getting started with Python</a>
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Cloud services</a>
@@ -49,7 +51,7 @@
         </div>
 
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="">API Reference</a>
+          {{#with (resolvePage 'openapi::index.adoc')}}<a class="navbar-link" href="{{relativize url}}">API Reference</a>{{/with}}
           <div class="navbar-dropdown">
             {{#with (resolvePage 'openapi::index.adoc')}}<a class="navbar-item" href="{{relativize url}}"><strong>REST APIs — Key methods</strong></a>{{/with}}
             {{#with (resolvePage 'v1@openapi::basic-occurrence.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}

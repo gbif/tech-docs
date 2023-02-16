@@ -1,0 +1,9 @@
+= Introduction to the GBIF API
+
+#TODO#
+
+This should cover a general introduction to the API:
+
+* When it is useful
+* What tools can be used to access it, and how to choose between them
+* References to further documentation, e.g. the xref:openapi::index.adoc[API Reference].

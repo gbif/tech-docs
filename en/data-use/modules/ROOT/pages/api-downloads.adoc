@@ -1,0 +1,355 @@
+= API Downloads
+
+The GBIF Occurrence Download API provides a service to download occurrence records and retrieve information about those downloads.
+
+Occurrence downloads are created asynchronously — the user requests a download and, once the download is prepared, is sent an email with a link to the resulting file.
+
+It is necessary to register as a user on https://www.gbif.org/[GBIF.org] to create a download request, and to authenticate using the username (not the email) and password.
+
+Complete technical details are provided in the xref:v1@openapi::occurrence.adoc#tag/Occurrence-downloads[API reference documentation].
+
+== Requesting an occurrence download
+
+A download request includes your username, email address, the download format, and a filter for the required data in the form of a <<predicates,predicate>>.
+
+A basic example using the _curl_ command to make the request:
+
+Put this in a file called `query.json`, replacing `userName` with your username and `userEmail@example.org` with your email address:
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": [
+    "userEmail@example.org"
+  ],
+  "sendNotification": true,
+  "format": "SIMPLE_CSV",
+  "predicate": { {
+    "type": "and",
+    "predicates": [
+        "type": "equals",
+        "key": "BASIS_OF_RECORD",
+        "value": "PRESERVED_SPECIMEN"
+      },
+      {
+        "type": "in",
+        "key": "COUNTRY",
+        "values": [
+          "VC", "GD"
+        ]
+      }
+    ]
+  }
+}
+----
+
+`format` can be changed to one of `SIMPLE_CSV`, `DWCA` or `SPECIES_LIST`, see https://www.gbif.org/faq?question=download-formats[information about download formats].
+
+Then use this Curl command:
+
+[source,shell]
+----
+curl --include --user userName:PASSWORD --header "Content-Type: application/json" --data @query.json https://api.gbif.org/v1/occurrence/download/request
+----
+
+A download key is returned. Querying that download key shows the download information, including the download link and DOI once the download is ready.  Run this repeatedly, until you see `SUCCEEDED`, replacing the key with the key for your download:
+
+[source,shell]
+----
+curl -Ss https://api.gbif.org/v1/occurrence/download/0001005-130906152512535
+----
+
+You can then download the resulting file:
+
+[source,shell]
+----
+curl --location --remote-name https://api.gbif.org/occurrence/download/request/0001005-130906152512535.zip
+----
+
+[#predicates]
+== Occurrence download predicates
+
+These are the supported predicates that can be combined to build download requests.
+
+=== `equals`
+
+Equality comparison.  Tests for exact equality of the term and the value, or case-sensitive equality if `matchCase` is set to `true`.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "equals",
+    "key": "BASIS_OF_RECORD",
+    "value": "LITERATURE"
+  }
+}
+----
+
+or
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "equals",
+    "key": "HAS_COORDINATE",
+    "value": "true"
+  }
+}
+----
+
+or
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "equals",
+    "key": "CATALOG_NUMBER",
+    "value": "Ax1"
+    "matchCase":"true"
+  }
+}
+----
+
+=== `and`
+
+Logical conjuction, "and".  The sub-predicates must all be true.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "and",
+    "predicates": [
+      "type": "equals", "key": "HAS_GEOSPATIAL_ISSUE", "value": "false"},
+      "type": "equals", "key": "TAXON_KEY", "value": "2440447"}
+    ]
+  }
+}
+----
+
+=== `or`
+
+Logical disjunction, "or". At least one of the sub-predicates must be true.
+
+When requesting many values of the same field (for example, multiple taxa or countries) the `in` predicate (just below) is more appropriate.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "or",
+    "predicates": [
+      "type": "equals", "key": "HAS_GEOSPATIAL_ISSUE", "value": "false"},
+      "type": "equals", "key": "TAXON_KEY", "value": "2440447"}
+    ]
+  }
+}
+----
+
+=== `in`
+
+Specify multiple values to be compared.  `"matchCase": true` can be added if required.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "in",
+    "key": "CATALOG_NUMBER",
+    "values": ["cat1", "cat2", "cat3"]
+  }
+}
+----
+
+=== `lessThan`
+
+Less than.  Returns occurrences with term values strictly less than the provided value.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "lessThan",
+    "key": "YEAR",
+    "value": "1900"
+  }
+}
+----
+
+=== `lessThanOrEquals`
+
+Less than or equals.  Returns occurrences with term values less than or equal to the provided value.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "lessThanOrEquals",
+    "key": "ELEVATION",
+    "value": "1000"
+  }
+}
+----
+
+=== `greaterThan`
+
+Greater than.  Returns occurrences with term values strictly greater than the provided value.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "greaterThan",
+    "key": "YEAR",
+    "value": "1900"
+  }
+}
+----
+
+=== `greaterThanOrEquals`
+
+Greater than or equals. Returns occurrences with term values greater than or equal to the provided value
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "greaterThanOrEquals",
+    "key": "ELEVATION",
+    "value": "1000"
+  }
+}
+----
+
+=== `within`
+
+Geospatial predicate that checks if the coordinates are inside a polygon.
+
+The polygon should be specified in https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry[Well-known text (WKT)] format.  If you have problems, first check your polygon with https://arthur-e.github.io/Wicket/[Wicket] — ensure the points are ordered anti-clockwise.  (A polygon with clockwise points represents the opposite: the whole world _except_ the polygon.)
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "within",
+    "geometry": "POLYGON((-130.78125 51.179342,
+                          -130.78125 22.593726,
+                          -62.578125 22.593726,
+                          -62.578125 51.179342,
+                          -130.78125 51.179342))"
+  }
+}
+----
+
+=== `geoDistance`
+
+Geospatial distance.  This predicate checks if coordinates are within a specified distance of a geographical coordinate.  The distance is specified with a unit, e.g. `5km` or `1250m`.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "geoDistance",
+    "latitude": "90",
+    "longitude": "100",
+    "distance": "5km",
+  }
+}
+----
+
+=== `not`
+
+Logical negation.  Gives the opposite of the sub-predicate.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "not",
+    "predicate": {
+      "type": "equals",
+      "key": "DATASET_KEY",
+      "value": "4fa7b334-ce0d-4e88-aaae-2e0c138d049e"
+    }
+  }
+}
+----
+
+=== `like`
+
+Search for a pattern. `?` matches exactly one character, `*` matches zero or more characters.  `"matchCase": true` can be added if required.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "like",
+    "key": "CATALOG_NUMBER",
+    "value": "PAPS5-560*"
+  }
+}
+----
+
+=== `isNull`
+
+Has an empty (null) value.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "isNull",
+    "parameter": "CONTINENT"
+  }
+}
+----
+
+=== `isNotNull`
+
+Has a non-empty value
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "isNotNull",
+    "parameter":"ISSUE"
+  }
+}
+----
