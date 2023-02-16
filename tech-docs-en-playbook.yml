@@ -31,9 +31,6 @@ content:
       branches: [ipt-2.4-docs, master]
       start_path: docs/en
       edit_url: 'https://github.com/gbif/ipt/edit/master/{path}'
-    - url: https://github.com/MattBlissett/doc-data-pipelines-for-biodiversity-data.git
-      start_path: en
-      branches: HEAD
     - url: https://github.com/gbif/doc-publishing-dna-derived-data.git
       start_path: en
       branches: antora

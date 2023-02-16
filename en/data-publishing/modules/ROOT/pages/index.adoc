@@ -49,3 +49,9 @@ The dataset validator can be used to https://www.gbif.org/tools/data-validator/a
 
 * change occurrence IDs
 * citations
+
+== Other
+
+(Moved here from the main menu.)
+
+* xref:dna-derived-data::index.adoc[]

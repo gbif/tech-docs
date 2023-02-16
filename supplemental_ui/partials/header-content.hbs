@@ -24,7 +24,6 @@
           <div class="navbar-dropdown">
             {{#with (resolvePage 'guides::data-publishing.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             {{#with (resolvePage 'ipt::how-to-publish.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
-            {{#with (resolvePage 'dna-derived-data::index.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{attributes.component-title}}}</a>{{/with}}
             {{#with (resolvePage 'ipt::index.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{attributes.component-title}}}</a>{{/with}}
           </div>
         </div>
@@ -33,7 +32,6 @@
           <a class="navbar-link" href="">Data processing</a>
           <div class="navbar-dropdown">
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Overview</a>
-            {{#with (resolvePage 'data-pipelines::index.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{attributes.component-title}}}</a>{{/with}}
             <a class="navbar-item" href="{{siteRootPath}}/">🏗 Backbone assembly</a>
           </div>
         </div>
