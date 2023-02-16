@@ -1,0 +1,14 @@
+= 🏗 pygbif
+
+#TODO: Rewrite/write page, this is just a starter.#
+
+_Python client for the GBIF API._
+
+pygbif is split up into modules for each of the major GBIF API endpoints:
+
+* Registry - Datasets, Nodes, Installations, Networks, Organizations
+* Species - Taxonomic names
+* Occurrences - Occurrence data, including the download API
+* Maps - Maps, get raster maps from GBIF as PNG or MVT
+
+You can import the entire library, or each module individually as needed.
