@@ -204,6 +204,10 @@ for tag in registry["tags"]:
         new_tags.append(tag)
 registry["tags"] = new_tags
 
+# Add heading
+registry['info']['title'] = registry['info']['title'] + " — Key methods only"
+registry['info']['description'] = "**This is a view of *key methods only*, sufficient for most users of GBIF data.**  Data publishers with write access to the GBIF Registry should refer to the [full Registry API documentation](registry).\n\n" + registry['info']['description']
+
 with open(output+"/registry-key-methods.json", "w") as write_file:
     json.dump(registry, write_file, separators=(',', ':'), indent=indent)
 print("")
