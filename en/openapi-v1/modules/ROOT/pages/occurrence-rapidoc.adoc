@@ -1,6 +1,4 @@
 = Occurrence API
-:description: The GBIF Occurrence API (rapidoc)
 :page-no-next: true
 :page-layout: rapidoc
 :page-openapi-url: /openapi/occurrence.json
-:header: Occurrence API

@@ -1,6 +1,4 @@
-= Registry API
-:description: The GBIF Registry API (redoc)
+= Registry API (All methods)
 :page-no-next: true
 :page-layout: redoc
 :page-openapi-url: /openapi/registry.json
-:header: Registry API

@@ -73,7 +73,7 @@ Perhaps a small amount of key information that we'd expect to be fully translate
 
 Auto-generated pages from https://www.openapis.org/[OpenAPI] endpoints are generated for our webservices.
 
-The script link:fetch-openapi.py[`fetch-openapi.py`] retrieves the OpenAPI definitions, and makes some rearrangements — some sections of the Registry are better documented as part of the Occurrences module.
+The script link:fetch-openapi.py[`fetch-openapi.py`] retrieves the OpenAPI definitions, and makes some rearrangements — some sections of the Registry are better documented as part of the Occurrences module.  It also defines what is included in the "Key methods" version of the Registry, edit the script to add/remove methods.
 
 There are three versions of the `openapi` Antora module, stored in link:en/openapi[`en/openapi`], link:en/openapi-v1[`en/openapi-v1`] and link:en/openapi-v2[`en/openapi-v2`]. This structure is only visible to the user in the resulting URLs, and in Antora's version menu which allows access to the old Maps V1 documentation. This structure will be more useful during and after our transition to V2 for the other modules.
 
@@ -93,7 +93,7 @@ For routine use when authoring documentation, build just the English documentati
 
 [,sh]
 ----
-docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z antora/antora:3.0.1 development-en-playbook.yml
+./build-local-documentation.sh
 ----
 
 To build English and Spanish and with the search function, and suitable for a webserver, run:

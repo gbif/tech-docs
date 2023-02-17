@@ -52,10 +52,8 @@
           {{#with (resolvePage 'openapi::index.adoc')}}<a class="navbar-link" href="{{relativize url}}">API Reference</a>{{/with}}
           <div class="navbar-dropdown">
             {{#with (resolvePage 'openapi::index.adoc')}}<a class="navbar-item" href="{{relativize url}}"><strong>Overview</strong></a>{{/with}}
-            {{#with (resolvePage 'openapi::index.adoc')}}<a class="navbar-item" href="{{relativize url}}"><strong>REST APIs — Key methods</strong></a>{{/with}}
-            {{#with (resolvePage 'v1@openapi::basic-occurrence.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             <hr class="navbar-divider">
-            {{#with (resolvePage 'openapi::index.adoc')}}<a class="navbar-item" href="{{relativize url}}"><strong>REST APIs — All methods</strong></a>{{/with}}
+            {{#with (resolvePage 'v1@openapi::registry-key-methods.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             {{#with (resolvePage 'v1@openapi::registry.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             {{#with (resolvePage 'v1@openapi::species.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             {{#with (resolvePage 'v1@openapi::occurrence.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}

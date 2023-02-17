@@ -1,6 +1,4 @@
 = Literature API
-:description: The GBIF Literature API
 :page-no-next: true
 :page-layout: swagger
 :page-openapi-url: /openapi/literature.json
-:header: Literature API

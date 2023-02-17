@@ -2,9 +2,6 @@ import sys
 import requests
 import json
 
-response = requests.get('http://ws.gbif.org/applications', headers={'Accept': 'application/json'})
-services = json.loads(response.text)
-
 if len(sys.argv) != 3:
     print("Need 2 arguments, output directory and environment")
     exit(1)
@@ -17,7 +14,13 @@ if env == 'dev':
 else:
     indent = None
 
+print("--- Fetching and processing OpenAPI documentation ---")
 print("Output to "+output+" for environment "+env)
+print("")
+
+print("--- Finding available webservices ---")
+response = requests.get('http://ws.gbif.org/applications', headers={'Accept': 'application/json'})
+services = json.loads(response.text)
 
 urls = {}
 
@@ -28,8 +31,10 @@ for s in services:
             if i['registration']['serviceUrl'].find('gbif.org') > 0:
                 urls[s['name']] = i['registration']['serviceUrl']
                 print("Found "+env+" "+s['name']+" at "+urls[s['name']])
+print("")
 
 # Retrieve the documentation
+print("--- Retrieving OpenAPI specifications ---")
 for ws, url in urls.items():
     filename = output + '/' + ws.replace('-ws', '') + '.json'
     print("Fetching documentation for "+ws)
@@ -47,8 +52,19 @@ for ws, url in urls.items():
 
     else:
         print("Response "+str(response.status_code)+" for "+ws+", ignoring while in dev.")
+print("")
+
+# Development
+#response = requests.get("http://localhost:8080/v3/api-docs")
+#registry = json.loads(response.text)
+
+#response = requests.get("http://localhost:8080/v3/api-docs")
+#occurrence = json.loads(response.text)
+# End development
 
 # Special cases for registry and occurrence
+print("--- Moving some method-paths from Registry to Occurrence ---")
+
 movePrefixFromRegistryToOccurrence = [
     '/occurrence/download/'
 ]
@@ -72,6 +88,7 @@ for path in registry["paths"]:
         if path.startswith(prefix):
             toRemove.append(path)
 
+# Schemas need duplicating
 occurrence['components']['schemas']['PagingResponseDownloadStatistics'] = registry['components']['schemas']['PagingResponseDownloadStatistics']
 occurrence['components']['schemas']['DownloadStatistics'] = registry['components']['schemas']['DownloadStatistics']
 occurrence['components']['schemas']['PagingResponseDatasetOccurrenceDownloadUsage'] = registry['components']['schemas']['PagingResponseDatasetOccurrenceDownloadUsage']
@@ -91,24 +108,104 @@ with open(output+"/registry.json", "w") as write_file:
 
 with open(output+"/occurrence.json", "w") as write_file:
     json.dump(occurrence, write_file, separators=(',', ':'), indent=indent)
+print("")
 
-print("------")
-print()
+print("--- Filtering for basic Registry API view ---")
 
-complicated = []
+# Selected registry path-methods for the basic view
+registryBasicPath = {}
+registryBasicPath['get'] = [
+    '/dataset',
+    '/dataset/doi/{prefix}/{suffix}',
+    '/dataset/metadata/{key}',
+    '/dataset/metadata/{key}/document',
+    '/dataset/search',
+    '/dataset/search/export',
+    '/dataset/{key}',
+    '/dataset/{key}/process',
+    '/derivedDataset/dataset/{doiPrefix}/{doiSuffix}',
+    '/derivedDataset/dataset/{key}',
+    '/derivedDataset/user/{user}',
+    '/derivedDataset/{doiPrefix}/{doiSuffix}',
+    '/derivedDataset/{doiPrefix}/{doiSuffix}/citation',
+    '/derivedDataset/{doiPrefix}/{doiSuffix}/datasets',
+    '/enumeration/basic',
+    '/enumeration/basic/{name}',
+    '/enumeration/country',
+    '/enumeration/extension',
+    '/enumeration/interpretationRemark',
+    '/enumeration/language',
+    '/enumeration/license',
+    '/grscicoll/collection',
+    '/grscicoll/collection/export',
+    '/grscicoll/collection/{key}',
+    '/grscicoll/institution',
+    '/grscicoll/institution/export',
+    '/grscicoll/institution/{key}',
+    '/grscicoll/search',
+    '/installation',
+    '/installation/{key}',
+    '/network',
+    '/network/{key}',
+    '/node',
+    '/node/{key}',
+    '/oai-pmh/registry',
+    '/organization',
+    '/organization/{key}'
+]
+registryBasicPath['post'] = [
+    '/derivedDataset'
+]
+registryBasicPath['put'] = [
+    '/derivedDataset/{doiPrefix}/{doiSuffix}'
+]
+registryBasicPath['delete'] = []
 
-for path in occurrence["paths"]:
-    for method in occurrence["paths"][path]:
-        if "x-Category" in occurrence["paths"][path][method]:
-            print("Keep "+method+" "+path)
+complicated = {}
+complicated['get'] = []
+complicated['post'] = []
+complicated['put'] = []
+complicated['delete'] = []
+
+tags_to_keep = []
+
+#for tag in registry["tags"]:
+#    tags_to_remove.append(registry["tags"][tag]['name'])
+
+for path in registry["paths"]:
+    for method in registry["paths"][path]:
+        if path not in registryBasicPath[method]:
+            print("Excluding "+method+" "+path+" from Registry key methods view.")
+            complicated[method].append(path)
         else:
-            print("Discard "+method+" "+path)
-            complicated.append(path)
+            print("Including "+method+" "+path+" from Registry key methods view.")
+            for tag in registry["paths"][path][method]['tags']:
+                #if tag in tags_to_remove:
+                tags_to_keep.append(tag)
 
-for path in complicated:
-    if path in occurrence["paths"]:
-        del occurrence["paths"][path]
-        print("Removed "+path+" from basic occurrence")
+        # Alternative way using code annotations, but see https://github.com/swagger-api/swagger-core/issues/3249
+        # if "x-Category" in registry["paths"][path][method]:
+        #     print("Keep "+method+" "+path)
+        # else:
+        #     print("Discard "+method+" "+path)
+        #     complicated.append(path)
 
-with open(output+"/basic-occurrence.json", "w") as write_file:
-    json.dump(occurrence, write_file, separators=(',', ':'), indent=indent)
+# Delete unwanted path-methods
+for method in complicated:
+    for path in complicated[method]:
+        if path in registry["paths"]:
+            if method in registry["paths"][path]:
+                del registry["paths"][path][method]
+
+# Delete unneeded tags
+new_tags = []
+for tag in registry["tags"]:
+    if tag['name'] in tags_to_keep:
+        new_tags.append(tag)
+registry["tags"] = new_tags
+
+with open(output+"/registry-key-methods.json", "w") as write_file:
+    json.dump(registry, write_file, separators=(',', ':'), indent=indent)
+print("")
+
+print("=== OpenAPI specification generation completed ===")

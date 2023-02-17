@@ -48,7 +48,7 @@ def write_description_table(term_url, term_set, output_file):
     response = requests.get(term_url)
     definitions = json.loads(response.text)
 
-    print("Writing %s→%s to %s" % (term_url, term_set, output_file))
+    print("Writing %s to %s" % (term_url, output_file))
 
     with open(output_file, "w") as f:
         print('[cols="3h,1h,1h,~"]', file=f)
@@ -58,7 +58,7 @@ def write_description_table(term_url, term_set, output_file):
         print("", file=f)
 
         for field in term_set(definitions):
-            print(field)
+            #print(field)
             print('|%s[%s]' % (field['term'], field['name']), file=f)
             if field['type'] in types:
                 print('|%s' % (types[field['type']]), file=f)
