@@ -47,17 +47,26 @@ For requests that support paging the following parameters are used:
 |Determines the offset for the search results. A limit of 20 and offset of 40 will retrieve the third page of 20 results.
 |===
 
+=== Repeatable parameters
+
+Many search parameters are repeatable, for example the country parameter in the occurrence search.  Repeating the parameter with different values will search for records matching any value.  For example, `https://api.gbif.org/v1/occurrence/search?country=GB&country=IE&country=IM`.
+
 === Range queries
 
-Some search parameters support range queries, for example the year parameter in the occurrence search. In general ranges are given as a single parameter value by concatenating a lower and an upper value with a comma. For example: `https://api.gbif.org/v1/occurrence/search?year=1800,1899`
+Some search parameters support range queries, for example the year parameter in the occurrence search. In general ranges are given as a single parameter value by concatenating a lower and an upper value with a comma. For example: `https://api.gbif.org/v1/occurrence/search?year=1800,1899`.
+
+In most cases, where a parameter can _either_ be repeated, _or_ used as a range, but not queried with multiple ranges.
 
 === Authentication
 
 POST, PUT, and DELETE requests require authentication. The GBIF API uses https://en.wikipedia.org/wiki/Basic_access_authentication[HTTP Basic Authentication] with any existing https://www.gbif.org/user/profile[GBIF user account].
 
-For example, to issue a new download programmatically using curl with a https://www.gbif.org/developer/occurrence#predicates[query filter as JSON #TODO#] in a file called filter.json:
+For example, to issue a new download programmatically using curl with a xref:data-use::api-downloads.adoc[query filter as JSON] in a file called filter.json:
 
-`$ curl -i --user yourUserName:yourPassword -H "Content-Type: application/json" -H "Accept: application/json" -X POST -d @filter.json https://api.gbif.org/v1/occurrence/download/request`
+[source,shell]
+----
+$ curl -i --user yourUserName:yourPassword -H "Content-Type: application/json" -X POST -d @filter.json https://api.gbif.org/v1/occurrence/download/request`
+----
 
 === Enumerations
 

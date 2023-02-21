@@ -44,6 +44,10 @@ for ws, url in urls.items():
             registry = json.loads(response.text)
         elif ws == 'occurrence-ws':
             occurrence = json.loads(response.text)
+        elif ws == 'metrics-ws':
+            metrics = json.loads(response.text)
+        elif ws == 'geocode-ws':
+            geocode = json.loads(response.text)
         else:
             openapi = json.loads(response.text)
             with open(filename, "w") as write_file:
@@ -89,19 +93,58 @@ for path in registry["paths"]:
             toRemove.append(path)
 
 # Schemas need duplicating
-occurrence['components']['schemas']['PagingResponseDownloadStatistics'] = registry['components']['schemas']['PagingResponseDownloadStatistics']
-occurrence['components']['schemas']['DownloadStatistics'] = registry['components']['schemas']['DownloadStatistics']
-occurrence['components']['schemas']['PagingResponseDatasetOccurrenceDownloadUsage'] = registry['components']['schemas']['PagingResponseDatasetOccurrenceDownloadUsage']
-occurrence['components']['schemas']['DatasetOccurrenceDownloadUsage'] = registry['components']['schemas']['DatasetOccurrenceDownloadUsage']
-occurrence['components']['schemas']['DOI'] = registry['components']['schemas']['DOI']
-occurrence['components']['schemas']['Download'] = registry['components']['schemas']['Download']
-occurrence['components']['schemas']['DownloadRequest'] = registry['components']['schemas']['DownloadRequest']
-occurrence['components']['schemas']['PagingResponseDownload'] = registry['components']['schemas']['PagingResponseDownload']
+registrySchemas = [
+    'PagingResponseDownloadStatistics',
+    'DownloadStatistics',
+    'PagingResponseDatasetOccurrenceDownloadUsage',
+    'DatasetOccurrenceDownloadUsage',
+    'DOI',
+    'Download',
+    'DownloadRequest',
+    'PagingResponseDownload'
+    ]
+for schema in registrySchemas:
+    occurrence['components']['schemas'][schema] = registry['components']['schemas'][schema]
 
 for path in toRemove:
     if path in registry["paths"]:
         del registry["paths"][path]
         print("Removed "+path+" from registry")
+print("")
+
+# Special cases for geocode (moving to occurrence)
+print("--- Moving some method-paths from Geocode to Occurrence ---")
+
+movePrefixFromGeocodeToOccurrence = [
+    '/geocode/gadm/'
+]
+
+for path in geocode["paths"]:
+    for prefix in movePrefixFromGeocodeToOccurrence:
+        if path.startswith(prefix):
+            occurrence["paths"][path] = geocode["paths"][path]
+            print("Added "+path+" to occurrence")
+
+# Schemas need duplicating
+geocodeSchemas = ['GadmRegion', 'Region', 'Pageable', 'PagingResponseGadmRegion']
+for schema in geocodeSchemas:
+    occurrence['components']['schemas'][schema] = geocode['components']['schemas'][schema]
+print("")
+
+# Special cases for metrics (moving to occurrence)
+# Metrics schema can be ignored.
+print("--- Moving all method-paths from Metrics to Occurrence ---")
+
+for path in metrics["paths"]:
+    occurrence["paths"][path] = metrics["paths"][path]
+    print("Added "+path+" to occurrence")
+
+# Schemas need duplicating
+metricsSchemas = ['DimensionObject', 'Rollup', 'CountQuery', 'Parameter']
+for schema in metricsSchemas:
+    occurrence['components']['schemas'][schema] = metrics['components']['schemas'][schema]
+
+# Write the result of all that moving.
 
 with open(output+"/registry.json", "w") as write_file:
     json.dump(registry, write_file, separators=(',', ':'), indent=indent)
