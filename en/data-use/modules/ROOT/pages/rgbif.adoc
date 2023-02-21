@@ -2,7 +2,7 @@
 
 _An interface to the GBIF API for the R statistical programming environment._
 
-rgbif is an R package from https://ropensci.org/[rOpenSci] that allows searching and retrieving data from GBIF. rgbif wraps R code around the xref:api-introduction.adoc[GBIF API] to allow you to talk to GBIF from R and access metadata, species names, and occurrences.
+**rgbif** is an R package from https://ropensci.org/[rOpenSci] that allows searching and retrieving data from GBIF. rgbif wraps R code around the xref:api-introduction.adoc[GBIF API] to allow you to talk to GBIF from R and access metadata, species names, and occurrences.
 
 The main rgbif documentation can be found https://docs.ropensci.org/rgbif/index.html[here].
 
