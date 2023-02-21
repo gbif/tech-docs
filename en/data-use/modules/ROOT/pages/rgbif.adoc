@@ -6,7 +6,7 @@ rgbif is an R package from https://ropensci.org/[rOpenSci] that allows searching
 
 The main rgbif documentation can be found https://docs.ropensci.org/rgbif/index.html[here].
 
-## Installation
+== Installation
 
 [source,r]
 ----
@@ -23,7 +23,7 @@ The main rgbif documentation can be found https://docs.ropensci.org/rgbif/index.
 > install.packages("rgbif", repos="https://dev.ropensci.org") # dev version
 ----
 
-## Getting Started 
+== Getting Started 
 
 There are several long-form articles that can help get you started:
 
@@ -47,19 +47,18 @@ It is usually better to get occurrence records using a **taxonKey**. See the art
 > occ_search(taxonKey = taxonKey)
 ----
 
-GBIF **strongly recommends** the use of `occ_download()` rather than `occ_search()` for serious research projects. See article [Getting Occurrence Data From GBIF](https://docs.ropensci.org/rgbif/articles/getting_occurrence_data.html). 
+GBIF **strongly recommends** the use of _occ_download()` rather than `occ_search()` for serious research projects. See article https://docs.ropensci.org/rgbif/articles/getting_occurrence_data.html[Getting Occurrence Data From GBIF]. 
 
-It is required to set up your [GBIF credentials](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html) to make downloads from GBIF. 
+It is required to set up your https://docs.ropensci.org/rgbif/articles/gbif_credentials.html[GBIF credentials] to make downloads from GBIF. 
 
 [source,r]
 ----
 > occ_download(pred("taxonKey", 5219534)) # 5219534 is the taxonKey for Pan troglodytes
 ----
 
+== Citation 
 
-## Citation 
-
-Under the terms of the GBIF data user agreement, users who download data agree to cite a DOI. Please see GBIF’s [citation guidelines](https://www.gbif.org/citation-guidelines) and [Citing GBIF Mediated Data](https://docs.ropensci.org/rgbif/articles/gbif_citations.html).
+Under the terms of the GBIF data user agreement, users who download data agree to cite a DOI. Please see GBIF’s https://www.gbif.org/citation-guidelines[citation guidelines] and https://docs.ropensci.org/rgbif/articles/gbif_citations.html[Citing GBIF Mediated Data].
 
 Please also cite **rgbif** by running `citation(package = "rgbif")`.
 
