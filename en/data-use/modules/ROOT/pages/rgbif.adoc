@@ -1,6 +1,68 @@
-= 🏗 rgbif
+= rgbif
 
-#TODO: Rewrite, page was copied from https://www.gbif.org/tool/81747/rgbif as a starter.#
+_An interface to the GBIF API for the R statistical programming environment._
+
+rgbif is an R package from https://ropensci.org/[rOpenSci] that allows searching and retrieving data from GBIF. rgbif wraps R code around the xref:api-introduction.adoc[GBIF API] to allow you to talk to GBIF from R and access metadata, species names, and occurrences.
+
+## Installation
+
+[source,r]
+----
+> install.packages("rgbif") # CRAN version
+----
+
+[source,r]
+----
+> pak::pkg_install("ropensci/rgbif") # dev version
+----
+
+[source,r]
+----
+> install.packages("rgbif", repos="https://dev.ropensci.org") # dev version
+----
+
+## Getting Started 
+
+There are several long-form articles that can help get you started:
+
+* [Getting Started](https://docs.ropensci.org/rgbif/articles/rgbif.html)
+* [Getting Occurrence Data From GBIF](https://docs.ropensci.org/rgbif/articles/getting_occurrence_data.html)
+* [Working With Taxonomic Names](https://docs.ropensci.org/rgbif/articles/taxonomic_names.html)
+
+Most GBIF users are interested in getting lat-lon occurrence records. 
+
+[source,r]
+----
+> occ_search(scientificName = "Pan troglodytes")
+> occ_data(scientificName = "Pan troglodytes")
+```
+
+It is usually better to get occurrence records using a **taxonKey**. See the article [Working With Taxonomic Names](https://docs.ropensci.org/rgbif/articles/taxonomic_names.html). 
+
+[source,r]
+----
+> taxonKey <- name_backbone("Pan troglodytes")$usageKey
+> occ_search(taxonKey = taxonKey)
+----
+
+GBIF **strongly recommends** the use of `occ_download()` rather than `occ_search()` for serious research projects. See article [Getting Occurrence Data From GBIF](https://docs.ropensci.org/rgbif/articles/getting_occurrence_data.html). 
+
+It is required to set up your [GBIF credentials](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html) to make downloads from GBIF. 
+
+[source,r]
+----
+> occ_download(pred("taxonKey", 5219534)) # 5219534 is the taxonKey for Pan troglodytes
+----
+
+
+## Citation 
+
+Under the terms of the GBIF data user agreement, users who download data agree to cite a DOI. Please see GBIF’s [citation guidelines](https://www.gbif.org/citation-guidelines) and [Citing GBIF Mediated Data](https://docs.ropensci.org/rgbif/articles/gbif_citations.html).
+
+Please also cite **rgbif** by running `citation(package = "rgbif")`.
+
+
+-------------------------------------------------------------------------------------------------------------
 
 _An interface to the GBIF API for the R statistical programming environment._
 
