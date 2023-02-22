@@ -33,12 +33,24 @@ for s in services:
                 print("Found "+env+" "+s['name']+" at "+urls[s['name']])
 print("")
 
+def to_filename(ws):
+    ws = ws.replace('-ws', '')
+    if (ws == 'vectortile-server'):
+        ws = 'v2-maps'
+    return ws
+
+def to_url(ws, url):
+    if (url.endswith('/')):
+        return url+"v3/api-docs"
+    else:
+        return url+"/v3/api-docs"
+
 # Retrieve the documentation
 print("--- Retrieving OpenAPI specifications ---")
 for ws, url in urls.items():
-    filename = output + '/' + ws.replace('-ws', '') + '.json'
-    print("Fetching documentation for "+ws)
-    response = requests.get(url+"v3/api-docs")
+    filename = output + '/' + to_filename(ws) + '.json'
+    print("Fetching documentation for "+ws+" from "+to_url(ws, url))
+    response = requests.get(to_url(ws, url))
     if response.status_code == 200:
         if ws == 'registry-ws':
             registry = json.loads(response.text)
