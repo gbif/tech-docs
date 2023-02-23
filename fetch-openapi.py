@@ -110,7 +110,7 @@ registrySchemas = [
     'DownloadStatistics',
     'PagingResponseDatasetOccurrenceDownloadUsage',
     'DatasetOccurrenceDownloadUsage',
-    'DOI',
+    #'DOI',
     'Download',
     'DownloadRequest',
     'PagingResponseDownload'
