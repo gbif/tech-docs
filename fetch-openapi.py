@@ -37,6 +37,8 @@ def to_filename(ws):
     ws = ws.replace('-ws', '')
     if (ws == 'vectortile-server'):
         ws = 'v2-maps'
+    if (ws == 'pipelines-validator'):
+        ws = 'validator'
     return ws
 
 def to_url(ws, url):
@@ -60,6 +62,10 @@ for ws, url in urls.items():
             metrics = json.loads(response.text)
         elif ws == 'geocode-ws':
             geocode = json.loads(response.text)
+        elif ws == 'checklistbank-ws':
+            checklistbank = json.loads(response.text)
+        elif ws == 'checklistbank-nub-ws':
+            checklistbanknub = json.loads(response.text)
         else:
             openapi = json.loads(response.text)
             with open(filename, "w") as write_file:
@@ -76,6 +82,9 @@ print("")
 
 #response = requests.get("http://localhost:8080/v3/api-docs")
 #occurrence = json.loads(response.text)
+
+#response = requests.get("http://localhost:8080/v3/api-docs")
+#checklistbank = json.loads(response.text)
 # End development
 
 # Special cases for registry and occurrence
@@ -155,6 +164,20 @@ for path in metrics["paths"]:
 metricsSchemas = ['DimensionObject', 'Rollup', 'CountQuery', 'Parameter']
 for schema in metricsSchemas:
     occurrence['components']['schemas'][schema] = metrics['components']['schemas'][schema]
+print("")
+
+# Special cases for checklistbank / checklistbanknub
+print("--- Moving all method-paths from ChecklistbankNub to Checklistbank ---")
+
+for path in checklistbanknub["paths"]:
+    checklistbank["paths"][path] = checklistbanknub["paths"][path]
+    print("Added "+path+" to checklistbank")
+
+# Schemas need duplicating
+checklistbanknubSchemas = ['NameUsageMatch', 'LookupUsage']
+for schema in checklistbanknubSchemas:
+    checklistbank['components']['schemas'][schema] = checklistbanknub['components']['schemas'][schema]
+print("")
 
 # Write the result of all that moving.
 
@@ -163,6 +186,9 @@ with open(output+"/registry.json", "w") as write_file:
 
 with open(output+"/occurrence.json", "w") as write_file:
     json.dump(occurrence, write_file, separators=(',', ':'), indent=indent)
+
+with open(output+"/checklistbank.json", "w") as write_file:
+    json.dump(checklistbank, write_file, separators=(',', ':'), indent=indent)
 print("")
 
 print("--- Filtering for basic Registry API view ---")
@@ -177,20 +203,12 @@ registryBasicPath['get'] = [
     '/dataset/search',
     '/dataset/search/export',
     '/dataset/{key}',
-    '/dataset/{key}/process',
     '/derivedDataset/dataset/{doiPrefix}/{doiSuffix}',
     '/derivedDataset/dataset/{key}',
     '/derivedDataset/user/{user}',
     '/derivedDataset/{doiPrefix}/{doiSuffix}',
     '/derivedDataset/{doiPrefix}/{doiSuffix}/citation',
     '/derivedDataset/{doiPrefix}/{doiSuffix}/datasets',
-    '/enumeration/basic',
-    '/enumeration/basic/{name}',
-    '/enumeration/country',
-    '/enumeration/extension',
-    '/enumeration/interpretationRemark',
-    '/enumeration/language',
-    '/enumeration/license',
     '/grscicoll/collection',
     '/grscicoll/collection/export',
     '/grscicoll/collection/{key}',
@@ -204,7 +222,6 @@ registryBasicPath['get'] = [
     '/network/{key}',
     '/node',
     '/node/{key}',
-    '/oai-pmh/registry',
     '/organization',
     '/organization/{key}'
 ]

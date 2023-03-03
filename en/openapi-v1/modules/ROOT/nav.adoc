@@ -4,3 +4,4 @@
 * xref:occurrence.adoc[]
 * xref:literature.adoc[]
 * xref:maps.adoc[]
+* xref:validator.adoc[]

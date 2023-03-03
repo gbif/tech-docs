@@ -1,0 +1,4 @@
+= Validator API
+:page-no-next: true
+:page-layout: rapidoc
+:page-openapi-url: /openapi/validator.json

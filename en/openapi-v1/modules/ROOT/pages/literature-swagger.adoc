@@ -1,0 +1,4 @@
+= Literature API
+:page-no-next: true
+:page-layout: swagger
+:page-openapi-url: /openapi/literature.json
