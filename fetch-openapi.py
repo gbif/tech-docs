@@ -131,6 +131,8 @@ for path in toRemove:
     if path in registry["paths"]:
         del registry["paths"][path]
         print("Removed "+path+" from registry")
+
+registry['info']['description'] = "**This is a view of *all Registry methods* available for advanced use.  Most users of GBIF data will prefer the [Registry API — Principal methods](registry-principal-methods) page instead.**\n\n" + registry['info']['description']
 print("")
 
 # Special cases for geocode (moving to occurrence)
@@ -247,10 +249,10 @@ tags_to_keep = []
 for path in registry["paths"]:
     for method in registry["paths"][path]:
         if path not in registryBasicPath[method]:
-            print("Excluding "+method+" "+path+" from Registry key methods view.")
+            print("Excluding "+method+" "+path+" from Registry principal methods view.")
             complicated[method].append(path)
         else:
-            print("Including "+method+" "+path+" from Registry key methods view.")
+            print("Including "+method+" "+path+" from Registry principal methods view.")
             for tag in registry["paths"][path][method]['tags']:
                 #if tag in tags_to_remove:
                 tags_to_keep.append(tag)
@@ -277,10 +279,10 @@ for tag in registry["tags"]:
 registry["tags"] = new_tags
 
 # Add heading
-registry['info']['title'] = registry['info']['title'] + " — Key methods only"
-registry['info']['description'] = "**This is a view of *key methods only*, sufficient for most users of GBIF data.**  Data publishers with write access to the GBIF Registry should refer to the [full Registry API documentation](registry).\n\n" + registry['info']['description']
+registry['info']['title'] = registry['info']['title'] + " — Principal methods only"
+registry['info']['description'] = "**This is a view of *principal methods only*, sufficient for most users of GBIF data.**  Data publishers with write access to the GBIF Registry should refer to the [full Registry API documentation](registry).\n\n" + registry['info']['description']
 
-with open(output+"/registry-key-methods.json", "w") as write_file:
+with open(output+"/registry-principal-methods.json", "w") as write_file:
     json.dump(registry, write_file, separators=(',', ':'), indent=indent)
 print("")
 

@@ -1,0 +1,4 @@
+= Registry API (Principal methods)
+:page-no-next: true
+:page-layout: swagger
+:page-openapi-url: /openapi/registry-principal-methods.json

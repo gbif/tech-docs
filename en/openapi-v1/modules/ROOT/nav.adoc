@@ -1,4 +1,4 @@
-* xref:registry-key-methods.adoc[]
+* xref:registry-principal-methods.adoc[]
 * xref:registry.adoc[]
 * xref:species.adoc[]
 * xref:occurrence.adoc[]
