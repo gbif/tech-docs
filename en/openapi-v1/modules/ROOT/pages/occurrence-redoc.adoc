@@ -1,4 +1,4 @@
 = Occurrence API
 :page-no-next: true
-:page-layout: swagger
+:page-layout: redoc
 :page-openapi-url: /openapi/occurrence.json

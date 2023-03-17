@@ -1,4 +1,4 @@
 = Validator API
 :page-no-next: true
-:page-layout: swagger
+:page-layout: redoc
 :page-openapi-url: /openapi/validator.json

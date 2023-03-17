@@ -1,4 +1,4 @@
 = Literature API
 :page-no-next: true
-:page-layout: redoc
+:page-layout: swagger
 :page-openapi-url: /openapi/literature.json
