@@ -168,6 +168,34 @@ for schema in metricsSchemas:
     occurrence['components']['schemas'][schema] = metrics['components']['schemas'][schema]
 print("")
 
+# Special cases for checklistbank (moving to registry)
+print("--- Moving some method-paths from Checklistbank to Registry ---")
+
+movePrefixFromChecklistbankToRegistry = [
+    '/dataset/{key}/metrics'
+]
+
+toRemove = []
+
+for path in checklistbank["paths"]:
+    for prefix in movePrefixFromChecklistbankToRegistry:
+        if path.startswith(prefix):
+            registry["paths"][path] = checklistbank["paths"][path]
+            print("Added "+path+" to registry")
+            toRemove.append(path)
+
+for path in toRemove:
+    if path in checklistbank["paths"]:
+        del checklistbank["paths"][path]
+        print("Removed "+path+" from checklistbank")
+
+# Schemas need duplicating
+checklistbankSchemas = [
+    'DatasetMetrics'
+    ]
+for schema in checklistbankSchemas:
+    registry['components']['schemas'][schema] = checklistbank['components']['schemas'][schema]
+
 # Special cases for checklistbank / checklistbanknub
 print("--- Moving all method-paths from ChecklistbankNub to Checklistbank ---")
 
