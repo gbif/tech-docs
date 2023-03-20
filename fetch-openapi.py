@@ -132,7 +132,9 @@ for path in toRemove:
         del registry["paths"][path]
         print("Removed "+path+" from registry")
 
-registry['info']['description'] = "**This is a view of *all Registry methods* available for advanced use.  Most users of GBIF data will prefer the [Registry API — Principal methods](registry-principal-methods) page instead.**\n\n" + registry['info']['description']
+# Preface registry description
+registry_description = registry['info']['description']
+registry['info']['description'] = "**This is a view of *all Registry methods* available for advanced use.  Most users of GBIF data will prefer the [Registry API — Principal methods](registry-principal-methods) page instead.**\n\n" + registry_description
 print("")
 
 # Special cases for geocode (moving to occurrence)
@@ -308,7 +310,7 @@ registry["tags"] = new_tags
 
 # Add heading
 registry['info']['title'] = registry['info']['title'] + " — Principal methods only"
-registry['info']['description'] = "**This is a view of *principal methods only*, sufficient for most users of GBIF data.**  Data publishers with write access to the GBIF Registry should refer to the [full Registry API documentation](registry).\n\n" + registry['info']['description']
+registry['info']['description'] = "**This is a view of *principal methods only*, sufficient for most users of GBIF data.**  Data publishers with write access to the GBIF Registry should refer to the [full Registry API documentation](registry).\n\n" + registry_description
 
 with open(output+"/registry-principal-methods.json", "w") as write_file:
     json.dump(registry, write_file, separators=(',', ':'), indent=indent)
