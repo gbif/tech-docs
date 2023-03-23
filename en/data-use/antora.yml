@@ -3,3 +3,7 @@ title: Data Use
 version: ~
 nav:
 - modules/ROOT/nav.adoc
+asciidoc:
+  attributes:
+    gbif_source: '🍃'
+    dwc_source: '🐦'

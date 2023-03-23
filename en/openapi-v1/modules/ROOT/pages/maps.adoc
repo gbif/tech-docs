@@ -56,7 +56,7 @@ With the following parameters:
 |[.line-through]#palette#
 .4+|mostly not supported
 .4+|[.line-through]#Selects a predefined colour palette, user-defined colouring rules or a colour gradient.# +
-Now, only the values `palette=yellows_reds`, `saturation=true` and `colors=,,#CC0000FF` are supported. These are the values used in the <<Embedded map,embedded map>>.
+Now, only the values `palette=yellows_reds`, `palette=greens`, `saturation=true` and `colors=,,#CC0000FF` are supported. These are the values used in the <<Embedded map,embedded map>> or noticed in query logs.
 
 |[.line-through]#colors#
 
