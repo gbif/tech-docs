@@ -39,6 +39,8 @@ def to_filename(ws):
         ws = 'v2-maps'
     if (ws == 'pipelines-validator'):
         ws = 'validator'
+    if (ws == 'vocabulary-rest'):
+        ws = 'vocabulary'
     return ws
 
 def to_url(ws, url):

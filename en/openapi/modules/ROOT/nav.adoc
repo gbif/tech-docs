@@ -4,3 +4,4 @@
 * xref:v2@openapi::maps.adoc[Maps API]
 * xref:v1@openapi::literature.adoc[Literature API]
 * xref:v1@openapi::validator.adoc[Validator API]
+* xref:v1@openapi::vocabulary.adoc[Vocabulary API]

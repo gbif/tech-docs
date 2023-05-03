@@ -21,6 +21,7 @@ The API is split into logical sections to ease understanding:
 * xref:v2@openapi::maps.adoc[*Maps*] provides simple services to show the maps of GBIF mobilized content on other sites.
 * xref:v1@openapi::literature.adoc[*Literature*] provides access to peer-reviewed papers and other literature indexed by GBIF, citing GBIF datasets and downloads.
 * xref:v1@openapi::validator.adoc[*Validator*] allows running data structure and quality checks against a dataset before publication to GBIF.
+* xref:v1@openapi::vocabulary.adoc[*Vocabularies*] are used during data interpretation to align some terms such as Life Stage to a limited set of values.
 
 == Communication
 
