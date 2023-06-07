@@ -1,9 +1,13 @@
 = Introduction to the GBIF API
 
-#TODO#
+The GBIF API provides a programmatic way to query and publish data on GBIF.org. It can be useful or necessary to use the API to
 
-This should cover a general introduction to the API:
+* make advanced queries, not supported by the website,
+* include the results of GBIF queries in scripts, workflows or analyses, which can then be repeated reliably and automatically,
+* embed GBIF data into other websites.
 
-* When it is useful
-* What tools can be used to access it, and how to choose between them
-* References to further documentation, e.g. the xref:openapi::index.adoc[API Reference].
+It can be accessed by any programming language, from a command-line terminal interface, or in some cases using a web browser.
+
+#TODO# We should advise on the available methods, and how to choose between them.
+
+Complete documentation is available in the xref:openapi::index.adoc[API Reference] section.

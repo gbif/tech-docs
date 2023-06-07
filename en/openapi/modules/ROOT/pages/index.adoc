@@ -9,16 +9,16 @@ The GBIF API provides a programmatic way to query and publish data on GBIF.org. 
 
 The GBIF API is RESTful and most queries return data in JSON format. The base URL is https://api.gbif.org/.
 
-The API should be considered stable, as should this accompanying documentation.  Please report any issues you find with either the API itself or the documentation to https://github.com/gbif/portal-feedback/issues[GitHub] (generally preferred), by email to the mailto:helpdesk@gbif.org[Helpdesk] or using the "feedback" button on an appropriate page on gbif.org.  Suggested edits to the documentation can also be made with the "Edit this page" links on this site.
+The API should be considered stable, as should this accompanying documentation.
 
 == API Sections
 
 The API is split into logical sections to ease understanding:
 
-* The xref:v1@openapi::registry-principal-methods.adoc[*Registry*] provides means to create, edit, update and search for information about the datasets, publishing organizations, networks and the means to access them (technical endpoints). The registered content controls what is crawled and indexed in the GBIF data portal, but as a shared API may also be used for other initiatives
+* The xref:v1@openapi::registry-principal-methods.adoc[*Registry*] provides means to create, edit, update and search for information about the datasets, publishing organizations, networks and the means to access them (technical endpoints). The registered content controls what is crawled and indexed in the GBIF data portal, but as a shared API may also be used for other initiatives, including the Global Register of Scientific Collections (GRSciColl).
 * xref:v1@openapi::species.adoc[*Species*] provides services to discover and access information about species and higher taxa, and utility services for interpreting names and looking up the identifiers and complete scientific names used for species in the GBIF portal.
-* xref:v1@openapi::occurrence.adoc[*Occurrence*] provides access to occurrence information crawled and indexed by GBIF and search services to do real time paged search and asynchronous download services to do large batch downloads.
-* xref:v2@openapi::maps.adoc[*Maps*] provides simple services to show the maps of GBIF mobilized content on other sites.
+* xref:v1@openapi::occurrence.adoc[*Occurrence*] provides access to occurrence information crawled and indexed by GBIF, search services to do real-time paged search and asynchronous download services to request large, batch downloads.
+* xref:v2@openapi::maps.adoc[*Maps*] provides services to show maps of GBIF-mobilized content.
 * xref:v1@openapi::literature.adoc[*Literature*] provides access to peer-reviewed papers and other literature indexed by GBIF, citing GBIF datasets and downloads.
 * xref:v1@openapi::validator.adoc[*Validator*] allows running data structure and quality checks against a dataset before publication to GBIF.
 * xref:v1@openapi::vocabulary.adoc[*Vocabularies*] are used during data interpretation to align some terms such as Life Stage to a limited set of values.
@@ -29,7 +29,7 @@ You can sign up to the https://lists.gbif.org/mailman/listinfo/api-users[GBIF AP
 
 You can also post questions to the https://discourse.gbif.org/[GBIF Community Forum] or using the feedback buttons at the top of the pages on https://www.gbif.org/[GBIF.org].
 
-Bug reports should also be submitted using the feedback button.
+Please report any issues you find with the API to https://github.com/gbif/portal-feedback/issues[GitHub] (recommended if you already have a GitHub account), using the "feedback" button on an appropriate page on gbif.org, or by email to the mailto:helpdesk@gbif.org[Helpdesk].  Errors, omissions or improvements to the documentation can be made in the same way, or with the "Edit this page" links on this site.
 
 == Common operations
 
