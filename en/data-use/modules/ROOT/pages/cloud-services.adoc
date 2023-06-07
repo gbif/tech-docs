@@ -1,9 +1,16 @@
-= 🏗 Cloud computing services
+= Cloud computing services
 
-#TODO: Rewrite/write page, this is just a starter.#
+Every month GBIF takes a full occurrence snapshot and uploads it to three cloud computing data repositories:
 
-Describe what data are shared to which cloud computing services.
+* the https://planetarycomputer.microsoft.com/dataset/gbif[Microsoft Planetary Computer] for Microsoft Azure
+* as an https://registry.opendata.aws/gbif/[Amazon AWS Open Dataset]
+* and to a public https://console.cloud.google.com/storage/browser/public-datasets-gbif[Google GCS bucket] and https://console.cloud.google.com/marketplace/product/bigquery-public-data/gbif-occurrences[BigQuery table].
 
-Provide an overview of how to access them, and a quick tutorial — or link to the overviews and tutorials on the cloud service pages.
+Information on the latest available snapshot is shown on https://www.gbif.org/occurrence-snapshots[Occurrence Snapshots], including a DOI and advice on https://www.gbif.org/citation-guidelines#derivedDatasets[Derived Dataset citations] for the records used.
 
-A blog post: https://data-blog.gbif.org/post/microsoft-azure-and-gbif/
+The Azure, AWS and GCS pages linked above include some advice and tutorials.  Users unfamiliar with cloud services should also see these posts from the GBIF Data Blog:
+
+* https://data-blog.gbif.org/post/aws-and-gbif/[GBIF and Apache-Spark on AWS tutorial]
+* https://data-blog.gbif.org/post/microsoft-azure-and-gbif/[GBIF and Apache-Spark on Microsoft Azure tutorial]
+
+The easiest service to use for rapid access to data is the https://console.cloud.google.com/marketplace/product/bigquery-public-data/gbif-occurrences[Google BigQuery table], which provides an SQL-like interface to the data.  We have provided examples on the linked page.
