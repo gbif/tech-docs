@@ -1,3 +1,0 @@
-= GBIF Technical Documentation
-
-Test another language.

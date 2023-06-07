@@ -1,17 +1,41 @@
-= Data use / Using data
+= Using data
 
-#TODO — what is this section called?#
+GBIF users can access the data they need in several ways, and each method generally offers data in a choice of formats.
 
-#TODO# Perhaps summarize the navigation menu on the left.
+The easiest option is to use the https://www.gbif.org/[GBIF website], which allows searching and browsing individual records, as well as requesting data downloads in the most common formats.
 
-== Downloads
+For more structured access, consider using the GBIF API, either directly or using the **rgbif** or **pygbif** libraries.
 
-=== Download on GBIF.org
+Some workflows are best served using cloud computing systems, and GBIF data is available on Amazon AWS, Google GCS and Microsoft Azure for this purpose.
 
-=== Download with the API (link to API topic)
+== Data downloads
 
-=== Download with API wrapper
+Downloads can be requested in three main formats: Simple, Darwin Core Archive and Species List.  Registered users may create them using the website or through the API, or using rgbif or pygbif.
 
-==== rgbif
+See xref:api-downloads.adoc[] for creating a download directly through the API.  See xref:rgbif.adoc[rgbif] and xref:pygbif.adoc[pygbif] for creating downloads using R or Python.
 
-==== pygbif
+See xref:download-formats.adoc[] for details on the structure of each download format, regardless of how it was created.
+
+== API usage
+
+The GBIF API provides a programmatic way to query and publish data on GBIF.org. It can be useful or necessary to use the API to
+
+* make advanced queries, not supported by the website,
+* include the results of GBIF queries in scripts, workflows or analyses, which can then be repeated reliably and automatically,
+* embed GBIF data into other websites.
+
+It can be accessed by any programming language, from a command-line terminal interface, or in some cases using a web browser.
+
+=== rgbif
+
+*rgbif* is a library maintained by GBIF for the R statistical programming language.  See xref:rgbif.adoc[].
+
+=== pygbif
+
+*pygbif* is a library maintaned by GBIF for the Python programming language.  See xref:pygbif.adoc[].
+
+INFO:Complete documentation on the API is available in the xref:openapi::index.adoc[API Reference] section.
+
+== Cloud computing services
+
+Each month, an export of GBIF occurrence data is uploaded to various cloud computing services.  These services allow users to query the data, integrate it into workflows running on cloud or local systems and make more complex queries than are possible using the GBIF API.  See xref:cloud-services.adoc[] for more information.

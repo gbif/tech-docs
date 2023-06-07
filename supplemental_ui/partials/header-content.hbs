@@ -19,20 +19,19 @@
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
 
-        <div class="navbar-item has-dropdown is-hoverable">
+        <!--div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="">Publishing data</a>
           <div class="navbar-dropdown">
             {{#with (resolvePage 'guides::data-publishing.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             {{#with (resolvePage 'ipt::how-to-publish.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
             {{#with (resolvePage 'ipt::index.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{attributes.component-title}}}</a>{{/with}}
           </div>
-        </div>
+        </div-->
 
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="">Data processing</a>
+          {{#with (resolvePage 'data-processing::index.adoc')}}<a class="navbar-link" href="{{relativize url}}">Data processing</a>{{/with}}
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Overview</a>
-            <a class="navbar-item" href="{{siteRootPath}}/">🏗 Backbone assembly</a>
+            {{#with (resolvePage 'data-processing::clustering-occurrences.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
           </div>
         </div>
 

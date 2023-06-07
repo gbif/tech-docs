@@ -8,8 +8,11 @@ content:
     - url: .
       start_path: ./en/home
       branches: HEAD
+    #- url: .
+    #  start_path: ./en/data-publishing
+    #  branches: HEAD
     - url: .
-      start_path: ./en/data-publishing
+      start_path: ./en/data-processing
       branches: HEAD
     - url: .
       start_path: ./en/data-use
@@ -23,15 +26,15 @@ content:
     - url: .
       start_path: ./en/openapi-v2
       branches: HEAD
-    - url: .
-      start_path: ./en/guides
-      branches: HEAD
-    - url: https://github.com/gbif/ipt.git
-      branches: [ipt-2.4-docs, master]
-      start_path: docs/en
-    - url: https://github.com/gbif/doc-publishing-dna-derived-data.git
-      start_path: en
-      branches: antora
+    #- url: .
+    #  start_path: ./en/guides
+    #  branches: HEAD
+    #- url: https://github.com/gbif/ipt.git
+    #  branches: [ipt-2.4-docs, master]
+    #  start_path: docs/en
+    #- url: https://github.com/gbif/doc-publishing-dna-derived-data.git
+    #  start_path: en
+    #  branches: antora
 output:
   clean: false
   dir: ./output/en
