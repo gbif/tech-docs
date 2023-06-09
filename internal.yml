@@ -7,6 +7,7 @@ site:
 content:
   sources:
     - url: https://github.com/gbif/informatics.git
+      edit_url: 'https://github.com/gbif/informatics/edit/master/{path}'
       start_path: docs
       branches: HEAD
 git:
