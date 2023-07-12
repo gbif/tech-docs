@@ -1,6 +1,5 @@
 site:
   title: GBIF Technical Documentation
-  url: https://tech-docs.gbif-dev.org
   start_page: ROOT::index.adoc
   keys:
     language: es
@@ -8,7 +7,7 @@ content:
   sources:
     - url: .
       start_path: ./es/home
-      branches: HEAD
+      branches: main
     #- url: https://github.com/gbif/ipt.git
     #  branches: [ipt-2.4.2-docs, generated-translations-master]
     #  start_path: docs/es
