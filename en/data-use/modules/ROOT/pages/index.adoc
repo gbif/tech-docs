@@ -34,7 +34,7 @@ It can be accessed by any programming language, from a command-line terminal int
 
 *pygbif* is a library maintaned by GBIF for the Python programming language.  See xref:pygbif.adoc[].
 
-INFO:Complete documentation on the API is available in the xref:openapi::index.adoc[API Reference] section.
+TIP:Complete documentation on the API is available in the xref:openapi::index.adoc[API Reference] section.
 
 == Cloud computing services
 
