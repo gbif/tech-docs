@@ -1,3 +1,5 @@
 = GBIF Data Processing
 
+Every single occurrence record in GBIF goes through a series of processing steps until it becomes available in on GBIF.org.  The process is described on https://www.gbif.org/article/5i3CQEZ6DuWiycgMaaakCo/gbif-infrastructure-data-processing[GBIF.org].
+
 See xref:clustering-occurrences.adoc[].
