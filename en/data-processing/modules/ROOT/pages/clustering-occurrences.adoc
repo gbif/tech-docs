@@ -105,7 +105,7 @@ There could be other unforeseen reasons, and if in doubt, please contact us at h
 If for one reason or another, you need to publish on GBIF occurrences for observations or specimens that you know are already on GBIF, how best to do it?
 
 . Make sure that you reuse the same identifiers as much as possible, including the formating. Same catalogue numbers, occurrenceID, etc.
-. Use the link:https://dwc.tdwg.org/terms/#dwc:associatedOccurrences[associatedOccurrences,role=term] term and https://rs.tdwg.org/dwc/terms/ResourceRelationship[[resource relationship extension]. These are not used during the clustering today, but are expected to be in the future, and are the correct way to communicate relationships within Darwin Core.
+. Use the link:https://dwc.tdwg.org/terms/#dwc:associatedOccurrences[associatedOccurrences,role=term] term and https://rs.tdwg.org/dwc/terms/ResourceRelationship[resource relationship extension]. These are not used during the clustering today, but are expected to be in the future, and are the correct way to communicate relationships within Darwin Core.
 
 == Where to send suggestions and ask questions
 
