@@ -5,3 +5,61 @@ _An interface to the GBIF API for the Python programming language._
 **pygbif** is a Python package that allows searching and retrieving data from GBIF. pygbif wraps Python code around the xref:api-introduction.adoc[GBIF API] to allow you to talk to GBIF from Python and access metadata, species names, and occurrences.
 
 The main pygbif documentation can be found at https://pygbif.readthedocs.io/.
+
+== Installation
+
+.Installing the stable version from PyPI
+[source,python]
+----
+pip install pygbif
+----
+
+.Installing the development version
+[source,python]
+----
+pip install git+git://github.com/gbif/pygbif.git#egg=pygbif
+----
+
+== Getting Started
+
+(Based on the example from https://pygbif.readthedocs.io/en/latest/docs/usecases.html[the documentation].)
+
+First, load the library:
+
+[source,python]
+----
+from pygbif import species as species
+from pygbif import occurrences as occ
+----
+
+Look up GBIF backbone taxonomic keys from a list of names:
+
+[source,python]
+----
+splist = ['Cyanocitta stelleri', 'Junco hyemalis', 'Aix sponsa',
+  'Ursus americanus', 'Pinus conorta', 'Poa annuus']
+keys = [ species.name_backbone(x)['usageKey'] for x in splist ]
+----
+
+Then, get a count of occurrence records for each taxon, and pull out number of records found for each taxon:
+
+[source,python]
+----
+out = [ occ.search(taxonKey = x, limit=0)['count'] for x in keys ]
+----
+
+Make a dict of species names and number of records, sorting in descending order:
+
+[source,python]
+----
+x = dict(zip(splist, out))
+sorted(x.items(), key=lambda z:z[1], reverse=True)
+----
+
+== Citation
+
+Under the terms of the GBIF data user agreement, users who download data agree to cite a DOI. Please see GBIF’s https://www.gbif.org/citation-guidelines[citation guidelines].
+
+// TODO: A method like rgbif has to aid citation and creating a derived dataset.
+
+Please also cite pygbif.

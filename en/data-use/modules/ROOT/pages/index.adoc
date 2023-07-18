@@ -18,6 +18,8 @@ See xref:download-formats.adoc[] for details on the structure of each download f
 
 == API usage
 
+TIP: Complete documentation on the API is available in the xref:openapi::index.adoc[API Reference] section.
+
 The GBIF API provides a programmatic way to query and publish data on GBIF.org. It can be useful or necessary to use the API to
 
 * make advanced queries, not supported by the website,
@@ -32,10 +34,18 @@ It can be accessed by any programming language, from a command-line terminal int
 
 === pygbif
 
-*pygbif* is a library maintaned by GBIF for the Python programming language.  See xref:pygbif.adoc[].
+*pygbif* is a library maintained by GBIF for the Python programming language.  See xref:pygbif.adoc[].
 
-TIP:Complete documentation on the API is available in the xref:openapi::index.adoc[API Reference] section.
+=== Other programming languages
+
+*Java* clients for the APIs are maintained by GBIF and linked in the xref:openapi::index.adoc[API reference documentation].
+
+There are also clients for *Ruby* (https://www.rubydoc.info/gems/gbifrb[gbifrb]) and *PHP* (https://gitlab.res-telae.cat/restelae/php-gbif[php-gbif]).  These clients are not maintained by GBIF.
 
 == Cloud computing services
 
 Each month, an export of GBIF occurrence data is uploaded to various cloud computing services.  These services allow users to query the data, integrate it into workflows running on cloud or local systems and make more complex queries than are possible using the GBIF API.  See xref:cloud-services.adoc[] for more information.
+
+== Citation
+
+Under the terms of the GBIF data user agreement, users who download data agree to cite a DOI. Please see GBIF’s https://www.gbif.org/citation-guidelines[citation guidelines].
