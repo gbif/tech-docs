@@ -1,7 +1,12 @@
-= Issues and flags
+= Occurrence issues and flags
 
-More than *50 issues and flags* have been created to deal with common
-data quality problems.
+More than *60 issues and flags* have been created to deal with common data quality problems.  Data users may use these flags to exclude occurrences from their analysis, or to apply their own data quality checks.
+
+// The definitive list of flags in in the API, and can be seen in the source code:
+// https://github.com/gbif/gbif-api/blob/dev/src/main/java/org/gbif/api/vocabulary/OccurrenceIssue.java
+
+// Check for missing issues:
+// (for i in $(curl -Ss https://raw.githubusercontent.com/gbif/gbif-api/dev/src/main/java/org/gbif/api/vocabulary/OccurrenceIssue.java | grep -Po '^  \K([A-Z0-9_]{5,})'); do grep --quiet $i occurrence-issues-and-flags.adoc || echo "$i missing"; done) | grep -v -e COORDINATE_ACCURACY_INVALID -e COORDINATE_PRECISION_UNCERTAINTY_MISMATCH -e POSSIBLY_ON_LOAN
 
 .Geospatial issues
 [cols="20%,60%,10%,10%"]
@@ -36,7 +41,22 @@ data quality problems.
 |*Geodetic datum invalid*
 |The geodetic datum could not be interpreted, because the supplied term cannot be matched against the vocabulary of known values.
 |_dwc:geodeticDatum_
-|https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_INVALID[example] +
+|https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_INVALID[example]
+
+|*Footprint SRS invalid*
+|The spatial reference system could not be interpreted, because the supplied term could not be matched against the vocabulary of known values.
+|_dwc:footprintSRS_
+|https://www.gbif.org/occurrence/search?issue=FOOTPRINT_SRS_INVALID[example]
+
+|*Footprint WKT mismatch*
+|The footprint well-known text (point, line or polygon) conflicts with the given coordinates.
+|_dwc:footprintWKT_, _dwc:decimalLatitude_, _dwc:decimalLongitude_, _dwc:verbatimCoordinates_, _dwc:verbatimLatitude_, _dwc:verbatimLongitude_
+|https://www.gbif.org/occurrence/search?issue=FOOTPRINT_WKT_MISMATCH[example]
+
+|*Footprint WKT invalid*
+|The footprint well-known text (point, line or polygon) could not be interpreted.
+|_dwc:footprintWKT_
+|https://www.gbif.org/occurrence/search?issue=FOOTPRINT_WKT_INVALID[example]
 
 |*Country mismatch*
 |Interpreted Country and Country code contradict each other.
@@ -52,6 +72,16 @@ data quality problems.
 |The country or countryCode given cannot be matched to the vocabulary for country names.
 |_dwc:country_
 |https://www.gbif.org/occurrence/search?issue=COUNTRY_INVALID[example]
+
+|*Continent coordinate mismatch*
+|The interpreted occurrence coordinates fall outside of the indicated continent.
+|_dwc:continent_, _dwc:decimalLatitude_, _dwc:decimalLongitude_
+|https://www.gbif.org/occurrence/search?issue=CONTINENT_COORDINATE_MISMATCH[example]
+
+|*Continent derived from country*
+|The continent is based on the provided country, not the provided continent.
+|_dwc:continent_, _dwc:country_
+|https://www.gbif.org/occurrence/search?issue=CONTINENT_DERIVED_FROM_COUNTRY[example]
 
 |*Continent invalid*
 |The continent given cannot be matched to the vocabulary for continent names.
@@ -179,6 +209,11 @@ Reasons include:
 |Matching to the taxonomic backbone can only be done using a fuzzy, non exact match.
 |dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_FUZZY[example]
+
+|*Taxon match aggregate*
+|Matching to the taxonomic backbone can only be done on a species level, but the occurrence was considered a broader species aggregate or complex.
+|dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank
+|https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_AGGREGATE[example]
 
 |===
 
@@ -356,6 +391,11 @@ Reasons include:
 |The present/absent status of the occurrence was inferred from the individual count value because no status value was supplied explicitly. An individual count of 0 is interpreted as status="absent", a value > 0 as "present".
 |_dwc:individualCount, dwc:occurrenceStatus_
 |https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_INFERRED_FROM_INDIVIDUAL_COUNT[example]
+
+|*Occurrence status inferred from basis of record*
+|The present/absent status of the occurrence was inferred from the basis of record value because no status value was supplied explicitly.
+|_dwc:basisOfRecord, dwc:occurrenceStatus_
+|https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_INFERRED_FROM_BASIS_OF_RECORD[example]
 
 |*References URI invalid*
 |The references URL cannot be resolved, and may be malformed or contain invalid characters.

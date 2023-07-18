@@ -1,5 +1,6 @@
 * xref:download-formats.adoc[]
-* xref:issues-and-flags.adoc[]
+* xref:occurrence-issues-and-flags.adoc[]
+* xref:checklist-issues-and-flags.adoc[]
 * xref:api-introduction.adoc[API Introduction]
 * xref:api-downloads.adoc[]
 * xref:cloud-services.adoc[]
