@@ -72,8 +72,7 @@ Reference information for the GBIF API.
 |xref:data-processing::index.adoc[image:datamodel-img-07.jpg[]]
 xref:data-processing::index.adoc[Data processing and quality checks]
 
-What happens to the data after you publish to GBIF and the efforts GBIF makes to standardize and clean the data for ease of use.
-
+The standardization and quality processes applied to data published to GBIF, including taxonomic, temporal and geographic checks.
 |xref:data-use::cloud-services.adoc[image:datamodel-img-05.jpg[]]
 xref:data-use::cloud-services.adoc[Cloud services]
 
