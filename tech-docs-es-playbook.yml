@@ -1,5 +1,5 @@
 site:
-  title: GBIF Technical Documentation
+  title: Technical Documentation
   start_page: ROOT::index.adoc
   keys:
     language: es

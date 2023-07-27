@@ -1,46 +1,6 @@
-= GBIF Technical Documentation
+= Technical Documentation
 :page-no-next: true
-
-Welcome to GBIF's new technical documentation!
-
-[cols="3*^.<1a",frame=none,grid=none,stripes=none]
-|===
-
-//|xref:get-started.adoc[image:datamodel-img-05.jpg[]]
-//xref:get-started.adoc[Get Started]
-
-//(Perhaps we don't need this section? Although I like the icon.)
-
-//|xref:data-publishing::index.adoc[image:datamodel-img-01.jpg[]]
-//xref:data-publishing::index.adoc[Data Publishing]
-
-//Information for new and experienced publishers of data to GBIF
-
-|xref:data-processing::index.adoc[image:datamodel-img-07.jpg[]]
-xref:data-processing::index.adoc[Data processing and quality checks]
-
-What happens to the data after you publish to GBIF and the efforts GBIF makes to standardize and clean the data for ease of use.
-
-|xref:data-use::index.adoc[image:datamodel-img-11.jpg[]]
-xref:data-use::index.adoc[Data Use]
-
-How to get the data you want from GBIF, understand it, and process it for your own analysis or reporting.
-
-|xref:openapi::index.adoc[image:datamodel-img-12.jpg[]]
-xref:openapi::index.adoc[API Reference]
-
-Reference information for the GBIF API.
-
-//|image::datamodel-intro-04.jpg[]
-
-//🏗 Other GBIF services (Registry, GRSciColl and Vocabulary server)
-
-// There need to be a multiple of three cells in this table, so add blanks if required.
-//|
-
-|===
-
-== Tim + Matt's new suggestion for this page.
+:page-layout: home
 
 The GBIF technical documentation describes how users can access data from GBIF.  It provides information on the available data, how to access it, where it has been cleaned or checked for data quality, and how it should be cited.
 
@@ -48,49 +8,46 @@ The documentation will later include information for data publishers, including 
 
 Please send any suggestions for improvements or corrections to helpdesk@gbif.org, or create an issue at https://github.com/gbif/tech-docs/issues.
 
-=== Search the documentation
+== What are you looking for?
 
 ++++
 <div id="search-field">
-  <input id="search-input" type="text" placeholder="Search technical documentation">
+  <input id="search-input" type="text" placeholder="Search" style="width: 100%; font-size: 2rem; background: #f2f2f2; padding: 0.25rem 1rem; border: none; margin: 1rem 0;">
 </div>
 ++++
 
-[cols="3*^.<1a",frame=none,grid=none,stripes=none]
-|===
+[.blocks]
+* xref:data-use::index.adoc[image:datamodel-img-11.jpg[]]
+** xref:data-use::index.adoc[Downloading data]
+** How to download data from GBIF, including using xref:data-use::rgbif.adoc[] and xref:data-use::pygbif.adoc[].
 
-|xref:data-use::index.adoc[image:datamodel-img-11.jpg[]]
-xref:data-use::index.adoc[Downloading data]
+* xref:openapi::index.adoc[image:datamodel-img-12.jpg[]]
+** xref:openapi::index.adoc[API Reference]
+** Reference information for the GBIF API.
 
-How to download data from GBIF, including using xref:data-use::rgbif.adoc[] and xref:data-use::pygbif.adoc[].
+* xref:data-processing::index.adoc[image:datamodel-img-07.jpg[]]
+** xref:data-processing::index.adoc[Data processing and quality checks]
+** The standardization and quality processes applied to data published to GBIF, including taxonomic, temporal and geographic checks.
 
-|xref:openapi::index.adoc[image:datamodel-img-12.jpg[]]
-xref:openapi::index.adoc[API Reference]
+* xref:data-use::cloud-services.adoc[image:datamodel-img-05.jpg[]]
+** xref:data-use::cloud-services.adoc[Cloud services]
+** Accessing GBIF's data using cloud services (AWS, Azure, GCS).
 
-Reference information for the GBIF API.
+* xref:data-publishing::index.adoc[image:datamodel-img-01.jpg[]]
+** xref:data-publishing::index.adoc[Data Publishing]
+** Information for new and experienced publishers of data to GBIF
 
-|xref:data-processing::index.adoc[image:datamodel-img-07.jpg[]]
-xref:data-processing::index.adoc[Data processing and quality checks]
+* https://ipt.gbif.org/manual/[image:datamodel-intro-04.jpg[]]
+** https://ipt.gbif.org/manual/[IPT]
+** The GBIF Integrated Publishing Toolkit (IPT) manual
 
-The standardization and quality processes applied to data published to GBIF, including taxonomic, temporal and geographic checks.
-|xref:data-use::cloud-services.adoc[image:datamodel-img-05.jpg[]]
-xref:data-use::cloud-services.adoc[Cloud services]
+[.discrete]
+== Tools
 
-Accessing GBIF's data using cloud services (AWS, Azure, GCS).
-
-|xref:data-publishing::index.adoc[image:datamodel-img-01.jpg[]]
-xref:data-publishing::index.adoc[Data Publishing]
-
-Information for new and experienced publishers of data to GBIF
-
-|https://ipt.gbif.org/manual/[image:datamodel-intro-04.jpg[]]
-https://ipt.gbif.org/manual/[IPT]
-
-The GBIF Integrated Publishing Toolkit (IPT) manual
-
-//🏗 Other GBIF services (Registry, GRSciColl and Vocabulary server)
-
-// There need to be a multiple of three cells in this table, so add blanks if required.
-//|
-
-|===
+[.smallblocks]
+* xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Data validator]
+* xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Species matching]
+* xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Name parser]
+* xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Derived datasets]
+* xref:data-use::rgbif.adoc[image:datamodel-img-11.jpg[] rgbif]
+* xref:data-use::pygbif.adoc[image:datamodel-img-11.jpg[] pygbif]

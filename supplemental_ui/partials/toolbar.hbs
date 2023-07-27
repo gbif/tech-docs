@@ -1,0 +1,15 @@
+<div class="toolbar" role="navigation">
+{{> nav-toggle}}
+  {{#with site.homeUrl}}
+  <a href="{{{relativize this}}}" class="home-link{{#if @root.page.home}} is-current{{/if}}"></a>
+  {{/with}}
+{{> breadcrumbs}}
+{{> page-versions}}
+  {{! TODO: Apache variable for GBIF_NETWORK, then show this only in that case. }}
+  {{#if (and page.fileUri (not env.CI))}}
+  <div class="edit-this-page"><a href="{{page.fileUri}}">Edit this page</a></div>
+  {{else if (and page.editUrl (or env.FORCE_SHOW_EDIT_PAGE_LINK (not page.origin.private)))}}
+  <div class="edit-this-page"><a href="{{page.editUrl}}">Edit this page</a></div>
+  {{/if}}
+  <div class="feedback-for-this-page"><a href="https://github.com/gbif/tech-docs/issues/new?labels=Feedback&body=Feedback+on+[{{page.title}}]({{page.canonicalUrl}})+({{page.origin.startPath}}/modules/{{page.module}}/pages/{{page.relativeSrcPath}})%0A%0AWrite+your+feedback+here.">Leave feedback</a></div>
+</div>
