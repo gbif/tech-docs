@@ -17,7 +17,7 @@ Please send any suggestions for improvements or corrections to helpdesk@gbif.org
 ++++
 
 [.blocks]
-* xref:data-use::index.adoc[image:datamodel-img-11.jpg[]]
+* xref:data-use::index.adoc[image:td-bg-01.png[]]
 ** xref:data-use::index.adoc[Downloading data]
 ** How to download data from GBIF, including using xref:data-use::rgbif.adoc[] and xref:data-use::pygbif.adoc[].
 
