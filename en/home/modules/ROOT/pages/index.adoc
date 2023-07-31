@@ -42,8 +42,10 @@ Please send any suggestions for improvements or corrections to helpdesk@gbif.org
 ** The GBIF Integrated Publishing Toolkit (IPT) manual
 
 [.discrete]
-== Tools
+== Explore tool documentation
 
+////
+This makes two columns out of the list items.
 [.smallblocks]
 * xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Data validator]
 * xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Species matching]
@@ -51,3 +53,17 @@ Please send any suggestions for improvements or corrections to helpdesk@gbif.org
 * xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Derived datasets]
 * xref:data-use::rgbif.adoc[image:datamodel-img-11.jpg[] rgbif]
 * xref:data-use::pygbif.adoc[image:datamodel-img-11.jpg[] pygbif]
+////
+
+[.bannerblocks]
+--
+image::datamodel-img-11.jpg[]
+
+* xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Data validator]
+* xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Species matching]
+* xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Derived datasets]
+
+[.bannerblocksmore]
+[.blocklink]
+xref:data-use::index.adoc[View all tools]
+--
