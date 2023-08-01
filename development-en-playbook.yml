@@ -48,6 +48,8 @@ ui:
   supplemental_files: ./supplemental_ui
 asciidoc:
   attributes:
+    idprefix: ''
+    idseparator: '-'
     page-pagination: yes
     language: en
     null: ␀

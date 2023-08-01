@@ -18,8 +18,8 @@ Please send any suggestions for improvements or corrections to helpdesk@gbif.org
 
 [.blocks]
 * xref:data-use::index.adoc[image:td-bg-01.png[]]
-** xref:data-use::index.adoc[Downloading data]
-** How to download data from GBIF, including using xref:data-use::rgbif.adoc[] and xref:data-use::pygbif.adoc[].
+** xref:data-use::index.adoc[Using data]
+** How to use data from GBIF, including xref:data-use::index.adoc#data-downloads[downloads], xref:data-use::rgbif.adoc[] and xref:data-use::pygbif.adoc[].
 
 * xref:openapi::index.adoc[image:td-bg-02.png[]]
 ** xref:openapi::index.adoc[API Reference]

@@ -30,6 +30,8 @@ urls:
   redirect_facility: httpd
 asciidoc:
   attributes:
+    idprefix: ''
+    idseparator: '-'
     page-pagination: yes
     language: es
     null: ␀
