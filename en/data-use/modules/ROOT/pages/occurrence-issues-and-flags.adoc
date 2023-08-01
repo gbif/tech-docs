@@ -8,7 +8,8 @@ More than *60 issues and flags* have been created to deal with common data quali
 // Check for missing issues:
 // (for i in $(curl -Ss https://raw.githubusercontent.com/gbif/gbif-api/dev/src/main/java/org/gbif/api/vocabulary/OccurrenceIssue.java | grep -Po '^  \K([A-Z0-9_]{5,})'); do grep --quiet $i occurrence-issues-and-flags.adoc || echo "$i missing"; done) | grep -v -e COORDINATE_ACCURACY_INVALID -e COORDINATE_PRECISION_UNCERTAINTY_MISMATCH -e POSSIBLY_ON_LOAN
 
-.Geospatial issues
+== Geospatial issues
+
 [cols="20%,60%,10%,10%"]
 |===
 |Flag name | Definition | Terms | Example
@@ -184,7 +185,8 @@ More than *60 issues and flags* have been created to deal with common data quali
 |https://www.gbif.org/occurrence/search?issue=CONTINENT_DERIVED_FROM_COORDINATES[example]
 |===
 
-.Taxonomic issues
+== Taxonomic issues
+
 [cols="20%,60%,10%,10%"]
 |===
 |Flag name | Definition | Terms | Example
@@ -217,7 +219,8 @@ Reasons include:
 
 |===
 
-.Date issues
+== Date issues
+
 [cols="20%,60%,10%,10%"]
 |===
 |Flag name | Definition | Terms | Example
@@ -303,7 +306,8 @@ Reasons include:
 |https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_UNLIKELY[example]
 |===
 
-.Vocabulary issues
+== Vocabulary issues
+
 [cols="20%,60%,10%,10%"]
 |===
 |Flag name | Definition | Terms | Example
@@ -325,7 +329,8 @@ Reasons include:
 
 |===
 
-.GRSciColl issues
+== GRSciColl issues
+
 [cols="20%,60%,10%,10%"]
 |===
 |Flag name | Definition | Terms | Example
@@ -372,7 +377,8 @@ Reasons include:
 
 |===
 
-.Other issues
+== Other issues
+
 [cols="20%,60%,10%,10%"]
 |===
 |Flag name | Definition | Terms | Example

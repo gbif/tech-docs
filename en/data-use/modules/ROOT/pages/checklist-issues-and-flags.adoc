@@ -8,8 +8,10 @@ More than *30 issues and flags* have been created to deal with common data quali
 // Check for missing issues:
 // (for i in $(curl -Ss https://raw.githubusercontent.com/gbif/gbif-api/dev/src/main/java/org/gbif/api/vocabulary/NameUsageIssue.java | grep -Po '^  \K([A-Z0-9_]{5,})'); do grep --quiet $i checklist-issues-and-flags.adoc || echo "$i missing"; done)
 
+== Checklist issues
 
-.Checklist issues
+These issues can be on a name in any published checklist.
+
 [cols="20%,60%,10%,10%"]
 |===
 |*Name unparsable*
@@ -165,7 +167,10 @@ More than *30 issues and flags* have been created to deal with common data quali
 |https://www.gbif.org/species/search?issue=RELATIONSHIP_MISSING&advanced=1[example]
 |===
 
-.GBIF Backbone
+== GBIF Backbone
+
+These issues are only present on names contained in the GBIF backbone taxonomy.
+
 [cols="20%,60%,10%,10%"]
 |===
 |*Basionym relation derived*
