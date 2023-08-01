@@ -57,7 +57,7 @@ This makes two columns out of the list items.
 
 [.bannerblocks]
 --
-image::datamodel-img-11.jpg[]
+image::tools-2.png[]
 
 * xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Data validator]
 * xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Species matching]
