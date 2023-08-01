@@ -11,8 +11,8 @@ Please send any suggestions for improvements or corrections to helpdesk@gbif.org
 == What are you looking for?
 
 ++++
-<div id="search-field">
-  <input id="search-input" type="text" placeholder="Search" style="width: 100%; font-size: 2rem; background: #f2f2f2; padding: 0.25rem 1rem; border: none; margin: 1rem 0;">
+<div id="search-field" class="main-page-search">
+  <input id="search-input" type="text" placeholder="Search" style="display: block; width: 100%; font-size: 2rem; background: #f2f2f2; padding: 0.25rem 1rem; border: none; margin: 1rem 0;">
 </div>
 ++++
 
