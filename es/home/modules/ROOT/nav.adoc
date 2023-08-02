@@ -1,3 +1,2 @@
-
-* xref:index.adoc[Bienvenido]
-* xref:language.adoc[Idioma]
+// Note the "home" section navigation is not currently visible, as the pages use the "home" layout which omits it.
+* xref:index.adoc[Welcome]
