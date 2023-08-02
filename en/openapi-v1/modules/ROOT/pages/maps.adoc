@@ -23,7 +23,7 @@ The following features are supported:
 * For certain basis of record types, the time period may be customized by decade; e.g. map the observations of a species since 1970
 
 This service is intended for use with commonly used clients such as the https://developers.google.com/maps/[Google Maps API], https://leafletjs.com/[Leaflet JS library] or the https://modestmaps.com[Modest Maps JS library].
-These libraries allow the GBIF layers to be visualized with other content, such as those coming from https://www.opengeospatial.org/standards/wms[Web Map Service (WMS)] providers. _It should be noted that the mapping API is not a WMS service, nor does it support WFS capabilities._ The examples on this page use the Leaflet library.
+These libraries allow the GBIF layers to be visualized with other content, such as those coming from https://www.opengeospatial.org/standards/wms[Web Map Service (WMS)] providers. _It should be noted that the mapping API is not a WMS service, nor does it support WFS capabilities._
 
 == The tile URL format
 
