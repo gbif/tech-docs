@@ -57,6 +57,7 @@ asciidoc:
     idprefix: ''
     idseparator: '-'
     page-pagination: yes
+    page-toctitle: 'Page contents'
     language: en
     null: ␀
 antora:
