@@ -6,7 +6,7 @@ The GBIF technical documentation describes how users can access data from GBIF. 
 
 The documentation will later include information for data publishers, including guidelines on best practices for publishing high-quality data, references to the relevant standards, and more detailed information on the data quality checks and alignments made to published data.
 
-Please send any suggestions for improvements or corrections to helpdesk@gbif.org, or create an issue at https://github.com/gbif/tech-docs/issues.
+Please send any suggestions for improvements or corrections to helpdesk@gbif.org, or create an issue on the https://github.com/gbif/tech-docs/issues[GitHub tech-docs project].
 
 == What are you looking for?
 
