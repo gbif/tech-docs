@@ -1,10 +1,10 @@
 = Occurrence clustering
 
-Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
+There might be duplicated records in the GBIF index. Some records may have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
 
 There are many valid reasons why these duplicates appear on GBIF. Sometimes https://discourse.gbif.org/t/duplicate-observations-across-datasets/3069[an observation was recorded in two different systems], sometimes several records correspond to herbaria duplicates (you can check https://www.gbif.org/news/4n8ZCfuK3zxseKAHRMcfA8/award-winner-uses-data-mining-and-machine-learning-to-identify-collectors-and-duplicated-herbarium-specimens[the work of Nicky Nicolson on the topic]), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform…
 
-This is why last year, we released an experimental data-clustering feature aiming to identify potentially related records on GBIF. The goal was not only to detect potential duplicates but to also find interesting relationships, such as between typification records or records originating from Natural History collections, DNA-derived sequences and citations of materials examined when publishing taxonomic treatments in journal articles.
+This is why we released an experimental data-clustering feature aiming to identify potentially related records on GBIF. The goal was not only to detect potential duplicates but to also find interesting relationships, such as between typification records or records originating from Natural History collections, DNA-derived sequences and citations of materials examined when publishing taxonomic treatments in journal articles.
 
 Records that have been included in a cluster can be found with the “is in cluster” filter in https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true[the occurrence search]. Each occurrence page belonging to a cluster will have a “CLUSTER” tab displaying the potentially related records (see a screenshot of https://www.gbif.org/occurrence/2871636339/cluster[this example] below).
 
@@ -28,7 +28,7 @@ The fields used to identify and group the candidates are a subset of what is use
 
 In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them.
 
-In the table below, I summarize how those assertions are made but if you would like more details, you can check the https://github.com/gbif/pipelines/blob/master/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java[source code].
+The table below summarizes how those assertions are made but for more details, check the https://github.com/gbif/pipelines/blob/master/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java[source code].
 
 [cols="1,1,1",frame=all,grid=all,strips=even]
 |===
