@@ -1,4 +1,25 @@
 = Tools
 
-Here you will find tools that are developed and maintained by GBIF. For a more comprehensive collection of tools relevant to biodiversity data curation, publication and use, check https://www.gbif.org/resource/search?contentType=tool[the tools catalogue]
+Tools support all areas relevant to biodiversity data management, from data capture and curation over data standardization and publication to data use and citation. They include stand-alone software packages, software libraries, and online services, and require varying degrees of technical knowledge to use. Some tools are mature and curated products, while others serve as demonstrators and are more experimental.
 
+Here, you will find tools that are developed and maintained by GBIF. For a more comprehensive collection of tools relevant to biodiversity data curation, publication, and use, check https://www.gbif.org/resource/search?contentType=tool[the tools catalogue]
+
+== IPT
+
+== Data Validator
+
+== Derived Datasets
+
+== rgbif
+
+== pygbif
+
+== Species Matcher
+
+== Name Parser
+
+== Sequence ID Tool
+// qualify as "experimental"?
+
+== MAXENT
+// include?
