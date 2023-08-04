@@ -1,13 +1,4 @@
-= GBIF Data Processing
+= Tools
 
-image::data-processing.png[]
+Here you will find tools that are developed and maintained by GBIF. For a more comprehensive collection of tools relevant to biodiversity data curation, publication and use, check https://www.gbif.org/resource/search?contentType=tool[the tools catalogue]
 
-Every single occurrence record in GBIF goes through a series of processing steps until it becomes available on GBIF.org.  The overall process is described on https://www.gbif.org/article/5i3CQEZ6DuWiycgMaaakCo/gbif-infrastructure-data-processing[GBIF.org].
-
-In addition, also see: 
-
-* xref:clustering-occurrences.adoc[]
-* https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids[improving occurrence ID stability]
-* https://data-blog.gbif.org/post/gbif-backbone-taxonomy/[a high-level overview of the taxonomic backbone generation]
-
-image::gbif_ecosystem_overview.jpg[]
