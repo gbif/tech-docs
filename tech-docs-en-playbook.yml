@@ -26,6 +26,9 @@ content:
     - url: .
       start_path: ./en/openapi-v2
       branches: main
+    - url: .
+      start_path: ./en/tools
+      branches: main
     #- url: .
     #  start_path: ./en/guides
     #  branches: main
