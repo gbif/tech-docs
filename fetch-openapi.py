@@ -167,7 +167,7 @@ for path in metrics["paths"]:
     print("Added "+path+" to occurrence")
 
 # Schemas need duplicating
-metricsSchemas = ['DimensionObject', 'Rollup', 'CountQuery', 'Parameter']
+metricsSchemas = ['DimensionObject', 'Rollup']
 for schema in metricsSchemas:
     occurrence['components']['schemas'][schema] = metrics['components']['schemas'][schema]
 print("")
