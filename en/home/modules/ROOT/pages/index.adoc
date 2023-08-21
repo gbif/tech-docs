@@ -4,7 +4,7 @@
 
 The GBIF technical documentation describes how users can access data from GBIF.  It provides information on the available data, how to access it, where it has been cleaned or checked for data quality, and how it should be cited.
 
-The documentation will later include information for data publishers, including guidelines on best practices for publishing high-quality data, references to the relevant standards, and more detailed information on the data quality checks and alignments made to published data.
+Apart from the already available documentation of the GBIF Integrated Publishing Toolkit (IPT), the documentation will later link to additional information for data publishers, including guidelines on best practices for publishing high-quality data, references to the relevant standards, and more detailed information on the data quality checks and alignments made to published data.
 
 Please send any suggestions for improvements or corrections to helpdesk@gbif.org, or create an issue on the https://github.com/gbif/tech-docs/issues[GitHub tech-docs project].
 
