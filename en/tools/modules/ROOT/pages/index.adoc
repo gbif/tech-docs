@@ -31,11 +31,13 @@ When created, a derived dataset is assigned a unique DOI that can be used to cit
 
 == rgbif
 
-*rgbif* is a library maintained by GBIF for the R statistical programming language.  See xref:rgbif.adoc[].
+*rgbif* is a library maintained by GBIF for the R statistical programming language.  See xref:rgbif.adoc[]
+// TODO: fix syntax for cross-section reference
 
 == pygbif
 
-*pygbif* is a library maintained by GBIF for the Python programming language.  See xref:pygbif.adoc[].
+*pygbif* is a library maintained by GBIF for the Python programming language.  See xref:pygbif.adoc[]. 
+// TODO: fix syntax for cross-section reference
 
 == Species Matcher
 
