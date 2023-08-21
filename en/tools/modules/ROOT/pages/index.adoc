@@ -6,20 +6,53 @@ Here, you will find tools that are developed and maintained by GBIF. For a more 
 
 == IPT
 
+The https://www.gbif.org/ipt[Integrated Publishing Toolkit (*IPT*)] is a free, open-source software tool used to publish and share biodiversity datasets through the GBIF network. The IPT can also be configured with a DataCite account in order to assign DOIs to datasets transforming it into a data repository.
+
+- for further documentation, see the https://ipt.gbif.org/manual/en/ipt/latest/[IPT manual], including https://ipt.gbif.org/manual/en/ipt/latest/releases[latest releases], https://ipt.gbif.org/manual/en/ipt/latest/installation#installation-method[installation methods], https://ipt.gbif.org/manual/en/ipt/latest/faq#usage[usage], https://github.com/gbif/ipt/[development], and https://crowdin.com/project/gbif-ipt[translations].
+
+
 == Data Validator
+
+The https://www.gbif.org/tools/data-validator/about[GBIF *data validator*] is a service that allows anyone with a GBIF-relevant dataset to receive a report on the syntactical correctness and the validity of the content contained within the dataset. By submitting a dataset to the validator, you can go through the validation and interpretation procedures usually associated with publishing in GBIF and quickly determine potential issues in data - without having to publish it. 
+
+- further technical documentation pending
 
 == Derived Datasets
 
+https://www.gbif.org/derived-dataset/about[*Derived datasets*] are citable records of GBIF-mediated occurrence data derived either from:
+
+* a GBIF.org download that has been filtered/reduced significantly, or
+* data accessed through a cloud service, e.g. Microsoft AI for Earth (Azure), or
+* data obtained by any means for which no DOI was assigned, but one is required (e.g. third-party tools accessing the GBIF search API).
+
+When created, a derived dataset is assigned a unique DOI that can be used to cite the data. 
+
+- further technical documentation pending
+
 == rgbif
+
+*rgbif* is a library maintained by GBIF for the R statistical programming language.  See xref:rgbif.adoc[].
 
 == pygbif
 
+*pygbif* is a library maintained by GBIF for the Python programming language.  See xref:pygbif.adoc[].
+
 == Species Matcher
+
+The https://www.gbif.org/tools/species-lookup[*species lookup tool*] can be used to normalize species names from a csv file against the GBIF taxonomic backbone.
+The file is expected to be have a column called 'scientificName' and an optional column 'kingdom' and 'id'. 
+
+- further technical documentation pending
 
 == Name Parser
 
+The GBIF https://www.gbif.org/tools/name-parser[*name parser*] is an online tool that allows to split scientific names into their components and to check them against the taxonomic backbone used by GBIF. It can be used to automate some processes while digitizing or curating lists of scientific names.  See documentation https://www.gbif.org/tools/name-parser/about[here].
+
 == Sequence ID Tool
 // qualify as "experimental"?
+The *sequence ID* tool will query taxonomy reference databases for Fungi, Animals, Bacteria and Archaea, based on ITS sequences for Fungi, COI sequences for Animals or 16S sequences for Bacteria and Archaea. See https://www.gbif.org/tools/sequence-id/about[here] for further details.
 
-== MAXENT
+- further technical documentation pending
+
+// == MAXENT
 // include?
