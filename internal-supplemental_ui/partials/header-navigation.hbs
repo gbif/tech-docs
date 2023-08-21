@@ -1,1 +1,6 @@
-../../supplemental_ui/partials/header-navigation.hbs
+<!--div class="navbar-item has-dropdown is-hoverable">
+  <a class="navbar-link" href="">Internal</a>
+  <div class="navbar-dropdown">
+    {{#with (resolvePage 'informatics::index.adoc')}}<a class="navbar-item" href="{{relativize url}}">{{{title}}}</a>{{/with}}
+  </div>
+</div-->

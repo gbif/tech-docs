@@ -1,0 +1,16 @@
+<div class="navbar-item has-dropdown is-hoverable">
+  <a class="navbar-link">
+    <svg class="navbar-feedback" fill="#fcfcfc" height="24" viewBox="0 0 100 100" width="24" xmlns="http://www.w3.org/2000/svg" >
+      <path d="M15.5,15.498h69v51.754H67.253v17.25L50,67.252H15.5V15.498z"/>
+    </svg>
+  </a>
+  <div class="navbar-dropdown">
+    <a class="navbar-item" href="https://github.com/gbif/informatics/issues/new?labels=Feedback&body=Feedback+on+[{{page.title}}](https://tech-docs.gbif-uat.org/en{{page.url}}) ([Github source for this page](../blob/main/{{page.origin.startPath}}/modules/{{page.module}}/pages/{{page.relativeSrcPath}}))%0A%0AWrite+your+feedback+here.">Leave feedback on GitHub</a>
+    <a class="navbar-item" href="mailto:informatics@gbif.org?subject=Feedback on informatics internal documentation '{{page.title}}'&body=Feedback on https://tech-docs.gbif-uat.org/en{{page.url}}">Send feedback by email</a>
+    {{#if (and page.fileUri (not env.CI))}}
+    <a class="navbar-item" href="{{page.fileUri}}">Edit this page</a>
+    {{else if (and page.editUrl (or env.FORCE_SHOW_EDIT_PAGE_LINK (not page.origin.private)))}}
+    <a class="navbar-item" href="{{page.editUrl}}">Edit this page on GitHub</a>
+    {{/if}}
+  </div>
+</div>
