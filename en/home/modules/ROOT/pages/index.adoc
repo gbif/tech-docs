@@ -59,9 +59,10 @@ This makes two columns out of the list items.
 --
 image::tools-2.png[]
 
+* xref:tools::index.adoc#ipt[image:tool-icon.png[] IPT]
 * xref:tools::index.adoc#data-validator[image:tool-icon.png[] Data validator]
-* xref:tools::index.adoc#species-matcher[image:tool-icon.png[] Species matching]
 * xref:tools::index.adoc#derived-datasets[image:tool-icon.png[] Derived datasets]
+// * xref:tools::index.adoc#species-matcher[image:tool-icon.png[] Species matching]
 
 [.bannerblocksmore]
 [.blocklink]
