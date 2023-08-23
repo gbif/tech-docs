@@ -1,0 +1,5 @@
+name: system-components
+title: System components
+version: ~
+nav:
+- modules/ROOT/nav.adoc
