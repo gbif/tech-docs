@@ -37,9 +37,16 @@ Please send any suggestions for improvements or corrections to helpdesk@gbif.org
 ** xref:data-publishing::index.adoc[Data Publishing]
 ** Information for new and experienced publishers of data to GBIF
 
+* xref:system-components::index.adoc[image:td-bg-06.png[]]
+** xref:system-components::index.adoc[System components]
+** Parts of the GBIF system setup (registry, GRSciColl etc)
+
+////
+moving IPT documentation into the tools section - this section to be deleted
 * https://ipt.gbif.org/manual/[image:td-bg-06.png[]]
 ** https://ipt.gbif.org/manual/[IPT]
 ** The GBIF Integrated Publishing Toolkit (IPT) manual
+////
 
 [.discrete]
 == Explore tool documentation
