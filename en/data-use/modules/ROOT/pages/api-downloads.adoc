@@ -6,7 +6,7 @@ Occurrence downloads are created asynchronously — the user requests a download
 
 It is necessary to register as a user on https://www.gbif.org/[GBIF.org] to create a download request, and to authenticate using the username (not the email) and password.
 
-Complete technical details are provided in the xref:v1@openapi::occurrence.adoc#tag/Occurrence-downloads[API reference documentation].
+Complete technical details are provided in the xref:v1@openapi::occurrence.adoc#/tag/Occurrence-downloads[API reference documentation].
 
 == Requesting an occurrence download
 
