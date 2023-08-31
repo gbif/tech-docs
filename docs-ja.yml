@@ -2,6 +2,8 @@ site:
   title: GBIF IPT ユーザーマニュアル
   url: /manual/ja
   start_page: ipt::index.adoc
+  keys:
+    language: ja
 content:
   edit_url: 'https://ipt.gbif.org/manual/ja/ipt/latest/translations'
   sources:
@@ -10,7 +12,7 @@ content:
       start_path: docs/ja
 ui:
   bundle:
-    url: ./theme/build/ui-bundle.zip
+    url: https://builds.gbif.org/job/tech-docs-theme/lastSuccessfulBuild/artifact/build/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental_ui
 output:

@@ -2,16 +2,18 @@ site:
   title: GBIF IPT User Manual (UAT)
   url: /manual/en
   start_page: ipt::index.adoc
+  keys:
+    language: en
 content:
   # Send edits to the master page, even for old versions.
   edit_url: 'https://github.com/gbif/ipt/edit/master/{path}'
   sources:
     - url: git@github.com:gbif/ipt.git
-      branches: [ipt-2.4-docs, master]
+      branches: [ipt-2.4-docs, master, master-ipt-3-frictionless]
       start_path: docs/en
 ui:
   bundle:
-    url: ./theme/build/ui-bundle.zip
+    url: https://builds.gbif.org/job/tech-docs-theme/lastSuccessfulBuild/artifact/build/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental_ui
 output:
@@ -28,6 +30,7 @@ urls:
 asciidoc:
   attributes:
     page-pagination: yes
+    page-toctitle: 'Page contents'
     language: en
 antora:
   extensions:

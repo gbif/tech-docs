@@ -1,7 +1,9 @@
 site:
-  title: Manual del Usuario del IPT
+  title: Manual del Usuario del IPT (Dev)
   url: /manual/es
   start_page: ipt::index.adoc
+  keys:
+    language: es
 content:
   edit_url: 'https://ipt.gbif.org/manual/es/ipt/latest/translations'
   sources:
@@ -10,7 +12,7 @@ content:
       start_path: docs/es
 ui:
   bundle:
-    url: ./theme/build/ui-bundle.zip
+    url: https://builds.gbif.org/job/tech-docs-theme/lastSuccessfulBuild/artifact/build/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental_ui
 output:
