@@ -97,44 +97,6 @@ This is accepted without an issue.  The precision of the eventDate is retained, 
 
 ==== 2. Mismatching dates
 
-.Mismatching dates — month and day are outside the eventDate interval
-[.mismatching,stripes=even]
-|====
-|             | eventDate             | year | month | day | startDayOfYear | endDayOfYear | issues
-
-| Published   | 2023-01-13/2023-02-03 | 2023 |    03 |  03 |                |              |
-| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_DATE_MISMATCH
-|====
-
-.Mismatching dates — day is different to the day of the eventDate
-[.mismatching,stripes=even]
-|====
-|             | eventDate             | year | month | day | startDayOfYear | endDayOfYear | issues
-
-| Published   | 2023-01-13            | 2023 |    01 |  03 |                |              |
-| Interpreted | 2023-01               | 2023 |    01 |     |                |              | RECORDED_DATE_MISMATCH
-|====
-
-.Mismatching dates — the beginning and end of the eventDate interval are different to the startDayOfYear and endDayOfYear
-[.mismatching,stripes=even]
-|====
-|             | eventDate             | year | month | day | startDayOfYear | endDayOfYear | issues
-
-| Published   | 2023-01-13/2023-02-03 |      |       |     |             18 |           44 |
-| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_DATE_MISMATCH
-|====
-
-.Mismatching dates — the month is different to the month in the eventDate.
-[.mismatching,stripes=even]
-|====
-|             | eventDate             | year | month | day | startDayOfYear | endDayOfYear | issues
-
-| Published   | 2023-01               | 2023 |    02 |     |                |              |
-| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_DATE_MISMATCH
-|====
-
-#Other way#
-
 .Mismatching dates
 [.mismatching,stripes=even]
 |====
@@ -156,8 +118,6 @@ This is accepted without an issue.  The precision of the eventDate is retained, 
 | Published   | 2023-01               | 2023 |    02 |     |                |              |
 | Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_DATE_MISMATCH
 |====
-
-
 
 
 == Occurrence identified date
