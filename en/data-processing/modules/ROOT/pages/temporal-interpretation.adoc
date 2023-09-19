@@ -1,10 +1,14 @@
 = Date and time interpretation
 
+== General date and time parsing
+
 Dates and times published in Darwin Core should use the https://en.wikipedia.org/wiki/ISO_8601[ISO 8601-1:2019] standard.  A single day is represented in year-month-day (`YYYY-MM-DD`) format, for example `2023-09-18`.  A time can be added by adding `T` and the time in 24 hour format, for example `2023-09-18T13:27:00`.
+
+Time zones may be provided: `2023-09-18T13:27:00Z` (UTC, GMT) and `2023-09-18T15:27:00+02:00` (Central European Summer Time) both represent the same point in time, but see below for how we handle time zone information.
 
 Where the date is imprecise, and only known to month or year resolution, the day or month may be omitted.  `2023-09` means some time in September 2023, `2023` means some time in 2023.
 
-An interval of time may be represented by separating two date-times with equal precision with `/`, for example `2023-09-05/2023-09-18` means some time between 5 September 2023 and 18 September 2023. `2023-01/2023-09` means January to September 2023, `2000/2023` covers 23 years, and `2023-09-10T03:54:00/2023-09-18T13:27:30` is a range with the start and end precise to the second.
+An interval of time may be represented by separating two date-times with equal precision with `/`, for example `2023-09-05/2023-09-18` means some time between 5 September 2023 and 18 September 2023. `2023-01/2023-09` means January to September 2023, `2000/2023` covers 24 years from the start of 2000 to the end of 2023, and `2023-09-10T03:54:00/2023-09-18T13:27:30` is a range with the start and end precise to the second.
 
 ISO 8601-1:2019 includes an abbreviated form for date intervals, where date parts that are unchanged may be omitted.  To make parsing easier for API users we normalize this to the full form: `2023-09-05/18` becomes `2023-09-05/2023-09-18`, `2023-01/09` becomes `2023-01/2023-09` and so on.
 
@@ -58,7 +62,7 @@ Note there is no time zone information — timezone information is wildly differ
 [TIP]
 .Advice for publishers
 ====
-It is perfectly acceptable to provide only the eventDate field, and thus allow GBIF's interpretation to fill in year, month, day, startDayOfYear and endDayOfYear.  Alternatively, providing only year, year+month, or year+month+day (depending on available data) is also fine.
+*It is perfectly acceptable to provide only the eventDate field*, and thus allow GBIF's interpretation to fill in year, month, day, startDayOfYear and endDayOfYear.  Alternatively, providing only year, year+month, or year+month+day (depending on available data) is also fine.
 
 Avoid providing incorrect or incomplete data — do not set the day (as part of the eventDate or as the day) to 0 or 1 if only the year or month is known.
 ====
