@@ -12,10 +12,6 @@ import xml.dom.minidom
 
 DWC_OCCURRENCE="https://rs.gbif.org/core/dwc_occurrence_2022-02-02.xml"
 SIMPLE_MULTIMEDIA="http://rs.gbif.org/terms/1.0/Multimedia"
-OPENAPI_OCCURRENCE="https://tech-docs.gbif-dev.org/openapi/occurrence.json"
-#OPENAPI_OCCURRENCE="http://localhost:8080/v3/api-docs"
-GBIF_API = 'http://api.gbif-dev.org/v1'
-#GBIF_API = 'http://localhost:8080'
 
 if len(sys.argv) != 3:
     print("Need 2 arguments, output directory and environment")
@@ -24,9 +20,21 @@ if len(sys.argv) != 3:
 output = sys.argv[1]
 env = sys.argv[2]
 
-if env == 'dev':
+if env == 'local':
+    OPENAPI_OCCURRENCE="http://localhost:8080/v3/api-docs"
+    GBIF_API = 'http://localhost:8080'
+    indent = 2
+elif env == 'dev':
+    OPENAPI_OCCURRENCE="https://tech-docs.gbif-dev.org/openapi/occurrence.json"
+    GBIF_API = 'http://api.gbif-dev.org/v1'
+    indent = 2
+elif env == 'uat':
+    OPENAPI_OCCURRENCE="https://tech-docs.gbif-uat.org/openapi/occurrence.json"
+    GBIF_API = 'http://api.gbif-uat.org/v1'
     indent = 2
 else:
+    OPENAPI_OCCURRENCE="https://tech-docs.gbif.org/openapi/occurrence.json"
+    GBIF_API = 'http://api.gbif.org/v1'
     indent = None
 
 def parseExtension(url):

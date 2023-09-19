@@ -1,1 +1,2 @@
+* xref:temporal-interpretation.adoc[]
 * xref:clustering-occurrences.adoc[]
