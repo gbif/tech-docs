@@ -30,7 +30,7 @@ In this second phase, the system will compare all records in the candidate set t
 
 The table below summarizes how those assertions are made but for more details, check the https://github.com/gbif/pipelines/blob/master/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java[source code].
 
-[cols="1,1,1",frame=all,grid=all,strips=even]
+[cols="1,1,1",frame=all,grid=all,stripes=even]
 |===
 | Assertion | Fields checked | Condition checked
 
@@ -59,7 +59,7 @@ The table below summarizes how those assertions are made but for more details, c
 The table below summarizes the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together.
 
 .Combination of assertion conditions to create cluster
-[.clustering-table-conditions,cols="8,14*^1",frame=all,grid=all,strips=even]
+[.clustering-table-conditions,cols="8,14*^1",frame=all,grid=all,stripes=even]
 |===
 |Assertion                      | | | | | | | | | | | | | |
 

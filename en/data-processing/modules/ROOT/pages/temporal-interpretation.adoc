@@ -1,0 +1,134 @@
+= Date and time interpretation
+
+Dates and times published in Darwin Core should use the https://en.wikipedia.org/wiki/ISO_8601[ISO 8601-1:2019] standard.  A single day is represented in year-month-day (`YYYY-MM-DD`) format, for example `2023-09-18`.  A time can be added by adding `T` and the time in 24 hour format, for example `2023-09-18T13:27:00`.
+
+Where the date is imprecise, and only known to month or year resolution, the day or month may be omitted.  `2023-09` means some time in September 2023, `2023` means some time in 2023.
+
+An interval of time may be represented by separating two date-times with equal precision with `/`, for example `2023-09-05/2023-09-18` means some time between 5 September 2023 and 18 September 2023. `2023-01/2023-09` means January to September 2023, `2000/2023` covers 23 years, and `2023-09-10T03:54:00/2023-09-18T13:27:30` is a range with the start and end precise to the second.
+
+ISO 8601-1:2019 includes an abbreviated form for date intervals, where date parts that are unchanged may be omitted.  To make parsing easier for API users we normalize this to the full form: `2023-09-05/18` becomes `2023-09-05/2023-09-18`, `2023-01/09` becomes `2023-01/2023-09` and so on.
+
+GBIF's system only supports date-times representing intervals on some fields; see below.
+
+Dates provided in other formats (`March 1986`, `13.03.1986`, `03/13/1986`, `13.III.1986`, `13 March 1986 to 5 April 1987` and so on) _may_ be interpreted, where we can do so without ambiguity, but these formats are not recommended.  Occurrences with dates we are unable to process will be flagged with the https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_INVALID[RECORDED_DATE_INVALID], https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_INVALID[IDENTIFIED_DATE_INVALID], https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_INVALID[GEOREFERENCED_DATE_INVALID] or https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_INVALID[MODIFIED_DATE_INVALID] issues.  Darwin Core includes a https://dwc.tdwg.org/terms/#dwc:verbatimEventDate[verbatimEventDate] field for recording the original date.
+
+Additionally, occurrences will be flagged with the https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_UNLIKELY[RECORDED_DATE_UNLIKELY], https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_UNLIKELY[IDENTIFIED_DATE_UNLIKELY], https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_UNLIKELY[GEOREFERENCED_DATE_UNLIKELY] or https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_UNLIKELY[MODIFIED_DATE_UNLIKELY] issues if these dates are in the future, or so far in the past as to be unlikely.
+
+== Occurrence recorded date
+
+Eight Darwin Core fields represent all or part of the date-time an occurrence was recorded:
+
+* https://dwc.tdwg.org/terms/#dwc:eventDate[eventDate]
+* https://dwc.tdwg.org/terms/#dwc:eventTime[eventTime] — not interpreted
+* https://dwc.tdwg.org/terms/#dwc:year[year]
+* https://dwc.tdwg.org/terms/#dwc:month[month]
+* https://dwc.tdwg.org/terms/#dwc:day[day]
+* https://dwc.tdwg.org/terms/#dwc:startDayOfYear[startDayOfYear]
+* https://dwc.tdwg.org/terms/#dwc:endDayOfYear[endDayOfYear]
+* https://dwc.tdwg.org/terms/#dwc:verbatimEventDate[verbatimEventDate] — not used during interpretation
+
+With six fields there is potential for conflict between the values.  Our interpretation procedures try to find a date consistent with the provided values, adding issues to the occurrence record if there are problems.  If values are missing but do not conflict, they are added without an issue being flagged.
+
+These are examples of records after interpretation, where the six fields are consistent:
+
+.Consistent event date fields *after interpretation*
+[.consistent-after,stripes=even]
+|====
+| eventDate                               | year | month | day | startDayOfYear | endDayOfYear
+
+| 2023-01-13T09:32:00                     | 2023 |     1 |  13 |             13 |           13
+| 2023-01-13T09:32:00/2023-01-13T18:12:00 | 2023 |     1 |  13 |             13 |           13
+| 2023-01-13T09:32:00/2023-01-15T20:22:00 | 2023 |     1 |     |             13 |           15
+
+| 2023-01-13                              | 2023 |     1 |  13 |             13 |           13
+| 2023-01-13/2023-01-15                   | 2023 |     1 |     |             13 |           15
+| 2023-01-13/2023-02-03                   | 2023 |       |     |             13 |           34
+| 2023-01-13/2024-03-09                   |      |       |     |             13 |           69
+
+| 2023-01                                 | 2023 |     1 |     |                |
+| 2023-01/2023-02                         | 2023 |       |     |                |
+| 2023-01/2024-02                         |      |       |     |                |
+
+| 2023                                    | 2023 |       |     |                |
+| 2023/2024                               |      |       |     |                |
+|====
+
+Note there is no time zone information — timezone information is wildly different across all data, and it is not possible to handle it consistently.  A record provided with eventDate `2023-01-13T09:32:00Z` (UTC) and another provided with `2023-01-13T09:32:00+14:00` (Line Islands, Kiribati) will both be interpreted to `2023-01-13T09:32:00`.
+
+[TIP]
+.Advice for publishers
+====
+It is perfectly acceptable to provide only the eventDate field, and thus allow GBIF's interpretation to fill in year, month, day, startDayOfYear and endDayOfYear.  Alternatively, providing only year, year+month, or year+month+day (depending on available data) is also fine.
+
+Avoid providing incorrect or incomplete data — do not set the day (as part of the eventDate or as the day) to 0 or 1 if only the year or month is known.
+====
+
+Publishing a combination of eventDate and/or year+month+day and/or year+startDayOfYear+endDayOfYear causes GBIF to calculate a consistent set of recorded date fields.  If you set more than one of these sets of fields, ensure they are consistent!
+
+=== Handling inconsistencies
+
+==== 1. A year+month+day for a date within the eventDate range
+
+This is accepted without an issue.  The precision of the eventDate is retained, and the year, month and day fields are blanked if the range extends over more than one year, month and/or day.
+
+.A year+month+day for a date within the eventDate range
+[.ymd-within-interval,stripes=even]
+|====
+|             | eventDate             | year | month | day | startDayOfYear | endDayOfYear | issues
+
+| Published   | 2023-01-13/2023-02-03 | 2023 |    01 |  25 |             13 |           34 |
+| Interpreted | 2023-01-13/2023-02-03 | 2023 |       |     |             13 |           34 |
+
+| Published   | 2023-01-13/2023-02-03 | 2023 |    01 |  25 |                |              |
+| Interpreted | 2023-01-13/2023-02-03 | 2023 |       |     |             13 |           34 |
+|====
+
+==== 2. Mismatching dates
+
+.Mismatching dates
+[.mismatching,stripes=even]
+|====
+|             | eventDate             | year | month | day | startDayOfYear | endDayOfYear | issues
+
+| Published   | 2023-01-13/2023-02-03 | 2023 |    03 |  03 |                |              |
+| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_DATE_MISMATCH
+
+| Published   | 2023-01-13            | 2023 |    01 |  03 |                |              |
+| Interpreted | 2023-01               | 2023 |    01 |     |                |              | RECORDED_DATE_MISMATCH
+
+| Published   | 2023-01-13/2023-02-03 |      |       |     |             18 |           44 |
+| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_DATE_MISMATCH
+
+| Published   | 2023-01               | 2023 |    02 |     |                |              |
+| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_DATE_MISMATCH
+|====
+
+== Occurrence identified date
+
+The https://dwc.tdwg.org/terms/#dwc:identifiedDate[identifiedDate] field is interpreted as a single date or date-time (not an interval).
+
+== Georeferenced date
+
+The https://dwc.tdwg.org/terms/#dwc:georeferencedDate[georeferencedDate] field is interpreted as a single date or date-time (not an interval).
+
+== Modified date
+
+The https://dwc.tdwg.org/terms/#dc:modified[modified] field is interpreted as a single date or date-time (not an interval).
+
+== Searching dates
+
+Occurrences are returned by the search and download APIs if the occurrence date/date range is **completely within** the query date or date range.
+
+.Date searches
+[.search-examples,stripes=even]
+|===
+|                                        | Record with eventDate 2023-01-11 |    2021-01 | 2023-01-11/12 |  2020/2021 | Meaning of the search
+
+| Search eventDate=2023-01-11            |                         included | _excluded_ |    _excluded_ | _excluded_ | Search for "on 11 January 2023"
+| Search eventDate=2023-01-11,2023-01-12 |                         included | _excluded_ |      included | _excluded_ | Search for "from the start of 11 January 2023 until the end of 12 January 2023"
+| Search eventDate=*,2023-01             |                         included |   included |      included | _excluded_ | Search for "before end of January 2023"
+| Search eventDate=2023-01,2023-01       |                         included |   included |      included | _excluded_ | Search for "after start of January 2023 and before end of January 2023"
+| Search eventDate=2023-01               |                         included |   included |      included | _excluded_ | Search for "after start of January 2023 and before end of January 2023"
+|===
+
+This implementation avoids returning occurrences with eventDates like "2000/2021" in many queries. (There are millions of occurrences with large ranges like this.)
