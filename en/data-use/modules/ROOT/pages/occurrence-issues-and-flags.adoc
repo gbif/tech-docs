@@ -217,6 +217,61 @@ Reasons include:
 |dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_AGGREGATE[example]
 
+|*Scientific name and ID inconsistent*
+|The scientificName provided in the occurrence record does not precisely match the name in the registered checklist when using the scientificNameID, taxonID or taxonConceptID to look it up. Publishers are advised to check the IDs are correct, or update the formatting of the names on their records.
+|dwc:scientificName,dwc:scientificNameID,dwc:taxonID,dwc:taxonConceptID
+|[example](https://www.gbif.org/occurrence/search?issue=SCIENTIFIC_NAME_AND_ID_INCONSISTENT)
+
+|*Taxon match name and ID ambiguous*
+|The GBIF Backbone concept was found using the scientificNameID, taxonID or taxonConceptID, but it differs from what would have been found if the classification names on the record were used. This may indicate a gap in the GBIF backbone, a poor mapping between the checklist and the backbone, or a mismatch between the classification names and the declared IDs (scientificNameID or taxonConceptID) on the occurrence record itself.
+|dwc:scientificName,dwc:scientificNameID,dwc:taxonID,dwc:taxonConceptID
+|[example](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_NAME_AND_ID_AMBIGUOUS)
+
+|*Scientific name ID not found*
+|The scientificNameID matched a known pattern, but it was not found in the associated checklist. The backbone lookup was performed using either the names or a different ID field from the record. This may indicate a poorly formatted identifier or may be caused by a newly created ID that isn't yet known in the version of the published checklist.
+|dwc:scientificNameID
+|[example](https://www.gbif.org/occurrence/search?issue=SCIENTIFIC_NAME_ID_NOT_FOUND)
+
+|*Taxon concept ID not found*
+|The taxonConceptID matched a known pattern, but it was not found in the associated checklist. The backbone lookup was performed using either the names or a different ID field from the record. This may indicate a poorly formatted identifier or may be caused by a newly created ID that isn't yet known in the version of the published checklist.
+|dwc:taxonConceptID
+|[example](https://www.gbif.org/occurrence/search?issue=TAXON_CONCEPT_ID_NOT_FOUND)
+
+|*Taxon ID not found*
+|The taxonID found matched a known pattern, but it was not found in the associated checklist. The backbone lookup was performed using either the names or a different ID field from the record. This may indicate a poorly formatted identifier or may be caused by a newly created ID that isn't yet known in the version of the published checklist.
+|dwc:taxonID
+|[example](https://www.gbif.org/occurrence/search?issue=TAXON_ID_NOT_FOUND)
+
+|*Taxon match scientific name ID ignored*
+|The scientificNameID was not used when mapping the record to the GBIF backbone. This may indicate one of: 
+
+* The ID uses a pattern not configured for use by GBIF
+* The ID did not uniquely identify a concept in the checklist
+* The ID found a concept in the checklist that did not map to the backbone
+* A different ID was used, or the record names were used, as no ID lookup successfully linked to the backbone.
+|dwc:scientificNameID
+|[example](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_SCIENTIFIC_NAME_ID_IGNORED)
+
+|*Taxon match taxon concept ID ignored*
+|taxonConceptID was not used when mapping the record to the GBIF backbone. This may indicate one of: 
+
+* The ID uses a pattern not configured for use by GBIF
+* The ID did not uniquely identify a concept in the checklist
+* The ID found a concept in the checklist that did not map to the backbone
+* A different ID was used, or the record names were used, as no ID lookup successfully linked to the backbone.
+|dwc:taxonConceptID
+|[example](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_TAXON_CONCEPT_ID_IGNORED)
+
+|*Taxon match taxon ID ignored*
+|The taxonID was not used when mapping the record to the GBIF backbone. This may indicate one of: 
+
+* The ID uses a pattern not configured for use by GBIF
+* The ID did not uniquely identify a concept in the checklist
+* The ID found a concept in the checklist that did not map to the backbone
+* A different ID was used, or the record names were used, as no ID lookup successfully linked to the backbone.
+|dwc:taxonID
+|[example](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_TAXON_ID_IGNORED)
+
 |===
 
 == Date issues
