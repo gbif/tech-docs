@@ -209,12 +209,12 @@ Reasons include:
 
 |*Taxon match fuzzy*
 |Matching to the taxonomic backbone can only be done using a fuzzy, non exact match.
-|dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank
+|_dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank_
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_FUZZY[example]
 
 |*Taxon match aggregate*
 |Matching to the taxonomic backbone can only be done on a species level, but the occurrence was considered a broader species aggregate or complex.
-|dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank
+|_dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank_
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_AGGREGATE[example]
 
 |*Scientific name and ID inconsistent*
@@ -224,12 +224,12 @@ Reasons include:
 
 |*Taxon match name and ID ambiguous*
 |The GBIF Backbone concept was found using the scientificNameID, taxonID or taxonConceptID, but it differs from what would have been found if the classification names on the record were used. This may indicate a gap in the GBIF backbone, a poor mapping between the checklist and the backbone, or a mismatch between the classification names and the declared IDs (scientificNameID or taxonConceptID) on the occurrence record itself.
-|dwc:scientificName,dwc:scientificNameID,dwc:taxonID,dwc:taxonConceptID
+|_dwc:scientificName, dwc:scientificNameID, dwc:taxonID, dwc:taxonConceptID_
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_NAME_AND_ID_AMBIGUOUS[example]
 
 |*Scientific name ID not found*
 |The scientificNameID matched a known pattern, but it was not found in the associated checklist. The backbone lookup was performed using either the names or a different ID field from the record. This may indicate a poorly formatted identifier or may be caused by a newly created ID that isn't yet known in the version of the published checklist.
-|dwc:scientificNameID
+|_dwc:scientificNameID_
 |https://www.gbif.org/occurrence/search?issue=SCIENTIFIC_NAME_ID_NOT_FOUND[example]
 
 |*Taxon concept ID not found*
@@ -239,7 +239,7 @@ Reasons include:
 
 |*Taxon ID not found*
 |The taxonID found matched a known pattern, but it was not found in the associated checklist. The backbone lookup was performed using either the names or a different ID field from the record. This may indicate a poorly formatted identifier or may be caused by a newly created ID that isn't yet known in the version of the published checklist.
-|dwc:taxonID
+|_dwc:taxonID_
 |https://www.gbif.org/occurrence/search?issue=TAXON_ID_NOT_FOUND[example]
 
 |*Taxon match scientific name ID ignored*
@@ -249,7 +249,7 @@ a|The scientificNameID was not used when mapping the record to the GBIF backbone
 * The ID did not uniquely identify a concept in the checklist
 * The ID found a concept in the checklist that did not map to the backbone
 * A different ID was used, or the record names were used, as no ID lookup successfully linked to the backbone.
-|dwc:scientificNameID
+|_dwc:scientificNameID_
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_SCIENTIFIC_NAME_ID_IGNORED[example]
 
 |*Taxon match taxon concept ID ignored*
@@ -259,7 +259,7 @@ a|taxonConceptID was not used when mapping the record to the GBIF backbone. This
 * The ID did not uniquely identify a concept in the checklist
 * The ID found a concept in the checklist that did not map to the backbone
 * A different ID was used, or the record names were used, as no ID lookup successfully linked to the backbone.
-|dwc:taxonConceptID
+|_dwc:taxonConceptID_
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_TAXON_CONCEPT_ID_IGNORED[example]
 
 |*Taxon match taxon ID ignored*
@@ -269,7 +269,7 @@ a|The taxonID was not used when mapping the record to the GBIF backbone. This ma
 * The ID did not uniquely identify a concept in the checklist
 * The ID found a concept in the checklist that did not map to the backbone
 * A different ID was used, or the record names were used, as no ID lookup successfully linked to the backbone.
-|dwc:taxonID
+|_dwc:taxonID_
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_TAXON_ID_IGNORED[example]
 
 |===
