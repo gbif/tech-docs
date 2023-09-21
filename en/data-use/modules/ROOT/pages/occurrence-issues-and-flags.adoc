@@ -243,7 +243,7 @@ Reasons include:
 |https://www.gbif.org/occurrence/search?issue=TAXON_ID_NOT_FOUND[example]
 
 |*Taxon match scientific name ID ignored*
-|The scientificNameID was not used when mapping the record to the GBIF backbone. This may indicate one of: 
+a|The scientificNameID was not used when mapping the record to the GBIF backbone. This may indicate one of: 
 
 * The ID uses a pattern not configured for use by GBIF
 * The ID did not uniquely identify a concept in the checklist
@@ -253,7 +253,7 @@ Reasons include:
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_SCIENTIFIC_NAME_ID_IGNORED[example]
 
 |*Taxon match taxon concept ID ignored*
-|taxonConceptID was not used when mapping the record to the GBIF backbone. This may indicate one of: 
+a|taxonConceptID was not used when mapping the record to the GBIF backbone. This may indicate one of: 
 
 * The ID uses a pattern not configured for use by GBIF
 * The ID did not uniquely identify a concept in the checklist
@@ -263,7 +263,7 @@ Reasons include:
 |https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_TAXON_CONCEPT_ID_IGNORED[example]
 
 |*Taxon match taxon ID ignored*
-|The taxonID was not used when mapping the record to the GBIF backbone. This may indicate one of: 
+a|The taxonID was not used when mapping the record to the GBIF backbone. This may indicate one of: 
 
 * The ID uses a pattern not configured for use by GBIF
 * The ID did not uniquely identify a concept in the checklist
