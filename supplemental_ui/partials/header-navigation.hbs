@@ -43,6 +43,14 @@
 </div-->
 
 <div class="navbar-item has-dropdown is-hoverable">
+  {{#with (resolvePage 'data-publishing::index.adoc')}}<a class="navbar-link" href="{{relativize url}}">Data publishing</a>{{/with}}
+</div>
+
+<div class="navbar-item has-dropdown is-hoverable">
+  {{#with (resolvePage 'data-processing::index.adoc')}}<a class="navbar-link" href="{{relativize url}}">Data processing</a>{{/with}}
+</div>
+
+<div class="navbar-item has-dropdown is-hoverable">
   {{#with (resolvePage 'data-use::index.adoc')}}<a class="navbar-link" href="{{relativize url}}">Data use</a>{{/with}}
 </div>
 
@@ -51,15 +59,7 @@
 </div>
 
 <div class="navbar-item has-dropdown is-hoverable">
-  {{#with (resolvePage 'data-processing::index.adoc')}}<a class="navbar-link" href="{{relativize url}}">Data processing</a>{{/with}}
-</div>
-
-<div class="navbar-item has-dropdown is-hoverable">
   {{#with (resolvePage 'cloud-services::index.adoc')}}<a class="navbar-link" href="{{relativize url}}">Cloud services</a>{{/with}}
-</div>
-
-<div class="navbar-item has-dropdown is-hoverable">
-  {{#with (resolvePage 'data-publishing::index.adoc')}}<a class="navbar-link" href="{{relativize url}}">Data publishing</a>{{/with}}
 </div>
 
 <div class="navbar-item has-dropdown is-hoverable">
