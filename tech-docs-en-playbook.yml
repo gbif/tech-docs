@@ -18,6 +18,9 @@ content:
       start_path: ./en/data-use
       branches: main
     - url: .
+      start_path: ./en/cloud-services
+      branches: main
+    - url: .
       start_path: ./en/openapi
       branches: main
     - url: .
