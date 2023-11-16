@@ -1,5 +1,6 @@
 * Data downloads
 * xref:download-formats.adoc[]
+* Issues and flags
 * xref:occurrence-issues-and-flags.adoc[]
 * xref:checklist-issues-and-flags.adoc[]
 * API Usage
