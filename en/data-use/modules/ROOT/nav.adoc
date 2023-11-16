@@ -8,4 +8,4 @@
 ** xref:api-downloads.adoc[]
 ** xref:rgbif.adoc[rgbif]
 ** xref:pygbif.adoc[pygbif]
-* xref:cloud-services.adoc[]
+* xref:cloud-services::index.adoc[]
