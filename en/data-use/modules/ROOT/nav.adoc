@@ -1,8 +1,9 @@
 * xref:download-formats.adoc[]
 * xref:occurrence-issues-and-flags.adoc[]
 * xref:checklist-issues-and-flags.adoc[]
-* xref:api-introduction.adoc[API Introduction]
-* xref:api-downloads.adoc[]
+* API Usage
+** xref:api-introduction.adoc[API Introduction]
+** xref:api-downloads.adoc[]
+** xref:rgbif.adoc[rgbif]
+** xref:pygbif.adoc[pygbif]
 * xref:cloud-services.adoc[]
-* xref:rgbif.adoc[rgbif]
-* xref:pygbif.adoc[pygbif]
