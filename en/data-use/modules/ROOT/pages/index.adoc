@@ -1,6 +1,6 @@
 = Using data
 
-image::data-use.png[]
+image::data-use.png[align=center,width=320,height=180]
 GBIF users can access the data they need in several ways, and each method generally offers data in a choice of formats.
 
 The easiest option is to use the https://www.gbif.org/[GBIF website], which allows searching and browsing individual records, as well as requesting data downloads in the most common formats.
@@ -45,7 +45,7 @@ There are also clients for *Ruby* (https://www.rubydoc.info/gems/gbifrb[gbifrb])
 
 == Cloud computing services
 
-Each month, an export of GBIF occurrence data is uploaded to various cloud computing services.  These services allow users to query the data, integrate it into workflows running on cloud or local systems and make more complex queries than are possible using the GBIF API.  See xref:cloud-services.adoc[] for more information.
+Each month, an export of GBIF occurrence data is uploaded to various cloud computing services.  These services allow users to query the data, integrate it into workflows running on cloud or local systems and make more complex queries than are possible using the GBIF API.  See xref:cloud-services::index.adoc[] for more information.
 
 == Citation
 
