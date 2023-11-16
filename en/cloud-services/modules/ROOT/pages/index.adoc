@@ -1,5 +1,7 @@
 = Cloud computing services
 
+image::cloud-services.png[align=center,width=320,height=180]
+
 Every month GBIF takes a full occurrence snapshot and uploads it to three cloud computing data repositories:
 
 * the https://planetarycomputer.microsoft.com/dataset/gbif[Microsoft Planetary Computer] for Microsoft Azure
