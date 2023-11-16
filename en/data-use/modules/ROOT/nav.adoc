@@ -1,3 +1,4 @@
+* Data downloads
 * xref:download-formats.adoc[]
 * xref:occurrence-issues-and-flags.adoc[]
 * xref:checklist-issues-and-flags.adoc[]
