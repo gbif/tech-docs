@@ -1,0 +1,3 @@
+= Citation
+
+Under the terms of the GBIF data user agreement, users who download data agree to cite a DOI. Please see GBIF’s https://www.gbif.org/citation-guidelines[citation guidelines].
