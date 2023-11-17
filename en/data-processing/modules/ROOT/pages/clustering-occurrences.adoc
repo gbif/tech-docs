@@ -12,7 +12,7 @@ image::example_cluster.png[]
 
 You can read https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections[this news item] for more information and some exciting examples.
 
-== How does the GBIF data-clustering feature work?
+== Clustering records
 
 === Step 1: Select candidates
 
@@ -24,7 +24,7 @@ For example, one of the "hashes" used is based on the species key, rounded coord
 
 The fields used to identify and group the candidates are a subset of what is used later on for comparing them (see the table below). See https://github.com/gbif/pipelines/blob/master/gbif/ingestion/clustering-gbif/src/main/scala/org/gbif/pipelines/clustering/Cluster.scala[the source code] to check the details.
 
-=== Step 2: Compare candidates with each other and assess whether they are potentially related
+=== Step 2: Compare and assess
 
 In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them.
 
@@ -100,17 +100,14 @@ It is possible that some occurrences check one of the combinations of assertions
 
 There could be other unforeseen reasons, and if in doubt, please contact us at helpdesk@gbif.org.
 
-== What can you do to improve linkage with other occurrences?
+== Improve linkage
 
 If for one reason or another, you need to publish on GBIF occurrences for observations or specimens that you know are already on GBIF, how best to do it?
 
 . Make sure that you reuse the same identifiers as much as possible, including the formating. Same catalogue numbers, occurrenceID, etc.
 . Use the link:https://dwc.tdwg.org/terms/#dwc:associatedOccurrences[associatedOccurrences,role=term] term and https://rs.tdwg.org/dwc/terms/ResourceRelationship[resource relationship extension]. These are not used during the clustering today, but are expected to be in the future, and are the correct way to communicate relationships within Darwin Core.
 
-== Where to send suggestions and ask questions
+== How to contribute
 
-If you have suggestions to improve the clustering feature or questions on how it works, you are very welcome to:
+If you have suggestions to improve the clustering feature or questions on how it works, you are very welcome to use the feedback feature on this page.
 
-* leave a comment under this post
-* or log an issue in our https://github.com/gbif/portal-feedback/issues[GitHub repository] or via the GBIF feedback system
-* or contact us at helpdesk@gbif.org.
