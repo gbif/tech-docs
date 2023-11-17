@@ -9,4 +9,4 @@
 ** xref:rgbif.adoc[rgbif]
 ** xref:pygbif.adoc[pygbif]
 * xref:cloud-services::index.adoc[]
-* xref:citation.adoc[citation]
+* xref:citation.adoc[Citation]
