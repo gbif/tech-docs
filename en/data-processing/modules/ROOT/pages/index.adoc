@@ -4,9 +4,10 @@ image::data-processing.png[align=center,width=320,height=180]
 
 Every single occurrence record in GBIF goes through a series of processing steps until it becomes available on GBIF.org.  The overall process is described on https://www.gbif.org/article/5i3CQEZ6DuWiycgMaaakCo/gbif-infrastructure-data-processing[GBIF.org].
 
+More specific topics are listed in the section menu.
+
 In addition, also see: 
 
-* xref:clustering-occurrences.adoc[]
 * https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids[improving occurrence ID stability]
 * https://data-blog.gbif.org/post/gbif-backbone-taxonomy/[a high-level overview of the taxonomic backbone generation]
 
