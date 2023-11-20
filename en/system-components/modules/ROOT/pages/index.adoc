@@ -21,3 +21,4 @@ The GBIF Secretariat maintains an ongoing literature tracking programme, which i
 == ChecklistBank
 
 https://www.checklistbank.org/[ChecklistBank] is an index and repository for taxonomic data. 
+// include: how to publish data: link to checklist publishing page
