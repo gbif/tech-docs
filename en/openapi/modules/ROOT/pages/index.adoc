@@ -1,7 +1,7 @@
 = GBIF API Reference
 :page-aliases: v1@openapi::index.adoc, v2@openapi::index.adoc
 
-image::open-api.png[align=center,width=640]
+image::open-api.png[align=center,width=640,height=384]
 
 The GBIF API provides a programmatic way to query and publish data on GBIF.org.  It can be useful or necessary to use the API to
 
