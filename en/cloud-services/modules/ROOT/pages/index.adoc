@@ -1,6 +1,6 @@
 = Cloud computing services
 
-image::bg-clouds.png[align=center,width=320,height=180]
+image::bg-clouds.png[{half-width}]
 
 Every month GBIF takes a full occurrence snapshot and uploads it to three cloud computing data repositories:
 
