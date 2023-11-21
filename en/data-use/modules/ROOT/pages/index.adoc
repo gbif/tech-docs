@@ -1,6 +1,6 @@
 = Using data
 
-image::data-use.png[align=center,width=320,height=180]
+image::data-use.png[align=center,640,383]
 GBIF users can access the data they need in several ways, and each method generally offers data in a choice of formats.
 
 The easiest option is to use the https://www.gbif.org/[GBIF website], which allows searching and browsing individual records, as well as requesting data downloads in the most common formats.
