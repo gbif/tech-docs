@@ -64,7 +64,7 @@ This makes two columns out of the list items.
 
 [.bannerblocks]
 --
-image::tools-2.png[{half-width}]
+image::tools-2.png[align=center,700,420]
 
 * xref:tools::index.adoc#ipt[image:tool-icon.png[] GBIF Integrated Publishing Toolkit (IPT)]
 * xref:tools::index.adoc#data-validator[image:tool-icon.png[] Data validator]
