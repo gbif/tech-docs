@@ -1,6 +1,6 @@
 = GBIF Data Processing
 
-image::data-processing.png[align=center,width=320,height=180]
+image::data-processing.png[align=center,640,383]
 
 Every single occurrence record in GBIF goes through a series of processing steps until it becomes available on GBIF.org.  The overall process is described on https://www.gbif.org/article/5i3CQEZ6DuWiycgMaaakCo/gbif-infrastructure-data-processing[GBIF.org].
 
