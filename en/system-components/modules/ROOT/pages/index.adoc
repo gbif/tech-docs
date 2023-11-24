@@ -2,7 +2,7 @@
 
 The technical infrastructure of GBIF includes components that run centrally to support data storage, processing, management, and enrichment. Some of these systems are integral parts of GBIF.org, others provide services to the community. 
 
-image::system-diagramme-2023.png[]
+image::system-diagramme-2023.png[link="https://tech-docs.gbif-uat.org/en/system-components/_images/system-diagramme-2023.png"]
 
 == GBIF Registry
 
