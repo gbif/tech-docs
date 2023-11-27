@@ -14,5 +14,6 @@ The Azure, AWS and GCS pages linked above include some advice and tutorials.  Us
 
 * https://data-blog.gbif.org/post/aws-and-gbif/[GBIF and Apache-Spark on AWS tutorial]
 * https://data-blog.gbif.org/post/microsoft-azure-and-gbif/[GBIF and Apache-Spark on Microsoft Azure tutorial]
+* https://data-blog.gbif.org/post/apache-arrow-and-parquet/[Apache Arrow tutorial]
 
 The easiest service to use for rapid access to data is the https://console.cloud.google.com/marketplace/product/bigquery-public-data/gbif-occurrences[Google BigQuery table], which provides an SQL-like interface to the data.  We have provided examples on the linked page.
