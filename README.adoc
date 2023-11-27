@@ -9,9 +9,9 @@ https://builds.gbif.org/job/tech-docs/lastBuild/console[image:https://builds.gbi
 
 This is the the GBIF technical documentation site.
 
-During development, it is visible at https://tech-docs.gbif-dev.org/
+During development, it is visible at https://techdocs.gbif-uat.org/
 
-NOTE: This file is documenting the documentation system, it's not shown on https://tech-docs.gbif-dev.org/.
+NOTE: This file is documenting the documentation system, it's not shown on https://techdocs.gbif-uat.org/.
 
 == Overall structure
 
@@ -22,7 +22,7 @@ The document system uses https://docs.antora.org/[Antora], a framework for combi
 Antora strictly defines how files and directories should be arranged, but flexible in allowing those files and directories to come from various sources.  There are four levels of content:
 
 Languages:: (GBIF addition, but following the https://gitlab.com/antora/antora/-/issues/208[suggestion on the Antora issue tracker]).  We don't expect all the manual to be translated into every language, so we should structure content to make it easy for translators to translate (and see progress) for suitable topics without being overwhelmed.
-Components:: The largest blocks of documentation.  Components we have include https://tech-docs.gbif-dev.org/en/data-publishing/[_Data Publishing_] and the https://tech-docs.gbif-dev.org/en/ipt/2.6/[_IPT_].
+Components:: The largest blocks of documentation.  Components we have include https://techdocs.gbif-uat.org/en/data-publishing/[_Data Publishing_] and the https://techdocs.gbif-uat.org/en/openapi/[_API reference_].
 Versions:: Each component can optionally have one or more versions.  We should only declare versions where it makes sense to keep documentation for the old version accessible online.
 Modules:: https://docs.antora.org/antora/latest/module-directories/[Antora describes] modules as "primarily an organization tool for the writer". So far we haven't used them, so everything is using the default `ROOT` module.
 
@@ -33,7 +33,7 @@ It may make translators' work easier if they can aim to translate entire compone
 
 === Within a component version
 
-A version of a component is defined by its `antora.yml` descriptor file, which should be present at the location specified in `{url}/{start_path}` from the playbook's `content.sources` section.  For example, the https://tech-docs.gbif-dev.org/en/data-publishing/[_Data Publishing_] component has its descriptor file in this repository at link:./en/data-publishing/antora.yml[en/data-publishing/antora.yml]:
+A version of a component is defined by its `antora.yml` descriptor file, which should be present at the location specified in `{url}/{start_path}` from the playbook's `content.sources` section.  For example, the https://techdocs.gbif-uat.org/en/data-publishing/[_Data Publishing_] component has its descriptor file in this repository at link:./en/data-publishing/antora.yml[en/data-publishing/antora.yml]:
 
 // If this were part of the real documentation, we could use an 'include:' directive to embed the file.  However, GitHub blocks these
 // for security reasons.  See https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/#using-include-directives-in-source-blocks
@@ -63,7 +63,7 @@ It's probably worth looking at these pages in the Antora and Asciidoctor documen
 
 ==== Home page
 
-The English home page, https://tech-docs.gbif-dev.org/en/, is a component called `ROOT`, which is a special name where `ROOT` doesn't show in links or URLs.  Reserve pages in this section for the home page and very general pages about the whole manual.
+The English home page, https://techdocs.gbif-uat.org/en/, is a component called `ROOT`, which is a special name where `ROOT` doesn't show in links or URLs.  Reserve pages in this section for the home page and very general pages about the whole manual.
 
 Exactly what belongs in the home module isn't very clear.
 It will be easier to work out once we have more documentation written.
