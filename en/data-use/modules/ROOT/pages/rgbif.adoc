@@ -2,9 +2,10 @@
 
 _An interface to the GBIF API for the R statistical programming environment._
 
+Please see the main https://docs.ropensci.org/rgbif/index.html[rgbif documentation site]. 
+
 **rgbif** is an R package from https://ropensci.org/[rOpenSci] that allows searching and retrieving data from GBIF. rgbif wraps R code around the xref:api-introduction.adoc[GBIF API] to allow you to talk to GBIF from R and access metadata, species names, and occurrences.
 
-The main rgbif documentation can be found https://docs.ropensci.org/rgbif/index.html[here].
 
 == Installation
 
@@ -30,31 +31,6 @@ There are several long-form articles that can help get you started:
 * https://docs.ropensci.org/rgbif/articles/rgbif.html[Getting Started]
 * https://docs.ropensci.org/rgbif/articles/getting_occurrence_data.html[Getting Occurrence Data From GBIF]
 * https://docs.ropensci.org/rgbif/articles/taxonomic_names.html[Working With Taxonomic Names]
-
-Most GBIF users are interested in getting lat-lon occurrence records. 
-
-[source,r]
-----
-occ_search(scientificName = "Pan troglodytes")
-occ_data(scientificName = "Pan troglodytes")
-----
-
-It is usually better to get occurrence records using a **taxonKey**. See the article https://docs.ropensci.org/rgbif/articles/taxonomic_names.html[Working With Taxonomic Names]. 
-
-[source,r]
-----
-taxonKey <- name_backbone("Pan troglodytes")$usageKey
-occ_search(taxonKey = taxonKey)
-----
-
-GBIF **strongly recommends** the use of ``occ_download()`` rather than ``occ_search()`` for serious research projects. See article https://docs.ropensci.org/rgbif/articles/getting_occurrence_data.html[Getting Occurrence Data From GBIF]. 
-
-It is required to set up your https://docs.ropensci.org/rgbif/articles/gbif_credentials.html[GBIF credentials] to make downloads from GBIF. 
-
-[source,r]
-----
-occ_download(pred("taxonKey", 5219534)) # 5219534 is the taxonKey for Pan troglodytes
-----
 
 == Citation 
 
