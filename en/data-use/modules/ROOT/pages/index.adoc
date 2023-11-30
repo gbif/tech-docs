@@ -1,4 +1,5 @@
 = Using data
+:page-toclevels: -1
 
 image::data-use.png[align=center,320,192]
 GBIF users can access the data they need in several ways, and each method generally offers data in a choice of formats.
