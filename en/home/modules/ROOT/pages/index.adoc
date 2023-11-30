@@ -1,6 +1,7 @@
 = Technical Documentation
 :page-no-next: true
 :page-layout: home
+:page-omitnavigation: true
 
 The GBIF technical documentation describes how users can access data from GBIF.  It provides information on the available data, how to retrieve it, where it has been cleaned or checked for data quality, and how it should be cited.
 

@@ -18,6 +18,9 @@ content:
       start_path: ./en/data-use
       branches: HEAD
     - url: .
+      start_path: ./en/cloud-services
+      branches: HEAD
+    - url: .
       start_path: ./en/openapi
       branches: HEAD
     - url: .
@@ -25,6 +28,12 @@ content:
       branches: HEAD
     - url: .
       start_path: ./en/openapi-v2
+      branches: HEAD
+    - url: .
+      start_path: ./en/tools
+      branches: HEAD
+    - url: .
+      start_path: ./en/system-components
       branches: HEAD
     #- url: .
     #  start_path: ./en/guides
