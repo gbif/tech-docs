@@ -1,4 +1,0 @@
-= Registry API (Principal methods)
-:page-no-next: true
-:page-layout: rapidoc
-:page-openapi-url: /openapi/registry-principal-methods.json

@@ -1,4 +1,0 @@
-= Occurrence API
-:page-no-next: true
-:page-layout: redoc
-:page-openapi-url: /openapi/occurrence.json
