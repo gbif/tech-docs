@@ -97,26 +97,27 @@ This is accepted without an issue.  The precision of the eventDate is retained, 
 
 ==== 2. Mismatching dates
 
+// Note the {zwsp} (zero-width space) to avoid the long values causing the table to overflow to the right.
 .Mismatching dates
 [.mismatching,stripes=even]
 |====
-| Problem     |             | eventDate             | year | month | day | startDayOfYear | endDayOfYear | issues
+| Problem     |             | eventDate             | year | month | day | start{zwsp}Day{zwsp}Of{zwsp}Year | end{zwsp}Day{zwsp}Of{zwsp}Year | issues
 
 .2+h| Month and day are outside the eventDate interval
 | Published   | 2023-01-13/2023-02-03 | 2023 |    03 |  03 |                |              |
-| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_DATE_MISMATCH
+| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_{zwsp}DATE_{zwsp}MISMATCH
 
 .2+h| Day is different to the day of the eventDate
 | Published   | 2023-01-13            | 2023 |    01 |  03 |                |              |
-| Interpreted | 2023-01               | 2023 |    01 |     |                |              | RECORDED_DATE_MISMATCH
+| Interpreted | 2023-01               | 2023 |    01 |     |                |              | RECORDED_{zwsp}DATE_{zwsp}MISMATCH
 
 .2+h| The beginning and end of the eventDate interval are different to the startDayOfYear and endDayOfYear
 | Published   | 2023-01-13/2023-02-03 |      |       |     |             18 |           44 |
-| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_DATE_MISMATCH
+| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_{zwsp}DATE_{zwsp}MISMATCH
 
 .2+h| The month is different to the month in the eventDate.
 | Published   | 2023-01               | 2023 |    02 |     |                |              |
-| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_DATE_MISMATCH
+| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_{zwsp}DATE_{zwsp}MISMATCH
 |====
 
 == Occurrence identified date
