@@ -30,7 +30,7 @@ Please send any suggestions for improvements or corrections to helpdesk@gbif.org
 ** xref:data-processing::index.adoc[Data processing and quality checks]
 ** The standardization and quality processes applied to data published to GBIF, including taxonomic, temporal and geographic checks.
 
-* xref:data-use::cloud-services.adoc[image:td-bg-04.png[]]
+* xref:cloud-services::index.adoc[image:td-bg-04.png[]]
 ** xref:cloud-services::index.adoc[Cloud services]
 ** Accessing GBIF's data using cloud services (AWS, Azure, GCS).
 

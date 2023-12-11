@@ -4,7 +4,7 @@ Data downloads are available from GBIF in three primary formats:
 
 * <<simple,*Simple*>>.  This format contains a selection of commonly used terms, after the data has been aligned to GBIF's taxonomic and geographic indices and structured vocabularies
 ** Downloads created on www.gbif.org or through the API using the format `SIMPLE_CSV` are produced in a tab-separated text format, suitable for use with spreadsheets and programming/scripting languages
-** Occurrence data accessed through xref:cloud-services.adoc[cloud services], or with the API format `SIMPLE_PARQUET`, are produced in https://en.wikipedia.org/wiki/Apache_Parquet[Apache Parquet format].  The fields are the same as for tab-separated text format.
+** Occurrence data accessed through xref:cloud-services::index.adoc[cloud services], or with the API format `SIMPLE_PARQUET`, are produced in https://en.wikipedia.org/wiki/Apache_Parquet[Apache Parquet format].  The fields are the same as for tab-separated text format.
 * <<dwca,*Darwin Core Archive*>> (API: `DWCA`).  This is a compressed Zip file, containing data in tab-separated text format, and metadata in XML format.
 ** `occurrence.txt` contains occurrence data after interpretation by GBIF's systems.
 ** `multimedia.txt` contains information on multimedia (images, audio, video) relating to the occurrences.
