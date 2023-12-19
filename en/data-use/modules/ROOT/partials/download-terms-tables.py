@@ -25,15 +25,15 @@ if env == 'local':
     GBIF_API = 'http://localhost:8080'
     indent = 2
 elif env == 'dev':
-    OPENAPI_OCCURRENCE="https://tech-docs.gbif-dev.org/openapi/occurrence.json"
+    OPENAPI_OCCURRENCE="https://techdocs.gbif-dev.org/openapi/occurrence.json"
     GBIF_API = 'http://api.gbif-dev.org/v1'
     indent = 2
 elif env == 'uat':
-    OPENAPI_OCCURRENCE="https://tech-docs.gbif-uat.org/openapi/occurrence.json"
+    OPENAPI_OCCURRENCE="https://techdocs.gbif-uat.org/openapi/occurrence.json"
     GBIF_API = 'http://api.gbif-uat.org/v1'
     indent = 2
 else:
-    OPENAPI_OCCURRENCE="https://tech-docs.gbif.org/openapi/occurrence.json"
+    OPENAPI_OCCURRENCE="https://techdocs.gbif.org/openapi/occurrence.json"
     GBIF_API = 'http://api.gbif.org/v1'
     indent = None
 

@@ -1,8 +1,8 @@
 = System components
 
-The technical infrastructure of GBIF includes components that run centrally to support data storage, processing, management, and enrichment. Some of these systems are integral parts of GBIF.org, others provide services to the community. 
+The technical infrastructure of GBIF includes components that run centrally to support data storage, processing, management, and enrichment. Some of these systems are integral parts of GBIF.org, others provide services to the community.
 
-image::system-diagramme-2023.png[link="https://tech-docs.gbif-uat.org/en/system-components/_images/system-diagramme-2023.png"]
+image::system-diagramme-2023.png[link="_images/system-diagramme-2023.png"]
 
 == GBIF Registry
 
@@ -20,5 +20,5 @@ The GBIF Secretariat maintains an ongoing literature tracking programme, which i
 
 == ChecklistBank
 
-https://www.checklistbank.org/[ChecklistBank] is an index and repository for taxonomic data. 
+https://www.checklistbank.org/[ChecklistBank] is an index and repository for taxonomic data.
 // include: how to publish data: link to checklist publishing page
