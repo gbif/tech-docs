@@ -78,7 +78,7 @@ datasetkey                              countrycode   count(*)
 [#sql]
 == Supported SQL
 
-Only `SELECT` queries are supported, and only queries against a single table, `occurrence`.  `JOIN` queries and sub-queries are not allowed.
+Only `SELECT` queries are supported, and only queries against a single table, `occurrence`.  `JOIN` queries and sub-queries are not allowed.  Selecting `*` is also not allowed, specify the columns you need.
 
 `GROUP BY` queries are supported, but not `HAVING` clauses.
 
@@ -92,6 +92,7 @@ Several custom functions are available:
 * `toISO8601`
 
 As well as custom aggregate functions:
+
 * `eeaCellCode`
 
 [#sql-columns]
@@ -124,7 +125,7 @@ This detailed query applies several quality filters for data for occurrences in 
 ----
 SELECT
   "year",
-  eeaCellCode(1000, decimallatitude, decimallongitude, COALESCE(coordinateUncertaintyInMeters, 1000)) AS eeaCellCode,
+  eeaCellCode(1000, decimalLatitude, decimalLongitude, COALESCE(coordinateUncertaintyInMeters, 1000)) AS eeaCellCode,
   speciesKey,
   COUNT(*) AS count,
   MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters
