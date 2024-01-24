@@ -88,12 +88,14 @@ Aggregate functions are also supported, for example `COUNT(…)`, `MIN(…)`, `M
 
 Several custom functions are available:
 
-* `stringArrayContains`
-* `toISO8601`
+* `gbif_geoDistance`
+* `gbif_joinArray`
+* `gbif_toISO8601`
+* `gbif_toLocalISO8601`
 
 As well as custom aggregate functions:
 
-* `eeaCellCode`
+* `gbif_eeaCellCode`
 
 [#sql-columns]
 == Available columns
@@ -125,7 +127,7 @@ This detailed query applies several quality filters for data for occurrences in 
 ----
 SELECT
   "year",
-  eeaCellCode(1000, decimalLatitude, decimalLongitude, COALESCE(coordinateUncertaintyInMeters, 1000)) AS eeaCellCode,
+  gbif_eeaCellCode(1000, decimalLatitude, decimalLongitude, COALESCE(coordinateUncertaintyInMeters, 1000)) AS eeaCellCode,
   speciesKey,
   COUNT(*) AS count,
   MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters
@@ -133,6 +135,10 @@ FROM occurrence
 WHERE
       occurrenceStatus = 'PRESENT'
   AND speciesKey IS NOT NULL
+  AND NOT array_contains(issue, 'ZERO_COORDINATE')
+  AND NOT array_contains(issue, 'COORDINATE_OUT_OF_RANGE')
+  AND NOT array_contains(issue, 'COORDINATE_INVALID')
+  AND NOT array_contains(issue, 'COUNTRY_COORDINATE_MISMATCH')
   AND (identificationVerificationStatus IS NULL
        OR NOT (   LOWER(identificationVerificationStatus) LIKE '%unverified%'
                OR LOWER(identificationVerificationStatus) LIKE '%unvalidated%'
@@ -158,7 +164,7 @@ New line characters cannot be used in the JSON file used to make the API query, 
   "creator": "userName",
   "sendNotification": false,
   "format": "SQL_TSV_ZIP",
-  "sql": "SELECT \"year\", eeaCellCode(1000, decimallatitude, decimallongitude, COALESCE(coordinateUncertaintyInMeters, 1000)) AS eeaCellCode, speciesKey, COUNT(*) AS \"count\", MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS \"minCoordinateUncertaintyInMeters\" FROM occurrence WHERE occurrenceStatus = 'PRESENT' AND speciesKey IS NOT NULL AND NOT stringArrayContains(issue, 'ZERO_COORDINATE', false) AND NOT stringArrayContains(issue, 'COORDINATE_OUT_OF_RANGE', false) AND NOT stringArrayContains(issue, 'COORDINATE_INVALID', false) AND NOT stringArrayContains(issue, 'COUNTRY_COORDINATE_MISMATCH', false) AND (identificationVerificationStatus IS NULL OR NOT (LOWER(identificationVerificationStatus) LIKE '%unverified%' OR LOWER(identificationVerificationStatus) LIKE '%unvalidated%' OR LOWER(identificationVerificationStatus) LIKE '%not able to validate%' OR LOWER(identificationVerificationStatus) LIKE '%control could not be conclusive due to insufficient knowledge%' OR LOWER(identificationVerificationStatus) LIKE '%unconfirmed%' OR LOWER(identificationVerificationStatus) LIKE '%unconfirmed - not reviewed%' OR LOWER(identificationVerificationStatus) LIKE '%validation requested%')) AND countryCode = 'SI' AND \"year\" >= 2000 AND hasCoordinate GROUP BY \"year\", eeaCellCode, speciesKey ORDER BY \"year\" DESC, eeaCellCode ASC, speciesKey ASC"
+  "sql": "SELECT \"year\", gbif_eeaCellCode(1000, decimallatitude, decimallongitude, COALESCE(coordinateUncertaintyInMeters, 1000)) AS eeaCellCode, speciesKey, COUNT(*) AS \"count\", MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS \"minCoordinateUncertaintyInMeters\" FROM occurrence WHERE occurrenceStatus = 'PRESENT' AND speciesKey IS NOT NULL NOT array_contains(issue, 'ZERO_COORDINATE') AND NOT array_contains(issue, 'COORDINATE_OUT_OF_RANGE') AND NOT array_contains(issue, 'COORDINATE_INVALID') AND NOT array_contains(issue, 'COUNTRY_COORDINATE_MISMATCH') AND (identificationVerificationStatus IS NULL OR NOT (LOWER(identificationVerificationStatus) LIKE '%unverified%' OR LOWER(identificationVerificationStatus) LIKE '%unvalidated%' OR LOWER(identificationVerificationStatus) LIKE '%not able to validate%' OR LOWER(identificationVerificationStatus) LIKE '%control could not be conclusive due to insufficient knowledge%' OR LOWER(identificationVerificationStatus) LIKE '%unconfirmed%' OR LOWER(identificationVerificationStatus) LIKE '%unconfirmed - not reviewed%' OR LOWER(identificationVerificationStatus) LIKE '%validation requested%')) AND countryCode = 'SI' AND \"year\" >= 2000 AND hasCoordinate GROUP BY \"year\", eeaCellCode, speciesKey ORDER BY \"year\" DESC, eeaCellCode ASC, speciesKey ASC"
 }
 ----
 
