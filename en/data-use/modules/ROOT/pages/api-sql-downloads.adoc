@@ -1,0 +1,164 @@
+= API SQL Downloads
+
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.
+
+The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL, _structured query language_, a programming language commonly used to access database systems.  In contrast to the xref:api-downloads.adoc[Predicate Download API], the SQL API allows selection of the columns of interest and generating summary views of the data.  Functions to generate _data cubes_ are available, as part of the https://b-cubed.eu/[Biodiversity Building Blocks for Policy] ("B-Cubed") project.
+
+Occurrence SQL downloads are created asynchronously — the user requests a download and, once the download is prepared, is sent an email with a link to the resulting file.
+
+It is necessary to register as a user on https://www.gbif.org/[GBIF.org] to create an SQL download request, and to authenticate using the username (not the email) and password.
+
+// Complete technical details are provided in the xref:v1@openapi::occurrence.adoc#/tag/Occurrence-downloads[API reference documentation].
+
+Using this API requires some knowledge of SQL.  Many general tutorials and guides to writing SQL queries are online, for example http://datacarpentry.org/sql-ecology-lesson/[Data management with SQL for Ecologists] (by Data Carpentry), see particularly the section on http://datacarpentry.org/sql-ecology-lesson/02-sql-aggregation.html[aggregating and grouping data].
+
+We will create a user interface for common types of query (e.g. data cubes) during 2024.
+
+== Requesting an SQL occurrence download
+
+A download request includes your username, email address, the download format, and the filter for the required data in the form of an SQL statement.
+
+A basic example using the _curl_ command to make the request:
+
+Put this in a file called `query.json`:
+
+[source,json]
+----
+{
+  "creator": "userName", <1>
+  "notificationAddresses": [
+    "userEmail@example.org" <2>
+  ],
+  "sendNotification": true,
+  "format": "SQL_TSV_ZIP", <3>
+  "sql": "SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE continent = 'EUROPE' GROUP BY datasetKey, countryCode" <4>
+}
+----
+<1> Replace with your username
+<2> Replace with your email address, or remove the `notificationAddresses` section and set `sendNotification` to `false`
+<3> `format` must be `SQL_TSV_ZIP`.  More formats will be added later.
+<4> This query will count occurrences from Europe per dataset and country.
+
+Then use this Curl command:
+
+[source,shell]
+----
+curl --include --user userName:PASSWORD --header "Content-Type: application/json" --data @query.json https://api.gbif.org/v1/occurrence/download/request
+----
+
+A download key is returned. Querying that download key shows the download information, including the download link and DOI once the download is ready.  Run this repeatedly, until you see `SUCCEEDED` — you will need to use your download key rather than the example:
+
+[source,shell]
+----
+curl -Ss https://api.gbif.org/v1/occurrence/download/0001005-130906152512535
+----
+
+You can then download the resulting file:
+
+[source,shell]
+----
+curl --location --remote-name https://api.gbif.org/occurrence/download/request/0001005-130906152512535.zip
+----
+
+And see the result:
+
+[source]
+----
+datasetkey                              countrycode   count(*)
+502d390c-d8ee-430b-8fe2-9acb3c433fe0    FR            400
+5309fe43-dc4f-4de8-804a-a29b2f28035a    FR            540
+530febaa-b914-416c-b3bf-f49a1dd821f0    LT            73
+535567d6-5f96-4187-9607-259d120bae50    FR            3
+53e9eca5-6831-4a43-a109-130feecfcd9c    EE            3
+53f2cda4-a2fd-49f0-b3e5-0782c9770e7c    NO            5505
+5a6538b8-e35c-46c4-8978-6858a657a75f    NL            119
+…
+----
+
+[#sql]
+== Supported SQL
+
+Only `SELECT` queries are supported, and only queries against a single table, `occurrence`.  `JOIN` queries and sub-queries are not allowed.
+
+`GROUP BY` queries are supported, but not `HAVING` clauses.
+
+Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT`, `IS NULL`, `RAND()`, `ROUND(…)`, `LOWER(…)`, etc.
+
+Aggregate functions are also supported, for example `COUNT(…)`, `MIN(…)`, `MAX(…)`, `AVERAGE(…)`.
+
+Several custom functions are available:
+
+* `stringArrayContains`
+* `toISO8601`
+
+As well as custom aggregate functions:
+* `eeaCellCode`
+
+[#sql-columns]
+== Available columns
+
+The `occurrence` table contains the interpreted data and the verbatim (as provided to GBIF) data.  An API to list the available columns and their data types will be developed; meanwhile https://api.gbif.org/v1/occurrence/download/describe/simpleWithVerbatimAvro[this API call] shows most of the information — the `name` field is the column name.  Note the `v_` prefix for the verbatim data columns.
+
+The SQL parser is strict, and column names that are also SQL keywords must be quoted. For example, `"year"`, `"month"` and `"day"`.
+
+[#sql-validation]
+== Query validation
+
+You can validate your queries using the validation API call.
+
+[source,shell]
+----
+curl --include --header "Content-Type: application/json" --data @query.json https://api.gbif.org/v1/occurrence/download/request/validate
+----
+
+Your query will be returned if it is valid, and an error message with an explanation will be returned if it is invalid.
+
+[#cube]
+== Data cube example
+
+Data cubes are views of GBIF occurrence data, filtered and summarized by species, time and location, and providing measures for each dimension.
+
+This detailed query applies several quality filters for data for occurrences in Slovenia recorded since 2000.  It produces a summary by year of observation/collection, species and the https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2/about-the-eea-reference-grid/eea_reference_grid_v1.pdf/at_download/file[EEA Reference Grid (PDF)] using a 1km grid size.  For each row, the minimum coordinate uncertainty is given.
+
+[source,sql]
+----
+SELECT
+  "year",
+  eeaCellCode(1000, decimallatitude, decimallongitude, COALESCE(coordinateUncertaintyInMeters, 1000)) AS eeaCellCode,
+  speciesKey,
+  COUNT(*) AS count,
+  MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters
+FROM occurrence
+WHERE
+      occurrenceStatus = 'PRESENT'
+  AND speciesKey IS NOT NULL
+  AND (identificationVerificationStatus IS NULL
+       OR NOT (   LOWER(identificationVerificationStatus) LIKE '%unverified%'
+               OR LOWER(identificationVerificationStatus) LIKE '%unvalidated%'
+               OR LOWER(identificationVerificationStatus) LIKE '%not able to validate%'
+               OR LOWER(identificationVerificationStatus) LIKE '%control could not be conclusive due to insufficient knowledge%'
+               OR LOWER(identificationVerificationStatus) LIKE '%unconfirmed%'
+               OR LOWER(identificationVerificationStatus) LIKE '%unconfirmed - not reviewed%'
+               OR LOWER(identificationVerificationStatus) LIKE '%validation requested%'
+              )
+      )
+  AND countryCode = 'SI'
+  AND "year" >= 2000
+  AND hasCoordinate
+GROUP BY "year", eeaCellCode, speciesKey
+ORDER BY "year" DESC, eeaCellCode ASC, speciesKey ASC;
+----
+
+New line characters cannot be used in the JSON file used to make the API query, and the `"` characters within the query must be escaped with a backslash `\`:
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "sendNotification": false,
+  "format": "SQL_TSV_ZIP",
+  "sql": "SELECT \"year\", eeaCellCode(1000, decimallatitude, decimallongitude, COALESCE(coordinateUncertaintyInMeters, 1000)) AS eeaCellCode, speciesKey, COUNT(*) AS \"count\", MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS \"minCoordinateUncertaintyInMeters\" FROM occurrence WHERE occurrenceStatus = 'PRESENT' AND speciesKey IS NOT NULL AND NOT stringArrayContains(issue, 'ZERO_COORDINATE', false) AND NOT stringArrayContains(issue, 'COORDINATE_OUT_OF_RANGE', false) AND NOT stringArrayContains(issue, 'COORDINATE_INVALID', false) AND NOT stringArrayContains(issue, 'COUNTRY_COORDINATE_MISMATCH', false) AND (identificationVerificationStatus IS NULL OR NOT (LOWER(identificationVerificationStatus) LIKE '%unverified%' OR LOWER(identificationVerificationStatus) LIKE '%unvalidated%' OR LOWER(identificationVerificationStatus) LIKE '%not able to validate%' OR LOWER(identificationVerificationStatus) LIKE '%control could not be conclusive due to insufficient knowledge%' OR LOWER(identificationVerificationStatus) LIKE '%unconfirmed%' OR LOWER(identificationVerificationStatus) LIKE '%unconfirmed - not reviewed%' OR LOWER(identificationVerificationStatus) LIKE '%validation requested%')) AND countryCode = 'SI' AND \"year\" >= 2000 AND hasCoordinate GROUP BY \"year\", eeaCellCode, speciesKey ORDER BY \"year\" DESC, eeaCellCode ASC, speciesKey ASC"
+}
+----
+
+The query can be validated and submitted as described above.
