@@ -25,9 +25,10 @@ Put this in a file called `query.json`, replacing `userName` with your username 
   ],
   "sendNotification": true,
   "format": "SIMPLE_CSV",
-  "predicate": { {
+  "predicate": {
     "type": "and",
     "predicates": [
+      {
         "type": "equals",
         "key": "BASIS_OF_RECORD",
         "value": "PRESERVED_SPECIMEN"
@@ -35,9 +36,7 @@ Put this in a file called `query.json`, replacing `userName` with your username 
       {
         "type": "in",
         "key": "COUNTRY",
-        "values": [
-          "VC", "GD"
-        ]
+        "values": [ "VC", "GD" ]
       }
     ]
   }
