@@ -280,7 +280,7 @@ Geospatial distance.  This predicate checks if coordinates are within a specifie
     "type": "geoDistance",
     "latitude": "90",
     "longitude": "100",
-    "distance": "5km",
+    "distance": "5km"
   }
 }
 ----
