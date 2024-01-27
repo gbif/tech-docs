@@ -22,7 +22,11 @@ Function definition:
 
 [source,sql]
 ----
-BOOLEAN GBIF_GeoDistance(DOUBLE centroidLatitude, DOUBLE centroidLongitude, STRING distance, DOUBLE latitude, DOUBLE longitude)
+BOOLEAN GBIF_GeoDistance(DOUBLE centroidLatitude,
+                         DOUBLE centroidLongitude,
+                         STRING distance,
+                         DOUBLE latitude,
+                         DOUBLE longitude)
 ----
 
 Parameters:
@@ -41,7 +45,9 @@ Function definition:
 
 [source,sql]
 ----
-BOOLEAN GBIF_Within(STRING geometryWellKnownText, DOUBLE latitude, DOUBLE longitude)
+BOOLEAN GBIF_Within(STRING geometryWellKnownText,
+                    DOUBLE latitude,
+                    DOUBLE longitude)
 ----
 
 Parameters:
@@ -64,7 +70,10 @@ Function definition:
 
 [source,sql]
 ----
-STRING GBIF_EEARGCode(INTEGER gridSize, DOUBLE latitude, DOUBLE longitude, DOUBLE coordinateUncertaintyInMeters)
+STRING GBIF_EEARGCode(INTEGER gridSize,
+                      DOUBLE latitude,
+                      DOUBLE longitude,
+                      DOUBLE coordinateUncertaintyInMeters)
 ----
 
 Parameters:
@@ -84,7 +93,10 @@ Function definition:
 
 [source,sql]
 ----
-STRING GBIF_EQDGCCode(INTEGER level, DOUBLE latitude, DOUBLE longitude, DOUBLE coordinateUncertaintyInMeters)
+STRING GBIF_EQDGCCode(INTEGER level,
+                      DOUBLE latitude,
+                      DOUBLE longitude,
+                      DOUBLE coordinateUncertaintyInMeters)
 ----
 
 Parameters:
@@ -108,7 +120,10 @@ Function definition:
 
 [source,sql]
 ----
-STRING GBIF_MGRSCode(INTEGER gridSize, DOUBLE latitude, DOUBLE longitude, DOUBLE coordinateUncertaintyInMeters)
+STRING GBIF_MGRSCode(INTEGER gridSize,
+                     DOUBLE latitude,
+                     DOUBLE longitude,
+                     DOUBLE coordinateUncertaintyInMeters)
 ----
 
 Parameters:
@@ -136,7 +151,8 @@ Function definition:
 
 [source,sql]
 ----
-STRING GBIF_JoinArray(ARRAY array, STRING separator)
+STRING GBIF_JoinArray(ARRAY array,
+                      STRING separator)
 ----
 
 Parameters:
