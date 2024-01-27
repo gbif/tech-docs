@@ -129,7 +129,8 @@ def write_description_table(term_url, term_set, section, gbif_first, output_file
                 print('|%s' % (field['type']), file=f)
 
             # Always present
-            print('|%s' % ('No' if field['required'] else 'Yes'), file=f)
+            # print('|%s' % ('No' if field['nullable'] else 'Yes'), file=f)
+            print('|%s' % ('No' if ('required' in field and field['required']) or ('nullable' in field and not field['nullable']) else 'Yes'), file=f)
 
             # GBIF definition
             if gbif_first and field_name in gbif_descriptions:

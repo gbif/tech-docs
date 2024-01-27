@@ -6,6 +6,12 @@ These custom functions are available when using the xref:api-sql-downloads.adoc[
 
 Note the function names are not case-sensitive, `gbif_geodistance`, `GBIF_GEODISTANCE` and `GBIF_GeoDistance` are all equivalent.
 
+== Standard functions
+
+Many of the basic functions supported by Apache Hive are supported.
+
+See https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-HiveOperatorsandUser-DefinedFunctions(UDFs)[Hive Operators and User-Defined Functions].
+
 == Filtering functions
 
 These are the same functions used for xref:api-downloads.adoc[predicate-based downloads].
