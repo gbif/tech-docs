@@ -1,0 +1,171 @@
+= API SQL Downloads – Functions
+
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently available for preview on the GBIF test environment, https://www.gbif-uat.org/[GBIF-UAT.org].
+
+These custom functions are available when using the xref:api-sql-downloads.adoc[SQL download API].
+
+Note the function names are not case-sensitive, `gbif_geodistance`, `GBIF_GEODISTANCE` and `GBIF_GeoDistance` are all equivalent.
+
+== Filtering functions
+
+These are the same functions used for xref:api-downloads.adoc[predicate-based downloads].
+
+=== Geospatial distance, `GBIF_GeoDistance`
+
+Function definition:
+
+[source,sql]
+----
+BOOLEAN GBIF_GeoDistance(DOUBLE centroidLatitude, DOUBLE centroidLongitude, STRING distance, DOUBLE latitude, DOUBLE longitude)
+----
+
+Parameters:
+
+`centroidLatitude`:: The latitude of the _centroid_, in WGS84 decimal degrees
+`centroidLongitude`:: The longitude of the _centroid_, in WGS84 decimal degrees
+`distance`:: A _distance_ in metres or kilometres including the unit, e.g. `500m` or `2.5km`
+`latitude`:: The latitude of the _point_ to filter (usually the `decimalLatitude` field)
+`longitude`:: The longitude of the _point_ to filter (usually the `decimalLongitude` field)
+
+This function returns `TRUE` if the _point_ is within _distance_ of the _centroid_.  It is equivalent to the xref:api-downloads.adoc#geoDistance[`geoDistance` predicate].
+
+=== Within polygon, `GBIF_Within`
+
+Function definition:
+
+[source,sql]
+----
+BOOLEAN GBIF_Within(STRING geometryWellKnownText, DOUBLE latitude, DOUBLE longitude)
+----
+
+Parameters:
+
+`geometryWellKnownText`:: A _polygon_ specified in https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry[Well-known text (WKT)] format
+`latitude`:: The latitude of the _point_ to filter (usually the `decimalLatitude` field)
+`longitude`:: The longitude of the _point_ to filter (usually the `decimalLongitude` field)
+
+This function returns `TRUE` if the _point_ is within the _polygon_.  It is equivalent to the xref:api-downloads.adoc#geoDistance[`within` predicate], and to the `geometry` parameter of the occurrence search API.
+
+If you have problems, first check your polygon with https://arthur-e.github.io/Wicket/[Wicket] — ensure the points are ordered anti-clockwise. (A polygon with clockwise points represents the opposite: the whole world except the polygon.)
+
+== Grid functions
+
+These functions are usually used for generating species occurrence cubes.  They calculate a grid cell for a point.
+
+=== EEA Reference Grid cell code, `GBIF_EEARGCode`
+
+Function definition:
+
+[source,sql]
+----
+STRING GBIF_EEARGCode(INTEGER gridSize, DOUBLE latitude, DOUBLE longitude, DOUBLE coordinateUncertaintyInMeters)
+----
+
+Parameters:
+
+`gridSize`:: The _grid size_ in metres of the EEA Reference Grid.  Must be _25_, _100_, _250_, _1000_, _10000_ or _100000_.
+`latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
+`longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
+`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`)
+
+The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
+
+Reference: https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2/about-the-eea-reference-grid/eea_reference_grid_v1.pdf/download[About the EEA reference grid [PDF]].
+
+=== Extended Quarter-Degree Grid cell code, `GBIF_EQDGCCode`
+
+Function definition:
+
+[source,sql]
+----
+STRING GBIF_EQDGCCode(INTEGER level, DOUBLE latitude, DOUBLE longitude, DOUBLE coordinateUncertaintyInMeters)
+----
+
+Parameters:
+
+`level`:: The _level_ of the grid; the number of additional divisions applied to a one-degree cell.
+`latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
+`longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
+`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`)
+
+The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
+
+A _level_ of _0_ will give the 1° cell, e.g. `S01E010`.  For quarter-degrees, use _level_ _2_, e.g. `S01E010AD`.
+
+Reference: https://doi.org/10.1111/j.1365-2028.2008.00997.x[Larsen R, Holmern T, Prager SD, Maliti H, Røskaft, E. (2009) Using the extended quarter degree grid cell system to unify mapping and sharing of biodiversity data. African Journal of Ecology, 47: 382-392.]
+
+See also: https://en.wikipedia.org/wiki/QDGC[Wikipedia: QDGC].
+
+=== Military Grid Reference System cell code, `GBIF_MGRSCode`
+
+Function definition:
+
+[source,sql]
+----
+STRING GBIF_MGRSCode(INTEGER gridSize, DOUBLE latitude, DOUBLE longitude, DOUBLE coordinateUncertaintyInMeters)
+----
+
+Parameters:
+
+`gridSize`:: The _grid size_ in metres.  Must be _1_, _10_, _100_, _1000_, _10000_, _100000_ or _0_.
+`latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
+`longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
+`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`)
+
+The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
+
+A _gridSize_ of _0_ will give the Grid Zone Junction (GZJ) only, e.g. `32`.  Other values increase the accuracy of the grid, e.g. _100_ (metres) `32UNC686615`.
+
+Reference: https://earth-info.nga.mil/GandG/coordsys/grids/referencesys.html[Grids and Reference Systems].
+
+See also: https://en.wikipedia.org/wiki/Military_Grid_Reference_System[Wikipedia: Military Grid Reference System].
+
+=== Text output functions
+
+These functions are useful when producing text-type output, e.g. tab-delimited files.
+
+=== Join Array, `GBIF_JoinArray`
+
+Function definition:
+
+[source,sql]
+----
+STRING GBIF_JoinArray(ARRAY array, STRING separator)
+----
+
+Parameters:
+
+`array`:: An array
+`separator`:: A separator to put between the array values, e.g. `|` or `, `
+
+This function returns the array elements separated by the separator.
+
+=== To ISO8601 Date, `GBIF_ToISO8601`
+
+Function definition:
+
+[source,sql]
+----
+STRING GBIF_ToISO8601(TIMESTAMP date)
+----
+
+Parameters:
+
+`date`:: A timestamp of millseconds from the Unix epoch.
+
+This function formats a timestamp to a string like `2024-01-26T13:43:08Z`.  The UTC timezone (`Z`) is used.
+
+=== To Local ISO8601 Date, `GBIF_ToLocalISO8601`
+
+Function definition:
+
+[source,sql]
+----
+STRING GBIF_ToLocalISO8601(TIMESTAMP date)
+----
+
+Parameters:
+
+`date`:: A timestamp of millseconds from the Unix epoch.
+
+This function formats a timestamp to a string like `2024-01-26T13:43:08`.  No timezone is included.
