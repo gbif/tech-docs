@@ -69,8 +69,10 @@ asciidoc:
     page-toctitle: 'Page contents'
     language: en
     null: ␀
+    prod: prod
 antora:
   extensions:
   - require: '@antora/lunr-extension'
     index_latest_only: true
     languages: [en]
+  - require: ./unpublish-flagged-pages.js
