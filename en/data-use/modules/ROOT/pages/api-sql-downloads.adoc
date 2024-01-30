@@ -1,5 +1,7 @@
 = API SQL Downloads
-ifdef::prod[:page-unpublish:]
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
 
 NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently available for preview on the GBIF test environment, https://www.gbif-uat.org/[GBIF-UAT.org].
 

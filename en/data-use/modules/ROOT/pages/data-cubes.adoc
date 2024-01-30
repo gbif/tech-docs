@@ -1,5 +1,7 @@
 = Data cubes
-ifdef::prod[:page-unpublish:]
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
 
 *Data cubes* group species occurrence data along spatial, temporal and/or taxonomic dimensions.
 

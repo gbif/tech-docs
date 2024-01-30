@@ -69,7 +69,6 @@ asciidoc:
     page-toctitle: 'Page contents'
     language: en
     null: ␀
-    prod: prod
 antora:
   extensions:
   - require: '@antora/lunr-extension'
