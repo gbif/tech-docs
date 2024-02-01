@@ -3,13 +3,15 @@ ifeval::["{env}" == "prod"]
 :page-unpublish:
 endif::[]
 
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently available for preview on the GBIF test environment, https://www.gbif-uat.org/[GBIF-UAT.org].
+
 *Data cubes* group species occurrence data along spatial, temporal and/or taxonomic dimensions.
 
 They can be produced using a *prototype* GBIF API, or using the GBIF occurrence data deposited on xref:cloud-services::index.adoc[external cloud services].  Both methods are described on this page.
 
 == Demonstration cube specification
 
-The cube will use occurrences of animals from Poland, recorded during or after 2000.
+The guides below will produce a data cube for occurrences of animals from Poland, recorded during or after 2000.
 
 The _dimensions_ of the cube will be
 
@@ -17,14 +19,14 @@ The _dimensions_ of the cube will be
 ** We must therefore exclude occurrences not identified to species level
 ** We will also exclude occurrences with known uncertain identifications
 . Year-Month
-** We must therefore exclude occurrences with only year accuracy, or with an uncertain date spanning multiple months
+** We must exclude occurrences with only year accuracy, or with an uncertain date spanning multiple months
 . EEA Reference grid
-** Randomize the point using the coordinateUncertaintyInMeters, defaulting to 1000m
+** We will randomize the point using the coordinateUncertaintyInMeters, defaulting to 1000m
 ** We will exclude occurrences without coordinates
 . Sex
 ** This is included to demonstrate a basic dimension
 . Life stage
-** This is included to demonstrate a more complex field used for a dimension
+** This is included to demonstrate a more complex field (a vocabulary field) used for a dimension
 
 The _measures_ of the cube will be
 
@@ -54,11 +56,10 @@ WHERE occurrenceStatus = 'PRESENT'
 
 === Exclude unwanted data
 
-The GBIF website and search APIs do not allow excluding data from searches, but this is often required for data cubes.  We have additional expressions for our WHERE clause:
+The GBIF website and search APIs do not allow excluding data from searches, but this is often required for data cubes.  We add additional expressions to our WHERE clause:
 
 [source,sql]
 ----
-…
   AND speciesKey IS NOT NULL <1>
   AND NOT array_contains(issue, 'COUNTRY_COORDINATE_MISMATCH') <2>
   AND month IS NOT NULL <3>
@@ -69,24 +70,26 @@ The GBIF website and search APIs do not allow excluding data from searches, but 
 
 === Write full query
 
+The WHERE clause is the filter, but the dimensions and measurements must be defined.  These are used for the SELECT and GROUP BY clauses.
+
 Typical data cubes will use an SQL query similar to this one:
 
 [source,sql]
 ----
 SELECT <1>
   -- Dimensions: <2>
-  year,
+  "year", <3>
   GBIF_EEARGCode(
     1000,
     decimalLatitude,
     decimalLongitude,
-    COALESCE(coordinateUncertaintyInMeters, 1000) <3>
+    COALESCE(coordinateUncertaintyInMeters, 1000) <4>
   ) AS eeaCellCode,
   speciesKey,
   sex,
   lifestage.concept AS lifestage,
-  -- Measurements <4>
-  COUNT(*) AS n,
+  -- Measurements <5>
+  COUNT(*) AS n, <6>
   MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters
 FROM
   occurrence
@@ -97,23 +100,25 @@ WHERE occurrenceStatus = 'PRESENT'
   AND hasCoordinate = TRUE
   AND speciesKey IS NOT NULL
   AND NOT ARRAY_CONTAINS(issue, 'COUNTRY_COORDINATE_MISMATCH')
-  AND month IS NOT NULL
+  AND "month" IS NOT NULL
 GROUP BY
-  year,
+  "year",
   eeaCellCode,
   speciesKey,
   sex,
   lifestage.concept,
-ORDER BY <5>
+ORDER BY <7>
   year DESC,
   eeaCellCode ASC,
   speciesKey ASC;
 ----
 <1> These are the columns in the resulting cube, i.e. the dimensions and measurements for the cube.
-<2> The dimensions must appear in the `GROUP BY` section. They can include functions.
-<3> `COALESCE` sets a default value (1000) if the first value is absent.
-<4> The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, `MAX`, `AVERAGE`, `SUM` etc
-<5> The `ORDER BY` section is optional.
+<2> The dimensions must also appear in the `GROUP BY` section. They can include functions.
+<3> `YEAR` (or `year`) is an SQL function, so we must quote the name of the column as `"year"`.  The same for `"month"`.
+<4> `COALESCE` sets a default value (1000) if the first value is absent.
+<5> The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, `MAX`, `AVERAGE`, `SUM` etc
+<6> `AS` gives a name to the column, used as the header in the result file
+<7> The `ORDER BY` section is optional.
 
 See xref::api-sql-download-functions.adoc[] for descriptions and arguments for the functions, including the `GBIF_EEARGCode` (EEA reference grid) function.
 
@@ -125,7 +130,7 @@ See xref::api-sql-downloads.adoc[] for instructions.
 
 == Generating a data cube using Microsoft Azure Databricks
 
-NOTE: This is an **prototype**, and the implementation may change throughout 2024.
+NOTE: This is a **prototype**, and the implementation may change throughout 2024.
 
 === Set up the Databricks cluster
 
@@ -135,17 +140,19 @@ Once the "Compute" cluster is created, add the cube functions library.
 
 . Choose "Compute", select your cluster and then "Libraries"
 . Click "Install new", "Maven" and use these parameters:
-** Coordinates: org.gbif.occurrence:cube-hive:0.1.0
-** Repository: https://repository.gbif.org/content/repositories/releases
+** Coordinates: `org.gbif.occurrence:cube-hive:0.1.0`
+** Repository: `https://repository.gbif.org/content/repositories/releases`
 . Click "Install"
 
 === Import the most recent GBIF monthly snapshot
+
+Create a new notebook, and using a Scala cell run this code. (Change the date to the current month.)
 
 [source,scala]
 ----
 import org.apache.spark.sql.functions._
 
-val gbif_snapshot_path = "wasbs://gbif@ai4edataeuwest.blob.core.windows.net/occurrence/2024-01-01/occurrence.parquet/*"
+val gbif_snapshot_path = "wasbs://gbif@ai4edataeuwest.blob.core.windows.net/occurrence/2024-02-01/occurrence.parquet/*"
 
 val df = spark.read.parquet(gbif_snapshot_path)
 
@@ -156,7 +163,7 @@ df.write.format("parquet").saveAsTable("gbif.occurrence")
 
 === Create a new SQL notebook
 
-In the new notebook, add the function definitions:
+In another new notebook, add an SQL cell and define the grid functions:
 
 [source,sql]
 ----
@@ -171,12 +178,10 @@ Perhaps using the GBIF.org website, find an approximate search filter, for examp
 
 [source,sql]
 ----
-…
 WHERE occurrenceStatus = 'PRESENT'
   AND countryCode = 'PL'
   AND year >= 2000
   AND kingdom = 'Animalia' <1>
-…
 ----
 <1> The `kingdomKey` fields (used in the GBIF API version above) is not available on Azure
 
@@ -188,12 +193,10 @@ The GBIF website and search APIs do not allow excluding data from searches, but 
 
 [source,sql]
 ----
-…
   AND decimalLatitude IS NOT NULL <1>
   AND speciesKey IS NOT NULL
   AND NOT array_contains(issue, 'COUNTRY_COORDINATE_MISMATCH')
   AND month IS NOT NULL
-…
 ----
 <1> The `hasCoordinate` fields is not available on Azure
 
@@ -216,7 +219,7 @@ SELECT <1>
   sex,
   lifestage.concept AS lifestage,
   -- Measurements <4>
-  COUNT(*) AS n,
+  COUNT(*) AS n, <5>
   MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters
 FROM
   gbif.occurrence
@@ -234,20 +237,20 @@ GROUP BY
   speciesKey,
   sex,
   lifestage.concept,
-ORDER BY <5>
+ORDER BY <6>
   year DESC,
   eeaCellCode ASC,
   speciesKey ASC;
 ----
 <1> These are the columns in the resulting cube, i.e. the dimensions and measurements for the cube.
-<2> The dimensions must appear in the `GROUP BY` section. They can include functions.
+<2> The dimensions must also appear in the `GROUP BY` section. They can include functions.
 <3> `COALESCE` sets a default value (1000) if the first value is absent.
 <4> The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, `MAX`, `AVERAGE`, `SUM` etc
-<5> The `ORDER BY` section is optional.
+<5> `AS` gives a name to the column, used as the header in the result file
+<6> The `ORDER BY` section is optional.
 
 See xref::api-sql-download-functions.adoc[] for descriptions and arguments for the functions, including the `GBIF_EEARGCode` (EEA reference grid) function.
 
-=== Submit the query to GBIF
+=== Execute the query
 
-See xref::api-sql-downloads.adoc[] for instructions.
-
+Run the query.  You can download the results using the user interface.

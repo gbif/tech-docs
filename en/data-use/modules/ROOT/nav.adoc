@@ -5,8 +5,14 @@
 ** xref:checklist-issues-and-flags.adoc[]
 * API Usage
 ** xref:api-introduction.adoc[API Introduction]
-** xref:api-downloads.adoc[]
 ** xref:rgbif.adoc[rgbif]
 ** xref:pygbif.adoc[pygbif]
+* API Downloads
+** xref:api-downloads.adoc[]
+ifeval::["{env}" != "prod"]
+** xref:api-sql-downloads.adoc[]
+** xref:api-sql-download-functions.adoc[]
+** xref:data-cubes.adoc[]
+endif::[]
 * xref:cloud-services::index.adoc[]
 * xref:citation.adoc[Citation]
