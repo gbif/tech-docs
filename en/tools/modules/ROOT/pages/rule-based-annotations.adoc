@@ -5,73 +5,71 @@ endif::[]
 
 NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently available for preview on the GBIF test environment, https://www.gbif-uat.org/[GBIF-UAT.org].
 
-=== Road Map 
-
-Initiated tasks in **bold**.
-
-https://docs.gbif.org/2023-work-programme/en/index.en.html#indicative-tasks-for-2023-14[work programme]
+This project is part of the indicative tasks for 2023 GBIF https://docs.gbif.org/2023-work-programme/en/index.en.html#indicative-tasks-for-2023-14[work programme]. 
 
 **Explore** approaches to annotation capabilities in GBIF.org that enable data corrections, enrichments and user-provided rules that combine taxonomic, geographic and temporal combinations to detect suspicious records
 
-* User interface 
-* API with storage 
-* R package `gbifan` interface 
-* Seeding the database
-* Introduce to pilot users
-* Start data paper
-* Integration with a hosted portal
-* Integration with GBIF.org
+=== Summary 
 
-==== User Interface 
+Rule based annotations is an experimental tool being developed within GBIF that will allow users to mark certain occurrence data searches with a controlled vocabulary of helpful terms. Currently, the project is focussed on annotating geographic locations, but this likely expand in the future. Although many features have been developed, this project should be considered a work in progress and experimental. The main goal of the project is to facilitate occurrence data cleaning and user feedback. 
 
-https://react-components.gbif-uat.org/iframe.html?args=&id=tools-annotations--standalone-example&taxonKey=2435099&viewMode=story[Demo UI]
+=== Road Map 
+
+Initiated tasks with ✓.
+
+==== User Interface ✓
 
 A demo UI  has been developed to facilitate the process of creating rule-based annotations on a map. This user-friendly interface allows users to visually interact with a map and define rules or criteria for data annotations.
 
-The current state of the demo UI for rule-based annotations is considered a work in progress, and it is expected to evolve based on valuable feedback gathered during the pilot phase. 
+The current state of the demo UI for rule-based annotations is considered a work in progress, and it is expected to evolve based on valuable feedback gathered during the pilot user testing phase. 
 
-==== API backend
+==== API backend ✓
+
+The main underlying technology that will be power the annotations will be a database store and a restful API interface. 
 
 https://github.com/gbif/occurrence-annotation[Backend GitHub]
 
-http://labs.gbif.org:7013/swagger-ui/index.html[API Docs]
+http://prodws-vh.gbif.org:8124/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config[API Docs]
 
-==== R package `gbifan` 
+==== R package `gbifan` ✓
 
-It is anticipated that the most efficient way to interact with the rule store will be via R. 
+Initially the main way to interact with the annotations store, will be through the API or R. 
 
-==== Introduction to pilot users
+The R package can be found https://github.com/gbif/occurrence-annotation/tree/main/r-package/gbifan[here].
 
-Identify potential pilot users who are actively engaged in biodiversity research, data annotation, or related fields. Consider reaching out to academic researchers and enthusiasts.
+==== Seeding rulesets  ✓
 
-==== Seeding rulesets 
+Seeding `rulesets` into our annotation store provides several benefits, especially when it comes to improving user experience. Seeding data can help new users get acquainted with the annotation system more quickly. By providing sample data or pre-existing annotations, users can learn how the system works and what is expected of them in terms of annotation tasks. This can reduce the learning curve and increase user engagement.  New and pilot Users can be more productive when they have access to seeded data. They can start their annotation tasks immediately instead of filling in well-known information. 
 
-Seeding `rulesets` into our annotation several benefits, especially when it comes to improving user experience. Seeding data can help new users get acquainted with the annotation system more quickly. By providing sample data or pre-existing annotations, users can learn how the system works and what is expected of them in terms of annotation tasks. This can reduce the learning curve and increase user engagement. 
-
-Seeding data with known annotations can also serve as a benchmark for quality assurance. Users can compare their annotations with the existing ones to ensure accuracy and consistency. This helps maintain high data quality standards, especially in applications like machine learning where training data quality is crucial. Users can be more productive when they have access to seeded data. They can start their annotation tasks immediately instead of filling in well-known information. 
-
-Providing users with seeded data can make the annotation process more engaging and rewarding. When users see that their annotations contribute to a dataset that already contains valuable information, they are more likely to stay engaged and continue using the system over the long term.
-
-.A table of examples ruleset seeds. 
+.Example ruleset seeds. 
 [width="100%",options="header,footer"]
 |====================
 |  https://www.gbif.org/dataset/f382f0ce-323a-4091-bb9f-add557f3a9a2[World Checklist of Vascular Plants]
 |  https://rs.gbif.org/extension/gbif/1.0/distribution_2022-02-02.xml[GBIF Species Distribution Extension]
-|
 |====================
+
+==== Introduction to interanal and external pilot users
+
+Before releasing the rule based annotations tool to the public, it will undergo internal and external piloting phase. In this phase, pilot users will be given a small annotations task within a group they are familar. The pilot users will then be interviewed about their overall experience, particulary if there were any "rules" or annotations they wanted but 
+
+Desired feedback during the pilot phase: 
+
+* Were there any rules that you wanted to make but could not? 
+* Do you think you will be able to use the rules you made to create and improved dataset? 
+* Is there any controlled vocabulary that you would like to add? 
+
+Less interesting feedback but still appreciated: 
+
+* UI improvements 
+* Software bugs
 
 ==== Data paper 
 
-Carrot to find pilot users. 
+After the internal and external review 
 
-==== Integration with a hosted portal 
+==== Development of data cleaning workflows 
 
-A https://www.gbif.org/hosted-portal[hosted portal] is a simple, branded and fully customizable website that displays a targeted subset of GBIF-mediated data to support Participant nodes and their partners.
-
-This service is designed to support biodiversity data use and engagement at national, institutional, regional and thematic scales.
-
-==== Integration with GBIF.org
-
+One of the final tasks will be the development of data cleaning workflows using the collected annotations. 
 
 === Introduction 
 
