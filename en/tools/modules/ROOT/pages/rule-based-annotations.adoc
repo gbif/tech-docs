@@ -55,8 +55,9 @@ Before releasing the rule based annotations tool to the public, it will undergo 
 Desired feedback during the pilot phase: 
 
 * Were there any rules that you wanted to make but could not? 
-* Do you think you will be able to use the rules you made to create and improved dataset? 
+* Do you think you will be able to use the rules you made to create an improved and useful dataset? 
 * Is there any controlled vocabulary that you would like to add? 
+* Was it clear what you were doing and why? 
 
 Less interesting feedback but still appreciated: 
 
@@ -65,7 +66,7 @@ Less interesting feedback but still appreciated:
 
 ==== Data paper 
 
-After the internal and external review 
+After the internal and external review we plan to write a data paper that will present the annotations tool to wider audience. The internal and external pilot users will be encouraged to be co-authors on the paper. The "data" part of the data paper will be an export of rules that were created during the pilot phase. 
 
 ==== Development of data cleaning workflows 
 
