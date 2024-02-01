@@ -246,7 +246,7 @@ Additionally, voting could provide protection against **vandalism**.
 Another useful feature would be the ability to *cast* a `rule` down to all child taxa. Annotating higher taxonomy is harder than annotating at the species level because you have to be confident, the annotation at the higher level fits all child taxa.
 
 .A map of amphibian occurrences on GBIF. It is well known there are no amphibians in Antarctica. However, we see from the map that one occurrence point still appears there in error.
-image::amphibians.png[]
+image::annotations/amphibians.png[]
 
 Given the distribution of Amphibians, a good rule for the high taxon Amphibians would be :
 
@@ -265,7 +265,7 @@ For example, a rule could exclude a certain group
 `rule` -> *Amphibians* in *Antarctica* are *Suspicious* except **Antartic frogs**
 
 .https://edition.cnn.com/2020/04/23/world/antarctica-first-frog-species-scn/index.html[Frog article]
-image::frogs.png[]
+image::annotations/frogs.png[]
 
 A work around to *rule exceptions* could of course be rules that simply *conflict*.
 
