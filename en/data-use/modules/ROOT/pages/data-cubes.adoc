@@ -86,16 +86,16 @@ SELECT <1>
     COALESCE(coordinateUncertaintyInMeters, 1000) <4>
   ) AS eeaCellCode,
   speciesKey,
-  sex,
-  lifestage.concept AS lifestage,
+  COALESCE(sex, 'NOT_SUPPLIED') AS sex,
+  COALESCE(occurrence.lifestage.concept, 'NOT_SUPPLIED') AS lifestage,
   -- Measurements <5>
-  COUNT(*) AS n, <6>
+  COUNT(*) AS occurrences, <6>
   MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters
 FROM
   occurrence
 WHERE occurrenceStatus = 'PRESENT'
   AND countryCode = 'PL'
-  AND year >= 2000
+  AND \"year\" >= 2000
   AND kingdomKey = 1
   AND hasCoordinate = TRUE
   AND speciesKey IS NOT NULL
@@ -106,9 +106,9 @@ GROUP BY
   eeaCellCode,
   speciesKey,
   sex,
-  lifestage.concept,
+  lifestage
 ORDER BY <7>
-  year DESC,
+  \"year\" DESC,
   eeaCellCode ASC,
   speciesKey ASC;
 ----
@@ -125,6 +125,19 @@ See xref::api-sql-download-functions.adoc[] for descriptions and arguments for t
 === Submit the query to GBIF
 
 See xref::api-sql-downloads.adoc[] for instructions.
+
+A cube #with *test data* from gbif-uat.org# using this query is available https://www.gbif-uat.org/occurrence/download/0000004-240201135505551[here].
+
+[%header,format=tsv]
+|===
+year	eeacellcode	specieskey	sex	lifestage	occurrences	mincoordinateuncertaintyinmeters
+2020	1kmE5156N3446	1310622	MALE	Adult	1	1000.0
+2020	1kmE5156N3447	1310622	MALE	Adult	1	1000.0
+2020	1kmE5157N3192	1631718	NOT_SUPPLIED	Adult	1	1000.0
+2020	1kmE5157N3192	1631721	NOT_SUPPLIED	Adult	2	1000.0
+2020	1kmE5157N3192	1631728	NOT_SUPPLIED	Adult	2	1000.0
+2020	1kmE5157N3192	1632179	NOT_SUPPLIED	Adult	3	1000.0
+|===
 
 '''
 
@@ -216,8 +229,6 @@ SELECT <1>
     COALESCE(coordinateUncertaintyInMeters, 1000) <3>
   ) AS eeaCellCode,
   speciesKey,
-  sex,
-  lifestage.concept AS lifestage,
   -- Measurements <4>
   COUNT(*) AS n, <5>
   MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters
@@ -234,9 +245,7 @@ WHERE occurrenceStatus = 'PRESENT'
 GROUP BY
   year,
   eeaCellCode,
-  speciesKey,
-  sex,
-  lifestage.concept,
+  speciesKey
 ORDER BY <6>
   year DESC,
   eeaCellCode ASC,
