@@ -95,7 +95,7 @@ FROM
   occurrence
 WHERE occurrenceStatus = 'PRESENT'
   AND countryCode = 'PL'
-  AND \"year\" >= 2000
+  AND "year" >= 2000
   AND kingdomKey = 1
   AND hasCoordinate = TRUE
   AND speciesKey IS NOT NULL
@@ -108,7 +108,7 @@ GROUP BY
   sex,
   lifestage
 ORDER BY <7>
-  \"year\" DESC,
+  "year" DESC,
   eeaCellCode ASC,
   speciesKey ASC;
 ----
