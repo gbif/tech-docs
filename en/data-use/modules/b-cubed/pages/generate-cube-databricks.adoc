@@ -1,8 +1,8 @@
-= Data cubes
+= Generate a species occurrence cube using Microsoft Azure Databricks
 
-*Data cubes* group species occurrence data along spatial, temporal and/or taxonomic dimensions.
+*Species occurrence cubes* group species occurrence data along spatial, temporal and/or taxonomic dimensions.
 
-This page demonstrates creating a cube using GBIF occurrence data deposited on Microsoft Azure.  The same approach can be used with other tabular data.
+This page demonstrates creating a cube using GBIF occurrence data deposited on Microsoft Azure.  The same approach can be used with other tabular data by uploading or importing it to Azure.
 
 == Demonstration cube specification
 
@@ -18,10 +18,6 @@ The _dimensions_ of the cube will be
 . EEA Reference grid
 ** We will randomize the point using the coordinateUncertaintyInMeters, defaulting to 1000m
 ** We will exclude occurrences without coordinates
-. Sex
-** This is included to demonstrate a basic dimension
-. Life stage
-** This is included to demonstrate a more complex field (a vocabulary field) used for a dimension
 
 The _measures_ of the cube will be
 
@@ -47,7 +43,7 @@ Once the "Compute" cluster is created, add the cube functions library.
 
 === Import the most recent GBIF monthly snapshot
 
-Create a new notebook, and using a Scala cell run this code. (Change the date to the current month.)
+Create a new notebook, and using a Scala cell run this code. (Change the date to the first day of the current month.)
 
 [source,scala]
 ----

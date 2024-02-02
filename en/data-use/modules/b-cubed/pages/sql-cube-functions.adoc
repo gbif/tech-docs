@@ -1,4 +1,4 @@
-= SQL Cube Functions
+= Species Occurrence Cube SQL Functions
 
 These custom functions have been developed by the B-Cubed project for producing species occurrence cubes.
 
