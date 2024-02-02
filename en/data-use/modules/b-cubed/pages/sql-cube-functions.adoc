@@ -2,7 +2,7 @@
 
 These custom functions have been developed by the B-Cubed project for producing species occurrence cubes.
 
-See xref:generate-cube-databricks[] for an example of their usage.
+See xref:generate-cube-databricks.adoc[] for an example of their usage.
 
 == Grid functions
 
