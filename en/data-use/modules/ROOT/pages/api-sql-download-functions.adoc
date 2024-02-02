@@ -21,7 +21,7 @@ These are the same functions used for xref:api-downloads.adoc[predicate-based do
 
 === Geospatial distance, `GBIF_GeoDistance`
 
-Function definition:
+*Function definition:*
 
 [source,sql]
 ----
@@ -32,7 +32,7 @@ BOOLEAN GBIF_GeoDistance(DOUBLE centroidLatitude,
                          DOUBLE longitude)
 ----
 
-Parameters:
+*Parameters:*
 
 `centroidLatitude`:: The latitude of the _centroid_, in WGS84 decimal degrees
 `centroidLongitude`:: The longitude of the _centroid_, in WGS84 decimal degrees
@@ -40,11 +40,13 @@ Parameters:
 `latitude`:: The latitude of the _point_ to filter (usually the `decimalLatitude` field)
 `longitude`:: The longitude of the _point_ to filter (usually the `decimalLongitude` field)
 
+*Return value:*
+
 This function returns `TRUE` if the _point_ is within _distance_ of the _centroid_.  It is equivalent to the xref:api-downloads.adoc#geoDistance[`geoDistance` predicate].
 
 === Within polygon, `GBIF_Within`
 
-Function definition:
+*Function definition:*
 
 [source,sql]
 ----
@@ -53,13 +55,17 @@ BOOLEAN GBIF_Within(STRING geometryWellKnownText,
                     DOUBLE longitude)
 ----
 
-Parameters:
+*Parameters:*
 
 `geometryWellKnownText`:: A _polygon_ specified in https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry[Well-known text (WKT)] format
 `latitude`:: The latitude of the _point_ to filter (usually the `decimalLatitude` field)
 `longitude`:: The longitude of the _point_ to filter (usually the `decimalLongitude` field)
 
-This function returns `TRUE` if the _point_ is within the _polygon_.  It is equivalent to the xref:api-downloads.adoc#geoDistance[`within` predicate], and to the `geometry` parameter of the occurrence search API.
+*Return value:*
+
+This function returns `TRUE` if the _point_ is within the _polygon_.  It is equivalent to the xref:api-downloads.adoc#within[`within` predicate], and to the `geometry` parameter of the occurrence search API.
+
+*Notes:*
 
 If you have problems, first check your polygon with https://arthur-e.github.io/Wicket/[Wicket] — ensure the points are ordered anti-clockwise. (A polygon with clockwise points represents the opposite: the whole world except the polygon.)
 
@@ -69,7 +75,7 @@ These functions are usually used for generating species occurrence cubes.  They 
 
 === EEA Reference Grid cell code, `GBIF_EEARGCode`
 
-Function definition:
+*Function definition:*
 
 [source,sql]
 ----
@@ -79,7 +85,7 @@ STRING GBIF_EEARGCode(INTEGER gridSize,
                       DOUBLE coordinateUncertaintyInMeters)
 ----
 
-Parameters:
+*Parameters:*
 
 `gridSize`:: The _grid size_ in metres of the EEA Reference Grid.  Must be _25_, _100_, _250_, _1000_, _10000_ or _100000_.
 `latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
@@ -88,11 +94,28 @@ Parameters:
 
 The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
 
-Reference: https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2/about-the-eea-reference-grid/eea_reference_grid_v1.pdf/download[About the EEA reference grid [PDF]].
+*Return value:*
+
+The code for the cell of the EEA reference grid in which the randomized point falls.
+
+*Example arguments and returned values:*
+
+[cols=">,>,>,>,>"]
+|===
+|Result|_gridSize_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_
+|`100kmE43N32`|`100 000`|`52.0`|`10.0`|`1000.0`
+|`10kmE432N321`|`10 000`|`52.0`|`10.0`|`1000.0`
+|`1kmE4321N3210`|`1 000`|`52.0`|`10.0`|`1000.0`
+|`250mE432100N321000`|`250`|`52.0`|`10.0`|`1000.0`
+|`100mE43210N32100`|`100`|`52.0`|`10.0`|`1000.0`
+|`25mE4321000N3210000`|`25`|`52.0`|`10.0`|`1000.0`
+|===
+
+Reference: https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2/about-the-eea-reference-grid/eea_reference_grid_v1.pdf/download[About the EEA reference grid (PDF)].
 
 === Extended Quarter-Degree Grid cell code, `GBIF_EQDGCCode`
 
-Function definition:
+*Function definition:*
 
 [source,sql]
 ----
@@ -102,7 +125,7 @@ STRING GBIF_EQDGCCode(INTEGER level,
                       DOUBLE coordinateUncertaintyInMeters)
 ----
 
-Parameters:
+*Parameters:*
 
 `level`:: The _level_ of the grid; the number of additional divisions applied to a one-degree cell.
 `latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
@@ -113,13 +136,31 @@ The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ withi
 
 A _level_ of _0_ will give the 1° cell, e.g. `S01E010`.  For quarter-degrees, use _level_ _2_, e.g. `S01E010AD`.
 
+*Return value:*
+
+The code for the cell of the Extended Quarter-Degree Grid in which the randomized point falls.
+
+*Example arguments and returned values:*
+
+[cols=">,>,>,>,>"]
+|===
+|Result|_level_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_
+|`E010N52`|`0`|`52.3`|`10.3`|`1000.0`
+|`E010N52C`|`1`|`52.3`|`10.3`|`1000.0`
+|`E010N52CB`|`2`|`52.3`|`10.3`|`1000.0`
+|`E010N52CBC`|`3`|`52.3`|`10.3`|`1000.0`
+|`E010N52CBCC`|`4`|`52.3`|`10.3`|`1000.0`
+|`E010N52CBCCB`|`5`|`52.3`|`10.3`|`1000.0`
+|`E010N52CBCCBB`|`6`|`52.3`|`10.3`|`1000.0`
+|===
+
 Reference: https://doi.org/10.1111/j.1365-2028.2008.00997.x[Larsen R, Holmern T, Prager SD, Maliti H, Røskaft, E. (2009) Using the extended quarter degree grid cell system to unify mapping and sharing of biodiversity data. African Journal of Ecology, 47: 382-392.]
 
 See also: https://en.wikipedia.org/wiki/QDGC[Wikipedia: QDGC].
 
 === Military Grid Reference System cell code, `GBIF_MGRSCode`
 
-Function definition:
+*Function definition:*
 
 [source,sql]
 ----
@@ -129,7 +170,7 @@ STRING GBIF_MGRSCode(INTEGER gridSize,
                      DOUBLE coordinateUncertaintyInMeters)
 ----
 
-Parameters:
+*Parameters:*
 
 `gridSize`:: The _grid size_ in metres.  Must be _1_, _10_, _100_, _1000_, _10000_, _100000_ or _0_.
 `latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
@@ -139,6 +180,24 @@ Parameters:
 The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
 
 A _gridSize_ of _0_ will give the Grid Zone Junction (GZJ) only, e.g. `32`.  Other values increase the accuracy of the grid, e.g. _100_ (metres) `32UNC686615`.
+
+*Return value:*
+
+The code for the cell of the Military Grid Reference System in which the randomized point falls.
+
+*Example arguments and returned values:*
+
+[cols=">,>,>,>,>"]
+|===
+|Result|_gridSize_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_
+|`32U`|`0`|`52.0`|`10.0`|`1000.0`
+|`32UNC`|`100 000`|`52.0`|`10.0`|`1000.0`
+|`32UNC66`|`10 000`|`52.0`|`10.0`|`1000.0`
+|`32UNC6861`|`1 000`|`52.0`|`10.0`|`1000.0`
+|`32UNC686615`|`100`|`52.0`|`10.0`|`1000.0`
+|`32UNC68646151`|`10`|`52.0`|`10.0`|`1000.0`
+|`32UNC6864961510`|`1`|`52.0`|`10.0`|`1000.0`
+|===
 
 Reference: https://earth-info.nga.mil/GandG/coordsys/grids/referencesys.html[Grids and Reference Systems].
 
@@ -150,7 +209,7 @@ These functions are useful when producing text-type output, e.g. tab-delimited f
 
 === Join Array, `GBIF_JoinArray`
 
-Function definition:
+*Function definition:*
 
 [source,sql]
 ----
@@ -158,39 +217,45 @@ STRING GBIF_JoinArray(ARRAY array,
                       STRING separator)
 ----
 
-Parameters:
+*Parameters:*
 
 `array`:: An array
 `separator`:: A separator to put between the array values, e.g. `|` or `, `
+
+*Return value:*
 
 This function returns the array elements separated by the separator.
 
 === To ISO8601 Date, `GBIF_ToISO8601`
 
-Function definition:
+*Function definition:*
 
 [source,sql]
 ----
 STRING GBIF_ToISO8601(TIMESTAMP date)
 ----
 
-Parameters:
+*Parameters:*
 
 `date`:: A timestamp of millseconds from the Unix epoch.
+
+*Return value:*
 
 This function formats a timestamp to a string like `2024-01-26T13:43:08Z`.  The UTC timezone (`Z`) is used.
 
 === To Local ISO8601 Date, `GBIF_ToLocalISO8601`
 
-Function definition:
+*Function definition:*
 
 [source,sql]
 ----
 STRING GBIF_ToLocalISO8601(TIMESTAMP date)
 ----
 
-Parameters:
+*Parameters:*
 
 `date`:: A timestamp of millseconds from the Unix epoch.
+
+*Return value:*
 
 This function formats a timestamp to a string like `2024-01-26T13:43:08`.  No timezone is included.

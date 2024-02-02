@@ -1,0 +1,153 @@
+= Data cubes
+
+*Data cubes* group species occurrence data along spatial, temporal and/or taxonomic dimensions.
+
+This page demonstrates creating a cube using GBIF occurrence data deposited on Microsoft Azure.  The same approach can be used with other tabular data.
+
+== Demonstration cube specification
+
+The guide below will produce a data cube for occurrences of animals from Poland, recorded during or after 2000.
+
+The _dimensions_ of the cube will be
+
+. Species
+** We must therefore exclude occurrences not identified to species level
+** We will also exclude occurrences with known uncertain identifications
+. Year-Month
+** We must exclude occurrences with only year accuracy, or with an uncertain date spanning multiple months
+. EEA Reference grid
+** We will randomize the point using the coordinateUncertaintyInMeters, defaulting to 1000m
+** We will exclude occurrences without coordinates
+. Sex
+** This is included to demonstrate a basic dimension
+. Life stage
+** This is included to demonstrate a more complex field (a vocabulary field) used for a dimension
+
+The _measures_ of the cube will be
+
+. Occurrence count
+. Minimum coordinate uncertainty
+. Minimum temporal uncertainty
+
+== Generating a data cube using Microsoft Azure Databricks
+
+NOTE: This is a **prototype**, and the implementation may change throughout 2024.
+
+=== Set up the Databricks cluster
+
+Follow the guide on the GBIF Data Blog, https://data-blog.gbif.org/post/microsoft-azure-and-gbif/[GBIF and Apache-Spark on Microsoft Azure tutorial], to set up a Databricks cluster.
+
+Once the "Compute" cluster is created, add the cube functions library.
+
+. Choose "Compute", select your cluster and then "Libraries"
+. Click "Install new", "Maven" and use these parameters:
+** Coordinates: `org.gbif.occurrence:cube-hive:0.1.0`
+** Repository: `https://repository.gbif.org/content/repositories/releases`
+. Click "Install"
+
+=== Import the most recent GBIF monthly snapshot
+
+Create a new notebook, and using a Scala cell run this code. (Change the date to the current month.)
+
+[source,scala]
+----
+import org.apache.spark.sql.functions._
+
+val gbif_snapshot_path = "wasbs://gbif@ai4edataeuwest.blob.core.windows.net/occurrence/2024-02-01/occurrence.parquet/*"
+
+val df = spark.read.parquet(gbif_snapshot_path)
+
+spark.sql("CREATE DATABASE gbif")
+
+df.write.format("parquet").saveAsTable("gbif.occurrence")
+----
+
+=== Define the gridding functions
+
+In another new notebook, add an SQL cell and define the grid functions:
+
+[source,sql]
+----
+CREATE OR REPLACE TEMPORARY FUNCTION eeaCellCode AS 'org.gbif.occurrence.hive.udf.EeaCellCodeUDF';
+CREATE OR REPLACE TEMPORARY FUNCTION eqdgcCode AS 'org.gbif.occurrence.hive.udf.ExtendedQuarterDegreeGridCellCodeUDF';
+CREATE OR REPLACE TEMPORARY FUNCTION mgrsCode AS 'org.gbif.occurrence.hive.udf.MilitaryGridReferenceSystemCellCodeUDF';
+----
+
+See xref:sql-cube-functions.adoc[] for definitions and parameters of the gridding functions.
+
+=== Create an initial GBIF search filter
+
+Perhaps using the GBIF.org website, find an approximate search filter, for example for a particular taxon, country or region, year range, etc.  This will need to be expressed in SQL for submission to the API:
+
+[source,sql]
+----
+WHERE occurrenceStatus = 'PRESENT'
+  AND countryCode = 'PL'
+  AND year >= 2000
+  AND kingdom = 'Animalia'
+----
+
+Note that not all fields are available on the GBIF data snapshot in Microsoft Azure.
+
+=== Exclude unwanted data
+
+The GBIF website and search APIs do not allow excluding data from searches, but this is often required for data cubes.  We have additional expressions for our WHERE clause:
+
+[source,sql]
+----
+  AND decimalLatitude IS NOT NULL
+  AND speciesKey IS NOT NULL
+  AND NOT array_contains(issue, 'COUNTRY_COORDINATE_MISMATCH')
+  AND month IS NOT NULL
+----
+
+=== Write full query
+
+Typical data cubes will use an SQL query similar to this one:
+
+[source,sql]
+----
+SELECT <1>
+  -- Dimensions: <2>
+  year,
+  eeaCellCode(
+    1000,
+    decimalLatitude,
+    decimalLongitude,
+    COALESCE(coordinateUncertaintyInMeters, 1000) <3>
+  ) AS eeaCellCode,
+  speciesKey,
+  -- Measurements <4>
+  COUNT(*) AS n, <5>
+  MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters
+FROM
+  gbif.occurrence
+WHERE occurrenceStatus = 'PRESENT'
+  AND countryCode = 'PL'
+  AND year >= 2000
+  AND kingdom = 'Animalia'
+  AND decimalLatitude IS NOT NULL
+  AND speciesKey IS NOT NULL
+  AND NOT ARRAY_CONTAINS(issue, 'COUNTRY_COORDINATE_MISMATCH')
+  AND month IS NOT NULL
+GROUP BY
+  year,
+  eeaCellCode,
+  speciesKey
+ORDER BY <6>
+  year DESC,
+  eeaCellCode ASC,
+  speciesKey ASC;
+----
+<1> These are the columns in the resulting cube, i.e. the dimensions and measurements for the cube.
+<2> The dimensions must also appear in the `GROUP BY` section. They can include functions.
+<3> `COALESCE` sets a default value (1000) if the first value is absent.
+<4> The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, `MAX`, `AVERAGE`, `SUM` etc
+<5> `AS` gives a name to the column, used as the header in the result file
+<6> The `ORDER BY` section is optional.
+
+See xref::sql-cube-functions.adoc[] for descriptions and arguments for the functions, including the `eeaCellCode` (EEA reference grid) function.
+
+=== Execute the query
+
+Run the query.  You can download the results using the user interface.

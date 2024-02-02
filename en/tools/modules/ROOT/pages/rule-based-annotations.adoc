@@ -9,21 +9,21 @@ This project is part of the indicative tasks for 2023 GBIF https://docs.gbif.org
 
 **Explore** approaches to annotation capabilities in GBIF.org that enable data corrections, enrichments and user-provided rules that combine taxonomic, geographic and temporal combinations to detect suspicious records
 
-=== Summary
+== Summary
 
 Rule based annotations is an experimental tool being developed within GBIF that will allow users to mark certain occurrence data searches with a controlled vocabulary of helpful terms. Currently, the project is focused on annotating geographic locations, but this likely expand in the future. Although many features have been developed, this project should be considered a work in progress and experimental. The main goal of the project is to facilitate occurrence data cleaning and user feedback.
 
-=== Road Map
+== Road Map
 
 Initiated tasks with ✓.
 
-==== User Interface ✓
+=== User Interface ✓
 
 A demo UI  has been developed to facilitate the process of creating rule-based annotations on a map. This user-friendly interface allows users to visually interact with a map and define rules or criteria for data annotations.
 
 The current state of the demo UI for rule-based annotations is considered a work in progress, and it is expected to evolve based on valuable feedback gathered during the pilot user testing phase.
 
-==== API backend ✓
+=== API backend ✓
 
 The main underlying technology that will be power the annotations will be a database store and a restful API interface.
 
@@ -33,13 +33,13 @@ https://github.com/gbif/occurrence-annotation[Backend GitHub]
 // if required. — Matt.
 // http://prodws-vh.gbif.org:8124/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config[API Docs]
 
-==== R package `gbifan` ✓
+=== R package `gbifan` ✓
 
 Initially the main way to interact with the annotations store, will be through the API or R.
 
 The R package can be found https://github.com/gbif/occurrence-annotation/tree/main/r-package/gbifan[here].
 
-==== Seeding rulesets  ✓
+=== Seeding rulesets  ✓
 
 Seeding `rulesets` into our annotation store provides several benefits, especially when it comes to improving user experience. Seeding data can help new users get acquainted with the annotation system more quickly. By providing sample data or pre-existing annotations, users can learn how the system works and what is expected of them in terms of annotation tasks. This can reduce the learning curve and increase user engagement.  New and pilot Users can be more productive when they have access to seeded data. They can start their annotation tasks immediately instead of filling in well-known information.
 
@@ -50,7 +50,7 @@ Seeding `rulesets` into our annotation store provides several benefits, especial
 |  https://rs.gbif.org/extension/gbif/1.0/distribution_2022-02-02.xml[GBIF Species Distribution Extension]
 |====================
 
-==== Introduction to interanal and external pilot users
+=== Introduction to interanal and external pilot users
 
 Before releasing the rule based annotations tool to the public, it will undergo internal and external piloting phase. In this phase, pilot users will be given a small annotations task within a group they are familiar. The pilot users will then be interviewed about their overall experience, particularly if there were any "rules" or annotations they wanted but
 
@@ -66,17 +66,17 @@ Less interesting feedback but still appreciated:
 * UI improvements
 * Software bugs
 
-==== Data paper
+=== Data paper
 
 After the internal and external review we plan to write a data paper that will present the annotations tool to wider audience. The internal and external pilot users will be encouraged to be co-authors on the paper. The "data" part of the data paper will be an export of rules that were created during the pilot phase.
 
-==== Development of data cleaning workflows
+=== Development of data cleaning workflows
 
 One of the final tasks will be the development of data cleaning workflows using the collected annotations.
 
-=== Introduction
+== Introduction
 
-==== Data cleaning
+=== Data cleaning
 
 https://www.gbif.org/[The Global Biodiversity Information Facility] (GBIF) is a vital data infrastructure for researchers, conservationists, and policymakers across the globe. It aggregates and mediates access to extensive datasets of biodiversity occurrence records, thereby fostering scientific research, conservation efforts, and informed decision-making. Nevertheless, the quality of these records is pivotal for their "fitness for use", and data cleaning becomes an essential process to ensure their reliability and utility.
 
@@ -85,17 +85,17 @@ In recent years, the significance of occurrence data quality in scientific resea
 .Lions in Europe and North America? It is common for GBIF maps to be confusing for users. Most GBIF users are not interested in records from zoos, fossils, or locations that might just be wrong, and GBIF mediated data is often not consistently rich enough to filter unwanted records.
 image::annotations/lions.png[width=80%]
 
-==== Fixing at source
+=== Fixing at source
 
 A competing viewpoint with regard to data cleaning is to "fix at source". Fixing GBIF occurrence data at the source, such as reaching out to data publishers to address issues and errors in their datasets, is an ideal approach in theory. However, in practice, this approach often encounters challenges, primarily because publishers may not respond to emails or communication attempts. It's essential to bear in mind that rule-based annotations can contribute to rectifying data problems at their origin as well. Additionally, it is often the case that records do not need to be fixed, but merely are  not acceptable for a certain application, such as species distribution mapping.
 
 .A rule is a combination of geographic, taxonomic, and geographic information that facilitates data cleaning or analysis.
-==== Motivation
+=== Motivation
 
 Automated solutions, like CoordinateCleaner, while valuable tools for data cleaning, may be considered incomplete in certain contexts due to their limited flexibility and potential to miss edge cases. A rule-based annotation system, on the other hand, allows users to make data quality decisions that fit their use case in a more granular way.
 
 .Any system that attempts to solve every problem will solve none.
-==== Complexity vs usability
+=== Complexity vs usability
 
 Annotation systems, like any software or tool, have the potential to become unusable when they become overly complicated.
 
@@ -103,7 +103,7 @@ One goal of a our rule-based annotation system is to make it accessible to a bro
 
 A rule-based annotation system, especially one used for annotating complex datasets like GBIF occurrence records, must strike a delicate balance between complexity and usability.
 
-==== Controlled vocabulary
+=== Controlled vocabulary
 
 One of the key ways to increase usability and complexity is to introduce a controlled vocabulary.
 
@@ -115,7 +115,7 @@ Using a small controlled vocabulary over in an annotation system offers several 
 .Example annotation that marks any occurrences of lions in Greenland as suspicious. It is left to the users to decide what to do with this information.
 image::annotations/lions-greenland.png[width=80%]
 
-==== Focus on location
+=== Focus on location
 
 Another way to limited the complexity of an annotation system is too limit the scope.
 
@@ -123,7 +123,7 @@ We've made a deliberate choice to concentrate on *location* rule-based annotatio
 
 It's important to note, however, that the concept of rule-based annotations is inherently extensible. While our initial focus centres on location data, the same framework and principles can be applied to other areas of data quality improvement within the GBIF context. This adaptability allows us to remain responsive to evolving user needs and feedback, ensuring that our efforts can be broadened to encompass other data quality challenges in the future. Ultimately, our aim is to create a flexible and scalable solution that can continue to benefit the biodiversity community as a whole.
 
-==== Comparison with other species location databases
+=== Comparison with other species location databases
 
 Other efforts exist to catalogue the ranges of the living world:
 
@@ -136,9 +136,9 @@ While these efforts are useful and well-developed, none of them are expressly fo
 .Our system allows users to annotate at an granular scale. For example, this annotation marks all occurrences that happen to be near this greenhouse as "managed".
 image::annotations/greenhouse-managed.png[]
 
-=== Technical Details
+== Technical Details
 
-==== Rules
+=== Rules
 
 A basic rule in our system looks like this.
 
@@ -188,7 +188,7 @@ For example, https://data-blog.gbif.org/post/country-centroids/[country centroid
 
 Finally, there might be other fields that might make good qualifiers/extensions, like `year`.
 
-==== Rulesets
+=== Rulesets
 
 A `ruleset` is a collection of `rules`.
 
@@ -205,7 +205,7 @@ For example, a `ruleset`  could be "Annotations of the Genus Leo", and it could 
 |`rule` -> *Lions* in *Centroid of SA* and *Preserved Specimens* are *Suspicious*
 |====================
 
-==== Projects
+=== Projects
 
 A `project` is a collection of `rulesets`.
 
@@ -223,25 +223,25 @@ Projects are designed to allow for collaboration between users and logical group
 
 Note how a `project` can encode knowledge from other sources into a `ruleset`, such as https://www.inaturalist.org/pages/atlases[iNaturalist atlases].
 
-==== Collaboration
+=== Collaboration
 
 We hope that users will collaborate on a `project` that interests them and create `rulesets` that are widely beneficial to others within their research community.
 
 Within a `project`, only users with access, granted by the project creator, will be able to create rules and rulesets. However, rules, rulesets, and projects will all be open and publicly available.
 
-==== Sharing rules
+=== Sharing rules
 
 It is also anticipated that a desirable feature would allow users to "borrow" `rule` or geo-polygon from another `ruleset` and assign a new taxonKey or add a rule extension. This will reduce the storage strains on GBIF and prevent duplicate work.
 
 For example, a common `rule` might be to mark something in the ocean as suspicious. A user should be able apply this rule to a new taxonKey without creating a new ocean polygon every time.
 
-==== Voting
+=== Voting
 
 For downstream users, deciding which `rule` and `rulesets` to use might become challenging without some quality control. Currently, we imagine a simple upvote-downvote system on `rule`, `ruleset`, and perhaps `project`. With voting users could see what annotations are supported by the broader community, and create cleaning scripts that are only use annotations supported by the community.
 
 Additionally, voting could provide protection against **vandalism**.
 
-==== Higher taxonomy
+=== Higher taxonomy
 
 Another useful feature would be the ability to *cast* a `rule` down to all child taxa. Annotating higher taxonomy is harder than annotating at the species level because you have to be confident, the annotation at the higher level fits all child taxa.
 
@@ -254,7 +254,7 @@ Given the distribution of Amphibians, a good rule for the high taxon Amphibians 
 
 One challenge is that is is hard to downcast annotations like "Native" to lower levels, since species of a big group tend not to be "Native" to exactly the same areas.
 
-==== Exceptions to rules
+=== Exceptions to rules
 
 Creating cast-down annotations can be hard due to several reasons related to the nature of the task and **exceptions to the rule**. An exclusion rule could be efficient for higher level downcasting of rules.
 
@@ -269,13 +269,13 @@ image::annotations/frogs.png[]
 
 A work around to *rule exceptions* could of course be rules that simply *conflict*.
 
-==== Conflicting rules
+=== Conflicting rules
 
 Inevitably, there are going to be rules created in our system that conflict. For example, a user might mark and area as "Native", while another user will mark the same area as "Suspicious".
 
 In our rule-based system, unlike perhaps other platforms, we are not striving to create a single ground truth. We aim only to have a collection of useful opinions, and we leave it to the end user to decide what to do with the information.
 
-==== Rules with more than one taxon
+=== Rules with more than one taxon
 
 It might be efficient in some circumstances to express rules with more than one taxon:
 
@@ -285,8 +285,7 @@ One useful example would be marking all https://www.marinespecies.org/[marine sp
 
 rule -> *Marine species on WORMS list* in *Land Polygon* are *Suspicious*
 
-
-==== Controlled vocabulary
+=== Controlled vocabulary
 
 We might consider using the preexisting vocabulary, although we are attempting to annotate land area (ranges) more than we are attempting annotate occurrence records.
 
@@ -339,24 +338,24 @@ This vocabulary is meant to be a compromise between modeling species ranges and 
 The current vocabulary might change in the future. Namely, there has been some discussion introducing hierarchy such that perhaps certain terms map to `present` or `absent` for example.
 
 .A burning question at this point might be why not annotate occurrences directly?
-==== Why not annotate occurrences directly?
+=== Why not annotate occurrences directly?
 
 Annotating land areas (and extensions) provide at least two advantages over annotating occurrences:
 
 1. Avoids the use of https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids[unstable gbifIds].
 2. Allows for future occurrences to benefit from the annotation.
 
-==== Rule license
+=== Rule license
 
 (Should rules have a usage license?)
 
-=== User Guide
+== User Guide
 
 If you are reading this you have been approached as potential pilot annotator.
 
 *This section will be completed once the UI matures a bit.*
 
-==== Good annotations
+=== Good annotations
 
 While there is not absolute definition of a good annotation and a bad one. Good annotations usually have a few properties:
 
@@ -366,5 +365,5 @@ While there is not absolute definition of a good annotation and a bad one. Good 
 
 (think about users outside of GBIF)
 
-=== References
+== References
 
