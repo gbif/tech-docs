@@ -8,7 +8,7 @@ content:
   edit_url: 'https://ipt.gbif.org/manual/es/ipt/latest/translations'
   sources:
     - url: /ipt
-      branches: [ipt-2.4-docs, generated-translations-master]
+      branches: [generated-translations-master]
       start_path: docs/es
 ui:
   bundle:
