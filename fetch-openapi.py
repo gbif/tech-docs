@@ -68,6 +68,8 @@ for ws, url in urls.items():
             checklistbank = json.loads(response.text)
         elif ws == 'checklistbank-nub-ws':
             checklistbanknub = json.loads(response.text)
+        elif ws == 'occurrence-annotation-ws':
+            occurrenceannotation = json.loads(response.text)
         else:
             openapi = json.loads(response.text)
             with open(filename, "w") as write_file:
@@ -171,6 +173,28 @@ metricsSchemas = ['DimensionObject', 'Rollup']
 for schema in metricsSchemas:
     occurrence['components']['schemas'][schema] = metrics['components']['schemas'][schema]
 print("")
+
+# Special cases for occurrence-annotation (moving to occurrence), but not for prod.
+if (env != 'prod'):
+    print("--- Moving some method-paths from Occurrence-Annotation to Occurrence ---")
+
+    movePrefixFromOccurrenceAnnotationToOccurrence = [
+        '/occurrence/experimental/annotation/'
+    ]
+
+    for path in occurrenceannotation["paths"]:
+        for prefix in movePrefixFromOccurrenceAnnotationToOccurrence:
+            if path.startswith(prefix):
+                occurrence["paths"][path] = occurrenceannotation["paths"][path]
+                print("Added "+path+" to occurrence")
+
+                # Schemas need duplicating
+                occurrenceAnnotationSchemas = ['Ruleset', 'Project', 'Rule', 'Comment']
+                for schema in occurrenceAnnotationSchemas:
+                    occurrence['components']['schemas'][schema] = occurrenceannotation['components']['schemas'][schema]
+                print("")
+else:
+    print("--- Skipping Occurrence-Annotation as this is prod ---")
 
 # Special cases for checklistbank (moving to registry)
 print("--- Moving some method-paths from Checklistbank to Registry ---")
