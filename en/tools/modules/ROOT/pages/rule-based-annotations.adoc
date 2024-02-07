@@ -54,17 +54,6 @@ Seeding `rulesets` into our annotation store provides several benefits, especial
 
 Before releasing the rule based annotations tool to the public, it will undergo internal and external piloting phase. In this phase, pilot users will be given a small annotations task within a group they are familiar. The pilot users will then be interviewed about their overall experience, particularly if there were any "rules" or annotations they wanted but
 
-Desired feedback during the pilot phase:
-
-* Were there any rules that you wanted to make but could not?
-* Do you think you will be able to use the rules you made to create an improved and useful dataset?
-* Is there any controlled vocabulary that you would like to add?
-* Was it clear what you were doing and why?
-
-Less interesting feedback but still appreciated:
-
-* UI improvements
-* Software bugs
 
 === Data paper
 
@@ -229,11 +218,7 @@ We hope that users will collaborate on a `project` that interests them and creat
 
 Within a `project`, only users with access, granted by the project creator, will be able to create rules and rulesets. However, rules, rulesets, and projects will all be open and publicly available.
 
-=== Sharing rules
 
-It is also anticipated that a desirable feature would allow users to "borrow" `rule` or geo-polygon from another `ruleset` and assign a new taxonKey or add a rule extension. This will reduce the storage strains on GBIF and prevent duplicate work.
-
-For example, a common `rule` might be to mark something in the ocean as suspicious. A user should be able apply this rule to a new taxonKey without creating a new ocean polygon every time.
 
 === Voting
 
@@ -253,6 +238,12 @@ Given the distribution of Amphibians, a good rule for the high taxon Amphibians 
 `rule` -> *Amphibians* in *Antarctica* are *Suspicious*
 
 One challenge is that is is hard to downcast annotations like "Native" to lower levels, since species of a big group tend not to be "Native" to exactly the same areas.
+
+=== Sharing rules
+
+It is also anticipated that a desirable feature would allow users to "borrow" `rule` or geo-polygon from another `ruleset` and assign a new taxonKey or add a rule extension. This will reduce the storage strains on GBIF and prevent duplicate work.
+
+For example, a common `rule` might be to mark something in the ocean as suspicious. A user should be able apply this rule to a new taxonKey without creating a new ocean polygon every time.
 
 === Exceptions to rules
 
@@ -345,25 +336,42 @@ Annotating land areas (and extensions) provide at least two advantages over anno
 1. Avoids the use of https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids[unstable gbifIds].
 2. Allows for future occurrences to benefit from the annotation.
 
-=== Rule license
-
-(Should rules have a usage license?)
-
 == User Guide
 
 If you are reading this you have been approached as potential pilot annotator.
 
-*This section will be completed once the UI matures a bit.*
+=== Using the UI 
+
+The current UI isn't meant to be a finished product. 
+
+=== Desired feedback 
+
+Desired feedback during the pilot phase:
+
+* Were there any rules that you wanted to make but could not?
+* Do you think you will be able to use the rules you made to create an improved and useful dataset?
+* Is there any controlled vocabulary that you would like to add?
+* Was it clear what you were doing and why?
+* Did you find the seeded rules useful? 
+
+Less interesting feedback but still appreciated:
+
+* UI improvements
+* Software bugs
 
 === Good annotations
 
-While there is not absolute definition of a good annotation and a bad one. Good annotations usually have a few properties:
+While there is not absolute definition of a good annotation and a bad one. 
 
-1. Good annotations usually don't use extremely complex polygons. If you find yourself needing to trace the coastline of Italy, you might be making a bad annotation. A good annotation should take into account a little bit of buffer to take into account occurrence record uncertainty.
+Good annotations usually have a few properties:
+
+1. Good annotations usually don't use extremely complex polygons. If you find yourself needing to trace the coastline of Italy, you might be making a bad annotation. A good annotation should take into account a little bit of buffer to take into account occurrence record uncertainty. Also it's difficult for us to store very large polygons. 
 2. Good annotations take into account future occurrence records. Remember that your annotations should be able to fit future occurrence fairly well.
 3. Good annotations also try to think about higher taxonomy and simplification.
 
 (think about users outside of GBIF)
+
+
 
 == References
 
