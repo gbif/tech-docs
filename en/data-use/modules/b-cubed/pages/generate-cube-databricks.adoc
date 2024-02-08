@@ -147,3 +147,39 @@ See xref::sql-cube-functions.adoc[] for descriptions and arguments for the funct
 === Execute the query
 
 Run the query.  You can download the results using the user interface.
+
+== Generating cube metadata
+
+Part of the metadata is the SQL query used above.  As this is prototype software, a DOI is not assigned.
+
+The contributions of GBIF-mediated datasets can be determined with a second SQL query, using the WHERE clause of the first. In effect, this is a two-dimensional "cube".
+
+[source,sql]
+----
+SELECT
+  -- Dimensions:
+  datasetKey,
+  license,
+  -- Measurement
+  COUNT(*) AS n
+FROM
+  gbif.occurrence
+WHERE occurrenceStatus = 'PRESENT' <1>
+  AND countryCode = 'PL'
+  AND year >= 2000
+  AND kingdom = 'Animalia'
+  AND decimalLatitude IS NOT NULL
+  AND speciesKey IS NOT NULL
+  AND NOT ARRAY_CONTAINS(issue, 'COUNTRY_COORDINATE_MISMATCH')
+  AND month IS NOT NULL
+GROUP BY
+  datasetKey,
+  license;
+----
+<1> _Exactly_ the same WHERE clause as used for the cube.
+
+The overall licence for the data is the most-strict of the licences returned in this SQL query.  From least- to most-strict, these are:
+
+* https://creativecommons.org/publicdomain/zero/1.0/[CC0_1_0], Creative Commons No Copyright 1.0
+* https://creativecommons.org/licenses/by/4.0/[CC_BY_4_0], Creative Commons Attribution 4.0
+* https://creativecommons.org/licenses/by-nc/4.0/[CC_BY_NC_4_0], Creative Commons Attribution-NonCommercial 4.0
