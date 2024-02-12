@@ -70,6 +70,46 @@ If you are reading this you have been approached as potential pilot annotator, a
 
 https://labs.gbif.org/annotations/iframe.html?args=&id=tools-annotations--standalone-example&view=RULES&viewMode=story[UI link]
 
+If you are a pilot user, you should already have your project ruleset permissions set up for you. 
+
+=== How to make rules
+
+To make a rule please select the project and ruleset you want to make a rule in. 
+
+Next, draw a polygon around region you want to make the rule about. Currently, the annotations system is focussed on location based rule-making but this might change in the future. 
+
+Next apply your label. 
+
+.Controlled vocabulary for locations
+[width="100%",options="header,footer"]
+|====================
+|  term | definition
+| Native| Refers to the natural geographic range where a species or organism historically evolved and occurs without human intervention.
+| Introduced | Refers to the geographic area where non-native organisms have been intentionally or accidentally introduced and established
+| Managed    | Encompasses the geographic area where specific species are actively controlled, conserved, or manipulated by human intervention.
+| Former     |  Denotes the historical geographic area where a species once naturally occurred but no longer does due to various factors.
+| Vagrant    | Describes sporadic occurrences of a species far outside its usual habitat or distribution, often due to rare or accidental dispersal events.
+| Suspicious | Occurrences occuring in the designated area might be in error in some way.
+|====================
+
+If vocabulary this doesn't work for you, please pick the closest fitting, and request additional vocabulary in your feedback. 
+
+Create your rule. 
+
+=== Good rules
+
+While there is not absolute definition of a good rule and a bad one. 
+
+Good annotations usually have a few properties:
+
+1. Good annotations usually don't use extremely complex polygons. If you find yourself needing to trace the coastline of Italy, you might be making a bad annotation. A good annotation should take into account a little bit of buffer to take into account occurrence record uncertainty. Also it's difficult for us to store very large polygons. 
+2. Good annotations take into account future occurrence records. Remember that your annotations should be able to fit future occurrence fairly well.
+3. Good annotations also try to think about higher taxonomy and simplification.
+
+(think about users outside of GBIF)
+
+
+
 
 
 === Desired feedback 
@@ -88,20 +128,6 @@ Less interesting feedback but still appreciated:
 
 * UI improvements
 * Software bugs
-
-=== Good annotations
-
-While there is not absolute definition of a good annotation and a bad one. 
-
-Good annotations usually have a few properties:
-
-1. Good annotations usually don't use extremely complex polygons. If you find yourself needing to trace the coastline of Italy, you might be making a bad annotation. A good annotation should take into account a little bit of buffer to take into account occurrence record uncertainty. Also it's difficult for us to store very large polygons. 
-2. Good annotations take into account future occurrence records. Remember that your annotations should be able to fit future occurrence fairly well.
-3. Good annotations also try to think about higher taxonomy and simplification.
-
-(think about users outside of GBIF)
-
-
 
 
 
