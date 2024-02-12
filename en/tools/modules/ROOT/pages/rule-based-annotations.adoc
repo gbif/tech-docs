@@ -50,20 +50,31 @@ Seeding `rulesets` into our annotation store provides several benefits, especial
 |  https://rs.gbif.org/extension/gbif/1.0/distribution_2022-02-02.xml[GBIF Species Distribution Extension]
 |====================
 
-=== Introduction to interanal and external pilot users
+=== Introduction to internal and external pilot users ✓
 
-Before releasing the rule based annotations tool to the public, it will undergo internal and external piloting phase. In this phase, pilot users will be given a small annotations task within a group they are familiar. The pilot users will then be interviewed about their overall experience, particularly if there were any "rules" or annotations they wanted but
+Before releasing the rule based annotations tool to the public, it will undergo internal and external piloting phase. In this phase, pilot users will be given a small annotations task within a group they are familiar. The pilot users will then be interviewed about their overall experience, particularly if there were any "rules" or annotations they wanted but make but could not. 
 
+=== Data paper
+
+After the internal and external review we plan to write a data paper that will present the annotations tool to wider audience. The internal and external pilot users will be encouraged to be co-authors on the paper. The "data" part of the data paper will be an export of rules that were created during the pilot phase.
+
+=== Development of data cleaning workflows
+
+One of the final tasks will be the development of data cleaning workflows using the collected annotations.
 
 == User Guide
 
-If you are reading this you have been approached as potential pilot annotator.
+If you are reading this you have been approached as potential pilot annotator, and you have probably been asked to complete a small but useful annotation task that is useful for you. This guide is meant to as an aid to get you started. 
 
 === Using the UI 
 
-The current UI isn't meant to be a finished product. 
+https://labs.gbif.org/annotations/iframe.html?args=&id=tools-annotations--standalone-example&view=RULES&viewMode=story[UI link]
+
+
 
 === Desired feedback 
+
+The current UI isn't meant to be a finished product. There are many missing features that we are well aware of. We appreciate feedback about the UI, and it is almost impossible to avoid, but we are much more interested in the qestions below. 
 
 Desired feedback during the pilot phase:
 
@@ -93,13 +104,6 @@ Good annotations usually have a few properties:
 
 
 
-=== Data paper
-
-After the internal and external review we plan to write a data paper that will present the annotations tool to wider audience. The internal and external pilot users will be encouraged to be co-authors on the paper. The "data" part of the data paper will be an export of rules that were created during the pilot phase.
-
-=== Development of data cleaning workflows
-
-One of the final tasks will be the development of data cleaning workflows using the collected annotations.
 
 == Introduction
 
