@@ -166,6 +166,190 @@ See xref:ROOT:download-formats.adoc#simple[simple download – term definitions]
 
 Run the query.  You can download the results using the user interface.
 
+=== Sampling bias
+
+To account for sampling bias, the specification recommends including an occurrence count for a higher taxon, typically the family.  This can be done using an SQL _window function_.  This is a more advanced SQL technique, see https://www.postgresql.org/docs/current/tutorial-window.html[the PostgreSQL documentation] which has a good introduction to the concept.
+
+The query is the same as before, except for the addition of the highlighted rows.
+
+[source,sql]
+----
+SELECT
+  -- Dimensions:
+  CONCAT_WS('-', year, month) AS yearMonth,
+  eeaCellCode(
+    1000,
+    decimalLatitude,
+    decimalLongitude,
+    COALESCE(coordinateUncertaintyInMeters, 1000)
+  ) AS eeaCellCode,
+  speciesKey,
+  family, <1>
+  species,
+  -- Measurements
+  COUNT(*) AS n,
+  MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters,
+  -- Higher taxon measurement
+  IF(ISNULL(family), NULL, SUM(COUNT(*)) OVER (PARTITION BY family)) AS familyCount <2>
+FROM
+  gbif.occurrence
+WHERE occurrenceStatus = 'PRESENT'
+  AND countryCode = 'PL'
+  AND year >= 2000
+  AND kingdom = 'Animalia'
+  AND decimalLatitude IS NOT NULL
+  AND speciesKey IS NOT NULL
+  AND NOT ARRAY_CONTAINS(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')
+  AND month IS NOT NULL
+GROUP BY
+  yearMonth,
+  eeaCellCode,
+  speciesKey,
+  family, <3>
+  species
+ORDER BY
+  yearMonth DESC,
+  eeaCellCode ASC,
+  speciesKey ASC;
+----
+<1> Family added to the dimensions
+<2> The count by family, see explanation below.
+<3> Family must be added to the group by clause.
+
+The `familyCount` expression has two parts.
+
+* `IF(ISNULL(family), NULL, _windowexpression_)` sets the value to `NULL` if the family itself is `NULL`.
+* The window expression is `SUM(COUNT(*)) OVER (PARTITION BY family)`.  This partitions (groups) the result rows by family, and for each partition it sums the number of occurrences, `SUM(COUNT(*))`.
+
+.Additional example (click to expand)
+[%collapsible]
+====
+This small example cube has only taxonomic and temporal dimensions, and around 300 rows: Fungi from Lichtenstein observed since 2000.
+
+[source,sql]
+----
+SELECT
+  -- Dimensions:
+  year,
+  speciesKey,
+  family,
+  species,
+  -- Measurements
+  COUNT(*) AS count,
+  -- Higher taxon for sampling bias
+  IF(ISNULL(family), NULL, SUM(COUNT(*)) OVER (PARTITION BY family)) AS familyCount
+FROM
+  gbif.occurrence
+WHERE occurrenceStatus = 'PRESENT'
+  AND countryCode = 'LI'
+  AND year >= 2000
+  AND kingdom = 'Fungi'
+  AND speciesKey IS NOT NULL
+GROUP BY
+  year,
+  speciesKey,
+  family,
+  species
+ORDER BY
+  family ASC,
+  speciesKey ASC,
+  year DESC;
+----
+
+The first few rows of the resulting cube:
+
+[%header,format=csv]
+|===
+year,speciesKey,family,species,count,familyCount
+2002,3301946,null,Protodontia piceicola,1,null
+2018,8690832,null,Trichaptum abietinum,1,null
+2002,2535310,Agaricaceae,Lepiota castanea,1,11
+2002,2535317,Agaricaceae,Lepiota subalba,1,11
+2002,2535689,Agaricaceae,Cystolepiota seminuda,5,11
+2002,2535723,Agaricaceae,Cystolepiota hetieri,1,11
+2021,7987658,Agaricaceae,Coprinus comatus,1,11
+2017,7987658,Agaricaceae,Coprinus comatus,1,11
+2002,9040203,Agaricaceae,Melanophyllum haematospermum,1,11
+2019,5240229,Amanitaceae,Amanita echinocephala,1,5
+2002,5240306,Amanitaceae,Amanita vaginata,1,5
+2002,5240325,Amanitaceae,Amanita phalloides,1,5
+2002,7496350,Amanitaceae,Amanita rubescens,1,5
+2017,8168319,Amanitaceae,Amanita muscaria,1,5
+2002,2526725,Amylocorticiaceae,Plicaturopsis crispa,6,6
+2002,2585521,Arachnopezizaceae,Arachnopeziza aurata,1,1
+|===
+
+====
+
+WARNING: Special care is required when generating a cube with a taxon filter of lower rank than the higher taxon count, for example when filtering for particular genera or species but using a count of occurrences in the whole family.
+
+In this case, the WHERE clause excludes data that must be counted in the higher taxon count.  The cube must be generated in two steps.  First, a cube encompassing the whole higher taxon is generated, and then the unwanted rows are discarded.
+
+.Two-step cube example (click to expand)
+[%collapsible]
+====
+As with the previous example, this cube will use observations from Lichtenstein since 2000.  The filter is for a particular genus, _Cortinarius_, which is narrower than the required higher taxon count by family.
+
+[source,sql]
+----
+WITH fungiCube AS ( <1>
+  SELECT
+    -- Dimensions:
+    year,
+    speciesKey,
+    family,
+    genus,
+    species,
+    -- Measurements
+    COUNT(*) AS count,
+    -- Higher taxon for sampling bias
+    IF(ISNULL(family), NULL, SUM(COUNT(*)) OVER (PARTITION BY family)) AS familyCount
+  FROM
+    gbif.occurrence
+  WHERE occurrenceStatus = 'PRESENT'
+    AND countryCode = 'LI'
+    AND year >= 2000
+    AND kingdom = 'Fungi' <2>
+  GROUP BY
+    year,
+    speciesKey,
+    family,
+    genus,
+    species
+  )
+SELECT
+  year,
+  speciesKey,
+  family,
+  species,
+  count,
+  familyCount
+FROM fungiCube
+WHERE genus = 'Cortinarius' <3>
+ORDER BY
+  speciesKey ASC,
+  year DESC;
+----
+<1> The WITH clause defines an intermediate table.
+<2> The intermediate table is a cube for all fungi.
+<3> The final cube filters for the required genus.
+
+The resulting cube:
+
+[%header,format=csv]
+|===
+year,speciesKey,family,species,count,familyCount
+2002,2529345,Cortinariaceae,Cortinarius humicola,1,11
+2002,2529415,Cortinariaceae,Cortinarius caperatus,1,11
+2002,2529421,Cortinariaceae,Cortinarius anomalus,1,11
+2002,3350278,Cortinariaceae,Cortinarius pulchripes,1,11
+2002,8015843,Cortinariaceae,Cortinarius calochrous,1,11
+2002,12087710,Cortinariaceae,Cortinarius bolaris,3,11
+|===
+
+====
+
+
 == Generating cube metadata
 
 Part of the metadata is the SQL query used above.  As this is prototype software, a DOI is not assigned.
