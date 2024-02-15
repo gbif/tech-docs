@@ -93,7 +93,7 @@ The GBIF website and search APIs do not allow excluding data from searches, but 
 ----
   AND decimalLatitude IS NOT NULL
   AND speciesKey IS NOT NULL
-  AND NOT array_contains(issue, 'COUNTRY_COORDINATE_MISMATCH')
+  AND NOT array_contains(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')
   AND month IS NOT NULL
 ----
 
@@ -101,11 +101,13 @@ The GBIF website and search APIs do not allow excluding data from searches, but 
 
 Typical data cubes will use an SQL query similar to this one:
 
+// Notebook with this query: https://adb-3344466598970896.16.azuredatabricks.net/?o=3344466598970896#notebook/2739885278246418/command/2739885278246426
+
 [source,sql]
 ----
 SELECT <1>
   -- Dimensions: <2>
-  year,
+  CONCAT_WS('-', year, month) AS yearMonth,
   eeaCellCode(
     1000,
     decimalLatitude,
@@ -113,6 +115,7 @@ SELECT <1>
     COALESCE(coordinateUncertaintyInMeters, 1000) <3>
   ) AS eeaCellCode,
   speciesKey,
+  species,
   -- Measurements <4>
   COUNT(*) AS n, <5>
   MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters
@@ -124,14 +127,15 @@ WHERE occurrenceStatus = 'PRESENT'
   AND kingdom = 'Animalia'
   AND decimalLatitude IS NOT NULL
   AND speciesKey IS NOT NULL
-  AND NOT ARRAY_CONTAINS(issue, 'COUNTRY_COORDINATE_MISMATCH')
+  AND NOT ARRAY_CONTAINS(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')
   AND month IS NOT NULL
 GROUP BY
-  year,
+  yearMonth,
   eeaCellCode,
-  speciesKey
+  speciesKey,
+  species
 ORDER BY <6>
-  year DESC,
+  yearMonth DESC,
   eeaCellCode ASC,
   speciesKey ASC;
 ----
@@ -144,7 +148,19 @@ ORDER BY <6>
 
 See xref::sql-cube-functions.adoc[] for descriptions and arguments for the functions, including the `eeaCellCode` (EEA reference grid) function.
 
-See xref:ROOT:download-formats.adoc#simple[simple download – term definitions] for the terms (columns) available in the GBIF data exported to public cloud providers.
+See xref:ROOT:download-formats.adoc#simple[simple download – term definitions] for the terms (columns) available in the GBIF data exported to public cloud providers.  Some useful SQL expressions are described below.
+
+.Useful SQL expressions
+|====
+|Meaning |Example |Expression
+
+|GBIF species key and species name |`2878688`, `Quercus robur` |`speciesKey, species`
+|Year and month |`2024-2` |`CONCAT_WS('-', year, month)`
+|Year, month and day |`2024-2-1` |`CONCAT_WS('-', year, month, day)`
+|A default value |`NOT-SUPPLIED` |`COALESCE(establishmentMeans, 'NOT-SUPPLIED')`
+|First array value |`C. Darwin` |`identifiedBy.array_element[0]`
+|Temporal uncertainty (https://github.com/gbif/occurrence-cube/issues/15[function to be developed]) |`86400` |`CASE WHEN SECOND(eventdate) > 0 THEN 1 WHEN MINUTE(eventdate) > 0 THEN 60 WHEN HOUR(eventdate) > 0 THEN 60*60 WHEN day IS NOT NULL THEN 60*60*24 WHEN month IS NOT NULL THEN 60*60*24*31 WHEN year IS NOT NULL THEN 60*60*24*365 ELSE DOUBLE('Infinity') END`
+|====
 
 === Execute the query
 
@@ -172,7 +188,7 @@ WHERE occurrenceStatus = 'PRESENT' <1>
   AND kingdom = 'Animalia'
   AND decimalLatitude IS NOT NULL
   AND speciesKey IS NOT NULL
-  AND NOT ARRAY_CONTAINS(issue, 'COUNTRY_COORDINATE_MISMATCH')
+  AND NOT ARRAY_CONTAINS(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')
   AND month IS NOT NULL
 GROUP BY
   datasetKey,
