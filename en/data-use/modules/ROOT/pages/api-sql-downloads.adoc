@@ -105,7 +105,17 @@ See the xref:api-sql-download-functions.adoc[separate page on the available SQL 
 [#sql-columns]
 == Available columns
 
-The `occurrence` table contains the interpreted data, the verbatim (as provided to GBIF) data, and some calculated columns useful for searching.  https://api.gbif-uat.org/v1/occurrence/download/describe/sql[This API call] shows the available columns — the `name` field is the column name.  Note the `v_` prefix for the verbatim data columns.
+The `occurrence` table contains the interpreted data, the verbatim (as provided to GBIF) data, and some calculated columns useful for searching.  The full list of available columns is show below, and is also available through https://api.gbif-uat.org/v1/occurrence/download/describe/sql[this API call] — the `name` field is the column name.  Note the `v_` prefix for the verbatim data columns.
+
+.Full list of available SQL column names
+[%collapsible]
+====
+The definitions marked with {dwc_source} are from the Darwin Core standard.
+
+The definitions marked with {gbif_source} are from GBIF, and may reflect the result of interpretation and data quality procedures applied by GBIF, or they may not be part of Darwin Core.
+
+include::partial$download-sql-terms-table.adoc[]
+====
 
 The SQL parser is strict, and column names that are also SQL keywords must be quoted. For example, `"year"`, `"month"` and `"day"`.
 

@@ -68,6 +68,7 @@ for prop in occurrence_api['components']['schemas']['Occurrence']['properties']:
         prop_def = occurrence_api['components']['schemas']['Occurrence']['properties'][prop]['description']
         prop_def = re.sub(r'\[(.*?)\]\((.*?)\)', r'link:\2[\1]', prop_def)
         gbif_descriptions[prop_key] = { 'description': prop_def }
+        gbif_descriptions[prop_key.lower()] = { 'description': prop_def }
     else:
         print("No OpenAPI description for", prop)
 gbif_descriptions['issue'] = gbif_descriptions['issues']
@@ -93,7 +94,7 @@ gbif_descriptions['verbatimScientificName'] = {'description': 'Scientific name a
 #gbif_descriptions[''] = {'description': ''}
 
 
-types = {
+text_types = {
     'STRING': 'String',
     'BOOLEAN': 'Boolean',
     'INT': 'Integer',
@@ -103,7 +104,17 @@ types = {
     'STRUCT<concept: STRING,lineage: ARRAY<STRING>>': 'String structure'
 }
 
-def write_description_table(term_url, term_set, section, gbif_first, output_file):
+sql_types = {
+    'STRING': 'String',
+    'BOOLEAN': 'Boolean',
+    'INT': 'Integer',
+    'DOUBLE': 'Double',
+    'DATE': 'Timestamp',
+    'ARRAY<STRING>': 'String array',
+    'STRUCT<concept: STRING,lineage: ARRAY<STRING>>': 'Structure with string `.concept` and string array `.lineage`'
+}
+
+def write_description_table(term_url, term_set, section, gbif_first, output_file, types):
     response = requests.get(term_url)
     definitions = json.loads(response.text)
 
@@ -158,32 +169,46 @@ write_description_table(GBIF_API + '/occurrence/download/describe/simpleCsv',
                         lambda x : x['fields'],
                         'simpleCsv',
                         True,
-                        output+"/download-simple-terms-table.adoc")
+                        output+"/download-simple-terms-table.adoc",
+                        text_types)
 
 # Fetch species list format download terms
 write_description_table(GBIF_API + '/occurrence/download/describe/speciesList',
                         lambda x : x['fields'],
                         'speciesList',
                         True,
-                        output+"/download-species-list-terms-table.adoc")
+                        output+"/download-species-list-terms-table.adoc",
+                        text_types)
 
 # Fetch DWCA format download terms
 write_description_table(GBIF_API + '/occurrence/download/describe/dwca',
                         lambda x : x['verbatim']['fields'],
                         'dwca.verbatim',
                         False,
-                        output+"/download-dwca-verbatim-terms-table.adoc")
+                        output+"/download-dwca-verbatim-terms-table.adoc",
+                        text_types)
 
 # Fetch DWCA format download terms
 write_description_table(GBIF_API + '/occurrence/download/describe/dwca',
                         lambda x : x['interpreted']['fields'],
                         'dwca.interpreted',
                         True,
-                        output+"/download-dwca-interpreted-terms-table.adoc")
+                        output+"/download-dwca-interpreted-terms-table.adoc",
+                        text_types)
 
 # Fetch DWCA format download terms
 write_description_table(GBIF_API + '/occurrence/download/describe/dwca',
                         lambda x : x['multimedia']['fields'],
                         'dwca.multimedia',
                         True,
-                        output+"/download-dwca-multimedia-terms-table.adoc")
+                        output+"/download-dwca-multimedia-terms-table.adoc",
+                        text_types)
+
+# Fetch SQL download terms
+if env != 'prod':
+    write_description_table(GBIF_API + '/occurrence/download/describe/sql',
+                            lambda x : x['fields'],
+                            'sql',
+                            True,
+                            output+"/download-sql-terms-table.adoc",
+                            sql_types)

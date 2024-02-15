@@ -144,6 +144,8 @@ ORDER BY <6>
 
 See xref::sql-cube-functions.adoc[] for descriptions and arguments for the functions, including the `eeaCellCode` (EEA reference grid) function.
 
+See xref:ROOT:download-formats.adoc#simple[simple download – term definitions] for the terms (columns) available in the GBIF data exported to public cloud providers.
+
 === Execute the query
 
 Run the query.  You can download the results using the user interface.
