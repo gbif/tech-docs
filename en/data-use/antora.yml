@@ -5,5 +5,5 @@ nav:
 - modules/ROOT/nav.adoc
 asciidoc:
   attributes:
-    gbif_source: '🍃'
-    dwc_source: '🐦'
+    gbif_source: image:ROOT::logo/gbif/symbol.svg[24,24]
+    dwc_source: image:ROOT::logo/tdwg/symbol.svg[24,24]
