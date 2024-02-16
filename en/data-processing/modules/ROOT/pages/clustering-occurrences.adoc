@@ -30,7 +30,8 @@ In this second phase, the system will compare all records in the candidate set t
 
 The table below summarizes how those assertions are made but for more details, check the https://github.com/gbif/pipelines/blob/master/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java[source code].
 
-[cols="1,1,1",frame=all,grid=all,stripes=even]
+// Table stripes are defined in /supplemental_ui/css/special-pages.css
+[cols="1,1,1",frame=all,grid=all]
 |===
 | Assertion | Fields checked | Condition checked
 
@@ -110,4 +111,3 @@ If for one reason or another, you need to publish on GBIF occurrences for observ
 == How to contribute
 
 If you have suggestions to improve the clustering feature or questions on how it works, you are very welcome to use the feedback feature on this page.
-
