@@ -1,9 +1,6 @@
 = API SQL Downloads – Functions
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
 
-NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently available for preview on the GBIF test environment, https://www.gbif-uat.org/[GBIF-UAT.org].
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently only available for preview by invited users.
 
 These custom functions are available when using the xref:api-sql-downloads.adoc[SQL download API].
 

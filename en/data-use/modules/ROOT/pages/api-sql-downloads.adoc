@@ -1,15 +1,12 @@
 = API SQL Downloads
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
 
-NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently available for preview on the GBIF test environment, https://www.gbif-uat.org/[GBIF-UAT.org].
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently only available for preview by invited users.
 
 The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL, _structured query language_, a programming language commonly used to access database systems.  In contrast to the xref:api-downloads.adoc[Predicate Download API], the SQL API allows selection of the columns of interest and generating summary views of the data.  Functions to generate _data cubes_ are available, as part of the https://b-cubed.eu/[Biodiversity Building Blocks for Policy] ("B-Cubed") project.
 
 Occurrence SQL downloads are created asynchronously — the user requests a download and, once the download is prepared, is sent an email with a link to the resulting file.
 
-It is necessary to register as a user on https://www.gbif-uat.org/[GBIF-UAT.org] to create an SQL download request, and to authenticate using the username (not the email) and password.
+It is necessary to register as a user on https://www.gbif.org/[GBIF.org] to create an SQL download request, and to authenticate using the username (not the email) and password.
 
 // Complete technical details are provided in the xref:v1@openapi::occurrence.adoc#/tag/Occurrence-downloads[API reference documentation].
 
@@ -46,37 +43,36 @@ Then use this Curl command:
 
 [source,shell]
 ----
-curl --include --user userName:PASSWORD --header "Content-Type: application/json" --data @query.json https://api.gbif-uat.org/v1/occurrence/download/request
+curl --include --user userName:PASSWORD --header "Content-Type: application/json" --data @query.json https://api.gbif.org/v1/occurrence/download/request
 ----
 
 A download key is returned. Querying that download key shows the download information, including the download link and DOI once the download is ready.  Run this repeatedly, until you see `SUCCEEDED` — you will need to use your download key rather than the example:
 
 [source,shell]
 ----
-curl -Ss https://api.gbif-uat.org/v1/occurrence/download/0000000-240127142345659
+curl -Ss https://api.gbif.org/v1/occurrence/download/0000379-240229165702484
 ----
 
 You can then download the resulting file:
 
 [source,shell]
 ----
-curl --location --remote-name https://api.gbif-uat.org/occurrence/download/request/0000000-240127142345659.zip
+curl --location --remote-name https://api.gbif.org/v1/occurrence/download/0000379-240229165702484.zip
 ----
 
 And see the result:
 
-[source]
-----
-datasetkey                              countrycode   count(*)
-502d390c-d8ee-430b-8fe2-9acb3c433fe0    FR            400
-5309fe43-dc4f-4de8-804a-a29b2f28035a    FR            540
-530febaa-b914-416c-b3bf-f49a1dd821f0    LT            73
-535567d6-5f96-4187-9607-259d120bae50    FR            3
-53e9eca5-6831-4a43-a109-130feecfcd9c    EE            3
-53f2cda4-a2fd-49f0-b3e5-0782c9770e7c    NO            5505
-5a6538b8-e35c-46c4-8978-6858a657a75f    NL            119
-…
-----
+[%header,format=tsv]
+|===
+datasetkey	countrycode	COUNT(*)
+005eb8d8-ed94-41be-89cf-e3115a9058e4	AD	1
+009a76f6-0960-4a56-a116-63991e6bb037	GR	3
+0214a6a7-898f-4ee8-b888-0be60ecde81f	PT	84
+03f2256a-e548-43d7-a731-253302f4aa34	LV	27
+040c5662-da76-4782-a48e-cdea1892d14c	IS	1306
+06aeea22-c116-4df2-93af-2d8321482801	FR	24
+07fd0d79-4883-435f-bba1-58fef110cd13	PL	357
+|===
 
 [#sql]
 == Supported SQL
@@ -105,7 +101,7 @@ See the xref:api-sql-download-functions.adoc[separate page on the available SQL 
 [#sql-columns]
 == Available columns
 
-The `occurrence` table contains the interpreted data, the verbatim (as provided to GBIF) data, and some calculated columns useful for searching.  The full list of available columns is show below, and is also available through https://api.gbif-uat.org/v1/occurrence/download/describe/sql[this API call] — the `name` field is the column name.  Note the `v_` prefix for the verbatim data columns.
+The `occurrence` table contains the interpreted data, the verbatim (as provided to GBIF) data, and some calculated columns useful for searching.  The full list of available columns is show below, and is also available through https://api.gbif.org/v1/occurrence/download/describe/sql[this API call] — the `name` field is the column name.  Note the `v_` prefix for the verbatim data columns.
 
 .Full list of available SQL column names
 [%collapsible]
@@ -126,7 +122,7 @@ You can validate your queries using the validation API call.
 
 [source,shell]
 ----
-curl --include --header "Content-Type: application/json" --data @query.json https://api.gbif-uat.org/v1/occurrence/download/request/validate
+curl --include --header "Content-Type: application/json" --data @query.json https://api.gbif.org/v1/occurrence/download/request/validate
 ----
 
 Your query will be returned if it is valid, and an error message with an explanation will be returned if it is invalid.

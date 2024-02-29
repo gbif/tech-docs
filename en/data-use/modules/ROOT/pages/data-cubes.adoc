@@ -1,9 +1,6 @@
 = Data cubes
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
 
-NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently available for preview on the GBIF test environment, https://www.gbif-uat.org/[GBIF-UAT.org].
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently only available for preview by invited users.
 
 *Data cubes* group species occurrence data along spatial, temporal and/or taxonomic dimensions.
 
@@ -36,7 +33,7 @@ The _measures_ of the cube will be
 
 == Generating a data cube using the GBIF API
 
-NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently available for preview on the GBIF test environment, https://www.gbif-uat.org/[GBIF-UAT.org].
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently only available for preview by invited users.
 
 === Create an initial GBIF search filter
 
@@ -126,15 +123,16 @@ See xref::api-sql-download-functions.adoc[] for descriptions and arguments for t
 
 See xref::api-sql-downloads.adoc[] for instructions.
 
-A cube #with *test data* from gbif-uat.org# using this query is available https://www.gbif-uat.org/occurrence/download/0000004-240201135505551[here].
+A cube using this query is available https://www.gbif.org/occurrence/download/0000338-240229165702484[here].
 
 [%header,format=tsv]
 |===
 year	eeacellcode	specieskey	sex	lifestage	occurrences	mincoordinateuncertaintyinmeters
-2020	1kmE5156N3446	1310622	MALE	Adult	1	1000.0
-2020	1kmE5156N3447	1310622	MALE	Adult	1	1000.0
-2020	1kmE5157N3192	1631718	NOT_SUPPLIED	Adult	1	1000.0
-2020	1kmE5157N3192	1631721	NOT_SUPPLIED	Adult	2	1000.0
-2020	1kmE5157N3192	1631728	NOT_SUPPLIED	Adult	2	1000.0
-2020	1kmE5157N3192	1632179	NOT_SUPPLIED	Adult	3	1000.0
+2024	1kmE4721N3243	2494543	MALE	NOT_SUPPLIED	1	75.0
+2024	1kmE4721N3243	2494543	FEMALE	Adult	1	98.0
+2024	1kmE4721N3244	5219243	NOT_SUPPLIED	NOT_SUPPLIED	1	90.0
+2024	1kmE4721N3245	5220126	NOT_SUPPLIED	NOT_SUPPLIED	1	142.0
+2024	1kmE4722N3192	5820507	NOT_SUPPLIED	NOT_SUPPLIED	1	1000.0
+2024	1kmE4722N3247	5219243	NOT_SUPPLIED	Adult	1	102.0
+2024	1kmE4723N3189	4485776	NOT_SUPPLIED	Adult	1	1000.0
 |===

@@ -66,6 +66,15 @@ You can then download the resulting file:
 curl --location --remote-name https://api.gbif.org/occurrence/download/request/0001005-130906152512535.zip
 ----
 
+Downloads using predicates can also be made through the website at https://www.gbif.org/occurrence/download/request[create new download].
+
+[#searchparameters]
+== Occurrence search parameters
+
+Most of the predicates below use a `key` which specifies the field to search on.
+
+The keys are listed and described on the xref:v1@openapi::occurrence.adoc#/Searching%20occurrences/searchOccurrence[/occurrence/search API call], and in the https://gbif.github.io/gbif-api/apidocs/org/gbif/api/model/occurrence/search/OccurrenceSearchParameter.html[Java documentation].  Note they must be provided in `UPPER_CASE_WITH_UNDERSCORES` for the download APIs.
+
 [#predicates]
 == Occurrence download predicates
 
@@ -352,3 +361,28 @@ Has a non-empty value
   }
 }
 ----
+
+[#verbatimextensions]
+== Verbatim extension data
+
+A download in Darwin Core Archive (`DWCA`) format includes three tables by default, as described in detail on xref::download-formats.adoc[Occurrence download formats].
+
+Additional Darwin Core extension data can also be included in the archive.  These data tables are not processed by GBIF; they are as-published.
+
+The extension tables available for download are provided using https://api.gbif.org/v1/occurrence/download/describe/dwca[this API call], under `verbatimExtensions`.  They can be requested by adding a `verbatimExtensions` property to the download request:
+
+[source,json]
+----
+{
+  "format": "DWCA",
+  "predicate": {
+    …
+  },
+  "verbatimExtensions": [
+    "http://rs.gbif.org/terms/1.0/DNADerivedData",
+    "http://rs.tdwg.org/dwc/terms/MeasurementOrFact"
+  ]
+}
+----
+
+For descriptions of the extensions and their terms, see https://rs.gbif.org/extensions.html[GBIF Registered Extensions].

@@ -9,6 +9,7 @@ Data downloads are available from GBIF in three primary formats:
 ** `occurrence.txt` contains occurrence data after interpretation by GBIF's systems.
 ** `multimedia.txt` contains information on multimedia (images, audio, video) relating to the occurrences.
 ** `verbatim.txt` contains the original, uninterpreted data, without modifications by GBIF's systems.
+** optionally, additional verbatim Darwin Core Archive extensions.  The data are as-received from the publisher.  See https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of these — note not all of them are maintained by GBIF.
 * <<species-list,*Species List*>> (API: `SPECIES_LIST`).  This is a summary format containing the distinct list of species names returned by the filter.
 
 The header row (first row) of all these files contain the short name of the terms they contain.  Most of the terms are defined by the https://dwc.tdwg.org/terms/[Darwin Core standard].  For example, the column `catalogNumber` contains data of the Darwin Core term https://rs.tdwg.org/dwc/terms/catalogNumber[http://rs.tdwg.org/dwc/terms/catalogNumber].
