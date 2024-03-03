@@ -29,7 +29,7 @@ Put this in a file called `query.json`:
   "notificationAddresses": [
     "userEmail@example.org" <2>
   ],
-  "sendNotification": true,
+  "sendNotification": True,
   "format": "SQL_TSV_ZIP", <3>
   "sql": "SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE continent = 'EUROPE' GROUP BY datasetKey, countryCode" <4>
 }
