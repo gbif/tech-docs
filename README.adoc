@@ -85,6 +85,53 @@ The overall design of the site is controlled by a theme, https://github.com/gbif
 
 Changing the site menus (on the green bar) is done by overriding the theme.  Start at link:./supplemental_ui/partials/header-content.hbs[supplemental_ui/partials/header-content.hbs] and copy + paste until you have what you want :-) (but remember pushing changes rebuilds the live site).
 
+== Additional Asciidoc syntax
+
+In general editors should refer to the https://docs.asciidoctor.org/asciidoc/[Asciidoctor documentation] and the https://docs.antora.org/antora/[Antora documentation].  Special syntax is used for:
+
+=== OpenAPI pages
+
+These are shown using Swagger, and a special page layout present in the site theme (see https://github.com/gbif/tech-docs-theme/blob/main/src/layouts/swagger.hbs[swagger.hbs] for the source).
+
+The OpenAPI source link:./fetch-openapi.py[is retrieved] whenever webservices are deployed, so it is always up-to-date.  This is done on all environments; techdocs.gbif.org documents api.gbif.org and techdocs.gbif-uat.org documents api.gbif-uat.org.
+
+=== Darwin Core Archive term tables
+
+These are generated when the site is built using link:./en/data-use/modules/ROOT/partials/download-terms-tables.py[this Python script]. The script generates a https://docs.antora.org/antora/latest/page/partials/[partial], which is included in the main pages.
+
+=== UAT-only pages
+
+Pages or parts of pages can be excluded from techdocs.gbif.org while they are under development.  This also excludes them from search results.
+
+//
+// If you are reading this file in a text editor, note the backslashes are not required
+// — they are to avoid the text being hidden when displayed on GitHub.
+//
+
+.Hiding a whole page from techdocs.gbif.org
+[source,asciidoc]
+----
+\ifeval::["{env}" == "prod"]
+:page-unpublish:
+\endif::[]
+----
+
+.Hiding part of a page
+[source,asciidoc]
+....
+\ifeval::["{env}" != "prod"]
+On the UAT system …
+\endif::[]
+....
+
+.Hiding an entry from the navigation (nav.adoc)
+[source,asciidoc]
+----
+\ifeval::["{env}" != "prod"]
+* xref:page-name.adoc[]
+\endif::[]
+----
+
 == Building
 
 The site builds in Jenkins every time it is modified, see the https://builds.gbif.org/job/tech-docs/lastBuild/console[status] and badge above.  To build it locally, the simplest method is to use Docker.  See the https://docs.docker.com/[Docker documentation] for installation on https://docs.docker.com/desktop/install/linux-install/[Linux], https://docs.docker.com/desktop/install/mac-install/[Mac] and https://docs.docker.com/desktop/install/windows-install/[Windows].
