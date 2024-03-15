@@ -10,7 +10,7 @@ Note the function names are not case-sensitive, `gbif_geodistance`, `GBIF_GEODIS
 
 Many of the basic functions supported by Apache Hive are supported.
 
-See https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-HiveOperatorsandUser-DefinedFunctions(UDFs)[Hive Operators and User-Defined Functions].
+See https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-HiveOperatorsandUser-DefinedFunctions(UDFs)[Hive Operators and User-Defined Functions] in the Apache Hive manual.
 
 == Filtering functions
 
@@ -200,7 +200,7 @@ Reference: https://earth-info.nga.mil/GandG/coordsys/grids/referencesys.html[Gri
 
 See also: https://en.wikipedia.org/wiki/Military_Grid_Reference_System[Wikipedia: Military Grid Reference System].
 
-=== Text output functions
+== Text output functions
 
 These functions are useful when producing text-type output, e.g. tab-delimited files.
 
@@ -222,6 +222,39 @@ STRING GBIF_JoinArray(ARRAY array,
 *Return value:*
 
 This function returns the array elements separated by the separator.
+
+=== Temporal Uncertainty, `GBIF_TemporalUncertainty`
+
+*Function definition:*
+
+[source,sql]
+----
+STRING GBIF_TemporalUncertainty(String dateInterval)
+----
+
+*Parameters:*
+
+`dateInterval`:: A string containing an ISO-8106 date or date interval.
+
+*Return value:*
+
+This function returns the uncertainty in seconds of the date.
+
+*Example arguments and returned value*
+
+|===
+|_dateInterval_ |Result |Remarks
+|2021-03-21T15:01:32.456Z |1 |Milliseconds are rounded to seconds.
+|2021-03-21T15:01:32Z |1 |
+|2021-03-21T15:01Z |60 |
+|2021-03-21T15Z |60×60 |
+|2021-03-21 |60×60×24 |
+|2021-03-01 |60×60×24 |
+|2021-01-01 |60×60×24 |
+|2021-03 |60×60×24×31 |
+|2021 |60×60×24×365 |
+|2021-03-21/2021-03-23 |60×60×24×3 |
+|===
 
 === To ISO8601 Date, `GBIF_ToISO8601`
 

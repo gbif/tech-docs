@@ -37,7 +37,7 @@ Once the "Compute" cluster is created, add the cube functions library.
 
 . Choose "Compute", select your cluster and then "Libraries"
 . Click "Install new", "Maven" and use these parameters:
-** Coordinates: `org.gbif.occurrence:cube-hive:0.1.0`
+** Coordinates: `org.gbif.occurrence:cube-hive:0.2.0`
 ** Repository: `https://repository.gbif.org/content/repositories/releases`
 . Click "Install"
 
@@ -159,7 +159,7 @@ See xref:ROOT:download-formats.adoc#simple[simple download – term definitions]
 |Year, month and day |`2024-2-1` |`CONCAT_WS('-', year, month, day)`
 |A default value |`NOT-SUPPLIED` |`COALESCE(establishmentMeans, 'NOT-SUPPLIED')`
 |First array value |`C. Darwin` |`identifiedBy.array_element[0]`
-|Temporal uncertainty (https://github.com/gbif/occurrence-cube/issues/15[function to be developed]) |`86400` |`CASE WHEN SECOND(eventdate) > 0 THEN 1 WHEN MINUTE(eventdate) > 0 THEN 60 WHEN HOUR(eventdate) > 0 THEN 60*60 WHEN day IS NOT NULL THEN 60*60*24 WHEN month IS NOT NULL THEN 60*60*24*31 WHEN year IS NOT NULL THEN 60*60*24*365 ELSE DOUBLE('Infinity') END`
+|Temporal uncertainty |`86400` |`temporalUncertainty(eventDate)`
 |====
 
 === Execute the query
@@ -219,7 +219,7 @@ ORDER BY
 The `familyCount` expression has two parts.
 
 * `IF(ISNULL(family), NULL, _windowexpression_)` sets the value to `NULL` if the family itself is `NULL`.
-* The window expression is `SUM(COUNT(*)) OVER (PARTITION BY family)`.  This partitions (groups) the result rows by family, and for each partition it sums the number of occurrences, `SUM(COUNT(*))`.
+* The window expression is `++SUM(COUNT(*)) OVER (PARTITION BY family)++`.  This partitions (groups) the result rows by family, and for each partition it sums the number of occurrences, `++SUM(COUNT(*))++`.
 
 .Additional example (click to expand)
 [%collapsible]
@@ -348,7 +348,6 @@ year,speciesKey,family,species,count,familyCount
 |===
 
 ====
-
 
 == Generating cube metadata
 

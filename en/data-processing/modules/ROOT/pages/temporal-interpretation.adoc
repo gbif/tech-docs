@@ -31,7 +31,9 @@ Eight Darwin Core fields represent all or part of the date-time an occurrence wa
 * https://dwc.tdwg.org/terms/#dwc:endDayOfYear[endDayOfYear]
 * https://dwc.tdwg.org/terms/#dwc:verbatimEventDate[verbatimEventDate] — not used during interpretation
 
+ifeval::["{env}" != "prod"]
 #TODO: Describe how this affects records published using BioCASe.#
+endif::[]
 
 With six fields there is potential for conflict between the values.  Our interpretation procedures try to find a date consistent with the provided values, adding issues to the occurrence record if there are problems.  If values are missing but do not conflict, they are added without an issue being flagged.
 

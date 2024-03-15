@@ -159,6 +159,46 @@ Reference: https://earth-info.nga.mil/GandG/coordsys/grids/referencesys.html[Gri
 
 See also: https://en.wikipedia.org/wiki/Military_Grid_Reference_System[Wikipedia: Military Grid Reference System].
 
+=== Temporal Uncertainty
+
+*Suggested function declaration:*
+
+[source,sql]
+----
+CREATE OR REPLACE TEMPORARY FUNCTION temporalUncertainty AS 'org.gbif.occurrence.hive.udf.TemporalUncertaintyUDF';
+----
+
+*Function definition:*
+
+[source,sql]
+----
+STRING temporalUncertainty(String dateInterval)
+----
+
+*Parameters:*
+
+`dateInterval`:: A string containing an ISO-8106 date or date interval.
+
+*Return value:*
+
+This function returns the uncertainty in seconds of the date.
+
+*Example arguments and returned value*
+
+|===
+|_dateInterval_ |Result |Remarks
+|2021-03-21T15:01:32.456Z |1 |Milliseconds are rounded to seconds.
+|2021-03-21T15:01:32Z |1 |
+|2021-03-21T15:01Z |60 |
+|2021-03-21T15Z |60×60 |
+|2021-03-21 |60×60×24 |
+|2021-03-01 |60×60×24 |
+|2021-01-01 |60×60×24 |
+|2021-03 |60×60×24×31 |
+|2021 |60×60×24×365 |
+|2021-03-21/2021-03-23 |60×60×24×3 |
+|===
+
 == Software repository
 
 Source code for the functions is available https://github.com/gbif/occurrence-cube[on GitHub].
