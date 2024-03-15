@@ -31,6 +31,7 @@ Darwin Core Archive downloads from gbif.org contain the following files:
 `occurrence.txt`:: Occurrence data after interpretation by GBIF.  Described in detail <<dwca-interpreted,below>>.
 `multimedia.txt`:: Occurrence multimedia data after interpretation by GBIF.  Described in detail <<dwca-multimedia,below>>.
 `verbatim.txt`:: Occurrence data without interpretation by GBIF.  Described in detail <<dwca-verbatim,below>>.
+`verbatim/*.txt`:: Occurrence extension data without interpretation by GBIF. See https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of these — note not all of them are maintained by GBIF.
 `meta.xml`:: The https://dwc.tdwg.org/text/[Darwin Core Archive metafile], describing the structure of the archive — the file formats, column names and their terms.
 `metadata.xml`:: Metadata about the download in https://eml.ecoinformatics.org/[Ecological Metadata Language (EML)].
 `rights.txt`:: Licence information for all the datasets with occurrences in the download.
@@ -65,7 +66,17 @@ Data in this table is not modified by GBIF interpretation processes, except for 
 
 include::partial$download-dwca-verbatim-terms-table.adoc[]
 
+[#dwca-extensions]
+=== Verbatim extensions (`verbatim/*.txt`)
+Data in these tables is not modified by GBIF interpretation processes, except for conversion to Unicode and possible changes to whitespace (spaces, tabs, newlines etc).
+
+See the https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of the extensions.
+
 [#species-list]
 == Species list downloads – Term definitions
+
+Species list downloads are a summary format containing the distinct list of species names returned by the filter.
+
+The definitions marked with {gbif_source} are from GBIF, and may reflect the result of interpretation and data quality procedures applied by GBIF, or they may not be part of Darwin Core.
 
 include::partial$download-species-list-terms-table.adoc[]
