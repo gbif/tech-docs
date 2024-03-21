@@ -12,7 +12,7 @@ https://registry.gbif.org/[GBIF Registry]
 
 The https://www.gbif.org/grscicoll[Global Registry of Scientific Collections (GRSciColl)] is a comprehensive, community-curated clearing house of information on scientific collections, which builds on previous efforts developed by the Consortium of the Barcode of Life (CBOL) and others.
 
-GRSciColl includes data on institutions, collections and associated staff members and spans all scientific disciplines, including earth and space sciences, anthropology, archaeology, biology and biomedicine, as well as applied fields like agriculture, veterinary medicine and technology. https://www.gbif.org/grscicoll[more]
+GRSciColl includes data on institutions, collections and associated staff members and spans all scientific disciplines, including earth and space sciences, anthropology, archaeology, biology and biomedicine, as well as applied fields like agriculture, veterinary medicine and technology.
 
 == Literature tracking
 
