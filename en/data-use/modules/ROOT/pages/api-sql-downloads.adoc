@@ -23,28 +23,33 @@ Put this in a file called `query.json`:
 [source,json]
 ----
 {
-  "creator": "userName", <1>
-  "notificationAddresses": [
-    "userEmail@example.org" <2>
-  ],
   "sendNotification": true,
-  "format": "SQL_TSV_ZIP", <3>
-  "sql": "SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE continent = 'EUROPE' GROUP BY datasetKey, countryCode" <4>
+  "notificationAddresses": [
+    "userEmail@example.org" <1>
+  ],
+  "format": "SQL_TSV_ZIP", <2>
+  "sql": "SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE continent = 'EUROPE' GROUP BY datasetKey, countryCode" <3>
 }
 ----
-<1> Replace with your username
-<2> Replace with your email address, or remove the `notificationAddresses` section and set `sendNotification` to `false`
-<3> `format` must be `SQL_TSV_ZIP`.  More formats will be added later.
-<4> This query will count occurrences from Europe per dataset and country.
+<1> Replace with your email address, or remove the `notificationAddresses` and `sendNotification` values
+<2> `format` must be `SQL_TSV_ZIP`.  More formats will be added later.
+<3> This query will count occurrences from Europe per dataset and country.
 
 Then use this _curl_ command:
 
 [source,shell]
 ----
-curl --include --user userName:PASSWORD --header "Content-Type: application/json" --data @query.json https://api.gbif.org/v1/occurrence/download/request
+curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @query.json https://api.gbif.org/v1/occurrence/download/request
 ----
 
-If the query is accepted the first line of output should be `HTTP/2 201`, and a download key will be returned on the last line. Querying that download key shows the download information, including the download link and DOI once the download is ready.  Run this repeatedly, until you see `SUCCEEDED` — you will need to use your download key rather than the example:
+The first line of the output shows the result of the download request:
+
+* If the query is accepted the first line of output should be `HTTP/2 201`, and a download key will be returned on the last line.
+* If the SQL is not valid, the first line of the output will be `HTTP/2 400`.  There may be useful information on the error at the end of the output.
+* `HTTP/2 401` means your username or password is incorrect
+* `HTTP/2 403` means your username does not have permission to use this prototype feature.
+
+Querying the download key from an accepted request shows the download information, including the download link and DOI once the download is ready.  Run this repeatedly, until you see `SUCCEEDED` — you will need to use your download key rather than the example:
 
 [source,shell]
 ----
