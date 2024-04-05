@@ -20,6 +20,7 @@ The _dimensions_ of the cube will be
 . https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2/about-the-eea-reference-grid/eea_reference_grid_v1.pdf/at_download/file[EEA Reference Grid (PDF)] with a 1km grid size
 ** We will randomize the point using the coordinateUncertaintyInMeters, defaulting to 1000m
 ** We will exclude occurrences without coordinates
+** We will exclude occurrences with a coordinateUncertaintyInMeters greater than 1000m
 . Sex
 ** This is included to demonstrate a basic dimension
 . Life stage
@@ -57,17 +58,8 @@ The GBIF website and basic search APIs do not allow excluding data from searches
 
 [source,sql]
 ----
+  AND (coordinateUncertaintyInMeters <= 1000 OR coordinateUncertaintyInMeters IS NULL)
   AND speciesKey IS NOT NULL <1>
-  AND (identificationVerificationStatus IS NULL <2>
-       OR NOT (   LOWER(identificationVerificationStatus) LIKE '%unverified%'
-               OR LOWER(identificationVerificationStatus) LIKE '%unvalidated%'
-               OR LOWER(identificationVerificationStatus) LIKE '%not able to validate%'
-               OR LOWER(identificationVerificationStatus) LIKE '%control could not be conclusive due to insufficient knowledge%'
-               OR LOWER(identificationVerificationStatus) LIKE '%unconfirmed%'
-               OR LOWER(identificationVerificationStatus) LIKE '%unconfirmed - not reviewed%'
-               OR LOWER(identificationVerificationStatus) LIKE '%validation requested%'
-              )
-      )
   AND NOT ARRAY_CONTAINS(issue, 'ZERO_COORDINATE') <3>
   AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_OUT_OF_RANGE')
   AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_INVALID')
@@ -94,7 +86,7 @@ The year and month fields are separate, we want both in the form `2024-03`:
 
 [source,sql]
 ----
-CONCAT_WS('-', "year", "month") AS yearMonth <1>
+PRINTF('%04d-%02d', "year", "month") AS yearMonth <1>
 ----
 <1> `YEAR(…)` (or `year(…)`) and `MONTH(…)` are SQL functions, so we must quote the name of the columns as `"year"` and `"month"` using double quotes.
 
@@ -202,6 +194,7 @@ WHERE occurrenceStatus = 'PRESENT'
   AND "year" >= 2000
   AND kingdomKey = 1
   AND hasCoordinate = TRUE
+  AND (coordinateUncertaintyInMeters <= 1000 OR coordinateUncertaintyInMeters IS NULL)
   AND speciesKey IS NOT NULL
   AND NOT ARRAY_CONTAINS(issue, 'ZERO_COORDINATE')
   AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_OUT_OF_RANGE')
@@ -234,7 +227,7 @@ See xref::api-sql-download-functions.adoc[] for descriptions and arguments for t
 
 See xref::api-sql-downloads.adoc[] for instructions.
 
-A cube using this query is available https://www.gbif.org/occurrence/download/0000025-240314170635999[here].
+A cube using this query is available https://www.gbif.org/occurrence/download/0099186-240321170329656[here].
 
 [%header,format=tsv]
 |===
