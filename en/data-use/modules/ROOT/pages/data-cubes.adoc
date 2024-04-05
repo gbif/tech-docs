@@ -58,16 +58,16 @@ The GBIF website and basic search APIs do not allow excluding data from searches
 
 [source,sql]
 ----
-  AND (coordinateUncertaintyInMeters <= 1000 OR coordinateUncertaintyInMeters IS NULL)
-  AND speciesKey IS NOT NULL <1>
+  AND (coordinateUncertaintyInMeters <= 1000 OR coordinateUncertaintyInMeters IS NULL) <1>
+  AND speciesKey IS NOT NULL <2>
   AND NOT ARRAY_CONTAINS(issue, 'ZERO_COORDINATE') <3>
   AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_OUT_OF_RANGE')
   AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_INVALID')
   AND NOT ARRAY_CONTAINS(issue, 'COUNTRY_COORDINATE_MISMATCH')
   AND month IS NOT NULL <4>
 ----
-<1> Exclude occurrences not identified to species level
-<2> Exclude occurrences with these known identification issues
+<1> Exclude occurrences with a large coordinate uncertainty, but keep those without an uncertainty
+<2> Exclude occurrences not identified to species level
 <3> Exclude occurrences with these georeferencing issues
 <4> Exclude occurrences without a month, or spanning multiple months
 
