@@ -10,9 +10,6 @@ import sys
 from xml.dom.minidom import parse
 import xml.dom.minidom
 
-DWC_OCCURRENCE="https://rs.gbif.org/core/dwc_occurrence_2022-02-02.xml"
-SIMPLE_MULTIMEDIA="http://rs.gbif.org/terms/1.0/Multimedia"
-
 if len(sys.argv) != 3:
     print("Need 2 arguments, output directory and environment")
     exit(1)
@@ -21,21 +18,36 @@ output = sys.argv[1]
 env = sys.argv[2]
 
 if env == 'local':
+    DWC_EXTENSIONS="https://rs.gbif.org/sandbox/extensions.json"
     OPENAPI_OCCURRENCE="http://localhost:8080/v3/api-docs"
     GBIF_API = 'http://localhost:8080'
     indent = 2
 elif env == 'dev':
+    DWC_EXTENSIONS="https://rs.gbif.org/sandbox/extensions.json"
     OPENAPI_OCCURRENCE="https://techdocs.gbif-dev.org/openapi/occurrence.json"
     GBIF_API = 'http://api.gbif-dev.org/v1'
     indent = 2
 elif env == 'uat':
+    DWC_EXTENSIONS="https://rs.gbif.org/sandbox/extensions.json"
     OPENAPI_OCCURRENCE="https://techdocs.gbif-uat.org/openapi/occurrence.json"
     GBIF_API = 'http://api.gbif-uat.org/v1'
     indent = 2
 else:
+    DWC_EXTENSIONS="https://rs.gbif.org/extensions.json"
     OPENAPI_OCCURRENCE="https://techdocs.gbif.org/openapi/occurrence.json"
     GBIF_API = 'http://api.gbif.org/v1'
     indent = None
+
+# Find current DWC Occurrence core
+dwc_extensions = requests.get(DWC_EXTENSIONS)
+dwc_extensions_json = json.loads(dwc_extensions.text)
+for ext in dwc_extensions_json['extensions']:
+    if ext['identifier'] == "http://rs.tdwg.org/dwc/terms/Occurrence" and ext['isLatest']:
+        DWC_OCCURRENCE=ext['url']
+        print("Using Darwin Core Occurrence definitions from ", DWC_OCCURRENCE)
+        break
+
+SIMPLE_MULTIMEDIA="http://rs.gbif.org/terms/1.0/Multimedia"
 
 def parseExtension(url):
     terms = {}
@@ -74,25 +86,27 @@ for prop in occurrence_api['components']['schemas']['Occurrence']['properties']:
 gbif_descriptions['issue'] = gbif_descriptions['issues']
 
 # Additional descriptions not defined
-gbif_descriptions['eventType'] = {'description': 'The type for sampling event records.'}
-gbif_descriptions['hasCoordinate'] = {'description': 'Boolean indicating that a valid latitude and longitude exists.'}
-gbif_descriptions['hasGeospatialIssues'] = {'description': 'Boolean indicating that some spatial validation rule has not passed.'}
-gbif_descriptions['level0Gid'] = {'description': 'The identifier for the top-level division from the https://gadm.org/[GADM database]. This is usually a three-letter code from ISO 3166.'}
-gbif_descriptions['level0Name'] = {'description': 'The English name for the top-level division from the https://gadm.org/[GADM database].'}
-gbif_descriptions['level1Gid'] = {'description': 'The identifier for the first-level division from the https://gadm.org/[GADM database].'}
-gbif_descriptions['level1Name'] = {'description': 'The English name for the first-level division from the https://gadm.org/[GADM database].'}
-gbif_descriptions['level2Gid'] = {'description': 'The identifier for the second-level division from the https://gadm.org/[GADM database].'}
-gbif_descriptions['level2Name'] = {'description': 'The English name for the second-level division from the https://gadm.org/[GADM database].'}
-gbif_descriptions['level3Gid'] = {'description': 'The identifier for the third-level division from the https://gadm.org/[GADM database].'}
-gbif_descriptions['level3Name'] = {'description': 'The English name for the third-level division from the https://gadm.org/[GADM database].'}
-gbif_descriptions['mediaType'] = {'description': 'The media type given as Dublin Core type values, in particular StillImage, MovingImage or Sound.'}
-gbif_descriptions['numberOfOccurrences'] = {'description': 'The number of occurrences of this species/taxon.'}
-gbif_descriptions['projectId'] = {'description': ''}
+gbif_descriptions['dwcaextension'] = {'description': 'The list of Darwin Core extensions present on the occurrence record.'}
+gbif_descriptions['eventdategte'] = {'description': 'The lower bound for the eventDate term as a timestamp, 2000-01-01T00:00:00 for an event date of 2000.'}
+gbif_descriptions['eventdatelte'] = {'description': 'The upper bound for the eventDate term as a timestamp, 2000-12-31T23:59:59 for an event date of 2000.'}
+gbif_descriptions['eventtype'] = {'description': 'The type for sampling event records.'}
+gbif_descriptions['hascoordinate'] = {'description': 'Boolean indicating that a valid latitude and longitude exists.'}
+gbif_descriptions['hasgeospatialissues'] = {'description': 'Boolean indicating that some spatial validation rule has not passed.'}
+gbif_descriptions['level0gid'] = {'description': 'The identifier for the top-level division from the https://gadm.org/[GADM database]. This is usually a three-letter code from ISO 3166.'}
+gbif_descriptions['level0name'] = {'description': 'The English name for the top-level division from the https://gadm.org/[GADM database].'}
+gbif_descriptions['level1gid'] = {'description': 'The identifier for the first-level division from the https://gadm.org/[GADM database].'}
+gbif_descriptions['level1name'] = {'description': 'The English name for the first-level division from the https://gadm.org/[GADM database].'}
+gbif_descriptions['level2gid'] = {'description': 'The identifier for the second-level division from the https://gadm.org/[GADM database].'}
+gbif_descriptions['level2name'] = {'description': 'The English name for the second-level division from the https://gadm.org/[GADM database].'}
+gbif_descriptions['level3gid'] = {'description': 'The identifier for the third-level division from the https://gadm.org/[GADM database].'}
+gbif_descriptions['level3name'] = {'description': 'The English name for the third-level division from the https://gadm.org/[GADM database].'}
+gbif_descriptions['mediatype'] = {'description': 'The media type given as Dublin Core type values, in particular StillImage, MovingImage or Sound.'}
+gbif_descriptions['numberofoccurrences'] = {'description': 'The number of occurrences of this species/taxon.'}
+gbif_descriptions['projectid'] = {'description': ''}
 gbif_descriptions['publisher'] = {'description': 'The name of the organization publishing this record'}
 gbif_descriptions['repatriated'] = {'description': 'Boolean indicating if the publishing country is different to the location country.'}
-gbif_descriptions['verbatimScientificName'] = {'description': 'Scientific name as provided by the source.'}
+gbif_descriptions['verbatimscientificname'] = {'description': 'Scientific name as provided by the source.'}
 #gbif_descriptions[''] = {'description': ''}
-
 
 text_types = {
     'STRING': 'String',
@@ -129,6 +143,7 @@ def write_description_table(term_url, term_set, section, gbif_first, output_file
 
         for field in term_set(definitions):
             field_name = field['name']
+            l_field_name = field_name.lower()
 
             # Name
             print('|%s[%s]' % (field['term'], field_name), file=f)
@@ -144,19 +159,19 @@ def write_description_table(term_url, term_set, section, gbif_first, output_file
             print('|%s' % ('No' if ('required' in field and field['required']) or ('nullable' in field and not field['nullable']) else 'Yes'), file=f)
 
             # GBIF definition
-            if gbif_first and field_name in gbif_descriptions:
-                print('|[[%s.%s]]{gbif_source} %s' % (section, field_name, gbif_descriptions[field_name]['description']), file=f)
+            if gbif_first and l_field_name in gbif_descriptions:
+                print('|[[%s.%s]]{gbif_source} %s' % (section, field_name, gbif_descriptions[l_field_name]['description']), file=f)
             # DWC definition
             elif field['term'] in dwc_terms:
                 print('|[[%s.%s]]{dwc_source} %s' % (section, field_name, dwc_terms[field['term']]['description']), file=f)
             # GBIF (if not first)
-            elif field_name in gbif_descriptions:
-                print('|[[%s.%s]]{gbif_source} %s' % (section, field_name, gbif_descriptions[field_name]['description']), file=f)
+            elif l_field_name in gbif_descriptions:
+                print('|[[%s.%s]]{gbif_source} %s' % (section, field_name, gbif_descriptions[l_field_name]['description']), file=f)
             # Simple Multimedia definiton
             elif field['term'] in multimedia_terms:
                 print('|[[%s.%s]]{gbif_source} %s' % (section, field_name, multimedia_terms[field['term']]['description']), file=f)
             else:
-                print(field_name, "not found in GBIF, DWC or Simple Multimedia definitions")
+                print(field_name, "not found in GBIF, DWC or Simple Multimedia definitions, or the hardcoded table.")
                 print('|–', file=f)
 
             print('', file=f)
@@ -205,10 +220,9 @@ write_description_table(GBIF_API + '/occurrence/download/describe/dwca',
                         text_types)
 
 # Fetch SQL download terms
-if env != 'prod':
-    write_description_table(GBIF_API + '/occurrence/download/describe/sql',
-                            lambda x : x['fields'],
-                            'sql',
-                            True,
-                            output+"/download-sql-terms-table.adoc",
-                            sql_types)
+write_description_table(GBIF_API + '/occurrence/download/describe/sql',
+                        lambda x : x['fields'],
+                        'sql',
+                        True,
+                        output+"/download-sql-terms-table.adoc",
+                        sql_types)
