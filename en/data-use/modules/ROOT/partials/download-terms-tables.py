@@ -87,8 +87,8 @@ gbif_descriptions['issue'] = gbif_descriptions['issues']
 
 # Additional descriptions not defined
 gbif_descriptions['dwcaextension'] = {'description': 'The list of Darwin Core extensions present on the occurrence record.'}
-gbif_descriptions['eventdategte'] = {'description': 'The lower bound for the eventDate term as a timestamp, 2000-01-01T00:00:00 for an event date of 2000.'}
-gbif_descriptions['eventdatelte'] = {'description': 'The upper bound for the eventDate term as a timestamp, 2000-12-31T23:59:59 for an event date of 2000.'}
+gbif_descriptions['eventdategte'] = {'description': '*Experimental* The lower bound for the eventDate term as a timestamp, `2000-01-01T00:00:00` for an event date of `2000`.'}
+gbif_descriptions['eventdatelte'] = {'description': '*Experimental* The upper bound for the eventDate term as a timestamp, `2000-12-31T23:59:59` for an event date of `2000`.'}
 gbif_descriptions['eventtype'] = {'description': 'The type for sampling event records.'}
 gbif_descriptions['hascoordinate'] = {'description': 'Boolean indicating that a valid latitude and longitude exists.'}
 gbif_descriptions['hasgeospatialissues'] = {'description': 'Boolean indicating that some spatial validation rule has not passed.'}
@@ -102,7 +102,7 @@ gbif_descriptions['level3gid'] = {'description': 'The identifier for the third-l
 gbif_descriptions['level3name'] = {'description': 'The English name for the third-level division from the https://gadm.org/[GADM database].'}
 gbif_descriptions['mediatype'] = {'description': 'The media type given as Dublin Core type values, in particular StillImage, MovingImage or Sound.'}
 gbif_descriptions['numberofoccurrences'] = {'description': 'The number of occurrences of this species/taxon.'}
-gbif_descriptions['projectid'] = {'description': ''}
+gbif_descriptions['projectid'] = {'description': 'Identifiers for projects related to this occurrence.'}
 gbif_descriptions['publisher'] = {'description': 'The name of the organization publishing this record'}
 gbif_descriptions['repatriated'] = {'description': 'Boolean indicating if the publishing country is different to the location country.'}
 gbif_descriptions['verbatimscientificname'] = {'description': 'Scientific name as provided by the source.'}
