@@ -1,8 +1,8 @@
 = API SQL Downloads
 
-NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently only available for preview by invited users.
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently only available for preview by invited users.  Contact helpdesk@gbif.org to request access.
 
-The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL, _structured query language_, a programming language commonly used to access database systems.  In contrast to the xref:api-downloads.adoc[Predicate Download API], the SQL API allows selection of the columns of interest and generation of summary views of GBIF data.  Functions to generate xref::data-cubes.adoc[_data cubes_] are available as part of the https://b-cubed.eu/[Biodiversity Building Blocks for Policy] project.
+The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL, _structured query language_, a programming language commonly used to access database systems.  In contrast to the xref:api-downloads.adoc[Predicate Download API], the SQL API allows selection of the columns of interest and generation of summary views of GBIF data.  Functions to generate xref::data-cubes.adoc[_species occurrence cubes_] are available as part of the https://b-cubed.eu/[Biodiversity Building Blocks for Policy] project.
 
 Occurrence SQL downloads are created asynchronously — the user requests a download and, once the download is prepared, is sent an email with a link to the resulting file.
 
@@ -47,7 +47,7 @@ The first line of the output shows the result of the download request:
 * If the query is accepted the first line of output should be `HTTP/2 201`, and a download key will be returned on the last line.
 * If the SQL is not valid, the first line of the output will be `HTTP/2 400`.  There may be useful information on the error at the end of the output.
 * `HTTP/2 401` means your username or password is incorrect
-* `HTTP/2 403` means your username does not have permission to use this prototype feature.
+* `HTTP/2 403` means your username does not have permission to use this prototype feature — contact helpdesk@gbif.org.
 
 Querying the download key from an accepted request shows the download information, including the download link and DOI once the download is ready.  Run this repeatedly, until you see `SUCCEEDED` — you will need to use your download key rather than the example:
 
