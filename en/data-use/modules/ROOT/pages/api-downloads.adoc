@@ -140,8 +140,8 @@ Logical conjuction, "and".  The sub-predicates must all be true.
   "predicate": {
     "type": "and",
     "predicates": [
-      "type": "equals", "key": "HAS_GEOSPATIAL_ISSUE", "value": "false"},
-      "type": "equals", "key": "TAXON_KEY", "value": "2440447"}
+      { "type": "equals", "key": "HAS_GEOSPATIAL_ISSUE", "value": "false"},
+      { "type": "equals", "key": "TAXON_KEY", "value": "2440447"}
     ]
   }
 }
@@ -161,8 +161,8 @@ When requesting many values of the same field (for example, multiple taxa or cou
   "predicate": {
     "type": "or",
     "predicates": [
-      "type": "equals", "key": "HAS_GEOSPATIAL_ISSUE", "value": "false"},
-      "type": "equals", "key": "TAXON_KEY", "value": "2440447"}
+      { "type": "equals", "key": "HAS_GEOSPATIAL_ISSUE", "value": "false"},
+      { "type": "equals", "key": "TAXON_KEY", "value": "2440447"}
     ]
   }
 }
