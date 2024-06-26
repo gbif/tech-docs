@@ -107,6 +107,63 @@ Reference: https://doi.org/10.1111/j.1365-2028.2008.00997.x[Larsen R, Holmern T,
 
 See also: https://en.wikipedia.org/wiki/QDGC[Wikipedia: QDGC].
 
+=== ISEA3H Grid cell code
+
+This function implements the _Inverse Snyder Equal-Area Projection (ISEA) Aperture 3 Hexagonal (3H) Discrete Global Grid System (DGGS)_, ISEA3H.  Grid cell codes/identifiers are as specified in https://doi.org/10.1080/15230406.2018.1455157[A novel identifier scheme for the ISEA Aperture 3 Hexagon Discrete Global Grid System].
+
+*Suggested function declaration:*
+
+[source,sql]
+----
+CREATE OR REPLACE TEMPORARY FUNCTION isea3hCode AS 'org.gbif.occurrence.hive.udf.Isea3hCellCodeUDF';
+----
+
+*Function definition:*
+
+[source,sql]
+----
+STRING isea3hCode(INTEGER resolution,
+                  DOUBLE latitude,
+                  DOUBLE longitude,
+                  DOUBLE coordinateUncertaintyInMeters)
+----
+
+*Parameters:*
+
+`resolution`:: The _resolution_ of the grid; the number of division steps applied to the initial dodecahedron.  Valid values are 1 to 22.
+`latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
+`longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
+`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`)
+
+The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
+
+See https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html[ISEA3H details] for the number and size of cells at each resolution.
+
+*Return value:*
+
+The code for the cell of the ISEA3H grid cell in which the randomized point falls.
+
+*Example arguments and returned values:*
+
+[cols=">,>,>,>,>"]
+|===
+|Result|_resolution_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_
+|`-358282526011250000`|`3`|`52.3`|`10.3`|`1000.0`
+| `652180731009071912`|`6`|`52.3`|`10.3`|`1000.0`
+| `952458899010519815`|`9`|`52.3`|`10.3`|`1000.0`
+|===
+
+References:
+
+* http://www.opengis.net/doc/AS/dggs/1.0[Discrete Global Grid Systems Abstract Specification]
+* https://doi.org/10.1559/152304003100011090[Geodesic discrete global grid systems.]
+* https://doi.org/10.1080/15230406.2018.1455157[A novel identifier scheme for the ISEA Aperture 3 Hexagon Discrete Global Grid System]
+
+See also:
+
+* https://github.com/mocnik-science/geogrid[geogrid], the Java library used by GBIF to calculate the grid.
+* https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html[dggridR], an R package to calculate the grid (though not using the same identifiers).
+
 === Military Grid Reference System cell code
 
 *Suggested function declaration:*
