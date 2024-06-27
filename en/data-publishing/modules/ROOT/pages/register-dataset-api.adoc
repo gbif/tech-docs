@@ -1,0 +1,98 @@
+= Registering a dataset using the API
+
+[TIP]
+.Who should register datasets in this way?
+====
+Registering a dataset using the API may be appropriate for an institution with many datasets and an existing software system to manage them.
+
+If this does not apply see xref:index.adoc[other dataset registration options] for alternatives.
+====
+
+== Permissions
+
+You will need a user account on GBIF.org to handle the registrations.  Ideally, this should be an account for your institution or software system, rather than a personal account.
+
+You should also create an account on GBIF-UAT.org which you can use for testing.  _Please do not create test datasets on GBIF.org! They will be assigned DOIs, which can never be deleted._
+
+Once you have created the accounts, contact helpdesk@gbif.org to ask for editor_rights permissions for your organization.
+
+You can also test on GBIF-UAT.org using the username `ws_client_demo` and password `Demo123`.  This has permission to create datasets owned by https://www.gbif-uat.org/publisher/0a16da09-7719-40de-8d4f-56a15ed52fb6[Test Organization #1], which has a https://www.gbif-uat.org/installation/92d76df5-3de1-4c89-be03-7a17abad962a[Test HTTP installation].
+
+== Process
+
+Registration requires two REST calls — the first creates a new dataset, then the second adds an endpoint (HTTP or HTTPS location) which GBIF will use to access the dataset.
+
+First, record the mandatory dataset metadata in a JSON file, `dataset.json`.
+
+[source,json]
+.Mandatory dataset metadata
+----
+{
+  "publishingOrganizationKey": "0a16da09-7719-40de-8d4f-56a15ed52fb6", <1>
+  "installationKey": "92d76df5-3de1-4c89-be03-7a17abad962a", <1>
+  "type": "METADATA", <2>
+  "title": "Example dataset registration",
+  "description": "The dataset is registered with minimal metadata, which is overwritten once GBIF can access the file.",
+  "language": "eng",
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/legalcode" <3>
+}
+----
+<1> The publishing organization and installation must already exist in the GBIF Registry.
+<2> See the enumeration API for the accepted values for the https://api.gbif.org/v1/enumeration/basic/DatasetType[type] (DatasetType)…
+<3> …and https://api.gbif.org/v1/enumeration/license[licence].
+
+_POST_ this JSON to GBIF using the Registry API:
+
+[source,shell]
+----
+curl -Ssf --user ws_client_demo:Demo123 -H "Content-Type: application/json" -X POST --data @dataset.json https://api.gbif-uat.org/v1/dataset | tr -d '"' | tee dataset.registration
+
+dataset=$(cat dataset.registration)
+----
+
+Notice the API returns the new dataset's UUID, and we have recorded this in the file `dataset.registration`.  The UUID is then stored in a variable.
+
+Next define the endpoint in `endpoint.json`:
+
+[source,json]
+.Endpoint definition
+----
+{
+  "type": "EML", <1>
+  "url": "https://techdocs.gbif.org/en/data-publishing/_attachments/test-dataset.eml"
+}
+----
+<1> See other values for https://api.gbif.org/v1/enumeration/basic/EndpointType[type] (EndpointType), this will be `DWC_ARCHIVE` for normal occurrence, checklist or sampling event datasets.
+
+Add this endpoint to the dataset:
+
+[source,shell]
+----
+curl -Ssf --user ws_client_demo:Demo123 -H "Content-Type: application/json" -X POST --data @endpoint.json https://api.gbif-uat.org/v1/dataset/$dataset/endpoint
+----
+
+== Result
+
+The dataset should be visible in the GBIF Registry:
+
+[source,shell]
+----
+firefox https://registry.gbif-uat.org/dataset/$dataset
+----
+
+After 1-2 minutes the dataset metadata will be updated.  After a further 1-60 minutes, depending on the size of the dataset and the number of other datasets being processed, occurrence and/or checklist data should be retrieved from your system and shown on GBIF's system.  You can follow the progress under "Crawling history" and  "Ingestion history" for your dataset, and see the length of the queue at https://registry.gbif-uat.org/monitoring/running-crawls["Running crawls"] (https://registry.gbif-uat.org/monitoring/running-crawls[UAT version]) and https://registry.gbif-uat.org/monitoring/running-ingestions["Running ingestions"] (https://registry.gbif-uat.org/monitoring/running-ingestions[UAT version]).  Here, "crawling" refers to GBIF's system downloading data from your server, and also tracks processing metadata and checklists.  "Ingestion" handles occurrence data.
+
+== Shell script
+
+This is a very minimal procedure, without any error checking or proper recording of the dataset UUID.
+
+.Shell script (click to expand)
+[%collapsible]
+====
+xref:attachment$register.sh[Download this script].
+
+[source,json]
+------
+include::attachment$register.sh[]
+------
+====

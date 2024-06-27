@@ -1,2 +1,3 @@
-* xref:index.adoc[Data publishing]
+* xref:index.adoc[]
+* xref:register-dataset-api.adoc[]
 

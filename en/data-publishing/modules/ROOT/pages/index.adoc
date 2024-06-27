@@ -1,57 +1,54 @@
 = Data publishing
 
-== Publishing through the IPT
+Most institutions publishing data to GBIF need to convert their data into a format suitable for GBIF to process, typically Darwin Core Archive.
 
-xref:ipt::index.adoc[IPT manual]
+Tools including the https://ipt.gbif.org/manual/[GBIF IPT] and BioCASe can convert data stored in spreadsheets and databases to the appropriate formats.  *The IPT is the most common way to publish data to GBIF.*
 
-xref:ipt::how-to-publish.adoc[How to publish]
+Some institutional collections management systems, such as Symbiota or EarthCape, can export all or part of their data to GBIF.
 
-== Publishing with the (registry) API
+Users or institutional systems (custom software) which can generate Darwin Core Archives and make them available on a webserver have two options:
 
-(link to API component)
+* For occasional datasets (one or two per year) contact the mailto:helpdesk@gbif.org[GBIF helpdesk], who will register the dataset on your behalf.
+* If new datasets will be registered more frequently, you may xref:register-dataset-api.adoc[register the datasets directly using the API].
 
-xref:v1@openapi::registry.adoc[Registry]
+Further discussion of the options can be found in https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/[this blogpost]
 
-== Other publishing methods
+//== Dataset classes
 
-Other publishing methods exist besides the IPT and the API. More information can be found in this https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/[blogpost]
+//Dataset can be published in four different formats:
 
-== Dataset classes
+//* Metadata-only
+//* Checklist
+//* Occurrence
+//* Sampling event
 
-Dataset can be published in four different formats:
+//Generally, the data quality increases from metadata-only to sampling event datasets.
 
-* Metadata-only
-* Checklist
-* Occurrence
-* Sampling event
+//== Data quality recommendations
 
-Generally, the data quality increases from metadata-only to sampling event datasets.
-
-=== Data quality recommendations
-
-You can familiarize yourself with the requirements of each dataset class https://www.gbif.org/data-quality-requirements[here]
+//You can familiarize yourself with the requirements for the various types of dataset https://www.gbif.org/data-quality-requirements[here]
 
 == Tools to quality check your publication
 
 === Dataset validator
 
-The dataset validator can be used to https://www.gbif.org/tools/data-validator/about[validate] zipped Darwin core archive folders
+The dataset validator can be used to https://www.gbif.org/tools/data-validator/about[validate] zipped Darwin Core Archive datasets.
 
-== Species matching
+//== Species matching
 
-== Species API (link to API topic)
+//== Species API (link to API topic)
 
-== The test IPT
+//== The test IPT
 
-== The meaning of flags and issues and how you should deal with them
+//== The meaning of flags and issues and how you should deal with them
 
-== Data publishing FAQ
+//== Data publishing FAQ
 
-* change occurrence IDs
-* citations
+//* change occurrence IDs
+//* citations
 
-== Other
+//== Other
 
-(Moved here from the main menu.)
+//(Moved here from the main menu.)
 
-* xref:dna-derived-data::index.adoc[]
+//* DNA derived data
