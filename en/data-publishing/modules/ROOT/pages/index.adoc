@@ -46,7 +46,7 @@ Name usage, search and parsing can be carried out with the https://techdocs.gbif
 
 === Flags and issues
 
-When records are published to GBIF, they may receive various data quality flags and issues. The meaning and how to deal with the different issues are documented for https://techdocs.gbif-uat.org/en/data-use/occurrence-issues-and-flags[occurrence] and https://techdocs.gbif-uat.org/en/data-use/checklist-issues-and-flags[checklist] datasets. 
+When records are published to GBIF, they may receive various data quality flags and issues. The meaning and how to deal with the different issues are documented for xref:data-use::occurrence-issues-and-flags.adoc[occurrence] and xref:data-use::checklist-issues-and-flags.adoc[checklist] datasets.
 
 //== Data publishing FAQ
 
