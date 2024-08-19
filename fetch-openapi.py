@@ -28,7 +28,7 @@ urls = {}
 for s in services:
     for i in s["instances"]:
         if (i['tags']['env'] == env):
-            if i['registration']['serviceUrl'].find('gbif.org') > 0:
+            if i['registration']['serviceUrl'].find('gbif') > 0:
                 urls[s['name']] = i['registration']['serviceUrl']
                 print("Found "+env+" "+s['name']+" at "+urls[s['name']])
 print("")
