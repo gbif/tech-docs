@@ -180,18 +180,18 @@ image::annotations/lions-greenland.png[width=80%]
 
 // It's important to note, however, that the concept of rule-based annotations is inherently extensible. While our initial focus centres on location data, the same framework and principles can be applied to other areas of data quality improvement within the GBIF context. This adaptability allows us to remain responsive to evolving user needs and feedback, ensuring that our efforts can be broadened to encompass other data quality challenges in the future. Ultimately, our aim is to create a flexible and scalable solution that can continue to benefit the biodiversity community as a whole.
 
-// === Comparison with similar projects
+=== Comparison with other species location databases
 
-// Other efforts exist to catalogue the ranges of the living world:
+Other efforts exist to catalogue the ranges of the living world:
 
-// * https://www.iucnredlist.org/resources/spatial-data-download[IUCN range maps]
-// * https://mol.org/[Map of life]
-// * https://www.inaturalist.org/pages/atlases[iNaturalist atlases]
+* https://www.iucnredlist.org/resources/spatial-data-download[IUCN range maps]
+* https://mol.org/[Map of life]
+* https://www.inaturalist.org/pages/atlases[iNaturalist atlases]
 
-// While these efforts are useful and well-developed, none of them are expressly focused on data quality. Namely, none of these systems allow users to easily state with a simple controlled vocabulary and rules where occurrences for a species are likely and unlikely.
+While these efforts are useful and well-developed, none of them are expressly focused on data quality. Namely, none of these systems allow users to easily state with a simple controlled vocabulary and rules where occurrences for a species are likely and unlikely.
 
-// .Our system allows users to annotate at an granular scale. For example, this annotation marks all occurrences that happen to be near this greenhouse as "managed".
-// image::annotations/greenhouse-managed.png[]
+.Our system allows users to annotate at an granular scale. For example, this annotation marks all occurrences that happen to be near this greenhouse as "managed".
+image::annotations/greenhouse-managed.png[]
 
 == Technical Details
 
@@ -223,27 +223,27 @@ A `taxon` in our system is going to be a GBIF `taxonKey` so rules are more likel
 |`rule` -> *5219404* in *Ocean* are *suspicious*
 |====================
 
-// ==== Rule extensions
+==== Rule extensions
 
-// We have found in initial testing that only being able to annotate land areas (a geo-polygon) is restrictive, so it is anticipated that certain extensions to this basic formula might be supported.
+We have found in initial testing that only being able to annotate land areas (a geo-polygon) is restrictive, so it is anticipated that certain extensions to this basic formula might be supported.
 
-// For example, often occurrence records can be suspicious but still be in a somewhat plausible location. A natural way to handle such cases would be to allow for rules with GBIF `datasetKey`.
+For example, often occurrence records can be suspicious but still be in a somewhat plausible location. A natural way to handle such cases would be to allow for rules with GBIF `datasetKey`.
 
-// `rule` ->  `taxon` in `geo-polygon` and `datasetKey` are `controlled vocab`
+`rule` ->  `taxon` in `geo-polygon` and `datasetKey` are `controlled vocab`
 
-// For example,
+For example,
 
-// `rule` -> *Lions* in *South Africa* and *datasetKey* are *suspicious*
+`rule` -> *Lions* in *South Africa* and *datasetKey* are *suspicious*
 
-// Another natural extension might be GBIF `basisOfRecord`.
+Another natural extension might be GBIF `basisOfRecord`.
 
-// For example, https://data-blog.gbif.org/post/country-centroids/[country centroid] locations are often only suspicious for museum specimens, so a user could define a rule that captures this knowledge.
+For example, https://data-blog.gbif.org/post/country-centroids/[country centroid] locations are often only suspicious for museum specimens, so a user could define a rule that captures this knowledge.
 
-// `rule` -> *Lions* in *Centroid of South Africa* and *Preserved Specimen* are *suspicious*
+`rule` -> *Lions* in *Centroid of South Africa* and *Preserved Specimen* are *suspicious*
 
-// "Centroid of South Africa" would, of course, be defined by some WKT object like a circle or a polygon.
+"Centroid of South Africa" would, of course, be defined by some WKT object like a circle or a polygon.
 
-// Finally, there might be other fields that might make good qualifiers/extensions, like `year`.
+Finally, there might be other fields that might make good qualifiers/extensions, like `year`.
 
 === Rulesets
 
@@ -286,6 +286,8 @@ We hope that users will collaborate on a `project` that interests them and creat
 
 Within a `project`, only users with access, granted by the project creator, will be able to create rules and rulesets. However, rules, rulesets, and projects will all be open and publicly available.
 
+
+
 === Voting
 
 For downstream users, deciding which `rule` and `rulesets` to use might become challenging without some quality control. Currently, we imagine a simple upvote-downvote system on `rule`, `ruleset`, and perhaps `project`. With voting users could see what annotations are supported by the broader community, and create cleaning scripts that are only use annotations supported by the community.
@@ -294,7 +296,7 @@ Additionally, voting could provide protection against **vandalism**.
 
 === Higher taxonomy
 
-Annotating higher taxonomy is harder than annotating at the species level because you have to be confident, the annotation at the higher level fits all child taxa.
+Another useful feature would be the ability to *cast* a `rule` down to all child taxa. Annotating higher taxonomy is harder than annotating at the species level because you have to be confident, the annotation at the higher level fits all child taxa.
 
 .A map of amphibian occurrences on GBIF. It is well known there are no amphibians in Antarctica. However, we see from the map that one occurrence point still appears there in error.
 image::annotations/amphibians.png[]
@@ -305,26 +307,26 @@ Given the distribution of Amphibians, a good rule for the high taxon Amphibians 
 
 One challenge is that is is hard to downcast annotations like "Native" to lower levels, since species of a big group tend not to be "Native" to exactly the same areas.
 
-// === Sharing rules
+=== Sharing rules
 
-// It is also anticipated that a desirable feature would allow users to "borrow" `rule` or geo-polygon from another `ruleset` and assign a new taxonKey or add a rule extension. This will reduce the storage strains on GBIF and prevent duplicate work.
+It is also anticipated that a desirable feature would allow users to "borrow" `rule` or geo-polygon from another `ruleset` and assign a new taxonKey or add a rule extension. This will reduce the storage strains on GBIF and prevent duplicate work.
 
-// For example, a common `rule` might be to mark something in the ocean as suspicious. A user should be able apply this rule to a new taxonKey without creating a new ocean polygon every time.
+For example, a common `rule` might be to mark something in the ocean as suspicious. A user should be able apply this rule to a new taxonKey without creating a new ocean polygon every time.
 
-// === Exceptions to rules
+=== Exceptions to rules
 
-// Creating cast-down annotations can be hard due to several reasons related to the nature of the task and **exceptions to the rule**. An exclusion rule could be efficient for higher level downcasting of rules.
+Creating cast-down annotations can be hard due to several reasons related to the nature of the task and **exceptions to the rule**. An exclusion rule could be efficient for higher level downcasting of rules.
 
-// For example, a rule could exclude a certain group
+For example, a rule could exclude a certain group
 
-// `rule` -> `taxon` in `geo-polygon` are `controlled vocabulary` except `taxon x`
+`rule` -> `taxon` in `geo-polygon` are `controlled vocabulary` except `taxon x`
 
-// `rule` -> *Amphibians* in *Antarctica* are *Suspicious* except **Antartic frogs**
+`rule` -> *Amphibians* in *Antarctica* are *Suspicious* except **Antartic frogs**
 
-// .https://edition.cnn.com/2020/04/23/world/antarctica-first-frog-species-scn/index.html[Frog article]
-// image::annotations/frogs.png[]
+.https://edition.cnn.com/2020/04/23/world/antarctica-first-frog-species-scn/index.html[Frog article]
+image::annotations/frogs.png[]
 
-// A work around to *rule exceptions* could of course be rules that simply *conflict*.
+A work around to *rule exceptions* could of course be rules that simply *conflict*.
 
 === Conflicting rules
 
@@ -332,15 +334,15 @@ Inevitably, there are going to be rules created in our system that conflict. For
 
 In our rule-based system, unlike perhaps other platforms, we are not striving to create a single ground truth. We aim only to have a collection of useful opinions, and we leave it to the end user to decide what to do with the information.
 
-// === Rules with more than one taxon
+=== Rules with more than one taxon
 
-// It might be efficient in some circumstances to express rules with more than one taxon:
+It might be efficient in some circumstances to express rules with more than one taxon:
 
-// rule -> `taxon_1` + `taxon_2` `...` in `geo-polygon` are `controlled vocabulary`
+rule -> `taxon_1` + `taxon_2` `...` in `geo-polygon` are `controlled vocabulary`
 
-// One useful example would be marking all https://www.marinespecies.org/[marine species] on land as suspicious.
+One useful example would be marking all https://www.marinespecies.org/[marine species] on land as suspicious.
 
-// rule -> *Marine species on WORMS list* in *Land Polygon* are *Suspicious*
+rule -> *Marine species on WORMS list* in *Land Polygon* are *Suspicious*
 
 === Controlled vocabulary
 
@@ -401,6 +403,7 @@ Annotating land areas (and extensions) provide at least two advantages over anno
 
 1. Avoids the use of https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids[unstable gbifIds].
 2. Allows for future occurrences to benefit from the annotation.
+
 
 == References
 

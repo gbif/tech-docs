@@ -332,15 +332,15 @@ Inevitably, there are going to be rules created in our system that conflict. For
 
 In our rule-based system, unlike perhaps other platforms, we are not striving to create a single ground truth. We aim only to have a collection of useful opinions, and we leave it to the end user to decide what to do with the information.
 
-// === Rules with more than one taxon
+=== Rules with more than one taxon
 
-// It might be efficient in some circumstances to express rules with more than one taxon:
+It might be efficient in some circumstances to express rules with more than one taxon:
 
-// rule -> `taxon_1` + `taxon_2` `...` in `geo-polygon` are `controlled vocabulary`
+rule -> `taxon_1` + `taxon_2` `...` in `geo-polygon` are `controlled vocabulary`
 
-// One useful example would be marking all https://www.marinespecies.org/[marine species] on land as suspicious.
+One useful example would be marking all https://www.marinespecies.org/[marine species] on land as suspicious.
 
-// rule -> *Marine species on WORMS list* in *Land Polygon* are *Suspicious*
+rule -> *Marine species on WORMS list* in *Land Polygon* are *Suspicious*
 
 === Controlled vocabulary
 
@@ -401,6 +401,7 @@ Annotating land areas (and extensions) provide at least two advantages over anno
 
 1. Avoids the use of https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids[unstable gbifIds].
 2. Allows for future occurrences to benefit from the annotation.
+
 
 == References
 

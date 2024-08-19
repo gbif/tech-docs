@@ -294,7 +294,7 @@ Additionally, voting could provide protection against **vandalism**.
 
 === Higher taxonomy
 
-Annotating higher taxonomy is harder than annotating at the species level because you have to be confident, the annotation at the higher level fits all child taxa.
+Another useful feature would be the ability to *cast* a `rule` down to all child taxa. Annotating higher taxonomy is harder than annotating at the species level because you have to be confident, the annotation at the higher level fits all child taxa.
 
 .A map of amphibian occurrences on GBIF. It is well known there are no amphibians in Antarctica. However, we see from the map that one occurrence point still appears there in error.
 image::annotations/amphibians.png[]
@@ -305,26 +305,26 @@ Given the distribution of Amphibians, a good rule for the high taxon Amphibians 
 
 One challenge is that is is hard to downcast annotations like "Native" to lower levels, since species of a big group tend not to be "Native" to exactly the same areas.
 
-// === Sharing rules
+=== Sharing rules
 
-// It is also anticipated that a desirable feature would allow users to "borrow" `rule` or geo-polygon from another `ruleset` and assign a new taxonKey or add a rule extension. This will reduce the storage strains on GBIF and prevent duplicate work.
+It is also anticipated that a desirable feature would allow users to "borrow" `rule` or geo-polygon from another `ruleset` and assign a new taxonKey or add a rule extension. This will reduce the storage strains on GBIF and prevent duplicate work.
 
-// For example, a common `rule` might be to mark something in the ocean as suspicious. A user should be able apply this rule to a new taxonKey without creating a new ocean polygon every time.
+For example, a common `rule` might be to mark something in the ocean as suspicious. A user should be able apply this rule to a new taxonKey without creating a new ocean polygon every time.
 
-// === Exceptions to rules
+=== Exceptions to rules
 
-// Creating cast-down annotations can be hard due to several reasons related to the nature of the task and **exceptions to the rule**. An exclusion rule could be efficient for higher level downcasting of rules.
+Creating cast-down annotations can be hard due to several reasons related to the nature of the task and **exceptions to the rule**. An exclusion rule could be efficient for higher level downcasting of rules.
 
-// For example, a rule could exclude a certain group
+For example, a rule could exclude a certain group
 
-// `rule` -> `taxon` in `geo-polygon` are `controlled vocabulary` except `taxon x`
+`rule` -> `taxon` in `geo-polygon` are `controlled vocabulary` except `taxon x`
 
-// `rule` -> *Amphibians* in *Antarctica* are *Suspicious* except **Antartic frogs**
+`rule` -> *Amphibians* in *Antarctica* are *Suspicious* except **Antartic frogs**
 
-// .https://edition.cnn.com/2020/04/23/world/antarctica-first-frog-species-scn/index.html[Frog article]
-// image::annotations/frogs.png[]
+.https://edition.cnn.com/2020/04/23/world/antarctica-first-frog-species-scn/index.html[Frog article]
+image::annotations/frogs.png[]
 
-// A work around to *rule exceptions* could of course be rules that simply *conflict*.
+A work around to *rule exceptions* could of course be rules that simply *conflict*.
 
 === Conflicting rules
 
@@ -332,15 +332,15 @@ Inevitably, there are going to be rules created in our system that conflict. For
 
 In our rule-based system, unlike perhaps other platforms, we are not striving to create a single ground truth. We aim only to have a collection of useful opinions, and we leave it to the end user to decide what to do with the information.
 
-// === Rules with more than one taxon
+=== Rules with more than one taxon
 
-// It might be efficient in some circumstances to express rules with more than one taxon:
+It might be efficient in some circumstances to express rules with more than one taxon:
 
-// rule -> `taxon_1` + `taxon_2` `...` in `geo-polygon` are `controlled vocabulary`
+rule -> `taxon_1` + `taxon_2` `...` in `geo-polygon` are `controlled vocabulary`
 
-// One useful example would be marking all https://www.marinespecies.org/[marine species] on land as suspicious.
+One useful example would be marking all https://www.marinespecies.org/[marine species] on land as suspicious.
 
-// rule -> *Marine species on WORMS list* in *Land Polygon* are *Suspicious*
+rule -> *Marine species on WORMS list* in *Land Polygon* are *Suspicious*
 
 === Controlled vocabulary
 
@@ -401,6 +401,7 @@ Annotating land areas (and extensions) provide at least two advantages over anno
 
 1. Avoids the use of https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids[unstable gbifIds].
 2. Allows for future occurrences to benefit from the annotation.
+
 
 == References
 
