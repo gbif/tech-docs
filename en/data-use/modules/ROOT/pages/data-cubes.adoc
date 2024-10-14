@@ -227,7 +227,7 @@ See xref::api-sql-download-functions.adoc[] for descriptions and arguments for t
 
 See xref::api-sql-downloads.adoc[] for instructions.
 
-Note the queries above are shown in SQL format. The double quote characters, newlines and comments must be escaped/removed when converting the query to the JSON request for the API.  The submitted request is shown here: https://raw.githubusercontent.com/gbif/occurrence/refs/heads/master/occurrence-download/example-jobs/tech-docs-poland-cube.json
+Note the queries above are shown in SQL format. The double quote characters, newlines and comments must be escaped/removed when converting the query to the JSON request for the API.  The submitted request is https://raw.githubusercontent.com/gbif/occurrence/refs/heads/master/occurrence-download/example-jobs/tech-docs-poland-cube.json[available here].
 
 A cube made using this query is available https://www.gbif.org/occurrence/download/0099186-240321170329656[here].
 
