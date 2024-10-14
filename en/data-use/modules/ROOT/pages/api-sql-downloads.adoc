@@ -18,7 +18,7 @@ A download request includes your username, email address, the download format, a
 
 A basic example using the _curl_ command to make the request:
 
-Put this in a file called `query.json`:
+Put this in a file called (for example) `query.json`:
 
 [source,json]
 ----
@@ -44,10 +44,10 @@ curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: a
 
 The first line of the output shows the result of the download request:
 
-* If the query is accepted the first line of output should be `HTTP/2 201`, and a download key will be returned on the last line.
-* If the SQL is not valid, the first line of the output will be `HTTP/2 400`.  There may be useful information on the error at the end of the output.
-* `HTTP/2 401` means your username or password is incorrect
-* `HTTP/2 403` means your username does not have permission to use this prototype feature — contact helpdesk@gbif.org.
+* If the query is accepted the first line of output should be either `HTTP/1.1 201 Created` or `HTTP/2 201`, and a download key will be returned on the last line.
+* If the SQL is not valid, the first line of the output will be `HTTP/… 400 …`.  There may be useful information on the error at the end of the output.
+* `HTTP/… 401 …` means your username or password is incorrect
+* `HTTP/… 403 …` means your username does not have permission to use this prototype feature — contact helpdesk@gbif.org.
 
 Querying the download key from an accepted request shows the download information, including the download link and DOI once the download is ready.  Run this repeatedly, until you see `SUCCEEDED` — you will need to use your download key rather than the example:
 
@@ -102,6 +102,7 @@ As well as custom gridding functions:
 * `GBIF_EEARGCode`
 * `GBIF_EQDGCCode`
 * `GBIF_MGRSCode`
+* `GBIF_ISEA3HCode`
 
 See the xref:api-sql-download-functions.adoc[separate page on the available SQL functions].
 
@@ -110,7 +111,7 @@ See the xref:api-sql-download-functions.adoc[separate page on the available SQL 
 
 The `occurrence` table contains the interpreted data, the verbatim (as provided to GBIF) data, and some calculated columns useful for searching.  The full list of available columns is show below, and is also available through https://api.gbif.org/v1/occurrence/download/describe/sql[this API call] — the `name` field is the column name.  Note the `v_` prefix for the verbatim data columns.
 
-.Full list of available SQL column names
+.*Full list of available SQL column names* (click to expand)
 [%collapsible]
 ====
 The definitions marked with {dwc_source} are from the Darwin Core standard.
@@ -134,7 +135,56 @@ curl --include --header "Content-Type: application/json" --data @query.json http
 
 Your query will be returned if it is valid, and an error message with an explanation will be returned if it is invalid.
 
+[#troubleshooting]
+== Troubleshooting
+
+Many GBIF APIs are tolerant of small differences in how they are queried — you can make an occurrence download query using the search parameter `taxonKey`, `taxon_key`, `TAXONKEY` and so on, and using the value `1`, `'1'`, `"1"`, `{nbsp}1`, `"{nbsp}01"` etc.
+
+The SQL API is less forgiving, so some common parts of queries must be specified exactly as documented.
+
+Within the SQL query itself:
+
+. If column names are quoted they must use double quotes and lowercase: `"year"`, `"basisofrecord"`.  It's only necessary to quote column names that are also SQL functions: `"year"`, `"month"`, `"day"`.
+. When column and function names aren't quoted, the letter case doesn't matter: `basisOfRecord`, `basisofrecord`, `gbif_eeargcode(…)`, `GBIF_EEARGCode(…)`.
+. String values use single quotes, like `basisOfRecord = 'HUMAN_OBSERVATION'`.
+. SQL comments (lines beginning `--{nbsp}`) cannot be included in queries.
+. Columns with numeric types must be filtered using numbers, not quoted string values — use `taxonkey IN (1234, 5687)` or `year >= 2020`.
+. The column name for the taxonomic order is currently `order_`.  (It will later be corrected to `"order"`.)
+
+When converting the SQL query to JSON for submission to the API:
+
+. JSON uses double quotes for attributes and values, so when the SQL is written values containing double quotes must have these escaped using `\"`
+. Newlines, if used, should be replaced with either spaces ` ` or `\n`
+
+[source,json]
+----
+{
+  "sendNotification": true,
+  "notificationAddresses": [
+    "userEmail@example.org"
+  ],
+  "format": "SQL_TSV_ZIP",
+  "sql": "SELECT DISTINCT \"year\" \n FROM occurrence \n WHERE \"year\" > 2000";
+}
+----
+
+It can be convenient to work with neatly formatted SQL files, and convert them to JSON format automatically:
+
+[source,shell]
+----
+# Using jq
+grep -v -- '--' neat-query.sql | jq -R -s .
+
+# Using Python
+grep -v -- '--' neat-query.sql | python3 -c 'import sys, json; print(json.dumps(sys.stdin.read()))'
+----
+
 [#cube]
 == Further examples
 
 For a complete example of generating a data cube see the xref::data-cubes.adoc[] page.
+
+[#issues]
+== Known issues
+
+Known faults with the system are tracked https://github.com/gbif/occurrence-cube/issues[on GitHub].

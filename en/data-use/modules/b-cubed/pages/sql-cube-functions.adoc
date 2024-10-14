@@ -53,7 +53,9 @@ The code for the cell of the EEA reference grid in which the randomized point fa
 |`25mE4321000N3210000`|`25`|`52.0`|`10.0`|`1000.0`
 |===
 
-Reference: https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2/about-the-eea-reference-grid/eea_reference_grid_v1.pdf/download[About the EEA reference grid (PDF)].
+GeoPackage and ShapeFile downloads of the grids at several resolutions are available for download at the https://www.eea.europa.eu/en/datahub/datahubitem-view/3c362237-daa4-45e2-8c16-aaadfb1a003b[European Environment Agency Datahub].  (See the 2013 and 2011 datasets for alternative resolutions.)
+
+Reference: https://sdi.eea.europa.eu/catalogue/srv/api/records/aac8379a-5c4e-445c-b2ef-23a6a2701ef0/attachments/eea_reference_grid_v1.pdf[About the EEA reference grid (PDF)].
 
 === Extended Quarter-Degree Grid cell code
 

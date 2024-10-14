@@ -17,7 +17,7 @@ The _dimensions_ of the cube will be
 ** We will also exclude occurrences with identifications noted to be uncertain
 . Year-Month
 ** We must exclude occurrences with only year accuracy, or with an imprecise date spanning multiple months
-. https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2/about-the-eea-reference-grid/eea_reference_grid_v1.pdf/at_download/file[EEA Reference Grid (PDF)] with a 1km grid size
+. https://sdi.eea.europa.eu/catalogue/srv/api/records/aac8379a-5c4e-445c-b2ef-23a6a2701ef0/attachments/eea_reference_grid_v1.pdf[EEA Reference Grid (PDF)] with a 1km grid size
 ** We will randomize the point using the coordinateUncertaintyInMeters, defaulting to 1000m
 ** We will exclude occurrences without coordinates
 ** We will exclude occurrences with a coordinateUncertaintyInMeters greater than 1000m
@@ -227,7 +227,9 @@ See xref::api-sql-download-functions.adoc[] for descriptions and arguments for t
 
 See xref::api-sql-downloads.adoc[] for instructions.
 
-A cube using this query is available https://www.gbif.org/occurrence/download/0099186-240321170329656[here].
+Note the queries above are shown in SQL format. The double quote characters, newlines and comments must be escaped/removed when converting the query to the JSON request for the API.  The submitted request is shown here: https://raw.githubusercontent.com/gbif/occurrence/refs/heads/master/occurrence-download/example-jobs/tech-docs-poland-cube.json
+
+A cube made using this query is available https://www.gbif.org/occurrence/download/0099186-240321170329656[here].
 
 [%header,format=tsv]
 |===

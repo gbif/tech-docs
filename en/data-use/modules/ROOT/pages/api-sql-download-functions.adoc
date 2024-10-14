@@ -41,6 +41,16 @@ BOOLEAN GBIF_GeoDistance(DOUBLE centroidLatitude,
 
 This function returns `TRUE` if the _point_ is within _distance_ of the _centroid_.  It is equivalent to the xref:api-downloads.adoc#geoDistance[`geoDistance` predicate].
 
+*Example query:*
+
+[source,sql]
+----
+SELECT kingdom, scientificName, COUNT(*)
+FROM occurrence
+WHERE GBIF_GeoDistance(56.0, 12.0, '10km', decimalLatitude, decimalLongitude) = TRUE
+GROUP BY kingdom, scientificName;
+----
+
 === Within polygon, `GBIF_Within`
 
 *Function definition:*
@@ -64,7 +74,17 @@ This function returns `TRUE` if the _point_ is within the _polygon_.  It is equi
 
 *Notes:*
 
-If you have problems, first check your polygon with https://arthur-e.github.io/Wicket/[Wicket] — ensure the points are ordered anti-clockwise. (A polygon with clockwise points represents the opposite: the whole world except the polygon.)
+If you have problems, first check your polygon with https://wktmap.com/[WKT Map] or https://arthur-e.github.io/Wicket/[Wicket] — ensure the points are ordered anti-clockwise, and are in longitude-latitude order, and form a closed loop with the first and last points equal. (A polygon with clockwise points represents the opposite: the whole world except the polygon.)
+
+*Example query:*
+
+[source,sql]
+----
+SELECT kingdom, scientificName, COUNT(*)
+FROM occurrence
+WHERE GBIF_Within('POLYGON ((-64.8 32.3, -65.5 18.3, -80.3 25.2, -64.8 32.3))', decimalLatitude, decimalLongitude) = TRUE
+GROUP BY kingdom, scientificName;
+----
 
 == Grid functions
 
@@ -87,7 +107,7 @@ STRING GBIF_EEARGCode(INTEGER gridSize,
 `gridSize`:: The _grid size_ in metres of the EEA Reference Grid.  Must be _25_, _100_, _250_, _1000_, _10000_ or _100000_.
 `latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
 `longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
-`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`)
+`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`). Set to 0 to disable randomization.
 
 The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
 
@@ -95,7 +115,7 @@ The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ withi
 
 The code for the cell of the EEA reference grid in which the randomized point falls.
 
-*Example arguments and returned values:*
+*Supported grid resolutions and example values:*
 
 [cols=">,>,>,>,>"]
 |===
@@ -108,7 +128,32 @@ The code for the cell of the EEA reference grid in which the randomized point fa
 |`25mE4321000N3210000`|`25`|`52.0`|`10.0`|`1000.0`
 |===
 
-Reference: https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2/about-the-eea-reference-grid/eea_reference_grid_v1.pdf/download[About the EEA reference grid (PDF)].
+*Example query:*
+
+[source,sql]
+----
+SELECT
+  kingdom,
+  scientificName,
+  COUNT(*),
+  GBIF_EEARGCode(
+    10000, <1>
+    decimalLatitude,
+    decimalLongitude,
+    COALESCE(coordinateUncertaintyInMeters, 1000) <2>
+  )
+FROM occurrence
+WHERE country = 'PL'
+GROUP BY kingdom, scientificName;
+----
+<1> Selection of grid size
+<2> Default to randomization within a 1000m radius if the occurrence does not have a published coordinate uncertainty.
+
+*Additional resources*
+
+GeoPackage and ShapeFile downloads of the grids at several resolutions are available for download at the https://www.eea.europa.eu/en/datahub/datahubitem-view/3c362237-daa4-45e2-8c16-aaadfb1a003b[European Environment Agency Datahub].  (See the 2013 and 2011 datasets for alternative resolutions.)
+
+Reference: https://sdi.eea.europa.eu/catalogue/srv/api/records/aac8379a-5c4e-445c-b2ef-23a6a2701ef0/attachments/eea_reference_grid_v1.pdf[About the EEA reference grid (PDF)].
 
 === Extended Quarter-Degree Grid cell code, `GBIF_EQDGCCode`
 
@@ -127,7 +172,7 @@ STRING GBIF_EQDGCCode(INTEGER level,
 `level`:: The _level_ of the grid; the number of additional divisions applied to a one-degree cell.
 `latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
 `longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
-`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`)
+`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`). Set to 0 to disable randomization.
 
 The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
 
@@ -137,7 +182,7 @@ A _level_ of _0_ will give the 1° cell, e.g. `S01E010`.  For quarter-degrees, u
 
 The code for the cell of the Extended Quarter-Degree Grid in which the randomized point falls.
 
-*Example arguments and returned values:*
+*Supported grid resolutions and example values:*
 
 [cols=">,>,>,>,>"]
 |===
@@ -150,6 +195,29 @@ The code for the cell of the Extended Quarter-Degree Grid in which the randomize
 |`E010N52CBCCB`|`5`|`52.3`|`10.3`|`1000.0`
 |`E010N52CBCCBB`|`6`|`52.3`|`10.3`|`1000.0`
 |===
+
+*Example query:*
+
+[source,sql]
+----
+SELECT
+  kingdom,
+  scientificName,
+  COUNT(*),
+  GBIF_EQDGCCode(
+    2, <1>
+    decimalLatitude,
+    decimalLongitude,
+    COALESCE(coordinateUncertaintyInMeters, 1000) <2>
+  )
+FROM occurrence
+WHERE country = 'ZA'
+GROUP BY kingdom, scientificName;
+----
+<1> Selection of grid level
+<2> Default to randomization within a 1000m radius if the occurrence does not have a published coordinate uncertainty.
+
+*Additional resources*
 
 Reference: https://doi.org/10.1111/j.1365-2028.2008.00997.x[Larsen R, Holmern T, Prager SD, Maliti H, Røskaft, E. (2009) Using the extended quarter degree grid cell system to unify mapping and sharing of biodiversity data. African Journal of Ecology, 47: 382-392.]
 
@@ -174,7 +242,7 @@ STRING GBIF_ISEA3HCode(INTEGER resolution,
 `resolution`:: The _resolution_ of the grid; the number of division steps applied to the initial dodecahedron.  Valid values are 1 to 22.
 `latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
 `longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
-`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`)
+`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`). Set to 0 to disable randomization.
 
 The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
 
@@ -184,7 +252,7 @@ See https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html[ISEA3
 
 The code for the cell of the ISEA3H grid cell in which the randomized point falls.
 
-*Example arguments and returned values:*
+*Supported grid resolutions and example values:*
 
 [cols=">,>,>,>,>"]
 |===
@@ -193,6 +261,29 @@ The code for the cell of the ISEA3H grid cell in which the randomized point fall
 | `652180731009071912`|`6`|`52.3`|`10.3`|`1000.0`
 | `952458899010519815`|`9`|`52.3`|`10.3`|`1000.0`
 |===
+
+*Example query:*
+
+[source,sql]
+----
+SELECT
+  kingdom,
+  scientificName,
+  COUNT(*),
+  GBIF_ISEA3HCode(
+    6, <1>
+    decimalLatitude,
+    decimalLongitude,
+    COALESCE(coordinateUncertaintyInMeters, 1000) <2>
+  )
+FROM occurrence
+WHERE continent = 'AFRICA'
+GROUP BY kingdom, scientificName;
+----
+<1> Selection of grid level
+<2> Default to randomization within a 1000m radius if the occurrence does not have a published coordinate uncertainty.
+
+*Additional resources*
 
 References:
 
@@ -222,7 +313,7 @@ STRING GBIF_MGRSCode(INTEGER gridSize,
 `gridSize`:: The _grid size_ in metres.  Must be _1_, _10_, _100_, _1000_, _10000_, _100000_ or _0_.
 `latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
 `longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
-`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`)
+`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`). Set to 0 to disable randomization.
 
 The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
 
@@ -232,7 +323,7 @@ A _gridSize_ of _0_ will give the Grid Zone Junction (GZJ) only, e.g. `32`.  Oth
 
 The code for the cell of the Military Grid Reference System in which the randomized point falls.
 
-*Example arguments and returned values:*
+*Supported grid resolutions and example values:*
 
 [cols=">,>,>,>,>"]
 |===
@@ -245,6 +336,29 @@ The code for the cell of the Military Grid Reference System in which the randomi
 |`32UNC68646151`|`10`|`52.0`|`10.0`|`1000.0`
 |`32UNC6864961510`|`1`|`52.0`|`10.0`|`1000.0`
 |===
+
+*Example query:*
+
+[source,sql]
+----
+SELECT
+  kingdom,
+  scientificName,
+  COUNT(*),
+  GBIF_MGRSCode(
+    10000, <1>
+    decimalLatitude,
+    decimalLongitude,
+    COALESCE(coordinateUncertaintyInMeters, 1000) <2>
+  )
+FROM occurrence
+WHERE country = 'CG'
+GROUP BY kingdom, scientificName;
+----
+<1> Selection of grid size
+<2> Default to randomization within a 1000m radius if the occurrence does not have a published coordinate uncertainty.
+
+*Additional resources*
 
 Reference: https://earth-info.nga.mil/GandG/coordsys/grids/referencesys.html[Grids and Reference Systems].
 
