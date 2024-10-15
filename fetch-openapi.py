@@ -9,7 +9,7 @@ if len(sys.argv) != 3:
 output = sys.argv[1]
 env = sys.argv[2]
 
-if env == 'dev':
+if env == 'dev' or env == 'dev2':
     indent = 2
 else:
     indent = None
