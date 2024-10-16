@@ -1,0 +1,192 @@
+= Data quality recommendations
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
+
+image::data-quality-requirements.png[align=center,320,192]
+  
+Note: this page is currently under development
+  
+By following these data quality requirements and recommendations, data publishers can improve the quality, completeness and value of their datasets.
+
+____
+Data published with support of one of the funded programmes operated by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]) have stricter data quality requirements than data published outside of these programmes. Please also consult the documentation for *ADD LINK*[requirements for the EML file]. 
+____                                                                              
+  
+=== Status
+
+==== Required information
+
+The terms constitute the minimum formal requirements for publishing an occurrence dataset. GBIF.org will not accept a dataset without these terms and will not index the records. While these items are mandatory for publishing the dataset, they are only the starting point. The usefulness of the published data will still be severely limited unless additional information is supplied.
+                                                                              
+==== Strongly recommended information
+
+In addition to the mandatory terms, GBIF strongly recommend completing several more fields that help improve the usefulness of the dataset:
+
+* some information supports the integration into global data resources and prevents ambiguity, e.g. in matching scientific names that could apply to more than one organism (homonyms) to the correct place within the backbone taxonomy
+* more precise geo-location data (coordinates) significantly increase the usefulness of the data for a wide range of use cases
+* additional qualifiers for some data elements, e.g. coordinates, support the interpretation of those elements and help users to better estimate their usefulness for a given data use case
+* some data redundancy supports quality control and error detection (e.g. testing country codes against coordinates where both are supplied)
+* last not least, the richer the spectrum of available information of a dataset is, the more potential usage areas it becomes available for, meaning the dataset will me more widely accessible and used, and cited more often
+                                                                              
+==== Share if available
+
+If additional data are available, consider sharing them in order to increase the usefulness of your published data.
+                                                                              
+== Data quality requirements for checklists
+
+Checklist datasets provide a catalogue, rapid summary or baseline inventory a set of named organisms, or taxa. While they may include additional details like local species names or specimen citations, checklists typically categorize information along taxonomic, geographic, and thematic lines, or some combination of the three.
+
+.Data quality requirements for *checklists*
+[%autowidth,stripes=hover]                                                                            
+|===
+|Term |Status |Status funded GBIF programmes
+
+|https://dwc.tdwg.org/list/#dwc_taxonID[taxonID]
+|Required
+|Required
+
+|https://dwc.tdwg.org/list/#dwc_scientificName[scientificName]
+|Strongly recommended
+|Required
+
+|https://dwc.tdwg.org/list/#dwc_taxonRank[taxonRank]
+|Strongly recommended
+|Required
+
+|https://dwc.tdwg.org/list/#dwc_kingdom[kingdom]
+|Strongly recommended
+|Strongly recommended
+
+|https://dwc.tdwg.org/list/#dwc_parentNameUsageID[parentNameUsageID]
+|Strongly recommended  
+|Strongly recommended
+                                                                              
+|https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID[acceptedNameUsageID]
+|Strongly recommended 
+|Strongly recommended
+                                                                              
+|https://dwc.tdwg.org/list/#dwc_vernacularName[vernacularName]
+|Share if available
+|Share if available   
+|===
+  
+== Data quality requirements for occurrences
+
+Occurrence datasets make up the core of data published through GBIF.org, offering evidence of the occurrence of a species (or other taxon) at a particular place on a specified date.
+  
+.Data quality requirements for *occurrences*
+[%autowidth,stripes=hover]                                                                            
+|===
+|Term |Status |Status funded GBIF programmes
+
+|<<occurrenceID>> 
+|
+|Required 
+
+|https://dwc.tdwg.org/list/#dwc_basisOfRecord[basisOfRecord]
+|
+|Required                                                                                
+
+|https://dwc.tdwg.org/list/#dwc_scientificName[scientificName]
+|
+|Required                                                                              
+
+|https://dwc.tdwg.org/list/#dwc_eventDate[eventDate]
+|
+|Required
+
+|https://dwc.tdwg.org/list/#dwc_countryCode[countryCode]
+|Strongly recommended
+|Strongly recommended
+
+|https://dwc.tdwg.org/list/#dwc_taxonRank[taxonRank]
+|Strongly recommended  
+|Strongly recommended
+                                                                              
+|https://dwc.tdwg.org/list/#dwc_kingdom[kingdom]
+|Strongly recommended 
+|Strongly recommended  
+
+|https://dwc.tdwg.org/list/#dwc_decimalLatitude[decimalLatitude]
+|Strongly recommended
+|Strongly recommended
+                                                                              
+|https://dwc.tdwg.org/list/#dwc_decimalLongitude[decimalLongitude]
+|Strongly recommended
+|Strongly recommended
+
+|https://dwc.tdwg.org/list/#dwc_geodeticDatum[geodeticDatum]
+|Strongly recommended
+|Strongly recommended 
+
+|https://dwc.tdwg.org/list/#dwc_coordinateUncertaintyInMeters[coordinateUncertaintyInMeters]
+|Strongly recommended
+|Strongly recommended 
+
+|https://dwc.tdwg.org/list/#dwc_individualCount[individualCount]
+|Strongly recommended
+|Strongly recommended 
+
+|https://dwc.tdwg.org/list/#dwc_organismQuantity[organismQuantity]
+|Strongly recommended
+|Strongly recommended 
+
+|https://dwc.tdwg.org/list/#dwc_organismQuantityType[organismQuantityType]
+|Strongly recommended
+|Strongly recommended 
+
+|https://dwc.tdwg.org/list/#dwc_informationWithheld[informationWithheld]
+|Share if available
+|Share if available
+                                                                              
+|https://dwc.tdwg.org/list/#dwc_dataGeneralizations[dataGeneralizations]
+|Share if available
+|Share if available  
+
+|https://dwc.tdwg.org/list/#dwc_eventTime[eventTime]
+|Share if available
+|Share if available 
+
+|https://dwc.tdwg.org/list/#dwc_country[country]
+|Share if available
+|Share if available                                                                               
+|===  
+                                                                              
+== Data quality requirements for sampling events
+  
+.Data quality requirements for *sampling events*
+[%autowidth,stripes=hover]                                                                            
+|===
+|Term |Status |Status funded GBIF programmes
+
+|https://dwc.tdwg.org/list/#dwc_taxonID[taxonID]
+|Required
+
+|https://dwc.tdwg.org/list/#dwc_scientificName[scientificName]
+|Required
+
+|https://dwc.tdwg.org/list/#dwc_taxonRank[taxonRank]
+|Required
+
+|https://dwc.tdwg.org/list/#dwc_kingdom[kingdom]
+|Strongly recommended
+
+|https://dwc.tdwg.org/list/#dwc_parentNameUsageID[parentNameUsageID]
+|Strongly recommended  
+
+|https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID[acceptedNameUsageID]
+|Strongly recommended 
+
+|https://dwc.tdwg.org/list/#dwc_vernacularName[vernacularName]
+|Share if available                                                                               
+|===                      
+
+== Terms
+#Describe each term listed in the tables above and change links to refer to sub-headers of this section. Term example:#
+                                                                              
+==== occurrenceID [[occurrenceID]]
+===== https://dwc.tdwg.org/list/#dwc_occurrenceID[_dwc:occurrenceID_]
+
+A unique identifier for the occurrence, allowing the same occurrence to be recognized across dataset versions as well as through data downloads.
+Ideally, the occurrenceID is a persistent global unique identifier. As a minimum requirement, it has to be unique within the published dataset. It allows to recognize the same occurrence over time when the dataset indexing is refreshed; it links additional data like images; and it makes it possible to cite records e.g. in usage reports or in publications. This means that the occurrenceID needs to reliably stay with the occurrence at source, and to consistently refer to the same occurrence in published datasets and any underlying source data.                                                                              
