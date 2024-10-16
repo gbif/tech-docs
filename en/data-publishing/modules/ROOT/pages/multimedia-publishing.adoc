@@ -1,0 +1,155 @@
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
+
+= Sharing images, sounds and videos on GBIF
+
+Note that GBIF **does not** host original multimedia files and pictures cannot be uploaded directly to the platform.
+
+== Media displayed on the GBIF portal
+
+The GBIF.org portal allows to look for occurrences associated with media. For example, [pictures of otters](https://www.gbif.org/occurrence/search?media_type=StillImage&taxon_key=2433753), or the [call of a sea eagle](https://www.gbif.org/occurrence/search?media_type=Sound&taxon_key=2480444).
+
+Anyone can filter [GBIF occurrences](https://www.gbif.org/occurrence/search) by Media Type. Once users find what they are looking for, they can see and/or hear it directly on the GBIF portal.
+
+==== Images
+
+GBIF's searching interface has a [gallery](https://www.gbif.org/occurrence/gallery), which displays the first image available for each occurrence selected.
+
+image::example_gallery.png[]
+
+Users can also view images for a particular occurrence, by simply clicking on it. See for example, this [occurrence with two images](https://www.gbif.org/occurrence/1822411383) from [the Norwegian Species Observation Service](https://www.gbif.org/dataset/b124e1e0-4755-430f-9eab-894f25a9b59c).
+
+All the images belonging to a single dataset are visible on [its page](https://www.gbif.org/dataset/b124e1e0-4755-430f-9eab-894f25a9b59c). The same goes for all the images belonging to datasets published under the same organization: see [this example](https://www.gbif.org/publisher/d3978a37-635a-4ae3-bb85-7b4d41bc0b88).
+
+==== Audio and Video
+
+Sounds and videos can be directly played from a given occurrence page through a media player.
+
+For example, by clicking on [this occurrence](https://www.gbif.org/occurrence/1934990970) from [Xeno-canto - Bird sounds from around the world](https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24), users can listen to a kookaburra call.
+
+Here are some videos showing the 3D reconstruction of a specimen of sand flea by clicking on [this occurrence](https://www.gbif.org/occurrence/863580710) from [the Museum of Comparative Zoology, Harvard University](https://www.gbif.org/dataset/4bfac3ea-8763-4f4b-a71a-76a6f5f243d3)
+
+== Multimedia supported
+
+Here are the types of media that be shared on GBIF.
+
+=== Media types
+
+In theory, publishers could share any type of media defined by the [Dublin Core Metadata Initiative](http://dublincore.org/documents/dcmi-type-vocabulary/#H7). The recommended terms are:
+
+* [Collection](http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Collection)
+* [StillImage](http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-StillImage)
+* [Sound](http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Sound)
+* [MovingImage](http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-MovingImage)
+* [InteractiveResource](http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-InteractiveResource)
+* [Text](http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Text)
+
+In practice, the system infers the media type from the file format by using [MIME types](https://www.iana.org/assignments/media-types/media-types.xhtml) (these types correspond to the recommended media types cited above). If the type identified is `text/html`, the media is interpreted as a [reference](https://dwc.tdwg.org/terms/#dcterms:references) link instead of an associated media.
+
+In other words, GBIF currently integrates only images (`StillImage`), sounds (`Sound`), video (`MovingImage`) or collections of the three. For all the other media types, users will have to click on the links given with each occurrence.
+
+=== Formats
+
+In practice, any format that can be interpreted by [Apache Tika](https://github.com/apache/tika) is supported. This should include the formats in this [IANA Media Type list](https://www.iana.org/assignments/media-types/media-types.xhtml) (now called MIME types).
+
+== How to publish media in a Darwin Core Archive
+
+GBIF doesn't host original multimedia files. This means that publihsers cannot upload pictures or audio files directly to GBIF. These must be hosted on another system. What publishers should provide is a URL or URI for each media file they wish to make available.
+
+When sharing URLs and URIs, publishers should keep the following points in mind:
+
+* The URL provided must be a direct link to the file. For example: https://ipt.gbif.org/media/UAIC1008871_X.jpg.
+* Images embedded on web pages like https://ipt.gbif.org/media/viewer/UAIC1008871_X.html won't work, but can be provided in addition to the direct link.
+* The file extension doesn't always have to be specified in the URL (see for example the URLs provided with [this occurrence](https://www.gbif.org/occurrence/1019735016) from [The Hemiptera collection (EH) of the Muséum national d'Histoire naturelle](https://www.gbif.org/dataset/d9474ec2-061c-4858-bfdd-e10ba6aca397)).
+* GBIF resizes images for thumbnails, so publishers should provide the best-resolution possible.
+
+
+=== Simplest method: dwc:associatedMedia
+
+The simplest way to share media is to use the [associatedMedia](https://dwc.tdwg.org/terms/#dwc:associatedMedia) field. Since this term belongs to the Darwin Core Occurrence, publihsers don't need to create a second file for multimedia. In other words, publishers can have both their occurrences and images, sounds or videos in the same file.
+
+This field can handle one or several URLs separated by a pipe symbol: `|`.
+
+For example:
+
+* `https://ipt.gbif.org/media/UAIC1008871_X.jpg`
+* `https://ipt.gbif.org/media/UAIC1008871_X.jpg | https://ipt.gbif.org/media/UAIC1052169_Pheidole_obtusospinosa_65mm_3x_compedit_lg.jpg`
+
+However, this method doesn't allow to attach any metadata to the media (no title, no license, no author, etc.)  It also requires URL to have a common file extension like `.jpg`, `.jpeg`, `.png` or `.tiff`.
+
+=== Extensions: Simple Multimedia and Audio Visual (Audubon) Media Description
+
+A better way to share images, sounds or videos is to use extension files.
+
+> “Extension” files support the exchange of additional, described classes of data that relate to the core data type (Occurrence or Taxon). An extension record points to a record in the core data file.
+(Definition from the [Darwin Core Archive - How-to wiki](https://github.com/gbif/ipt/wiki/DwCAHowToGuide).)
+
+GBIF currently supports two types of extensions:
+
+* [Simple multimedia](http://rs.gbif.org/extension/gbif/1.0/multimedia.xml)
+* [Audubon Media Description](http://rs.gbif.org/extension/ac/audubon.xml) (partial support for now)
+
+Both of these extensions will allow publishers to share detailed information about your media such as `creator`, `description`, `license`, etc. However, the Audubon (soon to be renamed Audio Visual) Media Description is more exhaustive.
+
+Regardless of the extension chosen, publishers need to generate a file containing:
+
+* an [occurrenceID](https://dwc.tdwg.org/terms/#occurrenceID) field (referring to the occurrence or specimen concerned),
+* unique identifiers (`dcterms:identifier`),
+* links to the media (`dcterms:source` or `accessURI`),
+* etc.
+
+This file should be mapped with the proper terms and integrated in the Darwin Core Archive.
+
+=== Examples
+
+Here are a some datasets using different methods to share their media. Publishers are welcome to download their Darwin Core Archive to see how they are structured.
+
+* [This macroinvertebrate deep-sea dataset](https://www.gbif.org/dataset/4a53a180-f0c8-4dd8-a1fb-18768668edc9) uses the dwc:associatedMedia field (get Darwin Core Archive [here](http://ipt.iobis.org/obis-deepsea/archive.do?r=pri_invert_art)).
+* [The cnidarians collection (IK) of the Muséum national d'Histoire naturelle](https://www.gbif.org/dataset/b5cdf587-3342-48ec-9130-ba1281d7166f) uses the Simple Multimedia extension (get Darwin Core Archive [here](http://collections.mnhn.fr/ipt/archive.do?r=mnhn-ik)).
+* A great example of the use of the Audubon Media Description is this [Xeno-canto dataset](https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24) (get Darwin Core Archive [here](https://api.biodiversitydata.nl/v2/specimen/dwca/getDataSet/birdsounds)).
+* Checklists can also include multimedia extensions, see for example: [Radiolaria taxa in the Norwegian Sea and Arctic Ocean](https://www.gbif.org/dataset/38f91564-30ff-47b0-aa6b-cf3b59f0fca7) (get Darwin Core Archive [here](https://data.gbif.no/ipt/archive.do?r=radiolaria_taxa)).
+
+See how GBIF displays the mutlimedia mapping. Example of [two specimens of Stephanohelia gracilis](https://www.gbif.org/occurrence/1265882494) from [The cnidarians collection (IK) of the Muséum national d'Histoire naturelle](https://www.gbif.org/dataset/b5cdf587-3342-48ec-9130-ba1281d7166f). Here are two `JPEG` images but `the comments` show possible alternatives for other formats and types of media.
+
+image::example_still_image_1265882494.png[]
+
+== How to publish media outside of Darwin Core Archives
+
+Note that this part of the documentation is non-exhaustive.
+
+Publishers can publish resources on GBIF using alternatives to Darwin Core Archives.
+
+See, for example, the two systems below:
+
+* [BioCASe](http://www.biocase.org)
+* [Symbiota](http://symbiota.org)
+
+Here is a link documenting the mapping of media fields between ABCD standards (used by BioCASe) and Darwin Core Terms, see [this blog post](https://gbif.blogspot.com/2014/05/multimedia-in-gbif.html) from 2014:
+
+> In ABCD 2.06 we use the unit MultiMediaObject subelements instead. Here there are distinct file and webpage URLs (FileURI, ProductURI), the description (Comment),  the license (License/Text, TermsOfUseStatements) and also an indication of the mime type (Format).
+
+Symbiota documents how to submit and upload images on any Symbiota portal [here](http://symbiota.org/docs/image-submission-2/). To make the images accessible from GBIF, publishers need to follow [these instructions](http://symbiota.org/docs/publishing-to-gbif-from-a-symbiota-portal/).
+
+== Choose a license
+
+The Licenses fields are free text. However, we **strongly** encourage publishers to set up their licenses in a machine readable format.
+
+For example: `https://creativecommons.org/licenses/by-nc/4.0/`
+
+All the occurrences on GBIF have one of the three following licenses:
+
+* [CC0](https://creativecommons.org/publicdomain/zero/1.0/), for data made available for any use without any restrictions
+* [CC BY](https://creativecommons.org/licenses/by/4.0/), for data made available for any use with appropriate attribution
+* [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/), for data made available for any non-commercial use with appropriate attribution
+
+Although your multimedia licenses don't have to match your occurrence licenses, publishers could consider choosing one of them.
+
+== Where to host images and other media
+
+Most publishers host their own multimedia files but some use third party platforms.
+
+We advise against using [iNaturalist.org](https://www.inaturalist.org) as a way to host the images for a dataset. Since the iNaturalist portal makes its [Research-grade Observations](https://www.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7) available on GBIF, this would generate duplicate occurrences.
+
+If publishers are publishing a dataset through an [IPT](https://github.com/gbif/ipt/wiki), they can consider hosting your mutlimedia files on the same server. The images can be stored on a `media` folder and shared with Apache (see [this example](https://ipt.gbif.org/media/)). Publishers who are not publishing with your own IPT, should contact their IPT administrator.
+
