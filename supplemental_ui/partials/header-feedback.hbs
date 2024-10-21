@@ -5,8 +5,8 @@
     </svg>
   </a>
   <div class="navbar-dropdown">
-    <a class="navbar-item" href="https://github.com/gbif/tech-docs/issues/new?labels=Feedback&body=Feedback+on+[{{page.title}}](https://techdocs.gbif.org/en{{page.url}}) ([Github source for this page](../blob/main/{{page.origin.startPath}}/modules/{{page.module}}/pages/{{page.relativeSrcPath}}))%0A%0AWrite+your+feedback+here.">Leave feedback on GitHub</a>
-    <a class="navbar-item" href="mailto:helpdesk@gbif.org?subject=Feedback on technical documentation '{{page.title}}'&body=Feedback on https://techdocs.gbif.org/en{{page.url}}">Send feedback by email</a>
+    <a class="navbar-item" href="https://github.com/gbif/tech-docs/issues/new?labels=Feedback&body=Feedback+on+[{{page.title}}](https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/en{{page.url}}) ([Github source for this page](../blob/main/{{page.origin.startPath}}/modules/{{page.module}}/pages/{{page.relativeSrcPath}}))%0A%0AWrite+your+feedback+here.">Leave feedback on GitHub</a>
+    <a class="navbar-item" href="mailto:helpdesk@gbif.org?subject=Feedback on technical documentation '{{page.title}}'&body=Feedback on https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/en{{page.url}}">Send feedback by email</a>
     {{#if (and page.fileUri (not env.CI))}}
     <a class="navbar-item" href="{{page.fileUri}}">Edit this page</a>
     {{else if (and page.editUrl (or env.FORCE_SHOW_EDIT_PAGE_LINK (not page.origin.private)))}}
