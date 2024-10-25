@@ -90,20 +90,20 @@ Aggregate functions are also supported, for example `COUNT(…)`, `MIN(…)`, `M
 
 Several custom functions are available:
 
-* `GBIF_GeoDistance`
-* `GBIF_JoinArray`
-* `GBIF_TemporalUncertainty`
-* `GBIF_ToISO8601`
-* `GBIF_ToLocalISO8601`
-* `GBIF_Within`
+* `xref::api-sql-download-functions.adoc#GBIF_GeoDistance[GBIF_GeoDistance]`
+* `xref::api-sql-download-functions.adoc#GBIF_JoinArray[GBIF_JoinArray]`
+* `xref::api-sql-download-functions.adoc#GBIF_TemporalUncertainty[GBIF_TemporalUncertainty]`
+* `xref::api-sql-download-functions.adoc#GBIF_ToISO8601[GBIF_ToISO8601]`
+* `xref::api-sql-download-functions.adoc#GBIF_ToLocalISO8601[GBIF_ToLocalISO8601]`
+* `xref::api-sql-download-functions.adoc#GBIF_Within[GBIF_Within]`
 
 As well as custom gridding functions:
 
-* `GBIF_EEARGCode`
-* `GBIF_EQDGCCode`
-* `GBIF_MGRSCode`
-* `GBIF_ISEA3HCode`
-* `GBIF_DMSGCCode`
+* `xref::api-sql-download-functions.adoc#GBIF_EEARGCode[GBIF_EEARGCode]`
+* `xref::api-sql-download-functions.adoc#GBIF_EQDGCCode[GBIF_EQDGCCode]`
+* `xref::api-sql-download-functions.adoc#GBIF_MGRSCode[GBIF_MGRSCode]`
+* `xref::api-sql-download-functions.adoc#GBIF_ISEA3HCode[GBIF_ISEA3HCode]`
+* `xref::api-sql-download-functions.adoc#GBIF_DMSGCCode[GBIF_DMSGCCode]`
 
 See the xref:api-sql-download-functions.adoc[separate page on the available SQL functions].
 

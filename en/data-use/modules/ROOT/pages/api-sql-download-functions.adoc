@@ -16,7 +16,7 @@ See https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#Language
 
 These are the same functions used for xref:api-downloads.adoc[predicate-based downloads].
 
-[GBIF_GeoDistance]
+[#GBIF_GeoDistance]
 === Geospatial distance, `GBIF_GeoDistance`
 
 *Function definition:*
@@ -52,7 +52,7 @@ WHERE GBIF_GeoDistance(56.0, 12.0, '10km', decimalLatitude, decimalLongitude) = 
 GROUP BY kingdom, scientificName;
 ----
 
-[GBIF_Within]
+[#GBIF_Within]
 === Within polygon, `GBIF_Within`
 
 *Function definition:*
@@ -92,8 +92,11 @@ GROUP BY kingdom, scientificName;
 
 These functions are usually used for generating species occurrence cubes.  They calculate a grid cell for a point.
 
-[GBIF_EEARGCode]
+[#GBIF_EEARGCode]
 === EEA Reference Grid cell code, `GBIF_EEARGCode`
+
+.EEA Reference Grid with 50km resolution
+image::eearg_example_italy.png[]
 
 *Function definition:*
 
@@ -107,7 +110,7 @@ STRING GBIF_EEARGCode(INTEGER gridSize,
 
 *Parameters:*
 
-`gridSize`:: The _grid size_ in metres of the EEA Reference Grid.  Must be _25_, _100_, _250_, _1000_, _10000_ or _100000_.
+`gridSize`:: The _grid size_ in metres of the EEA Reference Grid.  Must be _25_, _100_, _250_, _1000_, _10000_, _50000_ or _100000_.
 `latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
 `longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
 `coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`). Set to 0 to disable randomization.
@@ -124,6 +127,7 @@ The code for the cell of the EEA reference grid in which the randomized point fa
 |===
 |Result|_gridSize_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_
 |`100kmE43N32`|`100 000`|`52.0`|`10.0`|`1000.0`
+|`50kmE425N265`|`50 000`|`52.0`|`10.0`|`1000.0`
 |`10kmE432N321`|`10 000`|`52.0`|`10.0`|`1000.0`
 |`1kmE4321N3210`|`1 000`|`52.0`|`10.0`|`1000.0`
 |`250mE432100N321000`|`250`|`52.0`|`10.0`|`1000.0`
@@ -158,8 +162,11 @@ GeoPackage and ShapeFile downloads of the grids at several resolutions are avail
 
 Reference: https://sdi.eea.europa.eu/catalogue/srv/api/records/aac8379a-5c4e-445c-b2ef-23a6a2701ef0/attachments/eea_reference_grid_v1.pdf[About the EEA reference grid (PDF)].
 
-[GBIF_EQDGCCode]
+[#GBIF_EQDGCCode]
 === Extended Quarter-Degree Grid cell code, `GBIF_EQDGCCode`
+
+.Extended Quarter-Degree Grid cells at level 2 on northern Madagascar
+image::eqdgc_example_madagascar.png[]
 
 *Function definition:*
 
@@ -227,7 +234,7 @@ Reference: https://doi.org/10.1111/j.1365-2028.2008.00997.x[Larsen R, Holmern T,
 
 See also: https://en.wikipedia.org/wiki/QDGC[Wikipedia: QDGC].
 
-[GBIF_DMSCCode]
+[#GBIF_DMSGCCode]
 === Degree-Minute-Second Grid cell code, `GBIF_DMSCCode`
 
 *Function definition:*
@@ -249,7 +256,9 @@ STRING GBIF_DMSGCCode(INTEGER resolution,
 
 The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
 
-A _resolution_ of _3600_ will give the 1° cell, e.g. `S01E010` — this is the same as <<GBIF_EQDGCCode>> with level 0.  The _resolution_ must be a divisor of 3600: _3600_ (1°), _1800_ (30′), _1200_ (20′), _900_ (15′), _720_ (12′), _600_ (10′), _450_, _400_, _360_, _300_ (5′), _240_, _225_, _200_, _180_ (3′), _150_ (2′30S), _144_, _120_ (2′), _100_, _90_, _80_, _75_, _72_, _60_ (1′), _50_, _48_, _45_, _40_, _36_, _30_, _25_, _24_, _20_, _18_, _16_, _15_, _12_, _10_, _9_, _8_, _6_, _5_, _4_, _3_, _2_ or _1_.
+A _resolution_ of _3600_ will give the 1° cell, e.g. `S01E010` — this is the same as <<GBIF_EQDGCCode>> with level 0.
+
+The _resolution_ must be a divisor of 3600.  Useful values are _3600_ (1°), _900_ (15′), _600_ (10′), _300_ (5′), _150_ (2′30″), _60_ (1′) and _30_ (30″).
 
 *Return value:*
 
@@ -266,8 +275,8 @@ A code for the cell in the format `EXXXxxxxNYYyyyy` where `E` is either `E` or `
 |`E010°45′N52°15′`(E010°45′N52°15′) | `900` (15′) |`52.3`|`10.8127`|`1000.0`
 |`E010°40′N52°10′`(E010°40′N52°10′) | `600` (10′) |`52.3`|`10.8127`|`1000.0`
 |`E010°45′N52°15′`(E010°45′N52°15′) | `300` (5′) |`52.3`|`10.8127`|`1000.0`
-|`E010°47′30″N52°17′30″`(E010°47′30″N52°17′30″) | `150` (2½′) |`52.3`|`10.8127|`1000.0`
-|`E010°48′N52°18′`(E010°48′N52°18′) | `60` (1′) |`52.3`|`10.8127|`1000.0`
+|`E010°47′30″N52°17′30″`(E010°47′30″N52°17′30″) | `150` (2½′) |`52.3`|`10.8127`|`1000.0`
+|`E010°48′N52°18′`(E010°48′N52°18′) | `60` (1′) |`52.3`|`10.8127`|`1000.0`
 |`E010°48′30″N52°18′00″`(E010°48′30″N52°18′00″) | `30`|`52.3`|`10.8127`|`1000.0`
 |`E010°48′45″N52°18′00″`(E010°48′45″N52°18′00″) | `1`|`52.3`|`10.8127`|`1000.0`
 |===
@@ -293,7 +302,7 @@ GROUP BY kingdom, scientificName;
 <1> Selection of grid resolution
 <2> Default to randomization within a 1000m radius if the occurrence does not have a published coordinate uncertainty.
 
-[GBIF_ISEA3HCode]
+[#GBIF_ISEA3HCode]
 === ISEA3H Grid cell code `GBIF_ISEA3HCode`
 
 This function implements the _Inverse Snyder Equal-Area Projection (ISEA) Aperture 3 Hexagonal (3H) Discrete Global Grid System (DGGS)_, ISEA3H.  Grid cell codes/identifiers are as specified in https://doi.org/10.1080/15230406.2018.1455157[A novel identifier scheme for the ISEA Aperture 3 Hexagon Discrete Global Grid System].
@@ -367,7 +376,7 @@ See also:
 * https://github.com/mocnik-science/geogrid[geogrid], the Java library used by GBIF to calculate the grid.
 * https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html[dggridR], an R package to calculate the grid (though not using the same identifiers).
 
-[GBIF_MGRSCode]
+[#GBIF_MGRSCode]
 === Military Grid Reference System cell code, `GBIF_MGRSCode`
 
 *Function definition:*
@@ -440,7 +449,7 @@ See also: https://en.wikipedia.org/wiki/Military_Grid_Reference_System[Wikipedia
 
 These functions are useful when producing text-type output, e.g. tab-delimited files.
 
-[GBIF_JoinArray]
+[#GBIF_JoinArray]
 === Join Array, `GBIF_JoinArray`
 
 *Function definition:*
@@ -460,7 +469,7 @@ STRING GBIF_JoinArray(ARRAY array,
 
 This function returns the array elements separated by the separator.
 
-[GBIF_TemporalUncertainty]
+[#GBIF_TemporalUncertainty]
 === Temporal Uncertainty, `GBIF_TemporalUncertainty`
 
 *Function definition:*
@@ -494,7 +503,7 @@ This function returns the uncertainty in seconds of the date.
 |2021-03-21/2021-03-23 |60×60×24×3 |
 |===
 
-[GBIF_ToISO8601]
+[#GBIF_ToISO8601]
 === To ISO8601 Date, `GBIF_ToISO8601`
 
 *Function definition:*
@@ -512,7 +521,7 @@ STRING GBIF_ToISO8601(TIMESTAMP date)
 
 This function formats a timestamp to a string like `2024-01-26T13:43:08Z`.  The UTC timezone (`Z`) is used.
 
-[GBIF_ToLocalISO8601]
+[#GBIF_ToLocalISO8601]
 === To Local ISO8601 Date, `GBIF_ToLocalISO8601`
 
 *Function definition:*
