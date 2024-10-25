@@ -103,6 +103,7 @@ As well as custom gridding functions:
 * `GBIF_EQDGCCode`
 * `GBIF_MGRSCode`
 * `GBIF_ISEA3HCode`
+* `GBIF_DMSGCCode`
 
 See the xref:api-sql-download-functions.adoc[separate page on the available SQL functions].
 

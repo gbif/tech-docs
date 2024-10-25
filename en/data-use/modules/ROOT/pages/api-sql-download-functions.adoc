@@ -16,6 +16,7 @@ See https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#Language
 
 These are the same functions used for xref:api-downloads.adoc[predicate-based downloads].
 
+[GBIF_GeoDistance]
 === Geospatial distance, `GBIF_GeoDistance`
 
 *Function definition:*
@@ -51,6 +52,7 @@ WHERE GBIF_GeoDistance(56.0, 12.0, '10km', decimalLatitude, decimalLongitude) = 
 GROUP BY kingdom, scientificName;
 ----
 
+[GBIF_Within]
 === Within polygon, `GBIF_Within`
 
 *Function definition:*
@@ -90,6 +92,7 @@ GROUP BY kingdom, scientificName;
 
 These functions are usually used for generating species occurrence cubes.  They calculate a grid cell for a point.
 
+[GBIF_EEARGCode]
 === EEA Reference Grid cell code, `GBIF_EEARGCode`
 
 *Function definition:*
@@ -155,6 +158,7 @@ GeoPackage and ShapeFile downloads of the grids at several resolutions are avail
 
 Reference: https://sdi.eea.europa.eu/catalogue/srv/api/records/aac8379a-5c4e-445c-b2ef-23a6a2701ef0/attachments/eea_reference_grid_v1.pdf[About the EEA reference grid (PDF)].
 
+[GBIF_EQDGCCode]
 === Extended Quarter-Degree Grid cell code, `GBIF_EQDGCCode`
 
 *Function definition:*
@@ -223,6 +227,73 @@ Reference: https://doi.org/10.1111/j.1365-2028.2008.00997.x[Larsen R, Holmern T,
 
 See also: https://en.wikipedia.org/wiki/QDGC[Wikipedia: QDGC].
 
+[GBIF_DMSCCode]
+=== Degree-Minute-Second Grid cell code, `GBIF_DMSCCode`
+
+*Function definition:*
+
+[source,sql]
+----
+STRING GBIF_DMSGCCode(INTEGER resolution,
+                      DOUBLE latitude,
+                      DOUBLE longitude,
+                      DOUBLE coordinateUncertaintyInMeters)
+----
+
+*Parameters:*
+
+`resolution`:: The _resolution_ of the grid in seconds
+`latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
+`longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
+`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`). Set to 0 to disable randomization.
+
+The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
+
+A _resolution_ of _3600_ will give the 1° cell, e.g. `S01E010` — this is the same as <<GBIF_EQDGCCode>> with level 0.  The _resolution_ must be a divisor of 3600: _3600_ (1°), _1800_ (30′), _1200_ (20′), _900_ (15′), _720_ (12′), _600_ (10′), _450_, _400_, _360_, _300_ (5′), _240_, _225_, _200_, _180_ (3′), _150_ (2′30S), _144_, _120_ (2′), _100_, _90_, _80_, _75_, _72_, _60_ (1′), _50_, _48_, _45_, _40_, _36_, _30_, _25_, _24_, _20_, _18_, _16_, _15_, _12_, _10_, _9_, _8_, _6_, _5_, _4_, _3_, _2_ or _1_.
+
+*Return value:*
+
+A code for the cell in the format `EXXXxxxxNYYyyyy` where `E` is either `E` or `W` and `N` is either `N` or `S`.  `XXX` is a value between 0 and 179, `YY` is between 0 and 89.  The fractional parts `xxxx` and `yyyy`, if present, are the coordinate of the corner of the square nearest to the origin.  The point 0°, 0° is defined to be `E000N00`.
+
+*Example grid resolutions and example values:*
+
+10° 48′ 45.6″ N = 10.8127
+
+[cols=">,>,>,>,>"]
+|===
+|Result|_level_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_
+|`E010°N52°` (E010°N52°) | `3600` (1°) |`52.3`|`10.8127`|`1000.0`
+|`E010°45′N52°15′`(E010°45′N52°15′) | `900` (15′) |`52.3`|`10.8127`|`1000.0`
+|`E010°40′N52°10′`(E010°40′N52°10′) | `600` (10′) |`52.3`|`10.8127`|`1000.0`
+|`E010°45′N52°15′`(E010°45′N52°15′) | `300` (5′) |`52.3`|`10.8127`|`1000.0`
+|`E010°47′30″N52°17′30″`(E010°47′30″N52°17′30″) | `150` (2½′) |`52.3`|`10.8127|`1000.0`
+|`E010°48′N52°18′`(E010°48′N52°18′) | `60` (1′) |`52.3`|`10.8127|`1000.0`
+|`E010°48′30″N52°18′00″`(E010°48′30″N52°18′00″) | `30`|`52.3`|`10.8127`|`1000.0`
+|`E010°48′45″N52°18′00″`(E010°48′45″N52°18′00″) | `1`|`52.3`|`10.8127`|`1000.0`
+|===
+
+*Example query:*
+
+[source,sql]
+----
+SELECT
+  kingdom,
+  scientificName,
+  COUNT(*),
+  GBIF_DMSGCCode(
+    900, <1>
+    decimalLatitude,
+    decimalLongitude,
+    COALESCE(coordinateUncertaintyInMeters, 1000) <2>
+  )
+FROM occurrence
+WHERE country = 'ZA'
+GROUP BY kingdom, scientificName;
+----
+<1> Selection of grid resolution
+<2> Default to randomization within a 1000m radius if the occurrence does not have a published coordinate uncertainty.
+
+[GBIF_ISEA3HCode]
 === ISEA3H Grid cell code `GBIF_ISEA3HCode`
 
 This function implements the _Inverse Snyder Equal-Area Projection (ISEA) Aperture 3 Hexagonal (3H) Discrete Global Grid System (DGGS)_, ISEA3H.  Grid cell codes/identifiers are as specified in https://doi.org/10.1080/15230406.2018.1455157[A novel identifier scheme for the ISEA Aperture 3 Hexagon Discrete Global Grid System].
@@ -296,6 +367,7 @@ See also:
 * https://github.com/mocnik-science/geogrid[geogrid], the Java library used by GBIF to calculate the grid.
 * https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html[dggridR], an R package to calculate the grid (though not using the same identifiers).
 
+[GBIF_MGRSCode]
 === Military Grid Reference System cell code, `GBIF_MGRSCode`
 
 *Function definition:*
@@ -368,6 +440,7 @@ See also: https://en.wikipedia.org/wiki/Military_Grid_Reference_System[Wikipedia
 
 These functions are useful when producing text-type output, e.g. tab-delimited files.
 
+[GBIF_JoinArray]
 === Join Array, `GBIF_JoinArray`
 
 *Function definition:*
@@ -387,6 +460,7 @@ STRING GBIF_JoinArray(ARRAY array,
 
 This function returns the array elements separated by the separator.
 
+[GBIF_TemporalUncertainty]
 === Temporal Uncertainty, `GBIF_TemporalUncertainty`
 
 *Function definition:*
@@ -420,6 +494,7 @@ This function returns the uncertainty in seconds of the date.
 |2021-03-21/2021-03-23 |60×60×24×3 |
 |===
 
+[GBIF_ToISO8601]
 === To ISO8601 Date, `GBIF_ToISO8601`
 
 *Function definition:*
@@ -437,6 +512,7 @@ STRING GBIF_ToISO8601(TIMESTAMP date)
 
 This function formats a timestamp to a string like `2024-01-26T13:43:08Z`.  The UTC timezone (`Z`) is used.
 
+[GBIF_ToLocalISO8601]
 === To Local ISO8601 Date, `GBIF_ToLocalISO8601`
 
 *Function definition:*
