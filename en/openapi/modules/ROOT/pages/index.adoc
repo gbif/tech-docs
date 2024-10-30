@@ -12,6 +12,8 @@ The GBIF API is RESTful and most queries return data in JSON format. The base UR
 
 The API should be considered stable, as should this accompanying documentation.
 
+*General API documentation and advice on usage, including using R, Python and Java API clients, is in the xref:data-use::index.adoc[Data Use] section.*
+
 == API Sections
 
 The API is split into logical sections to ease understanding:
@@ -99,7 +101,6 @@ Many parts of the GBIF API make use of enumerations, i.e. controlled vocabularie
 |Lists all supported GBIF licenses using the License URL or just the enum name if no URL exists.
 |===
 
-
 == Roadmap to v2
 
 Most of the GBIF API is currently at version 1 which means:
@@ -110,5 +111,3 @@ Most of the GBIF API is currently at version 1 which means:
 . The base URL includes the version as appropriate.
 
 The Maps API is at version 2, with the same expectations (as far as is possible, xref:v1@openapi::maps.adoc[Maps API version 1] continues to work).
-
-Feedback from developers on the API can be sent to mailto:informatics@gbif.org[informatics@gbif.org]. (For questions and help <<communication,see above>>).

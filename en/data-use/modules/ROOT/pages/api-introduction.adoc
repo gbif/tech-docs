@@ -11,3 +11,25 @@ It can be accessed using any programming language, from a command-line terminal 
 Beginners can refer to the https://data-blog.gbif.org/post/gbif-api-beginners-guide/[GBIF API Beginner's Guide] on the GBIF data blog.
 
 Complete documentation is available in the xref:openapi::index.adoc[API Reference] section.
+
+== API clients
+
+Software libraries to assist in using the GBIF API exist in these languages.  They can make working with the API much easier, but do not have complete coverage of all available API methods.
+
+=== rgbif
+
+*rgbif* is a library maintained by GBIF for the R statistical programming language.  See xref:rgbif.adoc[].
+
+=== pygbif
+
+*pygbif* is a library maintained by GBIF for the Python programming language.  See xref:pygbif.adoc[].
+
+=== Java
+
+*Java* clients for the APIs are maintained by GBIF and linked in the xref:openapi::index.adoc[API reference documentation].
+
+See xref:java.adoc[].
+
+=== Other programming languages
+
+There are also clients for *Ruby* (https://www.rubydoc.info/gems/gbifrb[gbifrb]) and *PHP* (https://gitlab.res-telae.cat/restelae/php-gbif[php-gbif]).  These clients are not maintained by GBIF.

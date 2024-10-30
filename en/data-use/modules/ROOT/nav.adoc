@@ -7,6 +7,7 @@
 ** xref:api-introduction.adoc[API Introduction]
 ** xref:rgbif.adoc[rgbif]
 ** xref:pygbif.adoc[pygbif]
+** xref:java.adoc[Java]
 * API Downloads
 ** xref:api-downloads.adoc[]
 ** xref:api-sql-downloads.adoc[]
