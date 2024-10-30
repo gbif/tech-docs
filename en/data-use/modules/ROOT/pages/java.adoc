@@ -34,11 +34,14 @@ Maven artefacts are available in our Maven repository:
 Refer to the webservice repositories for the clients and examples.
 
 * https://github.com/gbif/registry/tree/dev/registry-ws-client#readme[Registry]
-* https://github.com/gbif/occurrence/[Occurrence]
-* https://github.com/gbif/checklistbank/[Checklistbank]
-* https://github.com/gbif/crawler/[Crawler]
-* https://github.com/gbif/geocode/tree/master/geocode-ws-client#readme[Geocode]
-* https://github.com/gbif/metrics/tree/master/metrics-ws-client#readme[Metrics]
+* https://github.com/gbif/occurrence/[Occurrence] (Occurrence search and downloads)
+* https://github.com/gbif/checklistbank/[Checklistbank] (Species and taxa)
+* https://github.com/gbif/crawler/[Crawler] (Dataset indexing metadata and state)
+* https://github.com/gbif/geocode/tree/master/geocode-ws-client#readme[Geocode] (Reverse geocoding)
+* https://github.com/gbif/metrics/tree/master/metrics-ws-client#readme[Metrics] (Occurrence statistics)
 * https://github.com/gbif/vocabulary/[Vocabulary]
+* https://github.com/gbif/pipelines/gbif/validator/validator-ws-client[Validator] (Dataset validator)
+* https://github.com/gbif/maps/[Maps] (Occurrence maps; no Java client)
+* https://github.com/gbif/literature/[Literature] (Literature and citations; no Java client)
 
 Also note that functionality can be divided between multiple webservices, in a different way to the sections of the xref:openapi::index.adoc[API Reference] documentation.  For example, creation and retrieval of a download is implemented in the Occurrence module, but handling of download metadata is implemented in the Registry module.
