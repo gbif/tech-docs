@@ -26,9 +26,7 @@ Software libraries to assist in using the GBIF API exist in these languages.  Th
 
 === Java
 
-*Java* clients for the APIs are maintained by GBIF and linked in the xref:openapi::index.adoc[API reference documentation].
-
-See xref:java.adoc[].
+*Java* clients for the APIs are maintained by GBIF and linked in the xref:openapi::index.adoc[API reference documentation].  See xref:java.adoc[].
 
 === Other programming languages
 

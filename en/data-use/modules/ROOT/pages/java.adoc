@@ -31,7 +31,7 @@ Maven artefacts are available in our Maven repository:
 
 == Clients
 
-See the webservice repositories for the clients and examples.
+Refer to the webservice repositories for the clients and examples.
 
 * https://github.com/gbif/registry/tree/dev/registry-ws-client#readme[Registry]
 * https://github.com/gbif/occurrence/[Occurrence]

@@ -28,7 +28,7 @@ The GBIF API provides a programmatic way to query and publish data on GBIF.org. 
 
 It can be accessed by any programming language, from a command-line terminal interface, or in some cases using a web browser.
 
-See <<api-introduction>> for general advice on using the API, including clients in R, Python and Java.  Detailed information on using the API to make downloads is in the <<api-downloads>> section.
+See xref:api-introduction.adoc[] for general advice on using the API, including clients in R, Python and Java.  Detailed information on using the API to make downloads is in the xref:api-downloads.adoc[] section.
 
 Complete reference documentation is in the xref:openapi::index.adoc[API Reference] section.
 
