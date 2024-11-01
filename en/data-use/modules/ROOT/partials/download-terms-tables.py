@@ -52,6 +52,7 @@ SIMPLE_MULTIMEDIA="http://rs.gbif.org/terms/1.0/Multimedia"
 def parseExtension(url):
     terms = {}
     response = requests.get(url)
+    response.encoding = 'UTF-8'
     tree = DOMTree = xml.dom.minidom.parseString(response.text)
     for prop in tree.getElementsByTagName("property"):
         qualName = prop.getAttribute('qualName')
