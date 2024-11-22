@@ -40,7 +40,10 @@ When sharing URLs and URIs, publishers should keep the following points in mind:
 * The URL provided must be a direct link to the file. For example: https://ipt.gbif.org/media/UAIC1008871_X.jpg.
 * Images embedded on web pages like https://ipt.gbif.org/media/viewer/UAIC1008871_X.html will not render on GBIF but can be provided in addition to the direct link.
 * The file extension does not always have to be specified in the URL (see for example the URLs provided with https://www.gbif.org/occurrence/1019735016[this occurrence] from https://www.gbif.org/dataset/d9474ec2-061c-4858-bfdd-e10ba6aca397[The Hemiptera collection (EH) of the Muséum national d'Histoire naturelle]).
-* GBIF resizes images for thumbnails, so publishers should provide the best resolution possible.
+* GBIF resizes images for thumbnails with https://www.thumbor.org/[thumbor], so publishers should provide the best resolution possible.
+* GBIF caches images so any changes in the media should resolve in a new image URL, otherwise, the image link will be broken.
+
+#There are no size or resolution restrictions when sharing media URLs with GBIF.#
 
 === Simplest method: dwc:associatedMedia
 
