@@ -65,7 +65,7 @@ Occurrence records in these datasets sometimes provide only general locality inf
 
 == Sampling event [[Sampling_event]]
 
-Sampling event datasets provide greater detail, not only offering evidence that a species occurred at a given location and date but also making it possible to assess community composition for broader taxonomic groups, or even the abundance of species at multiple times and places. TSampling-event datasets typically derive from standardised protocols for measuring and monitoring biodiversity like vegetation transects, bird censuses, and freshwater or marine sampling.
+Sampling event datasets provide greater detail, not only offering evidence that a species occurred at a given location and date but also making it possible to assess community composition for broader taxonomic groups, or even the abundance of species at multiple times and places. Sampling-event datasets typically derive from standardised protocols for measuring and monitoring biodiversity like vegetation transects, bird censuses, and freshwater or marine sampling.
 
 By indicating the methods, events and relative abundance of species recorded in a sample, these datasets improve comparisons with data collected using the same protocols at different times and places — in some cases, even enabling data users to infer the absence of particular species from particular sites.
 
