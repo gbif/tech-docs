@@ -89,7 +89,7 @@ The https://eml.ecoinformatics.org/schema/eml-dataset_xsd#eml-dataset.xsd[datase
 
 === Project
 
-The project[https://eml.ecoinformatics.org/schema/eml-project_xsd#eml-project.xsd] field contains information on the project in which this dataset was collected. It includes information such as project personnel, funding, study area, project design and related projects.
+The https://eml.ecoinformatics.org/schema/eml-project_xsd#eml-project.xsd[project] field contains information on the project in which this dataset was collected. It includes information such as project personnel, funding, study area, project design and related projects.
 
 [%autowidth,stripes=hover] 
 |===
