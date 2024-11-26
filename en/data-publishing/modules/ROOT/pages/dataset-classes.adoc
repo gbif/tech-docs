@@ -18,7 +18,7 @@ Datasets shared with GBIF can be published in four different formats:
 |a **catalogue** or **list** of named organisms, or taxa
 
 |<<Occurrence>> 
-|the evidence of the **occurrence of a species** (or other taxon) at a particular place on a specified date. Occurrence datasets make up the core of data published through GBIF.org
+|the evidence of the **occurrence of a species** (or other taxon) at a particular place on a specified date
 
 |<<Sampling event>> 
 |offering evidence that a species occurred at a given location and date, but also making it possible to **assess community composition** for broader taxonomic groups or even the **abundance of species** at multiple times and places
