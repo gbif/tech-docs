@@ -129,7 +129,7 @@ Several fields could represent either a person or an organization. Below is a li
 | Jonny
 
 | https://eml.ecoinformatics.org/schema/eml-party_xsd#Person_surName[surName] 
-| Subfield of individualName field. The surname field is used for the last name of the individual associated with the resource. This is typically the family name of an individual, for example, the name by which s/he is referred to in citations. 
+| Subfield of individualName field. The surname field is used for the last name of the individual associated with the resource. This is typically the family name of an individual, for example, the name by which they are referred to in citations. 
 | Carson
 
 | https://eml.ecoinformatics.org/schema/eml-party_xsd#ResponsibleParty_organizationName[organizationName] 
