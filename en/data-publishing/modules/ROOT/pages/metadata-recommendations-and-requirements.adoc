@@ -358,14 +358,16 @@ The additionalMetadata field is a container for any other relevant metadata that
 | http://www.gbif.org/logo.jpg
 
 | parentCollectionIdentifier 
-| Subfield of collection field. Is an optional field. Identifier for the parent collection for this sub-collection. Enables a hierarchy of collections and sub collections to be built.
+| Subfield of collection field. Is an optional field. Identifier for the parent collection for this sub-collection. Enables a hierarchy of collections and sub-collections to be built.
 |
 
 | collectionName 
 | Subfield of collection field. Is an optional field. Official name of the Collection in the local language.
+|
 
 | collectionIdentifier 
 | Subfield of collection field.  Is an optional field. The URI (LSID or URL) of the collection. In RDF, used as URI of the collection resource.
+|
 
 | formationPeriod 
 | Text description of the time period during which the collection was assembled. 
@@ -373,6 +375,7 @@ The additionalMetadata field is a container for any other relevant metadata that
 
 | livingTimePeriod 
 | Time period during which biological material was alive (for palaeontological collections).
+|
 
 | specimenPreservationMethod 
 | Picklist keyword indicating the process or technique used to prevent physical deterioration of non-living collections. #Expected to contain an instance from the Specimen Preservation Method Type Term vocabulary#.   
