@@ -391,6 +391,8 @@ To record the quantity type of a species occurrence. Use together with <<organis
 
 The nature or genre of the resource.
 
+'''
+
 ==== eventID [[eventID]]
 ===== https://dwc.tdwg.org/list/#dwc_eventID[_dwc:eventID_]
 
