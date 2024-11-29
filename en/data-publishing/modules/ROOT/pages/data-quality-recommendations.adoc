@@ -12,26 +12,6 @@ By following these data quality requirements and recommendations, data publisher
 ____
 Data published with support of one of the funded programmes operated by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]) have stricter data quality requirements than data published outside of these programmes. Please also consult the documentation for *ADD LINK*[requirements for the EML file]. 
 ____                                                                              
-  
-=== Status
-
-==== Required information
-
-The terms constitute the minimum formal requirements for publishing an occurrence dataset. GBIF.org will not accept a dataset without these terms and will not index the records. While these items are mandatory for publishing the dataset, they are only the starting point. The usefulness of the published data will still be severely limited unless additional information is supplied.
-                                                                              
-==== Strongly recommended information
-
-In addition to the mandatory terms, GBIF strongly recommend completing several more fields that help improve the usefulness of the dataset:
-
-* some information supports the integration into global data resources and prevents ambiguity, e.g. in matching scientific names that could apply to more than one organism (homonyms) to the correct place within the backbone taxonomy
-* more precise geo-location data (coordinates) significantly increase the usefulness of the data for a wide range of use cases
-* additional qualifiers for some data elements, e.g. coordinates, support the interpretation of those elements and help users to better estimate their usefulness for a given data use case
-* some data redundancy supports quality control and error detection (e.g. testing country codes against coordinates where both are supplied)
-* last not least, the richer the spectrum of available information of a dataset is, the more potential usage areas it becomes available for, meaning the dataset will me more widely accessible and used, and cited more often
-                                                                              
-==== Share if available
-
-If additional data are available, consider sharing them in order to increase the usefulness of your published data.
                                                                               
 == Data quality requirements for checklists
 
@@ -40,7 +20,7 @@ Checklist datasets provide a catalogue, rapid summary or baseline inventory a se
 .Data quality requirements for *checklists*
 [%autowidth,stripes=hover]                                                                            
 |===
-|Term |Status |Status funded GBIF programmes
+|Term |<<Status>> |Status funded GBIF programmes
 
 |<<taxonID>>
 |Required
@@ -78,7 +58,7 @@ Occurrence datasets make up the core of data published through GBIF.org, offerin
 .Data quality requirements for *occurrences*
 [%autowidth,stripes=hover]                                                                            
 |===
-|Term |Status |Status funded GBIF programmes
+|Term |<<Status>> |Status funded GBIF programmes
 
 |<<occurrenceID>> 
 |
@@ -166,7 +146,7 @@ Occurrence datasets make up the core of data published through GBIF.org, offerin
 .Data quality requirements for *sampling events*
 [%autowidth,stripes=hover]                                                                            
 |===
-|Term |Status |Status funded GBIF programmes
+|Term |<<Status>> |Status funded GBIF programmes
 
 |<<eventID>>
 |
@@ -230,140 +210,261 @@ Occurrence datasets make up the core of data published through GBIF.org, offerin
 |===                      
 
 == Terms
-#Describe each term listed in the tables above and change links to refer to sub-headers of this section. Term example:#
+
+'''
 
 ==== taxonID [[taxonID]]
-===== |https://dwc.tdwg.org/list/#dwc_taxonID[_dwc:taxonID_]
+===== https://dwc.tdwg.org/list/#dwc_taxonID[_dwc:taxonID_]
 
-A unique identifier for the taxon, allowing the same taxon to be recognized across dataset versions as well as through data downloads and use. Ideally, the taxonID is a persistent global unique identifier. As a minimum requirement, it has to be unique within the published dataset. It allows to recognize the same set of taxon information over time when the dataset indexing is refreshed; it links additional data like images or occurrence records; and it makes it possible to cite records e.g. in usage reports or in publications. This means that the taxonID needs to reliably stay with the taxon information at source, and to consistently refer to the same set of taxon information in published datasets and any underlying source data.
+A unique identifier for the taxon, allowing the same taxon to be recognized across dataset versions as well as through data downloads and use. Ideally, the taxonID is a persistent global unique identifier. As a minimum requirement, it has to be unique within the published dataset. It allows to recognize the same set of taxon information over time when the dataset indexing is refreshed; it links additional data like images or occurrence records; and it makes it possible to cite records e.g. in usage reports or in publications. This means that the taxonID needs to reliably stay with the taxon information at source and to consistently refer to the same set of taxon information in published datasets and any underlying source data.
+
+'''
 
 ==== scientificName [[scientificName]]
-===== |https://dwc.tdwg.org/list/#dwc_scientificName[_dwc:scientificName_]
+===== https://dwc.tdwg.org/list/#dwc_scientificName[_dwc:scientificName_]
 
 The full scientific name, including authorship and year of the name where applicable. In the context of a checklist, the scientific name is the core data element of a taxon list or hierarchy that the dataset is set out to collate and publish.
 
 Depending on the purpose of the checklist, scientific names may be of any hierarchical level, though typically would be of species rank or below for, e.g., regional floristic or faunistic checklists, Red List collations, or thematic inventories like marine organisms or taxonomic revisions of species groups. If the checklist is intended to publish a hierarchy (tree-like structure), add separate entries for the relevant upper taxonomic ranks, e.g. kingdom, class and family, and link them into a hierarchical structure using the parentNameUsageID (see below) to support unambiguous interpretation of the checklist entries.
 
-Valid scientific names are Latin names following the syntax rules of the respective taxon group (e.g. botanical nomenclature). Not permitted are, i.a., working names ("Mallomonas sp.4"), common names ("fruit fly"), or names containing identification qualifiers ("Anemone cf. nemorosa"). If common names are used, they should be supplied in addition to the scientific names, using the VernacularName set of fields(see below).
+Valid scientific names are Latin names following the syntax rules of the respective taxon group (e.g. botanical nomenclature). Not permitted are, i.e., working names (`Mallomonas sp.4`), common names (`fruit fly`), or names containing identification qualifiers (`Anemone cf. nemorosa`). If common names are used, they should be supplied in addition to the scientific names, using the <<vernacularName>> set of fields.
+
+'''
 
 ==== taxonRank [[taxonRank]]
 ===== https://dwc.tdwg.org/list/#dwc_taxonRank[_dwc:taxonRank_]
 
+The taxonomic rank of the supplied scientific name. The taxon rank supports the interpretation of the scientific name during indexing and supports matching the checklist records to the core taxonomy, especially in the case of names at the genus level or above (monomials). While the format of higher taxon names in some groups contains indicators of their rank, this is not consistent across or even within groups, and cannot be reliably used for interpretation. For placing names correctly, explicitly specifying the taxon rank, alongside information on the higher taxonomy, is an important criterion. For practical purposes, the ranks used have to be (major) Linnean ranks: kingdom, phylum, class, order, family, genus, and species. Both Latin and English terms are accepted.
+
+'''
+
 ==== kingdom [[kingdom]]
 ===== https://dwc.tdwg.org/list/#dwc_kingdom[_dwc:kingdom_]
+
+The full scientific name specifying the kingdom that the scientific name is classified under and other higher taxonomy, if possible.
+
+With scientific names, there are numerous cases where the matching of a given name against the core taxonomy is unsure or ambiguous. This is the case, for example, with homonyms (identical names exist for different organisms, usually across groups), newly described names that are not yet part of the existing taxonomic tree, or spelling variants (typos, hyphenation etc). To support exact matching of a scientific name against the core taxonomy, additional names at higher ranks help interpretation and error prevention. For datasets where the hierarchical representation in the published data is not important, higher-level names can be supplied as part of the record itself by adding the relevant DarwinCore fields, similar to occurrence datasets.
+
+Names should be scientific (Latin) names at major Linnean ranks, like `Animalia` (`kingdom`) or `Rosaceae` (`family`). Not: common names (`animals`), abbreviations (`Rosac.`), intermediate rank levels (`Tetrapoda` (`superclass`)), or polyphyletic or non-taxonomic groupings (`algae`, `herbivore`).
+
+'''
 
 ==== parentNameUsageID [[parentNameUsageID]]
 ===== https://dwc.tdwg.org/list/#dwc_parentNameUsageID[_dwc:parentNameUsageID_]
 
+The taxonID of the next available higher-ranked (parent) entry within the checklist dataset, if higher taxon names are supplied as separate entries in the list. This supports the representation of the dataset as a hierarchy, e.g. for the publication of a taxonomy.
+
+'''
+
 ==== acceptedNameUsageID [[acceptedNameUsageID]]
 ===== https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID[_dwc:acceptedNameUsageID_]
 
+Within the record of a synonym, the taxonID of the accepted taxon name entry within the checklist dataset, if both synonyms and accepted names are supplied. This supports the representation of synonymy for a taxonomic dataset.
+
+'''
+
 ==== vernacularName [[vernacularName]]
 ===== https://dwc.tdwg.org/list/#dwc_vernacularName[_dwc:vernacularName_]
+
+When supplied, also add at least the language of the name, using ISO 639-1 language codes.
+
+'''
 
 ==== occurrenceID [[occurrenceID]]
 ===== https://dwc.tdwg.org/list/#dwc_occurrenceID[_dwc:occurrenceID_]
 
 A unique identifier for the occurrence, allowing the same occurrence to be recognized across dataset versions as well as through data downloads.
-Ideally, the occurrenceID is a persistent global unique identifier. As a minimum requirement, it has to be unique within the published dataset. It allows to recognize the same occurrence over time when the dataset indexing is refreshed; it links additional data like images; and it makes it possible to cite records e.g. in usage reports or in publications. This means that the occurrenceID needs to reliably stay with the occurrence at source, and to consistently refer to the same occurrence in published datasets and any underlying source data.
+Ideally, the occurrenceID is a persistent global unique identifier. As a minimum requirement, it has to be unique within the published dataset. It allows to recognize the same occurrence over time when the dataset indexing is refreshed; it links additional data like images; and it makes it possible to cite records e.g. in usage reports or publications. This means that the occurrenceID needs to reliably stay with the occurrence at source, and to consistently refer to the same occurrence in published datasets and any underlying source data.
+
+'''
 
 ==== basisOfRecord [[basisOfRecord]]
 ===== https://dwc.tdwg.org/list/#dwc_basisOfRecord[_dwc:basisOfRecord_]
 
+The type of the individual record. Choose one of the available options in dwc:basisOfRecord.
+
+'''
+
 ==== eventDate [[eventDate]]
 ===== https://dwc.tdwg.org/list/#dwc_eventDate[_dwc:eventDate_]
 
-#link to page on tech docs about event date format interpretation#
+Dates and times published in Darwin Core should use the https://en.wikipedia.org/wiki/ISO_8601[ISO 8601-1:2019] standard. Please see the following https://techdocs.gbif.org/en/data-processing/temporal-interpretation[documentation] for more details.
+
+'''
 
 ==== countryCode [[countryCode]]
 ===== https://dwc.tdwg.org/list/#dwc_countryCode[_dwc:countryCode_]
 
+A two-letter standard abbreviation for the country of the occurrence locality. Information on the collection or observation locality (geographic reference) is essential for any record. The country code is the proposed minimum standard to supply this information. The format for this field follows the https://www.iso.org/iso-3166-country-codes.html[ISO 3166-1-alpha-2 standard] for country codes. Those are two-letter codes for each country; lists can be found online. Publishers who wish to supply the country name, in addition, may add the appropriate element. In most cases, occurrences can be linked to a specific country. In cases where it is not possible to supply a country code (e.g. marine data outside of coastal zones), geographical coordinates should be supplied instead.
+
+'''
+
 ==== decimalLatitude [[decimalLatitude]]
 ===== https://dwc.tdwg.org/list/#dwc_decimalLatitude[_dwc:decimalLatitude_]
+
+The geographic latitude in decimal degrees. Where coordinate values are available <<decimalLongitude>> should be filled also. Valid values lie between `-90` and `90` incl. (`latitude`; `0`: `Equator`). Decimal coordinate values provide a geolocation of the occurrence that is much more informative than the country name alone, and that is stable over time (unlike the borders of countries). Many data use cases require coordinates if the data are to be of value or usable at all, for example, species distribution modelling or population studies in specific areas.
+
+Several issues concerning coordinates are encountered frequently. While the indexing process makes efforts to identify such cases and propose corrections, e.g. by plausibility-testing coordinates against country names, attention is needed already at the level of data preparation and publication. Such issues include transformation errors (resulting from e.g. conversion of degrees-minutes-seconds into decimal values), accidental swapping of values, either in the dataset or during the mapping process (latitude and longitude are reversed), or negation of values (transposition of locations from north to south, east to west or vice versa through the accidental or systematic loss or addition of minus-values). Additional points to keep in mind during data preparation are technical defaults (e.g. database settings substituting 0-values instead of unknown values resulting in records supplying lat/long as `0/0`; over-precision of data by automatic number-padding (`lat -17.79200000` where `lat -17.792` would be appropriate), or the need to blur coordinate precision e.g. the protection of sensitive species. Also note that gridded data, i.e. where coordinates represent centroids of grid cells in a field survey rather than the actual occurrence locality, may be better represented by publishing the dataset as event data rather than as occurrence records. Especially in such cases, it is essential to also supply the <<coordinateUncertaintyInMeters>>.
+
+'''
 
 ==== decimalLongitude [[decimalLongitude]]
 ===== https://dwc.tdwg.org/list/#dwc_decimalLongitude[_dwc:decimalLongitude_]
 
+The geographic longitude in decimal degrees. Where coordinate values are available <<decimalLatitude>> should be filled also. Valid values lie between  -180 and 180 incl. (longitude; 0: Greenwich Meridian). Decimal coordinate values provide a geolocation of the occurrence that is much more informative than the country name alone, and that is stable over time (unlike the borders of countries). Many data use cases require coordinates if the data are to be of value or usable at all, for example, species distribution modelling or population studies in specific areas.
+
+Several issues concerning coordinates are encountered frequently. While the indexing process makes efforts to identify such cases and propose corrections, e.g. by plausibility-testing coordinates against country names, attention is needed already at the level of data preparation and publication. Such issues include transformation errors (resulting from e.g. conversion of degrees-minutes-seconds into decimal values), accidental swapping of values, either in the dataset or during the mapping process (latitude and longitude are reversed), or negation of values (transposition of locations from north to south, east to west or vice versa through the accidental or systematic loss or addition of minus-values). Additional points to keep in mind during data preparation are technical defaults (e.g. database settings substituting 0-values instead of unknown values resulting in records supplying lat/long as `0/0`; over-precision of data by automatic number-padding (`lat -17.79200000` where `lat -17.792` would be appropriate), or the need to blur coordinate precision e.g. the protection of sensitive species. Also note that gridded data, i.e. where coordinates represent centroids of grid cells in a field survey rather than the actual occurrence locality, may be better represented by publishing the dataset as event data rather than as occurrence records. Especially in such cases, it is essential to also supply the <<coordinateUncertaintyInMeters>>.
+
+'''
+
 ==== geodeticDatum [[geodeticDatum]]
 ===== https://dwc.tdwg.org/list/#dwc_geodeticDatum[_dwc:geodeticDatum_]
+
+The coordinate system and set of reference points upon which the geographic coordinates are based. Different geodetic systems exist, and the exact locality of a point depends on which reference system the coordinates refer to. This is why the system should always be explicitly named when known: depending on the geographic region, the datum shift between two systems can vary from zero to hundreds of meters for a given point. When no value is supplied, GBIF's indexing process assumes the reference system to be WGS 84 (World Geodetic System 1984, a global approximation at sea level and, i.e., base of GPS data); but the more frequently the geodetic datum can be supplied explicitly by data publishers, the more reliable the geographic representation of occurrences will become, e.g. through datum conversion. It is likewise important to explicitly document the lack of knowledge of the system used, as this increases confidence in data interpretation. Examples: `WGS84`; `EPSG:4326`; `unknown`.
+
+'''
 
 ==== coordinateUncertaintyInMeters [[coordinateUncertaintyInMeters]]
 ===== https://dwc.tdwg.org/list/#dwc_coordinateUncertaintyInMeters[_dwc:coordinateUncertaintyInMeters_]
 
+The horizontal distance from the given <<decimalLatitude>> and <<decimalLongitude>> in meters, describing the smallest circle containing the whole of the Location. This is an indicator of the accuracy of the coordinate location, described as the radius of a circle around the stated point location. It allows estimating the potential distance of the real occurrence location from the recorded values and largely depends on the methodology used in coordinate determination. Thus, the value may be specific to or estimated from the methodology or device used for geolocating, e.g. `30` (reasonable lower limit of a GPS reading under good conditions if the actual precision was not recorded at the time). Note that `0` (zero) is not a valid value for this measure. If the value is unknown or not applicable, the value should be empty (null). If for some reason the `coordinateUncertaintyInMeters` was artificially increased, for example by rounding the coordinate values, the fields <<informationWithheld>> or <<dataGeneralizations>> must be filled in addition. Examples: `30`; `71`; `[empty]`. Not: `0`.
+
+'''
+
 ==== individualCount [[individualCount]]
 ===== https://dwc.tdwg.org/list/#dwc_individualCount[_dwc:individualCount_]
+
+Use the `individualCount` field to capture the number of individuals for the species associated with the occurrence. 
+
+'''
 
 ==== organismQuantity [[organismQuantity]]
 ===== https://dwc.tdwg.org/list/#dwc_organismQuantity[_dwc:organismQuantity_]
 
+To record the quantity of a species occurrence. Use together with <<organismQuantityType>> to specify the quantity e.g., `organismQuantity`: `5`/ `organismQuantityType`: `individuals`. `organismQuantity`: `r` / `organismQuantityType`: `BraunBlanquetScale`.
+
+'''
+
 ==== organismQuantityType [[organismQuantityType]]
 ===== https://dwc.tdwg.org/list/#dwc_organismQuantityType[_dwc:organismQuantityType_]
+
+To record the quantity type of a species occurrence. Use together with <<organismQuantity>> to specify the type of measurement e.g., `organismQuantity`: `5`/ `organismQuantityType`: `individuals`. `organismQuantity`: `r` / `organismQuantityType`: `BraunBlanquetScale`.
+
+'''
 
 ==== informationWithheld [[informationWithheld]]
 ===== https://dwc.tdwg.org/list/#dwc_informationWithheld[_dwc:informationWithheld_]
 
+'''
+
 ==== dataGeneralizations [[dataGeneralizations]]
 ===== https://dwc.tdwg.org/list/#dwc_dataGeneralizations[_dwc:dataGeneralizations_]
+
+'''
 
 ==== eventTime [[eventTime]]
 ===== https://dwc.tdwg.org/list/#dwc_eventTime[_dwc:eventTime_]
 
+'''
+
 ==== country [[country]]
 ===== https://dwc.tdwg.org/list/#dwc_country[_dwc:country_]
 
+'''
+
 ==== projectID [[projectID]]
-===== 
+
+'''
 
 ==== projectTitle [[projectTitle]]
-===== 
+
+'''
 
 ==== eventID [[eventID]]
 ===== https://dwc.tdwg.org/list/#dwc_eventID[_dwc:eventID_]
 
-A unique identifier for the sampling event, allowing to link individual occurrences to a specific event, and to cross reference events to document e.g. time series (resampling) or synchronized sampling across a wider area.
+A unique identifier for the sampling event, allowing to link individual occurrences to a specific event, and to cross-reference events to document e.g. time series (resampling) or synchronized sampling across a wider area.
 
-The eventID can be a persistent global unique identifier, or an identifier specific to the dataset. Its main function is to allow linking to related data (occurrences, other sampling events, site images etc.). While dataset-specific eventIDs are sufficient to refer to occurence records published within the same dataset, it is worth considering that very simple IDs like numbers could easily reoccur in other, unrelated datasets, and make external linkages ambiguous. In addition, the eventID needs to reliably stay with the sampling event information at source, and consistently refer to the same event, or else any data links will be broken.
+The eventID can be a persistent global unique identifier, or an identifier specific to the dataset. Its main function is to allow linking to related data (occurrences, other sampling events, site images etc.). While dataset-specific eventIDs are sufficient to refer to occurence records published within the same dataset, it is worth considering that very simple IDs like numbers could easily reoccur in other, unrelated datasets, and make external linkages ambiguous. In addition, the eventID needs to reliably stay with the sampling event information at source and consistently refer to the same event, or else any data links will be broken.
+
+'''
 
 ==== samplingProtocol [[samplingProtocol]]
 ===== https://dwc.tdwg.org/list/#dwc_samplingProtocol[_dwc:samplingProtocol_]
 
-The name of, reference to, or description of the method or protocol used during a sample event. Sample events typically use specific methods or follow certain protocols that standardize the sampling effort to a certain degree. Knowledge about the sampling protocol gives users additional information that is helpful for the interpretation of the attached occurrence records, e.g. what kind of organisms to expect or not expect within the dataset and whether the absence of a recording signifies absence in nature, or was outside the target group of the applied sampling methodology (e.g. "UV light trap"). If a more detailed description of the method or protocol exists, providing a reference is strongly encouraged (e.g. http://dx.doi.org/10.1111/j.1466-8238.2009.00467.x[Penguins from space: faecal stains reveal the location of emperor penguin colonies]. While there is no controlled vocabulary for this element, the goal is to, across datasets, gradually assemble a library of references for reuse, and to allow users to identify datasets that are based on comparable methods and protocols.
+The name of, reference to, or description of the method or protocol used during a sample event. Sample events typically use specific methods or follow certain protocols that standardize the sampling effort to a certain degree. Knowledge about the sampling protocol gives users additional information that is helpful for the interpretation of the attached occurrence records, e.g. what kind of organisms to expect or not expect within the dataset and whether the absence of a recording signifies absence in nature, or was outside the target group of the applied sampling methodology (e.g. `UV light trap`). If a more detailed description of the method or protocol exists, providing a reference is strongly encouraged (e.g. http://dx.doi.org/10.1111/j.1466-8238.2009.00467.x[Penguins from space: faecal stains reveal the location of emperor penguin colonies]. While there is no controlled vocabulary for this element, the goal is to, across datasets, gradually assemble a library of references for reuse, and to allow users to identify datasets that are based on comparable methods and protocols.
 
-==== samplingSizeValue [[samplingSizeValue]]
-===== https://dwc.tdwg.org/list/#dwc_sampleSizeValue[_dwc:samplingSizeValue_]
+'''
 
-Note: <<samplingSizeUnit>> should always be shared with the corresponding samplingSizeValue.
+==== sampleSizeValue [[sampleSizeValue]]
+===== https://dwc.tdwg.org/list/#dwc_sampleSizeValue[_dwc:sampleSizeValue_]
 
-A numeric value and the corresponding unit for the value, specifying the size of an individual sample in the sampling event. The two sampleSize fields always go together, and specify the size of an individual sample within a sample event. The sample size can relate to time duration, a spatial lengths (e.g. of a trawl), an area or a volume. A vegetation plot, for example, may have a sampleSizeValue of 2 with a sampleSizeUnit of "square kilometer". Recommended best practice is to use a controlled vocabulary for the sampleSizeUnit.
+Note: <<sampleSizeUnit>> should always be shared with the corresponding sampleSizeValue.
 
-==== samplingSizeUnit [[samplingSizeUnit]]
-===== https://dwc.tdwg.org/list/#dwc_sampleSizeUnit[_dwc:samplingSizeUnit_]
+A numeric value and the corresponding unit for the value, specifying the size of an individual sample in the sampling event. The two sampleSize fields always go together, and specify the size of an individual sample within a sample event. The sample size can relate to time duration, a spatial length (e.g. of a trawl), an area or a volume. A vegetation plot, for example, may have a `sampleSizeValue` of `2` with a `sampleSizeUnit` of `square kilometer`. Recommended best practice is to use a controlled vocabulary for the <<sampleSizeUnit>>.
 
-Note: <<samplingSizeValue>> should always be shared with the corresponding samplingSizeUnit.
+'''
 
-A numeric value and the corresponding unit for the value, specifying the size of an individual sample in the sampling event. The two sampleSize fields always go together, and specify the size of an individual sample within a sample event. The sample size can relate to time duration, a spatial lengths (e.g. of a trawl), an area or a volume. A vegetation plot, for example, may have a sampleSizeValue of 2 with a sampleSizeUnit of "square kilometer". Recommended best practice is to use a controlled vocabulary for the sampleSizeUnit.
+==== sampleSizeUnit [[sampleSizeUnit]]
+===== https://dwc.tdwg.org/list/#dwc_sampleSizeUnit[_dwc:sampleSizeUnit_]
+
+Note: <<sampleSizeValue>> should always be shared with the corresponding sampleSizeUnit.
+
+A numeric value and the corresponding unit for the value, specifying the size of an individual sample in the sampling event. The two sampleSize fields always go together, and specify the size of an individual sample within a sample event. The sample size can relate to time duration, a spatial length (e.g. of a trawl), an area or a volume. A vegetation plot, for example, may have a `sampleSizeValue` of `2` with a `sampleSizeUnit` of `square kilometer`. Recommended best practice is to use a controlled vocabulary for the <<sampleSizeUnit>>.
+
+'''
 
 ==== parentEventID [[parentEventID]]
 ===== https://dwc.tdwg.org/list/#dwc_parentEventID[_dwc:parentEventID_]
 
-A cross-reference to the eventID of a broader event, e.g. a long-term monitoring project that the specific event is a part of, or a general vegetation survey of a larger area that is comprised of a number of sub-plots. In order to be able to reference a parent event, this event needs to be specified as a separate entry, typically within the same dataset, carrying its own eventID. Refer to the eventID of the parent event in the sample event record to specify the relationship between the two entries.
+A cross-reference to the eventID of a broader event, e.g. a long-term monitoring project that the specific event is a part of or a general vegetation survey of a larger area that is comprised of a number of sub-plots. To be able to reference a parent event, this event needs to be specified as a separate entry, typically within the same dataset, carrying its own eventID. Refer to the eventID of the parent event in the sample event record to specify the relationship between the two entries.
+
+'''
 
 ==== samplingEffort [[samplingEffort]]
 ===== https://dwc.tdwg.org/list/#dwc_samplingEffort[_dwc:samplingEffort_]
 
-The measure for the amount of effort that was expended during a sampling event. The amount of effort expended during a sampling event often has an influence on the result. It included factors like the number of observers involved, or the total time spent at collecting, the number of traps exposed over a certain amount of time, the total distance covered, and mode of transport used, while surveying a plot, etc. Examples for sampling effort are "40 trap-nights", "10 observer-hours". While there is no controlled vocabulary, the recommendation is to keep this information brief and factual, giving users enough information to compare between sampling events.
+The measure for the amount of effort that was expended during a sampling event. The amount of effort expended during a sampling event often influences the result. It included factors like the number of observers involved, or the total time spent collecting, the number of traps exposed over a certain amount of time, the total distance covered, and the mode of transport used, while surveying a plot, etc. Examples of sampling effort are `40 trap-nights`, `10 observer-hours`. While there is no controlled vocabulary, the recommendation is to keep this information brief and factual, giving users enough information to compare between sampling events.
+
+'''
 
 ==== locationID [[locationID]]
 ===== https://dwc.tdwg.org/list/#dwc_locationID[_dwc:locationID_]
 
-An internal or external reference that links to a set of data describing the sample event location, if available. Example: http://www.geonames.org/10793757/dnb-6.html. Note: if such a reference cannot be meaningfully supplied, consider supplying more location detail, e.g. through use of the data elements locality, minimumElevationInMeters, minimumDepthInMeters, stateProvince, locationRemarks.
+An internal or external reference that links to a set of data describing the sample event location, if available. Example: `http://www.geonames.org/10793757/dnb-6.html`. Note: if such a reference cannot be meaningfully supplied, consider supplying more location detail, e.g. through use of the data elements `locality`, `minimumElevationInMeters`, `minimumDepthInMeters`, `stateProvince`, `locationRemarks`.
+
+'''
 
 ==== footprintWKT [[footprintWKT]]
 ===== https://dwc.tdwg.org/list/#dwc_footprintWKT[_dwc:footprintWKT_]
 
-An alternative area description, specifying the location of the sample event in Well-known text (WKT) markup language. A WKT representation of the shape (footprint, geometry) that defines the location. This differs from the point-radius representation that is combined from the elements decimalLatitude, decimalLongitude and coordinateUncertaintyInMeters in that it can define shapes that are not circles. Example: a one-degree bounding box with opposite corners at (longitude=10, latitude=20) and (longitude=11, latitude=21) would be expressed in well-known text as "POLYGON ((10 20, 11 20, 11 21, 10 21, 10 20))". Note that it is possible to supply both a point-radius and a footprintWKT location for the same sample event.
- 
+An alternative area description, specifying the location of the sample event in Well-known text (WKT) markup language. A WKT representation of the shape (footprint, geometry) that defines the location. This differs from the point-radius representation that is combined from the elements <<decimalLatitude>>, <<decimalLongitude>> and <<coordinateUncertaintyInMeters>> in that it can define shapes that are not circles. Example: a one-degree bounding box with opposite corners at (`longitude`=`10`, `latitude`=`20`) and (`longitude`=`11`, `latitude`=`21`) would be expressed in well-known text as `POLYGON ((10 20, 11 20, 11 21, 10 21, 10 20))`. Note that it is possible to supply both a point-radius and a footprintWKT location for the same sample event.
+
+'''
+
 ==== occurrenceStatus [[occurrenceStatus]]
 ===== https://dwc.tdwg.org/list/#dwc_occurrenceStatus[_dwc:occurrenceStatus_]
 
-Note: this applies to associated occurrence data, not to the sample event itself. A qualifier for individual occurrence records, marking a taxon as either present or absent at a location during the sampling event. Since sample datasets document the sampling effort exerted during the event, it can often be valuable to not only document taxa as being present (observed, collected) at the location at the time, but also to record negative occurrences (absences) for taxa that could be reasonably expected, but were not encountered in the event. An example is a floristic survey that estimates the abundance or coverage of plants in a certain area, working from a list of species that were encountered on earlier surveys of that same region. Recommendation: used the standard values of either "present" or "absent" to mark individual occurrence records. Note that absence records are currently not handled in the GBIF indexing processes, but that this is part of the medium term plans; that fact that processing is not yet implemented on that side does not hinder the collection and publication of absence data, making them available through the published dataset at source.
+Note: this applies to associated occurrence data, not to the sample event itself. A qualifier for individual occurrence records, marking a taxon as either present or absent at a location during the sampling event. Since sample datasets document the sampling effort exerted during the event, it can often be valuable to not only document taxa as being present (observed, collected) at the location at the time, but also to record negative occurrences (absences) for taxa that could be reasonably expected, but were not encountered in the event. An example is a floristic survey that estimates the abundance or coverage of plants in a certain area, working from a list of species that were encountered on earlier surveys of that same region. Recommendation: use the standard values of either `present` or `absent` to mark individual occurrence records. #Note that absence records are currently not handled in the GBIF indexing processes, but that this is part of the medium-term plans; the fact that processing is not yet implemented on that side does not hinder the collection and publication of absence data, making them available through the published dataset at source#.
+
+'''
+
+=== Status [[Status]]
+
+==== Required information
+
+The terms constitute the minimum formal requirements for publishing an occurrence dataset. GBIF will not accept a dataset without these terms and will not index the records. While these items are mandatory for publishing the dataset, they are only the starting point. The usefulness of the published data will still be severely limited unless additional information is supplied.
+                                                                              
+==== Strongly recommended information
+
+In addition to the mandatory terms, GBIF strongly recommends completing several more fields that help improve the usefulness of the dataset:
+
+* some information supports the integration into global data resources and prevents ambiguity, e.g. in matching scientific names that could apply to more than one organism (homonyms) to the correct place within the backbone taxonomy
+* more precise geo-location data (coordinates) significantly increase the usefulness of the data for a wide range of use cases
+* additional qualifiers for some data elements, e.g. coordinates, support the interpretation of those elements and help users to better estimate their usefulness for a given data use case
+* some data redundancy supports quality control and error detection (e.g. testing country codes against coordinates where both are supplied)
+* last but not least, the richer the spectrum of available information of a dataset is, the more potential usage areas it becomes available for, meaning the dataset will be more widely accessible and used, and cited more often
+                                                                              
+==== Share if available
+
+If additional data are available, consider sharing them to increase the usefulness of your published data.
