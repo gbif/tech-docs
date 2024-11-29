@@ -53,7 +53,7 @@ Checklist datasets provide a catalogue, rapid summary or baseline inventory a se
   
 == Data quality requirements for occurrences
 
-Occurrence datasets make up the core of data published through GBIF.org, offering evidence of the occurrence of a species (or other taxon) at a particular place on a specified date.
+Occurrence datasets are the core of data published through GBIF, offering evidence of the occurrence of a species (or other taxon) at a particular place on a specified date.
   
 .Data quality requirements for *occurrences*
 [%autowidth,stripes=hover]                                                                            
@@ -61,19 +61,19 @@ Occurrence datasets make up the core of data published through GBIF.org, offerin
 |Term |<<Status>> |Status funded GBIF programmes
 
 |<<occurrenceID>> 
-|
+|Required
 |Required 
 
 |<<basisOfRecord>>
-|
+|Strongly recommended
 |Required                                                                                
 
 |<<scientificName>>
-|
+|Strongly recommended
 |Required                                                                              
 
 |<<eventDate>>
-|
+|Strongly recommended
 |Required
 
 |<<countryCode>>
@@ -133,11 +133,11 @@ Occurrence datasets make up the core of data published through GBIF.org, offerin
 |Share if available     
 
 |<<projectID>>
-|
+|Share if available
 |Required     
 
 |<<projectTitle>>
-|
+|Share if available
 |Required      
 |===  
                                                                               
@@ -160,11 +160,11 @@ Occurrence datasets make up the core of data published through GBIF.org, offerin
 |
 |Required
 
-|<<samplingSizeValue>>
+|<<sampleSizeValue>>
 |
 |Required 
 
-|<<samplingSizeUnit>>
+|<<sampleSizeUnit>>
 | 
 |Required 
 
