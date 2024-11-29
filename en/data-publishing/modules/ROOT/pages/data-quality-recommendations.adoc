@@ -387,7 +387,7 @@ To record the quantity type of a species occurrence. Use together with <<organis
 '''
 
 ==== type [[type]]
-===== http://purl.org/dc/elements/1.1/type[_dwc:type_]
+===== http://purl.org/dc/elements/1.1/type[_dc:type_]
 
 The nature or genre of the resource.
 
