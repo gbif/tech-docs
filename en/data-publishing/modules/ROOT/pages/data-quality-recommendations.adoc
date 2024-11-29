@@ -9,6 +9,8 @@ Note: this page is currently under development
   
 By following these data quality requirements and recommendations, data publishers can improve the quality, completeness and value of their datasets.
 
+#All tables included in a Darwin Core Archive *must* include a unique identifier column.# 
+
 ____
 Data published with support of one of the funded programmes operated by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]) have stricter data quality requirements than data published outside of these programmes. Please also consult the documentation for *ADD LINK*[requirements for the EML file]. 
 ____                                                                              
@@ -148,24 +150,28 @@ Occurrence datasets are the core of data published through GBIF, offering eviden
 |===
 |Term |<<Status>> |Status funded GBIF programmes
 
+|#<<type>>#
+|Required
+|Required
+
 |<<eventID>>
-|
+|Strongly recommended
 |Required
 
 |<<eventDate>>
-|
+|Strongly recommended
 |Required
 
 |<<samplingProtocol>>
-|
+|Strongly recommended
 |Required
 
 |<<sampleSizeValue>>
-|
+|Strongly recommended
 |Required 
 
 |<<sampleSizeUnit>>
-| 
+| Strongly recommended
 |Required 
 
 |<<countryCode>>
@@ -379,6 +385,11 @@ To record the quantity type of a species occurrence. Use together with <<organis
 ==== projectTitle [[projectTitle]]
 
 '''
+
+==== type [[type]]
+===== http://purl.org/dc/elements/1.1/type[_dwc:type_]
+
+The nature or genre of the resource.
 
 ==== eventID [[eventID]]
 ===== https://dwc.tdwg.org/list/#dwc_eventID[_dwc:eventID_]
