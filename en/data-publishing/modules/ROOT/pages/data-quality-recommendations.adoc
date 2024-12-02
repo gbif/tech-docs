@@ -281,8 +281,11 @@ When supplied, also add at least the language of the name, using ISO 639-1 langu
 ==== occurrenceID [[occurrenceID]]
 ===== https://dwc.tdwg.org/list/#dwc_occurrenceID[_dwc:occurrenceID_]
 
-A unique identifier for the occurrence, allowing the same occurrence to be recognized across dataset versions as well as through data downloads.
-Ideally, the occurrenceID is a persistent global unique identifier. As a minimum requirement, it has to be unique within the published dataset. It allows to recognize the same occurrence over time when the dataset indexing is refreshed; it links additional data like images; and it makes it possible to cite records e.g. in usage reports or publications. This means that the occurrenceID needs to reliably stay with the occurrence at source, and to consistently refer to the same occurrence in published datasets and any underlying source data.
+A unique identifier for the occurrence, allowing the same occurrence to be recognized across dataset versions as well as through data downloads. As a minimum requirement, it has to be unique within the published dataset, but can also be a globally unique identifier. It allows users to recognize the same occurrence over time when the dataset indexing is refreshed. OccurrenceIDs links additional data like images to the record, and it makes it possible to cite records. This means that the occurrenceID needs to reliably stay with the occurrence at source, and to consistently refer to the same occurrence in published datasets and any underlying source data.
+
+The occurrenceID in a dataset helps GBIF identify whether an occurrence record is new. If it is new, GBIF assigns it a new unique gbifID. Some publishers include information, such as the collection or institution code, within the occurrenceID. However, if the collection or institution changes, the occurrenceID must also change, even though the actual occurrence record remains the same. This practice can lead to unnecessary instability in occurrenceIDs and gbifIDs. If possible, we now encourage publishers to use an occurrenceIDs with more stability, that do not encode information about the occurrence or specimen. For example, a simple large integer or UUID. 
+
+An important part of GBIF data processing is to assign a stable gbifID each new record. This is a somewhat complex process that uses the occurrenceID, catalogNumber, collectionCode, and institutionCode in combination with the GBIF datasetKey to either mint a new identifier or reuse an existing one, if the dataset has been processed before. When publishers do not supply an occurrenceID, GBIF processing will construct an identifier using the so-called triplet code (catalogNumber, collectionCode and institutionCode). 
 
 '''
 
