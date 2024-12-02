@@ -17,7 +17,7 @@ ____
                                                                               
 == Data quality requirements for checklists
 
-Checklist datasets provide a catalogue, rapid summary or baseline inventory a set of named organisms, or taxa. While they may include additional details like local species names or specimen citations, checklists typically categorize information along taxonomic, geographic, and thematic lines, or some combination of the three.
+https://www.gbif.org/dataset/search?type=CHECKLIST[Checklist datasets] provide a catalogue, rapid summary or baseline inventory a set of named organisms, or taxa. While they may include additional details like local species names or specimen citations, checklists typically categorize information along taxonomic, geographic, and thematic lines, or some combination of the three.
 
 .Data quality requirements for *checklists*
 [%autowidth,stripes=hover]                                                                            
@@ -55,7 +55,7 @@ Checklist datasets provide a catalogue, rapid summary or baseline inventory a se
   
 == Data quality requirements for occurrences
 
-Occurrence datasets are the core of data published through GBIF, offering evidence of the occurrence of a species (or other taxon) at a particular place on a specified date.
+https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the core of data published through GBIF, offering evidence of the occurrence of a species (or other taxon) at a particular place on a specified date.
   
 .Data quality requirements for *occurrences*
 [%autowidth,stripes=hover]                                                                            
@@ -144,6 +144,8 @@ Occurrence datasets are the core of data published through GBIF, offering eviden
 |===  
                                                                               
 == Data quality requirements for sampling events
+
+https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Sampling-event datasets] provide greater detail about a species occurring at a given location and date, including the methods, events and relative abundance of species recorded in a sample. By improving comparisons of data collected using the same protocols at different times and places, these datasets can enable researchers to infer the absence of particular species from particular sites.
   
 .Data quality requirements for *sampling events*
 [%autowidth,stripes=hover]                                                                            
