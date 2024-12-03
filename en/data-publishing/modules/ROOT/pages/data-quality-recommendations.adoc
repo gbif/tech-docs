@@ -11,7 +11,10 @@ NOTE: this page is currently under development
   
 By following these data quality requirements and recommendations, data publishers can improve the quality, completeness and value of their datasets. The data Class of the individual Darwin Core Terms in included in are indicated by icons:
 
-NATURE: https://dwc.tdwg.org/terms/#taxon[Taxon^] 
+[NOTE.nature]
+====
+https://dwc.tdwg.org/terms/#taxon[Taxon^] 
+====
 
 WORLD-MAP: https://dwc.tdwg.org/terms/#location[Location^] 
 
