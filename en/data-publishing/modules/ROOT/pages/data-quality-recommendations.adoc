@@ -7,7 +7,15 @@ image::data-quality-requirements.png[align=center,320,192]
   
 Note: this page is currently under development
   
-By following these data quality requirements and recommendations, data publishers can improve the quality, completeness and value of their datasets.
+By following these data quality requirements and recommendations, data publishers can improve the quality, completeness and value of their datasets. The data Class of the individual Darwin Core Terms in included in are indicated by icons:
+
+NATURE: https://dwc.tdwg.org/terms/#taxon[Taxon^] 
+
+WORLD-MAP: https://dwc.tdwg.org/terms/#location[Location^] 
+
+MAP: https://dwc.tdwg.org/terms/#occurrence[Occurrence^]
+
+DELIVERY-SERVICE: https://dwc.tdwg.org/terms/#event[Event^]
 
 #All tables included in a Darwin Core Archive *must* include a unique identifier column.# 
 
