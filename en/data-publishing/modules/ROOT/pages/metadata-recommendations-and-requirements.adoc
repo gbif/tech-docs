@@ -5,14 +5,16 @@ endif::[]
 
 == Background to the GBIF Metadata Profile
 
-____
+[TIP]
+.Things to consider
+====
 Metadata describes and explains the context of a dataset, and can vary in completeness. In general, metadata should allow a prospective end user of data to:
 
 1. Identify/discover its existence,
 2. Learn how to access or acquire the data,
 3. Understand its fitness-for-use, and
 4. Learn how to transfer (obtain a copy of) the data.
-____
+====
 
 The https://rs.gbif.org/schema/eml-gbif-profile/1.3/[GBIF EML Profile] was developed in order to standardize how resources get described at the dataset level in http://www.gbif.org[GBIF.org]. #This profile can be transformed to other common metadata formats.#
 
@@ -114,6 +116,15 @@ The https://eml.ecoinformatics.org/schema/eml-project_xsd#eml-project.xsd[projec
 | https://eml.ecoinformatics.org/schema/eml-project_xsd#ResearchProjectType_ResearchProjectType_designDescription_description[designDescription] 
 | The field designDescription contains general textual descriptions of research design. It can include detailed accounts of goals, motivations, theory, hypotheses, strategy, statistical design, and actual work. Literature citations may also be used to describe the research design.
 |
+
+| projectTitle 
+| The title of the funded project as listed in the contract document, but not containing the projectID and other administrative information.
+| https://www.gbif.org/programme/82243/#projects[Examples]
+
+| projectID
+| A unique identifier for the project from which a dataset is derived
+The record type is a GUID or other identifier that is near globally unique. This field is REQUIRED for a dataset that is funded through programmes operated by GBIF. In this case, the projectID is the ID of the funded project as listed in the contract document.
+|BID-AF2016-0001-REG
 |===
 
 === People and Organizations
