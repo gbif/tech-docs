@@ -144,15 +144,7 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 
 |<<country>>
 |Share if available
-|Share if available     
-
-|<<projectID>>
-|Share if available
-|Required     
-
-|<<projectTitle>>
-|Share if available
-|Required      
+|Share if available          
 |===  
                                                                               
 == Data quality requirements for sampling events
