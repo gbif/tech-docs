@@ -397,14 +397,6 @@ To record the quantity type of a species occurrence. Use together with <<organis
 
 '''
 
-==== projectID [[projectID]]
-
-'''
-
-==== projectTitle [[projectTitle]]
-
-'''
-
 ==== type [[type]]
 ===== http://purl.org/dc/elements/1.1/type[_dc:type_]
 
