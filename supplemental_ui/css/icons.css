@@ -1,0 +1,48 @@
+.doc .admonitionblock.taxon td.icon,
+.doc .admonitionblock.location td.icon,
+.doc .admonitionblock.occurrence td.icon,
+.doc .admonitionblock.event td.icon {
+    position: static;
+    width: 90px;
+    transform: none;
+    -webkit-transform: none;
+    background-color: transparent;
+    border-radius: 0;
+    vertical-align: top;
+    padding-top: 5px;;
+}
+
+.doc .admonitionblock.taxon td.icon .icon-note,
+.doc .admonitionblock.location td.icon .icon-note,
+.doc .admonitionblock.occurrence td.icon .icon-note,
+.doc .admonitionblock.event td.icon .icon-note {
+    width: 75px;
+    height: 75px;
+}
+
+.doc .admonitionblock.taxon td.icon .icon-note {
+    background: radial-gradient(circle, #cdd4a1, #cdd4a1 66%, transparent 66%);
+    content: url(../imgages/icons/nature.png);
+}
+
+.doc .admonitionblock.location td.icon .icon-note {
+    background: radial-gradient(circle, #dadbdf, #dadbdf 66%, transparent 66%);
+    content: url(../images/icons/world-map.png);
+}
+
+.doc .admonitionblock.occurrence td.icon .icon-note {
+    background: radial-gradient(circle, #859643, #859643 66%, transparent 66%);
+    content: url(../images/icons/map.png);
+}
+
+.doc .admonitionblock.event td.icon .icon-note {
+    background: radial-gradient(circle, #598046, #598046 66%, transparent 66%);
+    content: url(../images/icons/deliverty-service.png);
+}
+
+/* LAR style */
+
+.doc .figure-caption {
+    font-size: small;
+    font-style: normal;
+}
