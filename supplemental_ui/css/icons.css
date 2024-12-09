@@ -1,4 +1,4 @@
-.doc .admonitionblock.taxon td.icon,
+.doc .admonitionblock.nature td.icon,
 .doc .admonitionblock.location td.icon,
 .doc .admonitionblock.occurrence td.icon,
 .doc .admonitionblock.event td.icon {
@@ -12,7 +12,7 @@
     padding-top: 5px;;
 }
 
-.doc .admonitionblock.taxon td.icon .icon-note,
+.doc .admonitionblock.nature td.icon .icon-note,
 .doc .admonitionblock.location td.icon .icon-note,
 .doc .admonitionblock.occurrence td.icon .icon-note,
 .doc .admonitionblock.event td.icon .icon-note {
@@ -20,9 +20,9 @@
     height: 75px;
 }
 
-.doc .admonitionblock.taxon td.icon .icon-note {
+.doc .admonitionblock.nature td.icon .icon-note {
     background: radial-gradient(circle, #cdd4a1, #cdd4a1 66%, transparent 66%);
-    content: url(../imgages/icons/nature.png);
+    content: url(../images/icons/nature.png);
 }
 
 .doc .admonitionblock.location td.icon .icon-note {
@@ -37,7 +37,7 @@
 
 .doc .admonitionblock.event td.icon .icon-note {
     background: radial-gradient(circle, #598046, #598046 66%, transparent 66%);
-    content: url(../images/icons/deliverty-service.png);
+    content: url(../images/icons/delivery-service.png);
 }
 
 /* LAR style */

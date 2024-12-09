@@ -11,14 +11,23 @@ The required terms in the tables are the minimal terms to include for GBIF to in
 
 [NOTE.nature]
 ====
-https://dwc.tdwg.org/terms/#taxon[Taxon^] 
+https://dwc.tdwg.org/terms/#taxon[Taxon^]
 ====
 
-WORLD-MAP: https://dwc.tdwg.org/terms/#location[Location^] 
+[NOTE.location]
+====
+https://dwc.tdwg.org/terms/#location[Location^]
+====
 
-MAP: https://dwc.tdwg.org/terms/#occurrence[Occurrence^]
+[NOTE.occurrence]
+====
+https://dwc.tdwg.org/terms/#occurrence[Occurrence^]
+====
 
-DELIVERY-SERVICE: https://dwc.tdwg.org/terms/#event[Event^]
+[NOTE.event]
+====
+https://dwc.tdwg.org/terms/#event[Event^]
+====
 
 IMPORTANT: All tables included in a Darwin Core Archive *must* include a unique identifier column 
 
