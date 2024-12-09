@@ -2,14 +2,12 @@
 ifeval::["{env}" == "prod"]
 :page-unpublish:
 endif::[]
-:icons: image
-:iconsdir: icons
 
 image::data-quality-requirements.png[align=center,320,192]
   
 NOTE: this page is currently under development
   
-By following these data quality requirements and recommendations, data publishers can improve the quality, completeness and value of their datasets. The data Class of the individual Darwin Core Terms in included in are indicated by icons:
+The required terms in the tables are the minimal terms to include for GBIF to index the data. By following the data quality recommendations, data publishers can improve the quality, completeness and value of their datasets. The data Class of the individual Darwin Core Terms are indicated by the following icons:
 
 [NOTE.nature]
 ====
@@ -24,12 +22,12 @@ DELIVERY-SERVICE: https://dwc.tdwg.org/terms/#event[Event^]
 
 IMPORTANT: All tables included in a Darwin Core Archive *must* include a unique identifier column 
 
-NOTE: Data published with support of one of the funded programmes operated by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]) have stricter data quality requirements than data published outside of these programmes. Please also consult the documentation for *ADD LINK*[requirements for the EML file]. 
+NOTE: Data published with the support of one of the funded programmes operated by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]) have stricter data quality requirements than data published outside of these programmes. Please also consult the documentation for *ADD LINK*[requirements for the EML file]. 
                                                                              
                                                                               
 == Data quality requirements for checklists
 
-https://www.gbif.org/dataset/search?type=CHECKLIST[Checklist datasets] provide a catalogue, rapid summary or baseline inventory a set of named organisms, or taxa. While they may include additional details like local species names or specimen citations, checklists typically categorize information along taxonomic, geographic, and thematic lines, or some combination of the three.
+https://www.gbif.org/dataset/search?type=CHECKLIST[Checklist datasets] provide a catalogue, rapid summary or baseline inventory of a set of named organisms, or taxa. While they may include additional details like local species names or specimen citations, checklists typically categorize information along taxonomic, geographic, and thematic lines or some combination of the three.
 
 .Data quality requirements for *checklists*
 [%autowidth,stripes=hover]                                                                            
