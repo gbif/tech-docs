@@ -45,31 +45,31 @@ https://www.gbif.org/dataset/search?type=CHECKLIST[Checklist datasets] provide a
 |===
 |Term |<<Status>> |Status GBIF managed programmes
 
-|{taxon} <<taxonID>>
+|<<taxonID>>
 |Required
 |Required
 
-|{taxon} <<scientificName>>
+|<<scientificName>>
 |Strongly recommended
 |Required
 
-|{taxon}<<taxonRank>>
+|<<taxonRank>>
 |Strongly recommended
 |Required
 
-|{taxon} <<kingdom>>
+|<<kingdom>>
 |Strongly recommended
 |Strongly recommended
 
-|{taxon} <<parentNameUsageID>>
+|<<parentNameUsageID>>
 |Strongly recommended
 |Strongly recommended
 
-|{taxon} <<acceptedNameUsageID>>
+|<<acceptedNameUsageID>>
 |Strongly recommended
 |Strongly recommended
 
-|{taxon} <<vernacularName>>
+|<<vernacularName>>
 |Share if available
 |Share if available
 |===
@@ -83,7 +83,7 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 |===
 |Term |<<Status>> |Status funded GBIF programmes
 
-|{occurrence} <<occurrenceID>>
+|<<occurrenceID>>
 |Required
 |Required
 
@@ -91,67 +91,67 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 |Strongly recommended
 |Required
 
-|{taxon} <<scientificName>>
+|<<scientificName>>
 |Strongly recommended
 |Required
 
-|{event} <<eventDate>>
+|<<eventDate>>
 |Strongly recommended
 |Required
 
-|{location} <<countryCode>>
+|<<countryCode>>
 |Strongly recommended
 |Strongly recommended
 
-|{taxon} <<taxonRank>>
+|<<taxonRank>>
 |Strongly recommended
 |Strongly recommended
 
-|{taxon} <<kingdom>>
+|<<kingdom>>
 |Strongly recommended
 |Strongly recommended
 
-|{location} <<decimalLatitude>>
+|<<decimalLatitude>>
 |Strongly recommended
 |Strongly recommended
 
-|{location} <<decimalLongitude>>
+|<<decimalLongitude>>
 |Strongly recommended
 |Strongly recommended
 
-|{location} <<geodeticDatum>>
+|<<geodeticDatum>>
 |Strongly recommended
 |Strongly recommended
 
-|{location} <<coordinateUncertaintyInMeters>>
+|<<coordinateUncertaintyInMeters>>
 |Strongly recommended
 |Strongly recommended
 
-|{occurrence} <<individualCount>>
+|<<individualCount>>
 |Strongly recommended
 |Strongly recommended
 
-|{occurrence} <<organismQuantity>>
+|<<organismQuantity>>
 |Strongly recommended
 |Strongly recommended
 
-|{occurrence} <<organismQuantityType>>
+|<<organismQuantityType>>
 |Strongly recommended
 |Strongly recommended
 
-|{record} <<informationWithheld>>
+|<<informationWithheld>>
 |Share if available
 |Share if available
 
-|{record} <<dataGeneralizations>>
+|<<dataGeneralizations>>
 |Share if available
 |Share if available
 
-|{event} <<eventTime>>
+|<<eventTime>>
 |Share if available
 |Share if available
 
-|{location} <<country>>
+|<<country>>
 |Share if available
 |Share if available
 |===
@@ -165,67 +165,67 @@ https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Sampling-event datasets]
 |===
 |Term |<<Status>> |Status funded GBIF programmes
 
-|{record} #<<type>>#
+|#<<type>>#
 |Required
 |Required
 
-|{event} <<eventID>>
+|<<eventID>>
 |Strongly recommended
 |Required
 
-|{event} <<eventDate>>
+|<<eventDate>>
 |Strongly recommended
 |Required
 
-|{event} <<samplingProtocol>>
+|<<samplingProtocol>>
 |Strongly recommended
 |Required
 
-|{event} <<sampleSizeValue>>
+|<<sampleSizeValue>>
 |Strongly recommended
 |Required
 
-|{event} <<sampleSizeUnit>>
+|<<sampleSizeUnit>>
 | Strongly recommended
 |Required
 
-|{location} <<countryCode>>
+|<<countryCode>>
 |Strongly recommended
 |Strongly recommended
 
-|{event} <<parentEventID>>
+|<<parentEventID>>
 |Strongly recommended
 |Strongly recommended
 
-|{event} <<samplingEffort>>
+|<<samplingEffort>>
 |Strongly recommended
 |Strongly recommended
 
-|{location} <<locationID>>
+|<<locationID>>
 |Strongly recommended
 |Strongly recommended
 
-|{location} <<decimalLatitude>>
+|<<decimalLatitude>>
 |Strongly recommended
 |Strongly recommended
 
-|{location} <<decimalLongitude>>
+|<<decimalLongitude>>
 |Strongly recommended
 |Strongly recommended
 
-|{location} <<geodeticDatum>>
+|<<geodeticDatum>>
 |Strongly recommended
 |Strongly recommended
 
-|{location} <<coordinateUncertaintyInMeters>>
+|<<coordinateUncertaintyInMeters>>
 |Strongly recommended
 |Strongly recommended
 
-|{location} <<footprintWKT>>
+|<<footprintWKT>>
 |Strongly recommended
 |Strongly recommended
 
-|{occurrence} <<occurrenceStatus>>
+|<<occurrenceStatus>>
 |Strongly recommended
 |Strongly recommended
 |===
