@@ -43,7 +43,7 @@ https://www.gbif.org/dataset/search?type=CHECKLIST[Checklist datasets] provide a
 |===
 |Term |<<Status>> |Status funded GBIF programmes
 
-|<<taxonID>>
+|{taxon} image:ROOT:images/icons/nature.png[24,24] image:ROOT::images/icons/nature.png[24,24] <<taxonID>>
 |Required
 |Required
 
