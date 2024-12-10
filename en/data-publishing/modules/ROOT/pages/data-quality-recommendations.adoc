@@ -87,7 +87,7 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 |Required
 |Required
 
-|{record} <<basisOfRecord>>
+|<<basisOfRecord>>
 |Strongly recommended
 |Required
 
