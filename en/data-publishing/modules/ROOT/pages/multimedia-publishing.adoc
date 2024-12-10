@@ -109,7 +109,7 @@ The mapping of media fields between ABCD standards (used by BioCASe) and Darwin 
 [NOTE] 
 .ABCD 2.06
 ==== 
-In ABCD 2.06 we use the unit MultiMediaObject subelements instead. Here there are:
+ABCD 2.06 use the unit MultiMediaObject subelements instead. There are:
 
 . File and webpage URLs (FileURI, ProductURI).
 . The description (Comment).
