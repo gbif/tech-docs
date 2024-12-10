@@ -235,7 +235,7 @@ https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Sampling-event datasets]
 ==== {taxon} taxonID [[taxonID]]
 ===== https://dwc.tdwg.org/list/#dwc_taxonID[_dwc:taxonID_]
 
-image:ROOT::images/icons/nature.svg[24,24]
+image:ROOT::images/icons/nature.svg[50,50]
 
 {taxon}
 
