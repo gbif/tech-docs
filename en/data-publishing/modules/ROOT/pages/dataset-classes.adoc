@@ -33,7 +33,7 @@ Data quality requirements for each dataset class and the GBIF-operated programme
 
 == Metadata-only [[Metadata-only]]
 
-At its simplest level, institutions can create datasets describing unavailable resources like undigitized natural history collections. The other dataset classes include this basic information, but this ‘metadata-only’ class offers users a valuable tool for discovering and learning about evidence not yet available online or could be access in other places than GBIF. Metadata-only datasets can also help assess the relative importance and value of undigitized collections and set priorities for future digitization. As with all datasets, GBIF ensures that each metadata dataset is associated with a unique Digital Object Identifier (DOI) to streamline data users’ citation of these resources.
+At its simplest level, institutions can create datasets describing unavailable resources like undigitized natural history collections. The other dataset classes include this basic information, but this ‘metadata-only’ class offers users a valuable tool for discovering and learning about evidence not yet available online or could be accessed in other places than GBIF. Metadata-only datasets can also help assess the relative importance and value of undigitized collections and set priorities for future digitization. As with all datasets, GBIF ensures that each metadata dataset is associated with a unique Digital Object Identifier (DOI) to streamline data users’ citation of these resources.
 
 [grid=none]
 |===
