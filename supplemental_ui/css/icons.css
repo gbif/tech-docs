@@ -22,7 +22,7 @@
     height: 75px;
 }
 
-.doc .admonitionblock.nature td.icon .icon-note {
+.doc .admonitionblock.record td.icon .icon-note {
     background: radial-gradient(circle, #cdd4a1, #cdd4a1 66%, transparent 66%);
     content: url(../images/icons/record.svg);
 }
