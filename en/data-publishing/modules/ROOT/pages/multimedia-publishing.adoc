@@ -4,9 +4,7 @@ endif::[]
 
 = Sharing images, sounds and videos on GBIF
 
-____  
-Note that GBIF **does not** host original multimedia files and pictures cannot be uploaded directly to the platform.
-____  
+IMPORTANT: GBIF **does not** host original multimedia files and pictures cannot be uploaded directly to the platform. 
 
 == Supported multimedia
 
@@ -14,7 +12,7 @@ The following media types and formats can be shared on GBIF.
 
 === Media types
 
-Publishers can share any type of media defined by the http://dublincore.org/documents/dcmi-type-vocabulary/#H7[Dublin Core Metadata Initiative]. The recommended terms are:
+Publishers can share any `type` of media defined by the http://dublincore.org/documents/dcmi-type-vocabulary/#H7[Dublin Core Metadata Initiative]. The recommended terms are:
 
 * http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Collection[Collection]
 * http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-StillImage[StillImage]
@@ -23,9 +21,9 @@ Publishers can share any type of media defined by the http://dublincore.org/docu
 * http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-InteractiveResource[InteractiveResource]
 * http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Text[Text]
 
-The system infers the media type from the file format by using https://www.iana.org/assignments/media-types/media-types.xhtml[MIME types]. These types correspond to the recommended media types cited above. If the type identified is `text/html`, the media is interpreted as a https://dwc.tdwg.org/terms/#dcterms:references[reference] link instead of an associated media.
+The system infers the media `type` from the file format by using https://www.iana.org/assignments/media-types/media-types.xhtml[MIME types]. These types correspond to the recommended media types cited above. If the `type` identified is `text/html`, the media is interpreted as a https://dwc.tdwg.org/terms/#dcterms:references[reference] link instead of an associated media.
 
-However, GBIF currently integrates only images (`StillImage`), sounds (`Sound`), video (`MovingImage`) or collections of the three. For all the other media types, users must click on the links given with each record to view the content.
+NOTE: GBIF currently integrates only images (`StillImage`), sounds (`Sound`), video (`MovingImage`) or collections of the three. For all the other media types, users must click on the links given with each record to view the content.
 
 === Formats
 
@@ -35,15 +33,19 @@ Any format that can be interpreted by https://github.com/apache/tika[Apache Tika
 
 GBIF does not host original multimedia files hence publishers cannot upload pictures or audio files directly to GBIF. Media files must be hosted on another system, and publishers should provide a URL or URI for each media file they wish to make available.
 
+[TIP] 
+.Sharing URLs and URIs
+==== 
 When sharing URLs and URIs, publishers should keep the following points in mind:
 
-* The URL provided must be a direct link to the file. For example: https://ipt.gbif.org/media/UAIC1008871_X.jpg.
-* Images embedded on web pages like https://ipt.gbif.org/media/viewer/UAIC1008871_X.html will not render on GBIF but can be provided in addition to the direct link.
-* The file extension does not always have to be specified in the URL (see for example the URLs provided with https://www.gbif.org/occurrence/1019735016[this occurrence] from https://www.gbif.org/dataset/d9474ec2-061c-4858-bfdd-e10ba6aca397[The Hemiptera collection (EH) of the Muséum national d'Histoire naturelle]).
-* GBIF resizes #images# for thumbnails with https://www.thumbor.org/[thumbor], so publishers should provide the best resolution possible.
-* GBIF caches #images# so changes in the media should resolve in a new image URL, otherwise, the image link will render the previous version of the media.
+. The URL provided must be a direct link to the file. For example: https://ipt.gbif.org/media/UAIC1008871_X.jpg.
+. Images embedded on web pages like https://ipt.gbif.org/media/viewer/UAIC1008871_X.html will not render on GBIF but can be provided in addition to the direct link.
+. The file extension does not always have to be specified in the URL (see for example the URLs provided with https://www.gbif.org/occurrence/1019735016[this occurrence] from https://www.gbif.org/dataset/d9474ec2-061c-4858-bfdd-e10ba6aca397[The Hemiptera collection (EH) of the Muséum national d'Histoire naturelle]).
+. GBIF resizes #images# for thumbnails with https://www.thumbor.org/[thumbor], so publishers should provide the best resolution possible.
+. GBIF caches #images# so changes in the media should resolve in a new image URL, otherwise, the image link will render the previous version of the media.
+. #There are no size or resolution restrictions when sharing media URLs with GBIF.#
 
-#There are no size or resolution restrictions when sharing media URLs with GBIF.#
+====
 
 === Simplest method: dwc:associatedMedia
 
@@ -60,7 +62,7 @@ However, this method does not allow any metadata to be associated with the media
 
 === Extensions: Audiovisual Media Description
 
-Using extension files is a better way to share images, sounds or videos.
+Using extension files is a better way to share images, sounds or videos, and extensions can currently be shared with the two xref:dataset-classes.adoc#dataset-classes[dataset classes]: xref:dataset-classes.adoc#checklist[Checklist] and xref:dataset-classes.adoc#occurrence[Occurrence]. 
 
 > “Extension” files support the exchange of additional, described classes of data that relate to the core data type (Occurrence or Taxon). An extension record points to a record in the core data file." - definition from the https://github.com/gbif/ipt/wiki/DwCAHowToGuide[Darwin Core Archive - How-to wiki].
 
@@ -80,6 +82,15 @@ Regardless of the extension chosen, publishers need to generate a file containin
 
 This file should be mapped with the proper terms and integrated into the Darwin Core Archive. For examples, see the https://data-blog.gbif.org/post/gbif-multimedia/[data blog on multimedia sharing].
 
+[IMPORTANT] 
+.Things to be mindful of to ensure images render on GBIF.org
+==== 
+The extension file should include the MIME type in either the `type` or the `format` field:
+
+. For example, in the `format` field one of the options should be applied: `image/jpeg`, `image/png`, or `image/tiff`.
+. Alternatively, the `type` field could include the MIME type e.g., `StillImage`, `MovingImage`, `Sound`.
+====
+
 == How to publish media outside of Darwin Core Archives
 
 ____  
@@ -95,7 +106,16 @@ See, for example, the two systems below:
 
 The mapping of media fields between ABCD standards (used by BioCASe) and Darwin Core terms are covered in https://gbif.blogspot.com/2014/05/multimedia-in-gbif.html[this blog post] from 2014:
 
-> In ABCD 2.06 we use the unit MultiMediaObject subelements instead. Here there are distinct file and webpage URLs (FileURI, ProductURI), the description (Comment),  the license (License/Text, TermsOfUseStatements) and also an indication of the MIME type (Format).
+[NOTE] 
+.ABCD 2.06
+==== 
+In ABCD 2.06 we use the unit MultiMediaObject subelements instead. Here there are:
+
+. file and webpage URLs (FileURI, ProductURI).
+. the description (Comment).
+. the license (License/Text, TermsOfUseStatements).
+. an indication of the MIME type (Format).
+====
 
 Symbiota documents how to submit and upload images on any Symbiota portal http://symbiota.org/docs/image-submission-2/[here]. To make the images accessible from GBIF, publishers must follow http://symbiota.org/docs/publishing-to-gbif-from-a-symbiota-portal/[these instructions].
 
