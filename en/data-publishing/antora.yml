@@ -7,5 +7,5 @@ asciidoc:
   attributes:
     event: image:ROOT:images/icons/delivery-service.png[24,24]
     occurrence: image:ROOT:images/icons/map.png[24,24]
-    taxon: image:ROOT:images/icons/nature.png[24,24]
+    taxon: image:ROOT:images/icons/nature.svg[24,24]
     location: image:ROOT:images/icons/world-map.png[24,24]
