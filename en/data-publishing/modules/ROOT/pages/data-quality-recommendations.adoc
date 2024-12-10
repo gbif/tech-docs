@@ -33,7 +33,6 @@ IMPORTANT: All tables included in a Darwin Core Archive *must* include a unique 
 
 NOTE: Data published with the support of one of the programmes managed by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]) have stricter data quality requirements than data published outside of these programmes. Please also consult the documentation for xref:metadata-recommendations-and-requirements.adoc[requirements for the EML file].
 
-
 == Data quality requirements for checklists
 
 https://www.gbif.org/dataset/search?type=CHECKLIST[Checklist datasets] provide a catalogue, rapid summary or baseline inventory of a set of named organisms, or taxa. While they may include additional details like local species names or specimen citations, checklists typically categorize information along taxonomic, geographic, and thematic lines or some combination of the three.
@@ -43,7 +42,7 @@ https://www.gbif.org/dataset/search?type=CHECKLIST[Checklist datasets] provide a
 |===
 |Term |<<Status>> |Status GBIF managed programmes
 
-|{taxon} image:ROOT:ROOT:icons/nature.svg[Taxon,24,24] <<taxonID>>
+|{taxon} <<taxonID>>
 |Required
 |Required
 
@@ -234,10 +233,6 @@ https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Sampling-event datasets]
 
 === {taxon} taxonID [[taxonID]]
 ==== https://dwc.tdwg.org/list/#dwc_taxonID[_dwc:taxonID_]
-
-image:ROOT:ROOT:icons/nature.svg[Taxon,50,50]
-
-{taxon}
 
 A unique identifier for the taxon, allowing the same taxon to be recognized across dataset versions as well as through data downloads and use. Ideally, the taxonID is a persistent global unique identifier. As a minimum requirement, it has to be unique within the published dataset. It allows to recognize the same set of taxon information over time when the dataset indexing is refreshed; it links additional data like images or occurrence records; and it makes it possible to cite records e.g. in usage reports or in publications. This means that the taxonID needs to reliably stay with the taxon information at source and to consistently refer to the same set of taxon information in published datasets and any underlying source data.
 
