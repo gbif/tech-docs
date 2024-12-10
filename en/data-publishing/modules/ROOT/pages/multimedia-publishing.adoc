@@ -83,7 +83,7 @@ Regardless of the extension chosen, publishers need to generate a file containin
 This file should be mapped with the proper terms and integrated into the Darwin Core Archive. For examples, see the https://data-blog.gbif.org/post/gbif-multimedia/[data blog on multimedia sharing].
 
 [IMPORTANT] 
-.Things to be mindful of to ensure images render on GBIF.org
+.Ensuring images render on GBIF.org
 ==== 
 The extension file should include the MIME type in either the `type` or the `format` field:
 
@@ -111,10 +111,10 @@ The mapping of media fields between ABCD standards (used by BioCASe) and Darwin 
 ==== 
 In ABCD 2.06 we use the unit MultiMediaObject subelements instead. Here there are:
 
-. file and webpage URLs (FileURI, ProductURI).
-. the description (Comment).
-. the license (License/Text, TermsOfUseStatements).
-. an indication of the MIME type (Format).
+. File and webpage URLs (FileURI, ProductURI).
+. The description (Comment).
+. The license (License/Text, TermsOfUseStatements).
+. An indication of the MIME type (Format).
 ====
 
 Symbiota documents how to submit and upload images on any Symbiota portal http://symbiota.org/docs/image-submission-2/[here]. To make the images accessible from GBIF, publishers must follow http://symbiota.org/docs/publishing-to-gbif-from-a-symbiota-portal/[these instructions].
