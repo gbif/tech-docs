@@ -4,7 +4,7 @@ endif::[]
 
 = Sharing images, sounds and videos on GBIF
 
-IMPORTANT: GBIF **does not** host original multimedia files and pictures cannot be uploaded directly to the platform. 
+IMPORTANT: GBIF **does not** host original multimedia files and pictures cannot be uploaded directly to the platform.
 
 == Supported multimedia
 
@@ -12,38 +12,40 @@ The following media types and formats can be shared on GBIF.
 
 === Media types
 
-Publishers can share any `type` of media defined by the http://dublincore.org/documents/dcmi-type-vocabulary/#H7[Dublin Core Metadata Initiative]. The recommended terms are:
+Publishers can share any `type` of media defined by the https://dublincore.org/documents/dcmi-type-vocabulary/#H7[Dublin Core Metadata Initiative]. The recommended terms are:
 
-* http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Collection[Collection]
-* http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-StillImage[StillImage]
-* http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Sound[Sound]
-* http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-MovingImage[MovingImage]
-* http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-InteractiveResource[InteractiveResource]
-* http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Text[Text]
+* https://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Collection[Collection]
+* https://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-StillImage[StillImage]
+* https://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Sound[Sound]
+* https://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-MovingImage[MovingImage]
+* https://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-InteractiveResource[InteractiveResource]
+* https://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Text[Text]
 
-The system infers the media `type` from the file format by using https://www.iana.org/assignments/media-types/media-types.xhtml[MIME types]. These types correspond to the recommended media types cited above. If the `type` identified is `text/html`, the media is interpreted as a https://dwc.tdwg.org/terms/#dcterms:references[reference] link instead of an associated media.
+=== File formats
 
-NOTE: GBIF currently integrates only images (`StillImage`), sounds (`Sound`), video (`MovingImage`) or collections of the three. For all the other media types, users must click on the links given with each record to view the content.
+The file `format` should be provided as an _IANA Media Type_ (formerly _MIME Type_), for example `image/jpeg` or `audio/flac`.  The `format` should correspond to the `type` above.
 
-=== Formats
+The https://www.iana.org/assignments/media-types/media-types.xhtml[IANA Media Type list] (formerly MIME types) lists all recognized values.
 
-Any format that can be interpreted by https://github.com/apache/tika[Apache Tika] is supported. This should include the formats in this https://www.iana.org/assignments/media-types/media-types.xhtml[IANA Media Type list] (now called MIME types).
+If the `format` is `text/html`, the media is interpreted as a https://dwc.tdwg.org/terms/#dcterms:references[reference] link instead of an associated media.
+
+NOTE: GBIF currently integrates only images (`StillImage`), sounds (`Sound`), video (`MovingImage`) or combinations of the three. For all the other media types, users must click on the links given with each record to view the content.
 
 == How to publish media in a Darwin Core Archive
 
-GBIF does not host original multimedia files hence publishers cannot upload pictures or audio files directly to GBIF. Media files must be hosted on another system, and publishers should provide a URL or URI for each media file they wish to make available.
+GBIF does not host original multimedia files hence publishers cannot upload pictures or audio files directly to GBIF. Media files must be hosted on another system, and publishers should provide a URL for each media file they wish to make available.
 
-[TIP] 
-.Sharing URLs and URIs
-==== 
-When sharing URLs and URIs, publishers should keep the following points in mind:
+[TIP]
+.Sharing URLs
+====
+When sharing URLs, publishers should keep the following points in mind:
 
 . The URL provided must be a direct link to the file. For example: https://ipt.gbif.org/media/UAIC1008871_X.jpg.
 . Images embedded on web pages like https://ipt.gbif.org/media/viewer/UAIC1008871_X.html will not render on GBIF but can be provided in addition to the direct link.
 . The file extension does not always have to be specified in the URL (see for example the URLs provided with https://www.gbif.org/occurrence/1019735016[this occurrence] from https://www.gbif.org/dataset/d9474ec2-061c-4858-bfdd-e10ba6aca397[The Hemiptera collection (EH) of the Muséum national d'Histoire naturelle]).
-. GBIF resizes #images# for thumbnails with https://www.thumbor.org/[thumbor], so publishers should provide the best resolution possible.
-. GBIF caches #images# so changes in the media should resolve in a new image URL, otherwise, the image link will render the previous version of the media.
-. #There are no size or resolution restrictions when sharing media URLs with GBIF.#
+. GBIF resizes images for thumbnails and gallery views, but links to the best resolution image on individual occurrence pages.  Publishers should provide the best resolution possible.
+. GBIF caches images so changes in the media should resolve in a new image URL, otherwise, the image link will render the previous version of the media.
+. There are no size or resolution restrictions when sharing media URLs with GBIF.
 
 ====
 
@@ -51,51 +53,40 @@ When sharing URLs and URIs, publishers should keep the following points in mind:
 
 The simplest way to share media is to use the https://dwc.tdwg.org/terms/#dwc:associatedMedia[associatedMedia] field. Since this term belongs to the Darwin Core Occurrence, publishers do not need to create a second file for multimedia. In other words, publishers can have both their occurrences and images, sounds or videos in the same file.
 
-This field can handle one or several URLs separated by a pipe symbol: `|`.
+This field can handle one or several URLs separated by space-pipe-space: `{nbsp}|{nbsp}`.
 
 For example:
 
 * `https://ipt.gbif.org/media/UAIC1008871_X.jpg`
 * `https://ipt.gbif.org/media/UAIC1008871_X.jpg | https://ipt.gbif.org/media/UAIC1052169_Pheidole_obtusospinosa_65mm_3x_compedit_lg.jpg`
 
-However, this method does not allow any metadata to be associated with the media (title, license, author, etc.)  It also requires the URL to have a common file extension like `.jpg`, `.jpeg`, `.png` or `.tiff`.
+However, this method does not allow any metadata to be associated with the media (title, license, author, etc.).  It also requires the URL to have a common file extension like `.jpg`, `.jpeg`, `.png` or `.tiff`.
 
 === Extensions: Audiovisual Media Description
 
-Using extension files is a better way to share images, sounds or videos, and extensions can currently be shared with the two xref:dataset-classes.adoc#dataset-classes[dataset classes]: xref:dataset-classes.adoc#checklist[Checklist] and xref:dataset-classes.adoc#occurrence[Occurrence]. 
+Using extension files is a better way to share images, sounds or videos, and extensions can currently be shared with the two xref:dataset-classes.adoc#dataset-classes[dataset classes]: xref:dataset-classes.adoc#checklist[Checklist] and xref:dataset-classes.adoc#occurrence[Occurrence].
 
-> “Extension” files support the exchange of additional, described classes of data that relate to the core data type (Occurrence or Taxon). An extension record points to a record in the core data file." - definition from the https://github.com/gbif/ipt/wiki/DwCAHowToGuide[Darwin Core Archive - How-to wiki].
+> “Extension” files support the exchange of additional, described classes of data that relate to the core data type (Occurrence or Taxon). An extension record points to a record in the core data file." — definition from the https://ipt.gbif.org/manual/en/ipt/latest/dwca-guide[Darwin Core Archive – How-to Guide].
 
 GBIF currently supports two types of extensions:
 
 * http://rs.gbif.org/extension/gbif/1.0/multimedia.xml[Simple multimedia]
-* https://rs.gbif.org/extension/ac/audiovisual_2024_11_07.xml[Audiovisual Media Description] (#partial support for now#)
+* https://rs.gbif.org/extension/ac/audiovisual_2024_11_07.xml[Audiovisual Media Description]
 
 Both extensions will allow publishers to share detailed information about media such as `creator`, `description`, `license`, etc. However, the Audiovisual Media Description is more exhaustive.
 
-Regardless of the extension chosen, publishers need to generate a file containing:
+Regardless of the extension chosen, publishers need to generate a file containing at least:
 
-* an https://dwc.tdwg.org/terms/#occurrenceID[occurrenceID] field (referring to the occurrence or specimen concerned),
-* unique identifiers (`dcterms:identifier`),
-* links to the media (`dcterms:source` or `accessURI`),
-* etc.
+. unique identifiers linking the multimedia to the core Occurrence or Checklist row
+. the multimedia type (`dc:type`)
+. the file format (`dc:format`)
+. the link to the media file (`dc:identifier` for Simple Multimedia or `ac:accessURI` for Audiovisual Media Description)
 
 This file should be mapped with the proper terms and integrated into the Darwin Core Archive. For examples, see the https://data-blog.gbif.org/post/gbif-multimedia/[data blog on multimedia sharing].
 
-[IMPORTANT] 
-.Ensuring images render on GBIF.org
-==== 
-The extension file should include the MIME type in either the `type` or the `format` field:
-
-. For example, in the `format` field one of the options should be applied: `image/jpeg`, `image/png`, or `image/tiff`.
-. Alternatively, the `type` field could include the MIME type e.g., `StillImage`, `MovingImage`, `Sound`.
-====
-
 == How to publish media outside of Darwin Core Archives
 
-____  
-Note that this part of the documentation is non-exhaustive.
-____  
+NOTE: This part of the documentation is not exhaustive.
 
 Publishers can publish resources on GBIF using alternatives to Darwin Core Archives.
 
@@ -106,10 +97,10 @@ See, for example, the two systems below:
 
 The mapping of media fields between ABCD standards (used by BioCASe) and Darwin Core terms are covered in https://gbif.blogspot.com/2014/05/multimedia-in-gbif.html[this blog post] from 2014:
 
-[NOTE] 
+[NOTE]
 .ABCD 2.06
-==== 
-ABCD 2.06 use the unit MultiMediaObject subelements instead. There are:
+====
+ABCD 2.06 uses the unit MultiMediaObject subelements instead. There are:
 
 . File and webpage URLs (FileURI, ProductURI).
 . The description (Comment).
@@ -123,7 +114,7 @@ Symbiota documents how to submit and upload images on any Symbiota portal http:/
 
 The https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#rights[license] field is free text. However, GBIF **strongly** encourages publishers to set up their licenses in a machine-readable format.
 
-For example: `https://creativecommons.org/licenses/by-nc/4.0/`
+For example: `https://creativecommons.org/licenses/by/4.0/`
 
 All occurrence records on GBIF have one of the three following licenses:
 
@@ -135,9 +126,8 @@ Although multimedia licenses do not have to match the associated occurrence lice
 
 == Where to host images and other media
 
-Most publishers host their multimedia files but some use third-party platforms.
+Most publishers host their multimedia files on institutional systems, but some use third-party or cloud platforms.
 
 We advise against using https://www.inaturalist.org[iNaturalist.org] to host the images for a dataset. Since the iNaturalist portal makes its https://www.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7[Research-grade Observations] available on GBIF, this would generate duplicate occurrences.
 
-If publishers are publishing a dataset through an https://github.com/gbif/ipt/wiki[IPT], they can consider hosting multimedia files on the same server. The images can be stored in a `media` folder and shared with Apache (see https://ipt.gbif.org/media/[this example]). Publishers who are not publishing with their own IPT should contact their IPT administrator.
-
+If publishers are publishing a dataset through an https://www.gbif.org/ipt[IPT], they can consider hosting multimedia files on the same server. The images can be stored in a `media` folder and shared using the web server (see https://ipt.gbif.org/media/[this example]). Publishers who are not publishing with their own IPT should contact their IPT administrator.
