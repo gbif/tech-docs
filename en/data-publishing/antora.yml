@@ -5,7 +5,7 @@ nav:
 - modules/ROOT/nav.adoc
 asciidoc:
   attributes:
-    event: image:ROOT:ROOT:icons/delivery-service.png[Event,24,24]
-    occurrence: image:ROOT:ROOT:icons/map.png[Occurrence,24,24]
+    event: image:ROOT:ROOT:icons/delivery-service.svg[Event,24,24]
+    occurrence: image:ROOT:ROOT:icons/map.svg[Occurrence,24,24]
     taxon: image:ROOT:ROOT:icons/nature.svg[Taxon,24,24]
-    location: image:ROOT:ROOT:icons/world-map.png[Location,24,24]
+    location: image:ROOT:ROOT:icons/world-map.svg[Location,24,24]
