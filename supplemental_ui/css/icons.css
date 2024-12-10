@@ -1,3 +1,4 @@
+.doc .admonitionblock.record td.icon,
 .doc .admonitionblock.nature td.icon,
 .doc .admonitionblock.location td.icon,
 .doc .admonitionblock.occurrence td.icon,
@@ -12,12 +13,18 @@
     padding-top: 5px;;
 }
 
+.doc .admonitionblock.record td.icon .icon-note,
 .doc .admonitionblock.nature td.icon .icon-note,
 .doc .admonitionblock.location td.icon .icon-note,
 .doc .admonitionblock.occurrence td.icon .icon-note,
 .doc .admonitionblock.event td.icon .icon-note {
     width: 75px;
     height: 75px;
+}
+
+.doc .admonitionblock.nature td.icon .icon-note {
+    background: radial-gradient(circle, #cdd4a1, #cdd4a1 66%, transparent 66%);
+    content: url(../images/icons/record.svg);
 }
 
 .doc .admonitionblock.nature td.icon .icon-note {
