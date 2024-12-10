@@ -22,22 +22,22 @@
 
 .doc .admonitionblock.nature td.icon .icon-note {
     background: radial-gradient(circle, #cdd4a1, #cdd4a1 66%, transparent 66%);
-    content: url(../images/icons/nature.png);
+    content: url(../images/icons/nature.svg);
 }
 
 .doc .admonitionblock.location td.icon .icon-note {
     background: radial-gradient(circle, #dadbdf, #dadbdf 66%, transparent 66%);
-    content: url(../images/icons/world-map.png);
+    content: url(../images/icons/world-map.svg);
 }
 
 .doc .admonitionblock.occurrence td.icon .icon-note {
     background: radial-gradient(circle, #859643, #859643 66%, transparent 66%);
-    content: url(../images/icons/map.png);
+    content: url(../images/icons/map.svg);
 }
 
 .doc .admonitionblock.event td.icon .icon-note {
     background: radial-gradient(circle, #598046, #598046 66%, transparent 66%);
-    content: url(../images/icons/delivery-service.png);
+    content: url(../images/icons/delivery-service.svg);
 }
 
 /* LAR style */
