@@ -1,7 +1,0 @@
-occurrence (map.png): <a href="https://www.flaticon.com/free-icons/adventure" title="adventure icons">Adventure icons created by Freepik - Flaticon</a> (map)
-
-sampling event rounded (delivery-service.png): <a href="https://www.flaticon.com/free-icons/time" title="time icons">Time icons created by Freepik - Flaticon</a>
-
-location (world-map.png): <a href="https://www.flaticon.com/free-icons/world-map" title="world-map icons">World-map icons created by Freepik - Flaticon</a>
-
-taxon (nature.png): <a href="https://www.flaticon.com/free-icons/explore" title="explore icons">Explore icons created by Freepik - Flaticon</a>
