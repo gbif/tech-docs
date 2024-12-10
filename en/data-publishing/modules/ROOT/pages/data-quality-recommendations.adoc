@@ -239,7 +239,7 @@ image:ROOT::images/icons/nature.svg[50,50]
 
 {taxon}
 
-image:ROOT::images/icons/nature-small.png[50,50]
+image:ROOT::images/icons/nature-small.png
 
 A unique identifier for the taxon, allowing the same taxon to be recognized across dataset versions as well as through data downloads and use. Ideally, the taxonID is a persistent global unique identifier. As a minimum requirement, it has to be unique within the published dataset. It allows to recognize the same set of taxon information over time when the dataset indexing is refreshed; it links additional data like images or occurrence records; and it makes it possible to cite records e.g. in usage reports or in publications. This means that the taxonID needs to reliably stay with the taxon information at source and to consistently refer to the same set of taxon information in published datasets and any underlying source data.
 
