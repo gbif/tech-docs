@@ -12,7 +12,7 @@ Datasets shared with GBIF can be published in four different formats:
 |Dataset type |Content 
 
 |<<Metadata-only>>
-|datasets describing **unavailable** resources like undigitized natural history collections or data that are not standardized yet
+|datasets describing **unavailable** resources like undigitized natural history collections or data that are not yet standardized 
 
 |<<Checklist>> 
 |a **catalogue** or **list** of named organisms, or taxa
