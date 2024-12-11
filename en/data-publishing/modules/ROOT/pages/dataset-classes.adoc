@@ -47,7 +47,7 @@ Checklists are catalogues or lists of named organisms, or taxa. While they may i
 
 [grid=none]
 |===
-|https://dwc.tdwg.org/terms/#taxon[Darwin Core Taxon] |https://www.gbif.org/dataset/search?type=CHECKLIST[Browse checklists] |https://ipt.gbif.org/manual/en/ipt/latest/checklist-data#templates[Darwin Core Archive template for checklists] |#https://github.com/gbif/tech-docs/edit/main/en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc#checklists#[Data quality recommendations and requirements for checklists]
+|https://dwc.tdwg.org/terms/#taxon[Darwin Core Taxon] |https://www.gbif.org/dataset/search?type=CHECKLIST[Browse checklists] |https://ipt.gbif.org/manual/en/ipt/latest/checklist-data#templates[Darwin Core Archive template for checklists] |xref:data-quality-recommendations.adoc#data-quality-requirements-for-checklists[Data quality requirements and recommendations for checklists]
 
 |===
 
@@ -59,7 +59,7 @@ Occurrence records in these datasets sometimes provide only general locality inf
 
 [grid=none]
 |===
-|https://dwc.tdwg.org/terms/#occurrence[Darwin Core Occurrence] |https://www.gbif.org/dataset/search?type=OCCURRENCE[Browse occurrence datasets] |https://ipt.gbif.org/manual/en/ipt/2.5/occurrence-data#templates[Darwin Core Archive template for occurrence datasets] |#https://github.com/gbif/tech-docs/edit/main/en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc#occurrences#[Data quality recommendations and requirements for occurrences]
+|https://dwc.tdwg.org/terms/#occurrence[Darwin Core Occurrence] |https://www.gbif.org/dataset/search?type=OCCURRENCE[Browse occurrence datasets] |https://ipt.gbif.org/manual/en/ipt/2.5/occurrence-data#templates[Darwin Core Archive template for occurrence datasets] |xref:data-quality-recommendations.adoc#data-quality-requirements-for-occurrences[Data quality recommendations and requirements for occurrences]
 
 |===
 
@@ -71,6 +71,6 @@ By indicating the methods, events and relative abundance of species recorded in 
 
 [grid=none]
 |===
-|https://dwc.tdwg.org/terms/#event[Darwin Core Event] |https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Browse sampling event datasets] |https://ipt.gbif.org/manual/en/ipt/2.5/sampling-event-data#templates[Darwin Core Archive template for sampling event datasets] |#https://github.com/gbif/tech-docs/edit/main/en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc#sampling-events#[Data quality recommendations and requirements for sampling events]
+|https://dwc.tdwg.org/terms/#event[Darwin Core Event] |https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Browse sampling event datasets] |https://ipt.gbif.org/manual/en/ipt/2.5/sampling-event-data#templates[Darwin Core Archive template for sampling event datasets] |xref:data-quality-recommendations.adoc#data-quality-requirements-for-sampling-events[Data quality recommendations and requirements for sampling events]
 
 |===
