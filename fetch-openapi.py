@@ -19,7 +19,10 @@ print("Output to "+output+" for environment "+env)
 print("")
 
 print("--- Finding available webservices ---")
-response = requests.get('http://ws.gbif.org/applications', headers={'Accept': 'application/json'})
+if env == 'uat2':
+    response = requests.get('http://ws.gbif-uat2.org/applications', headers={'Accept': 'application/json'})
+else:
+    response = requests.get('http://ws.gbif.org/applications', headers={'Accept': 'application/json'})
 services = json.loads(response.text)
 
 urls = {}
