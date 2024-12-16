@@ -1,5 +1,5 @@
 site:
-  title: Technical Documentation
+  title: Documentación Técnica
   start_page: ROOT::index.adoc
   keys:
     language: es
