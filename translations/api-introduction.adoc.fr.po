@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2024-12-16 15:51\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: fr\n"
+"X-Crowdin-File: /main/translations/api-introduction.adoc.pot\n"
+"X-Crowdin-File-ID: 40544\n"
+
+#. type: Title =
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:1
+#, no-wrap
+msgid "Introduction to the GBIF API"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:4
+#: en/data-use/modules/ROOT/pages/index.adoc:24
+msgid "The GBIF API provides a programmatic way to query and publish data on GBIF.org. It can be useful or necessary to use the API to"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:6
+#: en/data-use/modules/ROOT/pages/index.adoc:26
+#: en/openapi/modules/ROOT/pages/index.adoc:8
+msgid "make advanced queries, not supported by the website,"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:7
+#: en/data-use/modules/ROOT/pages/index.adoc:27
+#: en/openapi/modules/ROOT/pages/index.adoc:9
+msgid "include the results of GBIF queries in scripts, workflows or analyses, which can then be repeated reliably and automatically,"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:8
+#: en/data-use/modules/ROOT/pages/index.adoc:28
+#: en/openapi/modules/ROOT/pages/index.adoc:10
+msgid "embed GBIF data into other websites."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:10
+msgid "It can be accessed using any programming language, from a command-line terminal interface, or in some cases using a web browser."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:12
+msgid "Beginners can refer to the https://data-blog.gbif.org/post/gbif-api-beginners-guide/[GBIF API Beginner's Guide] on the GBIF data blog."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:14
+msgid "Complete documentation is available in the xref:openapi::index.adoc[API Reference] section."
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:15
+#, no-wrap
+msgid "API clients"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:18
+msgid "Software libraries to assist in using the GBIF API exist in these languages.  They can make working with the API much easier, but do not have complete coverage of all available API methods."
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:19
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:1
+#: en/tools/modules/ROOT/pages/index.adoc:29
+#, no-wrap
+msgid "rgbif"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:22
+#, no-wrap
+msgid "*rgbif* is a library maintained by GBIF for the R statistical programming language.  See xref:rgbif.adoc[].\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:23
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:1
+#: en/tools/modules/ROOT/pages/index.adoc:33
+#, no-wrap
+msgid "pygbif"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:26
+#, no-wrap
+msgid "*pygbif* is a library maintained by GBIF for the Python programming language.  See xref:pygbif.adoc[].\n"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:27
+#, no-wrap
+msgid "Java"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:30
+#, no-wrap
+msgid "*Java* clients for the APIs are maintained by GBIF and linked in the xref:openapi::index.adoc[API reference documentation].  See xref:java.adoc[].\n"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:31
+#, no-wrap
+msgid "Other programming languages"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:33
+msgid "There are also clients for *Ruby* (https://www.rubydoc.info/gems/gbifrb[gbifrb]) and *PHP* (https://gitlab.res-telae.cat/restelae/php-gbif[php-gbif]).  These clients are not maintained by GBIF."
+msgstr ""
+
