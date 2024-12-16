@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2024-12-16 15:05+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/guides/modules/ROOT/pages/data-publishing.adoc:1
+#, no-wrap
+msgid "Data publishing – overview"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/data-publishing.adoc:4
+msgid ""
+"You can publish data in xref:ipt::darwin-core.adoc[Darwin Core Archive "
+"format] [this is a link to the IPT documentation]."
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/data-publishing.adoc:5
+msgid ""
+"When publishing checklists, see xref:ipt::best-practices-checklists."
+"adoc#publishing-synonymy[Publishing Synonymy] in the IPT documentation [this "
+"is a link to a specific section in the IPT documentation]."
+msgstr ""

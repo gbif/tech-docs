@@ -1,0 +1,625 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2024-12-16 15:05+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title ==
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:7
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:9
+#, no-wrap
+msgid "Demonstration cube specification"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:10
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:12
+msgid ""
+"The guide below will produce a data cube for occurrences of animals from "
+"Poland, recorded during or after 2000."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:12
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:14
+msgid "The _dimensions_ of the cube will be"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:14
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:16
+msgid "Species"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:15
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:17
+msgid "We must therefore exclude occurrences not identified to species level"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:17
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:19
+msgid "Year-Month"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:20
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:22
+msgid ""
+"We will randomize the point using the coordinateUncertaintyInMeters, "
+"defaulting to 1000m"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:21
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:23
+msgid "We will exclude occurrences without coordinates"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:23
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:30
+msgid "The _measures_ of the cube will be"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:25
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:32
+msgid "Occurrence count"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:26
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:33
+msgid "Minimum coordinate uncertainty"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:27
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:34
+msgid "Minimum temporal uncertainty"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:74
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:37
+#, no-wrap
+msgid "Create an initial GBIF search filter"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:77
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:40
+msgid ""
+"Perhaps using the GBIF.org website, find an approximate search filter, for "
+"example for a particular taxon, country or region, year range, etc.  This "
+"will need to be expressed in SQL for submission to the API:"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:88
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:55
+#, no-wrap
+msgid "Exclude unwanted data"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:100
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:153
+#, no-wrap
+msgid "Write full query"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:103
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:158
+msgid "Typical data cubes will use an SQL query similar to this one:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:143
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:219
+msgid ""
+"These are the columns in the resulting cube, i.e. the dimensions and "
+"measurements for the cube."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:145
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:106
+msgid "`COALESCE` sets a default value (1000) if the first value is absent."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:146
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:221
+msgid ""
+"The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, "
+"`MAX`, `AVERAGE`, `SUM` etc"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:147
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:222
+msgid "`AS` gives a name to the column, used as the header in the result file"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:4
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:4
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:4
+msgid ""
+"This is an **experimental feature**, and the implementation may change "
+"throughout 2024.  The feature is currently only available for preview by "
+"invited users.  Contact helpdesk@gbif.org to request access."
+msgstr ""
+
+#. type: Title =
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:1
+#, no-wrap
+msgid "Species occurrence cubes"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:6
+#, no-wrap
+msgid "*Species occurrence cubes* are views of GBIF occurrence data, filtered and summarized by spatial, temporal and/or taxonomic dimensions, and providing measures for each dimension.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:8
+msgid ""
+"They can be produced using a *prototype* GBIF API, or using the GBIF "
+"occurrence data deposited on xref:cloud-services::index.adoc[external cloud "
+"services].  This page covers generating a cube using GBIF's API.  See xref:b-"
+"cubed:generate-cube-databricks.adoc[] to generate a cube using a public "
+"cloud service."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:18
+msgid ""
+"We will also exclude occurrences with identifications noted to be uncertain"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:20
+msgid ""
+"We must exclude occurrences with only year accuracy, or with an imprecise "
+"date spanning multiple months"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:21
+msgid ""
+"https://sdi.eea.europa.eu/catalogue/srv/api/records/aac8379a-5c4e-445c-"
+"b2ef-23a6a2701ef0/attachments/eea_reference_grid_v1.pdf[EEA Reference Grid "
+"(PDF)] with a 1km grid size"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:24
+msgid ""
+"We will exclude occurrences with a coordinateUncertaintyInMeters greater "
+"than 1000m"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:25
+msgid "Sex"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:26
+msgid "This is included to demonstrate a basic dimension"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:27
+msgid "Life stage"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:28
+msgid ""
+"This is included to demonstrate a more complex field (a vocabulary field) "
+"used for a dimension"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:36
+msgid ""
+"To account for sampling bias, we will also count occurrences at family level."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:48
+#, no-wrap
+msgid ""
+"WHERE occurrenceStatus = 'PRESENT'\n"
+"  AND countryCode = 'PL' <1>\n"
+"  AND year >= 2000\n"
+"  AND kingdomKey = 1 <2>\n"
+"  AND hasCoordinate = TRUE <3>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:50
+msgid "Poland"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:51
+msgid "_Animalia_"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:52
+msgid "Include only occurrences with coordinates"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:54
+msgid ""
+"This corresponds to https://www.gbif.org/occurrence/search?"
+"country=PL&taxon_key=1&year=2000,*&occurrence_status=present[this query] on "
+"the website."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:58
+msgid ""
+"The GBIF website and basic search APIs do not allow excluding data from "
+"searches, but this is often required for data cubes.  We add additional "
+"expressions to our WHERE clause:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:68
+#, no-wrap
+msgid ""
+"  AND (coordinateUncertaintyInMeters <= 1000 OR coordinateUncertaintyInMeters IS NULL) <1>\n"
+"  AND speciesKey IS NOT NULL <2>\n"
+"  AND NOT ARRAY_CONTAINS(issue, 'ZERO_COORDINATE') <3>\n"
+"  AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_OUT_OF_RANGE')\n"
+"  AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_INVALID')\n"
+"  AND NOT ARRAY_CONTAINS(issue, 'COUNTRY_COORDINATE_MISMATCH')\n"
+"  AND month IS NOT NULL <4>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:70
+msgid ""
+"Exclude occurrences with a large coordinate uncertainty, but keep those "
+"without an uncertainty"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:71
+msgid "Exclude occurrences not identified to species level"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:72
+msgid "Exclude occurrences with these georeferencing issues"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:73
+msgid "Exclude occurrences without a month, or spanning multiple months"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:74
+#, no-wrap
+msgid "Prepare dimension expressions"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:77
+msgid ""
+"The dimensions are the species, year-month, 1km EEA grid, sex and life stage."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:79
+msgid ""
+"For species we could choose either the key (numeric identifier), the name, "
+"or both:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:83
+#, no-wrap
+msgid "speciesKey\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:86
+msgid ""
+"The year and month fields are separate, we want both in the form `2024-03`:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:90
+#, no-wrap
+msgid "PRINTF('%04d-%02d', \"year\", \"month\") AS yearMonth <1>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:92
+msgid ""
+"`YEAR(…)` (or `year(…)`) and `MONTH(…)` are SQL functions, so we must quote "
+"the name of the columns as `\"year\"` and `\"month\"` using double quotes."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:94
+msgid ""
+"Arguments for the grid function are given on the xref::api-sql-download-"
+"functions.adoc[SQL functions] page.  We use an EEA reference grid with 1km "
+"grid cell size:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:103
+#, no-wrap
+msgid ""
+"GBIF_EEARGCode(\n"
+"  1000, <1>\n"
+"  decimalLatitude,\n"
+"  decimalLongitude,\n"
+"  COALESCE(coordinateUncertaintyInMeters, 1000) <2>\n"
+") AS eeaCellCode,\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:105
+msgid "The grid size, 1000m"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:108
+msgid ""
+"Sex and life stage should both show `NOT_SUPPLIED` when the value is not "
+"provided:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:113
+#, no-wrap
+msgid ""
+"COALESCE(sex, 'NOT_SUPPLIED') AS sex,\n"
+"COALESCE(occurrence.lifestage.concept, 'NOT_SUPPLIED') AS lifestage, <1>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:115
+msgid ""
+"The `lifestage` field is hierarchical. We take the main value, not the whole "
+"hierarchy."
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:116
+#, no-wrap
+msgid "Prepare measurement expressions"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:119
+msgid "The _measures_ of the cube are the occurrence count:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:123
+#, no-wrap
+msgid "COUNT(*) AS occurrences\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:126
+msgid "and the minimum coordinate uncertainty and temporal uncertainty:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:131
+#, no-wrap
+msgid ""
+"MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters,\n"
+"MIN(GBIF_TemporalUncertainty(eventDate)) AS minTemporalUncertainty\n"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:133
+#, no-wrap
+msgid "Add sampling bias expression"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:136
+msgid ""
+"Measuring sampling bias requires including an occurrence count for a higher "
+"taxon, in this case the family.  This can be done using an SQL _window "
+"function_.  This is a more advanced SQL technique, see https://www."
+"postgresql.org/docs/current/tutorial-window.html[the PostgreSQL "
+"documentation] which has a good introduction to the concept."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:140
+#, no-wrap
+msgid "IF(ISNULL(familyKey), NULL, SUM(COUNT(*)) OVER (PARTITION BY familyKey)) AS familyCount\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:147
+#, no-wrap
+msgid ""
+"-- The same, shown on several lines:\n"
+"IF(ISNULL(familyKey), <1>\n"
+"   NULL, <2>\n"
+"     SUM(COUNT(*)) <3>\n"
+"     OVER (PARTITION BY familyKey) <4>\n"
+") AS familyCount\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:149
+msgid ""
+"Test for a null family; we still want to include species without a family in "
+"GBIF's taxonomic backbone"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:150
+msgid "Value to return for a null family"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:151
+msgid ""
+"Measurement for the partition, the sum of the counts of the number of "
+"occurrences by species within this family"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:152
+msgid "Partition by the family"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:156
+msgid ""
+"The WHERE clause is the filter, and the dimensions and measurements are "
+"SELECT expressions which must also appear in the GROUP BY clause."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:217
+#, no-wrap
+msgid ""
+"SELECT <1>\n"
+"  -- Dimensions: <2>\n"
+"  PRINTF('%04d-%02d', \"year\", \"month\") AS yearMonth,\n"
+"  GBIF_EEARGCode(\n"
+"    1000,\n"
+"    decimalLatitude,\n"
+"    decimalLongitude,\n"
+"    COALESCE(coordinateUncertaintyInMeters, 1000)\n"
+"  ) AS eeaCellCode,\n"
+"  familyKey,\n"
+"  family,\n"
+"  speciesKey,\n"
+"  species,\n"
+"  COALESCE(sex, 'NOT_SUPPLIED') AS sex,\n"
+"  COALESCE(occurrence.lifestage.concept, 'NOT_SUPPLIED') AS lifestage,\n"
+"  -- Measurements <3>\n"
+"  COUNT(*) AS occurrences, <4>\n"
+"  MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters,\n"
+"  MIN(GBIF_TemporalUncertainty(eventDate)) AS minTemporalUncertainty,\n"
+"  -- Higher taxon measurement\n"
+"  IF(ISNULL(familyKey), NULL, SUM(COUNT(*)) OVER (PARTITION BY familyKey)) AS familyCount\n"
+"FROM\n"
+"  occurrence\n"
+"WHERE occurrenceStatus = 'PRESENT'\n"
+"  AND countryCode = 'PL'\n"
+"  AND \"year\" >= 2000\n"
+"  AND kingdomKey = 1\n"
+"  AND hasCoordinate = TRUE\n"
+"  AND (coordinateUncertaintyInMeters <= 1000 OR coordinateUncertaintyInMeters IS NULL)\n"
+"  AND speciesKey IS NOT NULL\n"
+"  AND NOT ARRAY_CONTAINS(issue, 'ZERO_COORDINATE')\n"
+"  AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_OUT_OF_RANGE')\n"
+"  AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_INVALID')\n"
+"  AND NOT ARRAY_CONTAINS(issue, 'COUNTRY_COORDINATE_MISMATCH')\n"
+"  AND \"month\" IS NOT NULL\n"
+"GROUP BY\n"
+"  yearMonth,\n"
+"  eeaCellCode,\n"
+"  familyKey,\n"
+"  family,\n"
+"  speciesKey,\n"
+"  species,\n"
+"  sex,\n"
+"  lifestage\n"
+"ORDER BY <5>\n"
+"  yearMonth DESC,\n"
+"  eeaCellCode ASC,\n"
+"  speciesKey ASC;\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:220
+msgid ""
+"The dimensions must also appear in the `GROUP BY` section. They can include "
+"functions."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:223
+msgid "The `ORDER BY` section is optional."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:225
+msgid ""
+"See xref::api-sql-download-functions.adoc[] for descriptions and arguments "
+"for the functions, including the `GBIF_EEARGCode` (EEA reference grid) "
+"function."
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:226
+#, no-wrap
+msgid "Submit the query to GBIF"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:229
+msgid "See xref::api-sql-downloads.adoc[] for instructions."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:231
+msgid ""
+"Note the queries above are shown in SQL format. The double quote characters, "
+"newlines and comments must be escaped/removed when converting the query to "
+"the JSON request for the API.  The submitted request is https://raw."
+"githubusercontent.com/gbif/occurrence/refs/heads/master/occurrence-download/"
+"example-jobs/tech-docs-poland-cube.json[available here]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:233
+msgid ""
+"A cube made using this query is available https://www.gbif.org/occurrence/"
+"download/0099186-240321170329656[here]."
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:244
+#, no-wrap
+msgid ""
+"yearmonth\teeacellcode\tfamilykey\tfamily\tspecieskey\tspecies\tsex\tlifestage\toccurrences\tmincoordinateuncertaintyinmeters\tmintemporaluncertainty\tfamilycount\n"
+"2024-03\t1kmE4630N3262\t6537\tLimacidae\t2295438\tLimax maximus\tNOT_SUPPLIED\tNOT_SUPPLIED\t1\t122\t60\t548\n"
+"2024-03\t1kmE4630N3262\t5298\tCervidae\t5220126\tCapreolus capreolus\tNOT_SUPPLIED\tNOT_SUPPLIED\t1\t122\t60\t4877\n"
+"2024-03\t1kmE4630N3263\t9608\tEmberizidae\t2491557\tEmberiza schoeniclus\tNOT_SUPPLIED\tNOT_SUPPLIED\t1\t31\t60\t57742\n"
+"2024-03\t1kmE4631N3260\t9342\tRallidae\t5228199\tGallinula chloropus\tNOT_SUPPLIED\tNOT_SUPPLIED\t1\t31\t60\t26391\n"
+"2024-03\t1kmE4631N3263\t7782\tCoccinellidae\t1043171\tCalvia quatuordecimguttata\tNOT_SUPPLIED\tNOT_SUPPLIED\t1\t1000\t60\t4996\n"
+"2024-03\t1kmE4632N3257\t2986\tAnatidae\t2498036\tAnser anser\tNOT_SUPPLIED\tNOT_SUPPLIED\t1\t122\t60\t186923\n"
+"2024-03\t1kmE4632N3258\t2986\tAnatidae\t2498252\tAlopochen aegyptiaca\tNOT_SUPPLIED\tNOT_SUPPLIED\t1\t61\t60\t186923\n"
+msgstr ""
