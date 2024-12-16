@@ -1,0 +1,228 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2024-12-16 15:52\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: /main/translations/clustering-occurrences.adoc.pot\n"
+"X-Crowdin-File-ID: 40554\n"
+
+#. type: Title =
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:1
+#, no-wrap
+msgid "Occurrence clustering"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:4
+msgid "There might be duplicated records in the GBIF index. Some records may have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:6
+msgid "There are many valid reasons why these duplicates appear on GBIF. Sometimes https://discourse.gbif.org/t/duplicate-observations-across-datasets/3069[an observation was recorded in two different systems], sometimes several records correspond to herbaria duplicates (you can check https://www.gbif.org/news/4n8ZCfuK3zxseKAHRMcfA8/award-winner-uses-data-mining-and-machine-learning-to-identify-collectors-and-duplicated-herbarium-specimens[the work of Nicky Nicolson on the topic]), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform…"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:8
+msgid "This is why we released an experimental data-clustering feature aiming to identify potentially related records on GBIF. The goal was not only to detect potential duplicates but to also find interesting relationships, such as between typification records or records originating from Natural History collections, DNA-derived sequences and citations of materials examined when publishing taxonomic treatments in journal articles."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:10
+msgid "Records that have been included in a cluster can be found with the “is in cluster” filter in https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true[the occurrence search]. Each occurrence page belonging to a cluster will have a “CLUSTER” tab displaying the potentially related records (see a screenshot of https://www.gbif.org/occurrence/2871636339/cluster[this example] below)."
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:11
+#, no-wrap
+msgid "example_cluster.png"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:14
+msgid "You can read https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections[this news item] for more information and some exciting examples."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:15
+#, no-wrap
+msgid "Clustering records"
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:17
+#, no-wrap
+msgid "Step 1: Select candidates"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:20
+msgid "Comparing nearly 2 billions records with each other is very resource intensive and quite impractical, so the first step of the data-clustering process is to select and group candidate records to compare."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:22
+msgid "The system first creates a series of \"hashes\" for each record based on specified fields. All records sharing a hash are candidates to compare against each other."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:24
+msgid "For example, one of the \"hashes\" used is based on the species key, rounded coordinates, year, month and day. This means that the records that share the same values for those fields will be grouped together in the candidate table for further inspection."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:26
+msgid "The fields used to identify and group the candidates are a subset of what is used later on for comparing them (see the table below). See https://github.com/gbif/pipelines/blob/master/gbif/ingestion/clustering-gbif/src/main/scala/org/gbif/pipelines/clustering/Cluster.scala[the source code] to check the details."
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:27
+#, no-wrap
+msgid "Step 2: Compare and assess"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:30
+msgid "In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:32
+msgid "The table below summarizes how those assertions are made but for more details, check the https://github.com/gbif/pipelines/blob/master/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java[source code]."
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:58
+#, no-wrap
+msgid "| Assertion | Fields checked | Condition checked\n\n"
+"| Same specimen | `taxonKey`, `typeStatus` | same taxonKey between records and typeStatus is \"Holotype\" for both records\n"
+"| Typification relation | `scientificName`, `typeStatus` | same between records\n"
+"| Same accepted species | `speciesKey` | same between records\n"
+"| Same date | `eventDate` or `day`, `month`, `year` | same between records\n"
+"| Approximate date | `day`, `month`, `year` | dates one day apart\n"
+"| Different date | `eventDate` | differs between records\n"
+"| Non conflicting date | `eventDate`, `day`, `month`, `year` | no date on either record\n"
+"| Same recorder name | `recordedBy` | same between records\n"
+"| Same coordinates | `decimalLatitude`, `decimalLongitude` | same between records\n"
+"| Non conflicting Coordinates | `decimalLatitude`, `decimalLongitude` | no coordinate on one or both sides\n"
+"| Within 200 m | `decimalLatitude`, `decimalLongitude` | distance ≤ 0.200km\n"
+"| Within 2 km | `decimalLatitude`, `decimalLongitude` | distance ≤ 2.00km\n"
+"| Same country | `countryCode` | same between records\n"
+"| Non conflicting country | `countryCode` | country only on one record\n"
+"| Different country | `countryCode` | differs between records\n"
+"| Identifiers overlap | `occurrenceID`, `fieldNumber`, `recordNumber`, `otherCatalogueNumber`, grouped(`institutionCode`, `collectionCode`, `catalogueNumber`), grouped(`institutionCode`, `catalogueNumber`) | checks any overlap of identifiers between records\n"
+"| Other catalogue number overlap | `otherCatalogueNumber`, grouped(`institutionCode`, `collectionCode`, `catalogueNumber`) with any separator | checks if the other catalogue number correspond to the institution code, collection code and catalogue number from another record\n"
+"| Is from sequence repository | `datasetKey` | checks if one of the datasetKey corresponds to one of the sequence repository datasets: INSDC sequences, INSDC host organisms, INSDC environmental samples, iBOL (see keys `d8cd16ba-bb74-4420-821e-083f2bac17c2`, `393b8c26-e4e0-4dd0-a218-93fc074ebf4e`, `583d91fe-bbc0-4b4a-afe1-801f88263016` and `040c5662-da76-4782-a48e-cdea1892d14c`)\n"
+"| Are specimens | `basisOfRecord` | checks if the basis of record for both records are one of the following: `PRESERVED_SPECIMEN`, `LIVING_SPECIMEN`, `FOSSIL_SPECIMEN`, `MATERIAL_CITATION`\n\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:61
+msgid "The table below summarizes the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together."
+msgstr ""
+
+#. type: Block title
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:62
+#, no-wrap
+msgid "Combination of assertion conditions to create cluster"
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:90
+#, no-wrap
+msgid "|Assertion                      | | | | | | | | | | | | | |\n\n"
+"|Same specimen                  |x| | | | | | | | | | | | |\n"
+"|Typification relation          | |x| | | | | | | | | | | |\n\n"
+"|Same accepted species          | | | |x|x|x|x|x|x|x|x|x|x|\n\n"
+"|Same date                      | | | |x|x| | |x| |x| | | |\n"
+"|Non-conflicting date           | | | | | |x|x| |x| | | |x|\n"
+"|Approximate date               | | | | | | | | | | |x|x| |\n\n"
+"|Same coordinates               | | | |x| |x| | | | |x| | |\n"
+"|Non-conflicting coordinates    | | | | | | | | | |x| | |x|\n"
+"|Within 200m                    | | | | |x| |x| | | | | | |\n"
+"|Within 2km                     | | | | | | | |x|x| | |x| |\n\n"
+"|Identifiers overlap            | | | | | |x|x|x|x|x| | |x|\n"
+"|Other catalogue number overlap | | |x| | | | | | | | | | |\n\n"
+"|Same recorder name             | | | | | | | | | | |x|x| |\n\n"
+"|Is from sequence repository    | | | | | | | | | | | | |x|\n\n"
+"|Are specimen                   | | |x| | | | | | | | | | |\n\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:93
+msgid "Any group of occurrence associated with the assertion `Different date` or `Different country` will not be clustered together."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:94
+#, no-wrap
+msgid "Why are some occurrences not clustered?"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:97
+msgid "It is possible that some occurrences check one of the combinations of assertions but aren't shown as clustered yet. This could be the case for several reasons:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:99
+msgid "The occurrences are newly published. Right now, the clustering process is quite resource intensive and doesn't run automatically. We need to trigger it manually. This means that it can take a few weeks before newly published occurrences get clustered."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:100
+msgid "The \"duplicates\" come from the same dataset. The clustering algorithm only compares occurrences across datasets, not within datasets."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:101
+msgid "There can be a delay between the moment the occurrences are clustered and the moment they become searchable with the \"is in cluster\" filter (this is due to some technical reasons a bit too long to explain in this post, but relate to updating the search indexes separately from the clustering table)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:103
+msgid "There could be other unforeseen reasons, and if in doubt, please contact us at helpdesk@gbif.org."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:104
+#, no-wrap
+msgid "Improve linkage"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:107
+msgid "If for one reason or another, you need to publish on GBIF occurrences for observations or specimens that you know are already on GBIF, how best to do it?"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:109
+msgid "Make sure that you reuse the same identifiers as much as possible, including the formating. Same catalogue numbers, occurrenceID, etc."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:110
+msgid "Use the link:https://dwc.tdwg.org/terms/#dwc:associatedOccurrences[associatedOccurrences,role=term] term and https://rs.tdwg.org/dwc/terms/ResourceRelationship[resource relationship extension]. These are not used during the clustering today, but are expected to be in the future, and are the correct way to communicate relationships within Darwin Core."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:111
+#, no-wrap
+msgid "How to contribute"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:113
+msgid "If you have suggestions to improve the clustering feature or questions on how it works, you are very welcome to use the feedback feature on this page."
+msgstr ""
+
