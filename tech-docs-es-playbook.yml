@@ -8,12 +8,45 @@ content:
     - url: .
       start_path: ./es/home
       branches: main
+    - url: .
+      start_path: ./es/data-publishing
+      branches: main
+    - url: .
+      start_path: ./es/data-processing
+      branches: main
+    - url: .
+      start_path: ./es/data-use
+      branches: main
+    - url: .
+      start_path: ./es/cloud-services
+      branches: main
+    - url: .
+      start_path: ./es/openapi
+      branches: main
+    - url: .
+      start_path: ./es/openapi-v1
+      branches: main
+    - url: .
+      start_path: ./es/openapi-v2
+      branches: main
+    - url: .
+      start_path: ./es/tools
+      branches: main
+    - url: .
+      start_path: ./es/system-components
+      branches: main
+    #- url: .
+    #  start_path: ./es/guides
+    #  branches: main
     #- url: https://github.com/gbif/ipt.git
-    #  branches: [ipt-2.4.2-docs, generated-translations-master]
+    #  branches: [ipt-2.4-docs, master]
+    #  edit_url: 'https://github.com/gbif/ipt/edit/master/{path}'
     #  start_path: docs/es
-    #  edit_url: '/es/ipt/2.5/translations'
+    #- url: https://github.com/gbif/doc-publishing-dna-derived-data.git
+    #  start_path: en
+    #  branches: antora
 output:
-  clean: true
+  clean: false
   dir: ./output/es
 runtime:
   fetch: true
