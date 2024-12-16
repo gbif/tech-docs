@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:1
+#, no-wrap
+msgid "Maps API (v1)"
+msgstr ""
+
+#. type: Block title
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:4
+#, no-wrap
+msgid "Deprecated API"
+msgstr ""
+
+#. type: delimited block =
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:7
+#, no-wrap
+msgid "*Maps API Version 1 has been deprecated.*\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:9
+msgid ""
+"Please use xref:v2@openapi::maps.adoc[Maps API Version 2] for all new work, "
+"and convert any websites using Version 1 to the new API."
+msgstr ""
+
+#. type: delimited block =
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:11
+msgid ""
+"Most queries using Version 1 continue to work, but some queries return "
+"errors, and the detailed styling options have been removed."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:14
+msgid ""
+"The mapping API is a https://www.opengeospatial.org/standards/wmts[web map "
+"tile service] making it trivial to visualize GBIF content on interactive "
+"maps and overlay content from other sources."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:15
+#, no-wrap
+msgid "Feature overview"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:18
+msgid "The following features are supported:"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:20
+msgid ""
+"Map layers available for a *country*, *dataset*, *taxon* (species, "
+"subspecies or higher taxon), *publisher*"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:21
+msgid ""
+"[.line-through]#User-defined styling by selecting a predefined colour "
+"palette, or by providing styling rules#"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:22
+msgid ""
+"Density of content is clustered to a user-defined cluster size (regardless "
+"of zoom level)"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:23
+msgid ""
+"The ability to customize content shown by the https://rs.tdwg.org/dwc/terms/"
+"basisOfRecord[basis of record] (specimens, observations, fossils etc.)"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:24
+msgid ""
+"For certain basis of record types, the time period may be customized by "
+"decade; e.g. map the observations of a species since 1970"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:27
+msgid ""
+"This service is intended for use with commonly used clients such as the "
+"https://developers.google.com/maps/[Google Maps API], https://leafletjs.com/"
+"[Leaflet JS library] or the https://modestmaps.com[Modest Maps JS library].  "
+"These libraries allow the GBIF layers to be visualized with other content, "
+"such as those coming from https://www.opengeospatial.org/standards/wms[Web "
+"Map Service (WMS)] providers. _It should be noted that the mapping API is "
+"not a WMS service, nor does it support WFS capabilities._"
+msgstr ""
+
+#. type: Title ==
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:28
+#, no-wrap
+msgid "The tile URL format"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:31
+msgid "The format of the URL is as follows:"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:33
+msgid "`pass:[https://api.gbif.org/v1/map/density/tile?z={z}&x={x}&y={y}]`"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:35
+msgid "With the following parameters:"
+msgstr ""
+
+#. type: Table
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:57
+#, no-wrap
+msgid ""
+"|Parameter |Required |Description\n"
+"\n"
+"|type\n"
+"|*required*\n"
+"|A value of `TAXON`, `DATASET`, `COUNTRY` or `PUBLISHER`\n"
+"\n"
+"|key\n"
+"|*required*\n"
+"|The appropriate key for the chosen type (a taxon key, dataset/publisher UUID or two-letter ISO country code)\n"
+"\n"
+"|resolution\n"
+"|optional (default 1)\n"
+"|The number of pixels to which density is aggregated. Valid values are `1`, `2`, `4`, `8`, and `16`.\n"
+"\n"
+"|layer\n"
+"|optional (multivalued)\n"
+"|Declares the layers to be combined by the server for this tile, see <<Customizing layer content>>.\n"
+"\n"
+"|[.line-through]#palette#\n"
+msgstr ""
+
+#. type: Block title
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:57
+#, no-wrap
+msgid "4+|mostly not supported"
+msgstr ""
+
+#. type: Block title
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:58
+#, no-wrap
+msgid "4+|[.line-through]#Selects a predefined colour palette, user-defined colouring rules or a colour gradient.# +"
+msgstr ""
+
+#. type: Table
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:66
+msgid ""
+"Now, only the values `palette=yellows_reds`, `palette=greens`, "
+"`saturation=true` and `colors=,,#CC0000FF` are supported. These are the "
+"values used in the <<Embedded map,embedded map>> or noticed in query logs.  |"
+"[.line-through]#colors# |[.line-through]#saturation# |[.line-through]#hue#"
+msgstr ""
+
+#. type: Title ==
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:68
+#, no-wrap
+msgid "Customizing layer content"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:71
+msgid ""
+"`layer` parameters may be used to instruct the server to combine content "
+"into a single density layer. All layers declared will be combined by the "
+"server on rendering."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:73
+msgid ""
+"Thus, for a given taxon, country, dataset or provider, it is possible to "
+"retrieve:"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:75
+msgid "A map of specimens only"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:76
+msgid "A map of specimens and observations"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:77
+msgid "A map of specimens collected after 1970"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:78
+msgid "A map of everything observed or collected after 2000"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:79
+msgid "A map of everything where the year is known"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:80
+msgid "A map of everything omitting those data known to be living specimens"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:81
+msgid "...etc"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:83
+msgid "The specification for the layers is provided below."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:85
+msgid ""
+"This is a *multivalue field* so it is expected that several layers are "
+"requested in any single URL"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:86
+msgid ""
+"Should *no layers be specified, a sensible default is provided*. This is to "
+"preserve backwards compatibility since layering was an additional feature, "
+"and considered acceptable since a map with no layers makes little sense. At "
+"present the default returns all layers, but could be subject to future "
+"change (e.g. should a layer of records with known issues be added, it might "
+"not be included in the default)"
+msgstr ""
+
+#. type: Table
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:113
+#, no-wrap
+msgid ""
+"|Observations\n"
+"|Observation layers can take no year (`&layer=OBS_NO_YEAR`), before the 1900s (`&layer=OBS_PRE_1900`) or any decade after 1900. The full list is given: +\n"
+"`OBS_NO_YEAR`, `OBS_PRE_1900`, `OBS_1900_1910`, `OBS_1910_1920`, `OBS_1920_1930`,\n"
+"`OBS_1930_1940`, `OBS_1940_1950`, `OBS_1950_1960`, `OBS_1960_1970`, `OBS_1970_1980`,\n"
+"`OBS_1980_1990`, `OBS_1990_2000`, `OBS_2000_2010`, `OBS_2010_2020`, `OBS_2020_2030`\n"
+"\n"
+"|Specimens\n"
+"|Specimen layers can take no year (`&layer=SP_NO_YEAR`), before the 1900s (`&layer=SP_PRE_1900`) or any decade after 1900. The full list is given: +\n"
+"`SP_NO_YEAR`, `SP_PRE_1900`, `SP_1900_1910`, `SP_1910_1920`, `SP_1920_1930`,\n"
+"`SP_1930_1940`, `SP_1940_1950`, `SP_1950_1960`, `SP_1960_1970`, `SP_1970_1980`,\n"
+"`SP_1980_1990`, `SP_1990_2000`, `SP_2000_2010`, `SP_2010_2020`, `SP_2020_2030`\n"
+"\n"
+"|Living\n"
+"|If provided, the records with a declared basis of record of living will be included: `LIVING`.\n"
+"\n"
+"|Fossil\n"
+"|If provided, the records with a declared basis of record of fossil will be included: `FOSSIL`.\n"
+"\n"
+"|Other\n"
+"|Records where the basis of record is unknown, or something other than those above can take no year (`&layer=OTH_NO_YEAR`), before the 1900s (`&layer=OTH_PRE_1900`) or any decade after 1900. The full list is given: +\n"
+"`OTH_NO_YEAR`, `OTH_PRE_1900`, `OTH_1900_1910`, `OTH_1910_1920`, `OTH_1920_1930`,\n"
+"`OTH_1930_1940`, `OTH_1940_1950`, `OTH_1950_1960`, `OTH_1960_1970`, `OTH_1970_1980`,\n"
+"`OTH_1980_1990`, `OTH_1990_2000`, `OTH_2000_2010`, `OTH_2010_2020`, `OTH_2020_2030`\n"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:116
+msgid ""
+"With the introduction of xref:v2@openapi::maps.adoc[Maps API Version 2], "
+"layer specifications combining some decades and \"no year\" data will return "
+"an error."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:117
+#, no-wrap
+msgid "Embedded map"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:120
+msgid ""
+"Two HTML pages suitable for embedding as IFRAMEs are provided.  In addition "
+"to the parameters above, `style` may be set to `classic`, `dark`, `ocean`, "
+"`satellite`, `light` or `grey-blue` to pre-select from the styles available "
+"in the menu."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:122
+msgid ""
+"https://api.gbif.org/v1/map/?"
+"type=TAXON&key=1695297&resolution=4&style=ocean[Occurrence density example]"
+msgstr ""
+
+#. type: delimited block +
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:125
+#, no-wrap
+msgid "<iframe src=\"https://api.gbif.org/v1/map/?type=TAXON&key=1695297&resolution=4&style=ocean\" width=\"1024px\" height=\"450px\" allowfullscreen=\"allowfullscreen\"></iframe>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:128
+msgid ""
+"For the occurrence-at-location map, the arguments `point` and `zoom` should "
+"be provided."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:130
+msgid ""
+"https://api.gbif.org/v1/map/point.html?&style=grey-"
+"blue&point=31.89598,-104.82813&lat=31.89598&lng=-104.82813&zoom=8[Occurrence-"
+"at-location example]"
+msgstr ""
+
+#. type: delimited block +
+#: en/openapi-v1/modules/ROOT/pages/maps.adoc:133
+#, no-wrap
+msgid "<iframe src=\"https://api.gbif.org/v1/map/point.html?&style=grey-blue&point=31.89598,-104.82813&lat=31.89598&lng=-104.82813&zoom=8\" width=\"1024px\" height=\"450px\" allowfullscreen=\"allowfullscreen\"></iframe>\n"
+msgstr ""
+
+#. type: Title =
+#: en/openapi-v2/modules/ROOT/pages/maps.adoc:1
+#, no-wrap
+msgid "Maps API"
+msgstr ""
