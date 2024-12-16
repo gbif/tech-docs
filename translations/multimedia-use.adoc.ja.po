@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2024-12-16 15:55\n"
+"Last-Translator: \n"
+"Language-Team: Japanese\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /main/translations/multimedia-use.adoc.pot\n"
+"X-Crowdin-File-ID: 40586\n"
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:6
+msgid "Note: this is work in progress."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:10
+msgid "____ Note that GBIF **does not** host original multimedia files and pictures, and copyright may be more restrictive for the media files than for the associated records. Any use beyond the copyright has to be approved by the original data holder.  ____"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:11
+#, no-wrap
+msgid "Media displayed on the GBIF portal"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:14
+msgid "The GBIF.org portal allows to look for occurrences associated with media. For example, [pictures of otters](https://www.gbif.org/occurrence/search?media_type=StillImage&taxon_key=2433753), or the [call of a sea eagle](https://www.gbif.org/occurrence/search?media_type=Sound&taxon_key=2480444)."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:16
+msgid "Anyone can filter [GBIF occurrences](https://www.gbif.org/occurrence/search) by Media Type. Once users find what they are looking for, they can see and/or hear it directly on the GBIF portal."
+msgstr ""
+
+#. type: Title ====
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:17
+#, no-wrap
+msgid "Images"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:20
+msgid "GBIF's searching interface has a [gallery](https://www.gbif.org/occurrence/gallery), which displays the first image available for each occurrence selected."
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:21
+#, no-wrap
+msgid "example_gallery.png"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:24
+msgid "Users can also view images for a particular occurrence, by simply clicking on it. See for example, this [occurrence with two images](https://www.gbif.org/occurrence/1822411383) from [the Norwegian Species Observation Service](https://www.gbif.org/dataset/b124e1e0-4755-430f-9eab-894f25a9b59c)."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:26
+msgid "All the images belonging to a single dataset are visible on [its page](https://www.gbif.org/dataset/b124e1e0-4755-430f-9eab-894f25a9b59c). The same goes for all the images belonging to datasets published under the same organization: see [this example](https://www.gbif.org/publisher/d3978a37-635a-4ae3-bb85-7b4d41bc0b88)."
+msgstr ""
+
+#. type: Title ====
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:27
+#, no-wrap
+msgid "Audio and Video"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:30
+msgid "Sounds and videos can be directly played from a given occurrence page through a media player."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:32
+msgid "For example, by clicking on [this occurrence](https://www.gbif.org/occurrence/1934990970) from [Xeno-canto - Bird sounds from around the world](https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24), users can listen to a kookaburra call."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:33
+msgid "Here are some videos showing the 3D reconstruction of a specimen of sand flea by clicking on [this occurrence](https://www.gbif.org/occurrence/863580710) from [the Museum of Comparative Zoology, Harvard University](https://www.gbif.org/dataset/4bfac3ea-8763-4f4b-a71a-76a6f5f243d3)"
+msgstr ""
+

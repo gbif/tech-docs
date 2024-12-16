@@ -1,0 +1,804 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2024-12-16 15:57\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese, Brazilian\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: pt-BR\n"
+"X-Crowdin-File: /main/translations/rule-based-annotations.adoc.pot\n"
+"X-Crowdin-File-ID: 40604\n"
+
+#.  == MAXENT
+#.  include?
+#. type: Title =
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:1
+#, no-wrap
+msgid "Rule Based Annotations"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:7
+msgid "This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently available for preview on the GBIF test environment, https://www.gbif-uat.org/[GBIF-UAT.org]."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:9
+msgid "This project is part of the indicative tasks for 2023 GBIF https://docs.gbif.org/2023-work-programme/en/index.en.html#indicative-tasks-for-2023-14[work programme]."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:11
+#, no-wrap
+msgid "**Explore** approaches to annotation capabilities in GBIF.org that enable data corrections, enrichments and user-provided rules that combine taxonomic, geographic and temporal combinations to detect suspicious records.\n"
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:12
+#, no-wrap
+msgid "Summary"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:15
+msgid "Rule based annotations is an experimental tool being developed within GBIF that will allow users to mark certain occurrence data searches with a controlled vocabulary of helpful terms. Currently, the project is focused on annotating geographic locations, but this likely expand in the future. Although many features have been developed, this project should be considered a work in progress and experimental. The main goal of the project is to facilitate occurrence data cleaning and user feedback."
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:16
+#, no-wrap
+msgid "Road Map"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:19
+msgid "Initiated tasks with ✓."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:20
+#, no-wrap
+msgid "User Interface ✓"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:23
+msgid "A demo UI has been developed to facilitate the process of creating rule-based annotations on a map. This user-friendly interface allows users to visually interact with a map and define rules or criteria for data annotations."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:25
+msgid "The current state of the demo UI for rule-based annotations is considered a work in progress, and it is expected to evolve based on valuable feedback gathered during the pilot user testing phase."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:26
+#, no-wrap
+msgid "API backend ✓"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:29
+msgid "The main underlying technology that will be power the annotations will be a database store and a restful API interface."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:31
+msgid "https://github.com/gbif/occurrence-annotation[Backend GitHub]"
+msgstr ""
+
+#.  This is not public. We can add to https://techdocs.gbif.org/en/openapi/v1/occurrence (marked as experimental)
+#.  if required. — Matt.
+#.  http://prodws-vh.gbif.org:8124/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config[API Docs]
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:36
+#, no-wrap
+msgid "R package `gbifan` ✓"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:39
+msgid "Initially the main way to interact with the annotations store, will be through the API or R."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:41
+msgid "The R package can be found https://github.com/gbif/occurrence-annotation/tree/main/r-package/gbifan[here]."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:42
+#, no-wrap
+msgid "Seeding rulesets  ✓"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:45
+msgid "Seeding `rulesets` into our annotation store provides several benefits, especially when it comes to improving user experience. Seeding data can help new users get acquainted with the annotation system more quickly. By providing sample data or pre-existing annotations, users can learn how the system works and what is expected of them in terms of annotation tasks. This can reduce the learning curve and increase user engagement.  New and pilot Users can be more productive when they have access to seeded data. They can start their annotation tasks immediately instead of filling in well-known information."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:46
+#, no-wrap
+msgid "Example ruleset seeds."
+msgstr ""
+
+#. type: Table
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:51
+#, no-wrap
+msgid "|  https://www.gbif.org/dataset/f382f0ce-323a-4091-bb9f-add557f3a9a2[World Checklist of Vascular Plants]\n"
+"|  https://rs.gbif.org/extension/gbif/1.0/distribution_2022-02-02.xml[GBIF Species Distribution Extension]\n"
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:53
+#, no-wrap
+msgid "Introduction to internal and external pilot users ✓"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:56
+msgid "Before releasing the rule based annotations tool to the public, it will undergo internal and external piloting phase. In this phase, pilot users will be given a small annotations task within a group they are familiar. The pilot users will then be interviewed about their overall experience, particularly if there were any \"rules\" or annotations they wanted but make but could not."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:57
+#, no-wrap
+msgid "Data paper"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:60
+msgid "After the internal and external review we plan to write a data paper that will present the annotations tool to wider audience. The internal and external pilot users will be encouraged to be co-authors on the paper. The \"data\" part of the data paper will be an export of rules that were created during the pilot phase."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:61
+#, no-wrap
+msgid "Development of data cleaning workflows"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:64
+msgid "One of the final tasks will be the development of data cleaning workflows using the collected annotations."
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:65
+#, no-wrap
+msgid "User Guide"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:68
+msgid "If you are reading this you have been approached as potential pilot annotator, and you have probably been asked to complete a small but useful annotation task that is useful for you. This guide is meant to as an aid to get you started."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:69
+#, no-wrap
+msgid "Using the UI "
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:72
+msgid "https://labs.gbif.org/annotations/iframe.html?args=&id=tools-annotations--standalone-example&view=RULES&viewMode=story[UI link]"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:74
+msgid "If you are a pilot user, you should already have your project ruleset permissions set up for you."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:75
+#, no-wrap
+msgid "How to make rules"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:78
+msgid "To make a rule"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:80
+msgid "Log in with your GBIF username and password."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:82
+msgid "Select the project and ruleset you want to make a rule in. Alternatively, you can leave these blank if you want to make a one-off rule."
+msgstr ""
+
+#. type: Target for macro image
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:83
+#, no-wrap
+msgid "annotations/select_project.png"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:86
+msgid "draw a polygon or select region you want to make the rule about."
+msgstr ""
+
+#. type: Target for macro image
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:87
+#, no-wrap
+msgid "annotations/make_rule.png"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:90
+msgid "Next apply your label."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:91
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:353
+#, no-wrap
+msgid "Controlled vocabulary for locations"
+msgstr ""
+
+#. type: Table
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:101
+#, no-wrap
+msgid "|  term | definition\n"
+"| Native| Refers to the natural geographic range where a species or organism historically evolved and occurs without human intervention.\n"
+"| Introduced | Refers to the geographic area where non-native organisms have been intentionally or accidentally introduced and established\n"
+"| Managed    | Encompasses the geographic area where specific species are actively controlled, conserved, or manipulated by human intervention.\n"
+"| Former     |  Denotes the historical geographic area where a species once naturally occurred but no longer does due to various factors.\n"
+"| Vagrant    | Describes sporadic occurrences of a species far outside its usual habitat or distribution, often due to rare or accidental dispersal events.\n"
+"| Suspicious | Occurrences occurring in the designated area might be in error in some way.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:104
+msgid "If vocabulary this doesn't work for you, please pick the closest fitting, and request additional vocabulary in your feedback."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:106
+msgid "Create your rule."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:107
+#, no-wrap
+msgid "Good rules"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:110
+msgid "While there is not absolute definition of a good rule and a bad one."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:112
+msgid "Good annotations usually have a few properties:"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:114
+msgid "Good annotations usually don't use extremely complex polygons. If you find yourself needing to trace the coastline of Italy, you might be doing too much work. A good annotation should take into account a little bit of buffer to take into account occurrence record uncertainty. Many GBIF mediated occurrences do not have the resolution to justify making highly complex polygons. Also it's difficult for us to store very large polygons."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:115
+msgid "Good annotations take into account future occurrence records. Remember that your annotations should be able to fit future occurrence fairly well."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:116
+msgid "Good annotations also try to think about higher taxonomy and simplification."
+msgstr ""
+
+#.  === Desired feedback 
+#.  The current UI isn't meant to be a finished product. There are many missing features that we are well aware of. We appreciate feedback about the UI, and it is almost impossible to avoid, but we are much more interested in the qestions below. 
+#.  Desired feedback during the pilot phase:
+#.  * Were there any rules that you wanted to make but could not?
+#.  * Do you think you will be able to use the rules you made to create an improved and useful dataset?
+#.  * Is there any controlled vocabulary that you would like to add?
+#.  * Was it clear what you were doing and why?
+#.  * Did you find the seeded rules useful? 
+#.  Less interesting feedback but still appreciated:
+#.  * UI improvements
+#.  * Software bugs
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:136
+#, no-wrap
+msgid "Introduction"
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:138
+#, no-wrap
+msgid "Data cleaning"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:141
+msgid "https://www.gbif.org/[The Global Biodiversity Information Facility] (GBIF) is a vital data infrastructure for researchers, conservationists, and policymakers across the globe. It aggregates and mediates access to extensive datasets of biodiversity occurrence records, thereby fostering scientific research, conservation efforts, and informed decision-making. Nevertheless, the quality of these records is pivotal for their \"fitness for use\", and data cleaning becomes an essential process to ensure their reliability and utility."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:143
+#, no-wrap
+msgid " As the volume and complexity of occurrence data continue to grow, the need for automated data cleaning tools has become more important. R packages like https://docs.ropensci.org/CoordinateCleaner/[CoordinateCleaner] (2018) have played a key role in addressing this need, providing efficient and user-friendly solutions for common data quality issues.\n"
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:144
+#, no-wrap
+msgid "Lions in Europe and North America? It is common for GBIF maps to be confusing for users. Most GBIF users are not interested in records from zoos, fossils, or locations that might just be wrong, and GBIF mediated data is often not consistently rich enough to filter unwanted records."
+msgstr ""
+
+#. type: Target for macro image
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:145
+#, no-wrap
+msgid "annotations/lions.png"
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:147
+#, no-wrap
+msgid "Fixing at source"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:150
+msgid "A competing viewpoint with regard to data cleaning is to \"fix at source\". Fixing GBIF occurrence data at the source, such as reaching out to data publishers to address issues and errors in their datasets, is an ideal approach in theory. However, in practice, this approach often encounters challenges, primarily because publishers may not respond to emails or communication attempts. It's essential to bear in mind that rule-based annotations can contribute to rectifying data problems at their origin as well. Additionally, it is often the case that records do not need to be fixed, but merely are not acceptable for a certain application, such as species distribution mapping."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:151
+#, no-wrap
+msgid "A rule is a combination of geographic, taxonomic, and geographic information that facilitates data cleaning or analysis."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:152
+#, no-wrap
+msgid "Motivation"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:155
+msgid "Automated solutions, like CoordinateCleaner, while valuable tools for data cleaning, may be considered incomplete in certain contexts due to their limited flexibility and potential to miss edge cases. A rule-based annotation system, on the other hand, allows users to make data quality decisions that fit their use case in a more granular way."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:156
+#, no-wrap
+msgid "Any system that attempts to solve every problem will solve none."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:157
+#, no-wrap
+msgid "Complexity vs usability"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:160
+msgid "Annotation systems, like any software or tool, have the potential to become unusable when they become overly complicated."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:162
+msgid "One goal of a our rule-based annotation system is to make it accessible to a broad user base, including researchers, scientists, and casual users. If the system becomes overly complex, it can discourage potential users who may not have a deep technical background or a lot of time, but still have valuable feedback."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:164
+msgid "A rule-based annotation system, especially one used for annotating complex datasets like GBIF occurrence records, must strike a delicate balance between complexity and usability."
+msgstr ""
+
+#.  === Rules with more than one taxon
+#.  It might be efficient in some circumstances to express rules with more than one taxon:
+#.  rule -> `taxon_1` + `taxon_2` `...` in `geo-polygon` are `controlled vocabulary`
+#.  One useful example would be marking all https://www.marinespecies.org/[marine species] on land as suspicious.
+#.  rule -> *Marine species on WORMS list* in *Land Polygon* are *Suspicious*
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:165
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:345
+#, no-wrap
+msgid "Controlled vocabulary"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:168
+msgid "One of the key ways to increase usability and complexity is to introduce a controlled vocabulary."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:169
+#, no-wrap
+msgid "\"Penguins released in Norway\". While the most accurate description of this event is the sentence above, a more useful rule might be \"Penguins in Norway are suspicious\"."
+msgstr ""
+
+#. type: Target for macro image
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:170
+#, no-wrap
+msgid "annotations/penguins.png"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:173
+msgid "Using a small controlled vocabulary over in an annotation system offers several advantages to downstream users. Finding the right level of granularity and flexibility within the controlled vocabulary is key to reaping the benefits while accommodating the specific needs of the annotation user."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:174
+#, no-wrap
+msgid "Example annotation that marks any occurrences of lions in Greenland as suspicious. "
+msgstr ""
+
+#. type: Target for macro image
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:175
+#, no-wrap
+msgid "annotations/lions-greenland.png"
+msgstr ""
+
+#.  === Focus on location
+#.  We've made a deliberate choice to concentrate on *location* rule-based annotations for biodiversity occurrences. This decision stems from our goal to streamline and focus our efforts while addressing the most https://github.com/gbif/portal-feedback/issues?q=is%3Aissue+location+[a prevalent type of feedback we receive at GBIF].
+#.  It's important to note, however, that the concept of rule-based annotations is inherently extensible. While our initial focus centres on location data, the same framework and principles can be applied to other areas of data quality improvement within the GBIF context. This adaptability allows us to remain responsive to evolving user needs and feedback, ensuring that our efforts can be broadened to encompass other data quality challenges in the future. Ultimately, our aim is to create a flexible and scalable solution that can continue to benefit the biodiversity community as a whole.
+#.  === Comparison with similar projects
+#.  Other efforts exist to catalogue the ranges of the living world:
+#.  * https://www.iucnredlist.org/resources/spatial-data-download[IUCN range maps]
+#.  * https://mol.org/[Map of life]
+#.  * https://www.inaturalist.org/pages/atlases[iNaturalist atlases]
+#.  While these efforts are useful and well-developed, none of them are expressly focused on data quality. Namely, none of these systems allow users to easily state with a simple controlled vocabulary and rules where occurrences for a species are likely and unlikely.
+#.  .Our system allows users to annotate at an granular scale. For example, this annotation marks all occurrences that happen to be near this greenhouse as "managed".
+#.  image::annotations/greenhouse-managed.png[]
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:196
+#, no-wrap
+msgid "Technical Details"
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:198
+#, no-wrap
+msgid "Rules"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:201
+msgid "A basic rule in our system looks like this."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:203
+msgid "`rule` -> `taxon` in `geo-polygon` are `controlled vocab`"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:205
+msgid "In our system a `geo-polygon` is a https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry[Well-Known Text] (WKT) object. A `geo-polygon` could also be the name of a place that eventually maps to a WKT polygon (like a country code or GADM code)."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:206
+#, no-wrap
+msgid "simple example rules"
+msgstr ""
+
+#. type: Table
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:213
+#, no-wrap
+msgid "|`rule` -> *Lions* in *Greenland* are *suspicious*\n"
+"|`rule` -> *Penguins* in *Norway* are *suspicious*\n"
+"|`rule` -> *Penguins* in *WKT* are *native*\n"
+"|`rule` -> *Lions* in *Ocean* are *suspicious*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:216
+msgid "A `taxon` in our system is going to be a GBIF `taxonKey` so rules are more likely to look like this in practice."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:217
+#, no-wrap
+msgid "taxonKey rules"
+msgstr ""
+
+#. type: Table
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:224
+#, no-wrap
+msgid "|`rule` -> *5219404* in *Greenland* are *suspicious*\n"
+"|`rule` -> *5284* in *Norway* are *suspicious*\n"
+"|`rule` -> *5284* in *WKT* are *native*\n"
+"|`rule` -> *5219404* in *Ocean* are *suspicious*\n"
+msgstr ""
+
+#.  ==== Rule extensions
+#.  We have found in initial testing that only being able to annotate land areas (a geo-polygon) is restrictive, so it is anticipated that certain extensions to this basic formula might be supported.
+#.  For example, often occurrence records can be suspicious but still be in a somewhat plausible location. A natural way to handle such cases would be to allow for rules with GBIF `datasetKey`.
+#.  `rule` ->  `taxon` in `geo-polygon` and `datasetKey` are `controlled vocab`
+#.  For example,
+#.  `rule` -> *Lions* in *South Africa* and *datasetKey* are *suspicious*
+#.  Another natural extension might be GBIF `basisOfRecord`.
+#.  For example, https://data-blog.gbif.org/post/country-centroids/[country centroid] locations are often only suspicious for museum specimens, so a user could define a rule that captures this knowledge.
+#.  `rule` -> *Lions* in *Centroid of South Africa* and *Preserved Specimen* are *suspicious*
+#.  "Centroid of South Africa" would, of course, be defined by some WKT object like a circle or a polygon.
+#.  Finally, there might be other fields that might make good qualifiers/extensions, like `year`.
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:248
+#, no-wrap
+msgid "Rulesets"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:251
+msgid "A `ruleset` is a collection of `rules`."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:253
+msgid "For example, a `ruleset` could be \"Annotations of the Genus Leo\", and it could look something like the table below."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:254
+#, no-wrap
+msgid "Example ruleset"
+msgstr ""
+
+#. type: Table
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:263
+#, no-wrap
+msgid "|`rule` -> *Lions* in *Greenland* are *Suspicious*\n"
+"|`rule` -> *Lions* in *Ocean* are *Suspicious*\n"
+"|`rule` -> *Lions* in *South Africa* are *Native*\n"
+"|`rule` -> *Lions* in *WKT polygon of National Park* are *Native*\n"
+"|`rule` -> *Lions* in *WKT polygon of Zoo* are *Managed*\n"
+"|`rule` -> *Lions* in *Centroid of SA* and *Preserved Specimens* are *Suspicious*\n"
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:265
+#, no-wrap
+msgid "Projects"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:268
+msgid "A `project` is a collection of `rulesets`."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:270
+msgid "Projects are designed to allow for collaboration between users and logical grouping of `rulesets`. For example, a `ruleset` could focus on Lions, but be part of a bigger `project` about cleaning up Mammal occurrence records."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:271
+#, no-wrap
+msgid "Example Project Mammals"
+msgstr ""
+
+#. type: Table
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:279
+#, no-wrap
+msgid "|`ruleset` | Annotations of Lions based on Field Guide\n"
+"|`ruleset` | Annotations of Mammals that are not in the Ocean\n"
+"|`ruleset` | Suspicious Zoo Locations of North America\n"
+"|`ruleset` | Adapted iNaturalist atlases of Mammals\n"
+"|`ruleset` | Suspicious Centroid locations for Museum Specimens\n"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:282
+msgid "Note how a `project` can encode knowledge from other sources into a `ruleset`, such as https://www.inaturalist.org/pages/atlases[iNaturalist atlases]."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:283
+#, no-wrap
+msgid "Collaboration"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:286
+msgid "We hope that users will collaborate on a `project` that interests them and create `rulesets` that are widely beneficial to others within their research community."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:288
+msgid "Within a `project`, only users with access, granted by the project creator, will be able to create rules and rulesets. However, rules, rulesets, and projects will all be open and publicly available."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:289
+#, no-wrap
+msgid "Voting"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:292
+msgid "For downstream users, deciding which `rule` and `rulesets` to use might become challenging without some quality control. Currently, we imagine a simple upvote-downvote system on `rule`, `ruleset`, and perhaps `project`. With voting users could see what annotations are supported by the broader community, and create cleaning scripts that are only use annotations supported by the community."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:294
+msgid "Additionally, voting could provide protection against **vandalism**."
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:295
+#, no-wrap
+msgid "Higher taxonomy"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:298
+msgid "Annotating higher taxonomy is harder than annotating at the species level because you have to be confident, the annotation at the higher level fits all child taxa."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:299
+#, no-wrap
+msgid "A map of amphibian occurrences on GBIF. It is well known there are no amphibians in Antarctica. However, we see from the map that one occurrence point still appears there in error."
+msgstr ""
+
+#. type: Target for macro image
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:300
+#, no-wrap
+msgid "annotations/amphibians.png"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:303
+msgid "Given the distribution of Amphibians, a good rule for the high taxon Amphibians would be :"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:305
+msgid "`rule` -> *Amphibians* in *Antarctica* are *Suspicious*"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:307
+msgid "One challenge is that is is hard to downcast annotations like \"Native\" to lower levels, since species of a big group tend not to be \"Native\" to exactly the same areas."
+msgstr ""
+
+#.  === Sharing rules
+#.  It is also anticipated that a desirable feature would allow users to "borrow" `rule` or geo-polygon from another `ruleset` and assign a new taxonKey or add a rule extension. This will reduce the storage strains on GBIF and prevent duplicate work.
+#.  For example, a common `rule` might be to mark something in the ocean as suspicious. A user should be able apply this rule to a new taxonKey without creating a new ocean polygon every time.
+#.  === Exceptions to rules
+#.  Creating cast-down annotations can be hard due to several reasons related to the nature of the task and **exceptions to the rule**. An exclusion rule could be efficient for higher level downcasting of rules.
+#.  For example, a rule could exclude a certain group
+#.  `rule` -> `taxon` in `geo-polygon` are `controlled vocabulary` except `taxon x`
+#.  `rule` -> *Amphibians* in *Antarctica* are *Suspicious* except **Antartic frogs**
+#.  .https://edition.cnn.com/2020/04/23/world/antarctica-first-frog-species-scn/index.html[Frog article]
+#.  image::annotations/frogs.png[]
+#.  A work around to *rule exceptions* could of course be rules that simply *conflict*.
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:329
+#, no-wrap
+msgid "Conflicting rules"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:332
+msgid "Inevitably, there are going to be rules created in our system that conflict. For example, a user might mark and area as \"Native\", while another user will mark the same area as \"Suspicious\"."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:334
+msgid "In our rule-based system, unlike perhaps other platforms, we are not striving to create a single ground truth. We aim only to have a collection of useful opinions, and we leave it to the end user to decide what to do with the information."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:348
+msgid "We might consider using the preexisting vocabulary, although we are attempting to annotate land area (ranges) more than we are attempting annotate occurrence records."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:350
+msgid "https://registry.gbif.org/vocabulary/DegreeOfEstablishment/concepts"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:352
+msgid "Below is the working controlled vocabulary for location-based annotations."
+msgstr ""
+
+#. type: Table
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:363
+#, no-wrap
+msgid "|  term | definition\n"
+"| Native| Refers to the natural geographic range where a species or organism historically evolved and occurs without human intervention.\n"
+"| Introduced | Refers to the geographic area where non-native organisms have been intentionally or accidentally introduced and established\n"
+"| Managed    | Encompasses the geographic area where specific species are actively controlled, conserved, or manipulated by human intervention.\n"
+"| former     |  Denotes the historical geographic area where a species once naturally occurred but no longer does due to various factors.\n"
+"| Vagrant    | Describes sporadic occurrences of a species far outside its usual habitat or distribution, often due to rare or accidental dispersal events.\n"
+"| Suspicious | Occurrences occuring in the designated area might be in error in some way.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:366
+msgid "This vocabulary is meant to be a compromise between modeling species ranges and establishment means accurately, while not being overly complex."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:367
+#, no-wrap
+msgid "Example mappings"
+msgstr ""
+
+#. type: Table
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:393
+#, no-wrap
+msgid "|concept    | example\n"
+"|native\t    | extant\n"
+"|native\t    | endemic\n"
+"|native\t    | indigenous\n"
+"|native\t    | breeding\n"
+"|native\t    | non-breeding\n"
+"|introduced\t| assisted colonization\n"
+"|introduced\t| invasive\n"
+"|introduced\t| non native range\n"
+"|managed\t| location is captive range\n"
+"|managed\t| location is botanical garden\n"
+"|managed\t| location is zoo\n"
+"|managed\t| cultivated in glasshouse\n"
+"|suspicious\t| location is in the ocean\n"
+"|suspicious\t| zero-zero coordinate\n"
+"|suspicious\t| centroid\n"
+"|suspicious\t| area too far north for taxon\n"
+"|suspicious\t| area too high elevation for taxon\n"
+"|suspicious\t| area is natural history museum\n"
+"|former\t    | fossil range\n"
+"|former\t    | extinct\n"
+"|former\t    | historic\n"
+"|vagrant    | migrant\n"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:396
+msgid "The current vocabulary might change in the future. Namely, there has been some discussion introducing hierarchy such that perhaps certain terms map to `present` or `absent` for example."
+msgstr ""
+
+#. type: Block title
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:397
+#, no-wrap
+msgid "A burning question at this point might be why not annotate occurrences directly?"
+msgstr ""
+
+#. type: Title ===
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:398
+#, no-wrap
+msgid "Why not annotate occurrences directly?"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:401
+msgid "Annotating land areas (and extensions) provide at least two advantages over annotating occurrences:"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:403
+msgid "Avoids the use of https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids[unstable gbifIds]."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:404
+msgid "Allows for future occurrences to benefit from the annotation."
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:405
+#, no-wrap
+msgid "References"
+msgstr ""
+

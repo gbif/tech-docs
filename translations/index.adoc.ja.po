@@ -1,0 +1,1114 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2024-12-16 15:54\n"
+"Last-Translator: \n"
+"Language-Team: Japanese\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /main/translations/index.adoc.pot\n"
+"X-Crowdin-File-ID: 40574\n"
+
+#. type: Title ==
+#: en/cloud-services/modules/ROOT/pages/index.adoc:1
+#: en/data-use/modules/ROOT/pages/index.adoc:35
+#, no-wrap
+msgid "Cloud computing services"
+msgstr ""
+
+#. type: Target for macro image
+#: en/cloud-services/modules/ROOT/pages/index.adoc:3
+#, no-wrap
+msgid "bg-clouds.png"
+msgstr ""
+
+#. type: Plain text
+#: en/cloud-services/modules/ROOT/pages/index.adoc:6
+msgid "Every month GBIF takes a full occurrence snapshot and uploads it to three cloud computing data repositories:"
+msgstr ""
+
+#. type: Plain text
+#: en/cloud-services/modules/ROOT/pages/index.adoc:8
+msgid "the https://planetarycomputer.microsoft.com/dataset/gbif[Microsoft Planetary Computer] for Microsoft Azure"
+msgstr ""
+
+#. type: Plain text
+#: en/cloud-services/modules/ROOT/pages/index.adoc:9
+msgid "as an https://registry.opendata.aws/gbif/[Amazon AWS Open Dataset]"
+msgstr ""
+
+#. type: Plain text
+#: en/cloud-services/modules/ROOT/pages/index.adoc:10
+msgid "and to a public https://console.cloud.google.com/storage/browser/public-datasets-gbif[Google GCS bucket] and https://console.cloud.google.com/marketplace/product/bigquery-public-data/gbif-occurrences[BigQuery table]."
+msgstr ""
+
+#. type: Plain text
+#: en/cloud-services/modules/ROOT/pages/index.adoc:12
+msgid "Information on the latest available snapshot is shown on https://www.gbif.org/occurrence-snapshots[Occurrence Snapshots], including a DOI and advice on https://www.gbif.org/citation-guidelines#derivedDatasets[Derived Dataset citations] for the records used."
+msgstr ""
+
+#. type: Plain text
+#: en/cloud-services/modules/ROOT/pages/index.adoc:14
+msgid "The Azure, AWS and GCS pages linked above include some advice and tutorials.  Users unfamiliar with cloud services should also see these posts from the GBIF Data Blog:"
+msgstr ""
+
+#. type: Plain text
+#: en/cloud-services/modules/ROOT/pages/index.adoc:16
+msgid "https://data-blog.gbif.org/post/aws-and-gbif/[GBIF and Apache-Spark on AWS tutorial]"
+msgstr ""
+
+#. type: Plain text
+#: en/cloud-services/modules/ROOT/pages/index.adoc:17
+msgid "https://data-blog.gbif.org/post/microsoft-azure-and-gbif/[GBIF and Apache-Spark on Microsoft Azure tutorial]"
+msgstr ""
+
+#. type: Plain text
+#: en/cloud-services/modules/ROOT/pages/index.adoc:18
+msgid "https://data-blog.gbif.org/post/apache-arrow-and-parquet/[Apache Arrow tutorial]"
+msgstr ""
+
+#. type: Plain text
+#: en/cloud-services/modules/ROOT/pages/index.adoc:19
+msgid "The easiest service to use for rapid access to data is the https://console.cloud.google.com/marketplace/product/bigquery-public-data/gbif-occurrences[Google BigQuery table], which provides an SQL-like interface to the data.  We have provided examples on the linked page."
+msgstr ""
+
+#. type: Title =
+#: en/data-processing/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "GBIF Data Processing"
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-processing/modules/ROOT/pages/index.adoc:3
+#, no-wrap
+msgid "data-processing.png"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/index.adoc:6
+msgid "Every single occurrence record in GBIF goes through a series of processing steps until it becomes available on GBIF.org.  The overall process is described on https://www.gbif.org/article/5i3CQEZ6DuWiycgMaaakCo/gbif-infrastructure-data-processing[GBIF.org]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/index.adoc:8
+msgid "More specific topics are listed in the section menu."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/index.adoc:10
+msgid "In addition, also see:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/index.adoc:12
+msgid "https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids[improving occurrence ID stability]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/index.adoc:13
+msgid "https://data-blog.gbif.org/post/gbif-backbone-taxonomy/[a high-level overview of the taxonomic backbone generation]"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:1
+#: en/data-publishing/modules/ROOT/pages/index.adoc:27
+#, no-wrap
+msgid "Data quality recommendations"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:1
+#: en/data-publishing/modules/ROOT/pages/index.adoc:16
+#, no-wrap
+msgid "Dataset classes"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:1
+#: en/home/modules/ROOT/pages/get-started.adoc:6
+#, no-wrap
+msgid "Data publishing"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:4
+msgid "Most institutions publishing data to GBIF need to convert their data into a format suitable for GBIF to process, typically https://dwc.tdwg.org/terms/[Darwin Core Archive]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:6
+msgid "Tools including the https://ipt.gbif.org/manual/[GBIF IPT] and BioCASe can convert data stored in spreadsheets and databases to the appropriate formats.  *The IPT is the most common way to publish data to GBIF.*"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:8
+msgid "Some institutional collections management systems, such as Symbiota or EarthCape, can export all or part of their data to GBIF."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:10
+msgid "Users or institutional systems (custom software) which can generate Darwin Core Archives and make them available on a webserver have two options:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:12
+msgid "For occasional datasets (one or two per year) contact the mailto:helpdesk@gbif.org[GBIF helpdesk], who will register the dataset on your behalf."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:13
+msgid "If new datasets will be registered more frequently, you may xref:register-dataset-api.adoc[register the datasets directly using the API]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:15
+msgid "Further discussion of the options can be found in https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/[this blogpost]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:19
+msgid "Datasets can be published in four different formats:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:21
+msgid "Metadata-only"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:22
+msgid "https://www.gbif.org/data-quality-requirements-checklists[Checklist]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:23
+msgid "https://www.gbif.org/data-quality-requirements-occurrences[Occurrence]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:24
+msgid "https://www.gbif.org/data-quality-requirements-sampling-events[Sampling event]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:26
+msgid "Generally, the data quality increases from metadata-only to sampling event datasets."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:30
+msgid "You can familiarize yourself with the requirements for the various types of datasets https://www.gbif.org/data-quality-requirements[here]."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/index.adoc:31
+#, no-wrap
+msgid "Tools to quality check your publication"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/index.adoc:33
+#, no-wrap
+msgid "Dataset validator"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:36
+msgid "The dataset validator can be used to https://www.gbif.org/tools/data-validator/about[validate] zipped Darwin Core Archive datasets."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/index.adoc:37
+#, no-wrap
+msgid "Species matching"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:40
+msgid "https://www.gbif.org/tools/species-lookup[The species matching tool] can be used to normalize species names from a CSV file against the GBIF backbone."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/index.adoc:41
+#, no-wrap
+msgid "Species API (link to API topic)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:44
+msgid "Name usage, search and parsing can be carried out with the https://techdocs.gbif.org/en/openapi/v1/species[species API]."
+msgstr ""
+
+#. == The test IPT
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/index.adoc:47
+#, no-wrap
+msgid "Flags and issues"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:50
+msgid "When records are published to GBIF, they may receive various data quality flags and issues. The meaning and how to deal with the different issues are documented for xref:data-use::occurrence-issues-and-flags.adoc[occurrence] and xref:data-use::checklist-issues-and-flags.adoc[checklist] datasets."
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/nav.adoc:2
+#: en/data-use/modules/ROOT/pages/index.adoc:13
+#, no-wrap
+msgid "Data downloads"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:4
+#: en/data-use/modules/ROOT/pages/index.adoc:24
+msgid "The GBIF API provides a programmatic way to query and publish data on GBIF.org. It can be useful or necessary to use the API to"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:6
+#: en/data-use/modules/ROOT/pages/index.adoc:26
+#: en/openapi/modules/ROOT/pages/index.adoc:8
+msgid "make advanced queries, not supported by the website,"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:7
+#: en/data-use/modules/ROOT/pages/index.adoc:27
+#: en/openapi/modules/ROOT/pages/index.adoc:9
+msgid "include the results of GBIF queries in scripts, workflows or analyses, which can then be repeated reliably and automatically,"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:8
+#: en/data-use/modules/ROOT/pages/index.adoc:28
+#: en/openapi/modules/ROOT/pages/index.adoc:10
+msgid "embed GBIF data into other websites."
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:19
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:1
+#: en/tools/modules/ROOT/pages/index.adoc:29
+#, no-wrap
+msgid "rgbif"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:23
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:1
+#: en/tools/modules/ROOT/pages/index.adoc:33
+#, no-wrap
+msgid "pygbif"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/citation.adoc:1
+#: en/data-use/modules/ROOT/pages/index.adoc:39
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:59
+#, no-wrap
+msgid "Citation"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/citation.adoc:3
+#: en/data-use/modules/ROOT/pages/index.adoc:41
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:62
+msgid "Under the terms of the GBIF data user agreement, users who download data agree to cite a DOI. Please see GBIF’s https://www.gbif.org/citation-guidelines[citation guidelines]."
+msgstr ""
+
+#. type: Title =
+#: en/data-use/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "Using data"
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-use/modules/ROOT/pages/index.adoc:4
+#, no-wrap
+msgid "data-use.png"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:6
+msgid "GBIF users can access the data they need in several ways, and each method generally offers data in a choice of formats."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:8
+msgid "The easiest option is to use the https://www.gbif.org/[GBIF website], which allows searching and browsing individual records, as well as requesting data downloads in the most common formats."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:10
+msgid "For more structured access, consider using the GBIF API, either directly or using the **rgbif** or **pygbif** libraries."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:12
+msgid "Some workflows are best served using cloud computing systems, and GBIF data is available on Amazon AWS, Google GCS and Microsoft Azure for this purpose."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:16
+msgid "Downloads can be requested in three main formats: Simple, Darwin Core Archive and Species List.  Registered users may create them using the website or through the API, or using rgbif or pygbif."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:18
+msgid "See xref:api-downloads.adoc[] for creating a download directly through the API.  See xref:rgbif.adoc[rgbif] and xref:pygbif.adoc[pygbif] for creating downloads using R or Python."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:20
+msgid "See xref:download-formats.adoc[] for details on the structure of each download format, regardless of how it was created."
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/index.adoc:21
+#, no-wrap
+msgid "API usage"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:30
+msgid "It can be accessed by any programming language, from a command-line terminal interface, or in some cases using a web browser."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:32
+msgid "See xref:api-introduction.adoc[] for general advice on using the API, including clients in R, Python and Java.  Detailed information on using the API to make downloads is in the xref:api-downloads.adoc[] section."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:34
+msgid "Complete reference documentation is in the xref:openapi::index.adoc[API Reference] section."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:38
+msgid "Each month, an export of GBIF occurrence data is uploaded to various cloud computing services.  These services allow users to query the data, integrate it into workflows running on cloud or local systems and make more complex queries than are possible using the GBIF API.  See xref:cloud-services::index.adoc[] for more information."
+msgstr ""
+
+#. type: Title =
+#: en/guides/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "Hello"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:4
+msgid "This is the automatic start page for version *{page-component-version}* of Component B."
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:7
+msgid "Component B is one of two documentation components in the Antora Demo.  The other docs component, Component A, can be accessed via the component selector menu (aka component drawer) at the bottom of the menu on the left side of the page."
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:9
+msgid "Link to <<Page source>> or to <<Page source,the same with another text>>."
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:11
+msgid "See the xref:data-publishing.adoc[] or xref:data-publishing.adoc[like this]."
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:13
+msgid "See the xref:ipt:ROOT:doi-workflow.adoc#workflows[IPT workflow]."
+msgstr ""
+
+#. type: Title ==
+#: en/guides/modules/ROOT/pages/index.adoc:14
+#, no-wrap
+msgid "Page source"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:17
+msgid "This page is sourced from the AsciiDoc file named [.path]_index.adoc_ that is located at [.path]_demo-component-b/docs/modules/ROOT/pages_."
+msgstr ""
+
+#. type: Title ===
+#: en/guides/modules/ROOT/pages/index.adoc:18
+#, no-wrap
+msgid "Why is this the home page of Component B?"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:21
+msgid "This page is automatically used as the start page of Component B because it is stored in the ROOT module and named [.path]_index.adoc_."
+msgstr ""
+
+#. type: Title ===
+#: en/guides/modules/ROOT/pages/index.adoc:22
+#, no-wrap
+msgid "Why is this the home page of the Antora Demo site?"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:25
+msgid "This page is used as the home page for the Antora Demo because it is assigned as the site `start_page` in the Demo site's playbook file [.path]_site.yml_."
+msgstr ""
+
+#. type: Title ==
+#: en/guides/modules/ROOT/pages/index.adoc:26
+#, no-wrap
+msgid "Cross reference syntax to target this page"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:29
+msgid "To create a cross reference *to this page from another page in the ROOT module of Component B*, the xref syntax would be `\\xref:index.adoc[]`."
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:31
+msgid "To create a cross reference *to this page from a page in Module One of Component B*, the xref syntax would be `\\xref:ROOT:index.adoc[]`."
+msgstr ""
+
+#. type: Title ===
+#: en/guides/modules/ROOT/pages/index.adoc:32
+#, no-wrap
+msgid "Always target the latest version of this page"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:35
+msgid "To create a cross reference *to the latest version of this page from a page in Component A*, the xref syntax would be `\\xref:component-b::index.adoc[]`."
+msgstr ""
+
+#. type: Title ===
+#: en/guides/modules/ROOT/pages/index.adoc:36
+#, no-wrap
+msgid "Target a specific version of this page"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:38
+msgid "To create a cross reference *to version 1.0 of this page from a page in Component A*, the xref syntax would be `\\xref:1.0@component-b::index.adoc[]`."
+msgstr ""
+
+#. type: Title =
+#: en/home/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "Technical Documentation"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:7
+msgid "The GBIF technical documentation describes how users can access data from GBIF.  It provides information on the available data, how to retrieve it, where it has been cleaned or checked for data quality, and how it should be cited."
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:9
+msgid "Apart from the already available documentation of the GBIF Integrated Publishing Toolkit (IPT), the documentation will later link to additional information for data publishers, including guidelines on best practices for publishing high-quality data, references to the relevant standards, and more detailed information on the data quality checks and alignments made to published data."
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:11
+msgid "Please send any suggestions for improvements or corrections to helpdesk@gbif.org, or create an issue on the https://github.com/gbif/tech-docs/issues[GitHub tech-docs project]."
+msgstr ""
+
+#. type: Title ==
+#: en/home/modules/ROOT/pages/index.adoc:12
+#, no-wrap
+msgid "What are you looking for?"
+msgstr ""
+
+#. type: delimited block +
+#: en/home/modules/ROOT/pages/index.adoc:18
+#, no-wrap
+msgid "<div id=\"search-field\" class=\"main-page-search\">\n"
+"  <input id=\"search-input\" type=\"text\" placeholder=\"Search\" style=\"display: block; width: 100%; font-size: 2rem; background: #f2f2f2; padding: 0.25rem 1rem; border: none; margin: 1rem 0;\">\n"
+"</div>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:22
+msgid "xref:data-use::index.adoc[image:td-bg-01.png[]]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:23
+msgid "xref:data-use::index.adoc[Using data]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:24
+msgid "How to use data from GBIF, including xref:data-use::index.adoc#data-downloads[downloads], xref:data-use::rgbif.adoc[] and xref:data-use::pygbif.adoc[]."
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:26
+msgid "xref:openapi::index.adoc[image:td-bg-02.png[]]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:27
+msgid "xref:openapi::index.adoc[API Reference]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:28
+msgid "Reference information for the GBIF API."
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:30
+msgid "xref:data-processing::index.adoc[image:td-bg-03.png[]]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:31
+msgid "xref:data-processing::index.adoc[Data processing and quality checks]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:32
+msgid "The standardization and quality processes applied to data published to GBIF, including taxonomic, temporal and geographic checks."
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:34
+msgid "xref:cloud-services::index.adoc[image:td-bg-04.png[]]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:35
+msgid "xref:cloud-services::index.adoc[Cloud services]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:36
+msgid "Accessing GBIF's data using cloud services (AWS, Azure, GCS)."
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:38
+msgid "xref:data-publishing::index.adoc[image:td-bg-05.png[]]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:39
+msgid "xref:data-publishing::index.adoc[Data Publishing]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:40
+msgid "Information for new and experienced publishers of data to GBIF"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:42
+msgid "xref:system-components::index.adoc[image:td-bg-06.png[]]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:43
+msgid "xref:system-components::index.adoc[System components]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:44
+msgid "Parts of the GBIF system setup (registry, GRSciColl etc)"
+msgstr ""
+
+#. type: Title ==
+#: en/home/modules/ROOT/pages/index.adoc:53
+#, no-wrap
+msgid "Explore tool documentation"
+msgstr ""
+
+#. type: Target for macro image
+#: en/home/modules/ROOT/pages/index.adoc:68
+#, no-wrap
+msgid "tools-2.png"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:71
+msgid "xref:tools::index.adoc#ipt[image:tool-icon.png[] GBIF Integrated Publishing Toolkit (IPT)]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:72
+msgid "xref:tools::index.adoc#data-validator[image:tool-icon.png[] Data validator]"
+msgstr ""
+
+#.  * xref:tools::index.adoc#species-matcher[image:tool-icon.png[] Species matching]
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:73
+msgid "xref:tools::index.adoc#derived-datasets[image:tool-icon.png[] Derived datasets]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:78
+msgid "xref:tools::index.adoc[View all tools]"
+msgstr ""
+
+#. type: Title =
+#: en/openapi/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "GBIF API Reference"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/openapi/modules/ROOT/pages/index.adoc:4
+#, no-wrap
+msgid "320"
+msgstr ""
+
+#. type: Target for macro image
+#: en/openapi/modules/ROOT/pages/index.adoc:4
+#, no-wrap
+msgid "open-api.png"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:6
+msgid "The GBIF API provides a programmatic way to query and publish data on GBIF.org.  It can be useful or necessary to use the API to"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:12
+msgid "The GBIF API is RESTful and most queries return data in JSON format. The base URL is https://api.gbif.org/."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:14
+msgid "The API should be considered stable, as should this accompanying documentation."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:16
+#, no-wrap
+msgid "*General API documentation and advice on usage, including using R, Python and Java API clients, is in the xref:data-use::index.adoc[Data Use] section.*\n"
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/index.adoc:17
+#, no-wrap
+msgid "API Sections"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:20
+msgid "The API is split into logical sections to ease understanding:"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:22
+msgid "The xref:v1@openapi::registry-principal-methods.adoc[*Registry*] provides means to create, edit, update and search for information about the datasets, publishing organizations, networks and the means to access them (technical endpoints). The registered content controls what is crawled and indexed in the GBIF data portal, but as a shared API may also be used for other initiatives, including the Global Register of Scientific Collections (GRSciColl)."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:23
+msgid "xref:v1@openapi::species.adoc[*Species*] provides services to discover and access information about species and higher taxa, and utility services for interpreting names and looking up the identifiers and complete scientific names used for species in the GBIF portal."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:24
+msgid "xref:v1@openapi::occurrence.adoc[*Occurrence*] provides access to occurrence information crawled and indexed by GBIF, search services to do real-time paged search and asynchronous download services to request large, batch downloads."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:25
+msgid "xref:v2@openapi::maps.adoc[*Maps*] provides services to show maps of GBIF-mobilized content."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:26
+msgid "xref:v1@openapi::literature.adoc[*Literature*] provides access to peer-reviewed papers and other literature indexed by GBIF, citing GBIF datasets and downloads."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:27
+msgid "xref:v1@openapi::validator.adoc[*Validator*] allows running data structure and quality checks against a dataset before publication to GBIF."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:28
+msgid "xref:v1@openapi::vocabulary.adoc[*Vocabularies*] are used during data interpretation to align some terms such as Life Stage to a limited set of values."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/index.adoc:29
+#, no-wrap
+msgid "Communication"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:32
+msgid "You can sign up to the https://lists.gbif.org/mailman/listinfo/api-users[GBIF API users mailing list] to post your questions, and to keep informed about the API. We will announce new versions and scheduled maintenance downtimes before they happen."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:34
+msgid "You can also post questions to the https://discourse.gbif.org/[GBIF Community Forum] or using the feedback buttons at the top of the pages on https://www.gbif.org/[GBIF.org]."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:36
+msgid "Please report any issues you find with the API to https://github.com/gbif/portal-feedback/issues[GitHub] (recommended if you already have a GitHub account), using the \"feedback\" button on an appropriate page on gbif.org, or by email to the mailto:helpdesk@gbif.org[Helpdesk].  Errors, omissions or improvements to the documentation can be made in the same way, or with the \"Edit this page\" links on this site."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/index.adoc:37
+#, no-wrap
+msgid "Common operations"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:40
+msgid "The following details common cross-cutting parameters used in the API"
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/index.adoc:41
+#, no-wrap
+msgid "Paging"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:44
+msgid "For requests that support paging the following parameters are used:"
+msgstr ""
+
+#. type: Table
+#: en/openapi/modules/ROOT/pages/index.adoc:53
+#, no-wrap
+msgid "|Parameter |Details\n\n"
+"|`limit`\n"
+"|Controls the number of results in the page. Using too high a value will be overwritten with the default maximum threshold, depending on the service. Sensible defaults are used so this may be omitted.\n\n"
+"|`offset`\n"
+"|Determines the offset for the search results. A limit of 20 and offset of 40 will retrieve the third page of 20 results.\n"
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/index.adoc:55
+#, no-wrap
+msgid "Repeatable parameters"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:58
+msgid "Many search parameters are repeatable, for example the country parameter in the occurrence search.  Repeating the parameter with different values will search for records matching any value.  For example, `https://api.gbif.org/v1/occurrence/search?country=GB&country=IE&country=IM`."
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/index.adoc:59
+#, no-wrap
+msgid "Range queries"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:62
+msgid "Some search parameters support range queries, for example the year parameter in the occurrence search. In general ranges are given as a single parameter value by concatenating a lower and an upper value with a comma. For example: `https://api.gbif.org/v1/occurrence/search?year=1800,1899`."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:64
+msgid "In most cases, where a parameter can _either_ be repeated, _or_ used as a range, but not queried with multiple ranges."
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/index.adoc:65
+#, no-wrap
+msgid "Authentication"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:68
+msgid "POST, PUT, and DELETE requests require authentication. The GBIF API uses https://en.wikipedia.org/wiki/Basic_access_authentication[HTTP Basic Authentication] with any existing https://www.gbif.org/user/profile[GBIF user account]."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:70
+msgid "For example, to issue a new download programmatically using curl with a xref:data-use::api-downloads.adoc[query filter as JSON] in a file called filter.json:"
+msgstr ""
+
+#. type: delimited block -
+#: en/openapi/modules/ROOT/pages/index.adoc:74
+#, no-wrap
+msgid "$ curl -i --user yourUserName:yourPassword -H \"Content-Type: application/json\" -X POST -d @filter.json https://api.gbif.org/v1/occurrence/download/request`\n"
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/index.adoc:76
+#, no-wrap
+msgid "Enumerations"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:79
+msgid "Many parts of the GBIF API make use of enumerations, i.e. controlled vocabularies for specific topics. Often these are based on existing standards such as ISO or https://www.tdwg.org/standards/[TDWG]. The enumerations are part of the https://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/package-summary.html[GBIF Java API], but the currently active version can also be dynamically accessed through our JSON webservices to support more dynamic clients."
+msgstr ""
+
+#. type: Table
+#: en/openapi/modules/ROOT/pages/index.adoc:102
+#, no-wrap
+msgid "|Resource URL |Method |Response |Description\n\n"
+"|/enumeration/basic\n"
+"|GET\n"
+"|https://api.gbif.org/v1/enumeration/basic[Enumeration list]\n"
+"|Lists all available enumerations\n\n"
+"|/enumeration/basic/\\{ENUMERATION}\n"
+"|GET\n"
+"|https://api.gbif.org/v1/enumeration/basic/TypeStatus[Enumeration values]\n"
+"|Lists all available values for a given enumeration\n\n"
+"|/enumeration/country\n"
+"|GET\n"
+"|https://api.gbif.org/v1/enumeration/country[Country and area list]\n"
+"|Lists all countries and areas with their code and title\n\n"
+"|/enumeration/license\n"
+"|GET\n"
+"|https://api.gbif.org/v1/enumeration/license[License list]\n"
+"|Lists all supported GBIF licenses using the License URL or just the enum name if no URL exists.\n"
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/index.adoc:104
+#, no-wrap
+msgid "Roadmap to v2"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:107
+msgid "Most of the GBIF API is currently at version 1 which means:"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:109
+msgid "The API is stable – we won't rename or remove any REST resources or response properties to ensure backwards compatibility, but we might add new resources to the API. Any additions will be announced via the API mailing list."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:110
+msgid "Any bug fixes or additions will result in minor version changes which are not reflected in the API URL, only in the documentation and our Java client code."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:111
+msgid "If and when the need for breaking changes arises we will document our intent here and on the mailing list, and give considerable warning before moving to a future v2."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:112
+msgid "The base URL includes the version as appropriate."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:113
+msgid "The Maps API is at version 2, with the same expectations (as far as is possible, xref:v1@openapi::maps.adoc[Maps API version 1] continues to work)."
+msgstr ""
+
+#. type: Title ==
+#: en/system-components/modules/ROOT/pages/grscicoll.adoc:1
+#: en/system-components/modules/ROOT/pages/index.adoc:11
+#, no-wrap
+msgid "GRSciColl"
+msgstr ""
+
+#. type: Title =
+#: en/system-components/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "System components"
+msgstr ""
+
+#. type: Plain text
+#: en/system-components/modules/ROOT/pages/index.adoc:4
+msgid "The technical infrastructure of GBIF includes components that run centrally to support data storage, processing, management, and enrichment. Some of these systems are integral parts of GBIF.org, others provide services to the community."
+msgstr ""
+
+#. type: Named 'link' AttributeList argument for macro 'image'
+#: en/system-components/modules/ROOT/pages/index.adoc:5
+#, no-wrap
+msgid "_images/system-diagramme-2023.png"
+msgstr ""
+
+#. type: Target for macro image
+#: en/system-components/modules/ROOT/pages/index.adoc:5
+#, no-wrap
+msgid "system-diagramme-2023.png"
+msgstr ""
+
+#. type: Title ==
+#: en/system-components/modules/ROOT/pages/index.adoc:7
+#, no-wrap
+msgid "GBIF Registry"
+msgstr ""
+
+#. type: Plain text
+#: en/system-components/modules/ROOT/pages/index.adoc:10
+msgid "https://registry.gbif.org/[GBIF Registry]"
+msgstr ""
+
+#. type: Plain text
+#: en/system-components/modules/ROOT/pages/index.adoc:14
+msgid "The https://www.gbif.org/grscicoll[Global Registry of Scientific Collections (GRSciColl)] is a comprehensive, community-curated clearing house of information on scientific collections, which builds on previous efforts developed by the Consortium of the Barcode of Life (CBOL) and others."
+msgstr ""
+
+#. type: Plain text
+#: en/system-components/modules/ROOT/pages/index.adoc:16
+msgid "GRSciColl includes data on institutions, collections and associated staff members and spans all scientific disciplines, including earth and space sciences, anthropology, archaeology, biology and biomedicine, as well as applied fields like agriculture, veterinary medicine and technology."
+msgstr ""
+
+#. type: Title ==
+#: en/system-components/modules/ROOT/pages/index.adoc:17
+#, no-wrap
+msgid "Literature tracking"
+msgstr ""
+
+#. type: Plain text
+#: en/system-components/modules/ROOT/pages/index.adoc:20
+msgid "The GBIF Secretariat maintains an ongoing literature tracking programme, which identifies https://www.gbif.org/resource/search?contentType=literature[research uses and citations of biodiversity information accessed through GBIF’s global infrastructure]. We also produce https://www.gbif.org/resource/search?contentType=dataUse[summaries of recent research], many of which are then compiled in an annual https://www.gbif.org/science-review[Science Review]. You can find more information https://www.gbif.org/literature-tracking[here]."
+msgstr ""
+
+#. type: Title ==
+#: en/system-components/modules/ROOT/pages/index.adoc:21
+#, no-wrap
+msgid "ChecklistBank"
+msgstr ""
+
+#.  include: how to publish data: link to checklist publishing page
+#. type: Plain text
+#: en/system-components/modules/ROOT/pages/index.adoc:24
+msgid "https://www.checklistbank.org/[ChecklistBank] is an index and repository for taxonomic data."
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/data-validator.adoc:1
+#: en/tools/modules/ROOT/pages/index.adoc:15
+#, no-wrap
+msgid "Data Validator"
+msgstr ""
+
+#. type: Title =
+#: en/tools/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "Tools"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:4
+msgid "Tools support all areas relevant to biodiversity data management, from data capture and curation over data standardization and publication to data use and citation. They include stand-alone software packages, software libraries, and online services, and require varying degrees of technical knowledge to use. Some tools are mature and curated products, while others serve as demonstrators and are more experimental."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:6
+msgid "Here, you will find tools that are developed and maintained by GBIF. For a more comprehensive collection of tools relevant to biodiversity data curation, publication, and use, check https://www.gbif.org/resource/search?contentType=tool[the tools catalogue]"
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/index.adoc:7
+#, no-wrap
+msgid "IPT"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:10
+msgid "The https://www.gbif.org/ipt[Integrated Publishing Toolkit (IPT)] is a free, open-source software tool used to publish and share biodiversity datasets through the GBIF network. The IPT can also be configured with a DataCite account in order to assign DOIs to datasets, transforming it into a data repository."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:12
+msgid "https://ipt.gbif.org/manual/en/ipt/latest/[*IPT manual*]"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:14
+msgid "for further documentation, also see https://ipt.gbif.org/manual/en/ipt/latest/installation#installation-method[installation methods], https://ipt.gbif.org/manual/en/ipt/latest/faq#usage[usage], https://github.com/gbif/ipt/[development], and https://crowdin.com/project/gbif-ipt[translations]."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:18
+msgid "The https://www.gbif.org/tools/data-validator/about[GBIF *data validator*] is a service that allows anyone with a GBIF-relevant dataset to receive a report on the syntactical correctness and the validity of the content contained within the dataset. By submitting a dataset to the validator, you can go through the validation and interpretation procedures usually associated with publishing in GBIF and quickly determine potential issues in data - without having to publish it."
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/index.adoc:19
+#, no-wrap
+msgid "Derived Datasets"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:22
+msgid "https://www.gbif.org/derived-dataset/about[*Derived datasets*] are citable records of GBIF-mediated occurrence data derived either from:"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:24
+msgid "a GBIF.org download that has been filtered/reduced significantly, or"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:25
+msgid "data accessed through a cloud service, e.g. Microsoft AI for Earth (Azure), or"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:26
+msgid "data obtained by any means for which no DOI was assigned, but one is required (e.g. third-party tools accessing the GBIF search API)."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:28
+msgid "When created, a derived dataset is assigned a unique DOI that can be used to cite the data."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:32
+#, no-wrap
+msgid "*rgbif* is a library maintained by GBIF for the R statistical programming language.  See xref:data-use::rgbif.adoc[]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:36
+#, no-wrap
+msgid "*pygbif* is a library maintained by GBIF for the Python programming language.  See xref:data-use::pygbif.adoc[]. \n"
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/index.adoc:37
+#, no-wrap
+msgid "Species Matcher"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:41
+msgid "The https://www.gbif.org/tools/species-lookup[*species lookup tool*] can be used to normalize species names from a csv file against the GBIF taxonomic backbone.  The file is expected to be have a column called 'scientificName' and an optional column 'kingdom' and 'id'."
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/index.adoc:42
+#, no-wrap
+msgid "Name Parser"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:45
+msgid "The GBIF https://www.gbif.org/tools/name-parser[*name parser*] is an online tool that allows to split scientific names into their components and to check them against the taxonomic backbone used by GBIF. It can be used to automate some processes while digitizing or curating lists of scientific names.  See documentation https://www.gbif.org/tools/name-parser/about[here]."
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/index.adoc:46
+#, no-wrap
+msgid "Sequence ID Tool"
+msgstr ""
+
+#.  qualify as "experimental"?
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:49
+msgid "The *sequence ID* tool will query taxonomy reference databases for Fungi, Animals, Bacteria and Archaea, based on ITS sequences for Fungi, COI sequences for Animals or 16S sequences for Bacteria and Archaea. See https://www.gbif.org/tools/sequence-id/about[here] for further details."
+msgstr ""
+
