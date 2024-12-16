@@ -1,0 +1,7 @@
+= GBIF Analytics and Data Trends
+
+GBIF capture various metrics to enable monitoring of data trends. These are displayed at https://www.gbif.org/analytics.
+
+Every quarter, GBIF takes a snapshot of the published verbatim occurrence data. The latest snapshot, and all prior snapshots, are then reprocessed using the current processing pipeline, including the newest taxonomic backbone, vocabularies, geospatial layers and so on. The data are then summarized and made available for the https://www.gbif.org/analytics[GBIF Global Trends] page and the linked regional and country pages.
+
+These data are available at https://analytics-files.gbif.org/, where there is also a brief explanation. If you would find further documentation useful, please comment on https://github.com/gbif/tech-docs/issues/24[this issue].

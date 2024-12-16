@@ -1,0 +1,31 @@
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
+
+Note: this is work in progress.
+
+____ Note that GBIF **does not** host original multimedia files and pictures, and copyright may be more restrictive for the media files than for the associated records. Any use beyond the copyright has to be approved by the original data holder. ____
+
+== Media displayed on the GBIF portal
+
+The GBIF.org portal allows to look for occurrences associated with media. For example, [pictures of otters](https://www.gbif.org/occurrence/search?media_type=StillImage&taxon_key=2433753), or the [call of a sea eagle](https://www.gbif.org/occurrence/search?media_type=Sound&taxon_key=2480444).
+
+Anyone can filter [GBIF occurrences](https://www.gbif.org/occurrence/search) by Media Type. Once users find what they are looking for, they can see and/or hear it directly on the GBIF portal.
+
+==== Images
+
+GBIF's searching interface has a [gallery](https://www.gbif.org/occurrence/gallery), which displays the first image available for each occurrence selected.
+
+image::example_gallery.png[]
+
+Users can also view images for a particular occurrence, by simply clicking on it. See for example, this [occurrence with two images](https://www.gbif.org/occurrence/1822411383) from [the Norwegian Species Observation Service](https://www.gbif.org/dataset/b124e1e0-4755-430f-9eab-894f25a9b59c).
+
+All the images belonging to a single dataset are visible on [its page](https://www.gbif.org/dataset/b124e1e0-4755-430f-9eab-894f25a9b59c). The same goes for all the images belonging to datasets published under the same organization: see [this example](https://www.gbif.org/publisher/d3978a37-635a-4ae3-bb85-7b4d41bc0b88).
+
+==== Audio and Video
+
+Sounds and videos can be directly played from a given occurrence page through a media player.
+
+For example, by clicking on [this occurrence](https://www.gbif.org/occurrence/1934990970) from [Xeno-canto - Bird sounds from around the world](https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24), users can listen to a kookaburra call.
+
+Here are some videos showing the 3D reconstruction of a specimen of sand flea by clicking on [this occurrence](https://www.gbif.org/occurrence/863580710) from [the Museum of Comparative Zoology, Harvard University](https://www.gbif.org/dataset/4bfac3ea-8763-4f4b-a71a-76a6f5f243d3)

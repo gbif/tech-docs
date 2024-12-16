@@ -1,0 +1,47 @@
+= Java API clients
+
+_Webservice clients for the Java programming language._
+
+GBIF's API is implemented as a set of Java webservices. Most of the webservices include a Java client. These clients are used internally by other webservices, and in integration tests.
+
+They implement the https://github.com/gbif/gbif-api?tab=readme-ov-file[GBIF API] library (https://gbif.github.io/gbif-api/apidocs/[JavaDoc]), which provides model objects, enumerations and interface definitions for the public API.
+
+Internally the modules use https://github.com/OpenFeign/feign[OpenFeign] and https://cloud.spring.io/spring-cloud-openfeign/reference/html/[Spring Cloud OpenFeign].
+
+Common classes and configuration for clients can be found in the project https://github.com/gbif/gbif-common-ws[gbif-common-ws].
+
+== Installation
+
+Maven artefacts are available in our Maven repository:
+
+[source, xml]
+----
+<repository>
+  <id>gbif-releases</id>
+  <url>https://repository.gbif.org/content/repositories/releases</url>
+</repository>
+
+<!-- Example: Registry API -->
+<dependency>
+  <artifactId>registry-ws-client</artifactId>
+  <groupId>org.gbif.registry</groupId>
+  <version>3.96.22</version>
+</dependency>
+----
+
+== Clients
+
+Refer to the webservice repositories for the clients and examples.
+
+* https://github.com/gbif/registry/tree/dev/registry-ws-client#readme[Registry]
+* https://github.com/gbif/occurrence/[Occurrence] (Occurrence search and downloads)
+* https://github.com/gbif/checklistbank/[Checklistbank] (Species and taxa)
+* https://github.com/gbif/crawler/[Crawler] (Dataset indexing metadata and state)
+* https://github.com/gbif/geocode/tree/master/geocode-ws-client#readme[Geocode] (Reverse geocoding)
+* https://github.com/gbif/metrics/tree/master/metrics-ws-client#readme[Metrics] (Occurrence statistics)
+* https://github.com/gbif/vocabulary/[Vocabulary]
+* https://github.com/gbif/pipelines/gbif/validator/validator-ws-client[Validator] (Dataset validator)
+* https://github.com/gbif/maps/[Maps] (Occurrence maps; no Java client)
+* https://github.com/gbif/literature/[Literature] (Literature and citations; no Java client)
+
+Also note that functionality is divided between these webservices in a different way to the sections of the xref:openapi::index.adoc[API Reference] documentation. For example, creation and retrieval of a download is implemented in the Occurrence module, but handling of download metadata is implemented in the Registry module.

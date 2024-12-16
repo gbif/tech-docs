@@ -1,0 +1,40 @@
+= rgbif
+
+_An interface to the GBIF API for the R statistical programming environment._
+
+Please see the main https://docs.ropensci.org/rgbif/index.html[rgbif documentation site].
+
+**rgbif** is an R package from https://ropensci.org/[rOpenSci] that allows searching and retrieving data from GBIF. rgbif wraps R code around the xref:api-introduction.adoc[GBIF API] to allow you to talk to GBIF from R and access metadata, species names, and occurrences.
+
+
+== Installation
+
+[source, r]
+----
+install.packages("rgbif") # CRAN version
+----
+
+[source, r]
+----
+pak::pkg_install("ropensci/rgbif") # dev version
+----
+
+[source, r]
+----
+install.packages("rgbif", repos="https://dev.ropensci.org") # dev version
+----
+
+== Getting Started 
+
+There are several long-form articles that can help get you started:
+
+* https://docs.ropensci.org/rgbif/articles/rgbif.html[Getting Started]
+* https://docs.ropensci.org/rgbif/articles/getting_occurrence_data.html[Getting Occurrence Data From GBIF]
+* https://docs.ropensci.org/rgbif/articles/taxonomic_names.html[Working With Taxonomic Names]
+
+== Citation 
+
+Under the terms of the GBIF data user agreement, users who download data agree to cite a DOI. Please see GBIF’s https://www.gbif.org/citation-guidelines[citation guidelines] and https://docs.ropensci.org/rgbif/articles/gbif_citations.html[Citing GBIF Mediated Data].
+
+Please also cite **rgbif** by running ``citation(package = "rgbif")``.
+

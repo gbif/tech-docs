@@ -1,0 +1,4 @@
+= Occurrence API
+:page-no-next: true
+:page-layout: swagger
+:page-openapi-url: /openapi/occurrence.json

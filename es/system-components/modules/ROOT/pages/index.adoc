@@ -1,0 +1,24 @@
+= System components
+
+The technical infrastructure of GBIF includes components that run centrally to support data storage, processing, management, and enrichment. Some of these systems are integral parts of GBIF.org, others provide services to the community.
+
+image::system-diagramme-2023.png[link="_images/system-diagramme-2023.png"]
+
+== GBIF Registry
+
+https://registry.gbif.org/[GBIF Registry]
+
+== GRSciColl
+
+The https://www.gbif.org/grscicoll[Global Registry of Scientific Collections (GRSciColl)] is a comprehensive, community-curated clearing house of information on scientific collections, which builds on previous efforts developed by the Consortium of the Barcode of Life (CBOL) and others.
+
+GRSciColl includes data on institutions, collections and associated staff members and spans all scientific disciplines, including earth and space sciences, anthropology, archaeology, biology and biomedicine, as well as applied fields like agriculture, veterinary medicine and technology.
+
+== Literature tracking
+
+The GBIF Secretariat maintains an ongoing literature tracking programme, which identifies https://www.gbif.org/resource/search?contentType=literature[research uses and citations of biodiversity information accessed through GBIF’s global infrastructure]. We also produce https://www.gbif.org/resource/search?contentType=dataUse[summaries of recent research], many of which are then compiled in an annual https://www.gbif.org/science-review[Science Review]. You can find more information https://www.gbif.org/literature-tracking[here].
+
+== ChecklistBank
+
+https://www.checklistbank.org/[ChecklistBank] is an index and repository for taxonomic data.
+// include: how to publish data: link to checklist publishing page

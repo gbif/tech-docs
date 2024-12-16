@@ -1,0 +1,14 @@
+= Get started
+
+GBIF has developed technical documentation spread across 5 topics (should eventually be links + graphics perhaps?):
+
+* Data publishing
+** The topic is relevant for new as well as experienced data publishers in GBIF
+* GBIF data processing & quality checks
+** This section describes what happens to the data after you publish to GBIF and the efforts GBIF makes to standardze and clean the data for ease of use
+* Data use
+** How to get the data you want from GBIF and how to process it
+* API
+** Everything you need to know about the APIs GBIF use and how you can use them too!
+* Other GBIF services
+** Registry, grscicoll, vocabulary server etc.

@@ -1,0 +1,191 @@
+= API SQL Downloads
+
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2024. The feature is currently only available for preview by invited users. Contact helpdesk@gbif.org to request access.
+
+The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL, _structured query language_, a programming language commonly used to access database systems. In contrast to the xref:api-downloads.adoc[Predicate Download API], the SQL API allows selection of the columns of interest and generation of summary views of GBIF data. Functions to generate xref::data-cubes.adoc[_species occurrence cubes_] are available as part of the https://b-cubed.eu/[Biodiversity Building Blocks for Policy] project.
+
+Occurrence SQL downloads are created asynchronously — the user requests a download and, once the download is prepared, is sent an email with a link to the resulting file.
+
+Users must have registered on https://www.gbif.org/[GBIF.org] to create an SQL download request, and to authenticate using the username (not the email) and password.
+
+Using this API requires some knowledge of SQL. Many general tutorials and guides to writing SQL queries are online, see for example the section on http://datacarpentry.org/sql-ecology-lesson/02-sql-aggregation.html[aggregating and grouping data] within http://datacarpentry.org/sql-ecology-lesson/[Data management with SQL for Ecologists] by Data Carpentry.
+
+We will create a user interface for common types of query (including data cubes) during 2024.
+
+== Requesting an SQL occurrence download
+
+A download request includes your username, email address, the download format, and the filter for the required data in the form of an SQL statement.
+
+A basic example using the _curl_ command to make the request:
+
+Put this in a file called (for example) `query.json`:
+
+[source, json]
+----
+{
+  "sendNotification": true,
+  "notificationAddresses": [
+    "userEmail@example.org" <1>
+  ],
+  "format": "SQL_TSV_ZIP", <2>
+  "sql": "SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE continent = 'EUROPE' GROUP BY datasetKey, countryCode" <3>
+}
+----
+<1> Replace with your email address, or remove the `notificationAddresses` and `sendNotification` values
+<2> `format` must be `SQL_TSV_ZIP`. More formats will be added later.
+<3> This query will count occurrences from Europe per dataset and country.
+
+Then use this _curl_ command:
+
+[source, shell]
+----
+curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @query.json https://api.gbif.org/v1/occurrence/download/request
+----
+
+The first line of the output shows the result of the download request:
+
+* If the query is accepted the first line of output should be either `HTTP/1.1 201 Created` or `HTTP/2 201`, and a download key will be returned on the last line.
+* If the SQL is not valid, the first line of the output will be `HTTP/… 400 …`. There may be useful information on the error at the end of the output.
+* `HTTP/… 401 …` means your username or password is incorrect
+* `HTTP/… 403 …` means your username does not have permission to use this prototype feature — contact helpdesk@gbif.org.
+
+Querying the download key from an accepted request shows the download information, including the download link and DOI once the download is ready. Run this repeatedly, until you see `SUCCEEDED` — you will need to use your download key rather than the example:
+
+[source, shell]
+----
+curl -Ss https://api.gbif.org/v1/occurrence/download/0000379-240229165702484
+----
+
+You can then download the resulting file:
+
+[source, shell]
+----
+curl --location --remote-name https://api.gbif.org/v1/occurrence/download/request/0000379-240229165702484.zip
+----
+
+And see the result:
+
+[%header, format=tsv]
+|===
+datasetkey	countrycode	COUNT(*)
+005eb8d8-ed94-41be-89cf-e3115a9058e4	AD	1
+009a76f6-0960-4a56-a116-63991e6bb037	GR	3
+0214a6a7-898f-4ee8-b888-0be60ecde81f	PT	84
+03f2256a-e548-43d7-a731-253302f4aa34	LV	27
+040c5662-da76-4782-a48e-cdea1892d14c	IS	1306
+06aeea22-c116-4df2-93af-2d8321482801	FR	24
+07fd0d79-4883-435f-bba1-58fef110cd13	PL	357
+|===
+
+[#sql]
+== Supported SQL
+
+Only `SELECT` queries are supported, and only queries against a single table named `occurrence`. `JOIN` queries and sub-queries are not allowed. Selecting `*` is also not allowed, specify the columns you need.
+
+`GROUP BY` queries are supported, as are basic SQL window functions (`OVER` and `PARTITION BY`). The group and partition filters (`HAVING` and `QUALIFY`) are not yet supported.
+
+Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT`, `IS NULL`, `RAND()`, `ROUND(…)`, `LOWER(…)`, etc.
+
+Aggregate functions are also supported, for example `COUNT(…)`, `MIN(…)`, `MAX(…)`, `AVERAGE(…)`.
+
+Several custom functions are available:
+
+* `xref::api-sql-download-functions.adoc#GBIF_GeoDistance[GBIF_GeoDistance]`
+* `xref::api-sql-download-functions.adoc#GBIF_JoinArray[GBIF_JoinArray]`
+* `xref::api-sql-download-functions.adoc#GBIF_TemporalUncertainty[GBIF_TemporalUncertainty]`
+* `xref::api-sql-download-functions.adoc#GBIF_ToISO8601[GBIF_ToISO8601]`
+* `xref::api-sql-download-functions.adoc#GBIF_ToLocalISO8601[GBIF_ToLocalISO8601]`
+* `xref::api-sql-download-functions.adoc#GBIF_Within[GBIF_Within]`
+
+As well as custom gridding functions:
+
+* `xref::api-sql-download-functions.adoc#GBIF_EEARGCode[GBIF_EEARGCode]`
+* `xref::api-sql-download-functions.adoc#GBIF_EQDGCCode[GBIF_EQDGCCode]`
+* `xref::api-sql-download-functions.adoc#GBIF_MGRSCode[GBIF_MGRSCode]`
+* `xref::api-sql-download-functions.adoc#GBIF_ISEA3HCode[GBIF_ISEA3HCode]`
+* `xref::api-sql-download-functions.adoc#GBIF_DMSGCCode[GBIF_DMSGCCode]`
+
+See the xref:api-sql-download-functions.adoc[separate page on the available SQL functions].
+
+[#sql-columns]
+== Available columns
+
+The `occurrence` table contains the interpreted data, the verbatim (as provided to GBIF) data, and some calculated columns useful for searching. The full list of available columns is show below, and is also available through https://api.gbif.org/v1/occurrence/download/describe/sql[this API call] — the `name` field is the column name. Note the `v_` prefix for the verbatim data columns.
+
+.*Full list of available SQL column names* (click to expand)
+[%collapsible]
+====
+The definitions marked with {dwc_source} are from the Darwin Core standard.
+
+The definitions marked with {gbif_source} are from GBIF, and may reflect the result of interpretation and data quality procedures applied by GBIF, or they may not be part of Darwin Core.
+
+include::partial$download-sql-terms-table.adoc[]
+====
+
+The SQL parser is strict, and column names that are also SQL keywords must be quoted. For example, `"year"`, `"month"` and `"day"`.
+
+[#sql-validation]
+== Query validation
+
+You can validate your queries using the validation API call.
+
+[source, shell]
+----
+curl --include --header "Content-Type: application/json" --data @query.json https://api.gbif.org/v1/occurrence/download/request/validate
+----
+
+Your query will be returned if it is valid, and an error message with an explanation will be returned if it is invalid.
+
+[#troubleshooting]
+== Troubleshooting
+
+Many GBIF APIs are tolerant of small differences in how they are queried — you can make an occurrence download query using the search parameter `taxonKey`, `taxon_key`, `TAXONKEY` and so on, and using the value `1`, `'1'`, `"1"`, `{nbsp}1`, `"{nbsp}01"` etc.
+
+The SQL API is less forgiving, so some common parts of queries must be specified exactly as documented.
+
+Within the SQL query itself:
+
+. If column names are quoted they must use double quotes and lowercase: `"year"`, `"basisofrecord"`. It's only necessary to quote column names that are also SQL functions: `"year"`, `"month"`, `"day"`.
+. When column and function names aren't quoted, the letter case doesn't matter: `basisOfRecord`, `basisofrecord`, `gbif_eeargcode(…)`, `GBIF_EEARGCode(…)`.
+. String values use single quotes, like `basisOfRecord = 'HUMAN_OBSERVATION'`.
+. SQL comments (lines beginning `--{nbsp}`) cannot be included in queries.
+. Columns with numeric types must be filtered using numbers, not quoted string values — use `taxonkey IN (1234, 5687)` or `year >= 2020`.
+. The column name for the taxonomic order is currently `order_`. (It will later be corrected to `"order"`.)
+
+When converting the SQL query to JSON for submission to the API:
+
+. JSON uses double quotes for attributes and values, so when the SQL is written values containing double quotes must have these escaped using `\"`
+. Newlines, if used, should be replaced with either spaces ` ` or `\n`
+
+[source, json]
+----
+{
+  "sendNotification": true,
+  "notificationAddresses": [
+    "userEmail@example.org"
+  ],
+  "format": "SQL_TSV_ZIP",
+  "sql": "SELECT DISTINCT \"year\" \n FROM occurrence \n WHERE \"year\" > 2000";
+}
+----
+
+It can be convenient to work with neatly formatted SQL files, and convert them to JSON format automatically:
+
+[source, shell]
+----
+# Using jq
+grep -v -- '--' neat-query.sql | jq -R -s .
+
+# Using Python
+grep -v -- '--' neat-query.sql | python3 -c 'import sys, json; print(json.dumps(sys.stdin.read()))'
+----
+
+[#cube]
+== Further examples
+
+For a complete example of generating a data cube see the xref::data-cubes.adoc[] page.
+
+[#issues]
+== Known issues
+
+Known faults with the system are tracked https://github.com/gbif/occurrence-cube/issues[on GitHub].

@@ -1,0 +1,7 @@
+* xref:index.adoc[Data publishing requirements and recommendations]
+* xref:dataset-classes.adoc[Dataset classes]
+** xref:data-quality-recommendations.adoc[Data quality recommendations]
+** xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations]
+* xref:multimedia-publishing.adoc[Publishing multimedia]
+* xref:register-dataset-api.adoc[Register a dataset using the API]
+

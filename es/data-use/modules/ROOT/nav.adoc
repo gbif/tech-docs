@@ -1,0 +1,17 @@
+* Data downloads
+** xref:download-formats.adoc[]
+* Issues and flags
+** xref:occurrence-issues-and-flags.adoc[]
+** xref:checklist-issues-and-flags.adoc[]
+* API Usage
+** xref:api-introduction.adoc[API Introduction]
+** xref:rgbif.adoc[rgbif]
+** xref:pygbif.adoc[pygbif]
+** xref:java.adoc[Java]
+* API Downloads
+** xref:api-downloads.adoc[]
+** xref:api-sql-downloads.adoc[]
+** xref:api-sql-download-functions.adoc[]
+** xref:data-cubes.adoc[]
+* xref:cloud-services::index.adoc[]
+* xref:citation.adoc[Citation]

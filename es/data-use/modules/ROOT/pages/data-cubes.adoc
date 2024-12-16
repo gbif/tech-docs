@@ -1,0 +1,244 @@
+= Species occurrence cubes
+
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2024. The feature is currently only available for preview by invited users. Contact helpdesk@gbif.org to request access.
+
+*Species occurrence cubes* are views of GBIF occurrence data, filtered and summarized by spatial, temporal and/or taxonomic dimensions, and providing measures for each dimension.
+
+They can be produced using a *prototype* GBIF API, or using the GBIF occurrence data deposited on xref:cloud-services::index.adoc[external cloud services]. This page covers generating a cube using GBIF's API. See xref:b-cubed:generate-cube-databricks.adoc[] to generate a cube using a public cloud service.
+
+== Demonstration cube specification
+
+The guide below will produce a data cube for occurrences of animals from Poland, recorded during or after 2000.
+
+The _dimensions_ of the cube will be
+
+. Species
+** We must therefore exclude occurrences not identified to species level
+** We will also exclude occurrences with identifications noted to be uncertain
+. Year-Month
+** We must exclude occurrences with only year accuracy, or with an imprecise date spanning multiple months
+. https://sdi.eea.europa.eu/catalogue/srv/api/records/aac8379a-5c4e-445c-b2ef-23a6a2701ef0/attachments/eea_reference_grid_v1.pdf[EEA Reference Grid (PDF)] with a 1km grid size
+** We will randomize the point using the coordinateUncertaintyInMeters, defaulting to 1000m
+** We will exclude occurrences without coordinates
+** We will exclude occurrences with a coordinateUncertaintyInMeters greater than 1000m
+. Sex
+** This is included to demonstrate a basic dimension
+. Life stage
+** This is included to demonstrate a more complex field (a vocabulary field) used for a dimension
+
+The _measures_ of the cube will be
+
+. Occurrence count
+. Minimum coordinate uncertainty
+. Minimum temporal uncertainty
+
+To account for sampling bias, we will also count occurrences at family level.
+
+=== Create an initial GBIF search filter
+
+Perhaps using the GBIF.org website, find an approximate search filter, for example for a particular taxon, country or region, year range, etc. This will need to be expressed in SQL for submission to the API:
+
+[source, sql]
+----
+WHERE occurrenceStatus = 'PRESENT'
+  AND countryCode = 'PL' <1>
+  AND year >= 2000
+  AND kingdomKey = 1 <2>
+  AND hasCoordinate = TRUE <3>
+----
+<1> Poland
+<2> _Animalia_
+<3> Include only occurrences with coordinates
+
+This corresponds to https://www.gbif.org/occurrence/search?country=PL&taxon_key=1&year=2000,*&occurrence_status=present[this query] on the website.
+
+=== Exclude unwanted data
+
+The GBIF website and basic search APIs do not allow excluding data from searches, but this is often required for data cubes. We add additional expressions to our WHERE clause:
+
+[source, sql]
+----
+  AND (coordinateUncertaintyInMeters <= 1000 OR coordinateUncertaintyInMeters IS NULL) <1>
+  AND speciesKey IS NOT NULL <2>
+  AND NOT ARRAY_CONTAINS(issue, 'ZERO_COORDINATE') <3>
+  AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_OUT_OF_RANGE')
+  AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_INVALID')
+  AND NOT ARRAY_CONTAINS(issue, 'COUNTRY_COORDINATE_MISMATCH')
+  AND month IS NOT NULL <4>
+----
+<1> Exclude occurrences with a large coordinate uncertainty, but keep those without an uncertainty
+<2> Exclude occurrences not identified to species level
+<3> Exclude occurrences with these georeferencing issues
+<4> Exclude occurrences without a month, or spanning multiple months
+
+=== Prepare dimension expressions
+
+The dimensions are the species, year-month, 1km EEA grid, sex and life stage.
+
+For species we could choose either the key (numeric identifier), the name, or both:
+
+[source, sql]
+----
+speciesKey
+----
+
+The year and month fields are separate, we want both in the form `2024-03`:
+
+[source, sql]
+----
+PRINTF('%04d-%02d', "year", "month") AS yearMonth <1>
+----
+<1> `YEAR(…)` (or `year(…)`) and `MONTH(…)` are SQL functions, so we must quote the name of the columns as `"year"` and `"month"` using double quotes.
+
+Arguments for the grid function are given on the xref::api-sql-download-functions.adoc[SQL functions] page. We use an EEA reference grid with 1km grid cell size:
+
+[source, sql]
+----
+GBIF_EEARGCode(
+  1000, <1>
+  decimalLatitude,
+  decimalLongitude,
+  COALESCE(coordinateUncertaintyInMeters, 1000) <2>
+) AS eeaCellCode,
+----
+<1> The grid size, 1000m
+<2> `COALESCE` sets a default value (1000) if the first value is absent.
+
+Sex and life stage should both show `NOT_SUPPLIED` when the value is not provided:
+
+[source, sql]
+----
+COALESCE(sex, 'NOT_SUPPLIED') AS sex,
+COALESCE(occurrence.lifestage.concept, 'NOT_SUPPLIED') AS lifestage, <1>
+----
+<1> The `lifestage` field is hierarchical. We take the main value, not the whole hierarchy.
+
+=== Prepare measurement expressions
+
+The _measures_ of the cube are the occurrence count:
+
+[source, sql]
+----
+COUNT(*) AS occurrences
+----
+
+and the minimum coordinate uncertainty and temporal uncertainty:
+
+[source, sql]
+----
+MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters,
+MIN(GBIF_TemporalUncertainty(eventDate)) AS minTemporalUncertainty
+----
+
+=== Add sampling bias expression
+
+Measuring sampling bias requires including an occurrence count for a higher taxon, in this case the family. This can be done using an SQL _window function_. This is a more advanced SQL technique, see https://www.postgresql.org/docs/current/tutorial-window.html[the PostgreSQL documentation] which has a good introduction to the concept.
+
+[source, sql]
+----
+IF(ISNULL(familyKey), NULL, SUM(COUNT(*)) OVER (PARTITION BY familyKey)) AS familyCount
+
+-- The same, shown on several lines:
+IF(ISNULL(familyKey), <1>
+   NULL, <2>
+     SUM(COUNT(*)) <3>
+     OVER (PARTITION BY familyKey) <4>
+) AS familyCount
+----
+<1> Test for a null family; we still want to include species without a family in GBIF's taxonomic backbone
+<2> Value to return for a null family
+<3> Measurement for the partition, the sum of the counts of the number of occurrences by species within this family
+<4> Partition by the family
+
+=== Write full query
+
+The WHERE clause is the filter, and the dimensions and measurements are SELECT expressions which must also appear in the GROUP BY clause.
+
+Typical data cubes will use an SQL query similar to this one:
+
+////
+If changing, also update this file and run a new cube:
+
+https://github.com/gbif/occurrence/blob/dev/occurrence-download/example-jobs/tech-docs-poland-cube.sql
+
+grep -v -- '--' tech-docs-poland-cube.sql | jq -R -s .
+////
+
+[source, sql]
+----
+SELECT <1>
+  -- Dimensions: <2>
+  PRINTF('%04d-%02d', "year", "month") AS yearMonth,
+  GBIF_EEARGCode(
+    1000,
+    decimalLatitude,
+    decimalLongitude,
+    COALESCE(coordinateUncertaintyInMeters, 1000)
+  ) AS eeaCellCode,
+  familyKey,
+  family,
+  speciesKey,
+  species,
+  COALESCE(sex, 'NOT_SUPPLIED') AS sex,
+  COALESCE(occurrence.lifestage.concept, 'NOT_SUPPLIED') AS lifestage,
+  -- Measurements <3>
+  COUNT(*) AS occurrences, <4>
+  MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters,
+  MIN(GBIF_TemporalUncertainty(eventDate)) AS minTemporalUncertainty,
+  -- Higher taxon measurement
+  IF(ISNULL(familyKey), NULL, SUM(COUNT(*)) OVER (PARTITION BY familyKey)) AS familyCount
+FROM
+  occurrence
+WHERE occurrenceStatus = 'PRESENT'
+  AND countryCode = 'PL'
+  AND "year" >= 2000
+  AND kingdomKey = 1
+  AND hasCoordinate = TRUE
+  AND (coordinateUncertaintyInMeters <= 1000 OR coordinateUncertaintyInMeters IS NULL)
+  AND speciesKey IS NOT NULL
+  AND NOT ARRAY_CONTAINS(issue, 'ZERO_COORDINATE')
+  AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_OUT_OF_RANGE')
+  AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_INVALID')
+  AND NOT ARRAY_CONTAINS(issue, 'COUNTRY_COORDINATE_MISMATCH')
+  AND "month" IS NOT NULL
+GROUP BY
+  yearMonth,
+  eeaCellCode,
+  familyKey,
+  family,
+  speciesKey,
+  species,
+  sex,
+  lifestage
+ORDER BY <5>
+  yearMonth DESC,
+  eeaCellCode ASC,
+  speciesKey ASC;
+----
+<1> These are the columns in the resulting cube, i.e. the dimensions and measurements for the cube.
+<2> The dimensions must also appear in the `GROUP BY` section. They can include functions.
+<3> The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, `MAX`, `AVERAGE`, `SUM` etc
+<4> `AS` gives a name to the column, used as the header in the result file
+<5> The `ORDER BY` section is optional.
+
+See xref::api-sql-download-functions.adoc[] for descriptions and arguments for the functions, including the `GBIF_EEARGCode` (EEA reference grid) function.
+
+=== Submit the query to GBIF
+
+See xref::api-sql-downloads.adoc[] for instructions.
+
+Note the queries above are shown in SQL format. The double quote characters, newlines and comments must be escaped/removed when converting the query to the JSON request for the API. The submitted request is https://raw.githubusercontent.com/gbif/occurrence/refs/heads/master/occurrence-download/example-jobs/tech-docs-poland-cube.json[available here].
+
+A cube made using this query is available https://www.gbif.org/occurrence/download/0099186-240321170329656[here].
+
+[%header, format=tsv]
+|===
+yearmonth	eeacellcode	familykey	family	specieskey	species	sex	lifestage	occurrences	mincoordinateuncertaintyinmeters	mintemporaluncertainty	familycount
+2024-03	1kmE4630N3262	6537	Limacidae	2295438	Limax maximus	NOT_SUPPLIED	NOT_SUPPLIED	1	122	60	548
+2024-03	1kmE4630N3262	5298	Cervidae	5220126	Capreolus capreolus	NOT_SUPPLIED	NOT_SUPPLIED	1	122	60	4877
+2024-03	1kmE4630N3263	9608	Emberizidae	2491557	Emberiza schoeniclus	NOT_SUPPLIED	NOT_SUPPLIED	1	31	60	57742
+2024-03	1kmE4631N3260	9342	Rallidae	5228199	Gallinula chloropus	NOT_SUPPLIED	NOT_SUPPLIED	1	31	60	26391
+2024-03	1kmE4631N3263	7782	Coccinellidae	1043171	Calvia quatuordecimguttata	NOT_SUPPLIED	NOT_SUPPLIED	1	1000	60	4996
+2024-03	1kmE4632N3257	2986	Anatidae	2498036	Anser anser	NOT_SUPPLIED	NOT_SUPPLIED	1	122	60	186923
+2024-03	1kmE4632N3258	2986	Anatidae	2498252	Alopochen aegyptiaca	NOT_SUPPLIED	NOT_SUPPLIED	1	61	60	186923
+|===

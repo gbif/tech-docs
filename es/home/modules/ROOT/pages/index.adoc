@@ -1,0 +1,78 @@
+= Technical Documentation
+:page-no-next: true
+:page-layout: home
+:page-omitnavigation: true
+
+The GBIF technical documentation describes how users can access data from GBIF. It provides information on the available data, how to retrieve it, where it has been cleaned or checked for data quality, and how it should be cited.
+
+Apart from the already available documentation of the GBIF Integrated Publishing Toolkit (IPT), the documentation will later link to additional information for data publishers, including guidelines on best practices for publishing high-quality data, references to the relevant standards, and more detailed information on the data quality checks and alignments made to published data.
+
+Please send any suggestions for improvements or corrections to helpdesk@gbif.org, or create an issue on the https://github.com/gbif/tech-docs/issues[GitHub tech-docs project].
+
+== What are you looking for?
+
+++++
+<div id="search-field" class="main-page-search">
+  <input id="search-input" type="text" placeholder="Search" style="display: block; width: 100%; font-size: 2rem; background: #f2f2f2; padding: 0.25rem 1rem; border: none; margin: 1rem 0;">
+</div>
+++++
+
+[.blocks]
+* xref:data-use::index.adoc[image:td-bg-01.png[]]
+** xref:data-use::index.adoc[Using data]
+** How to use data from GBIF, including xref:data-use::index.adoc#data-downloads[downloads], xref:data-use::rgbif.adoc[] and xref:data-use::pygbif.adoc[].
+
+* xref:openapi::index.adoc[image:td-bg-02.png[]]
+** xref:openapi::index.adoc[API Reference]
+** Reference information for the GBIF API.
+
+* xref:data-processing::index.adoc[image:td-bg-03.png[]]
+** xref:data-processing::index.adoc[Data processing and quality checks]
+** The standardization and quality processes applied to data published to GBIF, including taxonomic, temporal and geographic checks.
+
+* xref:cloud-services::index.adoc[image:td-bg-04.png[]]
+** xref:cloud-services::index.adoc[Cloud services]
+** Accessing GBIF's data using cloud services (AWS, Azure, GCS).
+
+* xref:data-publishing::index.adoc[image:td-bg-05.png[]]
+** xref:data-publishing::index.adoc[Data Publishing]
+** Information for new and experienced publishers of data to GBIF
+
+* xref:system-components::index.adoc[image:td-bg-06.png[]]
+** xref:system-components::index.adoc[System components]
+** Parts of the GBIF system setup (registry, GRSciColl etc)
+
+////
+moving IPT documentation into the tools section - this section to be deleted
+* https://ipt.gbif.org/manual/[image:td-bg-06.png[]]
+** https://ipt.gbif.org/manual/[IPT]
+** The GBIF Integrated Publishing Toolkit (IPT) manual
+////
+
+[.discrete]
+== Explore tool documentation
+
+////
+This makes two columns out of the list items.
+[.smallblocks]
+* xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Data validator]
+* xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Species matching]
+* xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Name parser]
+* xref:data-use::index.adoc[image:datamodel-img-11.jpg[] Derived datasets]
+* xref:data-use::rgbif.adoc[image:datamodel-img-11.jpg[] rgbif]
+* xref:data-use::pygbif.adoc[image:datamodel-img-11.jpg[] pygbif]
+////
+
+[.bannerblocks]
+--
+image::tools-2.png[]
+
+* xref:tools::index.adoc#ipt[image:tool-icon.png[] GBIF Integrated Publishing Toolkit (IPT)]
+* xref:tools::index.adoc#data-validator[image:tool-icon.png[] Data validator]
+* xref:tools::index.adoc#derived-datasets[image:tool-icon.png[] Derived datasets]
+// * xref:tools::index.adoc#species-matcher[image:tool-icon.png[] Species matching]
+
+[.bannerblocksmore]
+[.blocklink]
+xref:tools::index.adoc[View all tools]
+--

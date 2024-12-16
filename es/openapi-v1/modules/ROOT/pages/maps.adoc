@@ -1,0 +1,126 @@
+= Maps API (v1)
+
+[IMPORTANT]
+.Deprecated API
+====
+*Maps API Version 1 has been deprecated.*
+
+Please use xref:v2@openapi::maps.adoc[Maps API Version 2] for all new work, and convert any websites using Version 1 to the new API.
+
+Most queries using Version 1 continue to work, but some queries return errors, and the detailed styling options have been removed.
+====
+
+The mapping API is a https://www.opengeospatial.org/standards/wmts[web map tile service] making it trivial to visualize GBIF content on interactive maps and overlay content from other sources.
+
+== Feature overview
+
+The following features are supported:
+
+* Map layers available for a *country*, *dataset*, *taxon* (species, subspecies or higher taxon), *publisher*
+* [.line-through]#User-defined styling by selecting a predefined colour palette, or by providing styling rules#
+* Density of content is clustered to a user-defined cluster size (regardless of zoom level)
+* The ability to customize content shown by the https://rs.tdwg.org/dwc/terms/basisOfRecord[basis of record] (specimens, observations, fossils etc.)
+* For certain basis of record types, the time period may be customized by decade; e.g. map the observations of a species since 1970
+
+This service is intended for use with commonly used clients such as the https://developers.google.com/maps/[Google Maps API], https://leafletjs.com/[Leaflet JS library] or the https://modestmaps.com[Modest Maps JS library]. These libraries allow the GBIF layers to be visualized with other content, such as those coming from https://www.opengeospatial.org/standards/wms[Web Map Service (WMS)] providers. _It should be noted that the mapping API is not a WMS service, nor does it support WFS capabilities._
+
+== The tile URL format
+
+The format of the URL is as follows:
+
+`pass:[https://api.gbif.org/v1/map/density/tile?z={z}&x={x}&y={y}]`
+
+With the following parameters:
+
+[cols="1,1,4"]
+|====
+|Parameter |Required |Description
+
+|type
+|*required*
+|A value of `TAXON`, `DATASET`, `COUNTRY` or `PUBLISHER`
+
+|key
+|*required*
+|The appropriate key for the chosen type (a taxon key, dataset/publisher UUID or two-letter ISO country code)
+
+|resolution
+|optional (default 1)
+|The number of pixels to which density is aggregated. Valid values are `1`, `2`, `4`, `8`, and `16`.
+
+|layer
+|optional (multivalued)
+|Declares the layers to be combined by the server for this tile, see <<Customizing layer content>>.
+
+|[.line-through]#palette#
+.4+|mostly not supported
+.4+|[.line-through]#Selects a predefined colour palette, user-defined colouring rules or a colour gradient.# +
+Now, only the values `palette=yellows_reds`, `palette=greens`, `saturation=true` and `colors=,,#CC0000FF` are supported. These are the values used in the <<Embedded map,embedded map>> or noticed in query logs. |[.line-through]#colors# |[.line-through]#saturation# |[.line-through]#hue#
+|====
+
+== Customizing layer content
+
+`layer` parameters may be used to instruct the server to combine content into a single density layer. All layers declared will be combined by the server on rendering.
+
+Thus, for a given taxon, country, dataset or provider, it is possible to retrieve:
+
+* A map of specimens only
+* A map of specimens and observations
+* A map of specimens collected after 1970
+* A map of everything observed or collected after 2000
+* A map of everything where the year is known
+* A map of everything omitting those data known to be living specimens
+* ...etc
+
+The specification for the layers is provided below.
+
+* This is a *multivalue field* so it is expected that several layers are requested in any single URL
+* Should *no layers be specified, a sensible default is provided*. This is to preserve backwards compatibility since layering was an additional feature, and considered acceptable since a map with no layers makes little sense. At present the default returns all layers, but could be subject to future change (e.g. should a layer of records with known issues be added, it might not be included in the default)
+
+[cols="1,9a"]
+|====
+
+|Observations
+|Observation layers can take no year (`&layer=OBS_NO_YEAR`), before the 1900s (`&layer=OBS_PRE_1900`) or any decade after 1900. The full list is given: +
+`OBS_NO_YEAR`, `OBS_PRE_1900`, `OBS_1900_1910`, `OBS_1910_1920`, `OBS_1920_1930`,
+`OBS_1930_1940`, `OBS_1940_1950`, `OBS_1950_1960`, `OBS_1960_1970`, `OBS_1970_1980`,
+`OBS_1980_1990`, `OBS_1990_2000`, `OBS_2000_2010`, `OBS_2010_2020`, `OBS_2020_2030`
+
+|Specimens
+|Specimen layers can take no year (`&layer=SP_NO_YEAR`), before the 1900s (`&layer=SP_PRE_1900`) or any decade after 1900. The full list is given: +
+`SP_NO_YEAR`, `SP_PRE_1900`, `SP_1900_1910`, `SP_1910_1920`, `SP_1920_1930`,
+`SP_1930_1940`, `SP_1940_1950`, `SP_1950_1960`, `SP_1960_1970`, `SP_1970_1980`,
+`SP_1980_1990`, `SP_1990_2000`, `SP_2000_2010`, `SP_2010_2020`, `SP_2020_2030`
+
+|Living
+|If provided, the records with a declared basis of record of living will be included: `LIVING`.
+
+|Fossil
+|If provided, the records with a declared basis of record of fossil will be included: `FOSSIL`.
+
+|Other
+|Records where the basis of record is unknown, or something other than those above can take no year (`&layer=OTH_NO_YEAR`), before the 1900s (`&layer=OTH_PRE_1900`) or any decade after 1900. The full list is given: +
+`OTH_NO_YEAR`, `OTH_PRE_1900`, `OTH_1900_1910`, `OTH_1910_1920`, `OTH_1920_1930`,
+`OTH_1930_1940`, `OTH_1940_1950`, `OTH_1950_1960`, `OTH_1960_1970`, `OTH_1970_1980`,
+`OTH_1980_1990`, `OTH_1990_2000`, `OTH_2000_2010`, `OTH_2010_2020`, `OTH_2020_2030`
+|====
+
+With the introduction of xref:v2@openapi::maps.adoc[Maps API Version 2], layer specifications combining some decades and "no year" data will return an error.
+
+== Embedded map
+
+Two HTML pages suitable for embedding as IFRAMEs are provided. In addition to the parameters above, `style` may be set to `classic`, `dark`, `ocean`, `satellite`, `light` or `grey-blue` to pre-select from the styles available in the menu.
+
+https://api.gbif.org/v1/map/?type=TAXON&key=1695297&resolution=4&style=ocean[Occurrence density example]
+
+++++
+<iframe src="https://api.gbif.org/v1/map/?type=TAXON&key=1695297&resolution=4&style=ocean" width="1024px" height="450px" allowfullscreen="allowfullscreen"></iframe>
+++++
+
+For the occurrence-at-location map, the arguments `point` and `zoom` should be provided.
+
+https://api.gbif.org/v1/map/point.html?&style=grey-blue&point=31.89598,-104.82813&lat=31.89598&lng=-104.82813&zoom=8[Occurrence-at-location example]
+
+++++
+<iframe src="https://api.gbif.org/v1/map/point.html?&style=grey-blue&point=31.89598,-104.82813&lat=31.89598&lng=-104.82813&zoom=8" width="1024px" height="450px" allowfullscreen="allowfullscreen"></iframe>
+++++

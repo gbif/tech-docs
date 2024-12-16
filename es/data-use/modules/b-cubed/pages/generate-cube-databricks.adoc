@@ -1,0 +1,386 @@
+= Generate a species occurrence cube using Microsoft Azure Databricks
+
+*Species occurrence cubes* group species occurrence data along spatial, temporal and/or taxonomic dimensions.
+
+This page demonstrates creating a cube using GBIF occurrence data deposited on Microsoft Azure. The same approach can be used with other tabular data by uploading or importing it to Azure.
+
+== Demonstration cube specification
+
+The guide below will produce a data cube for occurrences of animals from Poland, recorded during or after 2000.
+
+The _dimensions_ of the cube will be
+
+. Species
+** We must therefore exclude occurrences not identified to species level
+** We will also exclude occurrences with known uncertain identifications
+. Year-Month
+** We must exclude occurrences with only year accuracy, or with an uncertain date spanning multiple months
+. EEA Reference grid
+** We will randomize the point using the coordinateUncertaintyInMeters, defaulting to 1000m
+** We will exclude occurrences without coordinates
+
+The _measures_ of the cube will be
+
+. Occurrence count
+. Minimum coordinate uncertainty
+. Minimum temporal uncertainty
+
+== Generating a data cube using Microsoft Azure Databricks
+
+NOTE: This is a **prototype**, and the implementation may change throughout 2024.
+
+=== Set up the Databricks cluster
+
+Follow the guide on the GBIF Data Blog, https://data-blog.gbif.org/post/microsoft-azure-and-gbif/[GBIF and Apache-Spark on Microsoft Azure tutorial], to set up a Databricks cluster.
+
+Once the "Compute" cluster is created, add the cube functions library.
+
+. Choose "Compute", select your cluster and then "Libraries"
+. Click "Install new", "Maven" and use these parameters:
+** Coordinates: `org.gbif.occurrence:cube-hive:0.2.0`
+** Repository: `https://repository.gbif.org/content/repositories/releases`
+. Click "Install"
+
+=== Import the most recent GBIF monthly snapshot
+
+Create a new notebook, and using a Scala cell run this code. (Change the date to the first day of the current month.)
+
+[source, scala]
+----
+import org.apache.spark.sql.functions._
+
+val gbif_snapshot_path = "wasbs://gbif@ai4edataeuwest.blob.core.windows.net/occurrence/2024-02-01/occurrence.parquet/*"
+
+val df = spark.read.parquet(gbif_snapshot_path)
+
+spark.sql("CREATE DATABASE gbif")
+
+df.write.format("parquet").saveAsTable("gbif.occurrence")
+----
+
+=== Define the gridding functions
+
+In another new notebook, add an SQL cell and define the grid functions:
+
+[source, sql]
+----
+CREATE OR REPLACE TEMPORARY FUNCTION eeaCellCode AS 'org.gbif.occurrence.hive.udf.EeaCellCodeUDF';
+CREATE OR REPLACE TEMPORARY FUNCTION eqdgcCode AS 'org.gbif.occurrence.hive.udf.ExtendedQuarterDegreeGridCellCodeUDF';
+CREATE OR REPLACE TEMPORARY FUNCTION mgrsCode AS 'org.gbif.occurrence.hive.udf.MilitaryGridReferenceSystemCellCodeUDF';
+----
+
+See xref:sql-cube-functions.adoc[] for definitions and parameters of the gridding functions.
+
+=== Create an initial GBIF search filter
+
+Perhaps using the GBIF.org website, find an approximate search filter, for example for a particular taxon, country or region, year range, etc. This will need to be expressed in SQL for submission to the API:
+
+[source, sql]
+----
+WHERE occurrenceStatus = 'PRESENT'
+  AND countryCode = 'PL'
+  AND year >= 2000
+  AND kingdom = 'Animalia'
+----
+
+Note that not all fields are available on the GBIF data snapshot in Microsoft Azure.
+
+=== Exclude unwanted data
+
+The GBIF website and search APIs do not allow excluding data from searches, but this is often required for data cubes. We have additional expressions for our WHERE clause:
+
+[source, sql]
+----
+  AND decimalLatitude IS NOT NULL
+  AND speciesKey IS NOT NULL
+  AND NOT array_contains(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')
+  AND month IS NOT NULL
+----
+
+=== Write full query
+
+Typical data cubes will use an SQL query similar to this one:
+
+// Notebook with this query: https://adb-3344466598970896.16.azuredatabricks.net/?o=3344466598970896#notebook/2739885278246418/command/2739885278246426
+
+[source, sql]
+----
+SELECT <1>
+  -- Dimensions: <2>
+  CONCAT_WS('-', year, month) AS yearMonth,
+  eeaCellCode(
+    1000,
+    decimalLatitude,
+    decimalLongitude,
+    COALESCE(coordinateUncertaintyInMeters, 1000) <3>
+  ) AS eeaCellCode,
+  speciesKey,
+  species,
+  -- Measurements <4>
+  COUNT(*) AS n, <5>
+  MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters
+FROM
+  gbif.occurrence
+WHERE occurrenceStatus = 'PRESENT'
+  AND countryCode = 'PL'
+  AND year >= 2000
+  AND kingdom = 'Animalia'
+  AND decimalLatitude IS NOT NULL
+  AND speciesKey IS NOT NULL
+  AND NOT ARRAY_CONTAINS(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')
+  AND month IS NOT NULL
+GROUP BY
+  yearMonth,
+  eeaCellCode,
+  speciesKey,
+  species
+ORDER BY <6>
+  yearMonth DESC,
+  eeaCellCode ASC,
+  speciesKey ASC;
+----
+<1> These are the columns in the resulting cube, i.e. the dimensions and measurements for the cube.
+<2> The dimensions must also appear in the `GROUP BY` section. They can include functions.
+<3> `COALESCE` sets a default value (1000) if the first value is absent.
+<4> The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, `MAX`, `AVERAGE`, `SUM` etc
+<5> `AS` gives a name to the column, used as the header in the result file
+<6> The `ORDER BY` section is optional.
+
+See xref::sql-cube-functions.adoc[] for descriptions and arguments for the functions, including the `eeaCellCode` (EEA reference grid) function.
+
+See xref:ROOT:download-formats.adoc#simple[simple download – term definitions] for the terms (columns) available in the GBIF data exported to public cloud providers. Some useful SQL expressions are described below.
+
+.Useful SQL expressions
+|====
+|Meaning |Example |Expression
+
+|GBIF species key and species name |`2878688`, `Quercus robur` |`speciesKey, species`
+|Year and month |`2024-2` |`CONCAT_WS('-', year, month)`
+|Year, month and day |`2024-2-1` |`CONCAT_WS('-', year, month, day)`
+|A default value |`NOT-SUPPLIED` |`COALESCE(establishmentMeans, 'NOT-SUPPLIED')`
+|First array value |`C. Darwin` |`identifiedBy.array_element[0]`
+|Temporal uncertainty |`86400` |`temporalUncertainty(eventDate)`
+|====
+
+=== Execute the query
+
+Run the query. You can download the results using the user interface.
+
+=== Sampling bias
+
+To account for sampling bias, the specification recommends including an occurrence count for a higher taxon, typically the family. This can be done using an SQL _window function_. This is a more advanced SQL technique, see https://www.postgresql.org/docs/current/tutorial-window.html[the PostgreSQL documentation] which has a good introduction to the concept.
+
+The query is the same as before, except for the addition of the highlighted rows.
+
+[source, sql]
+----
+SELECT
+  -- Dimensions:
+  CONCAT_WS('-', year, month) AS yearMonth,
+  eeaCellCode(
+    1000,
+    decimalLatitude,
+    decimalLongitude,
+    COALESCE(coordinateUncertaintyInMeters, 1000)
+  ) AS eeaCellCode,
+  speciesKey,
+  family, <1>
+  species,
+  -- Measurements
+  COUNT(*) AS n,
+  MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters,
+  -- Higher taxon measurement
+  IF(ISNULL(family), NULL, SUM(COUNT(*)) OVER (PARTITION BY family)) AS familyCount <2>
+FROM
+  gbif.occurrence
+WHERE occurrenceStatus = 'PRESENT'
+  AND countryCode = 'PL'
+  AND year >= 2000
+  AND kingdom = 'Animalia'
+  AND decimalLatitude IS NOT NULL
+  AND speciesKey IS NOT NULL
+  AND NOT ARRAY_CONTAINS(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')
+  AND month IS NOT NULL
+GROUP BY
+  yearMonth,
+  eeaCellCode,
+  speciesKey,
+  family, <3>
+  species
+ORDER BY
+  yearMonth DESC,
+  eeaCellCode ASC,
+  speciesKey ASC;
+----
+<1> Family added to the dimensions
+<2> The count by family, see explanation below.
+<3> Family must be added to the group by clause.
+
+The `familyCount` expression has two parts.
+
+* `IF(ISNULL(family), NULL, _windowexpression_)` sets the value to `NULL` if the family itself is `NULL`.
+* The window expression is `++SUM(COUNT(*)) OVER (PARTITION BY family)++`. This partitions (groups) the result rows by family, and for each partition it sums the number of occurrences, `++SUM(COUNT(*))++`.
+
+.Additional example (click to expand)
+[%collapsible]
+====
+This small example cube has only taxonomic and temporal dimensions, and around 300 rows: Fungi from Lichtenstein observed since 2000.
+
+[source, sql]
+----
+SELECT
+  -- Dimensions:
+  year,
+  speciesKey,
+  family,
+  species,
+  -- Measurements
+  COUNT(*) AS count,
+  -- Higher taxon for sampling bias
+  IF(ISNULL(family), NULL, SUM(COUNT(*)) OVER (PARTITION BY family)) AS familyCount
+FROM
+  gbif.occurrence
+WHERE occurrenceStatus = 'PRESENT'
+  AND countryCode = 'LI'
+  AND year >= 2000
+  AND kingdom = 'Fungi'
+  AND speciesKey IS NOT NULL
+GROUP BY
+  year,
+  speciesKey,
+  family,
+  species
+ORDER BY
+  family ASC,
+  speciesKey ASC,
+  year DESC;
+----
+
+The first few rows of the resulting cube:
+
+[%header, format=csv]
+|===
+year,speciesKey,family,species,count,familyCount
+2002,3301946,null,Protodontia piceicola,1,null
+2018,8690832,null,Trichaptum abietinum,1,null
+2002,2535310,Agaricaceae,Lepiota castanea,1,11
+2002,2535317,Agaricaceae,Lepiota subalba,1,11
+2002,2535689,Agaricaceae,Cystolepiota seminuda,5,11
+2002,2535723,Agaricaceae,Cystolepiota hetieri,1,11
+2021,7987658,Agaricaceae,Coprinus comatus,1,11
+2017,7987658,Agaricaceae,Coprinus comatus,1,11
+2002,9040203,Agaricaceae,Melanophyllum haematospermum,1,11
+2019,5240229,Amanitaceae,Amanita echinocephala,1,5
+2002,5240306,Amanitaceae,Amanita vaginata,1,5
+2002,5240325,Amanitaceae,Amanita phalloides,1,5
+2002,7496350,Amanitaceae,Amanita rubescens,1,5
+2017,8168319,Amanitaceae,Amanita muscaria,1,5
+2002,2526725,Amylocorticiaceae,Plicaturopsis crispa,6,6
+2002,2585521,Arachnopezizaceae,Arachnopeziza aurata,1,1
+|===
+
+====
+
+WARNING: Special care is required when generating a cube with a taxon filter of lower rank than the higher taxon count, for example when filtering for particular genera or species but using a count of occurrences in the whole family.
+
+In this case, the WHERE clause excludes data that must be counted in the higher taxon count. The cube must be generated in two steps. First, a cube encompassing the whole higher taxon is generated, and then the unwanted rows are discarded.
+
+.Two-step cube example (click to expand)
+[%collapsible]
+====
+As with the previous example, this cube will use observations from Lichtenstein since 2000. The filter is for a particular genus, _Cortinarius_, which is narrower than the required higher taxon count by family.
+
+[source, sql]
+----
+WITH fungiCube AS ( <1>
+  SELECT
+    -- Dimensions:
+    year,
+    speciesKey,
+    family,
+    genus,
+    species,
+    -- Measurements
+    COUNT(*) AS count,
+    -- Higher taxon for sampling bias
+    IF(ISNULL(family), NULL, SUM(COUNT(*)) OVER (PARTITION BY family)) AS familyCount
+  FROM
+    gbif.occurrence
+  WHERE occurrenceStatus = 'PRESENT'
+    AND countryCode = 'LI'
+    AND year >= 2000
+    AND kingdom = 'Fungi' <2>
+  GROUP BY
+    year,
+    speciesKey,
+    family,
+    genus,
+    species
+  )
+SELECT
+  year,
+  speciesKey,
+  family,
+  species,
+  count,
+  familyCount
+FROM fungiCube
+WHERE genus = 'Cortinarius' <3>
+ORDER BY
+  speciesKey ASC,
+  year DESC;
+----
+<1> The WITH clause defines an intermediate table.
+<2> The intermediate table is a cube for all fungi.
+<3> The final cube filters for the required genus.
+
+The resulting cube:
+
+[%header, format=csv]
+|===
+year,speciesKey,family,species,count,familyCount
+2002,2529345,Cortinariaceae,Cortinarius humicola,1,11
+2002,2529415,Cortinariaceae,Cortinarius caperatus,1,11
+2002,2529421,Cortinariaceae,Cortinarius anomalus,1,11
+2002,3350278,Cortinariaceae,Cortinarius pulchripes,1,11
+2002,8015843,Cortinariaceae,Cortinarius calochrous,1,11
+2002,12087710,Cortinariaceae,Cortinarius bolaris,3,11
+|===
+
+====
+
+== Generating cube metadata
+
+Part of the metadata is the SQL query used above. As this is prototype software, a DOI is not assigned.
+
+The contributions of GBIF-mediated datasets can be determined with a second SQL query, using the WHERE clause of the first. In effect, this is a two-dimensional "cube".
+
+[source, sql]
+----
+SELECT
+  -- Dimensions:
+  datasetKey,
+  license,
+  -- Measurement
+  COUNT(*) AS n
+FROM
+  gbif.occurrence
+WHERE occurrenceStatus = 'PRESENT' <1>
+  AND countryCode = 'PL'
+  AND year >= 2000
+  AND kingdom = 'Animalia'
+  AND decimalLatitude IS NOT NULL
+  AND speciesKey IS NOT NULL
+  AND NOT ARRAY_CONTAINS(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')
+  AND month IS NOT NULL
+GROUP BY
+  datasetKey,
+  license;
+----
+<1> _Exactly_ the same WHERE clause as used for the cube.
+
+The overall licence for the data is the most-strict of the licences returned in this SQL query. From least- to most-strict, these are:
+
+* https://creativecommons.org/publicdomain/zero/1.0/[CC0_1_0], Creative Commons No Copyright 1.0
+* https://creativecommons.org/licenses/by/4.0/[CC_BY_4_0], Creative Commons Attribution 4.0
+* https://creativecommons.org/licenses/by-nc/4.0/[CC_BY_NC_4_0], Creative Commons Attribution-NonCommercial 4.0
