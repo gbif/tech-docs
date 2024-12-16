@@ -1,0 +1,729 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2024-12-16 15:53\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: pt-PT\n"
+"X-Crowdin-File: /main/translations/generate-cube-databricks.adoc.pot\n"
+"X-Crowdin-File-ID: 40568\n"
+
+#. type: Title =
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:1
+#, no-wrap
+msgid "Generate a species occurrence cube using Microsoft Azure Databricks"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:4
+#, no-wrap
+msgid "*Species occurrence cubes* group species occurrence data along spatial, temporal and/or taxonomic dimensions.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:6
+msgid "This page demonstrates creating a cube using GBIF occurrence data deposited on Microsoft Azure.  The same approach can be used with other tabular data by uploading or importing it to Azure."
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:7
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:9
+#, no-wrap
+msgid "Demonstration cube specification"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:10
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:12
+msgid "The guide below will produce a data cube for occurrences of animals from Poland, recorded during or after 2000."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:12
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:14
+msgid "The _dimensions_ of the cube will be"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:14
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:16
+msgid "Species"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:15
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:17
+msgid "We must therefore exclude occurrences not identified to species level"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:16
+msgid "We will also exclude occurrences with known uncertain identifications"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:17
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:19
+msgid "Year-Month"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:18
+msgid "We must exclude occurrences with only year accuracy, or with an uncertain date spanning multiple months"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:19
+msgid "EEA Reference grid"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:20
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:22
+msgid "We will randomize the point using the coordinateUncertaintyInMeters, defaulting to 1000m"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:21
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:23
+msgid "We will exclude occurrences without coordinates"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:23
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:30
+msgid "The _measures_ of the cube will be"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:25
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:32
+msgid "Occurrence count"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:26
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:33
+msgid "Minimum coordinate uncertainty"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:27
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:34
+msgid "Minimum temporal uncertainty"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:28
+#, no-wrap
+msgid "Generating a data cube using Microsoft Azure Databricks"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:31
+msgid "This is a **prototype**, and the implementation may change throughout 2024."
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:32
+#, no-wrap
+msgid "Set up the Databricks cluster"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:35
+msgid "Follow the guide on the GBIF Data Blog, https://data-blog.gbif.org/post/microsoft-azure-and-gbif/[GBIF and Apache-Spark on Microsoft Azure tutorial], to set up a Databricks cluster."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:37
+msgid "Once the \"Compute\" cluster is created, add the cube functions library."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:39
+msgid "Choose \"Compute\", select your cluster and then \"Libraries\""
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:40
+msgid "Click \"Install new\", \"Maven\" and use these parameters:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:41
+msgid "Coordinates: `org.gbif.occurrence:cube-hive:0.2.0`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:42
+msgid "Repository: `https://repository.gbif.org/content/repositories/releases`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:43
+msgid "Click \"Install\""
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:44
+#, no-wrap
+msgid "Import the most recent GBIF monthly snapshot"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:47
+msgid "Create a new notebook, and using a Scala cell run this code. (Change the date to the first day of the current month.)"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:51
+#, no-wrap
+msgid "import org.apache.spark.sql.functions._\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:53
+#, no-wrap
+msgid "val gbif_snapshot_path = \"wasbs://gbif@ai4edataeuwest.blob.core.windows.net/occurrence/2024-02-01/occurrence.parquet/*\"\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:55
+#, no-wrap
+msgid "val df = spark.read.parquet(gbif_snapshot_path)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:57
+#, no-wrap
+msgid "spark.sql(\"CREATE DATABASE gbif\")\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:59
+#, no-wrap
+msgid "df.write.format(\"parquet\").saveAsTable(\"gbif.occurrence\")\n"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:61
+#, no-wrap
+msgid "Define the gridding functions"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:64
+msgid "In another new notebook, add an SQL cell and define the grid functions:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:70
+#, no-wrap
+msgid "CREATE OR REPLACE TEMPORARY FUNCTION eeaCellCode AS 'org.gbif.occurrence.hive.udf.EeaCellCodeUDF';\n"
+"CREATE OR REPLACE TEMPORARY FUNCTION eqdgcCode AS 'org.gbif.occurrence.hive.udf.ExtendedQuarterDegreeGridCellCodeUDF';\n"
+"CREATE OR REPLACE TEMPORARY FUNCTION mgrsCode AS 'org.gbif.occurrence.hive.udf.MilitaryGridReferenceSystemCellCodeUDF';\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:73
+msgid "See xref:sql-cube-functions.adoc[] for definitions and parameters of the gridding functions."
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:74
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:37
+#, no-wrap
+msgid "Create an initial GBIF search filter"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:77
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:40
+msgid "Perhaps using the GBIF.org website, find an approximate search filter, for example for a particular taxon, country or region, year range, etc.  This will need to be expressed in SQL for submission to the API:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:84
+#, no-wrap
+msgid "WHERE occurrenceStatus = 'PRESENT'\n"
+"  AND countryCode = 'PL'\n"
+"  AND year >= 2000\n"
+"  AND kingdom = 'Animalia'\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:87
+msgid "Note that not all fields are available on the GBIF data snapshot in Microsoft Azure."
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:88
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:55
+#, no-wrap
+msgid "Exclude unwanted data"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:91
+msgid "The GBIF website and search APIs do not allow excluding data from searches, but this is often required for data cubes.  We have additional expressions for our WHERE clause:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:98
+#, no-wrap
+msgid "  AND decimalLatitude IS NOT NULL\n"
+"  AND speciesKey IS NOT NULL\n"
+"  AND NOT array_contains(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')\n"
+"  AND month IS NOT NULL\n"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:100
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:153
+#, no-wrap
+msgid "Write full query"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:103
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:158
+msgid "Typical data cubes will use an SQL query similar to this one:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:141
+#, no-wrap
+msgid "SELECT <1>\n"
+"  -- Dimensions: <2>\n"
+"  CONCAT_WS('-', year, month) AS yearMonth,\n"
+"  eeaCellCode(\n"
+"    1000,\n"
+"    decimalLatitude,\n"
+"    decimalLongitude,\n"
+"    COALESCE(coordinateUncertaintyInMeters, 1000) <3>\n"
+"  ) AS eeaCellCode,\n"
+"  speciesKey,\n"
+"  species,\n"
+"  -- Measurements <4>\n"
+"  COUNT(*) AS n, <5>\n"
+"  MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters\n"
+"FROM\n"
+"  gbif.occurrence\n"
+"WHERE occurrenceStatus = 'PRESENT'\n"
+"  AND countryCode = 'PL'\n"
+"  AND year >= 2000\n"
+"  AND kingdom = 'Animalia'\n"
+"  AND decimalLatitude IS NOT NULL\n"
+"  AND speciesKey IS NOT NULL\n"
+"  AND NOT ARRAY_CONTAINS(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')\n"
+"  AND month IS NOT NULL\n"
+"GROUP BY\n"
+"  yearMonth,\n"
+"  eeaCellCode,\n"
+"  speciesKey,\n"
+"  species\n"
+"ORDER BY <6>\n"
+"  yearMonth DESC,\n"
+"  eeaCellCode ASC,\n"
+"  speciesKey ASC;\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:143
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:219
+msgid "These are the columns in the resulting cube, i.e. the dimensions and measurements for the cube."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:144
+msgid "The dimensions must also appear in the `GROUP BY` section. They can include functions."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:145
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:106
+msgid "`COALESCE` sets a default value (1000) if the first value is absent."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:146
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:221
+msgid "The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, `MAX`, `AVERAGE`, `SUM` etc"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:147
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:222
+msgid "`AS` gives a name to the column, used as the header in the result file"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:148
+msgid "The `ORDER BY` section is optional."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:150
+msgid "See xref::sql-cube-functions.adoc[] for descriptions and arguments for the functions, including the `eeaCellCode` (EEA reference grid) function."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:152
+msgid "See xref:ROOT:download-formats.adoc#simple[simple download – term definitions] for the terms (columns) available in the GBIF data exported to public cloud providers.  Some useful SQL expressions are described below."
+msgstr ""
+
+#. type: Block title
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:153
+#, no-wrap
+msgid "Useful SQL expressions"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:163
+#, no-wrap
+msgid "|Meaning |Example |Expression\n\n"
+"|GBIF species key and species name |`2878688`, `Quercus robur` |`speciesKey, species`\n"
+"|Year and month |`2024-2` |`CONCAT_WS('-', year, month)`\n"
+"|Year, month and day |`2024-2-1` |`CONCAT_WS('-', year, month, day)`\n"
+"|A default value |`NOT-SUPPLIED` |`COALESCE(establishmentMeans, 'NOT-SUPPLIED')`\n"
+"|First array value |`C. Darwin` |`identifiedBy.array_element[0]`\n"
+"|Temporal uncertainty |`86400` |`temporalUncertainty(eventDate)`\n"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:165
+#, no-wrap
+msgid "Execute the query"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:168
+msgid "Run the query.  You can download the results using the user interface."
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:169
+#, no-wrap
+msgid "Sampling bias"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:172
+msgid "To account for sampling bias, the specification recommends including an occurrence count for a higher taxon, typically the family.  This can be done using an SQL _window function_.  This is a more advanced SQL technique, see https://www.postgresql.org/docs/current/tutorial-window.html[the PostgreSQL documentation] which has a good introduction to the concept."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:174
+msgid "The query is the same as before, except for the addition of the highlighted rows."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:214
+#, no-wrap
+msgid "SELECT\n"
+"  -- Dimensions:\n"
+"  CONCAT_WS('-', year, month) AS yearMonth,\n"
+"  eeaCellCode(\n"
+"    1000,\n"
+"    decimalLatitude,\n"
+"    decimalLongitude,\n"
+"    COALESCE(coordinateUncertaintyInMeters, 1000)\n"
+"  ) AS eeaCellCode,\n"
+"  speciesKey,\n"
+"  family, <1>\n"
+"  species,\n"
+"  -- Measurements\n"
+"  COUNT(*) AS n,\n"
+"  MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters,\n"
+"  -- Higher taxon measurement\n"
+"  IF(ISNULL(family), NULL, SUM(COUNT(*)) OVER (PARTITION BY family)) AS familyCount <2>\n"
+"FROM\n"
+"  gbif.occurrence\n"
+"WHERE occurrenceStatus = 'PRESENT'\n"
+"  AND countryCode = 'PL'\n"
+"  AND year >= 2000\n"
+"  AND kingdom = 'Animalia'\n"
+"  AND decimalLatitude IS NOT NULL\n"
+"  AND speciesKey IS NOT NULL\n"
+"  AND NOT ARRAY_CONTAINS(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')\n"
+"  AND month IS NOT NULL\n"
+"GROUP BY\n"
+"  yearMonth,\n"
+"  eeaCellCode,\n"
+"  speciesKey,\n"
+"  family, <3>\n"
+"  species\n"
+"ORDER BY\n"
+"  yearMonth DESC,\n"
+"  eeaCellCode ASC,\n"
+"  speciesKey ASC;\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:216
+msgid "Family added to the dimensions"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:217
+msgid "The count by family, see explanation below."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:218
+msgid "Family must be added to the group by clause."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:220
+msgid "The `familyCount` expression has two parts."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:222
+msgid "`IF(ISNULL(family), NULL, _windowexpression_)` sets the value to `NULL` if the family itself is `NULL`."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:223
+msgid "The window expression is `++SUM(COUNT(*)) OVER (PARTITION BY family)++`.  This partitions (groups) the result rows by family, and for each partition it sums the number of occurrences, `++SUM(COUNT(*))++`."
+msgstr ""
+
+#. type: Block title
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:224
+#, no-wrap
+msgid "Additional example (click to expand)"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:228
+msgid "This small example cube has only taxonomic and temporal dimensions, and around 300 rows: Fungi from Lichtenstein observed since 2000."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:257
+#, no-wrap
+msgid "SELECT\n"
+"  -- Dimensions:\n"
+"  year,\n"
+"  speciesKey,\n"
+"  family,\n"
+"  species,\n"
+"  -- Measurements\n"
+"  COUNT(*) AS count,\n"
+"  -- Higher taxon for sampling bias\n"
+"  IF(ISNULL(family), NULL, SUM(COUNT(*)) OVER (PARTITION BY family)) AS familyCount\n"
+"FROM\n"
+"  gbif.occurrence\n"
+"WHERE occurrenceStatus = 'PRESENT'\n"
+"  AND countryCode = 'LI'\n"
+"  AND year >= 2000\n"
+"  AND kingdom = 'Fungi'\n"
+"  AND speciesKey IS NOT NULL\n"
+"GROUP BY\n"
+"  year,\n"
+"  speciesKey,\n"
+"  family,\n"
+"  species\n"
+"ORDER BY\n"
+"  family ASC,\n"
+"  speciesKey ASC,\n"
+"  year DESC;\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:260
+msgid "The first few rows of the resulting cube:"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:280
+#, no-wrap
+msgid "year,speciesKey,family,species,count,familyCount\n"
+"2002,3301946,null,Protodontia piceicola,1,null\n"
+"2018,8690832,null,Trichaptum abietinum,1,null\n"
+"2002,2535310,Agaricaceae,Lepiota castanea,1,11\n"
+"2002,2535317,Agaricaceae,Lepiota subalba,1,11\n"
+"2002,2535689,Agaricaceae,Cystolepiota seminuda,5,11\n"
+"2002,2535723,Agaricaceae,Cystolepiota hetieri,1,11\n"
+"2021,7987658,Agaricaceae,Coprinus comatus,1,11\n"
+"2017,7987658,Agaricaceae,Coprinus comatus,1,11\n"
+"2002,9040203,Agaricaceae,Melanophyllum haematospermum,1,11\n"
+"2019,5240229,Amanitaceae,Amanita echinocephala,1,5\n"
+"2002,5240306,Amanitaceae,Amanita vaginata,1,5\n"
+"2002,5240325,Amanitaceae,Amanita phalloides,1,5\n"
+"2002,7496350,Amanitaceae,Amanita rubescens,1,5\n"
+"2017,8168319,Amanitaceae,Amanita muscaria,1,5\n"
+"2002,2526725,Amylocorticiaceae,Plicaturopsis crispa,6,6\n"
+"2002,2585521,Arachnopezizaceae,Arachnopeziza aurata,1,1\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:285
+msgid "Special care is required when generating a cube with a taxon filter of lower rank than the higher taxon count, for example when filtering for particular genera or species but using a count of occurrences in the whole family."
+msgstr ""
+
+#. type: delimited block =
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:287
+msgid "In this case, the WHERE clause excludes data that must be counted in the higher taxon count.  The cube must be generated in two steps.  First, a cube encompassing the whole higher taxon is generated, and then the unwanted rows are discarded."
+msgstr ""
+
+#. type: Block title
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:288
+#, no-wrap
+msgid "Two-step cube example (click to expand)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:292
+msgid "As with the previous example, this cube will use observations from Lichtenstein since 2000.  The filter is for a particular genus, _Cortinarius_, which is narrower than the required higher taxon count by family."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:332
+#, no-wrap
+msgid "WITH fungiCube AS ( <1>\n"
+"  SELECT\n"
+"    -- Dimensions:\n"
+"    year,\n"
+"    speciesKey,\n"
+"    family,\n"
+"    genus,\n"
+"    species,\n"
+"    -- Measurements\n"
+"    COUNT(*) AS count,\n"
+"    -- Higher taxon for sampling bias\n"
+"    IF(ISNULL(family), NULL, SUM(COUNT(*)) OVER (PARTITION BY family)) AS familyCount\n"
+"  FROM\n"
+"    gbif.occurrence\n"
+"  WHERE occurrenceStatus = 'PRESENT'\n"
+"    AND countryCode = 'LI'\n"
+"    AND year >= 2000\n"
+"    AND kingdom = 'Fungi' <2>\n"
+"  GROUP BY\n"
+"    year,\n"
+"    speciesKey,\n"
+"    family,\n"
+"    genus,\n"
+"    species\n"
+"  )\n"
+"SELECT\n"
+"  year,\n"
+"  speciesKey,\n"
+"  family,\n"
+"  species,\n"
+"  count,\n"
+"  familyCount\n"
+"FROM fungiCube\n"
+"WHERE genus = 'Cortinarius' <3>\n"
+"ORDER BY\n"
+"  speciesKey ASC,\n"
+"  year DESC;\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:334
+msgid "The WITH clause defines an intermediate table."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:335
+msgid "The intermediate table is a cube for all fungi."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:336
+msgid "The final cube filters for the required genus."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:338
+msgid "The resulting cube:"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:348
+#, no-wrap
+msgid "year,speciesKey,family,species,count,familyCount\n"
+"2002,2529345,Cortinariaceae,Cortinarius humicola,1,11\n"
+"2002,2529415,Cortinariaceae,Cortinarius caperatus,1,11\n"
+"2002,2529421,Cortinariaceae,Cortinarius anomalus,1,11\n"
+"2002,3350278,Cortinariaceae,Cortinarius pulchripes,1,11\n"
+"2002,8015843,Cortinariaceae,Cortinarius calochrous,1,11\n"
+"2002,12087710,Cortinariaceae,Cortinarius bolaris,3,11\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:352
+#, no-wrap
+msgid "Generating cube metadata"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:355
+msgid "Part of the metadata is the SQL query used above.  As this is prototype software, a DOI is not assigned."
+msgstr ""
+
+#. type: delimited block =
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:357
+msgid "The contributions of GBIF-mediated datasets can be determined with a second SQL query, using the WHERE clause of the first. In effect, this is a two-dimensional \"cube\"."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:379
+#, no-wrap
+msgid "SELECT\n"
+"  -- Dimensions:\n"
+"  datasetKey,\n"
+"  license,\n"
+"  -- Measurement\n"
+"  COUNT(*) AS n\n"
+"FROM\n"
+"  gbif.occurrence\n"
+"WHERE occurrenceStatus = 'PRESENT' <1>\n"
+"  AND countryCode = 'PL'\n"
+"  AND year >= 2000\n"
+"  AND kingdom = 'Animalia'\n"
+"  AND decimalLatitude IS NOT NULL\n"
+"  AND speciesKey IS NOT NULL\n"
+"  AND NOT ARRAY_CONTAINS(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')\n"
+"  AND month IS NOT NULL\n"
+"GROUP BY\n"
+"  datasetKey,\n"
+"  license;\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:381
+msgid "_Exactly_ the same WHERE clause as used for the cube."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:383
+msgid "The overall licence for the data is the most-strict of the licences returned in this SQL query.  From least- to most-strict, these are:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:385
+msgid "https://creativecommons.org/publicdomain/zero/1.0/[CC0_1_0], Creative Commons No Copyright 1.0"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:386
+msgid "https://creativecommons.org/licenses/by/4.0/[CC_BY_4_0], Creative Commons Attribution 4.0"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:386
+msgid "https://creativecommons.org/licenses/by-nc/4.0/[CC_BY_NC_4_0], Creative Commons Attribution-NonCommercial 4.0"
+msgstr ""
+
