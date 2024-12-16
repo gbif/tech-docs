@@ -1,5 +1,0 @@
-name: ROOT
-title: GBIF Documentación Técnica
-version: ~
-nav:
-- modules/ROOT/nav.adoc
