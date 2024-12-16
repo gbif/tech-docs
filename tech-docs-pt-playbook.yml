@@ -1,0 +1,76 @@
+site:
+  title: Documentação Técnica
+  start_page: ROOT::index.adoc
+  keys:
+    language: pt
+content:
+  sources:
+    - url: .
+      start_path: ./pt/home
+      branches: main
+    - url: .
+      start_path: ./pt/data-publishing
+      branches: main
+    - url: .
+      start_path: ./pt/data-processing
+      branches: main
+    - url: .
+      start_path: ./pt/data-use
+      branches: main
+    - url: .
+      start_path: ./pt/cloud-services
+      branches: main
+    - url: .
+      start_path: ./pt/openapi
+      branches: main
+    - url: .
+      start_path: ./pt/openapi-v1
+      branches: main
+    - url: .
+      start_path: ./pt/openapi-v2
+      branches: main
+    - url: .
+      start_path: ./pt/tools
+      branches: main
+    - url: .
+      start_path: ./pt/system-components
+      branches: main
+    #- url: .
+    #  start_path: ./pt/guides
+    #  branches: main
+    #- url: https://github.com/gbif/ipt.git
+    #  branches: [ipt-2.4-docs, master]
+    #  edit_url: 'https://github.com/gbif/ipt/edit/master/{path}'
+    #  start_path: docs/pt
+    #- url: https://github.com/gbif/doc-publishing-dna-derived-data.git
+    #  start_path: en
+    #  branches: antora
+output:
+  clean: false
+  dir: ./output/pt
+runtime:
+  fetch: true
+  cache_dir: ./cache
+ui:
+  bundle:
+    url: https://builds.gbif.org/job/tech-docs-theme/lastSuccessfulBuild/artifact/build/ui-bundle.zip
+    snapshot: true
+  supplemental_files: ./supplemental_ui
+urls:
+  html_extension_style: drop
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: latest
+  redirect_facility: httpd
+asciidoc:
+  attributes:
+    idprefix: ''
+    idseparator: '-'
+    page-pagination: yes
+    page-toctitle: 'Contenido de la página'
+    language: pt
+    null: ␀
+antora:
+  extensions:
+  - require: '@antora/lunr-extension'
+    index_latest_only: true
+    languages: [pt]
