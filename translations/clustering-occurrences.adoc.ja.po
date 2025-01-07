@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2024-12-16 15:14+0000\n"
-"PO-Revision-Date: 2024-12-16 15:52\n"
+"POT-Creation-Date: 2025-01-07 13:08+0000\n"
+"PO-Revision-Date: 2025-01-07 13:11\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -82,7 +82,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:26
-msgid "The fields used to identify and group the candidates are a subset of what is used later on for comparing them (see the table below). See https://github.com/gbif/pipelines/blob/master/gbif/ingestion/clustering-gbif/src/main/scala/org/gbif/pipelines/clustering/Cluster.scala[the source code] to check the details."
+msgid "The fields used to identify and group the candidates are a subset of what is used later on for comparing them (see the table below). See https://github.com/gbif/clustering/blob/dev/src/main/java/org/gbif/clustering/Cluster.java[the source code] to check the details."
 msgstr ""
 
 #. type: Title ===
@@ -98,7 +98,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:32
-msgid "The table below summarizes how those assertions are made but for more details, check the https://github.com/gbif/pipelines/blob/master/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java[source code]."
+msgid "The table below summarizes how those assertions are made but for more details, check the https://github.com/gbif/clustering/blob/dev/src/main/java/org/gbif/clustering/parsers/OccurrenceRelationships.java[source code]."
 msgstr ""
 
 #. type: Table
