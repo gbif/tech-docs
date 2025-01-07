@@ -22,13 +22,13 @@ The system first creates a series of "hashes" for each record based on specified
 
 For example, one of the "hashes" used is based on the species key, rounded coordinates, year, month and day. This means that the records that share the same values for those fields will be grouped together in the candidate table for further inspection.
 
-The fields used to identify and group the candidates are a subset of what is used later on for comparing them (see the table below). See https://github.com/gbif/pipelines/blob/master/gbif/ingestion/clustering-gbif/src/main/scala/org/gbif/pipelines/clustering/Cluster.scala[the source code] to check the details.
+The fields used to identify and group the candidates are a subset of what is used later on for comparing them (see the table below). See https://github.com/gbif/clustering/blob/dev/src/main/java/org/gbif/clustering/Cluster.java[the source code] to check the details.
 
 === Step 2: Compare and assess
 
 In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them.
 
-The table below summarizes how those assertions are made but for more details, check the https://github.com/gbif/pipelines/blob/master/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java[source code].
+The table below summarizes how those assertions are made but for more details, check the https://github.com/gbif/clustering/blob/dev/src/main/java/org/gbif/clustering/parsers/OccurrenceRelationships.java[source code].
 
 // Table stripes are defined in /supplemental_ui/css/special-pages.css
 [cols="1,1,1",frame=all,grid=all]
