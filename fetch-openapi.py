@@ -71,6 +71,8 @@ for ws, url in urls.items():
             checklistbank = json.loads(response.text)
         elif ws == 'checklistbank-nub-ws':
             checklistbanknub = json.loads(response.text)
+        elif ws == 'matching-ws-gbif':
+            checklistbanknub = json.loads(response.text)
         elif ws == 'occurrence-annotation-ws':
             occurrenceannotation = json.loads(response.text)
         else:
