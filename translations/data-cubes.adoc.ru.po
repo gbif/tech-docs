@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2024-12-16 15:14+0000\n"
-"PO-Revision-Date: 2024-12-16 15:52\n"
+"POT-Creation-Date: 2025-01-21 14:29+0000\n"
+"PO-Revision-Date: 2025-01-21 16:49\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -146,17 +146,15 @@ msgstr ""
 msgid "`AS` gives a name to the column, used as the header in the result file"
 msgstr ""
 
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:4
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:4
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:4
-msgid "This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently only available for preview by invited users.  Contact helpdesk@gbif.org to request access."
-msgstr ""
-
 #. type: Title =
 #: en/data-use/modules/ROOT/pages/data-cubes.adoc:1
 #, no-wrap
 msgid "Species occurrence cubes"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:4
+msgid "This is an **experimental feature**, and the implementation may change throughout 2025.  The feature is currently only available for preview by invited users.  Contact helpdesk@gbif.org to request access."
 msgstr ""
 
 #. type: Plain text
