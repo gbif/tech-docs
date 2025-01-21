@@ -1,6 +1,6 @@
 = Species occurrence cubes
 
-NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently only available for preview by invited users.  Contact helpdesk@gbif.org to request access.
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2025.  The feature is currently only available for preview by invited users.  Contact helpdesk@gbif.org to request access.
 
 *Species occurrence cubes* are views of GBIF occurrence data, filtered and summarized by spatial, temporal and/or taxonomic dimensions, and providing measures for each dimension.
 
