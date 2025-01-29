@@ -74,3 +74,4 @@ antora:
   - require: '@antora/lunr-extension'
     index_latest_only: true
     languages: [es]
+  - require: ./unpublish-flagged-pages.js
