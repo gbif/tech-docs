@@ -2,17 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2024-12-16 15:14+0000\n"
-"PO-Revision-Date: 2024-12-16 15:52\n"
+"PO-Revision-Date: 2025-01-30 15:33\n"
 "Last-Translator: \n"
-"Language-Team: Spanish, Colombia\n"
-"Language: es_CO\n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: gbif-tech-docs\n"
 "X-Crowdin-Project-ID: 746653\n"
-"X-Crowdin-Language: es-CO\n"
+"X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: /main/translations/citation.adoc.pot\n"
 "X-Crowdin-File-ID: 40552\n"
 
@@ -22,12 +22,12 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/pygbif.adoc:59
 #, no-wrap
 msgid "Citation"
-msgstr ""
+msgstr "Citación"
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/citation.adoc:3
 #: en/data-use/modules/ROOT/pages/index.adoc:41
 #: en/data-use/modules/ROOT/pages/pygbif.adoc:62
 msgid "Under the terms of the GBIF data user agreement, users who download data agree to cite a DOI. Please see GBIF’s https://www.gbif.org/citation-guidelines[citation guidelines]."
-msgstr ""
+msgstr "Bajo los términos del acuerdo de usuario de datos de GBIF, los usuarios que descargan datos acuerdan citar un DOI. Por favor, consulte la guía para citar de GBIF https://www.gbif.org/es/citation-guidelines."
 
