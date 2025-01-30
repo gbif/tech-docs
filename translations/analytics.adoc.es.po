@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2024-12-16 15:14+0000\n"
-"PO-Revision-Date: 2025-01-30 13:53\n"
+"PO-Revision-Date: 2025-01-30 15:33\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -30,7 +30,7 @@ msgstr "GBIF captura varias métricas para permitir el seguimiento de las tenden
 #. type: Plain text
 #: en/openapi/modules/ROOT/pages/analytics.adoc:6
 msgid "Every quarter, GBIF takes a snapshot of the published verbatim occurrence data.  The latest snapshot, and all prior snapshots, are then reprocessed using the current processing pipeline, including the newest taxonomic backbone, vocabularies, geospatial layers and so on.  The data are then summarized and made available for the https://www.gbif.org/analytics[GBIF Global Trends] page and the linked regional and country pages."
-msgstr "GBIF captura varias métricas para permitir el seguimiento de las tendencias de los datos. Estas se muestran en https://www.gbif.org/analytics."
+msgstr "Cada trimestre, GBIF toma una instantánea de los datos de ocurrencia publicados.  La última instantánea, y todas las anteriores, se vuelven a procesar utilizando el proceso actual, incluyendo la base taxonómica, vocabularios, capas geoespaciales, etc. más recientes. Los datos se resumen y se ponen a disposición en la página https://www.gbif.org/analytics[GBIF Global Trends] y en las páginas regionales y de países enlazadas."
 
 #. type: Plain text
 #: en/openapi/modules/ROOT/pages/analytics.adoc:7
