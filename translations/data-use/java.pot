@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/data-use/modules/ROOT/pages/java.adoc:1
+#, no-wrap
+msgid "Java API clients"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:4
+msgid "_Webservice clients for the Java programming language._"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:6
+msgid ""
+"GBIF's API is implemented as a set of Java webservices.  Most of the "
+"webservices include a Java client.  These clients are used internally by "
+"other webservices, and in integration tests."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:8
+msgid ""
+"They implement the https://github.com/gbif/gbif-api?tab=readme-ov-file[GBIF "
+"API] library (https://gbif.github.io/gbif-api/apidocs/[JavaDoc]), which "
+"provides model objects, enumerations and interface definitions for the "
+"public API."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:10
+msgid ""
+"Internally the modules use https://github.com/OpenFeign/feign[OpenFeign] and "
+"https://cloud.spring.io/spring-cloud-openfeign/reference/html/[Spring Cloud "
+"OpenFeign]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:12
+msgid ""
+"Common classes and configuration for clients can be found in the project "
+"https://github.com/gbif/gbif-common-ws[gbif-common-ws]."
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/java.adoc:13
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:9
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:10
+#, no-wrap
+msgid "Installation"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:16
+msgid "Maven artefacts are available in our Maven repository:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/java.adoc:23
+#, no-wrap
+msgid ""
+"<repository>\n"
+"  <id>gbif-releases</id>\n"
+"  <url>https://repository.gbif.org/content/repositories/releases</url>\n"
+"</repository>\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/java.adoc:30
+#, no-wrap
+msgid ""
+"<!-- Example: Registry API -->\n"
+"<dependency>\n"
+"  <artifactId>registry-ws-client</artifactId>\n"
+"  <groupId>org.gbif.registry</groupId>\n"
+"  <version>3.96.22</version>\n"
+"</dependency>\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/java.adoc:32
+#, no-wrap
+msgid "Clients"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:35
+msgid "Refer to the webservice repositories for the clients and examples."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:37
+msgid ""
+"https://github.com/gbif/registry/tree/dev/registry-ws-client#readme[Registry]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:38
+msgid ""
+"https://github.com/gbif/occurrence/[Occurrence] (Occurrence search and "
+"downloads)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:39
+msgid ""
+"https://github.com/gbif/checklistbank/[Checklistbank] (Species and taxa)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:40
+msgid ""
+"https://github.com/gbif/crawler/[Crawler] (Dataset indexing metadata and "
+"state)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:41
+msgid ""
+"https://github.com/gbif/geocode/tree/master/geocode-ws-"
+"client#readme[Geocode] (Reverse geocoding)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:42
+msgid ""
+"https://github.com/gbif/metrics/tree/master/metrics-ws-"
+"client#readme[Metrics] (Occurrence statistics)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:43
+msgid "https://github.com/gbif/vocabulary/[Vocabulary]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:44
+msgid ""
+"https://github.com/gbif/pipelines/gbif/validator/validator-ws-"
+"client[Validator] (Dataset validator)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:45
+msgid "https://github.com/gbif/maps/[Maps] (Occurrence maps; no Java client)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:46
+msgid ""
+"https://github.com/gbif/literature/[Literature] (Literature and citations; "
+"no Java client)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/java.adoc:47
+msgid ""
+"Also note that functionality is divided between these webservices in a "
+"different way to the sections of the xref:openapi::index.adoc[API Reference] "
+"documentation.  For example, creation and retrieval of a download is "
+"implemented in the Occurrence module, but handling of download metadata is "
+"implemented in the Registry module."
+msgstr ""
