@@ -1,6 +1,6 @@
 = Species occurrence cubes
 
-NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently only available for preview by invited users.  Contact helpdesk@gbif.org to request access.
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2025.  The feature is currently only available for preview by invited users.  Contact helpdesk@gbif.org to request access.
 
 *Species occurrence cubes* are views of GBIF occurrence data, filtered and summarized by spatial, temporal and/or taxonomic dimensions, and providing measures for each dimension.
 
@@ -42,13 +42,14 @@ Perhaps using the GBIF.org website, find an approximate search filter, for examp
 ----
 WHERE occurrenceStatus = 'PRESENT'
   AND countryCode = 'PL' <1>
-  AND year >= 2000
-  AND kingdomKey = 1 <2>
-  AND hasCoordinate = TRUE <3>
+  AND "year" >= 2000 <2>
+  AND kingdomKey = 1 <3>
+  AND hasCoordinate = TRUE <4>
 ----
 <1> Poland
-<2> _Animalia_
-<3> Include only occurrences with coordinates
+<2> `YEAR(…)` (or `year(…)`) is an SQL function, so we must quote the name of the column as `"year"` using double quotes.
+<3> _Animalia_
+<4> Include only occurrences with coordinates
 
 This corresponds to https://www.gbif.org/occurrence/search?country=PL&taxon_key=1&year=2000,*&occurrence_status=present[this query] on the website.
 
@@ -64,7 +65,7 @@ The GBIF website and basic search APIs do not allow excluding data from searches
   AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_OUT_OF_RANGE')
   AND NOT ARRAY_CONTAINS(issue, 'COORDINATE_INVALID')
   AND NOT ARRAY_CONTAINS(issue, 'COUNTRY_COORDINATE_MISMATCH')
-  AND month IS NOT NULL <4>
+  AND "month" IS NOT NULL <4>
 ----
 <1> Exclude occurrences with a large coordinate uncertainty, but keep those without an uncertainty
 <2> Exclude occurrences not identified to species level

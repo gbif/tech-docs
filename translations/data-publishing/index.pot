@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:1
+#: en/data-publishing/modules/ROOT/pages/index.adoc:27
+#, no-wrap
+msgid "Data quality recommendations"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:1
+#: en/data-publishing/modules/ROOT/pages/index.adoc:16
+#, no-wrap
+msgid "Dataset classes"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:1
+#: en/home/modules/ROOT/pages/get-started.adoc:6
+#, no-wrap
+msgid "Data publishing"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:4
+msgid ""
+"Most institutions publishing data to GBIF need to convert their data into a "
+"format suitable for GBIF to process, typically https://dwc.tdwg.org/terms/"
+"[Darwin Core Archive]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:6
+msgid ""
+"Tools including the https://ipt.gbif.org/manual/[GBIF IPT] and BioCASe can "
+"convert data stored in spreadsheets and databases to the appropriate "
+"formats.  *The IPT is the most common way to publish data to GBIF.*"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:8
+msgid ""
+"Some institutional collections management systems, such as Symbiota or "
+"EarthCape, can export all or part of their data to GBIF."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:10
+msgid ""
+"Users or institutional systems (custom software) which can generate Darwin "
+"Core Archives and make them available on a webserver have two options:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:12
+msgid ""
+"For occasional datasets (one or two per year) contact the mailto:"
+"helpdesk@gbif.org[GBIF helpdesk], who will register the dataset on your "
+"behalf."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:13
+msgid ""
+"If new datasets will be registered more frequently, you may xref:register-"
+"dataset-api.adoc[register the datasets directly using the API]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:15
+msgid ""
+"Further discussion of the options can be found in https://data-blog.gbif.org/"
+"post/installations-and-hosting-solutions-explained/[this blogpost]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:19
+msgid "Datasets can be published in four different formats:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:21
+msgid "Metadata-only"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:22
+msgid "https://www.gbif.org/data-quality-requirements-checklists[Checklist]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:23
+msgid "https://www.gbif.org/data-quality-requirements-occurrences[Occurrence]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:24
+msgid ""
+"https://www.gbif.org/data-quality-requirements-sampling-events[Sampling "
+"event]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:26
+msgid ""
+"Generally, the data quality increases from metadata-only to sampling event "
+"datasets."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:30
+msgid ""
+"You can familiarize yourself with the requirements for the various types of "
+"datasets https://www.gbif.org/data-quality-requirements[here]."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/index.adoc:31
+#, no-wrap
+msgid "Tools to quality check your publication"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/index.adoc:33
+#, no-wrap
+msgid "Dataset validator"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:36
+msgid ""
+"The dataset validator can be used to https://www.gbif.org/tools/data-"
+"validator/about[validate] zipped Darwin Core Archive datasets."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/index.adoc:37
+#, no-wrap
+msgid "Species matching"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:40
+msgid ""
+"https://www.gbif.org/tools/species-lookup[The species matching tool] can be "
+"used to normalize species names from a CSV file against the GBIF backbone."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/index.adoc:41
+#, no-wrap
+msgid "Species API (link to API topic)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:44
+msgid ""
+"Name usage, search and parsing can be carried out with the https://techdocs."
+"gbif.org/en/openapi/v1/species[species API]."
+msgstr ""
+
+#. == The test IPT
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/index.adoc:47
+#, no-wrap
+msgid "Flags and issues"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/index.adoc:50
+msgid ""
+"When records are published to GBIF, they may receive various data quality "
+"flags and issues. The meaning and how to deal with the different issues are "
+"documented for xref:data-use::occurrence-issues-and-flags.adoc[occurrence] "
+"and xref:data-use::checklist-issues-and-flags.adoc[checklist] datasets."
+msgstr ""

@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:19
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:1
+#: en/tools/modules/ROOT/pages/index.adoc:29
+#, no-wrap
+msgid "rgbif"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/java.adoc:13
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:9
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:10
+#, no-wrap
+msgid "Installation"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:4
+msgid ""
+"_An interface to the GBIF API for the R statistical programming environment._"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:6
+msgid ""
+"Please see the main https://docs.ropensci.org/rgbif/index.html[rgbif "
+"documentation site]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:8
+#, no-wrap
+msgid "**rgbif** is an R package from https://ropensci.org/[rOpenSci] that allows searching and retrieving data from GBIF. rgbif wraps R code around the xref:api-introduction.adoc[GBIF API] to allow you to talk to GBIF from R and access metadata, species names, and occurrences.\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:15
+#, no-wrap
+msgid "install.packages(\"rgbif\") # CRAN version\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:20
+#, no-wrap
+msgid "pak::pkg_install(\"ropensci/rgbif\") # dev version\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:25
+#, no-wrap
+msgid "install.packages(\"rgbif\", repos=\"https://dev.ropensci.org\") # dev version\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:27
+#, no-wrap
+msgid "Getting Started "
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:30
+msgid "There are several long-form articles that can help get you started:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:32
+msgid "https://docs.ropensci.org/rgbif/articles/rgbif.html[Getting Started]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:33
+msgid ""
+"https://docs.ropensci.org/rgbif/articles/getting_occurrence_data."
+"html[Getting Occurrence Data From GBIF]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:34
+msgid ""
+"https://docs.ropensci.org/rgbif/articles/taxonomic_names.html[Working With "
+"Taxonomic Names]"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:35
+#, no-wrap
+msgid "Citation "
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:38
+msgid ""
+"Under the terms of the GBIF data user agreement, users who download data "
+"agree to cite a DOI. Please see GBIF’s https://www.gbif.org/citation-"
+"guidelines[citation guidelines] and https://docs.ropensci.org/rgbif/articles/"
+"gbif_citations.html[Citing GBIF Mediated Data]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:40
+msgid ""
+"Please also cite **rgbif** by running ``citation(package = \"rgbif\")``."
+msgstr ""

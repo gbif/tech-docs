@@ -1,0 +1,383 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:6
+#: en/data-use/modules/ROOT/pages/index.adoc:26
+#: en/openapi/modules/ROOT/pages/index.adoc:8
+msgid "make advanced queries, not supported by the website,"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:7
+#: en/data-use/modules/ROOT/pages/index.adoc:27
+#: en/openapi/modules/ROOT/pages/index.adoc:9
+msgid ""
+"include the results of GBIF queries in scripts, workflows or analyses, which "
+"can then be repeated reliably and automatically,"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:8
+#: en/data-use/modules/ROOT/pages/index.adoc:28
+#: en/openapi/modules/ROOT/pages/index.adoc:10
+msgid "embed GBIF data into other websites."
+msgstr ""
+
+#. type: Title =
+#: en/openapi/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "GBIF API Reference"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/openapi/modules/ROOT/pages/index.adoc:4
+#, no-wrap
+msgid "320"
+msgstr ""
+
+#. type: Target for macro image
+#: en/openapi/modules/ROOT/pages/index.adoc:4
+#, no-wrap
+msgid "open-api.png"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:6
+msgid ""
+"The GBIF API provides a programmatic way to query and publish data on GBIF."
+"org.  It can be useful or necessary to use the API to"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:12
+msgid ""
+"The GBIF API is RESTful and most queries return data in JSON format. The "
+"base URL is https://api.gbif.org/."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:14
+msgid ""
+"The API should be considered stable, as should this accompanying "
+"documentation."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:16
+#, no-wrap
+msgid "*General API documentation and advice on usage, including using R, Python and Java API clients, is in the xref:data-use::index.adoc[Data Use] section.*\n"
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/index.adoc:17
+#, no-wrap
+msgid "API Sections"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:20
+msgid "The API is split into logical sections to ease understanding:"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:22
+msgid ""
+"The xref:v1@openapi::registry-principal-methods.adoc[*Registry*] provides "
+"means to create, edit, update and search for information about the datasets, "
+"publishing organizations, networks and the means to access them (technical "
+"endpoints). The registered content controls what is crawled and indexed in "
+"the GBIF data portal, but as a shared API may also be used for other "
+"initiatives, including the Global Register of Scientific Collections "
+"(GRSciColl)."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:23
+msgid ""
+"xref:v1@openapi::species.adoc[*Species*] provides services to discover and "
+"access information about species and higher taxa, and utility services for "
+"interpreting names and looking up the identifiers and complete scientific "
+"names used for species in the GBIF portal."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:24
+msgid ""
+"xref:v1@openapi::occurrence.adoc[*Occurrence*] provides access to occurrence "
+"information crawled and indexed by GBIF, search services to do real-time "
+"paged search and asynchronous download services to request large, batch "
+"downloads."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:25
+msgid ""
+"xref:v2@openapi::maps.adoc[*Maps*] provides services to show maps of GBIF-"
+"mobilized content."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:26
+msgid ""
+"xref:v1@openapi::literature.adoc[*Literature*] provides access to peer-"
+"reviewed papers and other literature indexed by GBIF, citing GBIF datasets "
+"and downloads."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:27
+msgid ""
+"xref:v1@openapi::validator.adoc[*Validator*] allows running data structure "
+"and quality checks against a dataset before publication to GBIF."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:28
+msgid ""
+"xref:v1@openapi::vocabulary.adoc[*Vocabularies*] are used during data "
+"interpretation to align some terms such as Life Stage to a limited set of "
+"values."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/index.adoc:29
+#, no-wrap
+msgid "Communication"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:32
+msgid ""
+"You can sign up to the https://lists.gbif.org/mailman/listinfo/api-"
+"users[GBIF API users mailing list] to post your questions, and to keep "
+"informed about the API. We will announce new versions and scheduled "
+"maintenance downtimes before they happen."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:34
+msgid ""
+"You can also post questions to the https://discourse.gbif.org/[GBIF "
+"Community Forum] or using the feedback buttons at the top of the pages on "
+"https://www.gbif.org/[GBIF.org]."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:36
+msgid ""
+"Please report any issues you find with the API to https://github.com/gbif/"
+"portal-feedback/issues[GitHub] (recommended if you already have a GitHub "
+"account), using the \"feedback\" button on an appropriate page on gbif.org, "
+"or by email to the mailto:helpdesk@gbif.org[Helpdesk].  Errors, omissions or "
+"improvements to the documentation can be made in the same way, or with the "
+"\"Edit this page\" links on this site."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/index.adoc:37
+#, no-wrap
+msgid "Common operations"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:40
+msgid "The following details common cross-cutting parameters used in the API"
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/index.adoc:41
+#, no-wrap
+msgid "Paging"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:44
+msgid "For requests that support paging the following parameters are used:"
+msgstr ""
+
+#. type: Table
+#: en/openapi/modules/ROOT/pages/index.adoc:53
+#, no-wrap
+msgid ""
+"|Parameter |Details\n"
+"\n"
+"|`limit`\n"
+"|Controls the number of results in the page. Using too high a value will be overwritten with the default maximum threshold, depending on the service. Sensible defaults are used so this may be omitted.\n"
+"\n"
+"|`offset`\n"
+"|Determines the offset for the search results. A limit of 20 and offset of 40 will retrieve the third page of 20 results.\n"
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/index.adoc:55
+#, no-wrap
+msgid "Repeatable parameters"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:58
+msgid ""
+"Many search parameters are repeatable, for example the country parameter in "
+"the occurrence search.  Repeating the parameter with different values will "
+"search for records matching any value.  For example, `https://api.gbif.org/"
+"v1/occurrence/search?country=GB&country=IE&country=IM`."
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/index.adoc:59
+#, no-wrap
+msgid "Range queries"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:62
+msgid ""
+"Some search parameters support range queries, for example the year parameter "
+"in the occurrence search. In general ranges are given as a single parameter "
+"value by concatenating a lower and an upper value with a comma. For example: "
+"`https://api.gbif.org/v1/occurrence/search?year=1800,1899`."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:64
+msgid ""
+"In most cases, where a parameter can _either_ be repeated, _or_ used as a "
+"range, but not queried with multiple ranges."
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/index.adoc:65
+#, no-wrap
+msgid "Authentication"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:68
+msgid ""
+"POST, PUT, and DELETE requests require authentication. The GBIF API uses "
+"https://en.wikipedia.org/wiki/Basic_access_authentication[HTTP Basic "
+"Authentication] with any existing https://www.gbif.org/user/profile[GBIF "
+"user account]."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:70
+msgid ""
+"For example, to issue a new download programmatically using curl with a xref:"
+"data-use::api-downloads.adoc[query filter as JSON] in a file called filter."
+"json:"
+msgstr ""
+
+#. type: delimited block -
+#: en/openapi/modules/ROOT/pages/index.adoc:74
+#, no-wrap
+msgid "$ curl -i --user yourUserName:yourPassword -H \"Content-Type: application/json\" -X POST -d @filter.json https://api.gbif.org/v1/occurrence/download/request`\n"
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/index.adoc:76
+#, no-wrap
+msgid "Enumerations"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:79
+msgid ""
+"Many parts of the GBIF API make use of enumerations, i.e. controlled "
+"vocabularies for specific topics. Often these are based on existing "
+"standards such as ISO or https://www.tdwg.org/standards/[TDWG]. The "
+"enumerations are part of the https://gbif.github.io/gbif-api/apidocs/org/"
+"gbif/api/vocabulary/package-summary.html[GBIF Java API], but the currently "
+"active version can also be dynamically accessed through our JSON webservices "
+"to support more dynamic clients."
+msgstr ""
+
+#. type: Table
+#: en/openapi/modules/ROOT/pages/index.adoc:102
+#, no-wrap
+msgid ""
+"|Resource URL |Method |Response |Description\n"
+"\n"
+"|/enumeration/basic\n"
+"|GET\n"
+"|https://api.gbif.org/v1/enumeration/basic[Enumeration list]\n"
+"|Lists all available enumerations\n"
+"\n"
+"|/enumeration/basic/\\{ENUMERATION}\n"
+"|GET\n"
+"|https://api.gbif.org/v1/enumeration/basic/TypeStatus[Enumeration values]\n"
+"|Lists all available values for a given enumeration\n"
+"\n"
+"|/enumeration/country\n"
+"|GET\n"
+"|https://api.gbif.org/v1/enumeration/country[Country and area list]\n"
+"|Lists all countries and areas with their code and title\n"
+"\n"
+"|/enumeration/license\n"
+"|GET\n"
+"|https://api.gbif.org/v1/enumeration/license[License list]\n"
+"|Lists all supported GBIF licenses using the License URL or just the enum name if no URL exists.\n"
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/index.adoc:104
+#, no-wrap
+msgid "Roadmap to v2"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:107
+msgid "Most of the GBIF API is currently at version 1 which means:"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:109
+msgid ""
+"The API is stable – we won't rename or remove any REST resources or response "
+"properties to ensure backwards compatibility, but we might add new resources "
+"to the API. Any additions will be announced via the API mailing list."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:110
+msgid ""
+"Any bug fixes or additions will result in minor version changes which are "
+"not reflected in the API URL, only in the documentation and our Java client "
+"code."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:111
+msgid ""
+"If and when the need for breaking changes arises we will document our intent "
+"here and on the mailing list, and give considerable warning before moving to "
+"a future v2."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:112
+msgid "The base URL includes the version as appropriate."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:113
+msgid ""
+"The Maps API is at version 2, with the same expectations (as far as is "
+"possible, xref:v1@openapi::maps.adoc[Maps API version 1] continues to work)."
+msgstr ""

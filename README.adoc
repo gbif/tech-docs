@@ -4,6 +4,8 @@
 //https://creativecommons.org/licenses/by-sa/4.0/[image:https://img.shields.io/badge/License-CC%20BY%2D-SA%204.0-lightgrey.svg[CC BY-SA 4.0]]
 // Build status badge
 https://builds.gbif.org/job/tech-docs/lastBuild/console[image:https://builds.gbif.org/job/tech-docs/badge/icon[Build status]]
+// Translation badge
+https://crowdin.com/project/gbif-tech-docs[image:https://badges.crowdin.net/gbif-tech-docs/localized.svg[Localization status]]
 
 = GBIF Technical Documentation
 

@@ -1,3 +1,7 @@
+* xref:tools::index.adoc[]
+* xref:tools::data-validator.adoc[]
+* xref:tools::rule-based-annotations.adoc
+
 ////
 ToDo: clarify what kind of menu to include here
 - xref:data-use::rgbif.adoc[rgbif]

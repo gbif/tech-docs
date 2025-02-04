@@ -1,6 +1,6 @@
 = API SQL Downloads – Functions
 
-NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently only available for preview by invited users.  Contact helpdesk@gbif.org to request access.
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2025.  The feature is currently only available for preview by invited users.  Contact helpdesk@gbif.org to request access.
 
 These custom functions are available when using the xref:api-sql-downloads.adoc[SQL download API].
 
@@ -85,6 +85,74 @@ If you have problems, first check your polygon with https://wktmap.com/[WKT Map]
 SELECT kingdom, scientificName, COUNT(*)
 FROM occurrence
 WHERE GBIF_Within('POLYGON ((-64.8 32.3, -65.5 18.3, -80.3 25.2, -64.8 32.3))', decimalLatitude, decimalLongitude) = TRUE
+GROUP BY kingdom, scientificName;
+----
+
+[#GBIF_StringArrayContains]
+=== String Array Contains, `GBIF_StringArrayContains`
+
+*Function definition:*
+
+[source,sql]
+----
+STRING GBIF_StringArrayContains(ARRAY array,
+                                STRING query,
+                                BOOLEAN matchCase)
+----
+
+*Parameters:*
+
+`array`:: A string array
+`query`:: A string to test against each element of the array
+`matchCase`:: Whether to match letter case
+
+*Return value:*
+
+This function returns `TRUE` if one or more elements in the array match the query string.
+
+*Notes:*
+
+This is similar to the standard `ARRAY_CONTAINS` function, except for the addition of the `matchCase` parameter.
+
+*Example query:*
+
+[source,sql]
+----
+SELECT kingdom, scientificName, COUNT(*)
+FROM occurrence
+WHERE GBIF_StringArrayContains(occurrence.recordedby, 'Matthew', FALSE)
+GROUP BY kingdom, scientificName;
+----
+
+[#GBIF_StringArrayLike]
+=== String Array Like, `GBIF_StringArrayLike`
+
+*Function definition:*
+
+[source,sql]
+----
+STRING GBIF_StringArrayLike(ARRAY array,
+                            STRING query,
+                            BOOLEAN matchCase)
+----
+
+*Parameters:*
+
+`array`:: A string array
+`query`:: A pattern to test against each element of the array, with `?` matching a single character and `*` matching zero or more characters.
+`matchCase`:: Whether to match letter case
+
+*Return value:*
+
+This function returns `TRUE` if one or more elements in the array match the query pattern.
+
+*Example query:*
+
+[source,sql]
+----
+SELECT kingdom, scientificName, COUNT(*)
+FROM occurrence
+WHERE GBIF_StringArrayLike(occurrence.recordedby, 'Mat*hew', FALSE)
 GROUP BY kingdom, scientificName;
 ----
 

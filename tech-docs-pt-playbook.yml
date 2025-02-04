@@ -1,53 +1,53 @@
 site:
-  title: Documentación Técnica
+  title: Documentação Técnica
   start_page: ROOT::index.adoc
   keys:
-    language: es
+    language: pt
 content:
   sources:
     - url: .
-      start_path: ./es/home
+      start_path: ./pt/home
       branches: main
     - url: .
-      start_path: ./es/data-publishing
+      start_path: ./pt/data-publishing
       branches: main
     - url: .
-      start_path: ./es/data-processing
+      start_path: ./pt/data-processing
       branches: main
     - url: .
-      start_path: ./es/data-use
+      start_path: ./pt/data-use
       branches: main
     - url: .
-      start_path: ./es/cloud-services
+      start_path: ./pt/cloud-services
       branches: main
     - url: .
-      start_path: ./es/openapi
+      start_path: ./pt/openapi
       branches: main
     - url: .
-      start_path: ./es/openapi-v1
+      start_path: ./pt/openapi-v1
       branches: main
     - url: .
-      start_path: ./es/openapi-v2
+      start_path: ./pt/openapi-v2
       branches: main
     - url: .
-      start_path: ./es/tools
+      start_path: ./pt/tools
       branches: main
     - url: .
-      start_path: ./es/system-components
+      start_path: ./pt/system-components
       branches: main
     #- url: .
-    #  start_path: ./es/guides
+    #  start_path: ./pt/guides
     #  branches: main
     #- url: https://github.com/gbif/ipt.git
     #  branches: [ipt-2.4-docs, master]
     #  edit_url: 'https://github.com/gbif/ipt/edit/master/{path}'
-    #  start_path: docs/es
+    #  start_path: docs/pt
     #- url: https://github.com/gbif/doc-publishing-dna-derived-data.git
     #  start_path: en
     #  branches: antora
 output:
   clean: false
-  dir: ./output/es
+  dir: ./output/pt
 runtime:
   fetch: true
   cache_dir: ./cache
@@ -67,11 +67,11 @@ asciidoc:
     idseparator: '-'
     page-pagination: yes
     page-toctitle: 'Contenido de la página'
-    language: es
+    language: pt
     null: ␀
 antora:
   extensions:
   - require: '@antora/lunr-extension'
     index_latest_only: true
-    languages: [es]
+    languages: [pt]
   - require: ./unpublish-flagged-pages.js
