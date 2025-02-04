@@ -1,19 +1,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2024-12-16 15:14+0000\n"
-"PO-Revision-Date: 2024-12-16 15:53\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: 2025-02-04 17:46\n"
 "Last-Translator: \n"
-"Language-Team: Spanish, Colombia\n"
-"Language: es_CO\n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: gbif-tech-docs\n"
 "X-Crowdin-Project-ID: 746653\n"
-"X-Crowdin-Language: es-CO\n"
-"X-Crowdin-File: /main/translations/generate-cube-databricks.adoc.pot\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: /main/translations/data-use/generate-cube-databricks.pot\n"
 "X-Crowdin-File-ID: 40568\n"
 
 #. type: Title =
@@ -267,7 +267,7 @@ msgstr ""
 
 #. type: Title ===
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:88
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:55
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:56
 #, no-wrap
 msgid "Exclude unwanted data"
 msgstr ""
@@ -288,14 +288,14 @@ msgstr ""
 
 #. type: Title ===
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:100
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:153
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:154
 #, no-wrap
 msgid "Write full query"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:103
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:158
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:159
 msgid "Typical data cubes will use an SQL query similar to this one:"
 msgstr ""
 
@@ -339,7 +339,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:143
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:219
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:220
 msgid "These are the columns in the resulting cube, i.e. the dimensions and measurements for the cube."
 msgstr ""
 
@@ -350,19 +350,19 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:145
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:106
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:107
 msgid "`COALESCE` sets a default value (1000) if the first value is absent."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:146
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:221
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:222
 msgid "The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, `MAX`, `AVERAGE`, `SUM` etc"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:147
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:222
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:223
 msgid "`AS` gives a name to the column, used as the header in the result file"
 msgstr ""
 
