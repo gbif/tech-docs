@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: 2025-02-04 17:53\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: pt-PT\n"
+"X-Crowdin-File: /main/translations/tools/nav.pot\n"
+"X-Crowdin-File-ID: 43384\n"
+
+#. type: Plain text
+#: en/tools/modules/ROOT/nav.adoc:2
+msgid "xref:tools::index.adoc[]"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/nav.adoc:3
+msgid "xref:tools::data-validator.adoc[]"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/nav.adoc:4
+msgid "xref:tools::rule-based-annotations.adoc"
+msgstr ""
+
