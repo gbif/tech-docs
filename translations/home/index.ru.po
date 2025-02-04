@@ -1,0 +1,176 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: 2025-02-04 17:52\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: /main/translations/home/index.pot\n"
+"X-Crowdin-File-ID: 43368\n"
+
+#. type: Title =
+#: en/home/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "Technical Documentation"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:7
+msgid "The GBIF technical documentation describes how users can access data from GBIF.  It provides information on the available data, how to retrieve it, where it has been cleaned or checked for data quality, and how it should be cited."
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:9
+msgid "Apart from the already available documentation of the GBIF Integrated Publishing Toolkit (IPT), the documentation will later link to additional information for data publishers, including guidelines on best practices for publishing high-quality data, references to the relevant standards, and more detailed information on the data quality checks and alignments made to published data."
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:11
+msgid "Please send any suggestions for improvements or corrections to helpdesk@gbif.org, or create an issue on the https://github.com/gbif/tech-docs/issues[GitHub tech-docs project]."
+msgstr ""
+
+#. type: Title ==
+#: en/home/modules/ROOT/pages/index.adoc:12
+#, no-wrap
+msgid "What are you looking for?"
+msgstr ""
+
+#. type: delimited block +
+#: en/home/modules/ROOT/pages/index.adoc:18
+#, no-wrap
+msgid "<div id=\"search-field\" class=\"main-page-search\">\n"
+"  <input id=\"search-input\" type=\"text\" placeholder=\"Search\" style=\"display: block; width: 100%; font-size: 2rem; background: #f2f2f2; padding: 0.25rem 1rem; border: none; margin: 1rem 0;\">\n"
+"</div>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:22
+msgid "xref:data-use::index.adoc[image:td-bg-01.png[]]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:23
+msgid "xref:data-use::index.adoc[Using data]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:24
+msgid "How to use data from GBIF, including xref:data-use::index.adoc#data-downloads[downloads], xref:data-use::rgbif.adoc[] and xref:data-use::pygbif.adoc[]."
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:26
+msgid "xref:openapi::index.adoc[image:td-bg-02.png[]]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:27
+msgid "xref:openapi::index.adoc[API Reference]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:28
+msgid "Reference information for the GBIF API."
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:30
+msgid "xref:data-processing::index.adoc[image:td-bg-03.png[]]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:31
+msgid "xref:data-processing::index.adoc[Data processing and quality checks]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:32
+msgid "The standardization and quality processes applied to data published to GBIF, including taxonomic, temporal and geographic checks."
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:34
+msgid "xref:cloud-services::index.adoc[image:td-bg-04.png[]]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:35
+msgid "xref:cloud-services::index.adoc[Cloud services]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:36
+msgid "Accessing GBIF's data using cloud services (AWS, Azure, GCS)."
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:38
+msgid "xref:data-publishing::index.adoc[image:td-bg-05.png[]]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:39
+msgid "xref:data-publishing::index.adoc[Data Publishing]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:40
+msgid "Information for new and experienced publishers of data to GBIF"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:42
+msgid "xref:system-components::index.adoc[image:td-bg-06.png[]]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:43
+msgid "xref:system-components::index.adoc[System components]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:44
+msgid "Parts of the GBIF system setup (registry, GRSciColl etc)"
+msgstr ""
+
+#. type: Title ==
+#: en/home/modules/ROOT/pages/index.adoc:53
+#, no-wrap
+msgid "Explore tool documentation"
+msgstr ""
+
+#. type: Target for macro image
+#: en/home/modules/ROOT/pages/index.adoc:68
+#, no-wrap
+msgid "tools-2.png"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:71
+msgid "xref:tools::index.adoc#ipt[image:tool-icon.png[] GBIF Integrated Publishing Toolkit (IPT)]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:72
+msgid "xref:tools::index.adoc#data-validator[image:tool-icon.png[] Data validator]"
+msgstr ""
+
+#.  * xref:tools::index.adoc#species-matcher[image:tool-icon.png[] Species matching]
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:73
+msgid "xref:tools::index.adoc#derived-datasets[image:tool-icon.png[] Derived datasets]"
+msgstr ""
+
+#. type: Plain text
+#: en/home/modules/ROOT/pages/index.adoc:78
+msgid "xref:tools::index.adoc[View all tools]"
+msgstr ""
+
