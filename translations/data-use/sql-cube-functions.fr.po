@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2024-12-16 15:14+0000\n"
-"PO-Revision-Date: 2024-12-16 15:57\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: 2025-02-04 17:48\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Crowdin-Project: gbif-tech-docs\n"
 "X-Crowdin-Project-ID: 746653\n"
 "X-Crowdin-Language: fr\n"
-"X-Crowdin-File: /main/translations/sql-cube-functions.adoc.pot\n"
+"X-Crowdin-File: /main/translations/data-use/sql-cube-functions.pot\n"
 "X-Crowdin-File-ID: 40608\n"
 
 #. type: Title =
@@ -34,14 +34,14 @@ msgstr ""
 
 #. type: Title ==
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:7
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:91
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:159
 #, no-wrap
 msgid "Grid functions"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:10
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:94
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:162
 msgid "These functions are usually used for generating species occurrence cubes.  They calculate a grid cell for a point."
 msgstr ""
 
@@ -75,15 +75,17 @@ msgstr ""
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:231
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:23
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:59
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:102
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:172
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:241
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:311
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:383
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:456
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:476
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:510
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:528
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:95
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:131
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:170
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:240
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:309
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:379
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:451
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:524
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:544
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:578
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:596
 #, no-wrap
 msgid "*Function definition:*\n"
 msgstr ""
@@ -105,15 +107,17 @@ msgstr ""
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:238
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:34
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:68
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:112
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:182
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:251
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:321
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:393
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:464
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:483
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:517
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:535
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:104
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:140
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:180
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:250
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:319
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:389
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:461
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:532
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:551
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:585
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:603
 #, no-wrap
 msgid "*Parameters:*\n"
 msgstr ""
@@ -121,8 +125,8 @@ msgstr ""
 #. type: Labeled list
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:32
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:190
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:113
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:394
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:181
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:462
 #, no-wrap
 msgid "`gridSize`"
 msgstr ""
@@ -139,11 +143,11 @@ msgstr ""
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:191
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:38
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:70
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:114
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:184
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:253
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:323
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:395
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:182
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:252
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:321
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:391
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:463
 #, no-wrap
 msgid "`latitude`"
 msgstr ""
@@ -153,11 +157,11 @@ msgstr ""
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:83
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:137
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:192
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:115
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:185
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:254
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:324
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:396
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:183
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:253
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:322
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:392
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:464
 msgid "The latitude of the _point_ to grid (usually the `decimalLatitude` field)"
 msgstr ""
 
@@ -168,11 +172,11 @@ msgstr ""
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:192
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:39
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:71
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:115
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:185
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:254
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:324
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:396
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:183
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:253
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:322
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:392
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:464
 #, no-wrap
 msgid "`longitude`"
 msgstr ""
@@ -182,11 +186,11 @@ msgstr ""
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:84
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:138
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:193
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:116
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:186
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:255
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:325
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:397
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:184
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:254
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:323
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:393
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:465
 msgid "The longitude of the _point_ to grid (usually the `decimalLongitude` field)"
 msgstr ""
 
@@ -195,11 +199,11 @@ msgstr ""
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:84
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:138
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:193
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:116
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:186
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:255
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:325
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:397
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:184
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:254
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:323
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:393
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:465
 #, no-wrap
 msgid "`coordinateUncertaintyInMeters`"
 msgstr ""
@@ -217,11 +221,11 @@ msgstr ""
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:87
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:141
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:196
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:119
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:189
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:258
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:328
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:400
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:187
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:257
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:326
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:396
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:468
 msgid "The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle."
 msgstr ""
 
@@ -233,22 +237,24 @@ msgstr ""
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:242
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:42
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:74
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:121
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:193
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:264
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:110
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:146
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:189
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:261
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:332
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:404
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:469
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:487
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:521
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:539
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:400
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:472
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:537
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:555
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:589
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:607
 #, no-wrap
 msgid "*Return value:*\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:42
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:123
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:191
 msgid "The code for the cell of the EEA reference grid in which the randomized point falls."
 msgstr ""
 
@@ -275,13 +281,13 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:57
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:162
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:230
 msgid "GeoPackage and ShapeFile downloads of the grids at several resolutions are available for download at the https://www.eea.europa.eu/en/datahub/datahubitem-view/3c362237-daa4-45e2-8c16-aaadfb1a003b[European Environment Agency Datahub].  (See the 2013 and 2011 datasets for alternative resolutions.)"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:59
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:164
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:232
 msgid "Reference: https://sdi.eea.europa.eu/catalogue/srv/api/records/aac8379a-5c4e-445c-b2ef-23a6a2701ef0/attachments/eea_reference_grid_v1.pdf[About the EEA reference grid (PDF)]."
 msgstr ""
 
@@ -308,32 +314,32 @@ msgstr ""
 
 #. type: Labeled list
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:81
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:183
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:251
 #, no-wrap
 msgid "`level`"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:82
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:184
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:252
 msgid "The _level_ of the grid; the number of additional divisions applied to a one-degree cell."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:89
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:191
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:259
 msgid "A _level_ of _0_ will give the 1° cell, e.g. `S01E010`.  For quarter-degrees, use _level_ _2_, e.g. `S01E010AD`."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:93
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:195
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:263
 msgid "The code for the cell of the Extended Quarter-Degree Grid in which the randomized point falls."
 msgstr ""
 
 #. type: Table
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:106
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:208
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:276
 #, no-wrap
 msgid "|Result|_level_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_\n"
 "|`E010N52`|`0`|`52.3`|`10.3`|`1000.0`\n"
@@ -347,13 +353,13 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:109
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:234
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:302
 msgid "Reference: https://doi.org/10.1111/j.1365-2028.2008.00997.x[Larsen R, Holmern T, Prager SD, Maliti H, Røskaft, E. (2009) Using the extended quarter degree grid cell system to unify mapping and sharing of biodiversity data. African Journal of Ecology, 47: 382-392.]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:111
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:236
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:304
 msgid "See also: https://en.wikipedia.org/wiki/QDGC[Wikipedia: QDGC]."
 msgstr ""
 
@@ -365,7 +371,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:115
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:309
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:377
 msgid "This function implements the _Inverse Snyder Equal-Area Projection (ISEA) Aperture 3 Hexagonal (3H) Discrete Global Grid System (DGGS)_, ISEA3H.  Grid cell codes/identifiers are as specified in https://doi.org/10.1080/15230406.2018.1455157[A novel identifier scheme for the ISEA Aperture 3 Hexagon Discrete Global Grid System]."
 msgstr ""
 
@@ -386,33 +392,33 @@ msgstr ""
 
 #. type: Labeled list
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:135
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:252
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:322
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:320
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:390
 #, no-wrap
 msgid "`resolution`"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:136
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:323
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:391
 msgid "The _resolution_ of the grid; the number of division steps applied to the initial dodecahedron.  Valid values are 1 to 22."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:143
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:330
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:398
 msgid "See https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html[ISEA3H details] for the number and size of cells at each resolution."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:147
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:334
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:402
 msgid "The code for the cell of the ISEA3H grid cell in which the randomized point falls."
 msgstr ""
 
 #. type: Table
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:156
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:343
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:411
 #, no-wrap
 msgid "|Result|_resolution_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_\n"
 "|`-358282526011250000`|`3`|`52.3`|`10.3`|`1000.0`\n"
@@ -422,43 +428,43 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:159
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:369
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:437
 msgid "References:"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:161
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:371
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:439
 msgid "http://www.opengis.net/doc/AS/dggs/1.0[Discrete Global Grid Systems Abstract Specification]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:162
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:372
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:440
 msgid "https://doi.org/10.1559/152304003100011090[Geodesic discrete global grid systems.]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:163
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:373
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:441
 msgid "https://doi.org/10.1080/15230406.2018.1455157[A novel identifier scheme for the ISEA Aperture 3 Hexagon Discrete Global Grid System]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:165
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:375
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:443
 msgid "See also:"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:167
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:377
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:445
 msgid "https://github.com/mocnik-science/geogrid[geogrid], the Java library used by GBIF to calculate the grid."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:168
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:378
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:446
 msgid "https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html[dggridR], an R package to calculate the grid (though not using the same identifiers)."
 msgstr ""
 
@@ -485,25 +491,25 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:191
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:395
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:463
 msgid "The _grid size_ in metres.  Must be _1_, _10_, _100_, _1000_, _10000_, _100000_ or _0_."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:198
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:402
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:470
 msgid "A _gridSize_ of _0_ will give the Grid Zone Junction (GZJ) only, e.g. `32`.  Other values increase the accuracy of the grid, e.g. _100_ (metres) `32UNC686615`."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:202
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:406
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:474
 msgid "The code for the cell of the Military Grid Reference System in which the randomized point falls."
 msgstr ""
 
 #. type: Table
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:215
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:419
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:487
 #, no-wrap
 msgid "|Result|_gridSize_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_\n"
 "|`32U`|`0`|`52.0`|`10.0`|`1000.0`\n"
@@ -517,13 +523,13 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:218
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:445
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:513
 msgid "Reference: https://earth-info.nga.mil/GandG/coordsys/grids/referencesys.html[Grids and Reference Systems]."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:220
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:447
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:515
 msgid "See also: https://en.wikipedia.org/wiki/Military_Grid_Reference_System[Wikipedia: Military Grid Reference System]."
 msgstr ""
 
@@ -547,33 +553,33 @@ msgstr ""
 
 #. type: Labeled list
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:239
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:484
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:552
 #, no-wrap
 msgid "`dateInterval`"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:240
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:485
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:553
 msgid "A string containing an ISO-8106 date or date interval."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:244
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:489
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:557
 msgid "This function returns the uncertainty in seconds of the date."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:246
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:491
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:559
 #, no-wrap
 msgid "*Example arguments and returned value*\n"
 msgstr ""
 
 #. type: Table
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:259
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:504
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:572
 #, no-wrap
 msgid "|_dateInterval_ |Result |Remarks\n"
 "|2021-03-21T15:01:32.456Z |1 |Milliseconds are rounded to seconds.\n"
