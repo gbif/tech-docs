@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2025-02-04 17:44\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: /main/translations/openapi/analytics.pot\n"
+"X-Crowdin-File-ID: 40540\n"
+
+#. type: Title =
+#: en/openapi/modules/ROOT/pages/analytics.adoc:1
+#, no-wrap
+msgid "GBIF Analytics and Data Trends"
+msgstr "Análisis y tendencias de datos del GBIF"
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/analytics.adoc:4
+msgid "GBIF capture various metrics to enable monitoring of data trends.  These are displayed at https://www.gbif.org/analytics."
+msgstr "GBIF captura varias métricas para permitir el seguimiento de las tendencias de los datos. Estas se muestran en https://www.gbif.org/analytics."
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/analytics.adoc:6
+msgid "Every quarter, GBIF takes a snapshot of the published verbatim occurrence data.  The latest snapshot, and all prior snapshots, are then reprocessed using the current processing pipeline, including the newest taxonomic backbone, vocabularies, geospatial layers and so on.  The data are then summarized and made available for the https://www.gbif.org/analytics[GBIF Global Trends] page and the linked regional and country pages."
+msgstr "Cada trimestre, GBIF toma una instantánea de los datos de ocurrencia publicados.  La última instantánea, y todas las anteriores, se vuelven a procesar utilizando el proceso actual, incluyendo la base taxonómica, vocabularios, capas geoespaciales, etc. más recientes. Los datos se resumen y se ponen a disposición en la página https://www.gbif.org/analytics[GBIF Global Trends] y en las páginas regionales y de países enlazadas."
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/analytics.adoc:7
+msgid "These data are available at https://analytics-files.gbif.org/, where there is also a brief explanation.  If you would find further documentation useful, please comment on https://github.com/gbif/tech-docs/issues/24[this issue]."
+msgstr "Estos datos están disponibles en https://analytics-files.gbif.org/, donde también hay una breve explicación. Si le resulta útil disponer de más documentación, coméntelo en https://github.com/gbif/tech-docs/issues/24[this issue]."
+

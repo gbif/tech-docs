@@ -1,0 +1,370 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2025-02-04 17:49\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Traditional\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: zh-TW\n"
+"X-Crowdin-File: /main/translations/data-processing/temporal-interpretation.pot\n"
+"X-Crowdin-File-ID: 40610\n"
+
+#. type: Title =
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:1
+#, no-wrap
+msgid "Date and time interpretation"
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:3
+#, no-wrap
+msgid "General date and time parsing"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:6
+msgid "Dates and times published in Darwin Core should use the https://en.wikipedia.org/wiki/ISO_8601[ISO 8601-1:2019] standard.  A single day is represented in year-month-day (`YYYY-MM-DD`) format, for example `2023-09-18`.  A time can be added by adding `T` and the time in 24 hour format, for example `2023-09-18T13:27:00`."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:8
+msgid "Time zones may be provided: `2023-09-18T13:27:00Z` (UTC, GMT) and `2023-09-18T15:27:00+02:00` (Central European Summer Time) both represent the same point in time, but see below for how we handle time zone information."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:10
+msgid "Where the date is imprecise, and only known to month or year resolution, the day or month may be omitted.  `2023-09` means some time in September 2023, `2023` means some time in 2023."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:12
+msgid "An interval of time may be represented by separating two date-times with equal precision with `/`, for example `2023-09-05/2023-09-18` means some time between 5 September 2023 and 18 September 2023. `2023-01/2023-09` means January to September 2023, `2000/2023` covers 24 years from the start of 2000 to the end of 2023, and `2023-09-10T03:54:00/2023-09-18T13:27:30` is a range with the start and end precise to the second."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:14
+msgid "ISO 8601-1:2019 includes an abbreviated form for date intervals, where date parts that are unchanged may be omitted.  To make parsing easier for API users we normalize this to the full form: `2023-09-05/18` becomes `2023-09-05/2023-09-18`, `2023-01/09` becomes `2023-01/2023-09` and so on."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:16
+msgid "GBIF's system only supports date-times representing intervals on some fields; see below."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:18
+msgid "Dates provided in other formats (`March 1986`, `13.03.1986`, `03/13/1986`, `13.III.1986`, `13 March 1986 to 5 April 1987` and so on) _may_ be interpreted, where we can do so without ambiguity, but these formats are not recommended.  Occurrences with dates we are unable to process will be flagged with the https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_INVALID[RECORDED_DATE_INVALID], https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_INVALID[IDENTIFIED_DATE_INVALID], https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_INVALID[GEOREFERENCED_DATE_INVALID] or https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_INVALID[MODIFIED_DATE_INVALID] issues.  Darwin Core includes a https://dwc.tdwg.org/terms/#dwc:verbatimEventDate[verbatimEventDate] field for recording the original date."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:20
+msgid "Additionally, occurrences will be flagged with the https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_UNLIKELY[RECORDED_DATE_UNLIKELY], https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_UNLIKELY[IDENTIFIED_DATE_UNLIKELY], https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_UNLIKELY[GEOREFERENCED_DATE_UNLIKELY] or https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_UNLIKELY[MODIFIED_DATE_UNLIKELY] issues if these dates are in the future, or so far in the past as to be unlikely."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:21
+#, no-wrap
+msgid "Occurrence recorded date"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:24
+msgid "Eight Darwin Core fields represent all or part of the date-time an occurrence was recorded:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:26
+msgid "https://dwc.tdwg.org/terms/#dwc:eventDate[eventDate]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:27
+msgid "https://dwc.tdwg.org/terms/#dwc:eventTime[eventTime] — not interpreted"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:28
+msgid "https://dwc.tdwg.org/terms/#dwc:year[year]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:29
+msgid "https://dwc.tdwg.org/terms/#dwc:month[month]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:30
+msgid "https://dwc.tdwg.org/terms/#dwc:day[day]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:31
+msgid "https://dwc.tdwg.org/terms/#dwc:startDayOfYear[startDayOfYear]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:32
+msgid "https://dwc.tdwg.org/terms/#dwc:endDayOfYear[endDayOfYear]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:33
+msgid "https://dwc.tdwg.org/terms/#dwc:verbatimEventDate[verbatimEventDate] — not used during interpretation"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:36
+msgid "#TODO: Describe how this affects records published using BioCASe.#"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:39
+msgid "With six fields there is potential for conflict between the values.  Our interpretation procedures try to find a date consistent with the provided values, adding issues to the occurrence record if there are problems.  If values are missing but do not conflict, they are added without an issue being flagged."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:41
+msgid "These are examples of records after interpretation, where the six fields are consistent:"
+msgstr ""
+
+#. type: Block title
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:42
+#, no-wrap
+msgid "Consistent event date fields *after interpretation*"
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:63
+#, no-wrap
+msgid "| eventDate                               | year | month | day | startDayOfYear | endDayOfYear\n\n"
+"| 2023-01-13T09:32:00Z                    | 2023 |     1 |  13 |             13 |           13\n"
+"| 2023-01-13T09:32:00                     | 2023 |     1 |  13 |             13 |           13\n"
+"| 2023-01-13T09:32:00/2023-01-13T18:12:00 | 2023 |     1 |  13 |             13 |           13\n"
+"| 2023-01-13T09:32:00/2023-01-15T20:22:00 | 2023 |     1 |     |             13 |           15\n\n"
+"| 2023-01-13                              | 2023 |     1 |  13 |             13 |           13\n"
+"| 2023-01-13/2023-01-15                   | 2023 |     1 |     |             13 |           15\n"
+"| 2023-01-13/2023-02-03                   | 2023 |       |     |             13 |           34\n"
+"| 2023-01-13/2024-03-09                   |      |       |     |             13 |           69\n\n"
+"| 2023-01                                 | 2023 |     1 |     |                |\n"
+"| 2023-01/2023-02                         | 2023 |       |     |                |\n"
+"| 2023-01/2024-02                         |      |       |     |                |\n\n"
+"| 2023                                    | 2023 |       |     |                |\n"
+"| 2023/2024                               |      |       |     |                |\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:66
+msgid "Note that time zone information is only retained where the time zone is `Z` (UTC).  In other cases, timezone information is wildly different across all data, and it is not possible to handle it consistently.  A record provided with eventDate `2023-01-13T09:32:00+01:00` (Copenhagen, Denmark) and another provided with `2023-01-13T09:32:00+14:00` (Line Islands, Kiribati) will both be interpreted to `2023-01-13T09:32:00`."
+msgstr ""
+
+#. type: Block title
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:68
+#, no-wrap
+msgid "Advice for publishers"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:71
+#, no-wrap
+msgid "*It is perfectly acceptable to provide only the eventDate field*, and thus allow GBIF's interpretation to fill in year, month, day, startDayOfYear and endDayOfYear.  Alternatively, providing only year, year+month, or year+month+day (depending on available data) is also fine.\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:73
+msgid "Avoid providing incorrect or incomplete data — do not set the day (as part of the eventDate or as the day) to 0 or 1 if only the year or month is known."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:76
+msgid "Publishing a combination of eventDate and/or year+month+day and/or year+startDayOfYear+endDayOfYear causes GBIF to calculate a consistent set of recorded date fields.  If you set more than one of these sets of fields, ensure they are consistent!"
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:77
+#, no-wrap
+msgid "Handling inconsistencies"
+msgstr ""
+
+#. type: Title ====
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:79
+#, no-wrap
+msgid "1. A year+month+day for a date within the eventDate range"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:82
+msgid "This is accepted without an issue.  The precision of the eventDate is retained, and the year, month and day fields are blanked if the range extends over more than one year, month and/or day."
+msgstr ""
+
+#. type: Block title
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:83
+#, no-wrap
+msgid "A year+month+day for a date within the eventDate range, with start/endDayOfYear"
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:90
+#, no-wrap
+msgid "|             | eventDate             | year | month | day | startDayOfYear | endDayOfYear | issues\n\n"
+"| Published   | 2023-01-13/2023-02-03 | 2023 |    01 |  25 |             13 |           34 |\n"
+"| Interpreted | 2023-01-13/2023-02-03 | 2023 |       |     |             13 |           34 |\n"
+msgstr ""
+
+#. type: Block title
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:92
+#, no-wrap
+msgid "A year+month+day for a date within the eventDate range"
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:99
+#, no-wrap
+msgid "|             | eventDate             | year | month | day | startDayOfYear | endDayOfYear | issues\n\n"
+"| Published   | 2023-01-13/2023-02-03 | 2023 |    01 |  25 |                |              |\n"
+"| Interpreted | 2023-01-13/2023-02-03 | 2023 |       |     |             13 |           34 |\n"
+msgstr ""
+
+#. type: Title ====
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:101
+#, no-wrap
+msgid "2. Mismatching dates"
+msgstr ""
+
+#.  Note the {zwsp} (zero-width space) to avoid the long values causing the table to overflow to the right.
+#. type: Block title
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:104
+#, no-wrap
+msgid "Mismatching dates"
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:109
+#, no-wrap
+msgid "| Problem     |             | eventDate             | year | month | day | start{zwsp}Day{zwsp}Of{zwsp}Year | end{zwsp}Day{zwsp}Of{zwsp}Year | issues\n\n"
+msgstr ""
+
+#. type: Block title
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:109
+#, no-wrap
+msgid "2+h| Month and day are outside the eventDate interval"
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:113
+#, no-wrap
+msgid "| Published   | 2023-01-13/2023-02-03 | 2023 |    03 |  03 |                |              |\n"
+"| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_{zwsp}DATE_{zwsp}MISMATCH\n\n"
+msgstr ""
+
+#. type: Block title
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:113
+#, no-wrap
+msgid "2+h| Day is different to the day of the eventDate"
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:117
+#, no-wrap
+msgid "| Published   | 2023-01-13            | 2023 |    01 |  03 |                |              |\n"
+"| Interpreted | 2023-01               | 2023 |    01 |     |                |              | RECORDED_{zwsp}DATE_{zwsp}MISMATCH\n\n"
+msgstr ""
+
+#. type: Block title
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:117
+#, no-wrap
+msgid "2+h| The beginning and end of the eventDate interval are different to the startDayOfYear and endDayOfYear"
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:121
+#, no-wrap
+msgid "| Published   | 2023-01-13/2023-02-03 |      |       |     |             18 |           44 |\n"
+"| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_{zwsp}DATE_{zwsp}MISMATCH\n\n"
+msgstr ""
+
+#. type: Block title
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:121
+#, no-wrap
+msgid "2+h| The month is different to the month in the eventDate."
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:124
+#, no-wrap
+msgid "| Published   | 2023-01               | 2023 |    02 |     |                |              |\n"
+"| Interpreted | 2023                  | 2023 |       |     |                |              | RECORDED_{zwsp}DATE_{zwsp}MISMATCH\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:126
+#, no-wrap
+msgid "Occurrence identified date"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:129
+msgid "The https://dwc.tdwg.org/terms/#dwc:identifiedDate[identifiedDate] field is interpreted as a single date or date-time (not an interval)."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:130
+#, no-wrap
+msgid "Georeferenced date"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:133
+msgid "The https://dwc.tdwg.org/terms/#dwc:georeferencedDate[georeferencedDate] field is interpreted as a single date or date-time (not an interval)."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:134
+#, no-wrap
+msgid "Modified date"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:137
+msgid "The https://dwc.tdwg.org/terms/#dc:modified[modified] field is interpreted as a single date or date-time (not an interval)."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:138
+#, no-wrap
+msgid "Searching dates"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:141
+msgid "Occurrences are returned by the search and download APIs if the occurrence date/date range is **completely within** the query date or date range."
+msgstr ""
+
+#. type: Block title
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:142
+#, no-wrap
+msgid "Date searches"
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:152
+#, no-wrap
+msgid "|                                        | Record with eventDate 2023-01-11 |    2021-01 | 2023-01-11/12 |  2020/2021 | Meaning of the search\n\n"
+"| Search eventDate=2023-01-11            |                         included | _excluded_ |    _excluded_ | _excluded_ | Search for \"on 11 January 2023\"\n"
+"| Search eventDate=2023-01-11,2023-01-12 |                         included | _excluded_ |      included | _excluded_ | Search for \"from the start of 11 January 2023 until the end of 12 January 2023\"\n"
+"| Search eventDate=*,2023-01             |                         included |   included |      included | _excluded_ | Search for \"before end of January 2023\"\n"
+"| Search eventDate=2023-01,2023-01       |                         included |   included |      included | _excluded_ | Search for \"after start of January 2023 and before end of January 2023\"\n"
+"| Search eventDate=2023-01               |                         included |   included |      included | _excluded_ | Search for \"after start of January 2023 and before end of January 2023\"\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:154
+msgid "This implementation avoids returning occurrences with eventDates like \"2000/2021\" in many queries. (There are millions of occurrences with large ranges like this.)"
+msgstr ""
+

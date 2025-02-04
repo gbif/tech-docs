@@ -1,0 +1,160 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: 2025-02-04 17:53\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: /main/translations/tools/index.pot\n"
+"X-Crowdin-File-ID: 43382\n"
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:19
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:1
+#: en/tools/modules/ROOT/pages/index.adoc:29
+#, no-wrap
+msgid "rgbif"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:23
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:1
+#: en/tools/modules/ROOT/pages/index.adoc:33
+#, no-wrap
+msgid "pygbif"
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/data-validator.adoc:1
+#: en/tools/modules/ROOT/pages/index.adoc:15
+#, no-wrap
+msgid "Data Validator"
+msgstr ""
+
+#. type: Title =
+#: en/tools/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "Tools"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:4
+msgid "Tools support all areas relevant to biodiversity data management, from data capture and curation over data standardization and publication to data use and citation. They include stand-alone software packages, software libraries, and online services, and require varying degrees of technical knowledge to use. Some tools are mature and curated products, while others serve as demonstrators and are more experimental."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:6
+msgid "Here, you will find tools that are developed and maintained by GBIF. For a more comprehensive collection of tools relevant to biodiversity data curation, publication, and use, check https://www.gbif.org/resource/search?contentType=tool[the tools catalogue]"
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/index.adoc:7
+#, no-wrap
+msgid "IPT"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:10
+msgid "The https://www.gbif.org/ipt[Integrated Publishing Toolkit (IPT)] is a free, open-source software tool used to publish and share biodiversity datasets through the GBIF network. The IPT can also be configured with a DataCite account in order to assign DOIs to datasets, transforming it into a data repository."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:12
+msgid "https://ipt.gbif.org/manual/en/ipt/latest/[*IPT manual*]"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:14
+msgid "for further documentation, also see https://ipt.gbif.org/manual/en/ipt/latest/installation#installation-method[installation methods], https://ipt.gbif.org/manual/en/ipt/latest/faq#usage[usage], https://github.com/gbif/ipt/[development], and https://crowdin.com/project/gbif-ipt[translations]."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:18
+msgid "The https://www.gbif.org/tools/data-validator/about[GBIF *data validator*] is a service that allows anyone with a GBIF-relevant dataset to receive a report on the syntactical correctness and the validity of the content contained within the dataset. By submitting a dataset to the validator, you can go through the validation and interpretation procedures usually associated with publishing in GBIF and quickly determine potential issues in data - without having to publish it."
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/index.adoc:19
+#, no-wrap
+msgid "Derived Datasets"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:22
+msgid "https://www.gbif.org/derived-dataset/about[*Derived datasets*] are citable records of GBIF-mediated occurrence data derived either from:"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:24
+msgid "a GBIF.org download that has been filtered/reduced significantly, or"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:25
+msgid "data accessed through a cloud service, e.g. Microsoft AI for Earth (Azure), or"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:26
+msgid "data obtained by any means for which no DOI was assigned, but one is required (e.g. third-party tools accessing the GBIF search API)."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:28
+msgid "When created, a derived dataset is assigned a unique DOI that can be used to cite the data."
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:32
+#, no-wrap
+msgid "*rgbif* is a library maintained by GBIF for the R statistical programming language.  See xref:data-use::rgbif.adoc[]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:36
+#, no-wrap
+msgid "*pygbif* is a library maintained by GBIF for the Python programming language.  See xref:data-use::pygbif.adoc[]. \n"
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/index.adoc:37
+#, no-wrap
+msgid "Species Matcher"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:41
+msgid "The https://www.gbif.org/tools/species-lookup[*species lookup tool*] can be used to normalize species names from a csv file against the GBIF taxonomic backbone.  The file is expected to be have a column called 'scientificName' and an optional column 'kingdom' and 'id'."
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/index.adoc:42
+#, no-wrap
+msgid "Name Parser"
+msgstr ""
+
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:45
+msgid "The GBIF https://www.gbif.org/tools/name-parser[*name parser*] is an online tool that allows to split scientific names into their components and to check them against the taxonomic backbone used by GBIF. It can be used to automate some processes while digitizing or curating lists of scientific names.  See documentation https://www.gbif.org/tools/name-parser/about[here]."
+msgstr ""
+
+#. type: Title ==
+#: en/tools/modules/ROOT/pages/index.adoc:46
+#, no-wrap
+msgid "Sequence ID Tool"
+msgstr ""
+
+#.  qualify as "experimental"?
+#. type: Plain text
+#: en/tools/modules/ROOT/pages/index.adoc:49
+msgid "The *sequence ID* tool will query taxonomy reference databases for Fungi, Animals, Bacteria and Archaea, based on ITS sequences for Fungi, COI sequences for Animals or 16S sequences for Bacteria and Archaea. See https://www.gbif.org/tools/sequence-id/about[here] for further details."
+msgstr ""
+

@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: 2025-02-04 17:52\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar_SA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: ar\n"
+"X-Crowdin-File: /main/translations/system-components/index.pot\n"
+"X-Crowdin-File-ID: 43378\n"
+
+#. type: Title ==
+#: en/system-components/modules/ROOT/pages/grscicoll.adoc:1
+#: en/system-components/modules/ROOT/pages/index.adoc:11
+#, no-wrap
+msgid "GRSciColl"
+msgstr ""
+
+#. type: Title =
+#: en/system-components/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "System components"
+msgstr ""
+
+#. type: Plain text
+#: en/system-components/modules/ROOT/pages/index.adoc:4
+msgid "The technical infrastructure of GBIF includes components that run centrally to support data storage, processing, management, and enrichment. Some of these systems are integral parts of GBIF.org, others provide services to the community."
+msgstr ""
+
+#. type: Named 'link' AttributeList argument for macro 'image'
+#: en/system-components/modules/ROOT/pages/index.adoc:5
+#, no-wrap
+msgid "_images/system-diagramme-2023.png"
+msgstr ""
+
+#. type: Target for macro image
+#: en/system-components/modules/ROOT/pages/index.adoc:5
+#, no-wrap
+msgid "system-diagramme-2023.png"
+msgstr ""
+
+#. type: Title ==
+#: en/system-components/modules/ROOT/pages/index.adoc:7
+#, no-wrap
+msgid "GBIF Registry"
+msgstr ""
+
+#. type: Plain text
+#: en/system-components/modules/ROOT/pages/index.adoc:10
+msgid "https://registry.gbif.org/[GBIF Registry]"
+msgstr ""
+
+#. type: Plain text
+#: en/system-components/modules/ROOT/pages/index.adoc:14
+msgid "The https://www.gbif.org/grscicoll[Global Registry of Scientific Collections (GRSciColl)] is a comprehensive, community-curated clearing house of information on scientific collections, which builds on previous efforts developed by the Consortium of the Barcode of Life (CBOL) and others."
+msgstr ""
+
+#. type: Plain text
+#: en/system-components/modules/ROOT/pages/index.adoc:16
+msgid "GRSciColl includes data on institutions, collections and associated staff members and spans all scientific disciplines, including earth and space sciences, anthropology, archaeology, biology and biomedicine, as well as applied fields like agriculture, veterinary medicine and technology."
+msgstr ""
+
+#. type: Title ==
+#: en/system-components/modules/ROOT/pages/index.adoc:17
+#, no-wrap
+msgid "Literature tracking"
+msgstr ""
+
+#. type: Plain text
+#: en/system-components/modules/ROOT/pages/index.adoc:20
+msgid "The GBIF Secretariat maintains an ongoing literature tracking programme, which identifies https://www.gbif.org/resource/search?contentType=literature[research uses and citations of biodiversity information accessed through GBIF’s global infrastructure]. We also produce https://www.gbif.org/resource/search?contentType=dataUse[summaries of recent research], many of which are then compiled in an annual https://www.gbif.org/science-review[Science Review]. You can find more information https://www.gbif.org/literature-tracking[here]."
+msgstr ""
+
+#. type: Title ==
+#: en/system-components/modules/ROOT/pages/index.adoc:21
+#, no-wrap
+msgid "ChecklistBank"
+msgstr ""
+
+#.  include: how to publish data: link to checklist publishing page
+#. type: Plain text
+#: en/system-components/modules/ROOT/pages/index.adoc:24
+msgid "https://www.checklistbank.org/[ChecklistBank] is an index and repository for taxonomic data."
+msgstr ""
+

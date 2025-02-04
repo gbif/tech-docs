@@ -1,0 +1,537 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2025-02-04 17:47\n"
+"Last-Translator: \n"
+"Language-Team: Japanese\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /main/translations/data-use/occurrence-issues-and-flags.pot\n"
+"X-Crowdin-File-ID: 40590\n"
+
+#. type: Title =
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:1
+#, no-wrap
+msgid "Occurrence issues and flags"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:4
+msgid "More than *60 issues and flags* have been created to deal with common data quality problems.  Data users may use these flags to exclude occurrences from their analysis, or to apply their own data quality checks."
+msgstr ""
+
+#.  The definitive list of flags in in the API, and can be seen in the source code:
+#.  https://github.com/gbif/gbif-api/blob/dev/src/main/java/org/gbif/api/vocabulary/OccurrenceIssue.java
+#.  Check for missing issues:
+#.  (for i in $(curl -Ss https://raw.githubusercontent.com/gbif/gbif-api/dev/src/main/java/org/gbif/api/vocabulary/OccurrenceIssue.java | grep -Po '^  \K([A-Z0-9_]{5,})'); do grep --quiet $i occurrence-issues-and-flags.adoc || echo "$i missing"; done) | grep -v -e COORDINATE_ACCURACY_INVALID -e COORDINATE_PRECISION_UNCERTAINTY_MISMATCH -e POSSIBLY_ON_LOAN
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:11
+#, no-wrap
+msgid "Geospatial issues"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:186
+#, no-wrap
+msgid "|Flag name | Definition | Terms | Example\n\n"
+"|*Zero coordinate*\n"
+"|Coordinates are exactly 0/0, often indicating an actual null coordinate.\n"
+"|_dwc:decimalLatitude_, _dwc:decimalLongitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=ZERO_COORDINATE[example]\n\n"
+"|*Coordinate out of range*\n"
+"|The supplied coordinates lie outside of the range for decimal lat/lon values (-90/90, -180/180).\n"
+"|_dwc:decimalLatitude_, _dwc:decimalLongitude_, _dwc:verbatimCoordinates_, _dwc:verbatimLatitude_, _dwc:verbatimLongitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=COORDINATE_OUT_OF_RANGE[example]\n\n"
+"|*Country coordinate mismatch*\n"
+"|The interpreted occurrence coordinates fall outside of the indicated country.\n"
+"|_dwc:countryCode_, _dwc:country_, _dwc:decimalLatitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=COUNTRY_COORDINATE_MISMATCH[example]\n\n"
+"|*Coordinate invalid*\n"
+"|A coordinate value is given in some form, but GBIF is unable to interpret it. Possible reasons include, i.a., coordinates that fall out of range(larger/lower than 90/-90 or 180/-180, depending) or text values that cannot be interpreted.\n"
+"|_dwc:decimalLatitude_, _dwc:decimalLongitude_, _dwc:verbatimCoordinates_, _dwc:verbatimLatitude_, _dwc:verbatimLongitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=COORDINATE_INVALID[example]\n\n"
+"|*Geodetic datum assumed WGS84*\n"
+"|If the datum is null, data interpretation assumes the record coordinates are in WGS84.\n"
+"|_dwc:geodeticDatum_\n"
+"|https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_ASSUMED_WGS84[example]\n\n"
+"|*Geodetic datum invalid*\n"
+"|The geodetic datum could not be interpreted, because the supplied term cannot be matched against the vocabulary of known values.\n"
+"|_dwc:geodeticDatum_\n"
+"|https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_INVALID[example]\n\n"
+"|*Footprint SRS invalid*\n"
+"|The spatial reference system could not be interpreted, because the supplied term could not be matched against the vocabulary of known values.\n"
+"|_dwc:footprintSRS_\n"
+"|https://www.gbif.org/occurrence/search?issue=FOOTPRINT_SRS_INVALID[example]\n\n"
+"|*Footprint WKT mismatch*\n"
+"|The footprint well-known text (point, line or polygon) conflicts with the given coordinates.\n"
+"|_dwc:footprintWKT_, _dwc:decimalLatitude_, _dwc:decimalLongitude_, _dwc:verbatimCoordinates_, _dwc:verbatimLatitude_, _dwc:verbatimLongitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=FOOTPRINT_WKT_MISMATCH[example]\n\n"
+"|*Footprint WKT invalid*\n"
+"|The footprint well-known text (point, line or polygon) could not be interpreted.\n"
+"|_dwc:footprintWKT_\n"
+"|https://www.gbif.org/occurrence/search?issue=FOOTPRINT_WKT_INVALID[example]\n\n"
+"|*Country mismatch*\n"
+"|Interpreted Country and Country code contradict each other.\n"
+"|_dwc:countryCode_, _dwc:country_\n"
+"|https://www.gbif.org/occurrence/search?issue=COUNTRY_MISMATCH[example]\n\n"
+"|*Country derived from coordinates*\n"
+"|If the country and country code are not supplied or cannot be matched to known values, data interpretation derives their content from the decimal coordinates through a https://github.com/gbif/geocode[lookup service].\n"
+"|_dwc:countryCode_, _dwc:country_, _dwc:decimalLatitude_, _dwc:decimalLongitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=COUNTRY_DERIVED_FROM_COORDINATES[example]\n\n"
+"|*Country invalid*\n"
+"|The country or countryCode given cannot be matched to the vocabulary for country names.\n"
+"|_dwc:country_\n"
+"|https://www.gbif.org/occurrence/search?issue=COUNTRY_INVALID[example]\n\n"
+"|*Continent coordinate mismatch*\n"
+"|The interpreted occurrence coordinates fall outside of the indicated continent.\n"
+"|_dwc:continent_, _dwc:decimalLatitude_, _dwc:decimalLongitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=CONTINENT_COORDINATE_MISMATCH[example]\n\n"
+"|*Continent derived from country*\n"
+"|The continent is based on the provided country, not the provided continent.\n"
+"|_dwc:continent_, _dwc:country_\n"
+"|https://www.gbif.org/occurrence/search?issue=CONTINENT_DERIVED_FROM_COUNTRY[example]\n\n"
+"|*Continent invalid*\n"
+"|The continent given cannot be matched to the vocabulary for continent names.\n"
+"|_dwc:continent_\n"
+"|https://www.gbif.org/occurrence/search?issue=CONTINENT_INVALID[example]\n\n"
+"|*Coordinate rounded*\n"
+"|In the data interpretation the original coordinates are rounded to 6 decimals (~1m precision).\n"
+"|_dwc:decimalLatitude_, _dwc:decimalLongitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=COORDINATE_ROUNDED[example]\n\n"
+"|*Coordinate reprojected*\n"
+"|The original coordinates were successfully reprojected from a different geodetic datum to WGS84.\n"
+"|_dwc:geodeticDatum_\n"
+"|https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTED[example]\n\n"
+"|*Coordinate reprojection suspicious*\n"
+"|Indicates successful coordinate reprojection according to provided datum, but which results in a datum shift larger than 0.1 decimal degrees.\n"
+"|_dwc:geodeticDatum_, _dwc:decimalLatitude_, _dwc:decimalLongitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_SUSPICIOUS[example]\n\n"
+"|*Coordinate reprojection failed*\n"
+"|The given decimal latitude and longitude could not be reprojected to WGS84 based on the provided datum.\n"
+"|_dwc:geodeticDatum_, _dwc:decimalLatitude_, _dwc:decimalLongitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_FAILED[example]\n\n"
+"|*Coordinate uncertainty meters invalid*\n"
+"|The value given for Coordinate uncertainty in meters, indicating the radius of uncertainty around the given decimal coordinates, is not a valid number, or lies outside a plausible range.\n"
+"|_dwc:coordinateUncertaintyInMeters_\n"
+"|https://www.gbif.org/occurrence/search?issue=COORDINATE_UNCERTAINTY_METERS_INVALID[example]\n\n"
+"|*Coordinate precision invalid*\n"
+"|Indicates an invalid or very unlikely coordinates precision. The value is not a decimal number as expected, or it has an unusually low or high for a margin of uncertainty.\n"
+"|_dwc:coordinatePrecision_\n"
+"|https://www.gbif.org/occurrence/search?issue=COORDINATE_PRECISION_INVALID[example]\n\n"
+"|*Presumed negated longitude*\n"
+"|The supplied longitude value places the coordinates outside of the indicated country. Negating the longitude value would result in a country match.\n"
+"|_dwc:decimalLongitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=PRESUMED_NEGATED_LONGITUDE[example]\n\n"
+"|*Presumed negated latitude*\n"
+"|The supplied latitude value places the coordinates outside of the indicated country. Negating the latitude value would result in a country match.\n"
+"|_dwc:decimalLatitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=PRESUMED_NEGATED_LATITUDE[example]\n\n"
+"|*Presumed swapped coordinate*\n"
+"|Coordinates seem to be swapped when testing against the interpreted country.\n"
+"|_dwc:decimalLatitude_, _dwc:decimalLongitude_, _dwc:country_\n"
+"|https://www.gbif.org/occurrence/search?issue=PRESUMED_SWAPPED_COORDINATE[example]\n\n"
+"|*Depth min max swapped*\n"
+"|The values for minimum and maximum depth appear to the swapped.\n"
+"|_dwc:minimumDepthInMeters_, _dwc:maximumDepthInMeters_\n"
+"|https://www.gbif.org/occurrence/search?issue=DEPTH_MIN_MAX_SWAPPED[example]\n\n"
+"|*Depth non numeric*\n"
+"|The values for minimum and maximum depth are non-numeric values and cannot be interpreted.\n"
+"|_dwc:minimumDepthInMeters_, _dwc:maximumDepthInMeters_\n"
+"|https://www.gbif.org/occurrence/search?issue=DEPTH_NON_NUMERIC[example]\n\n"
+"|*Depth unlikely*\n"
+"|The values for minimum and maximum depth are negative or higher than 11000 (Mariana Trench depth in meters).\n"
+"|_dwc:minimumDepthInMeters_, _dwc:maximumDepthInMeters_\n"
+"|https://www.gbif.org/occurrence/search?issue=DEPTH_UNLIKELY[example]\n\n"
+"|*Depth not metric*\n"
+"|Set if supplied depth is not given in the metric system, for example using feet instead of meters.\n"
+"|_dwc:minimumDepthInMeters_, _dwc:maximumDepthInMeters_\n"
+"|https://www.gbif.org/occurrence/search?issue=DEPTH_NOT_METRIC[example]\n\n"
+"|*Elevation non numeric*\n"
+"|The values for minimum and maximum elevation are non-numeric values and cannot be interpreted.\n"
+"|_dwc:minimumElevationInMeters_, _dwc:maximumElevationMeters_\n"
+"|https://www.gbif.org/occurrence/search?issue=ELEVATION_NON_NUMERIC[example]\n\n"
+"|*Elevation min max swapped*\n"
+"|The values for minimum and maximum elevation appear to the swapped.\n"
+"|_dwc:minimumElevationInMeters_, _dwc:maximumElevationInMeters_\n"
+"|https://www.gbif.org/occurrence/search?issue=ELEVATION_MIN_MAX_SWAPPED[example]\n\n"
+"|*Elevation not metric*\n"
+"|Set if supplied elevation is not given in the metric system, for example using feet instead of meters.\n"
+"|_dwc:minimumElevationInMeters_, _dwc:maximumElevationInMeters_\n"
+"|https://www.gbif.org/occurrence/search?issue=ELEVATION_NOT_METRIC[example]\n\n"
+"|*Elevation unlikely*\n"
+"|The values for minimum and maximum elevation are above the troposphere (17000 m) or below Mariana Trench (11000 m).\n"
+"|_dwc:minimumElevationInMeters_, _dwc:maximumElevationInMeters_\n"
+"|https://www.gbif.org/occurrence/search?issue=ELEVATION_UNLIKELY[example]\n\n"
+"|*Continent country mismatch*\n"
+"|The interpreted continent and country do not match up.\n"
+"|_dwc:continent_, _dwc:countryCode_, _dwc:country_\n"
+"|https://www.gbif.org/occurrence/search?issue=CONTINENT_COUNTRY_MISMATCH[example]\n\n"
+"|*Continent derived from coordinates*\n"
+"|If no value is supplied for the continent or if the values cannot be matched against a known vocabulary, data interpretation derives the continent from the decimal coordinates.\n"
+"|_dwc:continent_, _dwc:decimalLatitude_, _dwc:decimal Longitude_\n"
+"|https://www.gbif.org/occurrence/search?issue=CONTINENT_DERIVED_FROM_COORDINATES[example]\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:188
+#, no-wrap
+msgid "Taxonomic issues"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:199
+#, no-wrap
+msgid "|Flag name | Definition | Terms | Example\n\n"
+"|*Taxon match higherrank*\n"
+"a|The record can be matched to the GBIF taxonomic backbone at a higher rank, but not with the scientific name given.\n\n"
+"Reasons include:\n\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:200
+#, no-wrap
+msgid "The name is new, and not available in the taxonomic datasets yet\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:201
+#, no-wrap
+msgid "The name is missing in the backbone's taxonomic sources for others reasons\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:248
+#, no-wrap
+msgid "Formatting or spelling of the scientific name caused interpretation errors\n"
+"|_dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank_\n"
+"|https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK[example]\n\n"
+"|*Taxon match none*\n"
+"|Matching to the taxonomic backbone cannot be done cause there was no match at all or several matches with too little information to keep them apart(homonyms).\n"
+"|_dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank_\n"
+"|https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_NONE[example]\n\n"
+"|*Taxon match fuzzy*\n"
+"|Matching to the taxonomic backbone can only be done using a fuzzy, non exact match.\n"
+"|_dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank_\n"
+"|https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_FUZZY[example]\n\n"
+"|*Taxon match aggregate*\n"
+"|Matching to the taxonomic backbone can only be done on a species level, but the occurrence was considered a broader species aggregate or complex.\n"
+"|_dwc:scientificName, dwc:kingdom, dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank_\n"
+"|https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_AGGREGATE[example]\n\n"
+"|*Scientific name and ID inconsistent*\n"
+"|The scientificName provided in the occurrence record does not precisely match the name in the registered checklist when using the scientificNameID, taxonID or taxonConceptID to look it up. Publishers are advised to check the IDs are correct, or update the formatting of the names on their records.\n"
+"|_dwc:scientificName, dwc:scientificNameID, dwc:taxonID, dwc:taxonConceptID_\n"
+"|https://www.gbif.org/occurrence/search?issue=SCIENTIFIC_NAME_AND_ID_INCONSISTENT[example]\n\n"
+"|*Taxon match name and ID ambiguous*\n"
+"|The GBIF Backbone concept was found using the scientificNameID, taxonID or taxonConceptID, but it differs from what would have been found if the classification names on the record were used. This may indicate a gap in the GBIF backbone, a poor mapping between the checklist and the backbone, or a mismatch between the classification names and the declared IDs (scientificNameID or taxonConceptID) on the occurrence record itself.\n"
+"|_dwc:scientificName, dwc:scientificNameID, dwc:taxonID, dwc:taxonConceptID_\n"
+"|https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_NAME_AND_ID_AMBIGUOUS[example]\n\n"
+"|*Scientific name ID not found*\n"
+"|The scientificNameID matched a known pattern, but it was not found in the associated checklist. The backbone lookup was performed using either the names or a different ID field from the record. This may indicate a poorly formatted identifier or may be caused by a newly created ID that isn't yet known in the version of the published checklist.\n"
+"|_dwc:scientificNameID_\n"
+"|https://www.gbif.org/occurrence/search?issue=SCIENTIFIC_NAME_ID_NOT_FOUND[example]\n\n"
+"|*Taxon concept ID not found*\n"
+"|The taxonConceptID matched a known pattern, but it was not found in the associated checklist. The backbone lookup was performed using either the names or a different ID field from the record. This may indicate a poorly formatted identifier or may be caused by a newly created ID that isn't yet known in the version of the published checklist.\n"
+"|dwc:taxonConceptID\n"
+"|https://www.gbif.org/occurrence/search?issue=TAXON_CONCEPT_ID_NOT_FOUND[example]\n\n"
+"|*Taxon ID not found*\n"
+"|The taxonID found matched a known pattern, but it was not found in the associated checklist. The backbone lookup was performed using either the names or a different ID field from the record. This may indicate a poorly formatted identifier or may be caused by a newly created ID that isn't yet known in the version of the published checklist.\n"
+"|_dwc:taxonID_\n"
+"|https://www.gbif.org/occurrence/search?issue=TAXON_ID_NOT_FOUND[example]\n\n"
+"|*Taxon match scientific name ID ignored*\n"
+"a|The scientificNameID was not used when mapping the record to the GBIF backbone. This may indicate one of: \n\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:249
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:259
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:269
+#, no-wrap
+msgid "The ID uses a pattern not configured for use by GBIF\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:250
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:260
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:270
+#, no-wrap
+msgid "The ID did not uniquely identify a concept in the checklist\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:251
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:261
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:271
+#, no-wrap
+msgid "The ID found a concept in the checklist that did not map to the backbone\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:258
+#, no-wrap
+msgid "A different ID was used, or the record names were used, as no ID lookup successfully linked to the backbone.\n"
+"|_dwc:scientificNameID_\n"
+"|https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_SCIENTIFIC_NAME_ID_IGNORED[example]\n\n"
+"|*Taxon match taxon concept ID ignored*\n"
+"a|taxonConceptID was not used when mapping the record to the GBIF backbone. This may indicate one of: \n\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:268
+#, no-wrap
+msgid "A different ID was used, or the record names were used, as no ID lookup successfully linked to the backbone.\n"
+"|_dwc:taxonConceptID_\n"
+"|https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_TAXON_CONCEPT_ID_IGNORED[example]\n\n"
+"|*Taxon match taxon ID ignored*\n"
+"a|The taxonID was not used when mapping the record to the GBIF backbone. This may indicate one of: \n\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:275
+#, no-wrap
+msgid "A different ID was used, or the record names were used, as no ID lookup successfully linked to the backbone.\n"
+"|_dwc:taxonID_\n"
+"|https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_TAXON_ID_IGNORED[example]\n\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:277
+#, no-wrap
+msgid "Date issues"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:288
+#, no-wrap
+msgid "|Flag name | Definition | Terms | Example\n\n"
+"|*Recorded date invalid*\n"
+"a|The recording date given cannot be intrepreted because is invalid.\n\n"
+"Reasons include:\n\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:289
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:315
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:326
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:337
+#, no-wrap
+msgid "A non-existing date (e.g \"1995-04-34\")\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:290
+#, no-wrap
+msgid "Missing date parts (e.g. Event date without year).\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:314
+#, no-wrap
+msgid "The date format does not follow the ISO 8601 standard (YYYY-MM-DD)\n"
+"|_dwc:eventDate, dwc:year, dwc:month, dwc:day_\n"
+"|https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_INVALID[example]\n\n"
+"|*Recorded date mismatch*\n"
+"|The recording date specified as the eventDate string and the individual year, month, day are contradicting.\n"
+"|_dwc:eventDate, dwc:year, dwc:month, dwc:day_\n"
+"|https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_MISMATCH[example]\n\n"
+"|*Identified date unlikely*\n"
+"|The identification date is in the future or before Linnean times (1700).\n"
+"|_dwc:dateIdentified_\n"
+"|https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_UNLIKELY[example]\n\n"
+"|*Recorded Date Unlikely*\n"
+"|The recording date is highly unlikely, falling either into the future or representing a very old date before 1600 that predates modern taxonomy.\n"
+"|_dwc:eventDate, dwc:year, dwc:month, dwc:day_\n"
+"|https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_UNLIKELY[example]\n\n"
+"|*Multimedia date invalid*\n"
+"a|The creation date given cannot be intrepreted because is invalid.\n\n"
+"Reasons include:\n\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:316
+#, no-wrap
+msgid "Missing date parts (e.g. Event date without year)\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:325
+#, no-wrap
+msgid "The date format does not follow the ISO 8601 standard (YYYY-MM-DD)\n"
+"|_dwc:created_\n"
+"|https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_DATE_INVALID[example]\n\n"
+"|*Identified date invalid*\n"
+"a|The identification date given cannot be intrepreted because is invalid.\n\n"
+"Reasons include:\n\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:327
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:338
+#, no-wrap
+msgid "Missing date parts (e.g. without year)\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:336
+#, no-wrap
+msgid "The date format does not follow the ISO 8601 standard (YYYY-MM-DD)\n"
+"|_dwc:dateIdentified_\n"
+"|https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_INVALID[example]\n\n"
+"|*Modified date invalid*\n"
+"a|A (partial) invalid modified date is given.\n\n"
+"Reasons include:\n\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:352
+#, no-wrap
+msgid "The date format does not follow the ISO 8601 standard (YYYY-MM-DD)\n"
+"|_dc:modified_\n"
+"|https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_INVALID[example]\n\n"
+"|*Modified date unlikely*\n"
+"|The modified date given is in the future or predates unix time (1970).\n"
+"|_dc:modified_\n"
+"|https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_UNLIKELY[example]\n\n"
+"|*Georeferenced date invalid* (date)\n"
+"a|The georeference date given cannot be interpreted because it is invalid.\n\n"
+"Reasons include:\n\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:353
+#, no-wrap
+msgid "A non-existing date (e.g \"1995-04-34\") +\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:354
+#, no-wrap
+msgid "Missing date parts (e.g. without year) +\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:362
+#, no-wrap
+msgid "The date format does not follow the ISO 8601 standard (YYYY-MM-DD)\n"
+"|_dwc:georeferencedDate_\n"
+"|https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_INVALID[example]\n\n"
+"|*Georeferenced date unlikely*\n"
+"|The georeference date given is in the future or before Linnean times (1700).\n"
+"|_dwc:georeferencedDate_\n"
+"|https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_UNLIKELY[example]\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:364
+#, no-wrap
+msgid "Vocabulary issues"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:385
+#, no-wrap
+msgid "|Flag name | Definition | Terms | Example\n\n"
+"|*Basis of record invalid*\n"
+"|The given basis of record is impossible to interpret or very different from the recommended vocabulary: https://rs.gbif.org/vocabulary/dwc/basis_of_record\n"
+"|_dwc:basisOfRecord_\n"
+"|https://www.gbif.org/occurrence/search?issue=BASIS_OF_RECORD_INVALID[example]\n\n"
+"|*Type status invalid*\n"
+"|The given type status is impossible to interpret or very different from the recommended vocabulary: https://rs.gbif.org/vocabulary/gbif/type_status\n"
+"|_dwc:typeStatus_\n"
+"|https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID[example]\n\n"
+"|*Occurrence status unparsable*\n"
+"|The given occurenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at or observation event.\n"
+"|_dwc:occurrenceStatus_\n"
+"|https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE[example]\n\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:387
+#, no-wrap
+msgid "GRSciColl issues"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:433
+#, no-wrap
+msgid "|Flag name | Definition | Terms | Example\n\n"
+"|*Ambiguous institution*\n"
+"|Multiple institutions were found in https://www.gbif.org/grscicoll[GRSciColl] with the same level of confidence and it can't be determined which one should be accepted. For example, there are several institutions with the same code and country. See https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ] on how to avoid ambiguous matches.\n"
+"|_dwc:institutionCode, dwc:institutionID_\n"
+"|https://www.gbif.org/occurrence/search?issue=AMBIGUOUS_INSTITUTION[example]\n\n"
+"|*Ambiguous collection*\n"
+"|Multiple collections were found in https://www.gbif.org/grscicoll[GRSciColl] with the same level of confidence and it can't be determined which one should be accepted. For example, there are several collections belonging to the same institution with the same code. See https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ] on how to avoid ambiguous matches.\n"
+"|_dwc:collectionCode, dwc:collectionID_\n"
+"|https://www.gbif.org/occurrence/search?issue=AMBIGUOUS_COLLECTION[example]\n\n"
+"|*Institution match none*\n"
+"|No match was found in https://www.gbif.org/grscicoll[GRSciColl]. Either the entry doesn't exists in GRSciColl or it has a different code. Check https://www.gbif.org/grscicoll[GRSciColl] and request update if needed.\n"
+"|_dwc:institutionCode, dwc:institutionID_\n"
+"|https://www.gbif.org/occurrence/search?issue=INSTITUTION_MATCH_NONE[example]\n\n"
+"|*Collection match none*\n"
+"|No match was found in https://www.gbif.org/grscicoll[GRSciColl]. Either the entry doesn't exists in GRSciColl or it has a different code. Check https://www.gbif.org/grscicoll[GRSciColl] and request update if needed.\n"
+"|_dwc:collectionCode, dwc:collectionID_\n"
+"|https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_NONE[example]\n\n"
+"|*Institution match fuzzy*\n"
+"|A match was found in https://www.gbif.org/grscicoll[GRSciColl] but it was matched fuzzily. To know more about why this has happened you can use the https://www.gbif.org/developer/registry#lookup[lookup API] to see see the \"reasons\" returned in the response. A common case is when the name is used instead of the code or the identifier. To avoid fuzzy matches, publishers should use identifiers in additon to codes. More details available in https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ].\n"
+"|_dwc:institutionCode, dwc:institutionID_\n"
+"|https://www.gbif.org/occurrence/search?issue=INSTITUTION_MATCH_FUZZY[example]\n\n"
+"|*Collection match fuzzy*\n"
+"|A match was found in https://www.gbif.org/grscicoll[GRSciColl] but it was matched fuzzily. To know more about why this has happened you can use the https://www.gbif.org/developer/registry#lookup[lookup API] to see the \"reasons\" returned in the response. A common case is when the name is used instead of the code or the identifier. To avoid fuzzy matches, publishers should use identifiers in additon to codes. More details available in https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll[this FAQ].\n"
+"|_dwc:collectionCode, dwc:collectionID_\n"
+"|https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_FUZZY[example]\n\n"
+"|*Institution collection mismatch*\n"
+"|At least one possible collection match was found in https://www.gbif.org/grscicoll[GRSciColl] but none of them belong to the institution matched.\n"
+"|_dwc:collectionCode, dwc:collectionID, dwc:institutionCode, dwc:institutionID_\n"
+"|https://www.gbif.org/occurrence/search?issue=INSTITUTION_COLLECTION_MISMATCH[example]\n\n"
+"|*Different owner institution*\n"
+"|The institution doesn't match the owner institution.\n"
+"|_dwc:ownerInstitutionCode, dwc:institutionCode, dwc:institutionID_\n"
+"|https://www.gbif.org/occurrence/search?issue=DIFFERENT_OWNER_INSTITUTION[example]\n\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:435
+#, no-wrap
+msgid "Other issues"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:476
+#, no-wrap
+msgid "|Flag name | Definition | Terms | Example\n\n"
+"|*Individual count invalid*\n"
+"|Individual count value not parsable into a positive integer.\n"
+"|_dwc:individualCount_\n"
+"|https://www.gbif.org/occurrence/search?issue=INDIVIDUAL_COUNT_INVALID[example]\n\n"
+"|*Individual count conflicts with occurrence status*\n"
+"|The values given for the individual count and for the status of the occurrence (present/absent) contradict each other (e.g. the count is 0 but the status says \"present\").\n"
+"|_dwc:individualCount, dwc:occurrenceStatus_\n"
+"|https://www.gbif.org/occurrence/search?issue=INDIVIDUAL_COUNT_CONFLICTS_WITH_OCCURRENCE_STATUS[example]\n\n"
+"|*Occurrence status inferred from individual count*\n"
+"|The present/absent status of the occurrence was inferred from the individual count value because no status value was supplied explicitly. An individual count of 0 is interpreted as status=\"absent\", a value > 0 as \"present\".\n"
+"|_dwc:individualCount, dwc:occurrenceStatus_\n"
+"|https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_INFERRED_FROM_INDIVIDUAL_COUNT[example]\n\n"
+"|*Occurrence status inferred from basis of record*\n"
+"|The present/absent status of the occurrence was inferred from the basis of record value because no status value was supplied explicitly.\n"
+"|_dwc:basisOfRecord, dwc:occurrenceStatus_\n"
+"|https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_INFERRED_FROM_BASIS_OF_RECORD[example]\n\n"
+"|*References URI invalid*\n"
+"|The references URL cannot be resolved, and may be malformed or contain invalid characters.\n"
+"|_dc:references_\n"
+"|https://www.gbif.org/occurrence/search?issue=REFERENCES_URI_INVALID[example]\n\n"
+"|*Multimedia URI invalid*\n"
+"|The multimedia URL cannot be resolved, and may be malformed or contain invalid characters.\n"
+"|_dwc:associatedMedia_\n"
+"|https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_URI_INVALID[example]\n\n"
+"|*Interpretation error*\n"
+"|An error occurred during interpretation, leaving the record interpretation incomplete.\n"
+"|\n"
+"|https://www.gbif.org/occurrence/search?issue=INTERPRETATION_ERROR[example]\n\n"
+msgstr ""
+

@@ -1,0 +1,143 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2025-02-04 17:45\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: fr\n"
+"X-Crowdin-File: /main/translations/data-publishing/dataset-classes.pot\n"
+"X-Crowdin-File-ID: 40564\n"
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:1
+#: en/data-publishing/modules/ROOT/pages/index.adoc:16
+#, no-wrap
+msgid "Dataset classes"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:7
+msgid "Note: this page is currently under development"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:9
+msgid "Datasets shared with GBIF can be published in four different formats:"
+msgstr ""
+
+#. type: Table
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:26
+#, no-wrap
+msgid "|Dataset type |Content \n\n"
+"|<<Metadata-only>>\n"
+"|datasets describing **unavailable** resources like undigitized natural history collections or data that are not yet standardized \n\n"
+"|<<Checklist>> \n"
+"|a **catalogue** or **list** of named organisms, or taxa\n\n"
+"|<<Occurrence>> \n"
+"|the evidence of the **occurrence of a species** (or other taxon) at a particular place on a specified date\n\n"
+"|<<Sampling event>> \n"
+"|offering evidence that a species occurred at a given location and date, but also making it possible to **assess community composition** for broader taxonomic groups or even the **abundance of species** at multiple times and places\n"
+"  \n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:29
+msgid "The four dataset classes supported by GBIF start simple and become progressively richer, more structured and more complex. This https://data-blog.gbif.org/post/choose-dataset-type/[blog post] can help you choose a dataset class if you are new to GBIF publishing."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:31
+msgid "Some fields are strongly recommended to be included in the different dataset classes and some may be required if the dataset is funded through a programme operated by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP])."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:33
+msgid "Data quality requirements for each dataset class and the GBIF-operated programmes are documented xref:data-quality-recommendations.adoc[here]. GBIF provides access to several https://techdocs.gbif-uat.org/en/data-publishing/#tools-to-quality-check-your-publication[tools] to assess data quality before publication."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:34
+#, no-wrap
+msgid "Metadata-only [[Metadata-only]]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:37
+msgid "At its simplest level, institutions can create datasets describing unavailable resources like undigitized natural history collections. The other dataset classes include this basic information, but this ‘metadata-only’ class offers users a valuable tool for discovering and learning about evidence not yet available online or could be accessed in other places than GBIF. Metadata-only datasets can also help assess the relative importance and value of undigitized collections and set priorities for future digitization. As with all datasets, GBIF ensures that each metadata dataset is associated with a unique Digital Object Identifier (DOI) to streamline data users’ citation of these resources."
+msgstr ""
+
+#. type: Table
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:42
+#, no-wrap
+msgid "|https://www.gbif.org/dataset/search?type=METADATA[Browse metadata-only datasets] \n\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:44
+#, no-wrap
+msgid "Checklist [[Checklist]]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:47
+msgid "Checklists are catalogues or lists of named organisms, or taxa. While they may include additional details like local species names or specimen citations, these ‘checklists’ typically categorize information along taxonomic, geographic, and thematic lines or some combination of the three. For example, a dataset that catalogues the Red Listed molluscs of Seychelles has distinct elements of taxonomy (the phylum Mollusca), geography (the island nation of Seychelles) and theme (species deemed imperilled by IUCN experts). Checklists function as a rapid summary or baseline inventory of taxa in a given context."
+msgstr ""
+
+#. type: Table
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:52
+#, no-wrap
+msgid "|https://dwc.tdwg.org/terms/#taxon[Darwin Core Taxon] |https://www.gbif.org/dataset/search?type=CHECKLIST[Browse checklists] |https://ipt.gbif.org/manual/en/ipt/latest/checklist-data#templates[Darwin Core Archive template for checklists] |xref:data-quality-recommendations.adoc#data-quality-requirements-for-checklists[Data quality requirements and recommendations for checklists]\n\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:54
+#, no-wrap
+msgid "Occurrence [[Occurrence]]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:57
+msgid "Occurrence datasets have sufficiently consistent detail to contribute information about the location of individual organisms in time and space — that is, they offer evidence of the occurrence of a species (or other taxon) at a particular place on a specified date. Occurrence datasets are the core of data published through GBIF.org, and examples can range from specimens and fossils in natural history collections, observations by field researchers and citizen scientists, and data gathered from camera traps or remote-sensing satellites."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:59
+msgid "Occurrence records in these datasets sometimes provide only general locality information, sometimes simply identifying the country, but in many cases, more precise locations and geographic coordinates support fine-scale analysis and mapping of species distributions."
+msgstr ""
+
+#. type: Table
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:64
+#, no-wrap
+msgid "|https://dwc.tdwg.org/terms/#occurrence[Darwin Core Occurrence] |https://www.gbif.org/dataset/search?type=OCCURRENCE[Browse occurrence datasets] |https://ipt.gbif.org/manual/en/ipt/2.5/occurrence-data#templates[Darwin Core Archive template for occurrence datasets] |xref:data-quality-recommendations.adoc#data-quality-requirements-for-occurrences[Data quality recommendations and requirements for occurrences]\n\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:66
+#, no-wrap
+msgid "Sampling event [[Sampling_event]]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:69
+msgid "Sampling event datasets provide greater detail, not only offering evidence that a species occurred at a given location and date but also making it possible to assess community composition for broader taxonomic groups, or even the abundance of species at multiple times and places. Sampling-event datasets typically derive from standardised protocols for measuring and monitoring biodiversity like vegetation transects, bird censuses, and freshwater or marine sampling."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:71
+msgid "By indicating the methods, events and relative abundance of species recorded in a sample, these datasets improve comparisons with data collected using the same protocols at different times and places — in some cases, even enabling data users to infer the absence of particular species from particular sites."
+msgstr ""
+
+#. type: Table
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:76
+#, no-wrap
+msgid "|https://dwc.tdwg.org/terms/#event[Darwin Core Event] |https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Browse sampling event datasets] |https://ipt.gbif.org/manual/en/ipt/2.5/sampling-event-data#templates[Darwin Core Archive template for sampling event datasets] |xref:data-quality-recommendations.adoc#data-quality-requirements-for-sampling-events[Data quality recommendations and requirements for sampling events]\n\n"
+msgstr ""
+

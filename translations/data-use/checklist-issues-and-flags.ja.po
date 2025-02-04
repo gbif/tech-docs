@@ -1,0 +1,159 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2025-02-04 17:45\n"
+"Last-Translator: \n"
+"Language-Team: Japanese\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /main/translations/data-use/checklist-issues-and-flags.pot\n"
+"X-Crowdin-File-ID: 40550\n"
+
+#. type: Title =
+#: en/data-use/modules/ROOT/pages/checklist-issues-and-flags.adoc:1
+#, no-wrap
+msgid "Checklist issues and flags"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/checklist-issues-and-flags.adoc:4
+msgid "More than *30 issues and flags* have been created to deal with common data quality problems in checklists."
+msgstr ""
+
+#.  The definitive list of flags in in the API, and can be seen in the source code:
+#.  https://github.com/gbif/gbif-api/blob/dev/src/main/java/org/gbif/api/vocabulary/NameUsageIssue.java
+#.  Check for missing issues:
+#.  (for i in $(curl -Ss https://raw.githubusercontent.com/gbif/gbif-api/dev/src/main/java/org/gbif/api/vocabulary/NameUsageIssue.java | grep -Po '^  \K([A-Z0-9_]{5,})'); do grep --quiet $i checklist-issues-and-flags.adoc || echo "$i missing"; done)
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/checklist-issues-and-flags.adoc:11
+#, no-wrap
+msgid "Checklist issues"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/checklist-issues-and-flags.adoc:14
+msgid "These issues can be on a name in any published checklist."
+msgstr ""
+
+#.  Not implemented yet
+#. type: Table
+#: en/data-use/modules/ROOT/pages/checklist-issues-and-flags.adoc:72
+#, no-wrap
+msgid "|*Name unparsable*\n"
+"|The value in the field flagged couldn't be parsed by the GBIF system. You can check if a scientific name can be parsed with our https://www.gbif.org/tools/name-parser[name parser tool].\n"
+"|any name field\n"
+"|https://www.gbif.org/species/search?issue=UNPARSABLE&advanced=1[example]\n\n"
+"|*Name partially parsed*\n"
+"|The value in the field flagged could only be partially parsed by the GBIF system. You can check if a scientific name can be parsed with our https://www.gbif.org/tools/name-parser[name parser tool].\n"
+"|any name field\n"
+"|https://www.gbif.org/species/search?issue=PARTIALLY_PARSABLE&advanced=1[example]\n\n"
+"|*ParentNameUsageID invalid*\n"
+"|The value for the ParentNameUsageID doesn't correspond to a valid entry in the list. Check that the parentNameUsageID points to an existing taxon entry within the checklist (parentNameUsageID should contain the value of the taxonID of the parent taxon in the same checklist\n"
+"|_dwc:parentNameUsageID_\n"
+"|https://www.gbif.org/species/search?issue=PARENT_NAME_USAGE_ID_INVALID&advanced=1[example]\n\n"
+"|*AcceptedNameUsageID invalid*\n"
+"|The value for the acceptedNameUsageID could not be resolved. Check that the acceptedNameUsageID points to an existing taxon entry within the checklist (for synonyms or misapplied named, acceptedNameUsageID should contain the value of the taxonID of the accepted/valid taxon name in the checklist\n"
+"|_dwc:acceptedNameUsageID_\n"
+"|https://www.gbif.org/species/search?issue=ACCEPTED_NAME_USAGE_ID_INVALID&advanced=1[example]\n\n"
+"|*OriginalNameUsageID invalid*\n"
+"|The value for originalNameUsageID could not be resolved. Check that the originalNameUsageID points to an existing taxon entry within the checklist (originalNameUsageID should contain the value of the taxonID of the scientificName in the checklist that represents the name originally established under the rules of the associated nomenclatural code, e.g. the basionym\n"
+"|_dwc:originalNameUsageID_\n"
+"|https://www.gbif.org/species/search?issue=ORIGINAL_NAME_USAGE_ID_INVALID&advanced=1[example]\n\n"
+"|*Rank unknown*\n"
+"|The value for taxonRank could not be interpreted. Check if you can map the value to one of https://api.gbif.org/v1/enumeration/basic/Rank[the accepted taxon rank values]\n"
+"|_dwc:taxonRank_\n"
+"|https://www.gbif.org/species/search?issue=RANK_INVALID&advanced=1[example]\n\n"
+"|*Nomenclatural status unknown*\n"
+"|The value for nomenclaturalStatus could not be interpreted. Check if you can map the value to one of https://api.gbif.org/v1/enumeration/basic/NomenclaturalStatus[the accepted nomenclatural status values]\n"
+"|_dwc:nomenclaturalStatus_\n"
+"|https://www.gbif.org/species/search?issue=NOMENCLATURAL_STATUS_INVALID&advanced=1[example]\n\n"
+"|*Taxonomic status unknown*\n"
+"|The value for taxonomicStatus could not be interpreted. Check if you can map the value to one of https://api.gbif.org/v1/enumeration/basic/TaxonomicStatus[the accepted taxonomic status values]\n"
+"|_dwc:TaxonomicStatus_\n"
+"|https://www.gbif.org/species/search?issue=TAXONOMIC_STATUS_INVALID&advanced=1[example]\n\n"
+"|*ScientificName assembled*\n"
+"|The scientific name was assembled from the individual name components (e.g. genus name, species epithet, authors), and not supplied as a whole. This is simply for information, publishers can ignore it\n"
+"|_dwc:scientificName_\n"
+"|https://www.gbif.org/species/search?issue=SCIENTIFIC_NAME_ASSEMBLED&advanced=1[example]\n\n"
+"|*Chained synonym*\n"
+"|The record is a synonym which has another synonym as its accepted name. The GBIF system resolves such chains and links every synonym to the final accepted name. Check that synonyms always point to accepted names\n"
+"|_dwc:acceptedNameUsageID_\n"
+"|https://www.gbif.org/species/search?issue=CHAINED_SYNOYM&advanced=1[example]\n\n"
+"|*Basionym author mismatch*\n"
+"|The authorship of the original name does not match the authorship in brackets of the taxon name. This flags the relationship between the two names as suspicious, based on the formal rules defined by nomenclatural codes.\n"
+"|_dwc:scientificName_, _dwc:scientificNameAuthorship_, _dwc:originalNameUsage_\n"
+"|https://www.gbif.org/species/search?issue=BASIONYM_AUTHOR_MISMATCH&advanced=1[example]\n\n"
+msgstr ""
+
+#. |*Taxonomic status mismatch*
+#. |The taxonomic status of a name is based on taxonomic opinion. In combination of data from various sources, taxonomic opinions can differ. This flag alerts to seeming inconsistencies within a group of names
+#. |_dwc:taxonomicStatus_
+#. |https://www.gbif.org/species/search?issue=TAXONOMIC_STATUS_MISMATCH&advanced=1[example]
+#.  Not implemented yet
+#. type: Table
+#: en/data-use/modules/ROOT/pages/checklist-issues-and-flags.adoc:83
+msgid "|*Classification parent cycle* |The child-parent relationships between taxon names result in a cycle that needs to be resolved/cut. The classification should be a tree.  |_dwc:parentNameUsageID_ |https://www.gbif.org/species/search?issue=PARENT_CYCLE&advanced=1[example]"
+msgstr ""
+
+#. |*Classification rank order invalid*
+#. |The taxon names in a child-parent chain are out of sequence relating to their ranks. Make sure that each child taxon points to its direct parent, as represented in the checklist
+#. |_dwc:parentNameUsageID_, _dwc:taxonRank_
+#. |https://www.gbif.org/species/search?issue=CLASSIFICATION_RANK_ORDER_INVALID&advanced=1[example]
+#. type: Table
+#: en/data-use/modules/ROOT/pages/checklist-issues-and-flags.adoc:168
+msgid "|*Classification not applied* |The denormalized classification of the checklist, i.e. values for terms like dwc:family or dwc:phylum, could not be applied to the name safely. This usually happens if there is also a normalized parentNameUsageID-based classification given with unspecified ranks |_dwc:parentNameUsageID_ |https://www.gbif.org/species/search?issue=CLASSIFICATION_NOT_APPLIED&advanced=1[example] |*Vernacular name invalid* |At least one part of a vernacular name attached to this taxon name, linked from the Vernacular Names extension, could not be interpreted. This usually happens when the name was blank, but it is also flagged if other controlled values such as language, lifestage, plural or sex in a vernacular name record cannot be interpreted.  |_dwc:vernacularName_ and http://rs.gbif.org/terms/1.0/VernacularName[Vernacular Name extension] |https://www.gbif.org/species/search?issue=VERNACULAR_NAME_INVALID&advanced=1[example] |*Description invalid* |At least one description record for this taxon name, linked from the Taxon Description extension, could not be interpreted because the mandatory description was missing or the language field was invalid |http://rs.gbif.org/terms/1.0/Description[Taxon Description extension] |https://www.gbif.org/species/search?issue=DESCRIPTION_INVALID&advanced=1[example] |*Distribution invalid* |At least one species distribution record for this taxon name, linked from the Species Distribution extension, could not be interpreted |http://rs.gbif.org/terms/1.0/Distribution[Species Distribution extension] |https://www.gbif.org/species/search?issue=DISTRIBUTION_INVALID&advanced=1[example] |*Species profile invalid* |At least one species profile record for this taxon name, linked from the Species Profile extension, could not be interpreted |http://rs.gbif.org/terms/1.0/SpeciesProfile[Species Profile extension] |https://www.gbif.org/species/search?issue=SPECIES_PROFILE_INVALID&advanced=1[example] |*Multimedia invalid* |At least one multimedia extension record attached to this taxon name could not be interpreted. This covers multimedia coming in through various https://rs.gbif.org/extensions.html[extensions], including Audubon core, Simple images or multimedia or EOL media |See https://data-blog.gbif.org/post/gbif-multimedia/ |https://www.gbif.org/species/search?issue=MULTIMEDIA_INVALID&advanced=1[example] |*Bibliographic references invalid* |At least one bibliographic reference for this taxon name, linked from the Literature References extension, could not be interpreted |http://rs.gbif.org/terms/1.0/Reference[Literature Reference extension] |https://www.gbif.org/species/search?issue=BIB_REFERENCE_INVALID&advanced=1[example] |*Alternative identifiers invalid* |At least one alternative identifier for this taxon name, linked from the Alternative Identifiers extension, could not be interpreted |http://rs.gbif.org/terms/1.0/Identifier[Identifier extension] |https://www.gbif.org/species/search?issue=ALT_IDENTIFIER_INVALID&advanced=1[example] |*Could not be matched to GBIF backbone* |The interpretation of the taxonomic name could not find an existing equivalent, or near-enough match, in the GBIF taxonomic backbone. If the taxon name is newly described or a recent recombination, this is expected, until the new name can be integrated into the backbone taxonomy. You can check how a scientific name is matched against the backbone taxonomy using our https://www.gbif.org/tools/species-lookup[species name matching tool].  |_dwc:scientificName_ |https://www.gbif.org/species/search?issue=BACKBONE_MATCH_NONE&advanced=1[example] |*Fuzzy GBIF backbone match* |Name match to the GBIF backbone taxonomy could only be done using a fuzzy, non exact match |_dwc:scientificName_ |https://www.gbif.org/species/search?issue=BACKBONE_MATCH_FUZZY&advanced=1[example] |*Backbone match aggregate* |Name usage could only be matched to a GBIF backbone species, but was in fact a broader species aggregate/complex.  |_dwc:scientificName_ |https://www.gbif.org/species/search?issue=BACKBONE_MATCH_AGGREGATE&advanced=1[example] |*Synonym lacking an accepted name* |The taxon name is explicitly marked as a synonym, but lacking a reference to the corresponding accepted name. If the accepted name is contained in the same data source, consider adding a reference to it |_dwc:TaxonomicStatus_, _dwc:acceptedNameUsageID_ |https://www.gbif.org/species/search?issue=ACCEPTED_NAME_MISSING&advanced=1[example] |*Accepted name not unique* |The synonym record provides the accepted name as verbatim text, rather than as a cross-reference. The verbatim name is ambiguous and could refer to several different records in GBIF's backbone taxonomy |_dwc:acceptedNameUsage_ |https://www.gbif.org/species/search?issue=ACCEPTED_NAME_NOT_UNIQUE&advanced=1[example] |*Parent name not unique* |The record provides the name of the taxonomic parent as verbatim text, rather than as a cross-reference. The verbatim name is ambiguous and could refer to several different records in GBIF's backbone taxonomy |_dwc:parentNameUsage_ |https://www.gbif.org/species/search?issue=PARENT_NAME_NOT_UNIQUE&advanced=1[example] |*Original name not unique* |The record provides the original name of the taxon (e.g. basionym) as verbatim text, rather than as a cross-reference. The verbatim name is ambiguous and could refer to several different records in GBIF's backbone taxonomy |_dwc:originalNameUsage_ |https://www.gbif.org/species/search?issue=ORIGINAL_NAME_NOT_UNIQUE&advanced=1[example] |*Relationship missing* |There were problems representing all name relationships, i.e. the link to the parent, accepted and/or original name. The interpreted record in GBIF is lacking some of the original source relation |_dwc:originalNameUsage_, _dwc:parentNameUsage_, _dwc:acceptedNameUsage_, _dwc:acceptedNameUsageID_, _dwc:TaxonomicStatus_, _dwc:parentNameUsageID_ |https://www.gbif.org/species/search?issue=RELATIONSHIP_MISSING&advanced=1[example]"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/checklist-issues-and-flags.adoc:170
+#, no-wrap
+msgid "GBIF Backbone"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/checklist-issues-and-flags.adoc:173
+msgid "These issues are only present on names contained in the GBIF backbone taxonomy."
+msgstr ""
+
+#.  TODO: Need a better explanation. Why not-synonymized, and ignored? What does it mean to a user? I would have assumed this flag to notify users that a homonym (identical name but different authorship) does exist that describes an unrelated group of organisms (taxon).
+#. type: Table
+#: en/data-use/modules/ROOT/pages/checklist-issues-and-flags.adoc:205
+#, no-wrap
+msgid "|*Basionym relation derived*\n"
+"|The record in GBIF has a relationship to an original name (basionym) that was derived from name & authorship comparison, but did not exist explicitly in the source data. This will only be flagged in programmatically generated GBIF backbone records of name usages.\n"
+"|\n"
+"|https://www.gbif.org/species/search?issue=ORIGINAL_NAME_DERIVED&advanced=1[example]\n\n"
+"|*Conflicting basionym combination*\n"
+"|There was more than one accepted name in a homotypical basionym group of names. GBIF backbone specific issue.\n"
+"|_dwc:scientificName_\n"
+"|https://www.gbif.org/species/search?issue=CONFLICTING_BASIONYM_COMBINATION&advanced=1[example]\n\n"
+"|*No species included*\n"
+"|The group (currently only genera are tested) is lacking any accepted species.\n"
+"|\n"
+"|https://www.gbif.org/species/search?issue=NO_SPECIES&advanced=1[example]\n\n"
+"|*Name parent mismatch*\n"
+"|The (accepted) bi/trinomial name does not match the parent name and should be recombined into the parent genus/species. For example the species _Picea alba_ with a parent genus _Abies_ is a mismatch, and should be replaced by _Abies alba_.\n"
+"|\n"
+"|https://www.gbif.org/species/search?issue=NAME_PARENT_MISMATCH&advanced=1[example]\n\n"
+"|*Orthographic variant*\n"
+"|An entry in the backbone is suspected to be only a spelling variation of an otherwise existing name.\n"
+"|\n"
+"|https://www.gbif.org/species/search?issue=ORTHOGRAPHIC_VARIANT&advanced=1[example]\n\n"
+"|*Homonym*\n"
+"|A not-synonymized homonym exists for this name in some other backbone source which has been ignored at build time.\n"
+"|\n"
+"|https://www.gbif.org/species/search?issue=HOMONYM&advanced=1[example]\n"
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/checklist-issues-and-flags.adoc:211
+msgid "|*Published earlier than parent name* |A bi- or trinomial name was seemingly published earlier than the parent genus/species. This might indicate a homonym issue, or that the name should rather be a recombination.  | |https://www.gbif.org/species/search?issue=PUBLISHED_BEFORE_GENUS&advanced=1[example]"
+msgstr ""
+

@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2025-02-04 17:44\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /main/translations/openapi/analytics.pot\n"
+"X-Crowdin-File-ID: 40540\n"
+
+#. type: Title =
+#: en/openapi/modules/ROOT/pages/analytics.adoc:1
+#, no-wrap
+msgid "GBIF Analytics and Data Trends"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/analytics.adoc:4
+msgid "GBIF capture various metrics to enable monitoring of data trends.  These are displayed at https://www.gbif.org/analytics."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/analytics.adoc:6
+msgid "Every quarter, GBIF takes a snapshot of the published verbatim occurrence data.  The latest snapshot, and all prior snapshots, are then reprocessed using the current processing pipeline, including the newest taxonomic backbone, vocabularies, geospatial layers and so on.  The data are then summarized and made available for the https://www.gbif.org/analytics[GBIF Global Trends] page and the linked regional and country pages."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/analytics.adoc:7
+msgid "These data are available at https://analytics-files.gbif.org/, where there is also a brief explanation.  If you would find further documentation useful, please comment on https://github.com/gbif/tech-docs/issues/24[this issue]."
+msgstr ""
+

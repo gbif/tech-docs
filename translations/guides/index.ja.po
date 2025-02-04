@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: 2025-02-04 17:51\n"
+"Last-Translator: \n"
+"Language-Team: Japanese\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /main/translations/guides/index.pot\n"
+"X-Crowdin-File-ID: 43364\n"
+
+#. type: Title =
+#: en/guides/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "Hello"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:4
+msgid "This is the automatic start page for version *{page-component-version}* of Component B."
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:7
+msgid "Component B is one of two documentation components in the Antora Demo.  The other docs component, Component A, can be accessed via the component selector menu (aka component drawer) at the bottom of the menu on the left side of the page."
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:9
+msgid "Link to <<Page source>> or to <<Page source,the same with another text>>."
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:11
+msgid "See the xref:data-publishing.adoc[] or xref:data-publishing.adoc[like this]."
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:13
+msgid "See the xref:ipt:ROOT:doi-workflow.adoc#workflows[IPT workflow]."
+msgstr ""
+
+#. type: Title ==
+#: en/guides/modules/ROOT/pages/index.adoc:14
+#, no-wrap
+msgid "Page source"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:17
+msgid "This page is sourced from the AsciiDoc file named [.path]_index.adoc_ that is located at [.path]_demo-component-b/docs/modules/ROOT/pages_."
+msgstr ""
+
+#. type: Title ===
+#: en/guides/modules/ROOT/pages/index.adoc:18
+#, no-wrap
+msgid "Why is this the home page of Component B?"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:21
+msgid "This page is automatically used as the start page of Component B because it is stored in the ROOT module and named [.path]_index.adoc_."
+msgstr ""
+
+#. type: Title ===
+#: en/guides/modules/ROOT/pages/index.adoc:22
+#, no-wrap
+msgid "Why is this the home page of the Antora Demo site?"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:25
+msgid "This page is used as the home page for the Antora Demo because it is assigned as the site `start_page` in the Demo site's playbook file [.path]_site.yml_."
+msgstr ""
+
+#. type: Title ==
+#: en/guides/modules/ROOT/pages/index.adoc:26
+#, no-wrap
+msgid "Cross reference syntax to target this page"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:29
+msgid "To create a cross reference *to this page from another page in the ROOT module of Component B*, the xref syntax would be `\\xref:index.adoc[]`."
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:31
+msgid "To create a cross reference *to this page from a page in Module One of Component B*, the xref syntax would be `\\xref:ROOT:index.adoc[]`."
+msgstr ""
+
+#. type: Title ===
+#: en/guides/modules/ROOT/pages/index.adoc:32
+#, no-wrap
+msgid "Always target the latest version of this page"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:35
+msgid "To create a cross reference *to the latest version of this page from a page in Component A*, the xref syntax would be `\\xref:component-b::index.adoc[]`."
+msgstr ""
+
+#. type: Title ===
+#: en/guides/modules/ROOT/pages/index.adoc:36
+#, no-wrap
+msgid "Target a specific version of this page"
+msgstr ""
+
+#. type: Plain text
+#: en/guides/modules/ROOT/pages/index.adoc:38
+msgid "To create a cross reference *to version 1.0 of this page from a page in Component A*, the xref syntax would be `\\xref:1.0@component-b::index.adoc[]`."
+msgstr ""
+

@@ -1,0 +1,155 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2025-02-04 17:47\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: /main/translations/data-use/pygbif.pot\n"
+"X-Crowdin-File-ID: 40594\n"
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/api-introduction.adoc:23
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:1
+#: en/tools/modules/ROOT/pages/index.adoc:33
+#, no-wrap
+msgid "pygbif"
+msgstr "pygbif"
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/citation.adoc:1
+#: en/data-use/modules/ROOT/pages/index.adoc:39
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:59
+#, no-wrap
+msgid "Citation"
+msgstr "Citación"
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/citation.adoc:3
+#: en/data-use/modules/ROOT/pages/index.adoc:41
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:62
+msgid "Under the terms of the GBIF data user agreement, users who download data agree to cite a DOI. Please see GBIF’s https://www.gbif.org/citation-guidelines[citation guidelines]."
+msgstr "Bajo los términos del acuerdo de usuario de datos de GBIF, los usuarios que descargan datos acuerdan citar un DOI. Por favor, consulte la guía para citar de GBIF https://www.gbif.org/es/citation-guidelines."
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/java.adoc:13
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:9
+#: en/data-use/modules/ROOT/pages/rgbif.adoc:10
+#, no-wrap
+msgid "Installation"
+msgstr "Instalación"
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:4
+msgid "_An interface to the GBIF API for the Python programming language._"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:6
+#, no-wrap
+msgid "**pygbif** is a Python package that allows searching and retrieving data from GBIF. pygbif wraps Python code around the xref:api-introduction.adoc[GBIF API] to allow you to talk to GBIF from Python and access metadata, species names, and occurrences.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:8
+msgid "The main pygbif documentation can be found at https://pygbif.readthedocs.io/."
+msgstr "La documentación principal de pygbif se puede encontrar en https://pygbif.readthedocs.io/."
+
+#. type: Block title
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:11
+#, no-wrap
+msgid "Installing the stable version from PyPI"
+msgstr "Instalando la versión estable de PyPI"
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:15
+#, no-wrap
+msgid "pip install pygbif\n"
+msgstr "pip install pygbif\n"
+
+#. type: Block title
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:17
+#, no-wrap
+msgid "Installing the development version"
+msgstr "Instalando la versión de desarrollo"
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:21
+#, no-wrap
+msgid "pip install git+git://github.com/gbif/pygbif.git#egg=pygbif\n"
+msgstr "pip install git+git://github.com/gbif/pygbif.git#egg=pygbif\n"
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:23
+#, no-wrap
+msgid "Getting Started"
+msgstr "Primeros pasos"
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:26
+msgid "(Based on the example from https://pygbif.readthedocs.io/en/latest/docs/usecases.html[the documentation].)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:28
+msgid "First, load the library:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:33
+#, no-wrap
+msgid "from pygbif import species as species\n"
+"from pygbif import occurrences as occ\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:36
+msgid "Look up GBIF backbone taxonomic keys from a list of names:"
+msgstr "Busque las claves taxonómicas de la base taxonómica de GBIF a partir de una lista de nombres:"
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:42
+#, no-wrap
+msgid "splist = ['Cyanocitta stelleri', 'Junco hyemalis', 'Aix sponsa',\n"
+"  'Ursus americanus', 'Pinus conorta', 'Poa annuus']\n"
+"keys = [ species.name_backbone(x)['usageKey'] for x in splist ]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:45
+msgid "Then, get a count of occurrence records for each taxon, and pull out number of records found for each taxon:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:49
+#, no-wrap
+msgid "out = [ occ.search(taxonKey = x, limit=0)['count'] for x in keys ]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:52
+msgid "Make a dict of species names and number of records, sorting in descending order:"
+msgstr "Cree un diccionario de nombres de especies y número de registros, ordenando en orden descendente:"
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:57
+#, no-wrap
+msgid "x = dict(zip(splist, out))\n"
+"sorted(x.items(), key=lambda z:z[1], reverse=True)\n"
+msgstr "x = dict(zip(splist, out))\n"
+"sorted(x.items(), key=lambda z:z[1], reverse=True)\n"
+
+#.  TODO: A method like rgbif has to aid citation and creating a derived dataset.
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/pygbif.adoc:65
+msgid "Please also cite pygbif."
+msgstr "Por favor, cite también pygbif."
+

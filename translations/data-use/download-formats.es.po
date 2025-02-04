@@ -1,0 +1,298 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: 2025-02-04 17:46\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: /main/translations/data-use/download-formats.pot\n"
+"X-Crowdin-File-ID: 40566\n"
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:124
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:21
+msgid "The definitions marked with {dwc_source} are from the Darwin Core standard."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:126
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:23
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:81
+msgid "The definitions marked with {gbif_source} are from GBIF, and may reflect the result of interpretation and data quality procedures applied by GBIF, or they may not be part of Darwin Core."
+msgstr ""
+
+#. type: Title =
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:1
+#, no-wrap
+msgid "Occurrence download formats"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:4
+msgid "Data downloads are available from GBIF in three primary formats:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:6
+msgid "<<simple,*Simple*>>.  This format contains a selection of commonly used terms, after the data has been aligned to GBIF's taxonomic and geographic indices and structured vocabularies"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:7
+msgid "Downloads created on www.gbif.org or through the API using the format `SIMPLE_CSV` are produced in a tab-separated text format, suitable for use with spreadsheets and programming/scripting languages"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:8
+msgid "Occurrence data accessed through xref:cloud-services::index.adoc[cloud services], or with the API format `SIMPLE_PARQUET`, are produced in https://en.wikipedia.org/wiki/Apache_Parquet[Apache Parquet format].  The fields are the same as for tab-separated text format."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:9
+msgid "<<dwca,*Darwin Core Archive*>> (API: `DWCA`).  This is a compressed Zip file, containing data in tab-separated text format, and metadata in XML format."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:10
+msgid "`occurrence.txt` contains occurrence data after interpretation by GBIF's systems."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:11
+msgid "`multimedia.txt` contains information on multimedia (images, audio, video) relating to the occurrences."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:12
+msgid "`verbatim.txt` contains the original, uninterpreted data, without modifications by GBIF's systems."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:13
+msgid "optionally, additional verbatim Darwin Core Archive extensions.  The data are as-received from the publisher.  See https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of these — note not all of them are maintained by GBIF."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:14
+msgid "<<species-list,*Species List*>> (API: `SPECIES_LIST`).  This is a summary format containing the distinct list of species names returned by the filter."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:16
+msgid "The header row (first row) of all these files contain the short name of the terms they contain.  Most of the terms are defined by the https://dwc.tdwg.org/terms/[Darwin Core standard].  For example, the column `catalogNumber` contains data of the Darwin Core term https://rs.tdwg.org/dwc/terms/catalogNumber[http://rs.tdwg.org/dwc/terms/catalogNumber]."
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:18
+#, no-wrap
+msgid "Simple download – Term definitions"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:27
+#, no-wrap
+msgid "DWCA downloads"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:30
+msgid "Darwin Core Archive downloads from gbif.org contain the following files:"
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:31
+#, no-wrap
+msgid "`occurrence.txt`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:32
+msgid "Occurrence data after interpretation by GBIF.  Described in detail <<dwca-interpreted,below>>."
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:32
+#, no-wrap
+msgid "`multimedia.txt`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:33
+msgid "Occurrence multimedia data after interpretation by GBIF.  Described in detail <<dwca-multimedia,below>>."
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:33
+#, no-wrap
+msgid "`verbatim.txt`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:34
+msgid "Occurrence data without interpretation by GBIF.  Described in detail <<dwca-verbatim,below>>."
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:34
+#, no-wrap
+msgid "`verbatim/*.txt`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:35
+msgid "Occurrence extension data without interpretation by GBIF. See https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of these — note not all of them are maintained by GBIF."
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:35
+#, no-wrap
+msgid "`meta.xml`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:36
+msgid "The https://dwc.tdwg.org/text/[Darwin Core Archive metafile], describing the structure of the archive — the file formats, column names and their terms."
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:36
+#, no-wrap
+msgid "`metadata.xml`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:37
+msgid "Metadata about the download in https://eml.ecoinformatics.org/[Ecological Metadata Language (EML)]."
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:37
+#, no-wrap
+msgid "`rights.txt`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:38
+msgid "Licence information for all the datasets with occurrences in the download."
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:38
+#, no-wrap
+msgid "`citations.txt`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:39
+msgid "Citations for all the datasets with occurrences in the download."
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:39
+#, no-wrap
+msgid "`dataset/*.xml`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:40
+msgid "EML metadata for every dataset with occurrences in the download."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:42
+msgid "The data may be read without any special tools, including by spreadsheets such as Microsoft Excel and LibreOffice Calc (see the https://www.gbif.org/faq?question=what-is-inside-a-gbif-download-zip-file[FAQ]).  The `.txt` files are tab-delimited, and all files are in UTF-8 encoding with Unix-style (`\\n`) line endings."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:44
+msgid "There are libraries to read Darwin Core Archives in these programming languages:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:46
+msgid "Java — https://github.com/gbif/dwca-io[GBIF dwca-io]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:47
+msgid ".NET — https://github.com/pjoiner/DwC-A_dotnet[DwC-A_dotnet]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:48
+msgid "Python — https://python-dwca-reader.readthedocs.io/en/latest/[Python DWCA Reader]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:49
+msgid "R — https://github.com/ropensci-archive/finch[finch] (NB: abandoned library)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:50
+msgid "Ruby — https://github.com/GlobalNamesArchitecture/dwc-archive[dwc-archive]"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:52
+#, no-wrap
+msgid "Interpreted term definitions (`occurrence.txt`)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:55
+msgid "This is the Darwin Core Archive _core_ entity, with row type https://rs.tdwg.org/dwc/terms/Occurrence[Occurrence].  Values are tab-delimited and in UTF-8 encoding."
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:59
+#, no-wrap
+msgid "Multimedia term definitions (`multimedia.txt`)"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:64
+#, no-wrap
+msgid "Verbatim term definitions (`verbatim.txt`)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:66
+msgid "Data in this table is not modified by GBIF interpretation processes, except for conversion to Unicode and possible changes to whitespace (spaces, tabs, newlines etc)."
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:70
+#, no-wrap
+msgid "Verbatim extensions (`verbatim/*.txt`)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:72
+msgid "Data in these tables is not modified by GBIF interpretation processes, except for conversion to Unicode and possible changes to whitespace (spaces, tabs, newlines etc)."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:74
+msgid "See the https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of the extensions."
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:76
+#, no-wrap
+msgid "Species list downloads – Term definitions"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:79
+msgid "Species list downloads are a summary format containing the distinct list of species names returned by the filter."
+msgstr ""
+

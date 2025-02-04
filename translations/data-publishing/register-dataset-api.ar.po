@@ -1,0 +1,230 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2025-02-04 17:47\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar_SA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: ar\n"
+"X-Crowdin-File: /main/translations/data-publishing/register-dataset-api.pot\n"
+"X-Crowdin-File-ID: 40596\n"
+
+#. type: Title =
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:1
+#, no-wrap
+msgid "Registering a dataset using the API"
+msgstr ""
+
+#. type: Block title
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:4
+#, no-wrap
+msgid "Who should register datasets in this way?"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:7
+msgid "Registering a dataset using the API may be appropriate for an institution with many datasets and an existing software system to manage them."
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:9
+msgid "If this does not apply see xref:index.adoc[other dataset registration options] for alternatives."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:11
+#, no-wrap
+msgid "Prerequisites"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:14
+msgid "You will need a webserver, VM, cloud hosting service or similar to host your datasets.  This must be accessible to GBIF's servers, and the data should be backed up regularly."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:16
+msgid "You will also need a user account on GBIF.org to handle the registrations.  Ideally, this should be an account for your institution or software system, rather than a personal account."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:18
+msgid "You should also create an account on GBIF-UAT.org which you can use for testing.  _Please do not create test datasets on GBIF.org! They will be assigned DOIs, which can never be deleted._"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:20
+msgid "Once you have created the accounts, contact helpdesk@gbif.org to ask for editor_rights permissions for your organization."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:22
+msgid "You can also test on GBIF-UAT.org using the username `ws_client_demo` and password `Demo123`.  This has permission to create datasets owned by https://www.gbif-uat.org/publisher/0a16da09-7719-40de-8d4f-56a15ed52fb6[Test Organization #1], which has a https://www.gbif-uat.org/installation/92d76df5-3de1-4c89-be03-7a17abad962a[Test HTTP installation]."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:23
+#, no-wrap
+msgid "Process"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:26
+msgid "Registration requires two REST calls — the first creates a new dataset, then the second adds an endpoint (HTTP or HTTPS location) which GBIF will use to access the dataset."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:28
+msgid "First, record the mandatory dataset metadata in a JSON file, `dataset.json`."
+msgstr ""
+
+#. type: Block title
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:30
+#, no-wrap
+msgid "Mandatory dataset metadata"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:41
+#, no-wrap
+msgid "{\n"
+"  \"publishingOrganizationKey\": \"0a16da09-7719-40de-8d4f-56a15ed52fb6\", <1>\n"
+"  \"installationKey\": \"92d76df5-3de1-4c89-be03-7a17abad962a\", <1>\n"
+"  \"type\": \"METADATA\", <2>\n"
+"  \"title\": \"Example dataset registration\",\n"
+"  \"description\": \"The dataset is registered with minimal metadata, which is overwritten once GBIF can access the file.\",\n"
+"  \"language\": \"eng\",\n"
+"  \"license\": \"http://creativecommons.org/publicdomain/zero/1.0/legalcode\" <3>\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:43
+msgid "The publishing organization and installation must already exist in the GBIF Registry."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:44
+msgid "See the enumeration API for the accepted values for the https://api.gbif.org/v1/enumeration/basic/DatasetType[type] (DatasetType)…"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:45
+msgid "…and https://api.gbif.org/v1/enumeration/license[licence]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:47
+msgid "_POST_ this JSON to GBIF using the Registry API:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:51
+#, no-wrap
+msgid "curl -Ssf --user ws_client_demo:Demo123 -H \"Content-Type: application/json\" -X POST --data @dataset.json https://api.gbif-uat.org/v1/dataset | tr -d '\"' | tee dataset.registration\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:53
+#, no-wrap
+msgid "dataset=$(cat dataset.registration)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:56
+msgid "Notice the API returns the new dataset's UUID, and we have recorded this in the file `dataset.registration`.  The UUID is then stored in a variable."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:58
+msgid "Next define the endpoint in `endpoint.json`:"
+msgstr ""
+
+#. type: Block title
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:60
+#, no-wrap
+msgid "Endpoint definition"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:66
+#, no-wrap
+msgid "{\n"
+"  \"type\": \"EML\", <1>\n"
+"  \"url\": \"https://techdocs.gbif.org/en/data-publishing/_attachments/test-dataset.eml\"\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:68
+msgid "See other values for https://api.gbif.org/v1/enumeration/basic/EndpointType[type] (EndpointType), this will be `DWC_ARCHIVE` for normal occurrence, checklist or sampling event datasets."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:70
+msgid "Add this endpoint to the dataset:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:74
+#, no-wrap
+msgid "curl -Ssf --user ws_client_demo:Demo123 -H \"Content-Type: application/json\" -X POST --data @endpoint.json https://api.gbif-uat.org/v1/dataset/$dataset/endpoint\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:76
+#, no-wrap
+msgid "Result"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:79
+msgid "The dataset should be visible in the GBIF Registry:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:83
+#, no-wrap
+msgid "firefox https://registry.gbif-uat.org/dataset/$dataset\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:86
+msgid "After 1-2 minutes the dataset metadata will be updated.  After a further 1-60 minutes, depending on the size of the dataset and the number of other datasets being processed, occurrence and/or checklist data should be retrieved from your system and shown on GBIF's system.  You can follow the progress under \"Crawling history\" and \"Ingestion history\" for your dataset, and see the length of the queue at https://registry.gbif-uat.org/monitoring/running-crawls[\"Running crawls\"] (https://registry.gbif-uat.org/monitoring/running-crawls[UAT version]) and https://registry.gbif-uat.org/monitoring/running-ingestions[\"Running ingestions\"] (https://registry.gbif-uat.org/monitoring/running-ingestions[UAT version]).  Here, \"crawling\" refers to GBIF's system downloading data from your server, and also tracks processing metadata and checklists.  \"Ingestion\" handles occurrence data."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:87
+#, no-wrap
+msgid "Shell script"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:90
+msgid "This is a very minimal procedure, without any error checking or proper recording of the dataset UUID."
+msgstr ""
+
+#. type: Block title
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:91
+#, no-wrap
+msgid "Shell script (click to expand)"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:95
+msgid "xref:attachment$register.sh[Download this script]."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:99
+#, no-wrap
+msgid "include::attachment$register.sh[]\n"
+msgstr ""
+

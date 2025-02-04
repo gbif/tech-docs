@@ -1,0 +1,944 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2024-12-16 15:52\n"
+"Last-Translator: \n"
+"Language-Team: Spanish, Colombia\n"
+"Language: es_CO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: es-CO\n"
+"X-Crowdin-File: /main/translations/data-quality-recommendations.adoc.pot\n"
+"X-Crowdin-File-ID: 40560\n"
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:1
+#: en/data-publishing/modules/ROOT/pages/index.adoc:27
+#, no-wrap
+msgid "Data quality recommendations"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:7
+msgid "this page is currently under development"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:9
+msgid "The required terms in the tables are the minimal terms to include for GBIF to index the data. By following the data quality recommendations, data publishers can improve the quality, completeness and value of their datasets. The data Class or category of the individual Darwin Core Terms are indicated by the following icons:"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:13
+msgid "https://dwc.tdwg.org/terms/#record-level[Record-level^]"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:18
+msgid "https://dwc.tdwg.org/terms/#taxon[Taxon^]"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:23
+msgid "https://dwc.tdwg.org/terms/#location[Location^]"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:28
+msgid "https://dwc.tdwg.org/terms/#occurrence[Occurrence^]"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:33
+msgid "https://dwc.tdwg.org/terms/#event[Event^]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:36
+msgid "All tables included in a Darwin Core Archive *must* include a unique identifier column"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:38
+msgid "Data published with the support of one of the programmes managed by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]) have stricter data quality requirements than data published outside of these programmes. Please also consult the documentation for xref:metadata-recommendations-and-requirements.adoc[requirements for the EML file]."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:39
+#, no-wrap
+msgid "Data quality requirements for checklists"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:42
+msgid "https://www.gbif.org/dataset/search?type=CHECKLIST[Checklist datasets] provide a catalogue, rapid summary or baseline inventory of a set of named organisms, or taxa. While they may include additional details like local species names or specimen citations, checklists typically categorize information along taxonomic, geographic, and thematic lines or some combination of the three."
+msgstr ""
+
+#. type: Block title
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:43
+#, no-wrap
+msgid "Data quality requirements for *checklists*"
+msgstr ""
+
+#. type: Table
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:75
+#, no-wrap
+msgid "|Term |<<Status>> |Status GBIF managed programmes\n\n"
+"|<<taxonID>>\n"
+"|Required\n"
+"|Required\n\n"
+"|<<scientificName>>\n"
+"|Strongly recommended\n"
+"|Required\n\n"
+"|<<taxonRank>>\n"
+"|Strongly recommended\n"
+"|Required\n\n"
+"|<<kingdom>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<parentNameUsageID>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<acceptedNameUsageID>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<vernacularName>>\n"
+"|Share if available\n"
+"|Share if available\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:77
+#, no-wrap
+msgid "Data quality requirements for occurrences"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:80
+msgid "https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the core of data published through GBIF, offering evidence of the occurrence of a species (or other taxon) at a particular place on a specified date."
+msgstr ""
+
+#. type: Block title
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:81
+#, no-wrap
+msgid "Data quality requirements for *occurrences*"
+msgstr ""
+
+#. type: Table
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:157
+#, no-wrap
+msgid "|Term |<<Status>> |Status funded GBIF programmes\n\n"
+"|<<occurrenceID>>\n"
+"|Required\n"
+"|Required\n\n"
+"|<<basisOfRecord>>\n"
+"|Strongly recommended\n"
+"|Required\n\n"
+"|<<scientificName>>\n"
+"|Strongly recommended\n"
+"|Required\n\n"
+"|<<eventDate>>\n"
+"|Strongly recommended\n"
+"|Required\n\n"
+"|<<countryCode>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<taxonRank>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<kingdom>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<decimalLatitude>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<decimalLongitude>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<geodeticDatum>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<coordinateUncertaintyInMeters>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<individualCount>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<organismQuantity>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<organismQuantityType>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<informationWithheld>>\n"
+"|Share if available\n"
+"|Share if available\n\n"
+"|<<dataGeneralizations>>\n"
+"|Share if available\n"
+"|Share if available\n\n"
+"|<<eventTime>>\n"
+"|Share if available\n"
+"|Share if available\n\n"
+"|<<country>>\n"
+"|Share if available\n"
+"|Share if available\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:159
+#, no-wrap
+msgid "Data quality requirements for sampling events"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:162
+msgid "https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Sampling-event datasets] provide greater detail about a species occurring at a given location and date, including the methods, events and relative abundance of species recorded in a sample. By improving comparisons of data collected using the same protocols at different times and places, these datasets can enable researchers to infer the absence of particular species from particular sites."
+msgstr ""
+
+#. type: Block title
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:163
+#, no-wrap
+msgid "Data quality requirements for *sampling events*"
+msgstr ""
+
+#. type: Table
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:231
+#, no-wrap
+msgid "|Term |<<Status>> |Status funded GBIF programmes\n\n"
+"|#<<type>>#\n"
+"|Required\n"
+"|Required\n\n"
+"|<<eventID>>\n"
+"|Strongly recommended\n"
+"|Required\n\n"
+"|<<eventDate>>\n"
+"|Strongly recommended\n"
+"|Required\n\n"
+"|<<samplingProtocol>>\n"
+"|Strongly recommended\n"
+"|Required\n\n"
+"|<<sampleSizeValue>>\n"
+"|Strongly recommended\n"
+"|Required\n\n"
+"|<<sampleSizeUnit>>\n"
+"| Strongly recommended\n"
+"|Required\n\n"
+"|<<countryCode>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<parentEventID>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<samplingEffort>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<locationID>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<decimalLatitude>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<decimalLongitude>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<geodeticDatum>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<coordinateUncertaintyInMeters>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<footprintWKT>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n\n"
+"|<<occurrenceStatus>>\n"
+"|Strongly recommended\n"
+"|Strongly recommended\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:233
+#, no-wrap
+msgid "Terms"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:235
+#, no-wrap
+msgid "{record} basisOfRecord [[basisOfRecord]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:236
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_basisOfRecord[_dwc:basisOfRecord_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:239
+msgid "The type of the individual record. Choose one of the available options in dwc:basisOfRecord."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:241
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:246
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:251
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:258
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:265
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:276
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:283
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:294
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:301
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:308
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:315
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:322
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:331
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:340
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:347
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:354
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:359
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:366
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:373
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:386
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:393
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:400
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:407
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:414
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:421
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:426
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:435
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:442
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:451
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:460
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:467
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:474
+msgid "'''"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:242
+#, no-wrap
+msgid "{record} informationWithheld [[informationWithheld]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:243
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_informationWithheld[_dwc:informationWithheld_]"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:247
+#, no-wrap
+msgid "{record} dataGeneralizations [[dataGeneralizations]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:248
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_dataGeneralizations[_dwc:dataGeneralizations_]"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:252
+#, no-wrap
+msgid "{record} type [[type]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:253
+#, no-wrap
+msgid "http://purl.org/dc/elements/1.1/type[_dc:type_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:256
+msgid "The nature or genre of the resource."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:259
+#, no-wrap
+msgid "{taxon} taxonID [[taxonID]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:260
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_taxonID[_dwc:taxonID_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:263
+msgid "A unique identifier for the taxon, allowing the same taxon to be recognized across dataset versions as well as through data downloads and use. Ideally, the taxonID is a persistent global unique identifier. As a minimum requirement, it has to be unique within the published dataset. It allows to recognize the same set of taxon information over time when the dataset indexing is refreshed; it links additional data like images or occurrence records; and it makes it possible to cite records e.g. in usage reports or in publications. This means that the taxonID needs to reliably stay with the taxon information at source and to consistently refer to the same set of taxon information in published datasets and any underlying source data."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:266
+#, no-wrap
+msgid "{taxon} scientificName [[scientificName]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:267
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_scientificName[_dwc:scientificName_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:270
+msgid "The full scientific name, including authorship and year of the name where applicable. In the context of a checklist, the scientific name is the core data element of a taxon list or hierarchy that the dataset is set out to collate and publish."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:272
+msgid "Depending on the purpose of the checklist, scientific names may be of any hierarchical level, though typically would be of species rank or below for, e.g., regional floristic or faunistic checklists, Red List collations, or thematic inventories like marine organisms or taxonomic revisions of species groups. If the checklist is intended to publish a hierarchy (tree-like structure), add separate entries for the relevant upper taxonomic ranks, e.g. kingdom, class and family, and link them into a hierarchical structure using the parentNameUsageID (see below) to support unambiguous interpretation of the checklist entries."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:274
+msgid "Valid scientific names are Latin names following the syntax rules of the respective taxon group (e.g. botanical nomenclature). Not permitted are, i.e., working names (`Mallomonas sp.4`), common names (`fruit fly`), or names containing identification qualifiers (`Anemone cf. nemorosa`). If common names are used, they should be supplied in addition to the scientific names, using the <<vernacularName>> set of fields."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:277
+#, no-wrap
+msgid "{taxon} taxonRank [[taxonRank]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:278
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_taxonRank[_dwc:taxonRank_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:281
+msgid "The taxonomic rank of the supplied scientific name. The taxon rank supports the interpretation of the scientific name during indexing and supports matching the checklist records to the core taxonomy, especially in the case of names at the genus level or above (monomials). While the format of higher taxon names in some groups contains indicators of their rank, this is not consistent across or even within groups, and cannot be reliably used for interpretation. For placing names correctly, explicitly specifying the taxon rank, alongside information on the higher taxonomy, is an important criterion. For practical purposes, the ranks used have to be (major) Linnean ranks: kingdom, phylum, class, order, family, genus, and species. Both Latin and English terms are accepted."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:284
+#, no-wrap
+msgid "{taxon} kingdom [[kingdom]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:285
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_kingdom[_dwc:kingdom_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:288
+msgid "The full scientific name specifying the kingdom that the scientific name is classified under and other higher taxonomy, if possible."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:290
+msgid "With scientific names, there are numerous cases where the matching of a given name against the core taxonomy is unsure or ambiguous. This is the case, for example, with homonyms (identical names exist for different organisms, usually across groups), newly described names that are not yet part of the existing taxonomic tree, or spelling variants (typos, hyphenation etc). To support exact matching of a scientific name against the core taxonomy, additional names at higher ranks help interpretation and error prevention. For datasets where the hierarchical representation in the published data is not important, higher-level names can be supplied as part of the record itself by adding the relevant DarwinCore fields, similar to occurrence datasets."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:292
+msgid "Names should be scientific (Latin) names at major Linnean ranks, like `Animalia` (`kingdom`) or `Rosaceae` (`family`). Not: common names (`animals`), abbreviations (`Rosac.`), intermediate rank levels (`Tetrapoda` (`superclass`)), or polyphyletic or non-taxonomic groupings (`algae`, `herbivore`)."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:295
+#, no-wrap
+msgid "{taxon} parentNameUsageID [[parentNameUsageID]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:296
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_parentNameUsageID[_dwc:parentNameUsageID_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:299
+msgid "The taxonID of the next available higher-ranked (parent) entry within the checklist dataset, if higher taxon names are supplied as separate entries in the list. This supports the representation of the dataset as a hierarchy, e.g. for the publication of a taxonomy."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:302
+#, no-wrap
+msgid "{taxon} acceptedNameUsageID [[acceptedNameUsageID]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:303
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID[_dwc:acceptedNameUsageID_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:306
+msgid "Within the record of a synonym, the taxonID of the accepted taxon name entry within the checklist dataset, if both synonyms and accepted names are supplied. This supports the representation of synonymy for a taxonomic dataset."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:309
+#, no-wrap
+msgid "{taxon} vernacularName [[vernacularName]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:310
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_vernacularName[_dwc:vernacularName_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:313
+msgid "When supplied, also add at least the language of the name, using ISO 639-1 language codes."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:316
+#, no-wrap
+msgid "{location} countryCode [[countryCode]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:317
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_countryCode[_dwc:countryCode_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:320
+msgid "A two-letter standard abbreviation for the country of the occurrence locality. Information on the collection or observation locality (geographic reference) is essential for any record. The country code is the proposed minimum standard to supply this information. The format for this field follows the https://www.iso.org/iso-3166-country-codes.html[ISO 3166-1-alpha-2 standard] for country codes. Those are two-letter codes for each country; lists can be found online. Publishers who wish to supply the country name, in addition, may add the appropriate element. In most cases, occurrences can be linked to a specific country. In cases where it is not possible to supply a country code (e.g. marine data outside of coastal zones), geographical coordinates should be supplied instead."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:323
+#, no-wrap
+msgid "{location} decimalLatitude [[decimalLatitude]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:324
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_decimalLatitude[_dwc:decimalLatitude_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:327
+msgid "The geographic latitude in decimal degrees. Where coordinate values are available <<decimalLongitude>> should be filled also. Valid values lie between `-90` and `90` incl. (`latitude`; `0`: `Equator`). Decimal coordinate values provide a geolocation of the occurrence that is much more informative than the country name alone, and that is stable over time (unlike the borders of countries). Many data use cases require coordinates if the data are to be of value or usable at all, for example, species distribution modelling or population studies in specific areas."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:329
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:338
+msgid "Several issues concerning coordinates are encountered frequently. While the indexing process makes efforts to identify such cases and propose corrections, e.g. by plausibility-testing coordinates against country names, attention is needed already at the level of data preparation and publication. Such issues include transformation errors (resulting from e.g. conversion of degrees-minutes-seconds into decimal values), accidental swapping of values, either in the dataset or during the mapping process (latitude and longitude are reversed), or negation of values (transposition of locations from north to south, east to west or vice versa through the accidental or systematic loss or addition of minus-values). Additional points to keep in mind during data preparation are technical defaults (e.g. database settings substituting 0-values instead of unknown values resulting in records supplying lat/long as `0/0`; over-precision of data by automatic number-padding (`lat -17.79200000` where `lat -17.792` would be appropriate), or the need to blur coordinate precision e.g. the protection of sensitive species. Also note that gridded data, i.e. where coordinates represent centroids of grid cells in a field survey rather than the actual occurrence locality, may be better represented by publishing the dataset as event data rather than as occurrence records. Especially in such cases, it is essential also to supply the <<coordinateUncertaintyInMeters>>."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:332
+#, no-wrap
+msgid "{location} decimalLongitude [[decimalLongitude]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:333
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_decimalLongitude[_dwc:decimalLongitude_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:336
+msgid "The geographic longitude in decimal degrees. Where coordinate values are available <<decimalLatitude>> should be filled also. Valid values lie between -180 and 180 incl. (longitude; 0: Greenwich Meridian). Decimal coordinate values provide a geolocation of the occurrence that is much more informative than the country name alone, and that is stable over time (unlike the borders of countries). Many data use cases require coordinates if the data are to be of value or usable at all, for example, species distribution modelling or population studies in specific areas."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:341
+#, no-wrap
+msgid "{location} geodeticDatum [[geodeticDatum]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:342
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_geodeticDatum[_dwc:geodeticDatum_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:345
+msgid "The coordinate system and set of reference points upon which the geographic coordinates are based. Different geodetic systems exist, and the exact locality of a point depends on which reference system the coordinates refer to. This is why the system should always be explicitly named when known: depending on the geographic region, the datum shift between two systems can vary from zero to hundreds of meters for a given point. When no value is supplied, GBIF's indexing process assumes the reference system to be WGS 84 (World Geodetic System 1984, a global approximation at sea level and, i.e., base of GPS data); but the more frequently the geodetic datum can be supplied explicitly by data publishers, the more reliable the geographic representation of occurrences will become, e.g. through datum conversion. It is likewise important to explicitly document the lack of knowledge of the system used, as this increases confidence in data interpretation. Examples: `WGS84`; `EPSG:4326`; `unknown`."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:348
+#, no-wrap
+msgid "{location} coordinateUncertaintyInMeters [[coordinateUncertaintyInMeters]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:349
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_coordinateUncertaintyInMeters[_dwc:coordinateUncertaintyInMeters_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:352
+msgid "The horizontal distance from the given <<decimalLatitude>> and <<decimalLongitude>> in meters, describing the smallest circle containing the whole of the Location. This is an indicator of the accuracy of the coordinate location, described as the radius of a circle around the stated point location. It allows estimating the potential distance of the real occurrence location from the recorded values and largely depends on the methodology used in coordinate determination. Thus, the value may be specific to or estimated from the methodology or device used for geolocating, e.g. `30` (reasonable lower limit of a GPS reading under good conditions if the actual precision was not recorded at the time). Note that `0` (zero) is not a valid value for this measure. If the value is unknown or not applicable, the value should be empty (null). If for some reason the `coordinateUncertaintyInMeters` was artificially increased, for example by rounding the coordinate values, the fields <<informationWithheld>> or <<dataGeneralizations>> must be filled in addition. Examples: `30`; `71`; `[empty]`. Not: `0`."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:355
+#, no-wrap
+msgid "{location} country [[country]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:356
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_country[_dwc:country_]"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:360
+#, no-wrap
+msgid "{location} locationID [[locationID]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:361
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_locationID[_dwc:locationID_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:364
+msgid "An internal or external reference that links to a set of data describing the sample event location, if available. Example: `http://www.geonames.org/10793757/dnb-6.html`. Note: if such a reference cannot be meaningfully supplied, consider supplying more location detail, e.g. through use of the data elements `locality`, `minimumElevationInMeters`, `minimumDepthInMeters`, `stateProvince`, `locationRemarks`."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:367
+#, no-wrap
+msgid "{location} footprintWKT [[footprintWKT]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:368
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_footprintWKT[_dwc:footprintWKT_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:371
+msgid "An alternative area description, specifying the location of the sample event in Well-known text (WKT) markup language. A WKT representation of the shape (footprint, geometry) that defines the location. This differs from the point-radius representation that is combined from the elements <<decimalLatitude>>, <<decimalLongitude>> and <<coordinateUncertaintyInMeters>> in that it can define shapes that are not circles. Example: a one-degree bounding box with opposite corners at (`longitude`=`10`, `latitude`=`20`) and (`longitude`=`11`, `latitude`=`21`) would be expressed in well-known text as `POLYGON ((10 20, 11 20, 11 21, 10 21, 10 20))`. Note that it is possible to supply both a point-radius and a footprintWKT location for the same sample event."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:374
+#, no-wrap
+msgid "{occurrence} occurrenceID [[occurrenceID]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:375
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_occurrenceID[_dwc:occurrenceID_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:378
+msgid "A unique identifier for the occurrence, allowing the same occurrence to be recognized across dataset versions as well as through data downloads. As a minimum requirement, it has to be unique within the published dataset, but can also be a globally unique identifier. It allows users to recognize the same occurrence over time when the dataset indexing is refreshed. OccurrenceIDs also link additional data like images to the record, and it makes it possible to cite records. This means that the occurrenceID needs to reliably stay with the occurrence at source, and to consistently refer to the same occurrence in published datasets and any underlying source data."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:380
+msgid "The occurrenceID in a dataset helps GBIF identify whether an occurrence record is new. If it is new, GBIF assigns it a new unique gbifID. Some publishers include information, such as the collection or institution code, within the occurrenceID. However, if the collection or institution changes, the occurrenceID must also change, even though the actual occurrence record remains the same. This practice can lead to unnecessary instability in occurrenceIDs and gbifIDs. If possible, we now encourage publishers to use an occurrenceIDs with more stability, that do not encode information about the occurrence or specimen. For example, a simple large integer or UUID."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:382
+msgid "An important part of GBIF data processing is to assign a stable gbifID each new record. This is a somewhat complex process that uses the occurrenceID, catalogNumber, collectionCode, and institutionCode in combination with the GBIF datasetKey to either mint a new identifier or reuse an existing one. When publishers do not supply an occurrenceID, GBIF processing will construct an identifier using the so-called triplet code (catalogNumber, collectionCode and institutionCode)."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:384
+msgid "If a previously published dataset alters more than 50% of its exsisting occurrenceIDs, it will get flagged by our link:https://github.com/gbif/ingestion-management/issues[ingestion management system]. Typically, a publisher will get an e-mail from GBIF within a day or two asking for a file mapping the old occurrenceIDs to the new occurrenceIDs. A GBIF data blog post has been written on the topic of id stability link:https://data-blog.gbif.org/post/improve-identifier-stability/[here]."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:387
+#, no-wrap
+msgid "{occurrence} individualCount [[individualCount]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:388
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_individualCount[_dwc:individualCount_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:391
+msgid "Use the `individualCount` field to capture the number of individuals for the species associated with the occurrence."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:394
+#, no-wrap
+msgid "{occurrence} organismQuantity [[organismQuantity]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:395
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_organismQuantity[_dwc:organismQuantity_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:398
+msgid "To record the quantity of a species occurrence. Use together with <<organismQuantityType>> to specify the quantity e.g., `organismQuantity`: `5`/ `organismQuantityType`: `individuals`. `organismQuantity`: `r` / `organismQuantityType`: `BraunBlanquetScale`."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:401
+#, no-wrap
+msgid "{occurrence} organismQuantityType [[organismQuantityType]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:402
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_organismQuantityType[_dwc:organismQuantityType_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:405
+msgid "To record the quantity type of a species occurrence. Use together with <<organismQuantity>> to specify the type of measurement e.g., `organismQuantity`: `5`/ `organismQuantityType`: `individuals`. `organismQuantity`: `r` / `organismQuantityType`: `BraunBlanquetScale`."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:408
+#, no-wrap
+msgid "{occurrence} occurrenceStatus [[occurrenceStatus]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:409
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_occurrenceStatus[_dwc:occurrenceStatus_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:412
+msgid "Note: this applies to associated occurrence data, not to the sample event itself. A qualifier for individual occurrence records, marking a taxon as either present or absent at a location during the sampling event. Since sample datasets document the sampling effort exerted during the event, it can often be valuable to not only document taxa as being present (observed, collected) at the location at the time, but also to record negative occurrences (absences) for taxa that could be reasonably expected, but were not encountered in the event. An example is a floristic survey that estimates the abundance or coverage of plants in a certain area, working from a list of species that were encountered on earlier surveys of that same region. Recommendation: use the standard values of either `present` or `absent` to mark individual occurrence records."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:415
+#, no-wrap
+msgid "{event} eventDate [[eventDate]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:416
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_eventDate[_dwc:eventDate_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:419
+msgid "Dates and times published in Darwin Core should use the https://en.wikipedia.org/wiki/ISO_8601[ISO 8601-1:2019] standard. Please see the following https://techdocs.gbif.org/en/data-processing/temporal-interpretation[documentation] for more details."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:422
+#, no-wrap
+msgid "{event} eventTime [[eventTime]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:423
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_eventTime[_dwc:eventTime_]"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:427
+#, no-wrap
+msgid "{event} eventID [[eventID]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:428
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_eventID[_dwc:eventID_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:431
+msgid "A unique identifier for the sampling event, allowing to link individual occurrences to a specific event, and to cross-reference events to document e.g. time series (resampling) or synchronized sampling across a wider area."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:433
+msgid "The eventID can be a persistent global unique identifier, or an identifier specific to the dataset. Its main function is to allow linking to related data (occurrences, other sampling events, site images etc.). While dataset-specific eventIDs are sufficient to refer to occurence records published within the same dataset, it is worth considering that very simple IDs like numbers could easily reoccur in other, unrelated datasets, and make external linkages ambiguous. In addition, the eventID needs to reliably stay with the sampling event information at source and consistently refer to the same event, or else any data links will be broken."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:436
+#, no-wrap
+msgid "{event} samplingProtocol [[samplingProtocol]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:437
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_samplingProtocol[_dwc:samplingProtocol_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:440
+msgid "The name of, reference to, or description of the method or protocol used during a sample event. Sample events typically use specific methods or follow certain protocols that standardize the sampling effort to a certain degree. Knowledge about the sampling protocol gives users additional information that is helpful for the interpretation of the attached occurrence records, e.g. what kind of organisms to expect or not expect within the dataset and whether the absence of a recording signifies absence in nature, or was outside the target group of the applied sampling methodology (e.g. `UV light trap`). If a more detailed description of the method or protocol exists, providing a reference is strongly encouraged (e.g. http://dx.doi.org/10.1111/j.1466-8238.2009.00467.x[Penguins from space: faecal stains reveal the location of emperor penguin colonies]. While there is no controlled vocabulary for this element, the goal is to, across datasets, gradually assemble a library of references for reuse, and to allow users to identify datasets that are based on comparable methods and protocols."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:443
+#, no-wrap
+msgid "{event} sampleSizeValue [[sampleSizeValue]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:444
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_sampleSizeValue[_dwc:sampleSizeValue_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:447
+msgid "Note: <<sampleSizeUnit>> should always be shared with the corresponding sampleSizeValue."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:449
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:458
+msgid "A numeric value and the corresponding unit for the value, specifying the size of an individual sample in the sampling event. The two sampleSize fields always go together, and specify the size of an individual sample within a sample event. The sample size can relate to time duration, a spatial length (e.g. of a trawl), an area or a volume. A vegetation plot, for example, may have a `sampleSizeValue` of `2` with a `sampleSizeUnit` of `square kilometer`. Recommended best practice is to use a controlled vocabulary for the <<sampleSizeUnit>>."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:452
+#, no-wrap
+msgid "{event} sampleSizeUnit [[sampleSizeUnit]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:453
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_sampleSizeUnit[_dwc:sampleSizeUnit_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:456
+msgid "Note: <<sampleSizeValue>> should always be shared with the corresponding sampleSizeUnit."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:461
+#, no-wrap
+msgid "{event} parentEventID [[parentEventID]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:462
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_parentEventID[_dwc:parentEventID_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:465
+msgid "A cross-reference to the eventID of a broader event, e.g. a long-term monitoring project that the specific event is a part of or a general vegetation survey of a larger area that is comprised of a number of sub-plots. To be able to reference a parent event, this event needs to be specified as a separate entry, typically within the same dataset, carrying its own eventID. Refer to the eventID of the parent event in the sample event record to specify the relationship between the two entries."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:468
+#, no-wrap
+msgid "{event} samplingEffort [[samplingEffort]]"
+msgstr ""
+
+#. type: Title ====
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:469
+#, no-wrap
+msgid "https://dwc.tdwg.org/list/#dwc_samplingEffort[_dwc:samplingEffort_]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:472
+msgid "The measure for the amount of effort that was expended during a sampling event. The amount of effort expended during a sampling event often influences the result. It included factors like the number of observers involved, or the total time spent collecting, the number of traps exposed over a certain amount of time, the total distance covered, and the mode of transport used, while surveying a plot, etc. Examples of sampling effort are `40 trap-nights`, `10 observer-hours`. While there is no controlled vocabulary, the recommendation is to keep this information brief and factual, giving users enough information to compare between sampling events."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:475
+#, no-wrap
+msgid "Status [[Status]]"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:477
+#, no-wrap
+msgid "Required information"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:480
+msgid "The terms constitute the minimum formal requirements for publishing an occurrence dataset. GBIF will not accept a dataset without these terms and will not index the records. While these items are mandatory for publishing the dataset, they are only the starting point. The usefulness of the published data will still be severely limited unless additional information is supplied."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:481
+#, no-wrap
+msgid "Strongly recommended information"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:484
+msgid "In addition to the mandatory terms, GBIF strongly recommends completing several more fields that help improve the usefulness of the dataset:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:486
+msgid "some information supports the integration into global data resources and prevents ambiguity, e.g. in matching scientific names that could apply to more than one organism (homonyms) to the correct place within the backbone taxonomy"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:487
+msgid "more precise geo-location data (coordinates) significantly increase the usefulness of the data for a wide range of use cases"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:488
+msgid "additional qualifiers for some data elements, e.g. coordinates, support the interpretation of those elements and help users to better estimate their usefulness for a given data use case"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:489
+msgid "some data redundancy supports quality control and error detection (e.g. testing country codes against coordinates where both are supplied)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:490
+msgid "last but not least, the richer the spectrum of available information of a dataset is, the more potential usage areas it becomes available for, meaning the dataset will be more widely accessible and used, and cited more often"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:491
+#, no-wrap
+msgid "Share if available"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:493
+msgid "If additional data are available, consider sharing them to increase the usefulness of your published data."
+msgstr ""
+

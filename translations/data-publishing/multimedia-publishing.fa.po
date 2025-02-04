@@ -1,0 +1,395 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2024-12-16 15:14+0000\n"
+"PO-Revision-Date: 2025-02-04 17:47\n"
+"Last-Translator: \n"
+"Language-Team: Persian\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: fa\n"
+"X-Crowdin-File: /main/translations/data-publishing/multimedia-publishing.pot\n"
+"X-Crowdin-File-ID: 40584\n"
+
+#. type: Title =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:5
+#, no-wrap
+msgid "Sharing images, sounds and videos on GBIF"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:8
+msgid "GBIF **does not** host original multimedia files and pictures cannot be uploaded directly to the platform."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:9
+#, no-wrap
+msgid "Supported multimedia"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:12
+msgid "The following media types and formats can be shared on GBIF."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:13
+#, no-wrap
+msgid "Media types"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:16
+msgid "Publishers can share any `type` of media defined by the https://dublincore.org/documents/dcmi-type-vocabulary/#H7[Dublin Core Metadata Initiative]. The recommended terms are:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:18
+msgid "https://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Collection[Collection]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:19
+msgid "https://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-StillImage[StillImage]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:20
+msgid "https://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Sound[Sound]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:21
+msgid "https://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-MovingImage[MovingImage]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:22
+msgid "https://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-InteractiveResource[InteractiveResource]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:23
+msgid "https://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Text[Text]"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:24
+#, no-wrap
+msgid "File formats"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:27
+msgid "The file `format` should be provided as an _IANA Media Type_ (formerly _MIME Type_), for example `image/jpeg` or `audio/flac`.  The `format` should correspond to the `type` above."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:29
+msgid "The https://www.iana.org/assignments/media-types/media-types.xhtml[IANA Media Type list] (formerly MIME types) lists all recognized values."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:31
+msgid "If the `format` is `text/html`, the media is interpreted as a https://dwc.tdwg.org/terms/#dcterms:references[reference] link instead of an associated media."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:33
+msgid "GBIF currently integrates only images (`StillImage`), sounds (`Sound`), video (`MovingImage`) or combinations of the three. For all the other media types, users must click on the links given with each record to view the content."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:34
+#, no-wrap
+msgid "How to publish media in a Darwin Core Archive"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:37
+msgid "GBIF does not host original multimedia files hence publishers cannot upload pictures or audio files directly to GBIF. Media files must be hosted on another system, and publishers should provide a URL for each media file they wish to make available."
+msgstr ""
+
+#. type: Block title
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:39
+#, no-wrap
+msgid "Sharing URLs"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:42
+msgid "When sharing URLs, publishers should keep the following points in mind:"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:44
+msgid "The URL provided must be a direct link to the file. For example: https://ipt.gbif.org/media/UAIC1008871_X.jpg."
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:45
+msgid "Images embedded on web pages like https://ipt.gbif.org/media/viewer/UAIC1008871_X.html will not render on GBIF but can be provided in addition to the direct link."
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:46
+msgid "The file extension does not always have to be specified in the URL (see for example the URLs provided with https://www.gbif.org/occurrence/1019735016[this occurrence] from https://www.gbif.org/dataset/d9474ec2-061c-4858-bfdd-e10ba6aca397[The Hemiptera collection (EH) of the Muséum national d'Histoire naturelle])."
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:47
+msgid "GBIF resizes images for thumbnails and gallery views, but links to the best resolution image on individual occurrence pages.  Publishers should provide the best resolution possible."
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:48
+msgid "GBIF caches images so changes in the media should resolve in a new image URL, otherwise, the image link will render the previous version of the media."
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:49
+msgid "There are no size or resolution restrictions when sharing media URLs with GBIF."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:52
+#, no-wrap
+msgid "Simplest method: dwc:associatedMedia"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:55
+msgid "The simplest way to share media is to use the https://dwc.tdwg.org/terms/#dwc:associatedMedia[associatedMedia] field. Since this term belongs to the Darwin Core Occurrence, publishers do not need to create a second file for multimedia. In other words, publishers can have both their occurrences and images, sounds or videos in the same file."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:57
+msgid "This field can handle one or several URLs separated by space-pipe-space: `{nbsp}|{nbsp}`."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:59
+msgid "For example:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:61
+msgid "`https://ipt.gbif.org/media/UAIC1008871_X.jpg`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:62
+msgid "`https://ipt.gbif.org/media/UAIC1008871_X.jpg | https://ipt.gbif.org/media/UAIC1052169_Pheidole_obtusospinosa_65mm_3x_compedit_lg.jpg`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:64
+msgid "However, this method does not allow any metadata to be associated with the media (title, license, author, etc.).  It also requires the URL to have a common file extension like `.jpg`, `.jpeg`, `.png` or `.tiff`."
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:65
+#, no-wrap
+msgid "Extensions: Audiovisual Media Description"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:68
+msgid "Using extension files is a better way to share images, sounds or videos, and extensions can currently be shared with the two xref:dataset-classes.adoc#dataset-classes[dataset classes]: xref:dataset-classes.adoc#checklist[Checklist] and xref:dataset-classes.adoc#occurrence[Occurrence]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:70
+msgid "“Extension” files support the exchange of additional, described classes of data that relate to the core data type (Occurrence or Taxon). An extension record points to a record in the core data file.\" — definition from the https://ipt.gbif.org/manual/en/ipt/latest/dwca-guide[Darwin Core Archive – How-to Guide]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:72
+msgid "GBIF currently supports two types of extensions:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:74
+msgid "http://rs.gbif.org/extension/gbif/1.0/multimedia.xml[Simple multimedia]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:75
+msgid "https://rs.gbif.org/extension/ac/audiovisual_2024_11_07.xml[Audiovisual Media Description]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:77
+msgid "Both extensions will allow publishers to share detailed information about media such as `creator`, `description`, `license`, etc. However, the Audiovisual Media Description is more exhaustive."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:79
+msgid "Regardless of the extension chosen, publishers need to generate a file containing at least:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:81
+msgid "unique identifiers linking the multimedia to the core Occurrence or Checklist row"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:82
+msgid "the multimedia type (`dc:type`)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:83
+msgid "the file format (`dc:format`)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:84
+msgid "the link to the media file (`dc:identifier` for Simple Multimedia or `ac:accessURI` for Audiovisual Media Description)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:86
+msgid "This file should be mapped with the proper terms and integrated into the Darwin Core Archive. For examples, see the https://data-blog.gbif.org/post/gbif-multimedia/[data blog on multimedia sharing]."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:87
+#, no-wrap
+msgid "How to publish media outside of Darwin Core Archives"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:90
+msgid "This part of the documentation is not exhaustive."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:92
+msgid "Publishers can publish resources on GBIF using alternatives to Darwin Core Archives."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:94
+msgid "See, for example, the two systems below:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:96
+msgid "http://www.biocase.org[BioCASe]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:97
+msgid "http://symbiota.org[Symbiota]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:99
+msgid "The mapping of media fields between ABCD standards (used by BioCASe) and Darwin Core terms are covered in https://gbif.blogspot.com/2014/05/multimedia-in-gbif.html[this blog post] from 2014:"
+msgstr ""
+
+#. type: Block title
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:101
+#, no-wrap
+msgid "ABCD 2.06"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:104
+msgid "ABCD 2.06 uses the unit MultiMediaObject subelements instead. There are:"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:106
+msgid "File and webpage URLs (FileURI, ProductURI)."
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:107
+msgid "The description (Comment)."
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:108
+msgid "The license (License/Text, TermsOfUseStatements)."
+msgstr ""
+
+#. type: delimited block =
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:109
+msgid "An indication of the MIME type (Format)."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:112
+msgid "Symbiota documents how to submit and upload images on any Symbiota portal http://symbiota.org/docs/image-submission-2/[here]. To make the images accessible from GBIF, publishers must follow http://symbiota.org/docs/publishing-to-gbif-from-a-symbiota-portal/[these instructions]."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:113
+#, no-wrap
+msgid "Choose a license"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:116
+msgid "The https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#rights[license] field is free text. However, GBIF **strongly** encourages publishers to set up their licenses in a machine-readable format."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:118
+msgid "For example: `https://creativecommons.org/licenses/by/4.0/`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:120
+msgid "All occurrence records on GBIF have one of the three following licenses:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:122
+msgid "https://creativecommons.org/publicdomain/zero/1.0/[CC0], for data made available for any use without any restrictions"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:123
+msgid "https://creativecommons.org/licenses/by/4.0/[CC BY], for data made available for any use with appropriate attribution"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:124
+msgid "https://creativecommons.org/licenses/by-nc/4.0/[CC BY-NC], for data made available for any non-commercial use with appropriate attribution"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:126
+msgid "Although multimedia licenses do not have to match the associated occurrence license, publishers could consider choosing one of them."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:127
+#, no-wrap
+msgid "Where to host images and other media"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:130
+msgid "Most publishers host their multimedia files on institutional systems, but some use third-party or cloud platforms."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:132
+msgid "We advise against using https://www.inaturalist.org[iNaturalist.org] to host the images for a dataset. Since the iNaturalist portal makes its https://www.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7[Research-grade Observations] available on GBIF, this would generate duplicate occurrences."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:133
+msgid "If publishers are publishing a dataset through an https://www.gbif.org/ipt[IPT], they can consider hosting multimedia files on the same server. The images can be stored in a `media` folder and shared using the web server (see https://ipt.gbif.org/media/[this example]). Publishers who are not publishing with their own IPT should contact their IPT administrator."
+msgstr ""
+

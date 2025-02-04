@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: 2025-02-04 17:53\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: /main/translations/system-components/nav.pot\n"
+"X-Crowdin-File-ID: 43380\n"
+
+#. type: Plain text
+#: en/system-components/modules/ROOT/nav.adoc:2
+msgid "xref:system-components::index.adoc[]"
+msgstr ""
+
+#. type: Plain text
+#: en/system-components/modules/ROOT/nav.adoc:3
+msgid "xref:system-components::grscicoll.adoc[]"
+msgstr ""
+
