@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2024-12-16 15:14+0000\n"
-"PO-Revision-Date: 2024-12-16 15:52\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: 2025-02-04 17:51\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -13,8 +13,8 @@ msgstr ""
 "X-Crowdin-Project: gbif-tech-docs\n"
 "X-Crowdin-Project-ID: 746653\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /main/translations/citation.adoc.pot\n"
-"X-Crowdin-File-ID: 40552\n"
+"X-Crowdin-File: /main/translations/data-use/citation.pot\n"
+"X-Crowdin-File-ID: 43358\n"
 
 #. type: Title ==
 #: en/data-use/modules/ROOT/pages/citation.adoc:1
