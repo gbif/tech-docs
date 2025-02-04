@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2024-12-16 15:14+0000\n"
-"PO-Revision-Date: 2024-12-16 15:55\n"
+"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"PO-Revision-Date: 2025-02-04 17:52\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -13,8 +13,8 @@ msgstr ""
 "X-Crowdin-Project: gbif-tech-docs\n"
 "X-Crowdin-Project-ID: 746653\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /main/translations/maps.adoc.pot\n"
-"X-Crowdin-File-ID: 40580\n"
+"X-Crowdin-File: /main/translations/openapi-v1/maps.pot\n"
+"X-Crowdin-File-ID: 43372\n"
 
 #. type: Title =
 #: en/openapi-v1/modules/ROOT/pages/maps.adoc:1
@@ -278,11 +278,5 @@ msgstr ""
 #: en/openapi-v1/modules/ROOT/pages/maps.adoc:133
 #, no-wrap
 msgid "<iframe src=\"https://api.gbif.org/v1/map/point.html?&style=grey-blue&point=31.89598,-104.82813&lat=31.89598&lng=-104.82813&zoom=8\" width=\"1024px\" height=\"450px\" allowfullscreen=\"allowfullscreen\"></iframe>\n"
-msgstr ""
-
-#. type: Title =
-#: en/openapi-v2/modules/ROOT/pages/maps.adoc:1
-#, no-wrap
-msgid "Maps API"
 msgstr ""
 
