@@ -19,7 +19,7 @@ print("Output to "+output+" for environment "+env)
 print("")
 
 print("--- Finding available webservices ---")
-if env == 'uat2':
+if env == 'prod':
     response = requests.get('http://ws.gbif-uat2.org/applications', headers={'Accept': 'application/json'})
 else:
     response = requests.get('http://ws.gbif.org/applications', headers={'Accept': 'application/json'})

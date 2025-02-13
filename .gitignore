@@ -3,7 +3,5 @@ cache-internal
 output
 .npm
 node_modules
-package.json
-package-lock.json
 .history
 .vscode
