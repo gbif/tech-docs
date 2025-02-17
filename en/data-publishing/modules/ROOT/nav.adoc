@@ -1,4 +1,4 @@
-* xref:index.adoc[Data publishing requirements and recommendations]
+* xref:index.adoc[Introduction to data publishing in GBIF]
 * xref:dataset-classes.adoc[Dataset classes]
 ** xref:data-quality-recommendations.adoc[Data quality recommendations]
 ** xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations]
