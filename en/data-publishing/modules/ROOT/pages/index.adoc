@@ -1,6 +1,6 @@
 = Data publishing
 
-Most institutions publishing data to GBIF need to convert their data into a format suitable for GBIF to process, typically https://dwc.tdwg.org/terms/[Darwin Core Archive].
+Most institutions publishing data to GBIF need to convert their data into a format suitable for GBIF to process, typically https://dwc.tdwg.org/terms/[Darwin Core Archive]. Datasets shared with GBIF must be formatted as one of the supported xref:dataset-classes.adoc[dataset classes] or data packages, and adhere to the xref:data-quality-recommendations.adoc[data quality requirements and recommendations].
 
 Tools including the https://ipt.gbif.org/manual/[GBIF IPT] and BioCASe can convert data stored in spreadsheets and databases to the appropriate formats.  *The IPT is the most common way to publish data to GBIF.*
 
@@ -12,21 +12,6 @@ Users or institutional systems (custom software) which can generate Darwin Core 
 * If new datasets will be registered more frequently, you may xref:register-dataset-api.adoc[register the datasets directly using the API].
 
 Further discussion of the options can be found in https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/[this blogpost].
-
-=== Dataset classes
-
-Datasets can be published in four different formats:
-
-* Metadata-only
-* https://www.gbif.org/data-quality-requirements-checklists[Checklist]
-* https://www.gbif.org/data-quality-requirements-occurrences[Occurrence]
-* https://www.gbif.org/data-quality-requirements-sampling-events[Sampling event]
-
-Generally, the data quality increases from metadata-only to sampling event datasets.
-
-=== Data quality recommendations
-
-You can familiarize yourself with the requirements for the various types of datasets https://www.gbif.org/data-quality-requirements[here].
 
 == Tools to quality check your publication
 
