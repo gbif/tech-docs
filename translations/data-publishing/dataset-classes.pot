@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-17 13:06+0000\n"
+"POT-Creation-Date: 2025-02-17 13:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,16 +24,11 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:7
-msgid "Note: this page is currently under development"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:9
 msgid "Datasets shared with GBIF can be published in four different formats:"
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:26
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:24
 #, no-wrap
 msgid ""
 "|Dataset type |Content \n"
@@ -53,7 +48,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:29
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:27
 msgid ""
 "The four dataset classes supported by GBIF start simple and become "
 "progressively richer, more structured and more complex. This https://data-"
@@ -62,7 +57,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:31
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:29
 msgid ""
 "Some fields are strongly recommended to be included in the different dataset "
 "classes and some may be required if the dataset is funded through a "
@@ -72,7 +67,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:33
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:31
 msgid ""
 "Data quality requirements for each dataset class and the GBIF-operated "
 "programmes are documented xref:data-quality-recommendations.adoc[here]. GBIF "
@@ -82,13 +77,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:34
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:32
 #, no-wrap
 msgid "Metadata-only [[Metadata-only]]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:37
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:35
 msgid ""
 "At its simplest level, institutions can create datasets describing "
 "unavailable resources like undigitized natural history collections. The "
@@ -103,7 +98,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:42
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:40
 #, no-wrap
 msgid ""
 "|https://www.gbif.org/dataset/search?type=METADATA[Browse metadata-only datasets] \n"
@@ -111,13 +106,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:44
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:42
 #, no-wrap
 msgid "Checklist [[Checklist]]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:47
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:45
 msgid ""
 "Checklists are catalogues or lists of named organisms, or taxa. While they "
 "may include additional details like local species names or specimen "
@@ -131,7 +126,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:52
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:50
 #, no-wrap
 msgid ""
 "|https://dwc.tdwg.org/terms/#taxon[Darwin Core Taxon] |https://www.gbif.org/dataset/search?type=CHECKLIST[Browse checklists] |https://ipt.gbif.org/manual/en/ipt/latest/checklist-data#templates[Darwin Core Archive template for checklists] |xref:data-quality-recommendations.adoc#data-quality-requirements-for-checklists[Data quality requirements and recommendations for checklists]\n"
@@ -139,13 +134,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:54
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:52
 #, no-wrap
 msgid "Occurrence [[Occurrence]]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:57
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:55
 msgid ""
 "Occurrence datasets have sufficiently consistent detail to contribute "
 "information about the location of individual organisms in time and space — "
@@ -158,7 +153,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:59
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:57
 msgid ""
 "Occurrence records in these datasets sometimes provide only general locality "
 "information, sometimes simply identifying the country, but in many cases, "
@@ -167,7 +162,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:64
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:62
 #, no-wrap
 msgid ""
 "|https://dwc.tdwg.org/terms/#occurrence[Darwin Core Occurrence] |https://www.gbif.org/dataset/search?type=OCCURRENCE[Browse occurrence datasets] |https://ipt.gbif.org/manual/en/ipt/2.5/occurrence-data#templates[Darwin Core Archive template for occurrence datasets] |xref:data-quality-recommendations.adoc#data-quality-requirements-for-occurrences[Data quality recommendations and requirements for occurrences]\n"
@@ -175,13 +170,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:66
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:64
 #, no-wrap
 msgid "Sampling event [[Sampling_event]]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:69
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:67
 msgid ""
 "Sampling event datasets provide greater detail, not only offering evidence "
 "that a species occurred at a given location and date but also making it "
@@ -193,7 +188,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:71
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:69
 msgid ""
 "By indicating the methods, events and relative abundance of species recorded "
 "in a sample, these datasets improve comparisons with data collected using "
@@ -203,7 +198,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:76
+#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:74
 #, no-wrap
 msgid ""
 "|https://dwc.tdwg.org/terms/#event[Darwin Core Event] |https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Browse sampling event datasets] |https://ipt.gbif.org/manual/en/ipt/2.5/sampling-event-data#templates[Darwin Core Archive template for sampling event datasets] |xref:data-quality-recommendations.adoc#data-quality-requirements-for-sampling-events[Data quality recommendations and requirements for sampling events]\n"
