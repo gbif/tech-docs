@@ -3,9 +3,9 @@ ifeval::["{env}" == "prod"]
 :page-unpublish:
 endif::[]
 
-NOTE: this page is currently under development
+NOTE: this page is currently under development and may be subject to change
 
-The required terms in the tables are the minimal terms to include for GBIF to index the data. By following the data quality recommendations, data publishers can improve the quality, completeness and value of their datasets. The data Class or category of the individual Darwin Core Terms are indicated by the following icons:
+The required terms in the tables are the minimal terms to include for GBIF to index the data. By following the data quality recommendations, data publishers can improve the quality, completeness and value of their datasets. The data Class or category of the individual Darwin Core Terms are indicated by the following colours:
 
 [NOTE.record]
 ====
