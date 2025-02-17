@@ -34,7 +34,8 @@ https://dwc.tdwg.org/terms/#event[Event^]
 
 IMPORTANT: All tables included in a Darwin Core Archive *must* include a unique identifier column
 
-NOTE: Data published with the support of one of the programmes managed by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]) have stricter data quality requirements than data published outside of these programmes. Please also consult the documentation for xref:metadata-recommendations-and-requirements.adoc[requirements for the EML file].
+NOTE: Data published with the support of one of the programmes managed by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]) have stricter data quality requirements than data published outside of these programmes.
+// Please also consult the documentation for xref:metadata-recommendations-and-requirements.adoc[requirements for the EML file].
 
 == Data quality requirements for checklists
 
