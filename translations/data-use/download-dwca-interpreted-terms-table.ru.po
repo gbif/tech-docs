@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-05 15:00+0000\n"
-"PO-Revision-Date: 2025-02-05 15:19\n"
+"POT-Creation-Date: 2025-02-17 12:53+0000\n"
+"PO-Revision-Date: 2025-02-17 13:22\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Crowdin-File-ID: 43392\n"
 
 #. type: Table
-#: en/data-use/modules/ROOT/partials/download-dwca-interpreted-terms-table.adoc:1162
+#: en/data-use/modules/ROOT/partials/download-dwca-interpreted-terms-table.adoc:1160
 #, no-wrap
 msgid "|Column name |Data type |Nullable |Definition\n\n"
 "|http://rs.gbif.org/terms/1.0/gbifID[gbifID]\n"
@@ -139,10 +139,9 @@ msgid "|Column name |Data type |Nullable |Definition\n\n"
 "|Yes\n"
 "|[[dwca.interpreted.organismQuantityType]]{gbif_source} The type of quantification system used for the quantity of organisms.\n\n"
 "|http://rs.tdwg.org/dwc/terms/sex[sex]\n"
-"|String\n"
+"|String structure\n"
 "|Yes\n"
-"|[[dwca.interpreted.sex]]{gbif_source} The sex of the biological individual(s) represented in the Occurrence.\n\n"
-"For definitions, see the link:http://rs.gbif.org/vocabulary/gbif/sex[GBIF sex vocabulary]\n\n"
+"|[[dwca.interpreted.sex]]{dwc_source} The sex of the biological individual(s) represented in the dwc:Occurrence.\n\n"
 "|http://rs.tdwg.org/dwc/terms/lifeStage[lifeStage]\n"
 "|String structure\n"
 "|Yes\n"
