@@ -14,7 +14,9 @@ You will need a webserver, VM, cloud hosting service or similar to host your dat
 
 You will also need a user account on GBIF.org to handle the registrations.  Ideally, this should be an account for your institution or software system, rather than a personal account.
 
-You should also create an account on GBIF-UAT.org which you can use for testing.  _Please do not create test datasets on GBIF.org! They will be assigned DOIs, which can never be deleted._
+You should also create an account on GBIF-UAT.org which you can use for testing.  
+
+WARNING: Please do not create test datasets on GBIF.org! They will be assigned DOIs, which can never be deleted.
 
 Once you have created the accounts, contact helpdesk@gbif.org to ask for editor_rights permissions for your organization.
 
