@@ -2,8 +2,6 @@
 ifeval::["{env}" == "prod"]
 :page-unpublish:
 endif::[]
-
-Note: this page is currently under development
   
 Datasets shared with GBIF can be published in four different formats:
 
