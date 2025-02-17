@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"POT-Creation-Date: 2025-02-17 13:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,9 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Title ===
+#. type: Title =
 #: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:1
-#: en/data-publishing/modules/ROOT/pages/index.adoc:27
 #, no-wrap
 msgid "Data quality recommendations"
 msgstr ""
