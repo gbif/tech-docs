@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-17 12:51+0000\n"
+"POT-Creation-Date: 2025-02-17 12:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Table
-#: en/data-use/modules/ROOT/partials/download-dwca-interpreted-terms-table.adoc:1162
+#: en/data-use/modules/ROOT/partials/download-dwca-interpreted-terms-table.adoc:1160
 #, no-wrap
 msgid ""
 "|Column name |Data type |Nullable |Definition\n"
@@ -174,9 +174,7 @@ msgid ""
 "|http://rs.tdwg.org/dwc/terms/sex[sex]\n"
 "|String structure\n"
 "|Yes\n"
-"|[[dwca.interpreted.sex]]{gbif_source} The sex of the biological individual(s) represented in the Occurrence.\n"
-"\n"
-"For definitions, see the link:http://rs.gbif.org/vocabulary/gbif/sex[GBIF sex vocabulary]\n"
+"|[[dwca.interpreted.sex]]{dwc_source} The sex of the biological individual(s) represented in the dwc:Occurrence.\n"
 "\n"
 "|http://rs.tdwg.org/dwc/terms/lifeStage[lifeStage]\n"
 "|String structure\n"
