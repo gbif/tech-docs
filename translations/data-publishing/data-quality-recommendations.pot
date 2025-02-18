@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-17 16:09+0000\n"
+"POT-Creation-Date: 2025-02-18 13:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,11 +24,6 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:7
-msgid "this page is currently under development and may be subject to change"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:9
 msgid ""
 "The required terms in the tables are the minimal terms to include for GBIF "
 "to index the data. By following the data quality recommendations, data "
@@ -38,32 +33,32 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:13
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:11
 msgid "https://dwc.tdwg.org/terms/#record-level[Record-level^]"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:18
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:16
 msgid "https://dwc.tdwg.org/terms/#taxon[Taxon^]"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:23
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:21
 msgid "https://dwc.tdwg.org/terms/#location[Location^]"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:28
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:26
 msgid "https://dwc.tdwg.org/terms/#occurrence[Occurrence^]"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:33
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:31
 msgid "https://dwc.tdwg.org/terms/#event[Event^]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:36
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:34
 msgid ""
 "All tables included in a Darwin Core Archive *must* include a unique "
 "identifier column"
@@ -71,13 +66,22 @@ msgstr ""
 
 #.  Please also consult the documentation for xref:metadata-recommendations-and-requirements.adoc[requirements for the EML file].
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:38
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:36
 msgid ""
 "Data published with the support of one of the programmes managed by GBIF (e."
 "g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/"
 "programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]) have "
 "stricter data quality requirements than data published outside of these "
 "programmes."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:39
+msgid ""
+"It is the publisher's responsibility to obscure sensitive species "
+"information. Please consult the https://docs.gbif.org/sensitive-species-best-"
+"practices/master/en/[Current Best Practices for Generalizing Sensitive "
+"Species Occurrence Data]."
 msgstr ""
 
 #. type: Title ==
@@ -267,7 +271,7 @@ msgstr ""
 msgid ""
 "|Term |<<Status>> |Status funded GBIF programmes\n"
 "\n"
-"|#<<type>>#\n"
+"|<<type>>\n"
 "|Required\n"
 "|Required\n"
 "\n"
