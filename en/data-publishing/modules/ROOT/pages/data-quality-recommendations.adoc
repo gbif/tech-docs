@@ -3,8 +3,6 @@ ifeval::["{env}" == "prod"]
 :page-unpublish:
 endif::[]
 
-NOTE: this page is currently under development and may be subject to change
-
 The required terms in the tables are the minimal terms to include for GBIF to index the data. By following the data quality recommendations, data publishers can improve the quality, completeness and value of their datasets. The data Class or category of the individual Darwin Core Terms are indicated by the following colours:
 
 [NOTE.record]
@@ -19,7 +17,7 @@ https://dwc.tdwg.org/terms/#taxon[Taxon^]
 
 [NOTE.location]
 ====
-https://dwc.tdwg.org/terms/#location[Location^]
+https://dwc.tdwg.org/terms/#location[Location^] 
 ====
 
 [NOTE.occurrence]
@@ -36,6 +34,8 @@ IMPORTANT: All tables included in a Darwin Core Archive *must* include a unique 
 
 NOTE: Data published with the support of one of the programmes managed by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]) have stricter data quality requirements than data published outside of these programmes.
 // Please also consult the documentation for xref:metadata-recommendations-and-requirements.adoc[requirements for the EML file].
+
+CAUTION: It is the publisher's responsibility to obscure sensitive species information. Please consult the https://docs.gbif.org/sensitive-species-best-practices/master/en/[Current Best Practices for Generalizing Sensitive Species Occurrence Data].
 
 == Data quality requirements for checklists
 
@@ -166,7 +166,7 @@ https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Sampling-event datasets]
 |===
 |Term |<<Status>> |Status funded GBIF programmes
 
-|#<<type>>#
+|<<type>>
 |Required
 |Required
 
