@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"POT-Creation-Date: 2025-02-26 17:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,57 +17,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/nav.adoc:2 en/openapi-v1/modules/ROOT/nav.adoc:2
-#: en/openapi-v2/modules/ROOT/nav.adoc:2
+#: en/openapi-v1/modules/ROOT/nav.adoc:2 en/openapi-v2/modules/ROOT/nav.adoc:2
+#: en/openapi/modules/ROOT/nav.adoc:2
 msgid "xref:v1@openapi::registry.adoc[Registry API]"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/nav.adoc:3 en/openapi-v1/modules/ROOT/nav.adoc:3
-#: en/openapi-v2/modules/ROOT/nav.adoc:3
+#: en/openapi-v1/modules/ROOT/nav.adoc:3 en/openapi-v2/modules/ROOT/nav.adoc:3
+#: en/openapi/modules/ROOT/nav.adoc:3
 msgid ""
 "xref:v1@openapi::registry-principal-methods.adoc[Registry API (Principal "
 "methods)]"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/nav.adoc:4 en/openapi-v1/modules/ROOT/nav.adoc:4
-#: en/openapi-v2/modules/ROOT/nav.adoc:4
+#: en/openapi-v1/modules/ROOT/nav.adoc:4 en/openapi-v2/modules/ROOT/nav.adoc:4
+#: en/openapi/modules/ROOT/nav.adoc:4
 msgid "xref:v1@openapi::species.adoc[Species API]"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/nav.adoc:5 en/openapi-v1/modules/ROOT/nav.adoc:5
-#: en/openapi-v2/modules/ROOT/nav.adoc:5
+#: en/openapi-v1/modules/ROOT/nav.adoc:5 en/openapi-v2/modules/ROOT/nav.adoc:5
+#: en/openapi/modules/ROOT/nav.adoc:5
 msgid "xref:v1@openapi::occurrence.adoc[Occurrence API]"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/nav.adoc:6 en/openapi-v1/modules/ROOT/nav.adoc:6
-#: en/openapi-v2/modules/ROOT/nav.adoc:6
+#: en/openapi-v1/modules/ROOT/nav.adoc:6 en/openapi-v2/modules/ROOT/nav.adoc:6
+#: en/openapi/modules/ROOT/nav.adoc:6
 msgid "xref:v2@openapi::maps.adoc[Maps API]"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/nav.adoc:7 en/openapi-v1/modules/ROOT/nav.adoc:7
-#: en/openapi-v2/modules/ROOT/nav.adoc:7
+#: en/openapi-v1/modules/ROOT/nav.adoc:7 en/openapi-v2/modules/ROOT/nav.adoc:7
+#: en/openapi/modules/ROOT/nav.adoc:7
 msgid "xref:v1@openapi::literature.adoc[Literature API]"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/nav.adoc:8 en/openapi-v1/modules/ROOT/nav.adoc:8
-#: en/openapi-v2/modules/ROOT/nav.adoc:8
+#: en/openapi-v1/modules/ROOT/nav.adoc:8 en/openapi-v2/modules/ROOT/nav.adoc:8
+#: en/openapi/modules/ROOT/nav.adoc:8
 msgid "xref:v1@openapi::validator.adoc[Validator API]"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/nav.adoc:9 en/openapi-v1/modules/ROOT/nav.adoc:9
-#: en/openapi-v2/modules/ROOT/nav.adoc:9
+#: en/openapi-v1/modules/ROOT/nav.adoc:9 en/openapi-v2/modules/ROOT/nav.adoc:9
+#: en/openapi/modules/ROOT/nav.adoc:9
 msgid "xref:v1@openapi::vocabulary.adoc[Vocabulary API]"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/nav.adoc:9 en/openapi-v1/modules/ROOT/nav.adoc:9
-#: en/openapi-v2/modules/ROOT/nav.adoc:9
+#: en/openapi-v1/modules/ROOT/nav.adoc:9 en/openapi-v2/modules/ROOT/nav.adoc:9
+#: en/openapi/modules/ROOT/nav.adoc:9
 msgid "xref:openapi::analytics.adoc[Analytics and Data Trends]"
 msgstr ""
