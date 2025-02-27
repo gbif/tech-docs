@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"POT-Creation-Date: 2025-02-27 12:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:124
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:126
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:21
 msgid ""
 "The definitions marked with {dwc_source} are from the Darwin Core standard."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:126
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:128
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:23
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:81
 msgid ""
