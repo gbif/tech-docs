@@ -1,6 +1,6 @@
 = API SQL Downloads – Functions
 
-NOTE: This is an **experimental feature**, and the implementation may change throughout 2025.  The feature is currently only available for preview by invited users.  Contact helpdesk@gbif.org to request access.
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2025.
 
 These custom functions are available when using the xref:api-sql-downloads.adoc[SQL download API].
 

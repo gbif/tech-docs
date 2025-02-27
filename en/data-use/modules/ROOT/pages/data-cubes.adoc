@@ -1,10 +1,8 @@
 = Species occurrence cubes
 
-NOTE: This is an **experimental feature**, and the implementation may change throughout 2025.  The feature is currently only available for preview by invited users.  Contact helpdesk@gbif.org to request access.
-
 *Species occurrence cubes* are views of GBIF occurrence data, filtered and summarized by spatial, temporal and/or taxonomic dimensions, and providing measures for each dimension.
 
-They can be produced using a *prototype* GBIF API, or using the GBIF occurrence data deposited on xref:cloud-services::index.adoc[external cloud services].  This page covers generating a cube using GBIF's API.  See xref:b-cubed:generate-cube-databricks.adoc[] to generate a cube using a public cloud service.
+They can be produced using the GBIF website, the GBIF API, or by using the GBIF occurrence data deposited on xref:cloud-services::index.adoc[external cloud services].  This page covers generating a cube using GBIF's website or API.  See xref:b-cubed:generate-cube-databricks.adoc[] to generate a cube using a public cloud service.
 
 == Demonstration cube specification
 
