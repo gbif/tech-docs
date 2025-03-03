@@ -2,13 +2,106 @@
 
 image::data-processing.png[align=center,320,192]
 
-Every single occurrence record in GBIF goes through a series of processing steps until it becomes available on GBIF.org.  The overall process is described on https://www.gbif.org/article/5i3CQEZ6DuWiycgMaaakCo/gbif-infrastructure-data-processing[GBIF.org].
+Every single occurrence record in GBIF goes through a series of processing steps until it becomes available in on GBIF.org. Internally the processing is coordinated by a messaging system that keeps each part of our processing code independent. The process can be devided up into 3 main parts: crawling (downloading) datasets into fragments, parsing fragments into verbatim occurrences and interpreting verbatim values.
 
-More specific topics are listed in the section menu.
+The outcome of each of these steps is available through our API. Every single occurrence record therefore has a raw fragment, verbatim and interpreted view. The corresponding timestamps lastCrawled, lastParsed and lastInterpreted indicate the exact last time each step has run. During processing, the progression of a dataset through these steps is visible on the ingestion monitor.
 
-In addition, also see: 
+= Raw fragments
 
-* https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids[improving occurrence ID stability]
-* https://data-blog.gbif.org/post/gbif-backbone-taxonomy/[a high-level overview of the taxonomic backbone generation]
+The very first step is to harvest data from the registered service endpoint in the GBIF registry. If multiple services are registered we prefer Darwin Core Archives. On every dataset details page you can see all registered services in the external data section of the summary block. Similarily they are also included in a dataset detail from our REST API.
 
+In addition to Darwin Core Archives GBIF also supports crawling of the XML based BioCASe, TAPIR and DiGIR protocols. The outcome of any crawling regardless of its protocol is a set of fragments each representing a single occurrence record in its raw form. In the case of Darwin Core Archives this is a JSON representation of an entire star record: a single core record with all the related extension records attached. In the case of the XML protocols, a fragment is the exact piece of XML that we have extracted. Each protocol and content schema (ABCD1.2, ABCD2.06, DwC1.0, DwC1.4, ...) therefore still exposes its entire content and nature. For example here are fragments of ABCD2.06 and Darwin Core.
 
+An important part of fragmenting is to assign a stable GBIF identifier to each fragment. This is a delicate process that uses the occurrenceID, catalogNumber, collectionCode and institutionCode in combination with the dataset registry key to either mint a new identifier or reuse an existing one if the dataset has been processed before.
+
+= Verbatim records
+
+Each fragment is then processed into a standard, Darwin Core-based form which we call the verbatim representation of an occurrence. This form is very similar to a Darwin Core Archive star record, but it is a little more structured and we limit the stored extensions to just 12 that we process further. At this stage the value of any individual term of a record is still untyped and has the exact verbatim value as found during crawling.
+
+Parsing has the biggest impact on ABCD fragments as these need to be translated to Darwin Core terms. We are still in the middle of improving the ABCD transformation, this is why you currently will not find all ABCD content in the verbatim version of a record.
+
+= Interpreted record
+
+Once all records are available in the standard verbatim form they go through a set of interpretations. These do basic string cleanups but for many important properties we also use strong data typing. For example latitude and longitude values are represented by Java doubles and the country, basis of record and many other terms which are based on a controlled vocabulary, are represented by fixed enumerations in our Java API.
+
+= Issues
+
+There are many things that can go wrong and we continously encounter unexpected data. In order to help us and publishers improve the data, we flag records with various issues that we have encountered. This is also very useful for data consumers as you can include these issues as filters in occurrence searches. Not all issues indicate bad data. Some are merley flagging the fact that GBIF has altered values during processing. On the details page of any occurrence record you will see the list of issues in the notice at the bottom.
+
+= Darwin Core versus GBIF terms
+
+For the interpreted records we use Darwin Core terms as much as possible, but there are some cases when we needed to create new terms in the GBIF namespace. Often these are very GBIF-specific things, but in some cases we opted against existing terms in favour of consistency in our API. This is primarily the case for anything related to accuracy. Darwin Core sometimes represents accuracy by providing a minimum and a maximum term, sometimes there is an explicit precision or accuracy term. We decided to be consistent and always use a single term, for example depth, accompanied by a matching accuracy term, in this case depthAccuracy.
+
+= Location interpretation
+
+== Coordinate
+
+If geolocated, the interpreted occurrence contains latitude and longitude as decimals for the WGS84 geodetic datum. A coordinateAccuracy in decimal degrees is optionally given if known. We decided not to use dwc:coordinatePrecision as we mean accuracy, not precision. We try to parse and verify the following verbatim terms in the given order to derive a valid WGS84 coordinate:
+
+dwc:decimalLatitude and dwc:decimalLongitude
+dwc:verbatimLatitude and dwc:verbatimLongitude
+dwc:verbatimCoordinates
+
+If a geodetic datum is given we then try to interpret the datum and, if different from WGS84, do a reprojection into WGS84. In addition if a literal country was indicated we verify that the coordinate falls within the given country. Frequently latitude/longitude values are swapped or have negated values which we can also often detect by looking at the expected country.
+
+== Vertical position
+
+For the vertical position of the occurrence Darwin Core provides a wealth of terms. Sadly it is often not clear how to use (minimum/maximum)elevationInMeters, (minimum/maximum)depthInMeters and (minimum/maximum)distanceAboveSurfaceInMeters in more complex cases. We decided to keep it simple and only use elevation and depth together with their accuracy terms to represent the vertical position. The absolute elevation is given as a decimal in metres and should point at the exact location of the occurrence. It is the coordinate's vertical position in a 3-dimensional coordiante system. Depth is a relative value indicating the distance to the surface of the earth, whether that's terrestrial or water. We preferred the term depth over distanceAboveSurface as it is very common for sea observations and rarely used for above ground distances.
+
+== Geography
+All geographical area terms in Darwin Core are processed, but only country is interpreted as a fixed enumeration matching the current ISO countries. When no country but a coordinate was published, we derive a country from the coordinate using our reverse geocoding API.
+
+== Taxonomy interpretation
+
+For a hierarchical, taxonomic search and consistent metrics to work all records need to be tied to a single taxonomy. As there is still no single taxonomy existing that covers all known names GBIF builds it's own GBIF backbone based on the Catalogue of Life. The higher classification above family level exclusively comes from the Catalogue of Life, while lower taxa can be added in an automated way from other taxonomic datasets available through the GBIF Checklist Bank
+
+== Backbone matching
+
+Every occurrence is assigned a taxonKey which points to the matching taxon in the GBIF backbone. This key is retrieved by querying our taxon match service, submitting the scientificName, taxonRank, genus, family and all other higher verbatim classification. If the scientificName is not present it will be assembled from the individual name parts if present: genus, specificEpithet and infraspecificEpithet. Having a higher classification qualifying the scientificName improves the accuracy of the taxonomic match in two ways, even if it is just the family or even kingdom:
+
+In case of homonyms or similar spelled names the service has a way to verify the potential matches.
+In case the given scientific name is not (yet) part of the GBIF backbone we can at least match the record to some higher taxon, such as the genus.
+Fuzzy name matching, matching to higher taxon or matching to no taxon are issue flags we assign to records.
+
+== Typification
+
+The type status of a specimen is interpreted from dwc:typeStatus using the TypeStatusParser according to our type status vocabulary.
+
+== Temporal interpretation
+
+Dates and time can come in various formats, locales and terms in Darwin Core. The majority of dates come as simple strings, but the recording date might be a complex one defined by multiple terms. In general we use our date parser to process verbatim values which prefer the ISO 8601 date format.
+
+== Simple date parsing
+
+GBIF processes the following date terms as simple dates:
+
+dc:modified: the date the record has last changed in the source
+dateIdentified: the date when the taxonomic identification happened
+Recording date
+Far more important and complex is the task of interpreting the recording date. It can come in either as:
+
+year, month, day
+eventDate
+verbatimEventDate
+We try to parse the first two in any case and compare results if they both exist, flagging mismatches.
+Other interpretation
+To provide a consistent search experience GBIF interprets a few terms by mapping values to a controlled enumeration:
+
+basisOfRecord
+sex
+establishmentMeans
+lifeStage
+
+This is done by case insensitive parsers based on a manually maintained dictionary that maps verbatim values we spot to their respective enumeration value. Basic string cleaning and whitespace normalisation is done in any case.
+
+== Multimedia
+Please see this blog post on publishing multimedia in GBIF. The addition of multimedia components to GBIF.org was introduced in 2014 and is described in this blog post.
+
+== Discovery and download
+
+Once the occurence record has been stored, maps, counters and search indexes are updated. At this time the record will be available through the GBIF API and GBIF.org, available for download. The entire process from when a dataset is registered until the data is available for the world to see, usually doesn’t take more than 5 minutes. This of course depends on number of records in the dataset.
+
+Data is available for download in two formats:
+
+Tab-delimited CSV: This simple format provides a tabular view of the data with the most commonly used columns. The table includes only the data after it has gone through interpretation and quality control. Tools such as Microsoft Excel can be used to read this format.
+Darwin Core Archive: This format is a TDWG Standard and contains rich information. It is a zip file containing the original data as shared by the publisher, and the interpreted view after data has gone through quality control procedures. Additional files provide supplementary information such as images. This is a richer format than simple CSV but provides the most complete view of data.
