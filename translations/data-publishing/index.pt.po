@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
-"PO-Revision-Date: 2025-02-04 17:51\n"
+"POT-Creation-Date: 2025-02-17 13:06+0000\n"
+"PO-Revision-Date: 2025-02-17 13:21\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -16,20 +16,6 @@ msgstr ""
 "X-Crowdin-File: /main/translations/data-publishing/index.pot\n"
 "X-Crowdin-File-ID: 43354\n"
 
-#. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:1
-#: en/data-publishing/modules/ROOT/pages/index.adoc:27
-#, no-wrap
-msgid "Data quality recommendations"
-msgstr ""
-
-#. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:1
-#: en/data-publishing/modules/ROOT/pages/index.adoc:16
-#, no-wrap
-msgid "Dataset classes"
-msgstr ""
-
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/index.adoc:1
 #: en/home/modules/ROOT/pages/get-started.adoc:6
@@ -39,7 +25,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/index.adoc:4
-msgid "Most institutions publishing data to GBIF need to convert their data into a format suitable for GBIF to process, typically https://dwc.tdwg.org/terms/[Darwin Core Archive]."
+msgid "Most institutions publishing data to GBIF need to convert their data into a format suitable for GBIF to process, typically https://dwc.tdwg.org/terms/[Darwin Core Archive]. Datasets shared with GBIF must be formatted as one of the supported xref:dataset-classes.adoc[dataset classes] or data packages, and adhere to the xref:data-quality-recommendations.adoc[data quality requirements and recommendations]."
 msgstr ""
 
 #. type: Plain text
@@ -72,89 +58,54 @@ msgstr ""
 msgid "Further discussion of the options can be found in https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/[this blogpost]."
 msgstr ""
 
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/index.adoc:19
-msgid "Datasets can be published in four different formats:"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/index.adoc:21
-msgid "Metadata-only"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/index.adoc:22
-msgid "https://www.gbif.org/data-quality-requirements-checklists[Checklist]"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/index.adoc:23
-msgid "https://www.gbif.org/data-quality-requirements-occurrences[Occurrence]"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/index.adoc:24
-msgid "https://www.gbif.org/data-quality-requirements-sampling-events[Sampling event]"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/index.adoc:26
-msgid "Generally, the data quality increases from metadata-only to sampling event datasets."
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/index.adoc:30
-msgid "You can familiarize yourself with the requirements for the various types of datasets https://www.gbif.org/data-quality-requirements[here]."
-msgstr ""
-
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/index.adoc:31
+#: en/data-publishing/modules/ROOT/pages/index.adoc:16
 #, no-wrap
 msgid "Tools to quality check your publication"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/index.adoc:33
+#: en/data-publishing/modules/ROOT/pages/index.adoc:18
 #, no-wrap
 msgid "Dataset validator"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/index.adoc:36
+#: en/data-publishing/modules/ROOT/pages/index.adoc:21
 msgid "The dataset validator can be used to https://www.gbif.org/tools/data-validator/about[validate] zipped Darwin Core Archive datasets."
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/index.adoc:37
+#: en/data-publishing/modules/ROOT/pages/index.adoc:22
 #, no-wrap
 msgid "Species matching"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/index.adoc:40
+#: en/data-publishing/modules/ROOT/pages/index.adoc:25
 msgid "https://www.gbif.org/tools/species-lookup[The species matching tool] can be used to normalize species names from a CSV file against the GBIF backbone."
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/index.adoc:41
+#: en/data-publishing/modules/ROOT/pages/index.adoc:26
 #, no-wrap
 msgid "Species API (link to API topic)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/index.adoc:44
+#: en/data-publishing/modules/ROOT/pages/index.adoc:29
 msgid "Name usage, search and parsing can be carried out with the https://techdocs.gbif.org/en/openapi/v1/species[species API]."
 msgstr ""
 
 #. == The test IPT
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/index.adoc:47
+#: en/data-publishing/modules/ROOT/pages/index.adoc:32
 #, no-wrap
 msgid "Flags and issues"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/index.adoc:50
+#: en/data-publishing/modules/ROOT/pages/index.adoc:35
 msgid "When records are published to GBIF, they may receive various data quality flags and issues. The meaning and how to deal with the different issues are documented for xref:data-use::occurrence-issues-and-flags.adoc[occurrence] and xref:data-use::checklist-issues-and-flags.adoc[checklist] datasets."
 msgstr ""
 
