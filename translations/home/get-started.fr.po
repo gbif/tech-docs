@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2024-12-16 15:14+0000\n"
-"PO-Revision-Date: 2025-02-04 17:46\n"
+"PO-Revision-Date: 2025-03-03 13:13\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -21,13 +21,13 @@ msgstr ""
 #: en/home/modules/ROOT/pages/get-started.adoc:6
 #, no-wrap
 msgid "Data publishing"
-msgstr ""
+msgstr "Publication de données"
 
 #. type: Title =
 #: en/home/modules/ROOT/pages/get-started.adoc:1
 #, no-wrap
 msgid "Get started"
-msgstr ""
+msgstr "Commencer"
 
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:4
@@ -42,7 +42,7 @@ msgstr ""
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:8
 msgid "GBIF data processing & quality checks"
-msgstr ""
+msgstr "Traitement et contrôle qualité des données par le GBIF"
 
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:9
