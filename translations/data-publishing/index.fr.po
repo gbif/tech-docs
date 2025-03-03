@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2025-02-17 13:06+0000\n"
-"PO-Revision-Date: 2025-02-17 13:21\n"
+"PO-Revision-Date: 2025-03-03 13:13\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: en/home/modules/ROOT/pages/get-started.adoc:6
 #, no-wrap
 msgid "Data publishing"
-msgstr ""
+msgstr "Publication de données"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/index.adoc:4
