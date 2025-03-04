@@ -86,9 +86,9 @@ To facilitate searching and metric generation, all occurrence records are tied t
 
 ==== Backbone matching
 
-Every occurrence is assigned a `taxonKey`` which points to the https://www.gbif.org/composition/5H6q4htCV3xwevyc5Np7jO/data-use-club-practical-session-4-recording-and-resources[matching taxon] in the GBIF backbone. This key is retrieved by querying our https://www.gbif.org/developer/species#searching[taxon match service], submitting the `scientificName`, `taxonRank`, `genus`, `family` and all other higher verbatim classification. If the `scientificName` is not present it will be assembled from the individual name parts if present: `genus`, `specificEpithet` and `infraspecificEpithet`. Having a higher classification qualifying the `scientificName` improves the accuracy of the taxonomic match in two ways, even if it is just the family or even kingdom:
+Every occurrence is assigned a `taxonKey` which points to the https://www.gbif.org/composition/5H6q4htCV3xwevyc5Np7jO/data-use-club-practical-session-4-recording-and-resources[matching taxon] in the GBIF backbone. This key is retrieved by querying our https://www.gbif.org/developer/species#searching[taxon match service], submitting the `scientificName`, `taxonRank`, `genus`, `family` and all other higher verbatim classification. If the `scientificName` is not present it will be assembled from the individual name parts if present: `genus`, `specificEpithet` and `infraspecificEpithet`. Having a higher classification qualifying the `scientificName` improves the accuracy of the taxonomic match in two ways, even if it is just the family or even kingdom:
 
-1. In the case of homonyms or similar spelled names, the service has a way to verify the potential matches.
+1. In the case of homonyms or similar spelled names, the service has no way to verify the potential matches, so such names will often get higher taxon matches.
 2. In case a given scientific name is not (yet) part of the GBIF backbone, GBIF can at least match the record to some higher taxon, such as the genus.
 3. Fuzzy name matching, matching to higher taxon or matching to no taxon are issue flags we assign to records.
 
