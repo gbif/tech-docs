@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"POT-Creation-Date: 2025-03-04 11:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,6 +15,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/index.adoc:79
+#: en/data-use/modules/ROOT/nav.adoc:4
+#, no-wrap
+msgid "Issues and flags"
+msgstr ""
 
 #. type: Title ==
 #: en/data-use/modules/ROOT/nav.adoc:2
@@ -26,11 +33,6 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/ROOT/nav.adoc:3
 msgid "xref:download-formats.adoc[]"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:4
-msgid "Issues and flags"
 msgstr ""
 
 #. type: Plain text

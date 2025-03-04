@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"POT-Creation-Date: 2025-03-04 11:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,6 +15,24 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#.  === Desired feedback 
+#.  The current UI isn't meant to be a finished product. There are many missing features that we are well aware of. We appreciate feedback about the UI, and it is almost impossible to avoid, but we are much more interested in the qestions below. 
+#.  Desired feedback during the pilot phase:
+#.  * Were there any rules that you wanted to make but could not?
+#.  * Do you think you will be able to use the rules you made to create an improved and useful dataset?
+#.  * Is there any controlled vocabulary that you would like to add?
+#.  * Was it clear what you were doing and why?
+#.  * Did you find the seeded rules useful? 
+#.  Less interesting feedback but still appreciated:
+#.  * UI improvements
+#.  * Software bugs
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/index.adoc:8
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:136
+#, no-wrap
+msgid "Introduction"
+msgstr ""
 
 #.  == MAXENT
 #.  include?
@@ -369,23 +387,6 @@ msgstr ""
 #: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:116
 msgid ""
 "Good annotations also try to think about higher taxonomy and simplification."
-msgstr ""
-
-#.  === Desired feedback 
-#.  The current UI isn't meant to be a finished product. There are many missing features that we are well aware of. We appreciate feedback about the UI, and it is almost impossible to avoid, but we are much more interested in the qestions below. 
-#.  Desired feedback during the pilot phase:
-#.  * Were there any rules that you wanted to make but could not?
-#.  * Do you think you will be able to use the rules you made to create an improved and useful dataset?
-#.  * Is there any controlled vocabulary that you would like to add?
-#.  * Was it clear what you were doing and why?
-#.  * Did you find the seeded rules useful? 
-#.  Less interesting feedback but still appreciated:
-#.  * UI improvements
-#.  * Software bugs
-#. type: Title ==
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:136
-#, no-wrap
-msgid "Introduction"
 msgstr ""
 
 #. type: Title ===
