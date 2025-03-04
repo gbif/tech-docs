@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
-"PO-Revision-Date: 2025-02-04 17:51\n"
+"POT-Creation-Date: 2025-03-04 11:04+0000\n"
+"PO-Revision-Date: 2025-03-04 12:01\n"
 "Last-Translator: \n"
 "Language-Team: Persian\n"
 "Language: fa_IR\n"
@@ -16,6 +16,13 @@ msgstr ""
 "X-Crowdin-File: /main/translations/data-use/nav.pot\n"
 "X-Crowdin-File-ID: 43362\n"
 
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/index.adoc:79
+#: en/data-use/modules/ROOT/nav.adoc:4
+#, no-wrap
+msgid "Issues and flags"
+msgstr ""
+
 #. type: Title ==
 #: en/data-use/modules/ROOT/nav.adoc:2
 #: en/data-use/modules/ROOT/pages/index.adoc:13
@@ -26,11 +33,6 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/ROOT/nav.adoc:3
 msgid "xref:download-formats.adoc[]"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:4
-msgid "Issues and flags"
 msgstr ""
 
 #. type: Plain text
