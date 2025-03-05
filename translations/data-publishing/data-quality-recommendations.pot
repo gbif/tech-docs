@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-18 13:01+0000\n"
+"POT-Creation-Date: 2025-03-05 16:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgid "Data quality recommendations"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:7
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:4
 msgid ""
 "The required terms in the tables are the minimal terms to include for GBIF "
 "to index the data. By following the data quality recommendations, data "
@@ -33,32 +33,32 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:11
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:8
 msgid "https://dwc.tdwg.org/terms/#record-level[Record-level^]"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:16
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:13
 msgid "https://dwc.tdwg.org/terms/#taxon[Taxon^]"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:21
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:18
 msgid "https://dwc.tdwg.org/terms/#location[Location^]"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:26
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:23
 msgid "https://dwc.tdwg.org/terms/#occurrence[Occurrence^]"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:31
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:28
 msgid "https://dwc.tdwg.org/terms/#event[Event^]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:34
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:31
 msgid ""
 "All tables included in a Darwin Core Archive *must* include a unique "
 "identifier column"
@@ -66,7 +66,7 @@ msgstr ""
 
 #.  Please also consult the documentation for xref:metadata-recommendations-and-requirements.adoc[requirements for the EML file].
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:36
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:33
 msgid ""
 "Data published with the support of one of the programmes managed by GBIF (e."
 "g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/"
@@ -76,7 +76,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:39
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:36
 msgid ""
 "It is the publisher's responsibility to obscure sensitive species "
 "information. Please consult the https://docs.gbif.org/sensitive-species-best-"
@@ -85,13 +85,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:40
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:37
 #, no-wrap
 msgid "Data quality requirements for checklists"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:43
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:40
 msgid ""
 "https://www.gbif.org/dataset/search?type=CHECKLIST[Checklist datasets] "
 "provide a catalogue, rapid summary or baseline inventory of a set of named "
@@ -102,13 +102,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:44
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:41
 #, no-wrap
 msgid "Data quality requirements for *checklists*"
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:76
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:73
 #, no-wrap
 msgid ""
 "|Term |<<Status>> |Status GBIF managed programmes\n"
@@ -143,13 +143,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:78
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:75
 #, no-wrap
 msgid "Data quality requirements for occurrences"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:81
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:78
 msgid ""
 "https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are "
 "the core of data published through GBIF, offering evidence of the occurrence "
@@ -157,13 +157,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:82
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:79
 #, no-wrap
 msgid "Data quality requirements for *occurrences*"
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:158
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:155
 #, no-wrap
 msgid ""
 "|Term |<<Status>> |Status funded GBIF programmes\n"
@@ -242,13 +242,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:160
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:157
 #, no-wrap
 msgid "Data quality requirements for sampling events"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:163
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:160
 msgid ""
 "https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Sampling-event "
 "datasets] provide greater detail about a species occurring at a given "
@@ -260,13 +260,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:164
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:161
 #, no-wrap
 msgid "Data quality requirements for *sampling events*"
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:232
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:229
 #, no-wrap
 msgid ""
 "|Term |<<Status>> |Status funded GBIF programmes\n"
@@ -337,121 +337,121 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:234
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:231
 #, no-wrap
 msgid "Terms"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:236
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:233
 #, no-wrap
 msgid "{record} basisOfRecord [[basisOfRecord]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:237
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:234
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_basisOfRecord[_dwc:basisOfRecord_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:240
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:237
 msgid ""
 "The type of the individual record. Choose one of the available options in "
 "dwc:basisOfRecord."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:242
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:247
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:252
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:259
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:266
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:277
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:284
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:295
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:302
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:309
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:316
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:323
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:332
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:341
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:348
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:355
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:360
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:367
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:374
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:387
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:394
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:401
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:408
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:415
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:422
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:427
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:436
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:443
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:452
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:461
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:468
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:475
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:239
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:244
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:249
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:256
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:263
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:274
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:281
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:292
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:299
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:306
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:313
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:320
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:329
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:338
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:345
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:352
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:357
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:364
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:371
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:384
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:391
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:398
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:405
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:412
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:419
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:424
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:433
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:440
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:449
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:458
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:465
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:472
 msgid "'''"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:243
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:240
 #, no-wrap
 msgid "{record} informationWithheld [[informationWithheld]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:244
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:241
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_informationWithheld[_dwc:informationWithheld_]"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:248
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:245
 #, no-wrap
 msgid "{record} dataGeneralizations [[dataGeneralizations]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:249
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:246
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_dataGeneralizations[_dwc:dataGeneralizations_]"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:253
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:250
 #, no-wrap
 msgid "{record} type [[type]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:254
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:251
 #, no-wrap
 msgid "http://purl.org/dc/elements/1.1/type[_dc:type_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:257
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:254
 msgid "The nature or genre of the resource."
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:260
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:257
 #, no-wrap
 msgid "{taxon} taxonID [[taxonID]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:261
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:258
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_taxonID[_dwc:taxonID_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:264
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:261
 msgid ""
 "A unique identifier for the taxon, allowing the same taxon to be recognized "
 "across dataset versions as well as through data downloads and use. Ideally, "
@@ -466,19 +466,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:267
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:264
 #, no-wrap
 msgid "{taxon} scientificName [[scientificName]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:268
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:265
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_scientificName[_dwc:scientificName_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:271
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:268
 msgid ""
 "The full scientific name, including authorship and year of the name where "
 "applicable. In the context of a checklist, the scientific name is the core "
@@ -487,7 +487,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:273
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:270
 msgid ""
 "Depending on the purpose of the checklist, scientific names may be of any "
 "hierarchical level, though typically would be of species rank or below for, "
@@ -501,7 +501,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:275
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:272
 msgid ""
 "Valid scientific names are Latin names following the syntax rules of the "
 "respective taxon group (e.g. botanical nomenclature). Not permitted are, i."
@@ -512,19 +512,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:278
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:275
 #, no-wrap
 msgid "{taxon} taxonRank [[taxonRank]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:279
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:276
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_taxonRank[_dwc:taxonRank_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:282
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:279
 msgid ""
 "The taxonomic rank of the supplied scientific name. The taxon rank supports "
 "the interpretation of the scientific name during indexing and supports "
@@ -540,26 +540,26 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:285
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:282
 #, no-wrap
 msgid "{taxon} kingdom [[kingdom]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:286
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:283
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_kingdom[_dwc:kingdom_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:289
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:286
 msgid ""
 "The full scientific name specifying the kingdom that the scientific name is "
 "classified under and other higher taxonomy, if possible."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:291
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:288
 msgid ""
 "With scientific names, there are numerous cases where the matching of a "
 "given name against the core taxonomy is unsure or ambiguous. This is the "
@@ -575,7 +575,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:293
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:290
 msgid ""
 "Names should be scientific (Latin) names at major Linnean ranks, like "
 "`Animalia` (`kingdom`) or `Rosaceae` (`family`). Not: common names "
@@ -585,19 +585,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:296
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:293
 #, no-wrap
 msgid "{taxon} parentNameUsageID [[parentNameUsageID]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:297
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:294
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_parentNameUsageID[_dwc:parentNameUsageID_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:300
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:297
 msgid ""
 "The taxonID of the next available higher-ranked (parent) entry within the "
 "checklist dataset, if higher taxon names are supplied as separate entries in "
@@ -606,19 +606,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:303
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:300
 #, no-wrap
 msgid "{taxon} acceptedNameUsageID [[acceptedNameUsageID]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:304
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:301
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID[_dwc:acceptedNameUsageID_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:307
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:304
 msgid ""
 "Within the record of a synonym, the taxonID of the accepted taxon name entry "
 "within the checklist dataset, if both synonyms and accepted names are "
@@ -627,38 +627,38 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:310
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:307
 #, no-wrap
 msgid "{taxon} vernacularName [[vernacularName]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:311
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:308
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_vernacularName[_dwc:vernacularName_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:314
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:311
 msgid ""
 "When supplied, also add at least the language of the name, using ISO 639-1 "
 "language codes."
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:317
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:314
 #, no-wrap
 msgid "{location} countryCode [[countryCode]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:318
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:315
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_countryCode[_dwc:countryCode_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:321
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:318
 msgid ""
 "A two-letter standard abbreviation for the country, territory or island of "
 "the occurrence locality. Information on the collection or observation "
@@ -675,19 +675,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:324
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:321
 #, no-wrap
 msgid "{location} decimalLatitude [[decimalLatitude]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:325
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:322
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_decimalLatitude[_dwc:decimalLatitude_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:328
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:325
 msgid ""
 "The geographic latitude in decimal degrees. Where coordinate values are "
 "available <<decimalLongitude>> should be filled also. Valid values lie "
@@ -700,8 +700,8 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:330
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:339
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:327
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:336
 msgid ""
 "Several issues concerning coordinates are encountered frequently. While the "
 "indexing process makes efforts to identify such cases and propose "
@@ -726,19 +726,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:333
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:330
 #, no-wrap
 msgid "{location} decimalLongitude [[decimalLongitude]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:334
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:331
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_decimalLongitude[_dwc:decimalLongitude_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:337
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:334
 msgid ""
 "The geographic longitude in decimal degrees. Where coordinate values are "
 "available <<decimalLatitude>> should be filled also. Valid values lie "
@@ -751,19 +751,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:342
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:339
 #, no-wrap
 msgid "{location} geodeticDatum [[geodeticDatum]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:343
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:340
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_geodeticDatum[_dwc:geodeticDatum_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:346
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:343
 msgid ""
 "The coordinate system and set of reference points upon which the geographic "
 "coordinates are based. Different geodetic systems exist, and the exact "
@@ -782,19 +782,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:349
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:346
 #, no-wrap
 msgid "{location} coordinateUncertaintyInMeters [[coordinateUncertaintyInMeters]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:350
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:347
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_coordinateUncertaintyInMeters[_dwc:coordinateUncertaintyInMeters_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:353
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:350
 msgid ""
 "The horizontal distance from the given <<decimalLatitude>> and "
 "<<decimalLongitude>> in meters, describing the smallest circle containing "
@@ -815,31 +815,31 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:356
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:353
 #, no-wrap
 msgid "{location} country [[country]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:357
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:354
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_country[_dwc:country_]"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:361
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:358
 #, no-wrap
 msgid "{location} locationID [[locationID]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:362
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:359
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_locationID[_dwc:locationID_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:365
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:362
 msgid ""
 "An internal or external reference that links to a set of data describing the "
 "sample event location, if available. Example: `http://www.geonames."
@@ -850,19 +850,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:368
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:365
 #, no-wrap
 msgid "{location} footprintWKT [[footprintWKT]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:369
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:366
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_footprintWKT[_dwc:footprintWKT_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:372
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:369
 msgid ""
 "An alternative area description, specifying the location of the sample event "
 "in Well-known text (WKT) markup language. A WKT representation of the shape "
@@ -878,19 +878,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:375
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:372
 #, no-wrap
 msgid "{occurrence} occurrenceID [[occurrenceID]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:376
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:373
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_occurrenceID[_dwc:occurrenceID_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:379
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:376
 msgid ""
 "A unique identifier for the occurrence, allowing the same occurrence to be "
 "recognized across dataset versions as well as through data downloads. As a "
@@ -904,7 +904,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:381
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:378
 msgid ""
 "The occurrenceID in a dataset helps GBIF identify whether an occurrence "
 "record is new. If it is new, GBIF assigns it a new unique gbifID. Some "
@@ -918,7 +918,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:383
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:380
 msgid ""
 "An important part of GBIF data processing is to assign a stable gbifID each "
 "new record. This is a somewhat complex process that uses the occurrenceID, "
@@ -930,7 +930,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:385
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:382
 msgid ""
 "If a previously published dataset alters more than 50% of its exsisting "
 "occurrenceIDs, it will get flagged by our link:https://github.com/gbif/"
@@ -942,38 +942,38 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:388
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:385
 #, no-wrap
 msgid "{occurrence} individualCount [[individualCount]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:389
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:386
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_individualCount[_dwc:individualCount_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:392
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:389
 msgid ""
 "Use the `individualCount` field to capture the number of individuals for the "
 "species associated with the occurrence."
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:395
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:392
 #, no-wrap
 msgid "{occurrence} organismQuantity [[organismQuantity]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:396
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:393
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_organismQuantity[_dwc:organismQuantity_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:399
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:396
 msgid ""
 "To record the quantity of a species occurrence. Use together with "
 "<<organismQuantityType>> to specify the quantity e.g., `organismQuantity`: "
@@ -982,19 +982,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:402
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:399
 #, no-wrap
 msgid "{occurrence} organismQuantityType [[organismQuantityType]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:403
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:400
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_organismQuantityType[_dwc:organismQuantityType_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:406
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:403
 msgid ""
 "To record the quantity type of a species occurrence. Use together with "
 "<<organismQuantity>> to specify the type of measurement e.g., "
@@ -1003,19 +1003,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:409
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:406
 #, no-wrap
 msgid "{occurrence} occurrenceStatus [[occurrenceStatus]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:410
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:407
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_occurrenceStatus[_dwc:occurrenceStatus_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:413
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:410
 msgid ""
 "Note: this applies to associated occurrence data, not to the sample event "
 "itself. A qualifier for individual occurrence records, marking a taxon as "
@@ -1032,19 +1032,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:416
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:413
 #, no-wrap
 msgid "{event} eventDate [[eventDate]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:417
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:414
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_eventDate[_dwc:eventDate_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:420
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:417
 msgid ""
 "Dates and times published in Darwin Core should use the https://en.wikipedia."
 "org/wiki/ISO_8601[ISO 8601-1:2019] standard. Please see the following "
@@ -1053,31 +1053,31 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:423
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:420
 #, no-wrap
 msgid "{event} eventTime [[eventTime]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:424
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:421
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_eventTime[_dwc:eventTime_]"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:428
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:425
 #, no-wrap
 msgid "{event} eventID [[eventID]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:429
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:426
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_eventID[_dwc:eventID_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:432
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:429
 msgid ""
 "A unique identifier for the sampling event, allowing to link individual "
 "occurrences to a specific event, and to cross-reference events to document e."
@@ -1085,7 +1085,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:434
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:431
 msgid ""
 "The eventID can be a persistent global unique identifier, or an identifier "
 "specific to the dataset. Its main function is to allow linking to related "
@@ -1099,19 +1099,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:437
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:434
 #, no-wrap
 msgid "{event} samplingProtocol [[samplingProtocol]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:438
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:435
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_samplingProtocol[_dwc:samplingProtocol_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:441
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:438
 msgid ""
 "The name of, reference to, or description of the method or protocol used "
 "during a sample event. Sample events typically use specific methods or "
@@ -1132,27 +1132,27 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:444
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:441
 #, no-wrap
 msgid "{event} sampleSizeValue [[sampleSizeValue]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:445
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:442
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_sampleSizeValue[_dwc:sampleSizeValue_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:448
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:445
 msgid ""
 "Note: <<sampleSizeUnit>> should always be shared with the corresponding "
 "sampleSizeValue."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:450
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:459
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:447
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:456
 msgid ""
 "A numeric value and the corresponding unit for the value, specifying the "
 "size of an individual sample in the sampling event. The two sampleSize "
@@ -1165,38 +1165,38 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:453
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:450
 #, no-wrap
 msgid "{event} sampleSizeUnit [[sampleSizeUnit]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:454
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:451
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_sampleSizeUnit[_dwc:sampleSizeUnit_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:457
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:454
 msgid ""
 "Note: <<sampleSizeValue>> should always be shared with the corresponding "
 "sampleSizeUnit."
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:462
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:459
 #, no-wrap
 msgid "{event} parentEventID [[parentEventID]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:463
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:460
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_parentEventID[_dwc:parentEventID_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:466
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:463
 msgid ""
 "A cross-reference to the eventID of a broader event, e.g. a long-term "
 "monitoring project that the specific event is a part of or a general "
@@ -1208,19 +1208,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:469
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:466
 #, no-wrap
 msgid "{event} samplingEffort [[samplingEffort]]"
 msgstr ""
 
 #. type: Title ====
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:470
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:467
 #, no-wrap
 msgid "https://dwc.tdwg.org/list/#dwc_samplingEffort[_dwc:samplingEffort_]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:473
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:470
 msgid ""
 "The measure for the amount of effort that was expended during a sampling "
 "event. The amount of effort expended during a sampling event often "
@@ -1234,19 +1234,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:476
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:473
 #, no-wrap
 msgid "Status [[Status]]"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:478
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:475
 #, no-wrap
 msgid "Required information"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:481
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:478
 msgid ""
 "The terms constitute the minimum formal requirements for publishing an "
 "occurrence dataset. GBIF will not accept a dataset without these terms and "
@@ -1257,20 +1257,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:482
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:479
 #, no-wrap
 msgid "Strongly recommended information"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:485
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:482
 msgid ""
 "In addition to the mandatory terms, GBIF strongly recommends completing "
 "several more fields that help improve the usefulness of the dataset:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:487
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:484
 msgid ""
 "some information supports the integration into global data resources and "
 "prevents ambiguity, e.g. in matching scientific names that could apply to "
@@ -1279,14 +1279,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:488
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:485
 msgid ""
 "more precise geo-location data (coordinates) significantly increase the "
 "usefulness of the data for a wide range of use cases"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:489
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:486
 msgid ""
 "additional qualifiers for some data elements, e.g. coordinates, support the "
 "interpretation of those elements and help users to better estimate their "
@@ -1294,14 +1294,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:490
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:487
 msgid ""
 "some data redundancy supports quality control and error detection (e.g. "
 "testing country codes against coordinates where both are supplied)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:491
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:488
 msgid ""
 "last but not least, the richer the spectrum of available information of a "
 "dataset is, the more potential usage areas it becomes available for, meaning "
@@ -1309,13 +1309,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:492
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:489
 #, no-wrap
 msgid "Share if available"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:494
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:491
 msgid ""
 "If additional data are available, consider sharing them to increase the "
 "usefulness of your published data."

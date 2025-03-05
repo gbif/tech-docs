@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-04 11:04+0000\n"
+"POT-Creation-Date: 2025-03-05 16:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,20 +16,20 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#.  === Desired feedback 
-#.  The current UI isn't meant to be a finished product. There are many missing features that we are well aware of. We appreciate feedback about the UI, and it is almost impossible to avoid, but we are much more interested in the qestions below. 
+#.  === Desired feedback
+#.  The current UI isn't meant to be a finished product. There are many missing features that we are well aware of. We appreciate feedback about the UI, and it is almost impossible to avoid, but we are much more interested in the qestions below.
 #.  Desired feedback during the pilot phase:
 #.  * Were there any rules that you wanted to make but could not?
 #.  * Do you think you will be able to use the rules you made to create an improved and useful dataset?
 #.  * Is there any controlled vocabulary that you would like to add?
 #.  * Was it clear what you were doing and why?
-#.  * Did you find the seeded rules useful? 
+#.  * Did you find the seeded rules useful?
 #.  Less interesting feedback but still appreciated:
 #.  * UI improvements
 #.  * Software bugs
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/index.adoc:8
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:136
+#: en/data-processing/modules/ROOT/pages/index.adoc:5
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:135
 #, no-wrap
 msgid "Introduction"
 msgstr ""
@@ -43,7 +43,7 @@ msgid "Rule Based Annotations"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:7
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:6
 msgid ""
 "This is an **experimental feature**, and the implementation may change "
 "throughout 2024.  The feature is currently available for preview on the GBIF "
@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:9
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:8
 msgid ""
 "This project is part of the indicative tasks for 2023 GBIF https://docs.gbif."
 "org/2023-work-programme/en/index.en.html#indicative-tasks-for-2023-14[work "
@@ -59,19 +59,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:11
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:10
 #, no-wrap
 msgid "**Explore** approaches to annotation capabilities in GBIF.org that enable data corrections, enrichments and user-provided rules that combine taxonomic, geographic and temporal combinations to detect suspicious records.\n"
 msgstr ""
 
 #. type: Title ==
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:12
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:11
 #, no-wrap
 msgid "Summary"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:15
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:14
 msgid ""
 "Rule based annotations is an experimental tool being developed within GBIF "
 "that will allow users to mark certain occurrence data searches with a "
@@ -83,24 +83,24 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:16
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:15
 #, no-wrap
 msgid "Road Map"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:19
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:18
 msgid "Initiated tasks with ✓."
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:20
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:19
 #, no-wrap
 msgid "User Interface ✓"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:23
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:22
 msgid ""
 "A demo UI has been developed to facilitate the process of creating rule-"
 "based annotations on a map. This user-friendly interface allows users to "
@@ -109,7 +109,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:25
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:24
 msgid ""
 "The current state of the demo UI for rule-based annotations is considered a "
 "work in progress, and it is expected to evolve based on valuable feedback "
@@ -117,20 +117,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:26
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:25
 #, no-wrap
 msgid "API backend ✓"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:29
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:28
 msgid ""
 "The main underlying technology that will be power the annotations will be a "
 "database store and a restful API interface."
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:31
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:30
 msgid "https://github.com/gbif/occurrence-annotation[Backend GitHub]"
 msgstr ""
 
@@ -138,33 +138,33 @@ msgstr ""
 #.  if required. — Matt.
 #.  http://prodws-vh.gbif.org:8124/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config[API Docs]
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:36
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:35
 #, no-wrap
 msgid "R package `gbifan` ✓"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:39
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:38
 msgid ""
 "Initially the main way to interact with the annotations store, will be "
 "through the API or R."
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:41
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:40
 msgid ""
 "The R package can be found https://github.com/gbif/occurrence-annotation/"
 "tree/main/r-package/gbifan[here]."
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:42
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:41
 #, no-wrap
 msgid "Seeding rulesets  ✓"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:45
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:44
 msgid ""
 "Seeding `rulesets` into our annotation store provides several benefits, "
 "especially when it comes to improving user experience. Seeding data can help "
@@ -178,13 +178,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:46
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:45
 #, no-wrap
 msgid "Example ruleset seeds."
 msgstr ""
 
 #. type: Table
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:51
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:50
 #, no-wrap
 msgid ""
 "|  https://www.gbif.org/dataset/f382f0ce-323a-4091-bb9f-add557f3a9a2[World Checklist of Vascular Plants]\n"
@@ -192,13 +192,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:53
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:52
 #, no-wrap
 msgid "Introduction to internal and external pilot users ✓"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:56
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:55
 msgid ""
 "Before releasing the rule based annotations tool to the public, it will "
 "undergo internal and external piloting phase. In this phase, pilot users "
@@ -209,13 +209,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:57
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:56
 #, no-wrap
 msgid "Data paper"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:60
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:59
 msgid ""
 "After the internal and external review we plan to write a data paper that "
 "will present the annotations tool to wider audience. The internal and "
@@ -225,26 +225,26 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:61
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:60
 #, no-wrap
 msgid "Development of data cleaning workflows"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:64
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:63
 msgid ""
 "One of the final tasks will be the development of data cleaning workflows "
 "using the collected annotations."
 msgstr ""
 
 #. type: Title ==
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:65
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:64
 #, no-wrap
 msgid "User Guide"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:68
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:67
 msgid ""
 "If you are reading this you have been approached as potential pilot "
 "annotator, and you have probably been asked to complete a small but useful "
@@ -253,79 +253,79 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:69
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:68
 #, no-wrap
-msgid "Using the UI "
+msgid "Using the UI"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:72
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:71
 msgid ""
 "https://labs.gbif.org/annotations/iframe.html?args=&id=tools-annotations--"
 "standalone-example&view=RULES&viewMode=story[UI link]"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:74
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:73
 msgid ""
 "If you are a pilot user, you should already have your project ruleset "
 "permissions set up for you."
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:75
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:74
 #, no-wrap
 msgid "How to make rules"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:78
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:77
 msgid "To make a rule"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:80
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:79
 msgid "Log in with your GBIF username and password."
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:82
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:81
 msgid ""
 "Select the project and ruleset you want to make a rule in. Alternatively, "
 "you can leave these blank if you want to make a one-off rule."
 msgstr ""
 
 #. type: Target for macro image
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:83
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:82
 #, no-wrap
 msgid "annotations/select_project.png"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:86
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:85
 msgid "draw a polygon or select region you want to make the rule about."
 msgstr ""
 
 #. type: Target for macro image
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:87
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:86
 #, no-wrap
 msgid "annotations/make_rule.png"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:90
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:89
 msgid "Next apply your label."
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:91
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:353
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:90
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:352
 #, no-wrap
 msgid "Controlled vocabulary for locations"
 msgstr ""
 
 #. type: Table
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:101
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:100
 #, no-wrap
 msgid ""
 "|  term | definition\n"
@@ -338,35 +338,35 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:104
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:103
 msgid ""
 "If vocabulary this doesn't work for you, please pick the closest fitting, "
 "and request additional vocabulary in your feedback."
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:106
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:105
 msgid "Create your rule."
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:107
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:106
 #, no-wrap
 msgid "Good rules"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:110
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:109
 msgid "While there is not absolute definition of a good rule and a bad one."
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:112
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:111
 msgid "Good annotations usually have a few properties:"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:114
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:113
 msgid ""
 "Good annotations usually don't use extremely complex polygons. If you find "
 "yourself needing to trace the coastline of Italy, you might be doing too "
@@ -377,26 +377,26 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:115
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:114
 msgid ""
 "Good annotations take into account future occurrence records. Remember that "
 "your annotations should be able to fit future occurrence fairly well."
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:116
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:115
 msgid ""
 "Good annotations also try to think about higher taxonomy and simplification."
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:138
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:137
 #, no-wrap
 msgid "Data cleaning"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:141
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:140
 msgid ""
 "https://www.gbif.org/[The Global Biodiversity Information Facility] (GBIF) "
 "is a vital data infrastructure for researchers, conservationists, and "
@@ -409,31 +409,31 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:143
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:142
 #, no-wrap
 msgid " As the volume and complexity of occurrence data continue to grow, the need for automated data cleaning tools has become more important. R packages like https://docs.ropensci.org/CoordinateCleaner/[CoordinateCleaner] (2018) have played a key role in addressing this need, providing efficient and user-friendly solutions for common data quality issues.\n"
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:144
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:143
 #, no-wrap
 msgid "Lions in Europe and North America? It is common for GBIF maps to be confusing for users. Most GBIF users are not interested in records from zoos, fossils, or locations that might just be wrong, and GBIF mediated data is often not consistently rich enough to filter unwanted records."
 msgstr ""
 
 #. type: Target for macro image
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:145
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:144
 #, no-wrap
 msgid "annotations/lions.png"
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:147
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:146
 #, no-wrap
 msgid "Fixing at source"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:150
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:149
 msgid ""
 "A competing viewpoint with regard to data cleaning is to \"fix at source\". "
 "Fixing GBIF occurrence data at the source, such as reaching out to data "
@@ -448,19 +448,19 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:151
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:150
 #, no-wrap
 msgid "A rule is a combination of geographic, taxonomic, and geographic information that facilitates data cleaning or analysis."
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:152
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:151
 #, no-wrap
 msgid "Motivation"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:155
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:154
 msgid ""
 "Automated solutions, like CoordinateCleaner, while valuable tools for data "
 "cleaning, may be considered incomplete in certain contexts due to their "
@@ -470,26 +470,26 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:156
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:155
 #, no-wrap
 msgid "Any system that attempts to solve every problem will solve none."
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:157
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:156
 #, no-wrap
 msgid "Complexity vs usability"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:160
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:159
 msgid ""
 "Annotation systems, like any software or tool, have the potential to become "
 "unusable when they become overly complicated."
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:162
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:161
 msgid ""
 "One goal of a our rule-based annotation system is to make it accessible to a "
 "broad user base, including researchers, scientists, and casual users. If the "
@@ -499,7 +499,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:164
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:163
 msgid ""
 "A rule-based annotation system, especially one used for annotating complex "
 "datasets like GBIF occurrence records, must strike a delicate balance "
@@ -512,33 +512,33 @@ msgstr ""
 #.  One useful example would be marking all https://www.marinespecies.org/[marine species] on land as suspicious.
 #.  rule -> *Marine species on WORMS list* in *Land Polygon* are *Suspicious*
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:165
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:345
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:164
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:344
 #, no-wrap
 msgid "Controlled vocabulary"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:168
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:167
 msgid ""
 "One of the key ways to increase usability and complexity is to introduce a "
 "controlled vocabulary."
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:169
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:168
 #, no-wrap
 msgid "\"Penguins released in Norway\". While the most accurate description of this event is the sentence above, a more useful rule might be \"Penguins in Norway are suspicious\"."
 msgstr ""
 
 #. type: Target for macro image
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:170
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:169
 #, no-wrap
 msgid "annotations/penguins.png"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:173
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:172
 msgid ""
 "Using a small controlled vocabulary over in an annotation system offers "
 "several advantages to downstream users. Finding the right level of "
@@ -548,13 +548,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:174
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:173
 #, no-wrap
-msgid "Example annotation that marks any occurrences of lions in Greenland as suspicious. "
+msgid "Example annotation that marks any occurrences of lions in Greenland as suspicious."
 msgstr ""
 
 #. type: Target for macro image
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:175
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:174
 #, no-wrap
 msgid "annotations/lions-greenland.png"
 msgstr ""
@@ -571,29 +571,29 @@ msgstr ""
 #.  .Our system allows users to annotate at an granular scale. For example, this annotation marks all occurrences that happen to be near this greenhouse as "managed".
 #.  image::annotations/greenhouse-managed.png[]
 #. type: Title ==
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:196
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:195
 #, no-wrap
 msgid "Technical Details"
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:198
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:197
 #, no-wrap
 msgid "Rules"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:201
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:200
 msgid "A basic rule in our system looks like this."
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:203
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:202
 msgid "`rule` -> `taxon` in `geo-polygon` are `controlled vocab`"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:205
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:204
 msgid ""
 "In our system a `geo-polygon` is a https://en.wikipedia.org/wiki/Well-"
 "known_text_representation_of_geometry[Well-Known Text] (WKT) object. A `geo-"
@@ -602,13 +602,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:206
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:205
 #, no-wrap
 msgid "simple example rules"
 msgstr ""
 
 #. type: Table
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:213
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:212
 #, no-wrap
 msgid ""
 "|`rule` -> *Lions* in *Greenland* are *suspicious*\n"
@@ -618,20 +618,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:216
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:215
 msgid ""
 "A `taxon` in our system is going to be a GBIF `taxonKey` so rules are more "
 "likely to look like this in practice."
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:217
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:216
 #, no-wrap
 msgid "taxonKey rules"
 msgstr ""
 
 #. type: Table
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:224
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:223
 #, no-wrap
 msgid ""
 "|`rule` -> *5219404* in *Greenland* are *suspicious*\n"
@@ -652,31 +652,31 @@ msgstr ""
 #.  "Centroid of South Africa" would, of course, be defined by some WKT object like a circle or a polygon.
 #.  Finally, there might be other fields that might make good qualifiers/extensions, like `year`.
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:248
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:247
 #, no-wrap
 msgid "Rulesets"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:251
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:250
 msgid "A `ruleset` is a collection of `rules`."
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:253
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:252
 msgid ""
 "For example, a `ruleset` could be \"Annotations of the Genus Leo\", and it "
 "could look something like the table below."
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:254
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:253
 #, no-wrap
 msgid "Example ruleset"
 msgstr ""
 
 #. type: Table
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:263
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:262
 #, no-wrap
 msgid ""
 "|`rule` -> *Lions* in *Greenland* are *Suspicious*\n"
@@ -688,18 +688,18 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:265
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:264
 #, no-wrap
 msgid "Projects"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:268
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:267
 msgid "A `project` is a collection of `rulesets`."
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:270
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:269
 msgid ""
 "Projects are designed to allow for collaboration between users and logical "
 "grouping of `rulesets`. For example, a `ruleset` could focus on Lions, but "
@@ -707,13 +707,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:271
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:270
 #, no-wrap
 msgid "Example Project Mammals"
 msgstr ""
 
 #. type: Table
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:279
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:278
 #, no-wrap
 msgid ""
 "|`ruleset` | Annotations of Lions based on Field Guide\n"
@@ -724,7 +724,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:282
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:281
 msgid ""
 "Note how a `project` can encode knowledge from other sources into a "
 "`ruleset`, such as https://www.inaturalist.org/pages/atlases[iNaturalist "
@@ -732,13 +732,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:283
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:282
 #, no-wrap
 msgid "Collaboration"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:286
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:285
 msgid ""
 "We hope that users will collaborate on a `project` that interests them and "
 "create `rulesets` that are widely beneficial to others within their research "
@@ -746,7 +746,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:288
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:287
 msgid ""
 "Within a `project`, only users with access, granted by the project creator, "
 "will be able to create rules and rulesets. However, rules, rulesets, and "
@@ -754,13 +754,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:289
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:288
 #, no-wrap
 msgid "Voting"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:292
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:291
 msgid ""
 "For downstream users, deciding which `rule` and `rulesets` to use might "
 "become challenging without some quality control. Currently, we imagine a "
@@ -771,18 +771,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:294
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:293
 msgid "Additionally, voting could provide protection against **vandalism**."
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:295
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:294
 #, no-wrap
 msgid "Higher taxonomy"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:298
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:297
 msgid ""
 "Annotating higher taxonomy is harder than annotating at the species level "
 "because you have to be confident, the annotation at the higher level fits "
@@ -790,31 +790,31 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:299
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:298
 #, no-wrap
 msgid "A map of amphibian occurrences on GBIF. It is well known there are no amphibians in Antarctica. However, we see from the map that one occurrence point still appears there in error."
 msgstr ""
 
 #. type: Target for macro image
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:300
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:299
 #, no-wrap
 msgid "annotations/amphibians.png"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:303
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:302
 msgid ""
 "Given the distribution of Amphibians, a good rule for the high taxon "
 "Amphibians would be :"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:305
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:304
 msgid "`rule` -> *Amphibians* in *Antarctica* are *Suspicious*"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:307
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:306
 msgid ""
 "One challenge is that is is hard to downcast annotations like \"Native\" to "
 "lower levels, since species of a big group tend not to be \"Native\" to "
@@ -833,13 +833,13 @@ msgstr ""
 #.  image::annotations/frogs.png[]
 #.  A work around to *rule exceptions* could of course be rules that simply *conflict*.
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:329
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:328
 #, no-wrap
 msgid "Conflicting rules"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:332
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:331
 msgid ""
 "Inevitably, there are going to be rules created in our system that conflict. "
 "For example, a user might mark and area as \"Native\", while another user "
@@ -847,7 +847,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:334
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:333
 msgid ""
 "In our rule-based system, unlike perhaps other platforms, we are not "
 "striving to create a single ground truth. We aim only to have a collection "
@@ -856,7 +856,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:348
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:347
 msgid ""
 "We might consider using the preexisting vocabulary, although we are "
 "attempting to annotate land area (ranges) more than we are attempting "
@@ -864,18 +864,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:350
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:349
 msgid "https://registry.gbif.org/vocabulary/DegreeOfEstablishment/concepts"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:352
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:351
 msgid ""
 "Below is the working controlled vocabulary for location-based annotations."
 msgstr ""
 
 #. type: Table
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:363
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:362
 #, no-wrap
 msgid ""
 "|  term | definition\n"
@@ -888,20 +888,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:366
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:365
 msgid ""
 "This vocabulary is meant to be a compromise between modeling species ranges "
 "and establishment means accurately, while not being overly complex."
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:367
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:366
 #, no-wrap
 msgid "Example mappings"
 msgstr ""
 
 #. type: Table
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:393
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:392
 #, no-wrap
 msgid ""
 "|concept    | example\n"
@@ -930,7 +930,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:396
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:395
 msgid ""
 "The current vocabulary might change in the future. Namely, there has been "
 "some discussion introducing hierarchy such that perhaps certain terms map to "
@@ -938,26 +938,26 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:397
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:396
 #, no-wrap
 msgid "A burning question at this point might be why not annotate occurrences directly?"
 msgstr ""
 
 #. type: Title ===
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:398
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:397
 #, no-wrap
 msgid "Why not annotate occurrences directly?"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:401
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:400
 msgid ""
 "Annotating land areas (and extensions) provide at least two advantages over "
 "annotating occurrences:"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:403
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:402
 msgid ""
 "Avoids the use of https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-"
 "processing-routine-improves-stability-of-gbif-occurrence-ids[unstable "
@@ -965,12 +965,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:404
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:403
 msgid "Allows for future occurrences to benefit from the annotation."
 msgstr ""
 
 #. type: Title ==
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:405
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:404
 #, no-wrap
 msgid "References"
 msgstr ""

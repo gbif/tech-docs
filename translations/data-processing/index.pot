@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-04 11:04+0000\n"
+"POT-Creation-Date: 2025-03-05 16:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,55 +23,55 @@ msgid "GBIF Data Processing"
 msgstr ""
 
 #. type: Target for macro image
-#: en/data-processing/modules/ROOT/pages/index.adoc:6
+#: en/data-processing/modules/ROOT/pages/index.adoc:3
 #, no-wrap
 msgid "data-processing.png"
 msgstr ""
 
-#.  === Desired feedback 
-#.  The current UI isn't meant to be a finished product. There are many missing features that we are well aware of. We appreciate feedback about the UI, and it is almost impossible to avoid, but we are much more interested in the qestions below. 
+#.  === Desired feedback
+#.  The current UI isn't meant to be a finished product. There are many missing features that we are well aware of. We appreciate feedback about the UI, and it is almost impossible to avoid, but we are much more interested in the qestions below.
 #.  Desired feedback during the pilot phase:
 #.  * Were there any rules that you wanted to make but could not?
 #.  * Do you think you will be able to use the rules you made to create an improved and useful dataset?
 #.  * Is there any controlled vocabulary that you would like to add?
 #.  * Was it clear what you were doing and why?
-#.  * Did you find the seeded rules useful? 
+#.  * Did you find the seeded rules useful?
 #.  Less interesting feedback but still appreciated:
 #.  * UI improvements
 #.  * Software bugs
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/index.adoc:8
-#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:136
+#: en/data-processing/modules/ROOT/pages/index.adoc:5
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:135
 #, no-wrap
 msgid "Introduction"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:11
+#: en/data-processing/modules/ROOT/pages/index.adoc:8
 msgid ""
 "Every occurrence record in GBIF goes through a series of processing steps "
 "prior to being made available on GBIF.org. The goal of this processing is to "
 "increase the consistency, discoverability and usability for GBIF end users. "
-"During processing and data normalization, GBIF may apply https://techdocs."
-"gbif.org/en/data-use/occurrence-issues-and-flags[flags] to highlight changes "
-"or issues to both end users and publishers. All unprocessed verbatim data is "
-"available to end users via Darwin Core Archive (DwC-A) downloads."
+"During processing and data normalization, GBIF may apply xref:data-use::"
+"occurrence-issues-and-flags[flags] to highlight changes or issues to both "
+"end users and publishers. All unprocessed verbatim data is available to end "
+"users via Darwin Core Archive (DwC-A) downloads."
 msgstr ""
 
 #. type: Target for macro image
-#: en/data-processing/modules/ROOT/pages/index.adoc:12
+#: en/data-processing/modules/ROOT/pages/index.adoc:9
 #, no-wrap
 msgid "workflow.png"
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/index.adoc:14
+#: en/data-processing/modules/ROOT/pages/index.adoc:11
 #, no-wrap
-msgid "Crawling "
+msgid "Crawling"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:17
+#: en/data-processing/modules/ROOT/pages/index.adoc:14
 msgid ""
 "The first processing step is to harvest data from the service endpoint "
 "listed in the GBIF registry. If multiple services are registered, GBIF "
@@ -81,7 +81,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:19
+#: en/data-processing/modules/ROOT/pages/index.adoc:16
 msgid ""
 "In addition to DwC-A, GBIF supports crawling of the XML-based BioCASe, TAPIR "
 "and DiGIR protocols. The outcome of any crawling regardless of its protocol "
@@ -98,13 +98,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/index.adoc:20
+#: en/data-processing/modules/ROOT/pages/index.adoc:17
 #, no-wrap
-msgid "Occurrence identifier "
+msgid "Occurrence identifier"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:23
+#: en/data-processing/modules/ROOT/pages/index.adoc:20
 msgid ""
 "An important part of GBIF data processing is to assign a stable `gbifID` to "
 "each new record. This is a somewhat complex process that uses the "
@@ -116,7 +116,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:25
+#: en/data-processing/modules/ROOT/pages/index.adoc:22
 msgid ""
 "If a previously published dataset alters more than 50% of its existing "
 "occurrenceIDs, it will get flagged by our https://github.com/gbif/ingestion-"
@@ -128,13 +128,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/index.adoc:26
+#: en/data-processing/modules/ROOT/pages/index.adoc:23
 #, no-wrap
-msgid "Occurrence interpretation "
+msgid "Occurrence interpretation"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:29
+#: en/data-processing/modules/ROOT/pages/index.adoc:26
 msgid ""
 "Once all records are available in the standard verbatim form, they go "
 "through a set of interpretations. If a term is interpreted by GBIF, an "
@@ -145,13 +145,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/index.adoc:30
+#: en/data-processing/modules/ROOT/pages/index.adoc:27
 #, no-wrap
 msgid "Coordinate interpretation"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:33
+#: en/data-processing/modules/ROOT/pages/index.adoc:30
 msgid ""
 "When available, the coordinates of an occurrence record are given particular "
 "attention. If a dwc:geodeticDatum is given, GBIF will https://github.com/"
@@ -163,63 +163,63 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:35
+#: en/data-processing/modules/ROOT/pages/index.adoc:32
 msgid ""
 "GBIF will attempt to parse and verify the following verbatim terms, in the "
 "specified order, to derive a valid WGS84 coordinate:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:37
+#: en/data-processing/modules/ROOT/pages/index.adoc:34
 msgid "`dwc:decimalLatitude` and `dwc:decimalLongitude`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:38
+#: en/data-processing/modules/ROOT/pages/index.adoc:35
 msgid "`dwc:verbatimLatitude` and `dwc:verbatimLongitude`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:39
+#: en/data-processing/modules/ROOT/pages/index.adoc:36
 msgid "dwc:verbatimCoordinates"
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/index.adoc:40
+#: en/data-processing/modules/ROOT/pages/index.adoc:37
 #, no-wrap
-msgid "Suspicious records "
+msgid "Suspicious records"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:43
+#: en/data-processing/modules/ROOT/pages/index.adoc:40
 msgid ""
-"GBIF uses four https://techdocs.gbif.org/en/data-use/occurrence-issues-and-"
-"flags[data quality flags] to apply a special “suspicious label” to "
-"occurrence records that have been flagged with one or more of these:"
+"GBIF uses four xref:data-use::occurrence-issues-and-flags[data quality "
+"flags] to apply a special “suspicious label” to occurrence records that have "
+"been flagged with one or more of these:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:45
+#: en/data-processing/modules/ROOT/pages/index.adoc:42
 msgid "Zero coordinate"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:46
+#: en/data-processing/modules/ROOT/pages/index.adoc:43
 msgid "Coordinate out of range"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:47
+#: en/data-processing/modules/ROOT/pages/index.adoc:44
 msgid "Country coordinate mismatch"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:48
+#: en/data-processing/modules/ROOT/pages/index.adoc:45
 msgid "Coordinate invalid"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:50
+#: en/data-processing/modules/ROOT/pages/index.adoc:47
 msgid ""
 "Various other processing decisions are made based on the value of the "
 "supplied coordinates. For example, by looking at the supplied country, GBIF "
@@ -229,26 +229,26 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/index.adoc:51
+#: en/data-processing/modules/ROOT/pages/index.adoc:48
 #, no-wrap
-msgid "Geocoding "
+msgid "Geocoding"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:54
+#: en/data-processing/modules/ROOT/pages/index.adoc:51
 msgid ""
 "GBIF will use the interpreted coordinates to make various enrichments and "
 "processing decisions for other publisher supplied fields."
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:55
+#: en/data-processing/modules/ROOT/pages/index.adoc:52
 #, no-wrap
-msgid "Country "
+msgid "Country"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:58
+#: en/data-processing/modules/ROOT/pages/index.adoc:55
 msgid ""
 "The publisher supplied dwc:country is interpreted as a https://gbif.github."
 "io/gbif-api/apidocs/org/gbif/api/vocabulary/Country.html[fixed enumeration] "
@@ -261,13 +261,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:59
+#: en/data-processing/modules/ROOT/pages/index.adoc:56
 #, no-wrap
 msgid "GADM (Database of Global Administrative Areas)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:62
+#: en/data-processing/modules/ROOT/pages/index.adoc:59
 msgid ""
 "https://gadm.org/[GADM] code at levels 0, 1, 2 and 3 are attached to all "
 "occurrence records with coordinates. This is an additional field and does "
@@ -275,13 +275,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:63
+#: en/data-processing/modules/ROOT/pages/index.adoc:60
 #, no-wrap
-msgid "Continent processing "
+msgid "Continent processing"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:66
+#: en/data-processing/modules/ROOT/pages/index.adoc:63
 msgid ""
 "GBIF `dwc:continent` processing is somewhat more complex than other fields. "
 "GBIF first attempts to parse the publisher supplied `dwc:continent` to a "
@@ -304,25 +304,29 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/index.adoc:67
+#: en/data-processing/modules/ROOT/pages/index.adoc:64
 #, no-wrap
-msgid "Normalization "
+msgid "Normalization"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:70
-#, no-wrap
-msgid "Often publisher supplied data is not sufficiently normalized to be useful for GBIF end users. For this reason GBIF will in certain instances, attempt to https://github.com/gbif/parsers[normalize the data] as much as possible. This is typically accomplished by using a mapping file from a publisher supplied value to a controlled vocabulary.   \n"
+#: en/data-processing/modules/ROOT/pages/index.adoc:67
+msgid ""
+"Often publisher supplied data is not sufficiently normalized to be useful "
+"for GBIF end users. For this reason GBIF will in certain instances, attempt "
+"to https://github.com/gbif/parsers[normalize the data] as much as possible. "
+"This is typically accomplished by using a mapping file from a publisher "
+"supplied value to a controlled vocabulary."
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:71
+#: en/data-processing/modules/ROOT/pages/index.adoc:68
 #, no-wrap
 msgid "Vocabulary server"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:74
+#: en/data-processing/modules/ROOT/pages/index.adoc:71
 msgid ""
 "To improve the transparency and flexibility of the mappings between "
 "publisher supplied values and controlled vocabularies, GBIF created the "
@@ -330,13 +334,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:75
+#: en/data-processing/modules/ROOT/pages/index.adoc:72
 #, no-wrap
 msgid "Occurrence status processing"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:78
+#: en/data-processing/modules/ROOT/pages/index.adoc:75
 msgid ""
 "Occurrence status processing (whether an occurrence is ABSENT or PRESENT) is "
 "somewhat more complex than other fields. GBIF first attempts to parse the "
@@ -349,36 +353,36 @@ msgid ""
 "Alternatively, if the `dwc:individualCount` is greater than zero, the record "
 "will be inferred to be PRESENT. However, `dwc:individualCount` will be "
 "ignored if the basis of record is equal to PRESERVED_SPECIMEN or "
-"FOSSIL_SPECIMEN, and GBIF will infer the occurrence status as PRESENT. "
-"https://techdocs.gbif.org/en/data-use/occurrence-issues-and-flags[Data "
-"quality flags] are applied when appropriate."
+"FOSSIL_SPECIMEN, and GBIF will infer the occurrence status as PRESENT. xref:"
+"data-use::occurrence-issues-and-flags[Data quality flags] are applied when "
+"appropriate."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:79
+#: en/data-processing/modules/ROOT/pages/index.adoc:76
 #: en/data-use/modules/ROOT/nav.adoc:4
 #, no-wrap
 msgid "Issues and flags"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:82
+#: en/data-processing/modules/ROOT/pages/index.adoc:79
 msgid ""
-"GBIF flags records with various https://techdocs.gbif.org/en/data-use/"
-"checklist-issues-and-flags[issues] detected during data processing to help "
-"publishers improve data quality and inform users of potential problems. "
-"These flags do not always indicate errors—some simply highlight changes made "
-"by GBIF, such as normalized values or inferred values."
+"GBIF flags records with various xref:data-use::checklist-issues-and-"
+"flags[issues] detected during data processing to help publishers improve "
+"data quality and inform users of potential problems. These flags do not "
+"always indicate errors—some simply highlight changes made by GBIF, such as "
+"normalized values or inferred values."
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/index.adoc:83
+#: en/data-processing/modules/ROOT/pages/index.adoc:80
 #, no-wrap
 msgid "Taxonomy interpretation"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:86
+#: en/data-processing/modules/ROOT/pages/index.adoc:83
 msgid ""
 "To facilitate searching and metric generation, all occurrence records are "
 "tied to a single global taxonomy, known as the https://www.gbif.org/dataset/"
@@ -391,13 +395,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:87
+#: en/data-processing/modules/ROOT/pages/index.adoc:84
 #, no-wrap
 msgid "Backbone matching"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:90
+#: en/data-processing/modules/ROOT/pages/index.adoc:87
 msgid ""
 "Every occurrence is assigned a `taxonKey` which points to the https://www."
 "gbif.org/composition/5H6q4htCV3xwevyc5Np7jO/data-use-club-practical-"
@@ -413,7 +417,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:92
+#: en/data-processing/modules/ROOT/pages/index.adoc:89
 msgid ""
 "In the case of homonyms or similar spelled names, the service has no way to "
 "verify the potential matches, so such names will often get higher taxon "
@@ -421,27 +425,27 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:93
+#: en/data-processing/modules/ROOT/pages/index.adoc:90
 msgid ""
 "In case a given scientific name is not (yet) part of the GBIF backbone, GBIF "
 "can at least match the record to some higher taxon, such as the genus."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:94
+#: en/data-processing/modules/ROOT/pages/index.adoc:91
 msgid ""
 "Fuzzy name matching, matching to higher taxon or matching to no taxon are "
 "issue flags we assign to records."
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:95
+#: en/data-processing/modules/ROOT/pages/index.adoc:92
 #, no-wrap
 msgid "Type status"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:97
+#: en/data-processing/modules/ROOT/pages/index.adoc:94
 msgid ""
 "The type status of a specimen is interpreted from `dwc:typeStatus` using the "
 "https://github.com/gbif/parsers/blob/master/src/main/java/org/gbif/common/"

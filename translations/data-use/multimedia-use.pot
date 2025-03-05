@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"POT-Creation-Date: 2025-03-05 16:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:6
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:4
 msgid "Note: this is work in progress."
 msgstr ""
 
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:10
+#. type: delimited block _
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:7
 msgid ""
-"____ Note that GBIF **does not** host original multimedia files and "
-"pictures, and copyright may be more restrictive for the media files than for "
-"the associated records. Any use beyond the copyright has to be approved by "
-"the original data holder.  ____"
+"Note that GBIF **does not** host original multimedia files and pictures, and "
+"copyright may be more restrictive for the media files than for the "
+"associated records. Any use beyond the copyright has to be approved by the "
+"original data holder."
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:11
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:9
 #, no-wrap
 msgid "Media displayed on the GBIF portal"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:14
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:12
 msgid ""
 "The GBIF.org portal allows to look for occurrences associated with media. "
 "For example, [pictures of otters](https://www.gbif.org/occurrence/search?"
@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:16
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:14
 msgid ""
 "Anyone can filter [GBIF occurrences](https://www.gbif.org/occurrence/search) "
 "by Media Type. Once users find what they are looking for, they can see and/"
@@ -54,13 +54,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:17
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:15
 #, no-wrap
 msgid "Images"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:20
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:18
 msgid ""
 "GBIF's searching interface has a [gallery](https://www.gbif.org/occurrence/"
 "gallery), which displays the first image available for each occurrence "
@@ -68,13 +68,13 @@ msgid ""
 msgstr ""
 
 #. type: Target for macro image
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:21
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:19
 #, no-wrap
 msgid "example_gallery.png"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:24
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:22
 msgid ""
 "Users can also view images for a particular occurrence, by simply clicking "
 "on it. See for example, this [occurrence with two images](https://www.gbif."
@@ -83,7 +83,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:26
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:24
 msgid ""
 "All the images belonging to a single dataset are visible on [its page]"
 "(https://www.gbif.org/dataset/b124e1e0-4755-430f-9eab-894f25a9b59c). The "
@@ -93,20 +93,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:27
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:25
 #, no-wrap
 msgid "Audio and Video"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:30
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:28
 msgid ""
 "Sounds and videos can be directly played from a given occurrence page "
 "through a media player."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:32
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:30
 msgid ""
 "For example, by clicking on [this occurrence](https://www.gbif.org/"
 "occurrence/1934990970) from [Xeno-canto - Bird sounds from around the world]"
@@ -115,7 +115,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:33
+#: en/data-use/modules/ROOT/pages/multimedia-use.adoc:31
 msgid ""
 "Here are some videos showing the 3D reconstruction of a specimen of sand "
 "flea by clicking on [this occurrence](https://www.gbif.org/"

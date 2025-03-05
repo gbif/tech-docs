@@ -17,19 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/tools/modules/ROOT/nav.adoc:2
-msgid "xref:tools::index.adoc[]"
-msgstr ""
-
-#. type: Plain text
-#: en/tools/modules/ROOT/nav.adoc:4
-msgid "xref:tools::data-validator.adoc[] \\ifeval::[\"{env}\" != \"prod\"]"
-msgstr ""
-
-#. type: Plain text
-#: en/tools/modules/ROOT/nav.adoc:6
-#, no-wrap
+#: en/home/modules/ROOT/partials/under-construction.adoc:6
 msgid ""
-"**Link only in UAT** xref:tools::rule-based-annotations.adoc[]\n"
-"\\endif::[]\n"
+"🚧 **This page is not published on techdocs.gbif.org.** It is only visible "
+"on the test and development sites. 🚧"
 msgstr ""
