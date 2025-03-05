@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-05 16:15+0000\n"
-"PO-Revision-Date: 2025-03-05 16:59\n"
+"POT-Creation-Date: 2025-03-05 16:58+0000\n"
+"PO-Revision-Date: 2025-03-05 18:29\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Crowdin-File-ID: 43667\n"
 
 #. type: Plain text
-#: en/home/modules/ROOT/partials/under-construction.adoc:6
-msgid "🚧 **This page is not published on techdocs.gbif.org.** It is only visible on the test and development sites. 🚧"
+#: en/home/modules/ROOT/partials/under-construction.adoc:3
+msgid "🚧 **This page is not published on techdocs.gbif.org.** It is only visible on the test and development sites (this is techdocs.gbif-{env}.org). 🚧"
 msgstr ""
 
