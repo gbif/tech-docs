@@ -110,9 +110,13 @@ Pages or parts of pages can be excluded from techdocs.gbif.org while they are un
 // — they are to avoid the text being hidden when displayed on GitHub.
 //
 
-.Hiding a whole page from techdocs.gbif.org
+.Hiding a whole page from techdocs.gbif.org — this **MUST** be at the start of the file
 [source,asciidoc]
 ----
+\ifeval::["{env}" == "prod"]
+:page-unpublish:
+\endif::[]
+
 = Page title
 
 \include::ROOT::partial$under-construction.adoc[]

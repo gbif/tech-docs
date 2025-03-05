@@ -1,3 +1,7 @@
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
+
 = Rule Based Annotations
 
 include::ROOT::partial$under-construction.adoc[]

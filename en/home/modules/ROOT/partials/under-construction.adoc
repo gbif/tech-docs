@@ -1,6 +1,3 @@
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
 ifeval::["{env}" != "prod"]
-WARNING: 🚧 **This page is not published on techdocs.gbif.org.**  It is only visible on the test and development sites. 🚧
+WARNING: 🚧 **This page is not published on techdocs.gbif.org.**  It is only visible on the test and development sites (this is techdocs.gbif-{env}.org). 🚧
 endif::[]

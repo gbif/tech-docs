@@ -1,3 +1,7 @@
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
+
 = Metadata recommendations and requirements
 
 include::ROOT::partial$under-construction.adoc[]
