@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-05 16:15+0000\n"
-"PO-Revision-Date: 2025-03-05 16:59\n"
+"POT-Creation-Date: 2025-03-05 17:08+0000\n"
+"PO-Revision-Date: 2025-03-05 18:30\n"
 "Last-Translator: \n"
 "Language-Team: Persian\n"
 "Language: fa_IR\n"
@@ -28,25 +28,21 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/nav.adoc:5
-msgid "xref:data-quality-recommendations.adoc[Data quality recommendations] \\ifeval::[\"{env}\" != \"prod\"]"
+msgid "xref:data-quality-recommendations.adoc[Data quality recommendations]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:7
-#, no-wrap
-msgid "**Link only in UAT** xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations]\n"
-"\\endif::[]\n"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:8
-#, no-wrap
-msgid "xref:multimedia-publishing.adoc[Publishing multimedia]\n"
+#: en/data-publishing/modules/ROOT/nav.adoc:6
+msgid "xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations **UAT**]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/nav.adoc:8
-#, no-wrap
-msgid "xref:register-dataset-api.adoc[Register a dataset using the API]\n"
+msgid "xref:multimedia-publishing.adoc[Publishing multimedia]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/nav.adoc:8
+msgid "xref:register-dataset-api.adoc[Register a dataset using the API]"
 msgstr ""
 
