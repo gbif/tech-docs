@@ -134,7 +134,7 @@ On the UAT system …
 [source,asciidoc]
 ----
 \ifeval::["{env}" != "prod"]
-* **Only on UAT** xref:page-name.adoc[]
+* xref:page-name.adoc[Page title **UAT**]
 \endif::[]
 ----
 
