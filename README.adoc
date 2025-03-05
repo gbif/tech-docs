@@ -113,9 +113,9 @@ Pages or parts of pages can be excluded from techdocs.gbif.org while they are un
 .Hiding a whole page from techdocs.gbif.org
 [source,asciidoc]
 ----
-\ifeval::["{env}" == "prod"]
-:page-unpublish:
-\endif::[]
+= Page title
+
+\include::ROOT::partial$under-construction.adoc[]
 ----
 
 .Hiding part of a page
@@ -130,7 +130,7 @@ On the UAT system …
 [source,asciidoc]
 ----
 \ifeval::["{env}" != "prod"]
-* xref:page-name.adoc[]
+* **Only on UAT** xref:page-name.adoc[]
 \endif::[]
 ----
 

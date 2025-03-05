@@ -1,7 +1,8 @@
 * xref:index.adoc[Introduction to data publishing in GBIF]
 * xref:dataset-classes.adoc[Dataset classes]
 ** xref:data-quality-recommendations.adoc[Data quality recommendations]
-** xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations]
+\ifeval::["{env}" != "prod"]
+** **Link only in UAT** xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations]
+\endif::[]
 * xref:multimedia-publishing.adoc[Publishing multimedia]
 * xref:register-dataset-api.adoc[Register a dataset using the API]
-

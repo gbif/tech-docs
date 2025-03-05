@@ -70,6 +70,8 @@ The GBIF website and basic search APIs do not allow excluding data from searches
 <3> Exclude occurrences with these georeferencing issues
 <4> Exclude occurrences without a month, or spanning multiple months
 
+TIP: If requesting a data cube using the website, additional WHERE clauses like this can be added by choosing "Edit as SQL" after choosing the basic cube download parameters.
+
 === Prepare dimension expressions
 
 The dimensions are the species, year-month, 1km EEA grid, sex and life stage.
@@ -141,13 +143,15 @@ IF(ISNULL(familyKey), NULL, SUM(COUNT(*)) OVER (PARTITION BY familyKey)) AS fami
 IF(ISNULL(familyKey), <1>
    NULL, <2>
      SUM(COUNT(*)) <3>
-     OVER (PARTITION BY familyKey) <4>
+     OVER (PARTITION BY familyKey, <4>
+                        PRINTF('%04d-%02d', "year", "month"),
+                        GBIF_EEARGCode(1000, decimalLatitude, decimalLongitude, COALESCE(coordinateUncertaintyInMeters, 1000)))
 ) AS familyCount
 ----
 <1> Test for a null family; we still want to include species without a family in GBIF's taxonomic backbone
 <2> Value to return for a null family
 <3> Measurement for the partition, the sum of the counts of the number of occurrences by species within this family
-<4> Partition by the family
+<4> Partition by the chosen family, keeping the other dimensions of yearMonth and eeaCellCode
 
 === Write full query
 
@@ -185,7 +189,13 @@ SELECT <1>
   MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters,
   MIN(GBIF_TemporalUncertainty(eventDate)) AS minTemporalUncertainty,
   -- Higher taxon measurement
-  IF(ISNULL(familyKey), NULL, SUM(COUNT(*)) OVER (PARTITION BY familyKey)) AS familyCount
+  IF(ISNULL(familyKey), <1>
+     NULL, <2>
+       SUM(COUNT(*)) <3>
+       OVER (PARTITION BY familyKey, <4>
+                          PRINTF('%04d-%02d', "year", "month"),
+                          GBIF_EEARGCode(1000, decimalLatitude, decimalLongitude, COALESCE(coordinateUncertaintyInMeters, 1000)))
+  ) AS familyCount
 FROM
   occurrence
 WHERE occurrenceStatus = 'PRESENT'
@@ -215,7 +225,7 @@ ORDER BY <5>
   speciesKey ASC;
 ----
 <1> These are the columns in the resulting cube, i.e. the dimensions and measurements for the cube.
-<2> The dimensions must also appear in the `GROUP BY` section. They can include functions.
+<2> The dimensions must also appear in the `GROUP BY` section and usually also in any `PARTITION BY` expressions. They can include functions.
 <3> The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, `MAX`, `AVERAGE`, `SUM` etc
 <4> `AS` gives a name to the column, used as the header in the result file
 <5> The `ORDER BY` section is optional.
@@ -228,16 +238,19 @@ See xref::api-sql-downloads.adoc[] for instructions.
 
 Note the queries above are shown in SQL format. The double quote characters, newlines and comments must be escaped/removed when converting the query to the JSON request for the API.  The submitted request is https://raw.githubusercontent.com/gbif/occurrence/refs/heads/master/occurrence-download/example-jobs/tech-docs-poland-cube.json[available here].
 
-A cube made using this query is available https://www.gbif.org/occurrence/download/0099186-240321170329656[here].
+A cube made using this query is available https://www.gbif.org/occurrence/download/0006140-250227182430271[here].
 
 [%header,format=tsv]
 |===
 yearmonth	eeacellcode	familykey	family	specieskey	species	sex	lifestage	occurrences	mincoordinateuncertaintyinmeters	mintemporaluncertainty	familycount
-2024-03	1kmE4630N3262	6537	Limacidae	2295438	Limax maximus	NOT_SUPPLIED	NOT_SUPPLIED	1	122	60	548
-2024-03	1kmE4630N3262	5298	Cervidae	5220126	Capreolus capreolus	NOT_SUPPLIED	NOT_SUPPLIED	1	122	60	4877
-2024-03	1kmE4630N3263	9608	Emberizidae	2491557	Emberiza schoeniclus	NOT_SUPPLIED	NOT_SUPPLIED	1	31	60	57742
-2024-03	1kmE4631N3260	9342	Rallidae	5228199	Gallinula chloropus	NOT_SUPPLIED	NOT_SUPPLIED	1	31	60	26391
-2024-03	1kmE4631N3263	7782	Coccinellidae	1043171	Calvia quatuordecimguttata	NOT_SUPPLIED	NOT_SUPPLIED	1	1000	60	4996
-2024-03	1kmE4632N3257	2986	Anatidae	2498036	Anser anser	NOT_SUPPLIED	NOT_SUPPLIED	1	122	60	186923
-2024-03	1kmE4632N3258	2986	Anatidae	2498252	Alopochen aegyptiaca	NOT_SUPPLIED	NOT_SUPPLIED	1	61	60	186923
+2025-02	1kmE4612N3427	3454	Mactridae	5188971	Rangia cuneata	NOT_SUPPLIED	NOT_SUPPLIED	1	1000.0	1	1
+2025-02	1kmE4612N3434	6858	Cardiidae	2286585	Cerastoderma glaucum	NOT_SUPPLIED	NOT_SUPPLIED	1	1000.0	1	1
+2025-02	1kmE4613N3421	2986	Anatidae	2498273	Clangula hyemalis	NOT_SUPPLIED	NOT_SUPPLIED	1	1000.0	1	1
+2025-02	1kmE4613N3433	6858	Cardiidae	2286585	Cerastoderma glaucum	NOT_SUPPLIED	NOT_SUPPLIED	1	1000.0	1	1
+2025-02	1kmE4613N3434	3476	Mytilidae	2285681	Mytilus trossulus	NOT_SUPPLIED	NOT_SUPPLIED	1	1000.0	1	1
+2025-02	1kmE4613N3434	6858	Cardiidae	2286585	Cerastoderma glaucum	NOT_SUPPLIED	NOT_SUPPLIED	1	1000.0	1	1
+2025-02	1kmE4613N3434	3454	Mactridae	5188971	Rangia cuneata	NOT_SUPPLIED	NOT_SUPPLIED	1	1000.0	1	1
+2025-02	1kmE4613N3435	3476	Mytilidae	2285681	Mytilus trossulus	NOT_SUPPLIED	NOT_SUPPLIED	1	1000.0	1	1
+2025-02	1kmE4622N3382	6950	Geometridae	4524740	Phigalia pilosaria	Male	Adult	1	1000.0	1	1
+2025-02	1kmE4643N3450	5235	Corvidae	2482515	Corvus cornix	NOT_SUPPLIED	Unknown	1	5.0	60	1
 |===

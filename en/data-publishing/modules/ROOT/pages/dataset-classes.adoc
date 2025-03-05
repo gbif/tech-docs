@@ -1,33 +1,30 @@
 = Dataset classes
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
-  
+
 Datasets shared with GBIF can be published in four different formats:
 
 [%autowidth.stretch]
 |===
-|Dataset type |Content 
+|Dataset type |Content
 
 |<<Metadata-only>>
-|datasets describing **unavailable** resources like undigitized natural history collections or data that are not yet standardized 
+|datasets describing **unavailable** resources like undigitized natural history collections or data that are not yet standardized
 
-|<<Checklist>> 
+|<<Checklist>>
 |a **catalogue** or **list** of named organisms, or taxa
 
-|<<Occurrence>> 
+|<<Occurrence>>
 |the evidence of the **occurrence of a species** (or other taxon) at a particular place on a specified date
 
-|<<Sampling event>> 
+|<<Sampling event>>
 |offering evidence that a species occurred at a given location and date, but also making it possible to **assess community composition** for broader taxonomic groups or even the **abundance of species** at multiple times and places
-  
+
 |===
 
 The four dataset classes supported by GBIF start simple and become progressively richer, more structured and more complex. This https://data-blog.gbif.org/post/choose-dataset-type/[blog post] can help you choose a dataset class if you are new to GBIF publishing.
 
-Some fields are strongly recommended to be included in the different dataset classes and some may be required if the dataset is funded through a programme operated by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]). 
-                                                                                                                                                                             
-Data quality requirements for each dataset class and the GBIF-operated programmes are documented xref:data-quality-recommendations.adoc[here]. GBIF provides access to several https://techdocs.gbif-uat.org/en/data-publishing/#tools-to-quality-check-your-publication[tools] to assess data quality before publication.  
+Some fields are strongly recommended to be included in the different dataset classes and some may be required if the dataset is funded through a programme operated by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP]).
+
+Data quality requirements for each dataset class and the GBIF-operated programmes are documented xref:data-quality-recommendations.adoc[here]. GBIF provides access to several xref:index.adoc#tools-to-quality-check-your-publication[tools] to assess data quality before publication.
 
 == Metadata-only [[Metadata-only]]
 
@@ -35,7 +32,7 @@ At its simplest level, institutions can create datasets describing unavailable r
 
 [grid=none]
 |===
-|https://www.gbif.org/dataset/search?type=METADATA[Browse metadata-only datasets] 
+|https://www.gbif.org/dataset/search?type=METADATA[Browse metadata-only datasets]
 
 |===
 

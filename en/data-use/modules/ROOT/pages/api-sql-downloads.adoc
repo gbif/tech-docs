@@ -86,7 +86,7 @@ Only `SELECT` queries are supported, and only queries against a single table nam
 
 `GROUP BY` queries are supported, as are basic SQL window functions (`OVER` and `PARTITION BY`). The group and partition filters (`HAVING` and `QUALIFY`) are not yet supported.
 
-Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT`, `IS NULL`, `RAND()`, `ROUND(…)`, `LOWER(…)`, etc.
+Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT`, `IS NULL`, `RAND()`, `ROUND(…)`, `LOWER(…)`, etc.  Note `BETWEEN` is not supported, use `>`, `>=`, `<` and `<=` instead.
 
 Aggregate functions are also supported, for example `COUNT(…)`, `MIN(…)`, `MAX(…)`, `AVERAGE(…)`.
 
@@ -160,8 +160,7 @@ Within the SQL query itself:
 . When column and function names aren't quoted, the letter case doesn't matter: `basisOfRecord`, `basisofrecord`, `gbif_eeargcode(…)`, `GBIF_EEARGCode(…)`.
 . String values use single quotes, like `basisOfRecord = 'HUMAN_OBSERVATION'`.
 . SQL comments (lines beginning `--{nbsp}`) cannot be included in queries.
-. Columns with numeric types must be filtered using numbers, not quoted string values — use `taxonkey IN (1234, 5687)` or `year >= 2020`.
-. The column name for the taxonomic order is currently `order_`.  (It will later be corrected to `"order"`.)
+. Columns with numeric types must be filtered using numbers, not quoted string values — use `taxonkey IN (1234, 5687)` or `"year" >= 2020`.
 
 When converting the SQL query to JSON for submission to the API:
 

@@ -1,12 +1,10 @@
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
+include::ROOT::partial$under-construction.adoc[]
 
 Note: this is work in progress.
 
-____  
+____
 Note that GBIF **does not** host original multimedia files and pictures, and copyright may be more restrictive for the media files than for the associated records. Any use beyond the copyright has to be approved by the original data holder.
-____  
+____
 
 == Media displayed on the GBIF portal
 

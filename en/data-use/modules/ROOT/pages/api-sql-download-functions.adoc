@@ -544,12 +544,14 @@ This function returns the array elements separated by the separator.
 
 [source,sql]
 ----
-STRING GBIF_TemporalUncertainty(String dateInterval)
+STRING GBIF_TemporalUncertainty(String dateInterval,
+                                String time)
 ----
 
 *Parameters:*
 
 `dateInterval`:: A string containing an ISO-8106 date or date interval.
+`time`:: A string containing an ISO-8106 time, or `null` if not required.
 
 *Return value:*
 

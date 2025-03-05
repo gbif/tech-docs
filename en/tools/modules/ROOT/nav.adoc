@@ -1,6 +1,8 @@
 * xref:tools::index.adoc[]
 * xref:tools::data-validator.adoc[]
-* xref:tools::rule-based-annotations.adoc
+\ifeval::["{env}" != "prod"]
+* **Link only in UAT** xref:tools::rule-based-annotations.adoc[]
+\endif::[]
 
 ////
 ToDo: clarify what kind of menu to include here

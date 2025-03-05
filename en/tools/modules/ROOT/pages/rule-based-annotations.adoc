@@ -1,7 +1,6 @@
 = Rule Based Annotations
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
+
+include::ROOT::partial$under-construction.adoc[]
 
 NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently available for preview on the GBIF test environment, https://www.gbif-uat.org/[GBIF-UAT.org].
 
@@ -52,7 +51,7 @@ Seeding `rulesets` into our annotation store provides several benefits, especial
 
 === Introduction to internal and external pilot users ✓
 
-Before releasing the rule based annotations tool to the public, it will undergo internal and external piloting phase. In this phase, pilot users will be given a small annotations task within a group they are familiar. The pilot users will then be interviewed about their overall experience, particularly if there were any "rules" or annotations they wanted but make but could not. 
+Before releasing the rule based annotations tool to the public, it will undergo internal and external piloting phase. In this phase, pilot users will be given a small annotations task within a group they are familiar. The pilot users will then be interviewed about their overall experience, particularly if there were any "rules" or annotations they wanted but make but could not.
 
 === Data paper
 
@@ -64,29 +63,29 @@ One of the final tasks will be the development of data cleaning workflows using 
 
 == User Guide
 
-If you are reading this you have been approached as potential pilot annotator, and you have probably been asked to complete a small but useful annotation task that is useful for you. This guide is meant to as an aid to get you started. 
+If you are reading this you have been approached as potential pilot annotator, and you have probably been asked to complete a small but useful annotation task that is useful for you. This guide is meant to as an aid to get you started.
 
-=== Using the UI 
+=== Using the UI
 
 https://labs.gbif.org/annotations/iframe.html?args=&id=tools-annotations--standalone-example&view=RULES&viewMode=story[UI link]
 
-If you are a pilot user, you should already have your project ruleset permissions set up for you. 
+If you are a pilot user, you should already have your project ruleset permissions set up for you.
 
 === How to make rules
 
-To make a rule 
+To make a rule
 
-1. Log in with your GBIF username and password. 
+1. Log in with your GBIF username and password.
 
-2.  Select the project and ruleset you want to make a rule in. Alternatively, you can leave these blank if you want to make a one-off rule. 
+2.  Select the project and ruleset you want to make a rule in. Alternatively, you can leave these blank if you want to make a one-off rule.
 
 image::annotations/select_project.png[width=80%]
 
-2. draw a polygon or select region you want to make the rule about. 
+2. draw a polygon or select region you want to make the rule about.
 
 image::annotations/make_rule.png[width=80%]
 
-3. Next apply your label. 
+3. Next apply your label.
 
 .Controlled vocabulary for locations
 [width="100%",options="header,footer"]
@@ -100,23 +99,23 @@ image::annotations/make_rule.png[width=80%]
 | Suspicious | Occurrences occurring in the designated area might be in error in some way.
 |====================
 
-If vocabulary this doesn't work for you, please pick the closest fitting, and request additional vocabulary in your feedback. 
+If vocabulary this doesn't work for you, please pick the closest fitting, and request additional vocabulary in your feedback.
 
-Create your rule. 
+Create your rule.
 
 === Good rules
 
-While there is not absolute definition of a good rule and a bad one. 
+While there is not absolute definition of a good rule and a bad one.
 
 Good annotations usually have a few properties:
 
-1. Good annotations usually don't use extremely complex polygons. If you find yourself needing to trace the coastline of Italy, you might be doing too much work. A good annotation should take into account a little bit of buffer to take into account occurrence record uncertainty. Many GBIF mediated occurrences do not have the resolution to justify making highly complex polygons. Also it's difficult for us to store very large polygons. 
+1. Good annotations usually don't use extremely complex polygons. If you find yourself needing to trace the coastline of Italy, you might be doing too much work. A good annotation should take into account a little bit of buffer to take into account occurrence record uncertainty. Many GBIF mediated occurrences do not have the resolution to justify making highly complex polygons. Also it's difficult for us to store very large polygons.
 2. Good annotations take into account future occurrence records. Remember that your annotations should be able to fit future occurrence fairly well.
 3. Good annotations also try to think about higher taxonomy and simplification.
 
-// === Desired feedback 
+// === Desired feedback
 
-// The current UI isn't meant to be a finished product. There are many missing features that we are well aware of. We appreciate feedback about the UI, and it is almost impossible to avoid, but we are much more interested in the qestions below. 
+// The current UI isn't meant to be a finished product. There are many missing features that we are well aware of. We appreciate feedback about the UI, and it is almost impossible to avoid, but we are much more interested in the qestions below.
 
 // Desired feedback during the pilot phase:
 
@@ -124,7 +123,7 @@ Good annotations usually have a few properties:
 // * Do you think you will be able to use the rules you made to create an improved and useful dataset?
 // * Is there any controlled vocabulary that you would like to add?
 // * Was it clear what you were doing and why?
-// * Did you find the seeded rules useful? 
+// * Did you find the seeded rules useful?
 
 // Less interesting feedback but still appreciated:
 
@@ -171,7 +170,7 @@ image::annotations/penguins.png[]
 
 Using a small controlled vocabulary over in an annotation system offers several advantages to downstream users. Finding the right level of granularity and flexibility within the controlled vocabulary is key to reaping the benefits while accommodating the specific needs of the annotation user.
 
-.Example annotation that marks any occurrences of lions in Greenland as suspicious. 
+.Example annotation that marks any occurrences of lions in Greenland as suspicious.
 image::annotations/lions-greenland.png[width=80%]
 
 // === Focus on location

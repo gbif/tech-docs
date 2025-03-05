@@ -1,7 +1,4 @@
 = Data quality recommendations
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
 
 The required terms in the tables are the minimal terms to include for GBIF to index the data. By following the data quality recommendations, data publishers can improve the quality, completeness and value of their datasets. The data Class or category of the individual Darwin Core Terms are indicated by the following colours:
 
@@ -17,7 +14,7 @@ https://dwc.tdwg.org/terms/#taxon[Taxon^]
 
 [NOTE.location]
 ====
-https://dwc.tdwg.org/terms/#location[Location^] 
+https://dwc.tdwg.org/terms/#location[Location^]
 ====
 
 [NOTE.occurrence]

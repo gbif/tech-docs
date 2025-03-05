@@ -1,7 +1,3 @@
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
-
 = Sharing images, sounds and videos on GBIF
 
 IMPORTANT: GBIF **does not** host original multimedia files and pictures cannot be uploaded directly to the platform.
