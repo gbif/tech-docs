@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-27 12:03+0000\n"
-"PO-Revision-Date: 2025-02-27 12:33\n"
+"POT-Creation-Date: 2025-03-05 16:15+0000\n"
+"PO-Revision-Date: 2025-03-05 16:58\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar_SA\n"
@@ -203,7 +203,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:90
-msgid "Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT`, `IS NULL`, `RAND()`, `ROUND(…)`, `LOWER(…)`, etc."
+msgid "Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT`, `IS NULL`, `RAND()`, `ROUND(…)`, `LOWER(…)`, etc.  Note `BETWEEN` is not supported, use `>`, `>=`, `<` and `<=` instead."
 msgstr ""
 
 #. type: Plain text
@@ -402,31 +402,26 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:164
-msgid "Columns with numeric types must be filtered using numbers, not quoted string values — use `taxonkey IN (1234, 5687)` or `year >= 2020`."
+msgid "Columns with numeric types must be filtered using numbers, not quoted string values — use `taxonkey IN (1234, 5687)` or `\"year\" >= 2020`."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:165
-msgid "The column name for the taxonomic order is currently `order_`.  (It will later be corrected to `\"order\"`.)"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:167
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:166
 msgid "When converting the SQL query to JSON for submission to the API:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:169
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:168
 msgid "JSON uses double quotes for attributes and values, so when the SQL is written values containing double quotes must have these escaped using `\\\"`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:170
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:169
 msgid "Newlines, if used, should be replaced with either spaces ` ` or `\\n`"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:181
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:180
 #, no-wrap
 msgid "{\n"
 "  \"sendNotification\": true,\n"
@@ -439,43 +434,43 @@ msgid "{\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:184
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:183
 msgid "It can be convenient to work with neatly formatted SQL files, and convert them to JSON format automatically:"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:189
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:188
 #, no-wrap
 msgid "# Using jq\n"
 "grep -v -- '--' neat-query.sql | jq -R -s .\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:192
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:191
 #, no-wrap
 msgid "# Using Python\n"
 "grep -v -- '--' neat-query.sql | python3 -c 'import sys, json; print(json.dumps(sys.stdin.read()))'\n"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:195
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:194
 #, no-wrap
 msgid "Further examples"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:198
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:197
 msgid "For a complete example of generating a data cube see the xref::data-cubes.adoc[] page."
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:200
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:199
 #, no-wrap
 msgid "Known issues"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:202
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:201
 msgid "Known faults with the system are tracked https://github.com/gbif/occurrence-cube/issues[on GitHub]."
 msgstr ""
 
