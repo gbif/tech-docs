@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-05 16:15+0000\n"
+"POT-Creation-Date: 2025-03-05 16:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,26 +16,20 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. == Data publishing FAQ
-#. * change occurrence IDs
-#. * citations
-#. == Other
-#. (Moved here from the main menu.)
-#. * DNA derived data
 #. type: Title =
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:1
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:5
 #, no-wrap
 msgid "Metadata recommendations and requirements"
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:5
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:9
 #, no-wrap
 msgid "Background to the GBIF Metadata Profile"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:8
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:12
 msgid ""
 "The https://rs.gbif.org/schema/eml-gbif-profile/1.3/[GBIF EML Profile] was "
 "developed to standardize how resources get described at the dataset level in "
@@ -44,7 +38,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:10
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:14
 msgid ""
 "In the GBIF EML Profile, there is a minimum set of mandatory elements "
 "required for identification, but it is recommended that as many elements be "
@@ -53,13 +47,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:12
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:16
 #, no-wrap
 msgid "Things to consider"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:15
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:19
 msgid ""
 "Metadata describes and explains the context of a dataset, and can vary in "
 "completeness. In general, metadata should allow a prospective end user of "
@@ -67,33 +61,33 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:17
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:21
 msgid "Identify/discover its existence,"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:18
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:22
 msgid "Learn how to access or acquire the data,"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:19
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:23
 msgid "Understand its fitness-for-use, and"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:20
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:24
 msgid "Learn how to transfer (obtain a copy of) the data."
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:22
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:26
 #, no-wrap
 msgid "Metadata Elements"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:25
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:29
 msgid ""
 "The GBIF EML Profile is primarily based on the https://eml.ecoinformatics."
 "org/[Ecological Metadata Language (EML)]. The GBIF profile utilizes a subset "
@@ -104,88 +98,88 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:27
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:38
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:31
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:42
 #, no-wrap
 msgid "Dataset (Resource)"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:28
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:91
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:32
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:95
 #, no-wrap
 msgid "Project"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:29
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:129
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:33
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:133
 #, no-wrap
 msgid "People and Organizations"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:30
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:34
 msgid "Keyword Set (General Keywords)"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:31
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:207
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:35
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:211
 #, no-wrap
 msgid "Coverage"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:32
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:211
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:36
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:215
 #, no-wrap
 msgid "Taxonomic Coverage"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:33
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:240
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:37
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:244
 #, no-wrap
 msgid "Geographic Coverage"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:34
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:269
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:38
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:273
 #, no-wrap
 msgid "Temporal Coverage"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:35
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:290
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:39
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:294
 #, no-wrap
 msgid "Methods"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:36
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:319
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:40
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:323
 #, no-wrap
 msgid "Intellectual Property Rights"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:37
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:41
 msgid ""
 "Additional Metadata + NCD (Natural Collections Descriptions Data) Related"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:41
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:45
 msgid ""
 "The https://eml.ecoinformatics.org/schema/eml-dataset_xsd#eml-dataset."
 "xsd[dataset] field has elements relating to a single dataset (resource)."
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:89
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:93
 #, no-wrap
 msgid ""
 "| Term name | Description | Example\n"
@@ -236,7 +230,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:94
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:98
 msgid ""
 "The https://eml.ecoinformatics.org/schema/eml-project_xsd#eml-project."
 "xsd[project] field contains information on the project in which this dataset "
@@ -245,7 +239,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:127
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:131
 #, no-wrap
 msgid ""
 "| Term | Definition | Example\n"
@@ -281,14 +275,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:132
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:136
 msgid ""
 "Several fields could represent either a person or an organization. Below is "
 "a list of the various fields used to describe a person or organization."
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:188
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:192
 #, no-wrap
 msgid ""
 "| Term | Definition | Example\n"
@@ -347,20 +341,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:190
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:194
 #, no-wrap
 msgid "KeywordSet (General Keywords)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:193
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:197
 msgid ""
 "The keywordSet field is a wrapper for the keyword and keywordThesaurus "
 "elements, both of which are required together."
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:205
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:209
 #, no-wrap
 msgid ""
 "| Term         | Definition | Example\n"
@@ -375,7 +369,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:210
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:214
 msgid ""
 "Describes the extent of the https://eml.ecoinformatics.org/schema/eml-"
 "resource_xsd#ResourceGroup_coverage[coverage] of the resource in terms of "
@@ -383,7 +377,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:214
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:218
 msgid ""
 "A container for taxonomic information about a resource. It includes a list "
 "of species names (or higher level ranks) from one or more classification "
@@ -392,7 +386,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:238
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:242
 #, no-wrap
 msgid ""
 "| Term | Definition | Example\n"
@@ -419,7 +413,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:243
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:247
 msgid ""
 "A container for spatial information about a resource; allows a bounding box "
 "for the overall https://eml.ecoinformatics.org/schema/eml-"
@@ -428,7 +422,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:267
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:271
 #, no-wrap
 msgid ""
 "| Term  | Definition | Example\n"
@@ -455,7 +449,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:272
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:276
 msgid ""
 "This container allows https://eml.ecoinformatics.org/schema/eml-"
 "coverage_xsd#Coverage_temporalCoverage[coverage] to be a single point in "
@@ -463,7 +457,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:288
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:292
 #, no-wrap
 msgid ""
 "| Term       | Definition | Example\n"
@@ -482,7 +476,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:293
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:297
 msgid ""
 "This field documents scientific https://eml.ecoinformatics.org/schema/eml-"
 "dataset_xsd#DatasetType_methods[methods] used in the collection of the "
@@ -491,7 +485,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:317
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:321
 #, no-wrap
 msgid ""
 "| Term            | Definition | #Example#\n"
@@ -518,14 +512,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:322
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:326
 msgid ""
 "Contain a rights management statement for the resource, or a reference to a "
 "service providing such information."
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:332
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:336
 #, no-wrap
 msgid ""
 "| Term           | Definition\n"
@@ -538,13 +532,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:334
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:338
 #, no-wrap
 msgid "#Additional Metadata + http://www.tdwg.org/activities/ncd/[Natural Collections Description Data (NCD)] Related#"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:337
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:341
 msgid ""
 "The additionalMetadata field is a container for any other relevant metadata "
 "that pertains to the resource being described. This field allows EML to be "
@@ -555,7 +549,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:397
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:401
 #, no-wrap
 msgid ""
 "| Term                   | Definition | Example\n"
@@ -618,13 +612,13 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:398
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:402
 #, no-wrap
 msgid "an exact number of “JGI-units” in the collection plus a measure of uncertainty (± x);\n"
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:402
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:406
 #, no-wrap
 msgid ""
 "a range of numbers (x to x), with the lower value representing an exact number, when the higher value is omitted.\n"
@@ -634,7 +628,7 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:404
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:408
 #, no-wrap
 msgid "Required metadata"
 msgstr ""

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-05 16:15+0000\n"
+"POT-Creation-Date: 2025-03-05 16:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/home/modules/ROOT/partials/under-construction.adoc:6
+#: en/home/modules/ROOT/partials/under-construction.adoc:3
 msgid ""
 "🚧 **This page is not published on techdocs.gbif.org.** It is only visible "
-"on the test and development sites. 🚧"
+"on the test and development sites (this is techdocs.gbif-{env}.org). 🚧"
 msgstr ""
