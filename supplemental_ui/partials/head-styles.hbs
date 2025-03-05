@@ -5,4 +5,5 @@
     <link rel="alternate" hreflang="x-default" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/en{{page.url}}" />
     <link rel="alternate" hreflang="en" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/en{{page.url}}" />
     {{~#if (ne env "prod")}}<link rel="alternate" hreflang="es" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/es{{page.url}}" />{{/if~}}
+    {{~#if (ne env "prod")}}<link rel="alternate" hreflang="fr" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/fr{{page.url}}" />{{/if~}}
     {{~#if (ne env "prod")}}<link rel="alternate" hreflang="pt" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/it{{page.url}}" />{{/if~}}
