@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-05 16:15+0000\n"
-"PO-Revision-Date: 2025-03-05 16:59\n"
+"POT-Creation-Date: 2025-03-05 17:08+0000\n"
+"PO-Revision-Date: 2025-03-05 18:29\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -23,13 +23,11 @@ msgstr ""
 
 #. type: Plain text
 #: en/tools/modules/ROOT/nav.adoc:4
-msgid "xref:tools::data-validator.adoc[] \\ifeval::[\"{env}\" != \"prod\"]"
+msgid "xref:tools::data-validator.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/tools/modules/ROOT/nav.adoc:6
-#, no-wrap
-msgid "**Link only in UAT** xref:tools::rule-based-annotations.adoc[]\n"
-"\\endif::[]\n"
+#: en/tools/modules/ROOT/nav.adoc:5
+msgid "xref:tools::rule-based-annotations.adoc[Rule-based annotations **UAT**]"
 msgstr ""
 
