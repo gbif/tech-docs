@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2024-12-16 15:14+0000\n"
-"PO-Revision-Date: 2025-02-04 17:46\n"
+"PO-Revision-Date: 2025-03-03 14:24\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -21,13 +21,13 @@ msgstr ""
 #: en/home/modules/ROOT/pages/get-started.adoc:6
 #, no-wrap
 msgid "Data publishing"
-msgstr ""
+msgstr "Publication de données"
 
 #. type: Title =
 #: en/home/modules/ROOT/pages/get-started.adoc:1
 #, no-wrap
 msgid "Get started"
-msgstr ""
+msgstr "Commencer"
 
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:4
@@ -37,45 +37,45 @@ msgstr ""
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:7
 msgid "The topic is relevant for new as well as experienced data publishers in GBIF"
-msgstr ""
+msgstr "Ce sujet est utile pour tous les fournisseurs de données du GBIF, les novices et chevronnés."
 
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:8
 msgid "GBIF data processing & quality checks"
-msgstr ""
+msgstr "Traitement et contrôle qualité des données par le GBIF"
 
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:9
 msgid "This section describes what happens to the data after you publish to GBIF and the efforts GBIF makes to standardze and clean the data for ease of use"
-msgstr ""
+msgstr "Cette section explique comment les données sont traitées une fois publiés sur le GBIF et les processus pour standardiser et nettoyer les données pour faciliter leur utilisation"
 
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:10
 msgid "Data use"
-msgstr ""
+msgstr "Untilisation de données"
 
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:11
 msgid "How to get the data you want from GBIF and how to process it"
-msgstr ""
+msgstr "Comment obtenir et traiter les données souhaitées du GBIF"
 
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:12
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:13
 msgid "Everything you need to know about the APIs GBIF use and how you can use them too!"
-msgstr ""
+msgstr "Tout savoir sur l'utilisation des APIs du GBIF"
 
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:14
 msgid "Other GBIF services"
-msgstr ""
+msgstr "Autres services du GBIF"
 
 #. type: Plain text
 #: en/home/modules/ROOT/pages/get-started.adoc:14
 msgid "Registry, grscicoll, vocabulary server etc."
-msgstr ""
+msgstr "Registre, GRSciColl (Registre Global de Collections Scientifiques), vocabulaires, etc."
 
