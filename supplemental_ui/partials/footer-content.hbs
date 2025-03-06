@@ -1,0 +1,24 @@
+<footer class="footer">
+  <div class="horizontal-stripe light-background">
+    <div class="footer-container">
+      <nav class="site-footer__menu">
+{{#if (ne env.env "prod")}}
+        <div>
+          <span style='text-transform: uppercase'>{{ env.env }}</span> site generated at {{ env.date }}.
+        </div>
+{{/if}}
+        <div>
+{{> footer-nav }}
+        </div>
+        <div>
+          <strong>GBIF Secretariat</strong> • Universitetsparken 15 • DK-2100 Copenhagen Ø • Denmark
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="horizontal-stripe">
+    <div class="footer-container">
+      <a href="https://www.gbif.org/"><img src="https://www.gbif.org/img/full_logo_white.svg" alt="GBIF"></a>
+    </div>
+  </div>
+</footer>

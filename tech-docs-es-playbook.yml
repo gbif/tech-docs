@@ -7,37 +7,37 @@ content:
   sources:
     - url: .
       start_path: ./es/home
-      branches: main
+      branches: HEAD
     - url: .
       start_path: ./es/data-publishing
-      branches: main
+      branches: HEAD
     - url: .
       start_path: ./es/data-processing
-      branches: main
+      branches: HEAD
     - url: .
       start_path: ./es/data-use
-      branches: main
+      branches: HEAD
     - url: .
       start_path: ./es/cloud-services
-      branches: main
+      branches: HEAD
     - url: .
       start_path: ./es/openapi
-      branches: main
+      branches: HEAD
     - url: .
       start_path: ./es/openapi-v1
-      branches: main
+      branches: HEAD
     - url: .
       start_path: ./es/openapi-v2
-      branches: main
+      branches: HEAD
     - url: .
       start_path: ./es/tools
-      branches: main
+      branches: HEAD
     - url: .
       start_path: ./es/system-components
-      branches: main
+      branches: HEAD
     #- url: .
     #  start_path: ./es/guides
-    #  branches: main
+    #  branches: HEAD
     #- url: https://github.com/gbif/ipt.git
     #  branches: [ipt-2.4-docs, master]
     #  edit_url: 'https://github.com/gbif/ipt/edit/master/{path}'

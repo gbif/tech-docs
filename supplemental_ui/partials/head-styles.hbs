@@ -2,8 +2,29 @@
     <link rel="stylesheet" href="{{{uiRootPath}}}/css/icons.css">
     <link rel="stylesheet" href="{{{uiRootPath}}}/css/special-pages.css">
 
+    <!-- Build environment: {{ env.env }} -->
+
     <link rel="alternate" hreflang="x-default" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/en{{page.url}}" />
     <link rel="alternate" hreflang="en" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/en{{page.url}}" />
-    {{~#if (ne env "prod")}}<link rel="alternate" hreflang="es" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/es{{page.url}}" />{{/if~}}
-    {{~#if (ne env "prod")}}<link rel="alternate" hreflang="fr" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/fr{{page.url}}" />{{/if~}}
-    {{~#if (ne env "prod")}}<link rel="alternate" hreflang="pt" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/it{{page.url}}" />{{/if~}}
+    {{#if (ne env.env "prod")}}<link rel="alternate" hreflang="es" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/es{{page.url}}" />{{/if}}
+    {{#if (ne env.env "prod")}}<link rel="alternate" hreflang="fr" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/fr{{page.url}}" />{{/if}}
+    {{#if (ne env.env "prod")}}<link rel="alternate" hreflang="pt" href="https://techdocs.gbif{{#if (and env.env (not (eq env.env 'prod')))}}-{{env.env}}{{/if}}.org/pt{{page.url}}" />{{/if}}
+
+    {{#if (ne env.env "prod")}}<style type="text/css">
+      .gbif-logo::before {
+        content: '{{ env.env }}';
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: bolder;
+        background: tomato;
+        color: #fff;
+        padding: 2 4px;
+        border-radius: 3px;
+      }
+      nav.navbar {
+        background: repeating-linear-gradient(45deg, rgb(117, 180, 117), rgb(114, 178, 114) 10px, rgb(97, 168, 97) 10px, rgb(97, 168, 97) 20px);
+      }
+      body {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='800px' width='800px'><text transform='translate(200, 200) rotate(-45)' text-anchor='middle' dominant-baseline='middle' fill='rgb(245,245,245)' font-size='80' font-family='sans-serif' font-weight='bold'>{{ env.env }}</text></svg>")
+      }
+    </style>{{/if}}
