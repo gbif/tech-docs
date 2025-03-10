@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-05 17:08+0000\n"
+"POT-Creation-Date: 2025-03-05 16:58+0000\n"
 "PO-Revision-Date: 2025-03-05 18:29\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
@@ -13,21 +13,11 @@ msgstr ""
 "X-Crowdin-Project: gbif-tech-docs\n"
 "X-Crowdin-Project-ID: 746653\n"
 "X-Crowdin-Language: ar\n"
-"X-Crowdin-File: /main/translations/tools/nav.pot\n"
-"X-Crowdin-File-ID: 43384\n"
+"X-Crowdin-File: /main/translations/home/under-construction.pot\n"
+"X-Crowdin-File-ID: 43667\n"
 
 #. type: Plain text
-#: en/tools/modules/ROOT/nav.adoc:2
-msgid "xref:tools::index.adoc[]"
-msgstr ""
-
-#. type: Plain text
-#: en/tools/modules/ROOT/nav.adoc:4
-msgid "xref:tools::data-validator.adoc[]"
-msgstr ""
-
-#. type: Plain text
-#: en/tools/modules/ROOT/nav.adoc:5
-msgid "xref:tools::rule-based-annotations.adoc[Rule-based annotations **UAT**]"
+#: en/home/modules/ROOT/partials/under-construction.adoc:3
+msgid "🚧 **This page is not published on techdocs.gbif.org.** It is only visible on the test and development sites (this is techdocs.gbif-{env}.org). 🚧"
 msgstr ""
 
