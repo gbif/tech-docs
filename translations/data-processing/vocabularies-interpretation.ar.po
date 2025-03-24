@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-24 12:08+0000\n"
-"PO-Revision-Date: 2025-03-24 12:13\n"
+"POT-Creation-Date: 2025-03-24 12:20+0000\n"
+"PO-Revision-Date: 2025-03-24 13:50\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar_SA\n"
@@ -36,7 +36,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:13
 #, no-wrap
-msgid "LifeStage"
+msgid "https://registry.gbif.org/vocabulary/LifeStage[LifeStage]"
 msgstr ""
 
 #. type: Plain text
@@ -52,7 +52,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:17
 #, no-wrap
-msgid "DegreeOfEstablishment"
+msgid "https://registry.gbif.org/vocabulary/DegreeOfEstablishment[DegreeOfEstablishment]"
 msgstr ""
 
 #. type: Plain text
@@ -73,7 +73,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:21
 #, no-wrap
-msgid "EstablishmentMeans"
+msgid "https://registry.gbif.org/vocabulary/EstablishmentMeans[EstablishmentMeans]"
 msgstr ""
 
 #. type: Plain text
@@ -84,7 +84,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:25
 #, no-wrap
-msgid "Pathway"
+msgid "https://registry.gbif.org/vocabulary/Pathway[Pathway]"
 msgstr ""
 
 #. type: Plain text
@@ -95,7 +95,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:29
 #, no-wrap
-msgid "EventType"
+msgid "https://registry.gbif.org/vocabulary/EventType[EventType]"
 msgstr ""
 
 #. type: Plain text
@@ -106,7 +106,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:33
 #, no-wrap
-msgid "TypeStatus"
+msgid "https://registry.gbif.org/vocabulary/TypeStatus[TypeStatus]"
 msgstr ""
 
 #. type: Plain text
@@ -114,11 +114,10 @@ msgstr ""
 msgid "Term: http://rs.tdwg.org/dwc/terms/typeStatus"
 msgstr ""
 
-#. type: Plain text
+#. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:37
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:23
 #, no-wrap
-msgid "Sex"
+msgid "https://registry.gbif.org/vocabulary/Sex[Sex]"
 msgstr ""
 
 #. type: Plain text
@@ -134,12 +133,12 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:41
 #, no-wrap
-msgid "GeoTime"
+msgid "https://registry.gbif.org/vocabulary/GeoTime[GeoTime]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:43
-msgid "Term:"
+msgid "Terms:"
 msgstr ""
 
 #. type: Plain text
@@ -194,7 +193,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:56
-msgid "Note that the interpretation of the geological terms produce the geologicalTime term to make search on these fields easier."
+msgid "Note that the interpretation of the geological terms produces the _geologicalTime_ term to make search on these fields easier."
 msgstr ""
 
 #. type: Title ==
