@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-24 12:08+0000\n"
+"POT-Creation-Date: 2025-03-24 12:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:13
 #, no-wrap
-msgid "LifeStage"
+msgid "https://registry.gbif.org/vocabulary/LifeStage[LifeStage]"
 msgstr ""
 
 #. type: Plain text
@@ -140,7 +140,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:43
-msgid "Term:"
+msgid "Terms:"
 msgstr ""
 
 #. type: Plain text
@@ -196,8 +196,8 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:56
 msgid ""
-"Note that the interpretation of the geological terms produce the "
-"geologicalTime term to make search on these fields easier."
+"Note that the interpretation of the geological terms produces the "
+"_geologicalTime_ term to make search on these fields easier."
 msgstr ""
 
 #. type: Title ==
