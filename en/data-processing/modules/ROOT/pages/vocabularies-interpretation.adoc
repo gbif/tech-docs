@@ -14,31 +14,31 @@ We are currently using the following vocabularies in the data interpretation:
 * Term: http://rs.tdwg.org/dwc/terms/lifeStage
 * Prefilter: remove numeric prefix
 
-=== DegreeOfEstablishment
+=== https://registry.gbif.org/vocabulary/DegreeOfEstablishment[DegreeOfEstablishment]
 * Term: http://rs.tdwg.org/dwc/terms/degreeOfEstablishment
 * Prefilter:
 
-=== EstablishmentMeans
+=== https://registry.gbif.org/vocabulary/EstablishmentMeans[EstablishmentMeans]
 * Term: http://rs.tdwg.org/dwc/terms/establishmentMeans
 * Prefilter:
 
-=== Pathway
+=== https://registry.gbif.org/vocabulary/Pathway[Pathway]
 * Term: http://rs.tdwg.org/dwc/terms/pathway
 * Prefilter:
 
-=== EventType
+=== https://registry.gbif.org/vocabulary/EventType[EventType]
 * Term: http://rs.gbif.org/terms/1.0/eventType
 * Prefilter:
 
-=== TypeStatus
+=== https://registry.gbif.org/vocabulary/TypeStatus[TypeStatus]
 * Term: http://rs.tdwg.org/dwc/terms/typeStatus
 * Prefilter:
 
-=== Sex
+=== https://registry.gbif.org/vocabulary/Sex[Sex]
 * Term: http://rs.tdwg.org/dwc/terms/sex: Sex
 * Prefilter: remove positive numbers
 
-=== GeoTime
+=== https://registry.gbif.org/vocabulary/GeoTime[GeoTime]
 * Terms:
 ** http://rs.tdwg.org/dwc/terms/earliestEonOrLowestEonothem
 ** http://rs.tdwg.org/dwc/terms/latestEonOrHighestEonothem
