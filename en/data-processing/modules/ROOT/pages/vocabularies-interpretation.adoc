@@ -10,7 +10,7 @@ include::ROOT::partial$under-construction.adoc[]
 
 We are currently using the following vocabularies in the data interpretation:
 
-=== LifeStage
+=== https://registry.gbif.org/vocabulary/LifeStage[LifeStage]
 * Term: http://rs.tdwg.org/dwc/terms/lifeStage
 * Prefilter: remove numeric prefix
 
@@ -39,7 +39,7 @@ We are currently using the following vocabularies in the data interpretation:
 * Prefilter: remove positive numbers
 
 === GeoTime
-* Term:
+* Terms:
 ** http://rs.tdwg.org/dwc/terms/earliestEonOrLowestEonothem
 ** http://rs.tdwg.org/dwc/terms/latestEonOrHighestEonothem
 ** http://rs.tdwg.org/dwc/terms/earliestEraOrLowestErathem
@@ -52,7 +52,7 @@ We are currently using the following vocabularies in the data interpretation:
 ** http://rs.tdwg.org/dwc/terms/latestAgeOrHighestStage
 * Prefilter:
 
-Note that the interpretation of the geological terms produce the geologicalTime term to make search on these fields easier.
+Note that the interpretation of the geological terms produces the _geologicalTime_ term to make search on these fields easier.
 
 
 == Source of the vocabularies
