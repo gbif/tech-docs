@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-05 16:15+0000\n"
+"POT-Creation-Date: 2025-03-24 12:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,6 +15,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:37
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:23
+#, no-wrap
+msgid "Sex"
+msgstr ""
 
 #. type: Title =
 #: en/data-use/modules/ROOT/pages/data-cubes.adoc:1
@@ -117,11 +124,6 @@ msgstr ""
 msgid ""
 "We will exclude occurrences with a coordinateUncertaintyInMeters greater "
 "than 1000m"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:23
-msgid "Sex"
 msgstr ""
 
 #. type: Plain text
