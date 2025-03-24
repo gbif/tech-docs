@@ -1,0 +1,64 @@
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
+
+= Vocabularies interpretation
+
+include::ROOT::partial$under-construction.adoc[]
+
+== Vocabularies used in interpretation
+
+We are currently using the following vocabularies in the data interpretation:
+
+=== LifeStage
+* Term: http://rs.tdwg.org/dwc/terms/lifeStage
+* Prefilter: remove numeric prefix
+
+=== DegreeOfEstablishment
+* Term: http://rs.tdwg.org/dwc/terms/degreeOfEstablishment
+* Prefilter:
+
+=== EstablishmentMeans
+* Term: http://rs.tdwg.org/dwc/terms/establishmentMeans
+* Prefilter:
+
+=== Pathway
+* Term: http://rs.tdwg.org/dwc/terms/pathway
+* Prefilter:
+
+=== EventType
+* Term: http://rs.gbif.org/terms/1.0/eventType
+* Prefilter:
+
+=== TypeStatus
+* Term: http://rs.tdwg.org/dwc/terms/typeStatus
+* Prefilter:
+
+=== Sex
+* Term: http://rs.tdwg.org/dwc/terms/sex: Sex
+* Prefilter: remove positive numbers
+
+=== GeoTime
+* Term:
+** http://rs.tdwg.org/dwc/terms/earliestEonOrLowestEonothem
+** http://rs.tdwg.org/dwc/terms/latestEonOrHighestEonothem
+** http://rs.tdwg.org/dwc/terms/earliestEraOrLowestErathem
+** http://rs.tdwg.org/dwc/terms/latestEraOrHighestErathem
+** http://rs.tdwg.org/dwc/terms/earliestPeriodOrLowestSystem
+** http://rs.tdwg.org/dwc/terms/latestPeriodOrHighestSystem
+** http://rs.tdwg.org/dwc/terms/earliestEpochOrLowestSeries
+** http://rs.tdwg.org/dwc/terms/latestEpochOrHighestSeries
+** http://rs.tdwg.org/dwc/terms/earliestAgeOrLowestStage
+** http://rs.tdwg.org/dwc/terms/latestAgeOrHighestStage
+* Prefilter:
+
+Note that the interpretation of the geological terms produce the geologicalTime term to make search on these fields easier.
+
+
+== Source of the vocabularies
+
+The source that is use is the latest release of each vocabulary. For example, you can find the latest release of the
+LifeStage vocabulary here: https://api.gbif.org/v1/vocabularies/LifeStage/releases?version=LATEST
+
+The response contains a URL where you can download that version in JSON format.
+
