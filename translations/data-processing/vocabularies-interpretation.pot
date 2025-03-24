@@ -1,0 +1,222 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-03-24 12:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:5
+#, no-wrap
+msgid "Vocabularies interpretation"
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:9
+#, no-wrap
+msgid "Vocabularies used in interpretation"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:12
+msgid ""
+"We are currently using the following vocabularies in the data interpretation:"
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:13
+#, no-wrap
+msgid "LifeStage"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:15
+msgid "Term: http://rs.tdwg.org/dwc/terms/lifeStage"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:16
+msgid "Prefilter: remove numeric prefix"
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:17
+#, no-wrap
+msgid "DegreeOfEstablishment"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:19
+msgid "Term: http://rs.tdwg.org/dwc/terms/degreeOfEstablishment"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:20
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:24
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:28
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:32
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:36
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:54
+msgid "Prefilter:"
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:21
+#, no-wrap
+msgid "EstablishmentMeans"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:23
+msgid "Term: http://rs.tdwg.org/dwc/terms/establishmentMeans"
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:25
+#, no-wrap
+msgid "Pathway"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:27
+msgid "Term: http://rs.tdwg.org/dwc/terms/pathway"
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:29
+#, no-wrap
+msgid "EventType"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:31
+msgid "Term: http://rs.gbif.org/terms/1.0/eventType"
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:33
+#, no-wrap
+msgid "TypeStatus"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:35
+msgid "Term: http://rs.tdwg.org/dwc/terms/typeStatus"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:37
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:23
+#, no-wrap
+msgid "Sex"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:39
+msgid "Term: http://rs.tdwg.org/dwc/terms/sex: Sex"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:40
+msgid "Prefilter: remove positive numbers"
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:41
+#, no-wrap
+msgid "GeoTime"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:43
+msgid "Term:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:44
+msgid "http://rs.tdwg.org/dwc/terms/earliestEonOrLowestEonothem"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:45
+msgid "http://rs.tdwg.org/dwc/terms/latestEonOrHighestEonothem"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:46
+msgid "http://rs.tdwg.org/dwc/terms/earliestEraOrLowestErathem"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:47
+msgid "http://rs.tdwg.org/dwc/terms/latestEraOrHighestErathem"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:48
+msgid "http://rs.tdwg.org/dwc/terms/earliestPeriodOrLowestSystem"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:49
+msgid "http://rs.tdwg.org/dwc/terms/latestPeriodOrHighestSystem"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:50
+msgid "http://rs.tdwg.org/dwc/terms/earliestEpochOrLowestSeries"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:51
+msgid "http://rs.tdwg.org/dwc/terms/latestEpochOrHighestSeries"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:52
+msgid "http://rs.tdwg.org/dwc/terms/earliestAgeOrLowestStage"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:53
+msgid "http://rs.tdwg.org/dwc/terms/latestAgeOrHighestStage"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:56
+msgid ""
+"Note that the interpretation of the geological terms produce the "
+"geologicalTime term to make search on these fields easier."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:58
+#, no-wrap
+msgid "Source of the vocabularies"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:62
+msgid ""
+"The source that is use is the latest release of each vocabulary. For "
+"example, you can find the latest release of the LifeStage vocabulary here: "
+"https://api.gbif.org/v1/vocabularies/LifeStage/releases?version=LATEST"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:64
+msgid ""
+"The response contains a URL where you can download that version in JSON "
+"format."
+msgstr ""
