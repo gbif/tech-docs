@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-24 12:18+0000\n"
+"POT-Creation-Date: 2025-03-24 12:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:17
 #, no-wrap
-msgid "DegreeOfEstablishment"
+msgid "https://registry.gbif.org/vocabulary/DegreeOfEstablishment[DegreeOfEstablishment]"
 msgstr ""
 
 #. type: Plain text
@@ -74,7 +74,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:21
 #, no-wrap
-msgid "EstablishmentMeans"
+msgid "https://registry.gbif.org/vocabulary/EstablishmentMeans[EstablishmentMeans]"
 msgstr ""
 
 #. type: Plain text
@@ -85,7 +85,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:25
 #, no-wrap
-msgid "Pathway"
+msgid "https://registry.gbif.org/vocabulary/Pathway[Pathway]"
 msgstr ""
 
 #. type: Plain text
@@ -96,7 +96,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:29
 #, no-wrap
-msgid "EventType"
+msgid "https://registry.gbif.org/vocabulary/EventType[EventType]"
 msgstr ""
 
 #. type: Plain text
@@ -107,7 +107,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:33
 #, no-wrap
-msgid "TypeStatus"
+msgid "https://registry.gbif.org/vocabulary/TypeStatus[TypeStatus]"
 msgstr ""
 
 #. type: Plain text
@@ -115,11 +115,10 @@ msgstr ""
 msgid "Term: http://rs.tdwg.org/dwc/terms/typeStatus"
 msgstr ""
 
-#. type: Plain text
+#. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:37
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:23
 #, no-wrap
-msgid "Sex"
+msgid "https://registry.gbif.org/vocabulary/Sex[Sex]"
 msgstr ""
 
 #. type: Plain text
@@ -135,7 +134,7 @@ msgstr ""
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:41
 #, no-wrap
-msgid "GeoTime"
+msgid "https://registry.gbif.org/vocabulary/GeoTime[GeoTime]"
 msgstr ""
 
 #. type: Plain text
