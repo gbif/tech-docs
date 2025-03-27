@@ -35,7 +35,7 @@ We are currently using the following vocabularies in the data interpretation:
 * Prefilter:
 
 === https://registry.gbif.org/vocabulary/Sex[Sex]
-* Term: http://rs.tdwg.org/dwc/terms/sex: Sex
+* Term: http://rs.tdwg.org/dwc/terms/sex
 * Prefilter: remove positive numbers
 
 === https://registry.gbif.org/vocabulary/GeoTime[GeoTime]
