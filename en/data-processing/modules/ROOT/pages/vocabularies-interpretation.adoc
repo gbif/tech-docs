@@ -8,7 +8,7 @@ include::ROOT::partial$under-construction.adoc[]
 
 == Vocabularies used in interpretation
 
-We are currently using the following vocabularies in the data interpretation:
+GBIF is currently using the following vocabularies in the interpretation:
 
 === https://registry.gbif.org/vocabulary/LifeStage[LifeStage]
 * Term: http://rs.tdwg.org/dwc/terms/lifeStage
@@ -52,15 +52,18 @@ We are currently using the following vocabularies in the data interpretation:
 ** http://rs.tdwg.org/dwc/terms/latestAgeOrHighestStage
 * Prefilter:
 
-Note that the interpretation of the geological terms produces the _geologicalTime_ term to make search on these fields easier.
+NOTE: The interpretation of the geological terms produces the _geologicalTime_ term to make searching on these fields easier.
 
 
 == Source of the vocabularies
 
-The source that is use is the latest release of each vocabulary. For example, you can find the latest release of the
+[TIP]
+====
+The source that is used is the latest release of each vocabulary. For example, you can find the latest release of the
 LifeStage vocabulary here: https://api.gbif.org/v1/vocabularies/LifeStage/releases?version=LATEST
 
 The response contains a URL where you can download that version in JSON format.
+====
 
-Also note that it's possible to do a lookup on the latest release of a vocabulary: /vocabularies/{vocabularyName}/concepts/latestRelease/lookup
-The results might be a different from the pipelines lookup because prefilters are not applied.
+NOTE: It is possible to do a lookup on the latest release of a vocabulary: /vocabularies/{vocabularyName}/concepts/latestRelease/lookup
+The results may be different from the pipelines lookup because prefilters are not applied.
