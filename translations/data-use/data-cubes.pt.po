@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-05 16:15+0000\n"
-"PO-Revision-Date: 2025-03-05 16:59\n"
+"POT-Creation-Date: 2025-03-24 12:08+0000\n"
+"PO-Revision-Date: 2025-03-24 12:13\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -15,6 +15,13 @@ msgstr ""
 "X-Crowdin-Language: pt-PT\n"
 "X-Crowdin-File: /main/translations/data-use/data-cubes.pot\n"
 "X-Crowdin-File-ID: 40556\n"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:37
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:23
+#, no-wrap
+msgid "Sex"
+msgstr ""
 
 #. type: Title =
 #: en/data-use/modules/ROOT/pages/data-cubes.adoc:1
@@ -100,11 +107,6 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/data-cubes.adoc:22
 msgid "We will exclude occurrences with a coordinateUncertaintyInMeters greater than 1000m"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:23
-msgid "Sex"
 msgstr ""
 
 #. type: Plain text
