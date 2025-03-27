@@ -62,3 +62,5 @@ LifeStage vocabulary here: https://api.gbif.org/v1/vocabularies/LifeStage/releas
 
 The response contains a URL where you can download that version in JSON format.
 
+Also note that it's possible to do a lookup on the latest release of a vocabulary: /vocabularies/{vocabularyName}/concepts/latestRelease/lookup
+The results might be a different from the pipelines lookup because prefilters are not applied.
