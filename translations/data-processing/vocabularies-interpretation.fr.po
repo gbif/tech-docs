@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-27 10:51+0000\n"
-"PO-Revision-Date: 2025-03-27 10:54\n"
+"POT-Creation-Date: 2025-03-27 11:13+0000\n"
+"PO-Revision-Date: 2025-03-27 12:29\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -30,7 +30,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:12
-msgid "We are currently using the following vocabularies in the data interpretation:"
+msgid "GBIF is currently using the following vocabularies in the interpretation:"
 msgstr ""
 
 #. type: Title ===
@@ -193,7 +193,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:56
-msgid "Note that the interpretation of the geological terms produces the _geologicalTime_ term to make search on these fields easier."
+msgid "The interpretation of the geological terms produces the _geologicalTime_ term to make searching on these fields easier."
 msgstr ""
 
 #. type: Title ==
@@ -202,13 +202,18 @@ msgstr ""
 msgid "Source of the vocabularies"
 msgstr ""
 
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:62
-msgid "The source that is use is the latest release of each vocabulary. For example, you can find the latest release of the LifeStage vocabulary here: https://api.gbif.org/v1/vocabularies/LifeStage/releases?version=LATEST"
+#. type: delimited block =
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:64
+msgid "The source that is used is the latest release of each vocabulary. For example, you can find the latest release of the LifeStage vocabulary here: https://api.gbif.org/v1/vocabularies/LifeStage/releases?version=LATEST"
+msgstr ""
+
+#. type: delimited block =
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:66
+msgid "The response contains a URL where you can download that version in JSON format."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:64
-msgid "The response contains a URL where you can download that version in JSON format."
+#: en/data-processing/modules/ROOT/pages/vocabularies-interpretation.adoc:69
+msgid "It is possible to do a lookup on the latest release of a vocabulary: /vocabularies/{vocabularyName}/concepts/latestRelease/lookup The results may be different from the pipelines lookup because prefilters are not applied."
 msgstr ""
 
