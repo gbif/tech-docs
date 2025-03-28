@@ -91,4 +91,4 @@ Every occurrence is assigned a `taxonKey` which points to the https://www.gbif.o
 
 ==== Type status
 
-The type status of a specimen is interpreted from `dwc:typeStatus` using the https://github.com/gbif/parsers/blob/master/src/main/java/org/gbif/common/parsers/TypeStatusParser.java[TypeStatusParser] according to our https://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/TypeStatus.html[type status vocabulary].
+The type status of a specimen is interpreted from `dwc:typeStatus` using the https://github.com/gbif/parsers/blob/master/src/main/java/org/gbif/common/parsers/TypeStatusParser.java[TypeStatusParser] according to our https://registry.gbif.org/vocabulary/TypeStatus[type status vocabulary].
