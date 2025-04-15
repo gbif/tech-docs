@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-26 17:47+0000\n"
-"PO-Revision-Date: 2025-03-05 10:44\n"
+"POT-Creation-Date: 2025-04-15 10:19+0000\n"
+"PO-Revision-Date: 2025-04-15 10:32\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -27,7 +27,7 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:379
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:451
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:524
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:544
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:560
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:578
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:596
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:21
@@ -50,7 +50,7 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:389
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:461
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:532
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:551
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:567
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:585
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:603
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:31
@@ -105,7 +105,7 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:400
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:472
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:537
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:555
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:571
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:589
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:607
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:40
@@ -122,12 +122,6 @@ msgstr ""
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:7
 #, no-wrap
 msgid "Grid functions"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:162
-#: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:10
-msgid "These functions are usually used for generating species occurrence cubes.  They calculate a grid cell for a point."
 msgstr ""
 
 #. type: Labeled list
@@ -270,12 +264,6 @@ msgid "`resolution`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:377
-#: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:115
-msgid "This function implements the _Inverse Snyder Equal-Area Projection (ISEA) Aperture 3 Hexagonal (3H) Discrete Global Grid System (DGGS)_, ISEA3H.  Grid cell codes/identifiers are as specified in https://doi.org/10.1080/15230406.2018.1455157[A novel identifier scheme for the ISEA Aperture 3 Hexagon Discrete Global Grid System]."
-msgstr ""
-
-#. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:391
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:136
 msgid "The _resolution_ of the grid; the number of division steps applied to the initial dodecahedron.  Valid values are 1 to 22."
@@ -285,12 +273,6 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:398
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:143
 msgid "See https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html[ISEA3H details] for the number and size of cells at each resolution."
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:402
-#: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:147
-msgid "The code for the cell of the ISEA3H grid cell in which the randomized point falls."
 msgstr ""
 
 #. type: Table
@@ -390,33 +372,33 @@ msgid "See also: https://en.wikipedia.org/wiki/Military_Grid_Reference_System[Wi
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:552
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:533
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:239
 #, no-wrap
 msgid "`dateInterval`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:553
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:534
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:240
 msgid "A string containing an ISO-8106 date or date interval."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:557
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:539
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:244
 msgid "This function returns the uncertainty in seconds of the date."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:559
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:541
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:246
 #, no-wrap
 msgid "*Example arguments and returned value*\n"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:572
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:554
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:259
 #, no-wrap
 msgid "|_dateInterval_ |Result |Remarks\n"
@@ -446,6 +428,11 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:6
 msgid "See xref:generate-cube-databricks.adoc[] for an example of their usage."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:10
+msgid "These functions are usually used for generating species occurrence cubes.  They calculate a grid cell for a point."
 msgstr ""
 
 #. type: Title ===
@@ -540,6 +527,11 @@ msgstr ""
 msgid "ISEA3H Grid cell code"
 msgstr ""
 
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:115
+msgid "This function implements the _Inverse Snyder Equal-Area Projection (ISEA) Aperture 3 Hexagonal (3H) Discrete Global Grid System (DGGS)_, ISEA3H.  Grid cell codes/identifiers are as specified in https://doi.org/10.1080/15230406.2018.1455157[A novel identifier scheme for the ISEA Aperture 3 Hexagon Discrete Global Grid System]."
+msgstr ""
+
 #. type: delimited block -
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:121
 #, no-wrap
@@ -553,6 +545,11 @@ msgid "STRING isea3hCode(INTEGER resolution,\n"
 "                  DOUBLE latitude,\n"
 "                  DOUBLE longitude,\n"
 "                  DOUBLE coordinateUncertaintyInMeters)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:147
+msgid "The code for the cell of the ISEA3H grid cell in which the randomized point falls."
 msgstr ""
 
 #. type: Title ===
