@@ -158,10 +158,10 @@ GROUP BY kingdom, scientificName;
 
 == Grid functions
 
-These functions are usually used for generating species occurrence cubes.  They calculate a grid cell for a point.
+These functions are usually used for generating species occurrence cubes.  They calculate a grid-cell for a point.
 
 [#GBIF_EEARGCode]
-=== EEA Reference Grid cell code, `GBIF_EEARGCode`
+=== EEA Reference Grid-cell code, `GBIF_EEARGCode`
 
 .EEA Reference Grid with 50km resolution
 image::eearg_example_italy.png[]
@@ -230,20 +230,20 @@ GeoPackage and ShapeFile downloads of the grids at several resolutions are avail
 
 Reference: https://sdi.eea.europa.eu/catalogue/srv/api/records/aac8379a-5c4e-445c-b2ef-23a6a2701ef0/attachments/eea_reference_grid_v1.pdf[About the EEA reference grid (PDF)].
 
-[#GBIF_EQDGCCode]
-=== Extended Quarter-Degree Grid cell code, `GBIF_EQDGCCode`
+[#GBIF_EQDGCode]
+=== Extended Quarter-Degree Grid-cell code, `GBIF_EQDGCode`
 
-.Extended Quarter-Degree Grid cells at level 2 on northern Madagascar
+.Extended Quarter-Degree Grid-cells at level 2 on northern Madagascar
 image::eqdgc_example_madagascar.png[]
 
 *Function definition:*
 
 [source,sql]
 ----
-STRING GBIF_EQDGCCode(INTEGER level,
-                      DOUBLE latitude,
-                      DOUBLE longitude,
-                      DOUBLE coordinateUncertaintyInMeters)
+STRING GBIF_EQDGCode(INTEGER level,
+                     DOUBLE latitude,
+                     DOUBLE longitude,
+                     DOUBLE coordinateUncertaintyInMeters)
 ----
 
 *Parameters:*
@@ -283,7 +283,7 @@ SELECT
   kingdom,
   scientificName,
   COUNT(*),
-  GBIF_EQDGCCode(
+  GBIF_EQDGCode(
     2, <1>
     decimalLatitude,
     decimalLongitude,
@@ -302,17 +302,17 @@ Reference: https://doi.org/10.1111/j.1365-2028.2008.00997.x[Larsen R, Holmern T,
 
 See also: https://en.wikipedia.org/wiki/QDGC[Wikipedia: QDGC].
 
-[#GBIF_DMSGCCode]
-=== Degree-Minute-Second Grid cell code, `GBIF_DMSCCode`
+[#GBIF_DMSGCode]
+=== Degree-Minute-Second Grid-cell code, `GBIF_DMSGCode`
 
 *Function definition:*
 
 [source,sql]
 ----
-STRING GBIF_DMSGCCode(INTEGER resolution,
-                      DOUBLE latitude,
-                      DOUBLE longitude,
-                      DOUBLE coordinateUncertaintyInMeters)
+STRING GBIF_DMSGCode(INTEGER resolution,
+                     DOUBLE latitude,
+                     DOUBLE longitude,
+                     DOUBLE coordinateUncertaintyInMeters)
 ----
 
 *Parameters:*
@@ -324,7 +324,7 @@ STRING GBIF_DMSGCCode(INTEGER resolution,
 
 The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
 
-A _resolution_ of _3600_ will give the 1° cell, e.g. `S01E010` — this is the same as <<GBIF_EQDGCCode>> with level 0.
+A _resolution_ of _3600_ will give the 1° cell, e.g. `S01E010` — this is the same as <<GBIF_EQDGCode>> with level 0.
 
 The _resolution_ must be a divisor of 3600.  Useful values are _3600_ (1°), _900_ (15′), _600_ (10′), _300_ (5′), _150_ (2′30″), _60_ (1′) and _30_ (30″).
 
@@ -357,7 +357,7 @@ SELECT
   kingdom,
   scientificName,
   COUNT(*),
-  GBIF_DMSGCCode(
+  GBIF_DMSGCode(
     900, <1>
     decimalLatitude,
     decimalLongitude,
@@ -371,9 +371,9 @@ GROUP BY kingdom, scientificName;
 <2> Default to randomization within a 1000m radius if the occurrence does not have a published coordinate uncertainty.
 
 [#GBIF_ISEA3HCode]
-=== ISEA3H Grid cell code `GBIF_ISEA3HCode`
+=== ISEA3H Grid-cell code `GBIF_ISEA3HCode`
 
-This function implements the _Inverse Snyder Equal-Area Projection (ISEA) Aperture 3 Hexagonal (3H) Discrete Global Grid System (DGGS)_, ISEA3H.  Grid cell codes/identifiers are as specified in https://doi.org/10.1080/15230406.2018.1455157[A novel identifier scheme for the ISEA Aperture 3 Hexagon Discrete Global Grid System].
+This function implements the _Inverse Snyder Equal-Area Projection (ISEA) Aperture 3 Hexagonal (3H) Discrete Global Grid System (DGGS)_, ISEA3H.  Grid-cell codes/identifiers are as specified in https://doi.org/10.1080/15230406.2018.1455157[A novel identifier scheme for the ISEA Aperture 3 Hexagon Discrete Global Grid System].
 
 *Function definition:*
 
@@ -398,7 +398,7 @@ See https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html[ISEA3
 
 *Return value:*
 
-The code for the cell of the ISEA3H grid cell in which the randomized point falls.
+The code for the cell of the ISEA3H grid-cell in which the randomized point falls.
 
 *Supported grid resolutions and example values:*
 
@@ -445,7 +445,7 @@ See also:
 * https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html[dggridR], an R package to calculate the grid (though not using the same identifiers).
 
 [#GBIF_MGRSCode]
-=== Military Grid Reference System cell code, `GBIF_MGRSCode`
+=== Military Grid Reference System Grid-cell code, `GBIF_MGRSCode`
 
 *Function definition:*
 
@@ -517,26 +517,6 @@ See also: https://en.wikipedia.org/wiki/Military_Grid_Reference_System[Wikipedia
 
 These functions are useful when producing text-type output, e.g. tab-delimited files.
 
-[#GBIF_JoinArray]
-=== Join Array, `GBIF_JoinArray`
-
-*Function definition:*
-
-[source,sql]
-----
-STRING GBIF_JoinArray(ARRAY array,
-                      STRING separator)
-----
-
-*Parameters:*
-
-`array`:: An array
-`separator`:: A separator to put between the array values, e.g. `|` or `, `
-
-*Return value:*
-
-This function returns the array elements separated by the separator.
-
 [#GBIF_TemporalUncertainty]
 === Temporal Uncertainty, `GBIF_TemporalUncertainty`
 
@@ -573,37 +553,55 @@ This function returns the uncertainty in seconds of the date.
 |2021-03-21/2021-03-23 |60×60×24×3 |
 |===
 
-[#GBIF_ToISO8601]
-=== To ISO8601 Date, `GBIF_ToISO8601`
+[#GBIF_MillisecondsToISO8601]
+=== Milliseconds To ISO8601 Date, `GBIF_MillisecondsToISO8601`
 
 *Function definition:*
 
 [source,sql]
 ----
-STRING GBIF_ToISO8601(TIMESTAMP date)
+STRING GBIF_MillisecondsToISO8601(TIMESTAMP date)
 ----
 
 *Parameters:*
 
-`date`:: A timestamp of millseconds from the Unix epoch.
+`date`:: A timestamp of milliseconds from the Unix epoch.
 
 *Return value:*
 
 This function formats a timestamp to a string like `2024-01-26T13:43:08Z`.  The UTC timezone (`Z`) is used.
 
-[#GBIF_ToLocalISO8601]
-=== To Local ISO8601 Date, `GBIF_ToLocalISO8601`
+[#GBIF_SecondsToISO8601]
+=== Seconds To ISO8601 Date, `GBIF_SecondsToISO8601`
 
 *Function definition:*
 
 [source,sql]
 ----
-STRING GBIF_ToLocalISO8601(TIMESTAMP date)
+STRING GBIF_SecondsToISO8601(TIMESTAMP date)
 ----
 
 *Parameters:*
 
-`date`:: A timestamp of millseconds from the Unix epoch.
+`date`:: A timestamp of seconds from the Unix epoch.
+
+*Return value:*
+
+This function formats a timestamp to a string like `2024-01-26T13:43:08Z`.  The UTC timezone (`Z`) is used.
+
+[#GBIF_SecondsToLocalISO8601]
+=== Seconds To Local ISO8601 Date, `GBIF_SecondsToLocalISO8601`
+
+*Function definition:*
+
+[source,sql]
+----
+STRING GBIF_SecondsToLocalISO8601(TIMESTAMP date)
+----
+
+*Parameters:*
+
+`date`:: A timestamp of seconds from the Unix epoch.
 
 *Return value:*
 
