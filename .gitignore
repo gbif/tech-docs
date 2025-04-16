@@ -5,3 +5,12 @@ output
 node_modules
 .history
 .vscode
+
+# These are generated, and translated versions should be generated (later) so
+# ensure they won't get added for translation.
+download-simple-terms-table.*
+download-dwca-interpreted-terms-table.*
+download-dwca-multimedia-terms-table.*
+download-dwca-verbatim-terms-table.*
+download-species-list-terms-table.*
+download-sql-terms-table.*
