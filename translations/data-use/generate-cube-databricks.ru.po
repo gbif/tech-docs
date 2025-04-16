@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
-"PO-Revision-Date: 2025-02-04 17:46\n"
+"POT-Creation-Date: 2025-03-05 16:15+0000\n"
+"PO-Revision-Date: 2025-04-16 14:18\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -15,6 +15,136 @@ msgstr ""
 "X-Crowdin-Language: ru\n"
 "X-Crowdin-File: /main/translations/data-use/generate-cube-databricks.pot\n"
 "X-Crowdin-File-ID: 40568\n"
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:7
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:7
+#, no-wrap
+msgid "Demonstration cube specification"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:10
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:10
+msgid "The guide below will produce a data cube for occurrences of animals from Poland, recorded during or after 2000."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:12
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:12
+msgid "The _dimensions_ of the cube will be"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:14
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:14
+msgid "Species"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:15
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:15
+msgid "We must therefore exclude occurrences not identified to species level"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:17
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:17
+msgid "Year-Month"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:20
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:20
+msgid "We will randomize the point using the coordinateUncertaintyInMeters, defaulting to 1000m"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:21
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:21
+msgid "We will exclude occurrences without coordinates"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:28
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:23
+msgid "The _measures_ of the cube will be"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:30
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:25
+msgid "Occurrence count"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:31
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:26
+msgid "Minimum coordinate uncertainty"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:32
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:27
+msgid "Minimum temporal uncertainty"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:35
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:74
+#, no-wrap
+msgid "Create an initial GBIF search filter"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:38
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:77
+msgid "Perhaps using the GBIF.org website, find an approximate search filter, for example for a particular taxon, country or region, year range, etc.  This will need to be expressed in SQL for submission to the API:"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:54
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:88
+#, no-wrap
+msgid "Exclude unwanted data"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:107
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:145
+msgid "`COALESCE` sets a default value (1000) if the first value is absent."
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:156
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:100
+#, no-wrap
+msgid "Write full query"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:161
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:103
+msgid "Typical data cubes will use an SQL query similar to this one:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:228
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:143
+msgid "These are the columns in the resulting cube, i.e. the dimensions and measurements for the cube."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:230
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:146
+msgid "The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, `MAX`, `AVERAGE`, `SUM` etc"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:231
+#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:147
+msgid "`AS` gives a name to the column, used as the header in the result file"
+msgstr ""
 
 #. type: Title =
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:1
@@ -33,46 +163,9 @@ msgstr ""
 msgid "This page demonstrates creating a cube using GBIF occurrence data deposited on Microsoft Azure.  The same approach can be used with other tabular data by uploading or importing it to Azure."
 msgstr ""
 
-#. type: Title ==
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:7
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:9
-#, no-wrap
-msgid "Demonstration cube specification"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:10
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:12
-msgid "The guide below will produce a data cube for occurrences of animals from Poland, recorded during or after 2000."
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:12
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:14
-msgid "The _dimensions_ of the cube will be"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:14
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:16
-msgid "Species"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:15
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:17
-msgid "We must therefore exclude occurrences not identified to species level"
-msgstr ""
-
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:16
 msgid "We will also exclude occurrences with known uncertain identifications"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:17
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:19
-msgid "Year-Month"
 msgstr ""
 
 #. type: Plain text
@@ -83,42 +176,6 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:19
 msgid "EEA Reference grid"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:20
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:22
-msgid "We will randomize the point using the coordinateUncertaintyInMeters, defaulting to 1000m"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:21
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:23
-msgid "We will exclude occurrences without coordinates"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:23
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:30
-msgid "The _measures_ of the cube will be"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:25
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:32
-msgid "Occurrence count"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:26
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:33
-msgid "Minimum coordinate uncertainty"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:27
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:34
-msgid "Minimum temporal uncertainty"
 msgstr ""
 
 #. type: Title ==
@@ -238,19 +295,6 @@ msgstr ""
 msgid "See xref:sql-cube-functions.adoc[] for definitions and parameters of the gridding functions."
 msgstr ""
 
-#. type: Title ===
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:74
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:37
-#, no-wrap
-msgid "Create an initial GBIF search filter"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:77
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:40
-msgid "Perhaps using the GBIF.org website, find an approximate search filter, for example for a particular taxon, country or region, year range, etc.  This will need to be expressed in SQL for submission to the API:"
-msgstr ""
-
 #. type: delimited block -
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:84
 #, no-wrap
@@ -265,13 +309,6 @@ msgstr ""
 msgid "Note that not all fields are available on the GBIF data snapshot in Microsoft Azure."
 msgstr ""
 
-#. type: Title ===
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:88
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:56
-#, no-wrap
-msgid "Exclude unwanted data"
-msgstr ""
-
 #. type: Plain text
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:91
 msgid "The GBIF website and search APIs do not allow excluding data from searches, but this is often required for data cubes.  We have additional expressions for our WHERE clause:"
@@ -284,19 +321,6 @@ msgid "  AND decimalLatitude IS NOT NULL\n"
 "  AND speciesKey IS NOT NULL\n"
 "  AND NOT array_contains(issue.array_element, 'COUNTRY_COORDINATE_MISMATCH')\n"
 "  AND month IS NOT NULL\n"
-msgstr ""
-
-#. type: Title ===
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:100
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:154
-#, no-wrap
-msgid "Write full query"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:103
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:159
-msgid "Typical data cubes will use an SQL query similar to this one:"
 msgstr ""
 
 #. type: delimited block -
@@ -338,32 +362,8 @@ msgid "SELECT <1>\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:143
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:220
-msgid "These are the columns in the resulting cube, i.e. the dimensions and measurements for the cube."
-msgstr ""
-
-#. type: Plain text
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:144
 msgid "The dimensions must also appear in the `GROUP BY` section. They can include functions."
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:145
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:107
-msgid "`COALESCE` sets a default value (1000) if the first value is absent."
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:146
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:222
-msgid "The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, `MAX`, `AVERAGE`, `SUM` etc"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:147
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:223
-msgid "`AS` gives a name to the column, used as the header in the result file"
 msgstr ""
 
 #. type: Plain text
