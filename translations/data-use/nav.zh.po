@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-04 11:04+0000\n"
-"PO-Revision-Date: 2025-03-04 12:01\n"
+"POT-Creation-Date: 2025-03-05 16:15+0000\n"
+"PO-Revision-Date: 2025-04-16 14:21\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Crowdin-File-ID: 43362\n"
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:79
+#: en/data-processing/modules/ROOT/pages/index.adoc:76
 #: en/data-use/modules/ROOT/nav.adoc:4
 #, no-wrap
 msgid "Issues and flags"
