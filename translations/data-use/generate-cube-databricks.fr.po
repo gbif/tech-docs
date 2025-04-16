@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-27 12:03+0000\n"
-"PO-Revision-Date: 2025-03-05 10:44\n"
+"POT-Creation-Date: 2025-03-05 16:15+0000\n"
+"PO-Revision-Date: 2025-04-16 14:18\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -110,38 +110,38 @@ msgid "Exclude unwanted data"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:105
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:107
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:145
 msgid "`COALESCE` sets a default value (1000) if the first value is absent."
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:152
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:156
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:100
 #, no-wrap
 msgid "Write full query"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:157
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:161
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:103
 msgid "Typical data cubes will use an SQL query similar to this one:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:218
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:228
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:143
 msgid "These are the columns in the resulting cube, i.e. the dimensions and measurements for the cube."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:220
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:230
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:146
 msgid "The measurements must be SQL aggregate functions, like `COUNT`, `MIN`, `MAX`, `AVERAGE`, `SUM` etc"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/data-cubes.adoc:221
+#: en/data-use/modules/ROOT/pages/data-cubes.adoc:231
 #: en/data-use/modules/b-cubed/pages/generate-cube-databricks.adoc:147
 msgid "`AS` gives a name to the column, used as the header in the result file"
 msgstr ""
