@@ -64,7 +64,12 @@ In most cases, where a parameter can _either_ be repeated, _or_ used as a range,
 
 === Authentication
 
-POST, PUT, and DELETE requests require authentication. The GBIF API uses https://en.wikipedia.org/wiki/Basic_access_authentication[HTTP Basic Authentication] with any existing https://www.gbif.org/user/profile[GBIF user account].
+[TIP]
+====
+Most use of the GBIF API does not require authentication.
+====
+
+POST, PUT, DELETE and some GET requests require authentication. The GBIF API uses https://en.wikipedia.org/wiki/Basic_access_authentication[HTTP Basic Authentication] with any existing https://www.gbif.org/user/profile[GBIF user account].
 
 For example, to issue a new download programmatically using curl with a xref:data-use::api-downloads.adoc[query filter as JSON] in a file called filter.json:
 
@@ -72,6 +77,17 @@ For example, to issue a new download programmatically using curl with a xref:dat
 ----
 $ curl -i --user yourUserName:yourPassword -H "Content-Type: application/json" -X POST -d @filter.json https://api.gbif.org/v1/occurrence/download/request`
 ----
+
+=== Rate limits
+
+[TIP]
+====
+If you are integrating the GBIF API into a website or app, we recommend you set the HTTP `User-Agent` to a URL or email address.  We can then contact you if there is a problem.
+====
+
+Many common API operations are able to sustain rapid querying, such as species matching, the geocode API or retrieving individual occurrences.
+
+Frequent queries to some search APIs may be rate limited, depending on our server load.  If this happens, you will receive an HTTP `429` error, and you should reduce your query rate and try again.
 
 === Enumerations
 
