@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
-"PO-Revision-Date: 2025-02-04 17:46\n"
+"POT-Creation-Date: 2025-02-27 12:03+0000\n"
+"PO-Revision-Date: 2025-04-16 14:18\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar_SA\n"
@@ -17,13 +17,13 @@ msgstr ""
 "X-Crowdin-File-ID: 40566\n"
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:124
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:126
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:21
 msgid "The definitions marked with {dwc_source} are from the Darwin Core standard."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:126
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:128
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:23
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:81
 msgid "The definitions marked with {gbif_source} are from GBIF, and may reflect the result of interpretation and data quality procedures applied by GBIF, or they may not be part of Darwin Core."

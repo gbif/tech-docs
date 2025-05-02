@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-05 16:15+0000\n"
-"PO-Revision-Date: 2025-03-05 16:59\n"
+"POT-Creation-Date: 2025-04-15 10:19+0000\n"
+"PO-Revision-Date: 2025-04-15 10:32\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -243,22 +243,22 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:103
-msgid "`xref::api-sql-download-functions.adoc#GBIF_JoinArray[GBIF_JoinArray]`"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:104
 msgid "`xref::api-sql-download-functions.adoc#GBIF_TemporalUncertainty[GBIF_TemporalUncertainty]`"
 msgstr ""
 
 #. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:104
+msgid "`xref::api-sql-download-functions.adoc#GBIF_MillisecondsToISO8601[GBIF_MillisecondsToISO8601]`"
+msgstr ""
+
+#. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:105
-msgid "`xref::api-sql-download-functions.adoc#GBIF_ToISO8601[GBIF_ToISO8601]`"
+msgid "`xref::api-sql-download-functions.adoc#GBIF_SecondsToISO8601[GBIF_SecondsToISO8601]`"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:106
-msgid "`xref::api-sql-download-functions.adoc#GBIF_ToLocalISO8601[GBIF_ToLocalISO8601]`"
+msgid "`xref::api-sql-download-functions.adoc#GBIF_SecondsToLocalISO8601[GBIF_SecondsToLocalISO8601]`"
 msgstr ""
 
 #. type: Plain text
@@ -273,7 +273,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:111
-msgid "`xref::api-sql-download-functions.adoc#GBIF_EQDGCCode[GBIF_EQDGCCode]`"
+msgid "`xref::api-sql-download-functions.adoc#GBIF_EQDGCode[GBIF_EQDGCode]`"
 msgstr ""
 
 #. type: Plain text
@@ -288,7 +288,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:114
-msgid "`xref::api-sql-download-functions.adoc#GBIF_DMSGCCode[GBIF_DMSGCCode]`"
+msgid "`xref::api-sql-download-functions.adoc#GBIF_DMSGCode[GBIF_DMSGCode]`"
 msgstr ""
 
 #. type: Plain text
@@ -406,22 +406,27 @@ msgid "Columns with numeric types must be filtered using numbers, not quoted str
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:166
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:165
+msgid "Array values (including vocabulary lineages) should be converted to delimited strings, for example `CONCAT_WS(' | ', recordedByID)` and `CONCAT_WS(' | ', occurrence.lifestage.lineage)`."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:167
 msgid "When converting the SQL query to JSON for submission to the API:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:168
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:169
 msgid "JSON uses double quotes for attributes and values, so when the SQL is written values containing double quotes must have these escaped using `\\\"`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:169
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:170
 msgid "Newlines, if used, should be replaced with either spaces ` ` or `\\n`"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:180
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:181
 #, no-wrap
 msgid "{\n"
 "  \"sendNotification\": true,\n"
@@ -434,43 +439,43 @@ msgid "{\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:183
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:184
 msgid "It can be convenient to work with neatly formatted SQL files, and convert them to JSON format automatically:"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:188
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:189
 #, no-wrap
 msgid "# Using jq\n"
 "grep -v -- '--' neat-query.sql | jq -R -s .\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:191
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:192
 #, no-wrap
 msgid "# Using Python\n"
 "grep -v -- '--' neat-query.sql | python3 -c 'import sys, json; print(json.dumps(sys.stdin.read()))'\n"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:194
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:195
 #, no-wrap
 msgid "Further examples"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:197
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:198
 msgid "For a complete example of generating a data cube see the xref::data-cubes.adoc[] page."
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:199
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:200
 #, no-wrap
 msgid "Known issues"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:201
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:202
 msgid "Known faults with the system are tracked https://github.com/gbif/occurrence-cube/issues[on GitHub]."
 msgstr ""
 
