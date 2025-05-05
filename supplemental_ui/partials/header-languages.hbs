@@ -8,10 +8,15 @@
     </svg>
   </a>
   <div class="navbar-dropdown">
+    {{~#if (ne env "prod")}}<a class="navbar-item" href="{{siteRootPath}}/../ar{{page.url}}">العربية</a>{{/if~}}
     <a class="navbar-item" href="{{siteRootPath}}/../en{{page.url}}">English</a>
-    {{~#if (ne env "prod")}}<a class="navbar-item" href="{{siteRootPath}}/../es{{page.url}}">español</a>{{/if~}}
-    {{~#if (ne env "prod")}}<a class="navbar-item" href="{{siteRootPath}}/../fr{{page.url}}">français</a>{{/if~}}
+    {{~#if (ne env "prod")}}<a class="navbar-item" href="{{siteRootPath}}/../es{{page.url}}">Español</a>{{/if~}}
+    {{~#if (ne env "prod")}}<a class="navbar-item" href="{{siteRootPath}}/../fr{{page.url}}">Français</a>{{/if~}}
+    {{~#if (ne env "prod")}}<a class="navbar-item" href="{{siteRootPath}}/../ja{{page.url}}">日本語</a>{{/if~}}
     {{~#if (ne env "prod")}}<a class="navbar-item" href="{{siteRootPath}}/../pt{{page.url}}">Português</a>{{/if~}}
+    {{~#if (ne env "prod")}}<a class="navbar-item" href="{{siteRootPath}}/../ru{{page.url}}"></a>{{/if~}}
+    {{~#if (ne env "prod")}}<a class="navbar-item" href="{{siteRootPath}}/../zh{{page.url}}">简体中文</a>{{/if~}}
+    {{~#if (ne env "prod")}}<a class="navbar-item" href="{{siteRootPath}}/../zh-tw{{page.url}}">繁體中文</a>{{/if~}}
   </div>
 </div>
 {{/if}}
