@@ -142,7 +142,7 @@ Occurrences are returned by the search and download APIs if the occurrence date/
 .Date searches
 [.search-examples,stripes=even]
 |===
-|                                        | Record with eventDate 2023-01-11 |    2021-01 | 2023-01-11/12 |  2020/2021 | Meaning of the search
+|                                        | Record with eventDate 2023-01-11 |    2023-01 | 2023-01-11/12 |  2020/2021 | Meaning of the search
 
 | Search eventDate=2023-01-11            |                         included | _excluded_ |    _excluded_ | _excluded_ | Search for "on 11 January 2023"
 | Search eventDate=2023-01-11,2023-01-12 |                         included | _excluded_ |      included | _excluded_ | Search for "from the start of 11 January 2023 until the end of 12 January 2023"
