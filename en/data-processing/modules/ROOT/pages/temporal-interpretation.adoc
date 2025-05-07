@@ -146,7 +146,7 @@ Occurrences are returned by the search and download APIs if the occurrence date/
 
 | Search eventDate=2023-01-11            |                         included | _excluded_ |    _excluded_ | _excluded_ | Search for "on 11 January 2023"
 | Search eventDate=2023-01-11,2023-01-12 |                         included | _excluded_ |      included | _excluded_ | Search for "from the start of 11 January 2023 until the end of 12 January 2023"
-| Search eventDate=*,2023-01             |                         included |   included |      included | _excluded_ | Search for "before end of January 2023"
+| Search eventDate=*,2023-01             |                         included |   included |      included | included   | Search for "before end of January 2023"
 | Search eventDate=2023-01,2023-01       |                         included |   included |      included | _excluded_ | Search for "after start of January 2023 and before end of January 2023"
 | Search eventDate=2023-01               |                         included |   included |      included | _excluded_ | Search for "after start of January 2023 and before end of January 2023"
 |===
