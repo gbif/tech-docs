@@ -153,9 +153,9 @@ To build English and Spanish and with the search function, and suitable for a we
 
 [,sh]
 ----
-docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z --env HOME=/antora antora/antora:3.0.1 npm i @antora/lunr-extension
+docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z --env HOME=/antora antora/antora:3.1.10 npm i @antora/lunr-extension @node-rs/jieba
 for lang in en es; do
-    docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z antora/antora:3.0.1 tech-docs-$lang-playbook.yml
+    docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z antora/antora:3.1.10 tech-docs-$lang-playbook.yml
 done
 ----
 
