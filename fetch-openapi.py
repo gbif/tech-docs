@@ -79,7 +79,14 @@ for ws, url in urls.items():
         print("Retrieved documentation for "+ws)
 
     else:
-        print("Response "+str(response.status_code)+" for "+ws+", ignoring while in dev.")
+        if ws == 'directory-ws':
+            print("Ignoring internal service")
+        elif ws == 'content-ws':
+            print("Ignoring internal service")
+        elif ws == 'crawler-ws':
+            print("Service not yet documented")
+        else:
+            raise Exception("Response "+str(response.status_code)+" for "+ws+", not continuing.")
 print("")
 
 # Development
