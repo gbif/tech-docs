@@ -243,7 +243,8 @@ for path in checklistbanknub["paths"]:
 # Schemas need duplicating
 checklistbanknubSchemas = ['NameUsageMatch', 'Usage', 'RankedName', 'Diagnostics', 'Status']
 for schema in checklistbanknubSchemas:
-    checklistbank['components']['schemas'][schema] = checklistbanknub['components']['schemas'][schema]
+    if schema in checklistbanknub['components']['schemas']:
+        checklistbank['components']['schemas'][schema] = checklistbanknub['components']['schemas'][schema]
 print("")
 
 # Write the result of all that moving.
