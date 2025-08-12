@@ -1,5 +1,5 @@
 site:
-  title: GBIF IPT ユーザーマニュアル (UAT)
+  title: GBIF IPT ユーザーマニュアル (Test)
   url: /manual/ja
   start_page: ipt::index.adoc
   keys:
