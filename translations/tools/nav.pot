@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-05 17:08+0000\n"
+"POT-Creation-Date: 2025-08-12 13:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,5 +28,6 @@ msgstr ""
 
 #. type: Plain text
 #: en/tools/modules/ROOT/nav.adoc:5
-msgid "xref:tools::rule-based-annotations.adoc[Rule-based annotations **UAT**]"
+msgid ""
+"xref:tools::rule-based-annotations.adoc[Rule-based annotations **Test**]"
 msgstr ""

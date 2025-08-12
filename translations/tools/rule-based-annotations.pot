@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-05 16:58+0000\n"
+"POT-Creation-Date: 2025-08-12 13:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgstr ""
 msgid ""
 "This is an **experimental feature**, and the implementation may change "
 "throughout 2024.  The feature is currently available for preview on the GBIF "
-"test environment, https://www.gbif-uat.org/[GBIF-UAT.org]."
+"test environment, https://www.gbif-test.org/[GBIF-Test.org]."
 msgstr ""
 
 #. type: Plain text
