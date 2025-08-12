@@ -14,13 +14,13 @@ You will need a webserver, VM, cloud hosting service or similar to host your dat
 
 You will also need a user account on GBIF.org to handle the registrations.  Ideally, this should be an account for your institution or software system, rather than a personal account.
 
-You should also create an account on GBIF-UAT.org which you can use for testing.  
+You should also create an account on GBIF-Test.org which you can use for testing.
 
 WARNING: Please do not create test datasets on GBIF.org! They will be assigned DOIs, which can never be deleted.
 
 Once you have created the accounts, contact helpdesk@gbif.org to ask for editor_rights permissions for your organization.
 
-You can also test on GBIF-UAT.org using the username `ws_client_demo` and password `Demo123`.  This has permission to create datasets owned by https://www.gbif-uat.org/publisher/0a16da09-7719-40de-8d4f-56a15ed52fb6[Test Organization #1], which has a https://www.gbif-uat.org/installation/92d76df5-3de1-4c89-be03-7a17abad962a[Test HTTP installation].
+You can also test on GBIF-Test.org using the username `ws_client_demo` and password `Demo123`.  This has permission to create datasets owned by https://www.gbif-test.org/publisher/0a16da09-7719-40de-8d4f-56a15ed52fb6[Test Organization #1], which has a https://www.gbif-test.org/installation/92d76df5-3de1-4c89-be03-7a17abad962a[Test HTTP installation].
 
 == Process
 
@@ -49,7 +49,7 @@ _POST_ this JSON to GBIF using the Registry API:
 
 [source,shell]
 ----
-curl -Ssf --user ws_client_demo:Demo123 -H "Content-Type: application/json" -X POST --data @dataset.json https://api.gbif-uat.org/v1/dataset | tr -d '"' | tee dataset.registration
+curl -Ssf --user ws_client_demo:Demo123 -H "Content-Type: application/json" -X POST --data @dataset.json https://api.gbif-test.org/v1/dataset | tr -d '"' | tee dataset.registration
 
 dataset=$(cat dataset.registration)
 ----
@@ -72,7 +72,7 @@ Add this endpoint to the dataset:
 
 [source,shell]
 ----
-curl -Ssf --user ws_client_demo:Demo123 -H "Content-Type: application/json" -X POST --data @endpoint.json https://api.gbif-uat.org/v1/dataset/$dataset/endpoint
+curl -Ssf --user ws_client_demo:Demo123 -H "Content-Type: application/json" -X POST --data @endpoint.json https://api.gbif-test.org/v1/dataset/$dataset/endpoint
 ----
 
 == Result
@@ -81,10 +81,10 @@ The dataset should be visible in the GBIF Registry:
 
 [source,shell]
 ----
-firefox https://registry.gbif-uat.org/dataset/$dataset
+firefox https://registry.gbif-test.org/dataset/$dataset
 ----
 
-After 1-2 minutes the dataset metadata will be updated.  After a further 1-60 minutes, depending on the size of the dataset and the number of other datasets being processed, occurrence and/or checklist data should be retrieved from your system and shown on GBIF's system.  You can follow the progress under "Crawling history" and  "Ingestion history" for your dataset, and see the length of the queue at https://registry.gbif-uat.org/monitoring/running-crawls["Running crawls"] (https://registry.gbif-uat.org/monitoring/running-crawls[UAT version]) and https://registry.gbif-uat.org/monitoring/running-ingestions["Running ingestions"] (https://registry.gbif-uat.org/monitoring/running-ingestions[UAT version]).  Here, "crawling" refers to GBIF's system downloading data from your server, and also tracks processing metadata and checklists.  "Ingestion" handles occurrence data.
+After 1-2 minutes the dataset metadata will be updated.  After a further 1-60 minutes, depending on the size of the dataset and the number of other datasets being processed, occurrence and/or checklist data should be retrieved from your system and shown on GBIF's system.  You can follow the progress under "Crawling history" and  "Ingestion history" for your dataset, and see the length of the queue at https://registry.gbif-test.org/monitoring/running-crawls["Running crawls"] (https://registry.gbif-test.org/monitoring/running-crawls[Test version]) and https://registry.gbif-test.org/monitoring/running-ingestions["Running ingestions"] (https://registry.gbif-test.org/monitoring/running-ingestions[Test version]).  Here, "crawling" refers to GBIF's system downloading data from your server, and also tracks processing metadata and checklists.  "Ingestion" handles occurrence data.
 
 == Shell script
 

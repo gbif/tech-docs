@@ -11,7 +11,7 @@ https://crowdin.com/project/gbif-tech-docs[image:https://badges.crowdin.net/gbif
 
 This is the the https://techdocs.gbif.org/[GBIF technical documentation site], visible at https://techdocs.gbif.org/.
 
-The development site is visible at https://techdocs.gbif-uat.org/
+The development site is visible at https://techdocs.gbif-test.org/
 
 NOTE: This file is documenting the documentation system, it's not shown on https://techdocs.gbif.org/.
 
@@ -95,13 +95,13 @@ In general editors should refer to the https://docs.asciidoctor.org/asciidoc/[As
 
 These are shown using Swagger, and a special page layout present in the site theme (see https://github.com/gbif/tech-docs-theme/blob/main/src/layouts/swagger.hbs[swagger.hbs] for the source).
 
-The OpenAPI source link:./fetch-openapi.py[is retrieved] whenever webservices are deployed, so it is always up-to-date.  This is done on all environments; techdocs.gbif.org documents api.gbif.org and techdocs.gbif-uat.org documents api.gbif-uat.org.
+The OpenAPI source link:./fetch-openapi.py[is retrieved] whenever webservices are deployed, so it is always up-to-date.  This is done on all environments; techdocs.gbif.org documents api.gbif.org and techdocs.gbif-test.org documents api.gbif-test.org.
 
 === Darwin Core Archive term tables
 
 These are generated when the site is built using link:./en/data-use/modules/ROOT/partials/download-terms-tables.py[this Python script]. The script generates a https://docs.antora.org/antora/latest/page/partials/[partial], which is included in the main pages.
 
-=== UAT-only pages
+=== Test-only pages
 
 Pages or parts of pages can be excluded from techdocs.gbif.org while they are under development.  This also excludes them from search results.
 
@@ -126,7 +126,7 @@ Pages or parts of pages can be excluded from techdocs.gbif.org while they are un
 [source,asciidoc]
 ....
 \ifeval::["{env}" != "prod"]
-On the UAT system …
+On the Test system …
 \endif::[]
 ....
 
@@ -134,7 +134,7 @@ On the UAT system …
 [source,asciidoc]
 ----
 \ifeval::["{env}" != "prod"]
-* xref:page-name.adoc[Page title **UAT**]
+* xref:page-name.adoc[Page title **Test**]
 \endif::[]
 ----
 

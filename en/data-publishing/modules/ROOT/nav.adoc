@@ -2,7 +2,7 @@
 * xref:dataset-classes.adoc[Dataset classes]
 ** xref:data-quality-recommendations.adoc[Data quality recommendations]
 ifeval::["{env}" != "prod"]
-** xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations **UAT**]
+** xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations **Test**]
 endif::[]
 * xref:multimedia-publishing.adoc[Publishing multimedia]
 * xref:register-dataset-api.adoc[Register a dataset using the API]

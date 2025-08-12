@@ -6,7 +6,7 @@ endif::[]
 
 include::ROOT::partial$under-construction.adoc[]
 
-NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently available for preview on the GBIF test environment, https://www.gbif-uat.org/[GBIF-UAT.org].
+NOTE: This is an **experimental feature**, and the implementation may change throughout 2024.  The feature is currently available for preview on the GBIF test environment, https://www.gbif-test.org/[GBIF-Test.org].
 
 This project is part of the indicative tasks for 2023 GBIF https://docs.gbif.org/2023-work-programme/en/index.en.html#indicative-tasks-for-2023-14[work programme].
 

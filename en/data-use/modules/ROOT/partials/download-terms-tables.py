@@ -27,10 +27,10 @@ elif env == 'dev':
     OPENAPI_OCCURRENCE="https://techdocs.gbif-dev.org/openapi/occurrence.json"
     GBIF_API = 'http://api.gbif-dev.org/v1'
     indent = 2
-elif env == 'uat':
+elif env == 'test':
     DWC_EXTENSIONS="https://rs.gbif.org/sandbox/extensions.json"
-    OPENAPI_OCCURRENCE="https://techdocs.gbif-uat.org/openapi/occurrence.json"
-    GBIF_API = 'http://api.gbif-uat.org/v1'
+    OPENAPI_OCCURRENCE="https://techdocs.gbif-test.org/openapi/occurrence.json"
+    GBIF_API = 'http://api.gbif-test.org/v1'
     indent = 2
 else:
     DWC_EXTENSIONS="https://rs.gbif.org/extensions.json"

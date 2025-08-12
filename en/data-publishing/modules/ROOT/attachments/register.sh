@@ -16,7 +16,7 @@ ACCESS_ENDPOINT=https://techdocs.gbif.org/en/data-publishing/_attachments
 # - An organization registered in GBIF
 # - An installation registered in GBIF (represents the server this script runs on)
 # - A GBIF.org user account with publishing rights for the registered organization.
-#   - These are the test values available for use on GBIF-UAT.org
+#   - These are the test values available for use on GBIF-Test.org
 ORGANIZATION=0a16da09-7719-40de-8d4f-56a15ed52fb6
 INSTALLATION=92d76df5-3de1-4c89-be03-7a17abad962a
 GBIF_USER=ws_client_demo
@@ -67,7 +67,7 @@ for dataset_file in *.@(zip|eml) ; do
         EOF
 
         # Send the request by HTTP:
-        curl -Ssf --user $GBIF_USER:$GBIF_PASSWORD -H "Content-Type: application/json" -X POST --data @$dataset_file.registration_json https://api.gbif-uat.org/v1/dataset | tr -d '"' > $dataset_file.registration
+        curl -Ssf --user $GBIF_USER:$GBIF_PASSWORD -H "Content-Type: application/json" -X POST --data @$dataset_file.registration_json https://api.gbif-test.org/v1/dataset | tr -d '"' > $dataset_file.registration
         dataset=$(cat $dataset_file.registration)
     fi
 
@@ -83,9 +83,9 @@ for dataset_file in *.@(zip|eml) ; do
         }
         EOF
 
-        curl -Ssf --user $GBIF_USER:$GBIF_PASSWORD -H "Content-Type: application/json" -X POST --data @$dataset_file.endpoint_json https://api.gbif-uat.org/v1/dataset/$dataset/endpoint > $dataset_file.endpoint
+        curl -Ssf --user $GBIF_USER:$GBIF_PASSWORD -H "Content-Type: application/json" -X POST --data @$dataset_file.endpoint_json https://api.gbif-test.org/v1/dataset/$dataset/endpoint > $dataset_file.endpoint
 
-        echo "Dataset registered, see https://registry.gbif-uat.org/dataset/$dataset or https://api.gbif-uat.org/v1/dataset/$dataset"
+        echo "Dataset registered, see https://registry.gbif-test.org/dataset/$dataset or https://api.gbif-test.org/v1/dataset/$dataset"
     fi
 
 done

@@ -1,7 +1,7 @@
 * xref:tools::index.adoc[]
 * xref:tools::data-validator.adoc[]
 ifeval::["{env}" != "prod"]
-* xref:tools::rule-based-annotations.adoc[Rule-based annotations **UAT**]
+* xref:tools::rule-based-annotations.adoc[Rule-based annotations **Test**]
 endif::[]
 
 ////
