@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-05 17:08+0000\n"
-"PO-Revision-Date: 2025-03-05 18:29\n"
+"POT-Creation-Date: 2025-08-12 13:13+0000\n"
+"PO-Revision-Date: 2025-08-12 13:29\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -33,7 +33,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/nav.adoc:6
-msgid "xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations **UAT**]"
+msgid "xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations **Test**]"
 msgstr ""
 
 #. type: Plain text
