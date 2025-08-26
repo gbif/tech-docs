@@ -14,7 +14,12 @@ The GBIF API supports the searching and retrieval of occurrence records using bo
 The taxonomy to be used can be specified in the API requests using an optional query parameter called `checklistKey`. If the `checklistKey` is parameter is not supplied, the default is to use the GBIF backbone.
 
 Valid values for this parameter are the dataset keys of the taxonomic datasets registered in GBIF.
-e.g. `checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b` for the Catalogue of Life eXtended Release or `checklistKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c` for the GBIF backbone.
+
+Valid values include:
+
+* `checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b` for the Catalogue of Life eXtended Release
+* `checklistKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c` for the GBIF backbone.
+
 
 The following section will highlight the API changes that have been made to support multiple taxonomies.
 
