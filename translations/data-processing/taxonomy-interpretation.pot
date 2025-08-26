@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-26 16:34+0000\n"
+"POT-Creation-Date: 2025-08-26 16:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/index.adoc:89
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:59
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:58
 msgid ""
 "In the case of homonyms or similar spelled names, the service has no way to "
 "verify the potential matches, so such names will often get higher taxon "
@@ -34,7 +34,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/index.adoc:91
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:63
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:62
 msgid ""
 "Fuzzy name matching, matching to higher taxon or matching to no taxon are "
 "issue flags we assign to records."
@@ -149,9 +149,10 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:33
 msgid ""
-"These keys are retrieved by querying our taxon match service, submitting the "
-"following darwin core fields where supplied by the data publisher with the "
-"occurrence record:"
+"These keys are retrieved by querying our https://techdocs.gbif.org/en/"
+"openapi/v1/species#/Searching%20names/matchNames[species match API], "
+"submitting the following darwin core fields where supplied by the data "
+"publisher with the occurrence record:"
 msgstr ""
 
 #. type: Plain text
@@ -246,24 +247,25 @@ msgid "https://dwc.tdwg.org/list/#taxonConceptID[taxonConceptID]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:55
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:54
 msgid ""
-"There are more details about parameters in the https://techdocs.gbif.org/en/"
-"openapi/v1/species#/Searching%20names/matchNames[API documentation]."
+"There are more details about parameters and response formats in the https://"
+"techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[API "
+"documentation]."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:57
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:56
 msgid ""
-"If the `scientificName` is not present in the published data, it will be "
-"assembled from the individual name parts if present: `genus`, "
+"If the `scientificName` is not present in the published occurrence record, "
+"it will be assembled from the individual name parts if present: `genus`, "
 "`specificEpithet`, `genericName` and `infraspecificEpithet`. Having a higher "
 "classification qualifying the `scientificName` improves the accuracy of the "
 "taxonomic match in two ways, even if it is just the family or even kingdom."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:61
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:60
 msgid ""
 "In case a given scientific name is not (yet) part of the taxonomy, GBIF can "
 "at least match the record to some higher taxon in that taxonomy, such as the "
@@ -271,7 +273,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:65
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:64
 msgid ""
 "In addition, there is an optional parameter called `checklistKey` which "
 "allows to specify the taxonomy to match against. If not supplied, the "
@@ -279,7 +281,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:70
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:69
 #, no-wrap
 msgid ""
 "*Example matching request against the COL XR*\n"
@@ -289,7 +291,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:72
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:71
 msgid ""
 "The version 2 of the species matching API has been introduced to support "
 "multiple taxonomies. It uses more Darwin Core terminology and has an "
@@ -298,13 +300,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:74
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:73
 #, no-wrap
 msgid "*Example response for a match against COL XR:*\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:172
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:171
 #, no-wrap
 msgid ""
 "{\n"
@@ -406,13 +408,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:174
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:173
 #, no-wrap
 msgid "Occurrence search API"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:178
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:177
 msgid ""
 "The occurrence search API has been extended to support searching using "
 "either taxonomy.  This is done by adding the optional `checklistKey` "
@@ -420,7 +422,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:183
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:182
 msgid ""
 "Example: ```bash curl -s \"http://api.gbif.org/v1/occurrence/search?"
 "scientificName=Acacia+acuminata&checklistKey=7ddf754f-d193-4cc9-"
@@ -428,13 +430,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:184
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:183
 #, no-wrap
 msgid "Response format"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:187
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:186
 msgid ""
 "The REST Occurrence API response has been extended to include the taxonomic "
 "information from multiple taxonomies. The `classifications` array contains "
@@ -444,7 +446,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:339
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:338
 #, no-wrap
 msgid ""
 "{\n"
@@ -599,39 +601,39 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:342
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:341
 #, no-wrap
 msgid "Occurrence download API"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:345
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:344
 msgid ""
 "The occurrence download API has been extended to support downloading "
 "occurrence records using either taxonomy."
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:347
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:346
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:79
 #, no-wrap
 msgid "Occurrence download predicates"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:350
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:349
 msgid ""
 "The predicate search API includes the `checklistKey` parameter to specify "
 "the taxonomy to be used for filtering occurrence records."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:352
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:351
 msgid "Example:"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:366
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:365
 #, no-wrap
 msgid ""
 "{\n"
@@ -648,13 +650,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:369
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:368
 #, no-wrap
 msgid "Occurrence download content"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:372
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:371
 msgid ""
 "Users can specify the taxonomy to be included in occurrence downloads by "
 "adding the `checklistKey` parameter to the download request. By default, the "
@@ -662,7 +664,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:399
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:398
 #, no-wrap
 msgid ""
 "{\n"
@@ -692,7 +694,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:402
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:401
 msgid ""
 "For more information on the download API, see the https://techdocs.gbif.org/"
 "en/openapi/v1/occurrence#/Occurrence-downloads/requestDownload[API "
@@ -700,13 +702,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:404
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:403
 #, no-wrap
 msgid "Taxonomic indexes"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:407
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:406
 msgid ""
 "With every update of a taxonomy, *versioned docker containers* are created "
 "to support the species matching https://techdocs.gbif.org/en/openapi/v1/"
@@ -716,14 +718,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:409
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:408
 msgid ""
 "The docker container indexes are built from ChecklistBank, which provides "
 "the organized taxonomic data, names, and hierarchy."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:411
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:410
 msgid ""
 "In addition, *stable unique identifiers* for taxa from other taxonomic "
 "datasets such as https://www.checklistbank.org/dataset/2041/about[Dyntaxa], "
@@ -735,43 +737,43 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:413
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:412
 msgid ""
 "This enables matching using `scientificNameID`, `taxonID` or "
 "`taxonConceptID` fields if these identifiers are used by data publishers."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:415
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:414
 #, no-wrap
 msgid "*The IUCN RedList category* is also linked to taxa in the index. The IUCN RedList information is pulled from ChecklistBank when the docker containers are built and linked to the checklist  (e.g. COL XR or GBIF Backbone).\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:417
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:416
 #, no-wrap
 msgid "Docker containers"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:420
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:419
 msgid ""
 "All available matching containers from the GBIF docker registry are listed "
 "here https://docker.gbif.org/v2/matching-ws/tags/list[here]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:422
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:421
 msgid "The image tags are made up of several pieces of information:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:424
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:423
 msgid "`{taxonomy}-{architecture}-{checklistbank-datasetKey}-{date}-{time}`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:426
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:425
 msgid ""
 "Hence, the image `xcol-arm64-308651-20250516-145444` exposes the COL "
 "eXtended Release with datasetKey=308651 and was build on the 16th of May "
@@ -779,38 +781,38 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:428
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:427
 msgid "You can also pull and run the latest COL XR like this:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:431
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:430
 msgid ""
 "```bash docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:"
 "xcol-amd64-latest"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:435
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:434
 msgid ""
-"# use arm64 instead of amd64 on a mac with apple silicon docker run -d -p "
-"8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-arm64-latest ```"
+"# use arm64 image instead of amd64 on a mac with apple silicon docker run -d "
+"-p 8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-arm64-latest ```"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:438
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:437
 msgid "Once running, metadata about the indexed data can be retrieved:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:442
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:441
 msgid "```bash curl -s \"http://localhost:8080/v2/species/match/metadata\" ```"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:446
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:445
 msgid ""
-"Example URL using local docker container: ```bash curl -s \"http://"
+"Example query URL using local docker container: ```bash curl -s \"http://"
 "localhost:8080/v2/species/match?"
 "scientificName=Oenanthe&scientificNameAuthorship=L."
 "&taxonRank=genus&kingdom=Plantae&verbose=true\" ```"
