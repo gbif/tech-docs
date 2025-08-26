@@ -1,5 +1,5 @@
 * xref:clustering-occurrences.adoc[]
 * xref:temporal-interpretation.adoc[]
-\ifeval::["{env}" != "prod"]
+ifeval::["{env}" != "prod"]
 * xref:vocabularies-interpretation.adoc[]
-\endif::[]
+endif::[]
