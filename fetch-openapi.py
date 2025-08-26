@@ -241,7 +241,7 @@ for path in checklistbanknub["paths"]:
     print("Added "+path+" to checklistbank")
 
 # Schemas need duplicating
-checklistbanknubSchemas = ['NameUsageMatch', 'Usage', 'RankedName', 'Diagnostics', 'Status']
+checklistbanknubSchemas = ['NameUsageMatch', 'Usage', 'RankedName', 'Diagnostics', 'Status', 'ExternalID']
 for schema in checklistbanknubSchemas:
     if schema in checklistbanknub['components']['schemas']:
         checklistbank['components']['schemas'][schema] = checklistbanknub['components']['schemas'][schema]
