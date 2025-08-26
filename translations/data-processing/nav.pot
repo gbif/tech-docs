@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-03-27 11:15+0000\n"
+"POT-Creation-Date: 2025-08-26 12:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgid "xref:clustering-occurrences.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:3
-msgid "xref:temporal-interpretation.adoc[]"
+#: en/data-processing/modules/ROOT/nav.adoc:4
+msgid "xref:temporal-interpretation.adoc[] \\ifeval::[\"{env}\" != \"prod\"]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:3
-msgid "xref:vocabularies-interpretation.adoc[]"
+#: en/data-processing/modules/ROOT/nav.adoc:5
+msgid "xref:vocabularies-interpretation.adoc[] \\endif::[]"
 msgstr ""
