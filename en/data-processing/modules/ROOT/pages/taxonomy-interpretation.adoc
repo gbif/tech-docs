@@ -6,7 +6,7 @@ To facilitate searching and metric generation, all occurrence records are matche
 
 * https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b[Catalogue of Life eXtended Release (COL XR)] - This will be the primary taxonomy used by https://www.gbif.org/portal[GBIF]. Catalogue of Life is a global index of species, which aims to provide a comprehensive and authoritative list of the world's species. It is compiled from multiple taxonomic datasets and is updated regularly. The eXtended Release (COL XR) builds on the Base Release  by programmatically integrating additional data sources. It integrates information from over 58,000 overlapping taxonomic and nomenclatural global, regional, national and management data sources (checklists) as well as originating from digitised literature available in Catalogue of Life's infrastructure https://www.checklistbank.org[ChecklistBank].
 
-* https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF backbone] - This is a taxonomy that up until recently GBIF has been building and integrating multiple times per year. It is primarily based on the http://www.catalogueoflife.org/[Catalogue of Life]. Higher-level classification above the family level exclusively comes from the Catalogue of Life, while the lower taxa was added in an automated way from other taxonomic datasets. The build process has now been discontinued in favour of the eXtended release of the Catalogue of Life. The GBIF Backbone will no longer be updated, but will remain available for backwards compatibility. All GBIF Backbone identifiers will be preserved and supported in the API.
+* https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF backbone] - This is a taxonomy that up until recently GBIF has been building and integrating multiple times per year. It is primarily based on an older version of http://www.catalogueoflife.org/[Catalogue of Life] with additional taxa added in an automated way from other taxonomic datasets. The build process has now been discontinued in favour of the eXtended release of the Catalogue of Life. The GBIF Backbone will no longer be updated, but will remain available for backwards compatibility. All GBIF Backbone identifiers will be preserved and supported in the API.
 
 == API support
 
@@ -58,14 +58,14 @@ Fuzzy name matching, matching to higher taxon or matching to no taxon are issue 
 
 In addition, there is an optional parameter called `checklistKey` which allows to specify the taxonomy to match against. If not supplied, the default is to match against the GBIF Backbone.
 
-Example matching request against the COL XR:
+*Example matching request against the COL XR*
 ```bash
 curl -s "http://api.gbif.org/v2/species/match?scientificName=Acacia+acuminata&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b"
 ```
 
 The version 2 of the species matching API has been introduced to support multiple taxonomies. It uses more Darwin Core terminology and has an enhanced response format that includes additional information such as the IUCN RedList category for the taxon if available.
 
-Here is an example response for a match against COL XR:
+*Example response for a match against COL XR:*
 [source,json]
 ----
 {
@@ -178,7 +178,7 @@ curl -s "http://api.gbif.org/v1/occurrence/search?scientificName=Acacia+acuminat
 
 ==== Response format
 
-The REST Occurrence API response has been extended to include the taxonomic information from multiple taxonomies. The `classifications` array contains the taxonomic information from all taxonomies that were used to match the occurrence record. Note: the example response has been shortened for readability.
+The REST Occurrence API response has been extended to include the taxonomic information from multiple taxonomies. The `classifications` array contains the taxonomic information from all taxonomies that were matched to the occurrence record. _Note: the example response has been shortened for brevity._
 
 [source,json]
 ----
@@ -335,6 +335,33 @@ The REST Occurrence API response has been extended to include the taxonomic info
 
 
 === Occurrence download API
+
+The occurrence download API has been extended to support downloading occurrence records using either taxonomy.
+
+
+==== Occurrence download predicates
+
+The predicate search API includes the `checklistKey` parameter to specify the taxonomy to be used for filtering occurrence records.
+
+Example:
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "sendNotification": false,
+  "format": "SIMPLE_CSV",
+  "predicate": {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "5WZLF",
+      "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
+  }
+}
+----
+
+
+==== Occurrence download content
 
 Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. By default, the GBIF Backbone will be used if no `checklistKey` is supplied.
 
