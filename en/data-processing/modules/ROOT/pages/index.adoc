@@ -79,6 +79,11 @@ GBIF flags records with various xref:data-use::checklist-issues-and-flags[issues
 
 === Taxonomy interpretation
 
+ifeval::["{env}" != "prod"]
+See the xref:taxonomy-interpretation.adoc[Taxonomy interpretation] on how GBIF interprets and matches against multiple taxonomies.
+endif::[]
+
+ifeval::["{env}" == "prod"]
 To facilitate searching and metric generation, all occurrence records are tied to a single global taxonomy, known as the https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF backbone]. GBIF builds this taxonomy multiple times per year, which is primarily based on the http://www.catalogueoflife.org/[Catalogue of Life]. Higher-level classification above the family level exclusively comes from the Catalogue of Life, while lower taxa can be added in an automated way from other taxonomic datasets available through the https://www.gbif.org/species[GBIF Checklist Bank].
 
 ==== Backbone matching
@@ -88,6 +93,7 @@ Every occurrence is assigned a `taxonKey` which points to the https://www.gbif.o
 1. In the case of homonyms or similar spelled names, the service has no way to verify the potential matches, so such names will often get higher taxon matches.
 2. In case a given scientific name is not (yet) part of the GBIF backbone, GBIF can at least match the record to some higher taxon, such as the genus.
 3. Fuzzy name matching, matching to higher taxon or matching to no taxon are issue flags we assign to records.
+endif::[]
 
 ==== Type status
 
