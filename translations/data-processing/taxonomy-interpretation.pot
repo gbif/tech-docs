@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-26 16:08+0000\n"
+"POT-Creation-Date: 2025-08-26 16:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -692,97 +692,110 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:402
 msgid ""
-"With every update of a taxonomy, versioned docker containers are created to "
-"support the species matching API. These containers are made available "
-"through our docker registry and can be used locally without depending on our "
-"online services."
+"With every update of a taxonomy, *versioned docker containers* are created "
+"to support the species matching https://techdocs.gbif.org/en/openapi/v1/"
+"species#/Searching%20names/matchNames[API]. These containers are made "
+"available through the GBIF docker registry and can be used locally without "
+"depending on online services."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:407
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:404
 msgid ""
-"The indexes in these docker containers are built using the data from the "
-"respective checklist in ChecklistBank.  ChecklistBank provides all the "
-"organised taxonomic information, names and hierarchy.  In addition, stable "
-"unique identifiers from other taxonomic datasets such as Dyntaxa, ITIS, "
-"WoRMs are retrieved from ChecklistBank and linked to taxa in the checklist.  "
+"The docker container indexes are built from ChecklistBank, which provides "
+"the organized taxonomic data, names, and hierarchy."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:406
+msgid ""
+"In addition, *stable unique identifiers* for taxa from other taxonomic "
+"datasets such as https://www.checklistbank.org/dataset/2041/about[Dyntaxa], "
+"https://www.checklistbank.org/dataset/2006/about[IPNI], https://www."
+"checklistbank.org/dataset/2144/about[ITIS], https://www.checklistbank.org/"
+"dataset/7888/about[UK Species Inventory] and https://www.checklistbank.org/"
+"dataset/2011/about[WoRMs] are retrieved from ChecklistBank and linked to "
+"taxa in the checklist (e.g. COL XR or GBIF Backbone)."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:408
+msgid ""
 "This enables matching using `scientificNameID`, `taxonID` or "
 "`taxonConceptID` fields if these identifiers are used by data publishers."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:409
-msgid ""
-"The IUCN RedList category is also linked to taxa in the index. The IUCN "
-"RedList information is pulled from ChecklistBank when the docker containers "
-"are built."
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:410
+#, no-wrap
+msgid "*The IUCN RedList category* is also linked to taxa in the index. The IUCN RedList information is pulled from ChecklistBank when the docker containers are built and linked to the checklist  (e.g. COL XR or GBIF Backbone).\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:411
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:412
 #, no-wrap
 msgid "Docker containers"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:414
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:415
 msgid ""
-"You can list all available matching containers from the GBIF image registry "
-"https://docker.gbif.org/v2/matching-ws/tags/list[here]"
+"All available matching containers from the GBIF docker registry are listed "
+"here https://docker.gbif.org/v2/matching-ws/tags/list[here]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:416
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:417
 msgid "The image tags are made up of several pieces of information:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:418
-msgid "`{taxonomy}-{architecture}-{datasetKey}-{date}-{time}`"
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:419
+msgid "`{taxonomy}-{architecture}-{checklistbank-datasetKey}-{date}-{time}`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:420
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:421
 msgid ""
-"So the image `xcol-arm64-308651-20250516-145444` exposes the COL eXtended "
-"Release with datasetKey=308651 and was build on the 16th of May 2025."
+"Hence, the image `xcol-arm64-308651-20250516-145444` exposes the COL "
+"eXtended Release with datasetKey=308651 and was build on the 16th of May "
+"2025."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:422
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:423
 msgid "You can also pull and run the latest COL XR like this:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:428
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:426
 msgid ""
 "```bash docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:"
-"xcol-amd64-latest # use arm64 instead of amd64 on a mac with apple silicon "
-"docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-"
-"arm64-latest ```"
-msgstr ""
-
-#. type: Title ====
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:430
-#, no-wrap
-msgid "return metadata about the indexed data"
+"xcol-amd64-latest"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:435
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:430
+msgid ""
+"# use arm64 instead of amd64 on a mac with apple silicon docker run -d -p "
+"8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-arm64-latest ```"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:433
+msgid "Once running, metadata about the indexed data can be retrieved:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:437
 msgid "```bash curl -s \"http://localhost:8080/v2/species/match/metadata\" ```"
 msgstr ""
 
-#. type: Title ====
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:436
-#, no-wrap
-msgid "Example URL using local docker container"
-msgstr ""
-
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:440
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:441
 msgid ""
-"```bash curl -s \"http://localhost:8080/v2/species/match?"
+"Example URL using local docker container: ```bash curl -s \"http://"
+"localhost:8080/v2/species/match?"
 "scientificName=Oenanthe&scientificNameAuthorship=L."
 "&taxonRank=genus&kingdom=Plantae&verbose=true\" ```"
 msgstr ""
