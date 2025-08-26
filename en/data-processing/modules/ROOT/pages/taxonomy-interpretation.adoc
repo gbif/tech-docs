@@ -398,43 +398,44 @@ For more information on the download API, see the https://techdocs.gbif.org/en/o
 
 == Taxonomic indexes
 
-With every update of a taxonomy, versioned docker containers are created to support the species matching API. These containers are made available through our docker registry and can be used locally without depending on our online services.
+With every update of a taxonomy, *versioned docker containers* are created to support the species matching https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[API]. These containers are made available through the GBIF docker registry and can be used locally without depending on online services.
 
-The indexes in these docker containers are built using the data from the respective checklist in ChecklistBank.
-ChecklistBank provides all the organised taxonomic information, names and hierarchy.
-In addition, stable unique identifiers from other taxonomic datasets such as Dyntaxa, ITIS, WoRMs are retrieved from ChecklistBank and linked to taxa in the checklist.
+The docker container indexes are built from ChecklistBank, which provides the organized taxonomic data, names, and hierarchy.
+
+In addition, *stable unique identifiers* for taxa from other taxonomic datasets such as https://www.checklistbank.org/dataset/2041/about[Dyntaxa], https://www.checklistbank.org/dataset/2006/about[IPNI], https://www.checklistbank.org/dataset/2144/about[ITIS], https://www.checklistbank.org/dataset/7888/about[UK Species Inventory] and https://www.checklistbank.org/dataset/2011/about[WoRMs] are retrieved from ChecklistBank and linked to taxa in the checklist (e.g. COL XR or GBIF Backbone).
+
 This enables matching using `scientificNameID`, `taxonID` or `taxonConceptID` fields if these identifiers are used by data publishers.
 
-The IUCN RedList category is also linked to taxa in the index. The IUCN RedList information is pulled from ChecklistBank when the docker containers are built.
+*The IUCN RedList category* is also linked to taxa in the index. The IUCN RedList information is pulled from ChecklistBank when the docker containers are built and linked to the checklist  (e.g. COL XR or GBIF Backbone).
 
 
 === Docker containers
 
-You can list all available matching containers from the GBIF image registry https://docker.gbif.org/v2/matching-ws/tags/list[here]
+All available matching containers from the GBIF docker registry are listed here https://docker.gbif.org/v2/matching-ws/tags/list[here]
 
 The image tags are made up of several pieces of information:
 
-`{taxonomy}-{architecture}-{datasetKey}-{date}-{time}`
+`{taxonomy}-{architecture}-{checklistbank-datasetKey}-{date}-{time}`
 
-So the image `xcol-arm64-308651-20250516-145444` exposes the COL eXtended Release with datasetKey=308651 and was build on the 16th of May 2025.
+Hence, the image `xcol-arm64-308651-20250516-145444` exposes the COL eXtended Release with datasetKey=308651 and was build on the 16th of May 2025.
 
 You can also pull and run the latest COL XR like this:
 
 ```bash
 docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-amd64-latest
+
 # use arm64 instead of amd64 on a mac with apple silicon
 docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-arm64-latest
 ```
 
 
-==== return metadata about the indexed data
+Once running, metadata about the indexed data can be retrieved:
 
 ```bash
 curl -s "http://localhost:8080/v2/species/match/metadata"
 ```
 
-==== Example URL using local docker container
-
+Example URL using local docker container:
 ```bash
 curl -s "http://localhost:8080/v2/species/match?scientificName=Oenanthe&scientificNameAuthorship=L.&taxonRank=genus&kingdom=Plantae&verbose=true"
 ```
