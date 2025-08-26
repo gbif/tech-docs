@@ -3,3 +3,6 @@
 ifeval::["{env}" != "prod"]
 * xref:vocabularies-interpretation.adoc[]
 endif::[]
+ifeval::["{env}" != "prod"]
+* xref:taxonomy-interpretation.adoc[]
+endif::[]

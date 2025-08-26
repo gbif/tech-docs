@@ -1,0 +1,413 @@
+= Taxonomy interpretation
+
+== Multiple taxonomy support
+
+To facilitate searching and metric generation, all occurrence records are matched to two taxonomies:
+
+* https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b[Catalogue of Life eXtended Release (COL XR)] - This will be the primary taxonomy used by https://www.gbif.org/portal[GBIF]. Catalogue of Life is a global index of species, which aims to provide a comprehensive and authoritative list of the world's species. It is compiled from multiple taxonomic datasets and is updated regularly. The eXtended Release (COL XR) builds on the Base Release  by programmatically integrating additional data sources. It integrates information from over 58,000 overlapping taxonomic and nomenclatural global, regional, national and management data sources (checklists) as well as originating from digitised literature available in Catalogue of Life's infrastructure https://www.checklistbank.org[ChecklistBank].
+
+* https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF backbone] - This is a taxonomy that up until recently GBIF has been building and integrating multiple times per year. It is primarily based on the http://www.catalogueoflife.org/[Catalogue of Life]. Higher-level classification above the family level exclusively comes from the Catalogue of Life, while the lower taxa was added in an automated way from other taxonomic datasets. The build process has now been discontinued in favour of the eXtended release of the Catalogue of Life. The GBIF Backbone will no longer be updated, but will remain available for backwards compatibility. All GBIF Backbone identifiers will be preserved and supported in the API.
+
+== API support
+
+The GBIF API supports the searching and retrieval of occurrence records using both taxonomies.
+The taxonomy to be used can be specified in the API requests using an optional query parameter called `checklistKey`. If the `checklistKey` is parameter is not supplied, the default is to use the GBIF backbone.
+
+Valid values for this parameter are the dataset keys of the taxonomic datasets registered in GBIF.
+e.g. `checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b` for the Catalogue of Life eXtended Release or `checklistKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c` for the GBIF backbone.
+
+The following section will highlight the API changes that have been made to support multiple taxonomies.
+
+
+=== Taxonomy matching
+
+For each occurrence record GBIF attempts to match that record to a taxon in each taxonomy.
+Therefore, each occurrence is assigned taxonKeys that link to the corresponding taxon in both the GBIF Backbone and the Catalogue of Life.
+
+These keys are retrieved by querying our taxon match service, submitting the following darwin core fields where supplied by the data publisher with the occurrence record:
+
+* https://dwc.tdwg.org/list/#dwc_scientificName[scientificName]
+* https://dwc.tdwg.org/list/#dwc_taxonRank[taxonRank]
+* https://dwc.tdwg.org/list/#dwc_specificEpithet[specificEpithet]
+* https://dwc.tdwg.org/list/#dwc_infraspecificEpithet[infraspecificEpithet]
+* https://dwc.tdwg.org/list/#dwc_genericName[genericName]
+* https://dwc.tdwg.org/list/#dwc_genus[genus]
+* https://dwc.tdwg.org/list/#dwc_subtribe[subtribe]
+* https://dwc.tdwg.org/list/#dwc_tribe[tribe]
+* https://dwc.tdwg.org/list/#dwc_subfamily[subfamily]
+* https://dwc.tdwg.org/list/#dwc_family[family]
+* https://dwc.tdwg.org/list/#dwc_superfamily[superfamily]
+* https://dwc.tdwg.org/list/#dwc_order[order]
+* https://dwc.tdwg.org/list/#dwc_class[class]
+* https://dwc.tdwg.org/list/#dwc_phylum[phylum]
+* https://dwc.tdwg.org/list/#dwc_kingdom[kingdom]
+* https://dwc.tdwg.org/list/#scientificNameID[scientificNameID]
+* https://dwc.tdwg.org/list/#taxonID[taxonID]
+* https://dwc.tdwg.org/list/#taxonConceptID[taxonConceptID]
+
+
+There are more details about parameters in the https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[API documentation].
+
+If the `scientificName` is not present in the published data, it will be assembled from the individual name parts if present: `genus`, `specificEpithet`, `genericName` and `infraspecificEpithet`. Having a higher classification qualifying the `scientificName` improves the accuracy of the taxonomic match in two ways, even if it is just the family or even kingdom.
+
+* In the case of homonyms or similar spelled names, the service has no way to verify the potential matches, so such names will often get higher taxon matches.
+
+* In case a given scientific name is not (yet) part of the taxonomy, GBIF can at least match the record to some higher taxon in that taxonomy, such as the genus.
+
+Fuzzy name matching, matching to higher taxon or matching to no taxon are issue flags we assign to records.
+
+In addition, there is an optional parameter called `checklistKey` which allows to specify the taxonomy to match against. If not supplied, the default is to match against the GBIF Backbone.
+
+Example matching request against the COL XR:
+```bash
+curl -s "http://api.gbif.org/v2/species/match?scientificName=Acacia+acuminata&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b"
+```
+
+The version 2 of the species matching API has been introduced to support multiple taxonomies. It uses more Darwin Core terminology and has an enhanced response format that includes additional information such as the IUCN RedList category for the taxon if available.
+
+Here is an example response for a match against COL XR:
+[source,json]
+----
+{
+  "usage": {
+    "key": "5WZLF",
+    "name": "Carcharodon carcharias (Linnaeus, 1758)",
+    "canonicalName": "Carcharodon carcharias",
+    "authorship": "(Linnaeus, 1758)",
+    "rank": "SPECIES",
+    "code": "ZOOLOGICAL",
+    "status": "ACCEPTED",
+    "genericName": "Carcharodon",
+    "specificEpithet": "carcharias",
+    "type": "SCIENTIFIC",
+    "formattedName": "<i>Carcharodon</i> <i>carcharias</i> (Linnaeus, 1758)"
+  },
+  "classification": [
+    {
+      "key": "CS5HF",
+      "name": "Eukaryota",
+      "rank": "DOMAIN"
+    },
+    {
+      "key": "N",
+      "name": "Animalia",
+      "rank": "KINGDOM"
+    },
+    {
+      "key": "CH2",
+      "name": "Chordata",
+      "rank": "PHYLUM"
+    },
+    {
+      "key": "8V4V3",
+      "name": "Vertebrata",
+      "rank": "SUBPHYLUM"
+    },
+    {
+      "key": "8V4V5",
+      "name": "Gnathostomata",
+      "rank": "INFRAPHYLUM"
+    },
+    {
+      "key": "8X6G5",
+      "name": "Chondrichthyes",
+      "rank": "PARVPHYLUM"
+    },
+    {
+      "key": "LB",
+      "name": "Elasmobranchii",
+      "rank": "CLASS"
+    },
+    {
+      "key": "3F5",
+      "name": "Lamniformes",
+      "rank": "ORDER"
+    },
+    {
+      "key": "CB2M7",
+      "name": "Lamnidae",
+      "rank": "FAMILY"
+    },
+    {
+      "key": "C973Q",
+      "name": "Carcharodon",
+      "rank": "GENUS"
+    },
+    {
+      "key": "5WZLF",
+      "name": "Carcharodon carcharias",
+      "rank": "SPECIES"
+    }
+  ],
+  "diagnostics": {
+    "matchType": "EXACT",
+    "confidence": 99,
+    "timeTaken": 22,
+    "timings": {
+      "nameNRank": 0,
+      "sciNameMatch": 22,
+      "nameParse": 1,
+      "luceneMatch": 21
+    }
+  },
+  "additionalStatus": [
+    {
+      "clbDatasetKey": "53131",
+      "datasetAlias": "IUCN",
+      "datasetKey": "19491596-35ae-4a91-9a98-85cf505f1bd3",
+      "status": "VULNERABLE",
+      "statusCode": "VU",
+      "sourceId": "3855"
+    }
+  ],
+  "synonym": false,
+  "left": 1049700,
+  "right": 1049701
+}
+----
+
+=== Occurrence search API
+
+The occurrence search API has been extended to support searching using either taxonomy.
+This is done by adding the optional `checklistKey` parameter to the occurrence search endpoint.
+
+Example:
+```bash
+curl -s "http://api.gbif.org/v1/occurrence/search?scientificName=Acacia+acuminata&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b"
+```
+
+==== Response format
+
+The REST Occurrence API response has been extended to include the taxonomic information from multiple taxonomies. The `classifications` array contains the taxonomic information from all taxonomies that were used to match the occurrence record. Note: the example response has been shortened for readability.
+
+[source,json]
+----
+{
+      "key": 5104646682,
+      "datasetKey": "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+      "basisOfRecord": "HUMAN_OBSERVATION",
+      "occurrenceStatus": "PRESENT",
+      "classifications": {
+        "7ddf754f-d193-4cc9-b351-99906754a03b": {
+          "usage": {
+            "key": "BSJCX",
+            "name": "Acacia acuminata Benth.",
+            "rank": "SPECIES",
+            "code": "BOTANICAL",
+            "authorship": "Benth.",
+            "genericName": "Acacia",
+            "specificEpithet": "acuminata",
+            "formattedName": "<i>Acacia</i> <i>acuminata</i> Benth."
+          },
+          "acceptedUsage": {
+            "key": "BSJCX",
+            "name": "Acacia acuminata Benth.",
+            "rank": "SPECIES",
+            "code": "BOTANICAL",
+            "authorship": "Benth.",
+            "genericName": "Acacia",
+            "specificEpithet": "acuminata",
+            "formattedName": "<i>Acacia</i> <i>acuminata</i> Benth."
+          },
+          "taxonomicStatus": "ACCEPTED",
+          "classification": [
+            {
+              "key": "CS5HF",
+              "name": "Eukaryota",
+              "rank": "DOMAIN"
+            },
+            {
+              "key": "P",
+              "name": "Plantae",
+              "rank": "KINGDOM"
+            },
+            {
+              "key": "CMQ8S",
+              "name": "Pteridobiotina",
+              "rank": "SUBKINGDOM"
+            },
+            {
+              "key": "TP",
+              "name": "Tracheophyta",
+              "rank": "PHYLUM"
+            },
+            {
+              "key": "MG",
+              "name": "Magnoliopsida",
+              "rank": "CLASS"
+            },
+            {
+              "key": "383",
+              "name": "Fabales",
+              "rank": "ORDER"
+            },
+            {
+              "key": "623QT",
+              "name": "Fabaceae",
+              "rank": "FAMILY"
+            },
+            {
+              "key": "C8VYK",
+              "name": "Acacia",
+              "rank": "GENUS"
+            },
+            {
+              "key": "BYZSL",
+              "name": "Juliflorae",
+              "rank": "SECTION_BOTANY"
+            },
+            {
+              "key": "BSJCX",
+              "name": "Acacia acuminata",
+              "rank": "SPECIES"
+            }
+          ],
+          "iucnRedListCategoryCode": "LC",
+          "issues": [
+            "TAXON_ID_NOT_FOUND"
+          ]
+        },
+        "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c": {
+          "usage": {
+            "key": "2979180",
+            "name": "Acacia acuminata Benth.",
+            "rank": "SPECIES",
+            "authorship": "Benth.",
+            "genericName": "Acacia",
+            "specificEpithet": "acuminata",
+            "formattedName": "<i>Acacia</i> <i>acuminata</i> Benth."
+          },
+          "acceptedUsage": {
+            "key": "2979180",
+            "name": "Acacia acuminata Benth.",
+            "rank": "SPECIES",
+            "authorship": "Benth.",
+            "genericName": "Acacia",
+            "specificEpithet": "acuminata",
+            "formattedName": "<i>Acacia</i> <i>acuminata</i> Benth."
+          },
+          "taxonomicStatus": "ACCEPTED",
+          "classification": [
+            {
+              "key": "6",
+              "name": "Plantae",
+              "rank": "KINGDOM"
+            },
+            {
+              "key": "7707728",
+              "name": "Tracheophyta",
+              "rank": "PHYLUM"
+            },
+            {
+              "key": "220",
+              "name": "Magnoliopsida",
+              "rank": "CLASS"
+            },
+            {
+              "key": "1370",
+              "name": "Fabales",
+              "rank": "ORDER"
+            },
+            {
+              "key": "5386",
+              "name": "Fabaceae",
+              "rank": "FAMILY"
+            },
+            {
+              "key": "2978223",
+              "name": "Acacia",
+              "rank": "GENUS"
+            },
+            {
+              "key": "2979180",
+              "name": "Acacia acuminata",
+              "rank": "SPECIES"
+            }
+          ],
+          "iucnRedListCategoryCode": "LC",
+          "issues": [
+            "TAXON_ID_NOT_FOUND"
+          ]
+        }
+      }
+    }
+----
+
+
+=== Occurrence download API
+
+Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. By default, the GBIF Backbone will be used if no `checklistKey` is supplied.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": [
+    "userEmail@example.org"
+  ],
+  "sendNotification": true,
+  "format": "SIMPLE_CSV",
+  "predicate": {
+    "type": "and",
+    "predicates": [
+      {
+        "type": "equals",
+        "key": "BASIS_OF_RECORD",
+        "value": "PRESERVED_SPECIMEN"
+      },
+      {
+        "type": "in",
+        "key": "COUNTRY",
+        "values": [ "VC", "GD" ]
+      }
+    ]
+  },
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
+}
+----
+
+For more information on the download API, see the https://techdocs.gbif.org/en/openapi/v1/occurrence#/Occurrence-downloads/requestDownload[API documentation].
+
+
+== Taxonomic indexes
+
+With every update of a taxonomy, versioned docker containers are created to support the species matching API. These containers are made available through our docker registry and can be used locally without depending on our online services.
+
+The indexes in these docker containers are built using the data from the respective checklist in ChecklistBank.
+ChecklistBank provides all the organised taxonomic information, names and hierarchy.
+In addition, stable unique identifiers from other taxonomic datasets such as Dyntaxa, ITIS, WoRMs are retrieved from ChecklistBank and linked to taxa in the checklist.
+This enables matching using `scientificNameID`, `taxonID` or `taxonConceptID` fields if these identifiers are used by data publishers.
+
+The IUCN RedList category is also linked to taxa in the index. The IUCN RedList information is pulled from ChecklistBank when the docker containers are built.
+
+
+=== Docker containers
+
+You can list all available matching containers from the GBIF image registry https://docker.gbif.org/v2/matching-ws/tags/list[here]
+
+The image tags are made up of several pieces of information:
+
+`{taxonomy}-{architecture}-{datasetKey}-{date}-{time}`
+
+So the image `xcol-arm64-308651-20250516-145444` exposes the COL eXtended Release with datasetKey=308651 and was build on the 16th of May 2025.
+
+You can also pull and run the latest COL XR like this:
+
+```bash
+docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-amd64-latest
+# use arm64 instead of amd64 on a mac with apple silicon
+docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-arm64-latest
+```
+
+
+==== return metadata about the indexed data
+
+```bash
+curl -s "http://localhost:8080/v2/species/match/metadata"
+```
+
+==== Example URL using local docker container
+
+```bash
+curl -s "http://localhost:8080/v2/species/match?scientificName=Oenanthe&scientificNameAuthorship=L.&taxonRank=genus&kingdom=Plantae&verbose=true"
+```
