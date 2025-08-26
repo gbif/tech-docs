@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-27 12:03+0000\n"
-"PO-Revision-Date: 2025-04-16 14:17\n"
+"POT-Creation-Date: 2025-08-26 16:39+0000\n"
+"PO-Revision-Date: 2025-08-26 17:45\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -15,6 +15,13 @@ msgstr ""
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: /main/translations/data-use/api-downloads.pot\n"
 "X-Crowdin-File-ID: 40542\n"
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:346
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:79
+#, no-wrap
+msgid "Occurrence download predicates"
+msgstr ""
 
 #. type: Title =
 #: en/data-use/modules/ROOT/nav.adoc:12
@@ -151,12 +158,6 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:77
 msgid "The keys are listed and described on the xref:v1@openapi::occurrence.adoc#/Searching%20occurrences/searchOccurrence[/occurrence/search API call], and in the https://gbif.github.io/gbif-api/apidocs/org/gbif/api/model/occurrence/search/OccurrenceSearchParameter.html[Java documentation].  Note they must be provided in `UPPER_CASE_WITH_UNDERSCORES` for the download APIs."
-msgstr ""
-
-#. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:79
-#, no-wrap
-msgid "Occurrence download predicates"
 msgstr ""
 
 #. type: Plain text
