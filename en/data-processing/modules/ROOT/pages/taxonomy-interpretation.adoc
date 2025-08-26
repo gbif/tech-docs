@@ -29,7 +29,7 @@ The following section will highlight the API changes that have been made to supp
 For each occurrence record GBIF attempts to match that record to a taxon in each taxonomy.
 Therefore, each occurrence is assigned taxonKeys that link to the corresponding taxon in both the GBIF Backbone and the Catalogue of Life.
 
-These keys are retrieved by querying our taxon match service, submitting the following darwin core fields where supplied by the data publisher with the occurrence record:
+These keys are retrieved by querying our https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[species match API], submitting the following darwin core fields where supplied by the data publisher with the occurrence record:
 
 * https://dwc.tdwg.org/list/#dwc_scientificName[scientificName]
 * https://dwc.tdwg.org/list/#dwc_taxonRank[taxonRank]
@@ -50,10 +50,9 @@ These keys are retrieved by querying our taxon match service, submitting the fol
 * https://dwc.tdwg.org/list/#taxonID[taxonID]
 * https://dwc.tdwg.org/list/#taxonConceptID[taxonConceptID]
 
+There are more details about parameters and response formats in the https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[API documentation].
 
-There are more details about parameters in the https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[API documentation].
-
-If the `scientificName` is not present in the published data, it will be assembled from the individual name parts if present: `genus`, `specificEpithet`, `genericName` and `infraspecificEpithet`. Having a higher classification qualifying the `scientificName` improves the accuracy of the taxonomic match in two ways, even if it is just the family or even kingdom.
+If the `scientificName` is not present in the published occurrence record, it will be assembled from the individual name parts if present: `genus`, `specificEpithet`, `genericName` and `infraspecificEpithet`. Having a higher classification qualifying the `scientificName` improves the accuracy of the taxonomic match in two ways, even if it is just the family or even kingdom.
 
 * In the case of homonyms or similar spelled names, the service has no way to verify the potential matches, so such names will often get higher taxon matches.
 
@@ -429,7 +428,7 @@ You can also pull and run the latest COL XR like this:
 ```bash
 docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-amd64-latest
 
-# use arm64 instead of amd64 on a mac with apple silicon
+# use arm64 image instead of amd64 on a mac with apple silicon
 docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-arm64-latest
 ```
 
@@ -440,7 +439,7 @@ Once running, metadata about the indexed data can be retrieved:
 curl -s "http://localhost:8080/v2/species/match/metadata"
 ```
 
-Example URL using local docker container:
+Example query URL using local docker container:
 ```bash
 curl -s "http://localhost:8080/v2/species/match?scientificName=Oenanthe&scientificNameAuthorship=L.&taxonRank=genus&kingdom=Plantae&verbose=true"
 ```
