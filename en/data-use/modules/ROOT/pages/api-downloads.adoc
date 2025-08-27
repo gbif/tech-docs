@@ -362,6 +362,41 @@ Has a non-empty value
 }
 ----
 
+
+[#downloadsTaxonomy]
+== Downloads with a specific taxonomy
+
+Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. By default, the GBIF Backbone will be used if no `checklistKey` is supplied.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": [
+    "userEmail@example.org"
+  ],
+  "sendNotification": true,
+  "format": "SIMPLE_CSV",
+  "predicate": {
+    "type": "and",
+    "predicates": [
+      {
+        "type": "equals",
+        "key": "BASIS_OF_RECORD",
+        "value": "PRESERVED_SPECIMEN"
+      },
+      {
+        "type": "in",
+        "key": "COUNTRY",
+        "values": [ "VC", "GD" ]
+      }
+    ]
+  },
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
+}
+----
+
+
 [#verbatimextensions]
 == Verbatim extension data
 
