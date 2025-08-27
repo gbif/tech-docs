@@ -362,7 +362,7 @@ Has a non-empty value
 }
 ----
 
-
+ifeval::["{env}" != "prod"]
 [#downloadsTaxonomy]
 == Downloads with a specific taxonomy
 
@@ -395,7 +395,7 @@ Users can specify the taxonomy to be included in occurrence downloads by adding 
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
 }
 ----
-
+endif::[]
 
 [#verbatimextensions]
 == Verbatim extension data
