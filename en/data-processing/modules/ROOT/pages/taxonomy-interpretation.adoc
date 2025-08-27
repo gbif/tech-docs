@@ -10,18 +10,18 @@ To facilitate searching and metric generation, all occurrence records are matche
 
 == API support
 
-The GBIF API supports the searching and retrieval of occurrence records using both taxonomies.
-The taxonomy to be used can be specified in the API requests using an optional query parameter called `checklistKey`. If the `checklistKey` is parameter is not supplied, the default is to use the GBIF backbone.
+The GBIF API allows searching and retrieving occurrence records using either taxonomy.
+You can specify the taxonomy with the optional `checklistKey` query parameter.
+If this parameter is not provided, the API defaults to the GBIF backbone taxonomy.
 
 Valid values for this parameter are the dataset keys of the taxonomic datasets registered in GBIF.
 
-Valid values include:
+Currently supported values include:
 
 * `checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b` for the Catalogue of Life eXtended Release
 * `checklistKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c` for the GBIF backbone.
 
-
-The following section will highlight the API changes that have been made to support multiple taxonomies.
+The following subsections will describe the API support multiple taxonomies.
 
 
 === Taxonomy matching
@@ -60,14 +60,20 @@ If the `scientificName` is not present in the published occurrence record, it wi
 
 Fuzzy name matching, matching to higher taxon or matching to no taxon are issue flags we assign to records.
 
-In addition, there is an optional parameter called `checklistKey` which allows to specify the taxonomy to match against. If not supplied, the default is to match against the GBIF Backbone.
+==== Identifier based matching
+
+The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a flag will be issued in the response to indicate the inconsistency.
+
+==== Matching against different taxonomies
+
+The optional checklistKey parameter specifies the taxonomy to match against. If omitted, the API defaults to the GBIF Backbone.
 
 *Example matching request against the COL XR*
 ```bash
 curl -s "http://api.gbif.org/v2/species/match?scientificName=Acacia+acuminata&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b"
 ```
 
-The version 2 of the species matching API has been introduced to support multiple taxonomies. It uses more Darwin Core terminology and has an enhanced response format that includes additional information such as the IUCN RedList category for the taxon if available.
+The version 2 response format that includes additional information such as the IUCN RedList category for the taxon if available.
 
 *Example response for a match against COL XR:*
 [source,json]
@@ -172,17 +178,17 @@ The version 2 of the species matching API has been introduced to support multipl
 
 === Occurrence search API
 
-The occurrence search API has been extended to support searching using either taxonomy.
-This is done by adding the optional `checklistKey` parameter to the occurrence search endpoint.
+The link:++https://techdocs.gbif.org/en/openapi/v1/occurrence#/Searching%20occurrences/searchOccurrence[Occurrence Search API] supports querying with either taxonomy by including the optional `checklistKey` parameter in the request.
 
 Example:
 ```bash
 curl -s "http://api.gbif.org/v1/occurrence/search?scientificName=Acacia+acuminata&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b"
 ```
 
+
 ==== Response format
 
-The REST Occurrence API response has been extended to include the taxonomic information from multiple taxonomies. The `classifications` array contains the taxonomic information from all taxonomies that were matched to the occurrence record. _Note: the example response has been shortened for brevity._
+The link:++https://techdocs.gbif.org/en/openapi/v1/occurrence#/Searching%20occurrences/searchOccurrence[Occurrence Search API]++[Occurrence API] response has been extended to include the taxonomic information from multiple taxonomies. The `classifications` array contains the taxonomic information from all taxonomies that were matched to the occurrence record. _Note: the example response has been shortened for brevity._
 
 [source,json]
 ----
@@ -340,7 +346,7 @@ The REST Occurrence API response has been extended to include the taxonomic info
 
 === Occurrence download API
 
-The occurrence download API has been extended to support downloading occurrence records using either taxonomy.
+The occurrence download API supports downloading occurrence records using either taxonomy.
 
 
 ==== Occurrence download predicates
@@ -415,7 +421,7 @@ This enables matching using `scientificNameID`, `taxonID` or `taxonConceptID` fi
 
 === Docker containers
 
-All available matching containers from the GBIF docker registry are listed here https://docker.gbif.org/v2/matching-ws/tags/list[here]
+All available matching containers from the GBIF docker registry are listed https://docker.gbif.org/v2/matching-ws/tags/list[here]
 
 The image tags are made up of several pieces of information:
 
@@ -441,5 +447,5 @@ curl -s "http://localhost:8080/v2/species/match/metadata"
 
 Example query URL using local docker container:
 ```bash
-curl -s "http://localhost:8080/v2/species/match?scientificName=Oenanthe&scientificNameAuthorship=L.&taxonRank=genus&kingdom=Plantae&verbose=true"
+curl -s "http://localhost:8080/v2/species/match?scientificName=Oenanthe&scientificNameAuthorship=L.&taxonRank=genus&kingdom=Plantae"
 ```
