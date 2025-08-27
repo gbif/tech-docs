@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-08-26 16:39+0000\n"
-"PO-Revision-Date: 2025-08-26 17:45\n"
+"POT-Creation-Date: 2025-08-27 09:12+0000\n"
+"PO-Revision-Date: 2025-08-27 11:08\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar_SA\n"
@@ -17,10 +17,46 @@ msgstr ""
 "X-Crowdin-File-ID: 40542\n"
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:346
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:352
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:79
 #, no-wrap
 msgid "Occurrence download predicates"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:377
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:370
+msgid "Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. By default, the GBIF Backbone will be used if no `checklistKey` is supplied."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:404
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:397
+#, no-wrap
+msgid "{\n"
+"  \"creator\": \"userName\",\n"
+"  \"notificationAddresses\": [\n"
+"    \"userEmail@example.org\"\n"
+"  ],\n"
+"  \"sendNotification\": true,\n"
+"  \"format\": \"SIMPLE_CSV\",\n"
+"  \"predicate\": {\n"
+"    \"type\": \"and\",\n"
+"    \"predicates\": [\n"
+"      {\n"
+"        \"type\": \"equals\",\n"
+"        \"key\": \"BASIS_OF_RECORD\",\n"
+"        \"value\": \"PRESERVED_SPECIMEN\"\n"
+"      },\n"
+"      {\n"
+"        \"type\": \"in\",\n"
+"        \"key\": \"COUNTRY\",\n"
+"        \"values\": [ \"VC\", \"GD\" ]\n"
+"      }\n"
+"    ]\n"
+"  },\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\"\n"
+"}\n"
 msgstr ""
 
 #. type: Title =
@@ -570,28 +606,34 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:366
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:367
+#, no-wrap
+msgid "Downloads with a specific taxonomy"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:401
 #, no-wrap
 msgid "Verbatim extension data"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:369
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:404
 msgid "A download in Darwin Core Archive (`DWCA`) format includes three tables by default, as described in detail on xref::download-formats.adoc[Occurrence download formats]."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:371
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:406
 msgid "Additional Darwin Core extension data can also be included in the archive.  These data tables are not processed by GBIF; they are as-published."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:373
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:408
 msgid "The extension tables available for download are provided using https://api.gbif.org/v1/occurrence/download/describe/dwca[this API call], under `verbatimExtensions`.  They can be requested by adding a `verbatimExtensions` property to the download request:"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:386
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:421
 #, no-wrap
 msgid "{\n"
 "  \"format\": \"DWCA\",\n"
@@ -606,7 +648,7 @@ msgid "{\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:388
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:423
 msgid "For descriptions of the extensions and their terms, see https://rs.gbif.org/extensions.html[GBIF Registered Extensions]."
 msgstr ""
 
