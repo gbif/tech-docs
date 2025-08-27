@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-08-27 08:49+0000\n"
-"PO-Revision-Date: 2025-08-27 08:50\n"
+"POT-Creation-Date: 2025-08-27 09:12+0000\n"
+"PO-Revision-Date: 2025-08-27 11:08\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -589,11 +589,13 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:377
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:370
 msgid "Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. By default, the GBIF Backbone will be used if no `checklistKey` is supplied."
 msgstr ""
 
 #. type: delimited block -
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:404
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:397
 #, no-wrap
 msgid "{\n"
 "  \"creator\": \"userName\",\n"
