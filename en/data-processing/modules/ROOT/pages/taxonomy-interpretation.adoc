@@ -4,13 +4,13 @@
 
 To facilitate searching and metric generation, all occurrence records are matched to two taxonomies:
 
-* https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b[Catalogue of Life eXtended Release (COL XR)] - This will be the primary taxonomy used by https://www.gbif.org/portal[GBIF]. Catalogue of Life is a global index of species, which aims to provide a comprehensive and authoritative list of the world's species. It is compiled from multiple taxonomic datasets and is updated regularly. The eXtended Release (COL XR) builds on the Base Release  by programmatically integrating additional data sources. It integrates information from over 58,000 overlapping taxonomic and nomenclatural global, regional, national and management data sources (checklists) as well as originating from digitised literature available in Catalogue of Life's infrastructure https://www.checklistbank.org[ChecklistBank].
+* https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b[Catalogue of Life eXtended Release (COL XR)] - This is the primary taxonomy used by https://www.gbif.org/portal[GBIF]. Catalogue of Life is a global index of species, which aims to provide a comprehensive and authoritative list of the world's species. It is compiled from multiple taxonomic datasets and is updated regularly. The eXtended Release (COL XR) builds on the Base Release  by programmatically integrating additional data sources. It integrates information from over 58,000 overlapping taxonomic and nomenclatural global, regional, national and management data sources (checklists) as well as originating from digitised literature available in Catalogue of Life's infrastructure https://www.checklistbank.org[ChecklistBank].
 
-* https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF backbone] - This is a taxonomy that up until recently GBIF has been building and integrating multiple times per year. It is primarily based on an older version of http://www.catalogueoflife.org/[Catalogue of Life] with additional taxa added in an automated way from other taxonomic datasets. The build process has now been discontinued in favour of the eXtended release of the Catalogue of Life. The GBIF Backbone will no longer be updated, but will remain available for backwards compatibility. All GBIF Backbone identifiers will be preserved and supported in the API.
+* https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF backbone] - This is a taxonomy that, up until recently, GBIF has been building and integrating periodically. It is primarily based on an older version of http://www.catalogueoflife.org/[Catalogue of Life] with additional taxa added in an automated way from other taxonomic datasets. The build process has now been discontinued in favour of the eXtended release of the Catalogue of Life. The GBIF Backbone will no longer be updated, but will remain available for backwards compatibility. All GBIF Backbone identifiers will be preserved and supported in the API.
 
 == API support
 
-The GBIF API allows searching and retrieving occurrence records using either taxonomy.
+NOTE: The GBIF API allows searching and retrieving occurrence records using either taxonomy.
 You can specify the taxonomy with the optional `checklistKey` query parameter.
 If this parameter is not provided, the API defaults to the GBIF backbone taxonomy.
 
@@ -21,7 +21,7 @@ Currently supported values include:
 * `checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b` for the Catalogue of Life eXtended Release
 * `checklistKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c` for the GBIF backbone.
 
-The following subsections will describe the API support multiple taxonomies.
+The following subsections will describe how the API supports multiple taxonomies.
 
 
 === Taxonomy matching
@@ -29,7 +29,7 @@ The following subsections will describe the API support multiple taxonomies.
 For each occurrence record GBIF attempts to match that record to a taxon in each taxonomy.
 Therefore, each occurrence is assigned taxonKeys that link to the corresponding taxon in both the GBIF Backbone and the Catalogue of Life.
 
-These keys are retrieved by querying our https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[species match API], submitting the following darwin core fields where supplied by the data publisher with the occurrence record:
+These keys are retrieved by querying our https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[species match API], depending on whether the following Darwin Core fields were supplied by the data publisher with the occurrence record:
 
 * https://dwc.tdwg.org/list/#dwc_scientificName[scientificName]
 * https://dwc.tdwg.org/list/#dwc_taxonRank[taxonRank]
@@ -52,21 +52,21 @@ These keys are retrieved by querying our https://techdocs.gbif.org/en/openapi/v1
 
 There are more details about parameters and response formats in the https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[API documentation].
 
-If the `scientificName` is not present in the published occurrence record, it will be assembled from the individual name parts if present: `genus`, `specificEpithet`, `genericName` and `infraspecificEpithet`. Having a higher classification qualifying the `scientificName` improves the accuracy of the taxonomic match in two ways, even if it is just the family or even kingdom.
+If the `scientificName` is not present in the published occurrence record, it will be assembled from the individual name parts if present: `genus`, `specificEpithet`, `genericName` and `infraspecificEpithet`. Having a higher classification qualifying the `scientificName` improves the accuracy of the taxonomic match in two ways, even if it is just the family or even the kingdom.
 
-* In the case of homonyms or similar spelled names, the service has no way to verify the potential matches, so such names will often get higher taxon matches.
+* In the case of homonyms or similarly spelt names, the service has no way to verify the potential matches, so such names will often get higher taxon matches.
 
 * In case a given scientific name is not (yet) part of the taxonomy, GBIF can at least match the record to some higher taxon in that taxonomy, such as the genus.
 
-Fuzzy name matching, matching to higher taxon or matching to no taxon are issue flags we assign to records.
+Fuzzy name matching, matching to a higher taxon or matching to no taxon are issue https://techdocs.gbif-test.org/en/data-use/checklist-issues-and-flags[flags] we assign to records.
 
-==== Identifier based matching
+==== Identifier-based matching
 
-The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a flag will be issued in the response to indicate the inconsistency.
+The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a https://techdocs.gbif-test.org/en/data-use/checklist-issues-and-flags[flag] will be issued in the response to indicate the inconsistency.
 
 ==== Matching against different taxonomies
 
-The optional checklistKey parameter specifies the taxonomy to match against. If omitted, the API defaults to the GBIF Backbone.
+The optional checklistKey parameter specifies the taxonomy to match against. 
 
 *Example matching request against the COL XR*
 ```bash
