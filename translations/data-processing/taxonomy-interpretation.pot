@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-28 09:56+0000\n"
+"POT-Creation-Date: 2025-08-28 14:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -680,7 +680,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:377
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:370
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:405
 msgid ""
 "Users can specify the taxonomy to be included in occurrence downloads by "
 "adding the `checklistKey` parameter to the download request. By default, the "
@@ -689,7 +689,7 @@ msgstr ""
 
 #. type: delimited block -
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:404
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:397
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:432
 #, no-wrap
 msgid ""
 "{\n"
