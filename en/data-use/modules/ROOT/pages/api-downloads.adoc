@@ -363,6 +363,41 @@ Has a non-empty value
 ----
 
 ifeval::["{env}" != "prod"]
+
+=== Predicate support for multiple taxonomies
+
+the `equals`, `in` support multiple taxonomies by adding a `checklistKey` property to the predicate.
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "equals",
+    "key": "TAXON_KEY",
+    "value": "5WZLF",
+    "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
+  }
+}
+----
+
+[source,json]
+----
+{
+  "creator": "userName",
+  "notificationAddresses": ["userName@example.org"],
+  "predicate": {
+    "type": "in",
+    "key": "TAXON_KEY",
+    "value": ["BSJCX", "3BQFW"],
+    "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
+  }
+}
+----
+
+
+
 [#downloadsTaxonomy]
 == Downloads with a specific taxonomy
 
