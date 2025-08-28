@@ -66,10 +66,8 @@ for ws, url in urls.items():
             geocode = json.loads(response.text)
         elif ws == 'checklistbank-ws':
             checklistbank = json.loads(response.text)
-        elif ws == 'checklistbank-nub-ws':
-            checklistbanknub = json.loads(response.text)
         elif ws == 'matching-ws-gbif':
-            checklistbanknub = json.loads(response.text)
+            matchingwsgbif = json.loads(response.text)
         elif ws == 'occurrence-annotation-ws':
             occurrenceannotation = json.loads(response.text)
         else:
@@ -218,7 +216,7 @@ for path in checklistbank["paths"]:
     for prefix in movePrefixFromChecklistbankToRegistry:
         if path.startswith(prefix):
             registry["paths"][path] = checklistbank["paths"][path]
-            print("Added "+path+" to registry")
+            print(f"Added {path} to registry")
             toRemove.append(path)
 
 for path in toRemove:
@@ -233,18 +231,33 @@ checklistbankSchemas = [
 for schema in checklistbankSchemas:
     registry['components']['schemas'][schema] = checklistbank['components']['schemas'][schema]
 
-# Special cases for checklistbank / checklistbanknub
-print("--- Moving all method-paths from ChecklistbankNub to Checklistbank ---")
-
-for path in checklistbanknub["paths"]:
-    checklistbank["paths"][path] = checklistbanknub["paths"][path]
-    print("Added "+path+" to checklistbank")
+# Special cases for checklistbank / matchingwsgbif
+print("--- Moving all method-paths from matchingwsgbif to Checklistbank ---")
 
 # Schemas need duplicating
-checklistbanknubSchemas = ['NameUsageMatch', 'Usage', 'RankedName', 'Diagnostics', 'Status', 'ExternalID']
-for schema in checklistbanknubSchemas:
-    if schema in checklistbanknub['components']['schemas']:
-        checklistbank['components']['schemas'][schema] = checklistbanknub['components']['schemas'][schema]
+matchingwsgbifSchemas = ['NameUsageMatch', 'Usage', 'RankedName', 'Diagnostics', 'Status', 'ExternalID', 'APIMetadata', 'BuildInfo', 'IndexMetadata']
+for schema in matchingwsgbifSchemas:
+    if schema in matchingwsgbif['components']['schemas']:
+        checklistbank['components']['schemas'][schema] = matchingwsgbif['components']['schemas'][schema]
+
+# remove the /v1/ suffix from the server URL if present
+for server in checklistbank["servers"]:
+    if server['url'].endswith('/v1/'):
+        server['url'] = server['url'][:-3]
+
+paths = checklistbank["paths"]
+for path in list(paths.keys()):  # iterate over a copy of keys
+    if not path.startswith('/v1/') and not path.startswith('/v2/'):
+        new_path = '/v1' + path
+        paths[new_path] = paths.pop(path)  # move value to new key
+        print(f"Modified {new_path} to checklistbank")
+
+print("--- Moving all method-paths from matchingwsgbif to Checklistbank ---")
+
+for path in matchingwsgbif["paths"]:
+    checklistbank["paths"][path] = matchingwsgbif["paths"][path]
+    print("Added "+path+" to checklistbank")
+
 print("")
 
 # Write the result of all that moving.
