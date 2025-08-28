@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-08-27 09:12+0000\n"
-"PO-Revision-Date: 2025-08-27 11:08\n"
+"POT-Creation-Date: 2025-08-28 09:56+0000\n"
+"PO-Revision-Date: 2025-08-28 11:47\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -23,18 +23,6 @@ msgstr ""
 msgid "Taxonomy interpretation"
 msgstr ""
 
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:94
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:58
-msgid "In the case of homonyms or similar spelled names, the service has no way to verify the potential matches, so such names will often get higher taxon matches."
-msgstr ""
-
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:96
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:62
-msgid "Fuzzy name matching, matching to higher taxon or matching to no taxon are issue flags we assign to records."
-msgstr ""
-
 #. type: Title ==
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:3
 #, no-wrap
@@ -48,12 +36,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:8
-msgid "https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b[Catalogue of Life eXtended Release (COL XR)] - This will be the primary taxonomy used by https://www.gbif.org/portal[GBIF]. Catalogue of Life is a global index of species, which aims to provide a comprehensive and authoritative list of the world's species. It is compiled from multiple taxonomic datasets and is updated regularly. The eXtended Release (COL XR) builds on the Base Release by programmatically integrating additional data sources. It integrates information from over 58,000 overlapping taxonomic and nomenclatural global, regional, national and management data sources (checklists) as well as originating from digitised literature available in Catalogue of Life's infrastructure https://www.checklistbank.org[ChecklistBank]."
+msgid "https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b[Catalogue of Life eXtended Release (COL XR)] - This is the primary taxonomy used by https://www.gbif.org/portal[GBIF]. Catalogue of Life is a global index of species, which aims to provide a comprehensive and authoritative list of the world's species. It is compiled from multiple taxonomic datasets and is updated regularly. The eXtended Release (COL XR) builds on the Base Release by programmatically integrating additional data sources. It integrates information from over 58,000 overlapping taxonomic and nomenclatural global, regional, national and management data sources (checklists) as well as originating from digitised literature available in Catalogue of Life's infrastructure https://www.checklistbank.org[ChecklistBank]."
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:10
-msgid "https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF backbone] - This is a taxonomy that up until recently GBIF has been building and integrating multiple times per year. It is primarily based on an older version of http://www.catalogueoflife.org/[Catalogue of Life] with additional taxa added in an automated way from other taxonomic datasets. The build process has now been discontinued in favour of the eXtended release of the Catalogue of Life. The GBIF Backbone will no longer be updated, but will remain available for backwards compatibility. All GBIF Backbone identifiers will be preserved and supported in the API."
+msgid "https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF backbone] - This is a taxonomy that, up until recently, GBIF has been building and integrating periodically. It is primarily based on an older version of http://www.catalogueoflife.org/[Catalogue of Life] with additional taxa added in an automated way from other taxonomic datasets. The build process has now been discontinued in favour of the eXtended release of the Catalogue of Life. The GBIF Backbone will no longer be updated, but will remain available for backwards compatibility. All GBIF Backbone identifiers will be preserved and supported in the API."
 msgstr ""
 
 #. type: Title ==
@@ -89,7 +77,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:25
-msgid "The following subsections will describe the API support multiple taxonomies."
+msgid "The following subsections will describe how the API supports multiple taxonomies."
 msgstr ""
 
 #. type: Title ===
@@ -105,7 +93,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:33
-msgid "These keys are retrieved by querying our https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[species match API], submitting the following darwin core fields where supplied by the data publisher with the occurrence record:"
+msgid "These keys are retrieved by querying our https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[species match API], depending on whether the following Darwin Core fields were supplied by the data publisher with the occurrence record:"
 msgstr ""
 
 #. type: Plain text
@@ -205,7 +193,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:56
-msgid "If the `scientificName` is not present in the published occurrence record, it will be assembled from the individual name parts if present: `genus`, `specificEpithet`, `genericName` and `infraspecificEpithet`. Having a higher classification qualifying the `scientificName` improves the accuracy of the taxonomic match in two ways, even if it is just the family or even kingdom."
+msgid "If the `scientificName` is not present in the published occurrence record, it will be assembled from the individual name parts if present: `genus`, `specificEpithet`, `genericName` and `infraspecificEpithet`. Having a higher classification qualifying the `scientificName` improves the accuracy of the taxonomic match in two ways, even if it is just the family or even the kingdom."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:58
+msgid "In the case of homonyms or similarly spelt names, the service has no way to verify the potential matches, so such names will often get higher taxon matches."
 msgstr ""
 
 #. type: Plain text
@@ -213,15 +206,20 @@ msgstr ""
 msgid "In case a given scientific name is not (yet) part of the taxonomy, GBIF can at least match the record to some higher taxon in that taxonomy, such as the genus."
 msgstr ""
 
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:62
+msgid "Fuzzy name matching, matching to a higher taxon or matching to no taxon are issue https://techdocs.gbif-test.org/en/data-use/checklist-issues-and-flags[flags] we assign to records."
+msgstr ""
+
 #. type: Title ====
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:63
 #, no-wrap
-msgid "Identifier based matching"
+msgid "Identifier-based matching"
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:66
-msgid "The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a flag will be issued in the response to indicate the inconsistency."
+msgid "The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a https://techdocs.gbif-test.org/en/data-use/checklist-issues-and-flags[flag] will be issued in the response to indicate the inconsistency."
 msgstr ""
 
 #. type: Title ====
@@ -232,7 +230,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:70
-msgid "The optional checklistKey parameter specifies the taxonomy to match against. If omitted, the API defaults to the GBIF Backbone."
+msgid "The optional checklistKey parameter specifies the taxonomy to match against."
 msgstr ""
 
 #. type: Plain text
