@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-08-28 09:56+0000\n"
-"PO-Revision-Date: 2025-08-28 11:47\n"
+"POT-Creation-Date: 2025-08-29 07:00+0000\n"
+"PO-Revision-Date: 2025-08-29 07:08\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -208,7 +208,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:62
-msgid "Fuzzy name matching, matching to a higher taxon or matching to no taxon are issue https://techdocs.gbif-test.org/en/data-use/checklist-issues-and-flags[flags] we assign to records."
+msgid "Fuzzy name matching, matching to a higher taxon or matching to no taxon are issue xref:data-use:checklist-issues-and-flags.adoc[flags] we assign to records."
 msgstr ""
 
 #. type: Title ====
@@ -219,7 +219,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:66
-msgid "The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a https://techdocs.gbif-test.org/en/data-use/checklist-issues-and-flags[flag] will be issued in the response to indicate the inconsistency."
+msgid "The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a xref:data-use:checklist-issues-and-flags.adoc[flag] will be issued in the response to indicate the inconsistency."
 msgstr ""
 
 #. type: Title ====
@@ -587,13 +587,13 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:377
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:370
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:405
 msgid "Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. By default, the GBIF Backbone will be used if no `checklistKey` is supplied."
 msgstr ""
 
 #. type: delimited block -
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:404
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:397
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:432
 #, no-wrap
 msgid "{\n"
 "  \"creator\": \"userName\",\n"
