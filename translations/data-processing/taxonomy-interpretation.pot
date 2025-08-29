@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-28 14:05+0000\n"
+"POT-Creation-Date: 2025-08-29 07:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -267,8 +267,8 @@ msgstr ""
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:62
 msgid ""
 "Fuzzy name matching, matching to a higher taxon or matching to no taxon are "
-"issue https://techdocs.gbif-test.org/en/data-use/checklist-issues-and-"
-"flags[flags] we assign to records."
+"issue xref:data-use:checklist-issues-and-flags.adoc[flags] we assign to "
+"records."
 msgstr ""
 
 #. type: Title ====
@@ -286,9 +286,9 @@ msgid ""
 "query parameters. If both an identifier field and a `scientificName` are "
 "provided, the identifier field will be used first for matching. A match will "
 "also be made using the `scientificName` and a comparison will be made "
-"between the two matches. If they do not agree, a https://techdocs.gbif-test."
-"org/en/data-use/checklist-issues-and-flags[flag] will be issued in the "
-"response to indicate the inconsistency."
+"between the two matches. If they do not agree, a xref:data-use:checklist-"
+"issues-and-flags.adoc[flag] will be issued in the response to indicate the "
+"inconsistency."
 msgstr ""
 
 #. type: Title ====
