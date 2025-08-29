@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-08-12 13:13+0000\n"
-"PO-Revision-Date: 2025-08-12 13:29\n"
+"POT-Creation-Date: 2025-08-29 14:16+0000\n"
+"PO-Revision-Date: 2025-08-29 15:45\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -42,7 +42,12 @@ msgid "xref:multimedia-publishing.adoc[Publishing multimedia]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:8
+#: en/data-publishing/modules/ROOT/nav.adoc:10
 msgid "xref:register-dataset-api.adoc[Register a dataset using the API]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/nav.adoc:11
+msgid "xref:local-contexts-pilot.adoc[LocalContexts pilot for Indigenous Data Governance]"
 msgstr ""
 
