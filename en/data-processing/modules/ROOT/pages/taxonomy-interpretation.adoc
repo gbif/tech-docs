@@ -58,11 +58,11 @@ If the `scientificName` is not present in the published occurrence record, it wi
 
 * In case a given scientific name is not (yet) part of the taxonomy, GBIF can at least match the record to some higher taxon in that taxonomy, such as the genus.
 
-Fuzzy name matching, matching to a higher taxon or matching to no taxon are issue https://techdocs.gbif-test.org/en/data-use/checklist-issues-and-flags[flags] we assign to records.
+Fuzzy name matching, matching to a higher taxon or matching to no taxon are issue xref:data-use:checklist-issues-and-flags.adoc[flags] we assign to records.
 
 ==== Identifier-based matching
 
-The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a https://techdocs.gbif-test.org/en/data-use/checklist-issues-and-flags[flag] will be issued in the response to indicate the inconsistency.
+The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a xref:data-use:checklist-issues-and-flags.adoc[flag] will be issued in the response to indicate the inconsistency.
 
 ==== Matching against different taxonomies
 
