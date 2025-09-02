@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-29 14:16+0000\n"
+"POT-Creation-Date: 2025-09-02 14:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,13 +44,11 @@ msgid "xref:multimedia-publishing.adoc[Publishing multimedia]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:10
+#: en/data-publishing/modules/ROOT/nav.adoc:9
 msgid "xref:register-dataset-api.adoc[Register a dataset using the API]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:11
-msgid ""
-"xref:local-contexts-pilot.adoc[LocalContexts pilot for Indigenous Data "
-"Governance]"
+#: en/data-publishing/modules/ROOT/nav.adoc:9
+msgid "xref:local-contexts-pilot.adoc[LocalContexts Pilot]"
 msgstr ""
