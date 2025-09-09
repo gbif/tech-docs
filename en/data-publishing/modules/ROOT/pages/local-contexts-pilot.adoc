@@ -54,7 +54,7 @@ For the purposes of this pilot, and to maintain simplicity:
 * Only JSON-formatted values will be interpreted.
 
 * Only the `local_contexts_project_id` will initially be recognized by the GBIF data platform, though additional properties may be supported in the future.
-  This property may point either to the https://localcontexts.org/support/api-guide/v2/[*LocalContexts Hub API*] endpoint or to the corresponding *project landing page*.
+  This property may point either to the https://localcontexts.org/support/api-guide/v2/[*LocalContexts Hub API*] endpoint or to the corresponding *project landing page*, also the project id without any url schema can be provided.
   In all cases, the GBIF portal will use the LocalContexts API to extract the relevant project metadata and provide a direct link to the project detail page in the *LocalContexts Web Portal*.
   Examples:
 
@@ -69,7 +69,16 @@ For the purposes of this pilot, and to maintain simplicity:
 ----
 {
   ...
-  "local_contexts_project_id": "https://sandbox.localcontextshub.org/projects/b23048f6-b832-4379-982a-7fe39a425ae8[https://sandbox.localcontextshub.org/api/v2/projects/b23048f6-b832-4379-982a-7fe39a425ae8/]"
+  "local_contexts_project_id": "https://sandbox.localcontextshub.org/projects/b23048f6-b832-4379-982a-7fe39a425ae8"
+  ...
+}
+----
+
+. Value using a LocalContexts Project Id
+----
+{
+  ...
+  "local_contexts_project_id": "b23048f6-b832-4379-982a-7fe39a425ae8"
   ...
 }
 ----
