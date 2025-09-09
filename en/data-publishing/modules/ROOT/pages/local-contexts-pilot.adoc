@@ -69,7 +69,7 @@ For the purposes of this pilot, and to maintain simplicity:
 ----
 {
   ...
-  "local_contexts_project_id": "https://sandbox.localcontextshub.org/api/v2/projects/b23048f6-b832-4379-982a-7fe39a425ae8/"
+  "local_contexts_project_id": "https://sandbox.localcontextshub.org/projects/b23048f6-b832-4379-982a-7fe39a425ae8[https://sandbox.localcontextshub.org/api/v2/projects/b23048f6-b832-4379-982a-7fe39a425ae8/]"
   ...
 }
 ----
