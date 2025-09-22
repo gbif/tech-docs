@@ -307,6 +307,9 @@ See also: https://en.wikipedia.org/wiki/QDGC[Wikipedia: QDGC].
 [#GBIF_DMSGCode]
 === Degree-Minute-Second Grid-cell code, `GBIF_DMSGCode`
 
+.Degree-Minute-Second Grid cells at 15′ width on northern Madagascar
+image::eqdgc_example_madagascar.png[]
+
 *Function definition:*
 
 [source,sql]
@@ -379,7 +382,10 @@ GeoPackage downloads of a Degree-Minute-Second grid at 3600″ (1°), 1800 (30�
 [#GBIF_ISEA3HCode]
 === ISEA3H Grid-cell code `GBIF_ISEA3HCode`
 
-This function implements the _Inverse Snyder Equal-Area Projection (ISEA) Aperture 3 Hexagonal (3H) Discrete Global Grid System (DGGS)_, ISEA3H.  Grid-cell codes/identifiers are as specified in https://doi.org/10.1080/15230406.2018.1455157[A novel identifier scheme for the ISEA Aperture 3 Hexagon Discrete Global Grid System].
+.ISEA3H Grid cells at resolution 10 over Belgium
+image::isea3h_example_belgium.png[]
+
+This function implements the _Inverse Snyder Equal-Area Projection (ISEA) Aperture 3 Hexagonal (3H) Discrete Global Grid System (DGGS)_, ISEA3H.  Grid-cell codes/identifiers are as specified in https://doi.org/10.1080/15230406.2018.1455157[A novel identifier scheme for the ISEA Aperture 3 Hexagon Discrete Global Grid System] — note the identifier contains the latitude and longitude of the centroid for the cell, see the paper for details.
 
 *Function definition:*
 
@@ -454,6 +460,9 @@ See also:
 
 [#GBIF_MGRSCode]
 === Military Grid Reference System Grid-cell code, `GBIF_MGRSCode`
+
+.Military Grid Reference System Grid cells at size 10km over part of Greece
+image::mgrs_example_greece.png[]
 
 *Function definition:*
 
