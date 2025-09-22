@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-22 13:15+0000\n"
+"POT-Creation-Date: 2025-09-22 13:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,10 +91,10 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:314
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:391
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:468
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:541
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:577
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:595
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:613
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:543
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:579
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:597
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:615
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:21
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:70
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:124
@@ -125,10 +125,10 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:324
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:401
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:478
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:549
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:584
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:602
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:620
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:551
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:586
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:604
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:622
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:31
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:80
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:134
@@ -229,10 +229,10 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:337
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:412
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:489
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:554
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:588
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:606
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:624
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:556
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:590
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:608
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:626
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:40
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:91
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:145
@@ -1174,13 +1174,23 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:530
 msgid ""
+"Shapefile downloads of MGRS areas are available from https://earth-info.nga."
+"mil/index.php?dir=coordsys&action=mgrs-1km-polyline-dloads[Office of "
+"Geomatics (USA National Geospatial-Intelligence Agency)] and Geodatabase "
+"format downloads are available at https://mgrs-data.org/data-downloads[mgrs-"
+"data.org]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:532
+msgid ""
 "Reference: https://earth-info.nga.mil/?"
 "dir=coordsys&action=coordsys#mgrs[Grids and Reference Systems] (select "
 "\"MGRS\")."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:532
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:534
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:220
 msgid ""
 "See also: https://en.wikipedia.org/wiki/"
@@ -1188,26 +1198,26 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:533
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:535
 #, no-wrap
 msgid "Text output functions"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:536
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:538
 msgid ""
 "These functions are useful when producing text-type output, e.g. tab-"
 "delimited files."
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:538
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:540
 #, no-wrap
 msgid "Temporal Uncertainty, `GBIF_TemporalUncertainty`"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:546
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:548
 #, no-wrap
 msgid ""
 "STRING GBIF_TemporalUncertainty(String dateInterval,\n"
@@ -1215,44 +1225,44 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:550
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:552
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:239
 #, no-wrap
 msgid "`dateInterval`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:551
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:553
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:240
 msgid "A string containing an ISO-8106 date or date interval."
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:551
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:553
 #, no-wrap
 msgid "`time`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:552
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:554
 msgid "A string containing an ISO-8106 time, or `null` if not required."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:556
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:558
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:244
 msgid "This function returns the uncertainty in seconds of the date."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:558
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:560
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:246
 #, no-wrap
 msgid "*Example arguments and returned value*\n"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:571
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:573
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:259
 #, no-wrap
 msgid ""
@@ -1270,70 +1280,70 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:574
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:576
 #, no-wrap
 msgid "Milliseconds To ISO8601 Date, `GBIF_MillisecondsToISO8601`"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:581
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:583
 #, no-wrap
 msgid "STRING GBIF_MillisecondsToISO8601(TIMESTAMP date)\n"
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:585
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:603
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:621
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:587
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:605
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:623
 #, no-wrap
 msgid "`date`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:586
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:588
 msgid "A timestamp of milliseconds from the Unix epoch."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:590
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:608
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:592
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:610
 msgid ""
 "This function formats a timestamp to a string like `2024-01-26T13:43:08Z`.  "
 "The UTC timezone (`Z`) is used."
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:592
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:594
 #, no-wrap
 msgid "Seconds To ISO8601 Date, `GBIF_SecondsToISO8601`"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:599
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:601
 #, no-wrap
 msgid "STRING GBIF_SecondsToISO8601(TIMESTAMP date)\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:604
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:622
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:606
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:624
 msgid "A timestamp of seconds from the Unix epoch."
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:610
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:612
 #, no-wrap
 msgid "Seconds To Local ISO8601 Date, `GBIF_SecondsToLocalISO8601`"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:617
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:619
 #, no-wrap
 msgid "STRING GBIF_SecondsToLocalISO8601(TIMESTAMP date)\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:625
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:627
 msgid ""
 "This function formats a timestamp to a string like `2024-01-26T13:43:08`.  "
 "No timezone is included."

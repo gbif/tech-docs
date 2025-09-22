@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-22 13:15+0000\n"
+"POT-Creation-Date: 2025-09-22 13:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,10 +26,10 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:314
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:391
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:468
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:541
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:577
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:595
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:613
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:543
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:579
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:597
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:615
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:21
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:70
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:124
@@ -49,10 +49,10 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:324
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:401
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:478
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:549
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:584
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:602
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:620
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:551
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:586
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:604
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:622
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:31
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:80
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:134
@@ -104,10 +104,10 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:337
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:412
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:489
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:554
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:588
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:606
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:624
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:556
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:590
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:608
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:626
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:40
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:91
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:145
@@ -408,7 +408,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:532
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:534
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:220
 msgid ""
 "See also: https://en.wikipedia.org/wiki/"
@@ -416,33 +416,33 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:550
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:552
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:239
 #, no-wrap
 msgid "`dateInterval`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:551
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:553
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:240
 msgid "A string containing an ISO-8106 date or date interval."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:556
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:558
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:244
 msgid "This function returns the uncertainty in seconds of the date."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:558
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:560
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:246
 #, no-wrap
 msgid "*Example arguments and returned value*\n"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:571
+#: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:573
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:259
 #, no-wrap
 msgid ""
