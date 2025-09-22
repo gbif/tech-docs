@@ -526,6 +526,8 @@ GROUP BY kingdom, scientificName;
 
 *Additional resources*
 
+Shapefile downloads of MGRS areas are available from https://earth-info.nga.mil/index.php?dir=coordsys&action=mgrs-1km-polyline-dloads[Office of Geomatics (USA National Geospatial-Intelligence Agency)] and Geodatabase format downloads are available at https://mgrs-data.org/data-downloads[mgrs-data.org].
+
 Reference: https://earth-info.nga.mil/?dir=coordsys&action=coordsys#mgrs[Grids and Reference Systems] (select "MGRS").
 
 See also: https://en.wikipedia.org/wiki/Military_Grid_Reference_System[Wikipedia: Military Grid Reference System].
