@@ -10,7 +10,7 @@ Note the function names are not case-sensitive, `gbif_geodistance`, `GBIF_GEODIS
 
 Many of the basic functions supported by Apache Hive are supported.
 
-See https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-HiveOperatorsandUser-DefinedFunctions(UDFs)[Hive Operators and User-Defined Functions] in the Apache Hive manual.
+See https://hive.apache.org/docs/latest/language/languagemanual-udf/[Hive Operators and User-Defined Functions] in the Apache Hive manual.
 
 == Filtering functions
 
@@ -183,7 +183,7 @@ STRING GBIF_EEARGCode(INTEGER gridSize,
 `longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
 `coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`). Set to 0 to disable randomization.
 
-The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
+The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within a circle.
 
 *Return value:*
 
@@ -298,6 +298,8 @@ GROUP BY kingdom, scientificName;
 
 *Additional resources*
 
+GeoPackage downloads of the EQDGC grid at levels 0–7 are available for https://download.gbif.org/grids/EQDGC/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/functions/ExtendedQuarterDegreeGridGenerator.java[this Java code].
+
 Reference: https://doi.org/10.1111/j.1365-2028.2008.00997.x[Larsen R, Holmern T, Prager SD, Maliti H, Røskaft, E. (2009) Using the extended quarter degree grid cell system to unify mapping and sharing of biodiversity data. African Journal of Ecology, 47: 382-392.]
 
 See also: https://en.wikipedia.org/wiki/QDGC[Wikipedia: QDGC].
@@ -326,7 +328,7 @@ The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ withi
 
 A _resolution_ of _3600_ will give the 1° cell, e.g. `S01E010` — this is the same as <<GBIF_EQDGCode>> with level 0.
 
-The _resolution_ must be a divisor of 3600.  Useful values are _3600_ (1°), _900_ (15′), _600_ (10′), _300_ (5′), _150_ (2′30″), _60_ (1′) and _30_ (30″).
+The _resolution_ must be a divisor of 3600.  Useful values are _3600_ (1°), _1800_ (30′), _900_ (15′), _600_ (10′), _300_ (5′), _150_ (2′30″), _60_ (1′) and _30_ (30″).
 
 *Return value:*
 
@@ -369,6 +371,10 @@ GROUP BY kingdom, scientificName;
 ----
 <1> Selection of grid resolution
 <2> Default to randomization within a 1000m radius if the occurrence does not have a published coordinate uncertainty.
+
+*Additional resources*
+
+GeoPackage downloads of a Degree-Minute-Second grid at 3600″ (1°), 1800 (30′), 900″ (15′), 600″ (10′), 300″ (5′), 150″ (2′30″), 60″ (1′) and 30″ (30″) are available for https://download.gbif.org/grids/DMS/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/functions/DmsGridGenerator.java[this Java code].
 
 [#GBIF_ISEA3HCode]
 === ISEA3H Grid-cell code `GBIF_ISEA3HCode`
@@ -432,6 +438,8 @@ GROUP BY kingdom, scientificName;
 <2> Default to randomization within a 1000m radius if the occurrence does not have a published coordinate uncertainty.
 
 *Additional resources*
+
+GeoPackage downloads of the ISEA3H grid at levels 0–11 are available for https://download.gbif.org/grids/ISEA3H/[download from GBIF].  These were generated using https://github.com/jhnwllr/ISEA3H-shapefiles[this R code].
 
 References:
 
@@ -509,7 +517,7 @@ GROUP BY kingdom, scientificName;
 
 *Additional resources*
 
-Reference: https://earth-info.nga.mil/GandG/coordsys/grids/referencesys.html[Grids and Reference Systems].
+Reference: https://earth-info.nga.mil/?dir=coordsys&action=coordsys#mgrs[Grids and Reference Systems] (select "MGRS").
 
 See also: https://en.wikipedia.org/wiki/Military_Grid_Reference_System[Wikipedia: Military Grid Reference System].
 
