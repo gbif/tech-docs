@@ -1,0 +1,20 @@
+= Importing GBIF data into LibreOffice Calc
+\ifeval::["{env}" == "prod"]
+:page-unpublish:
+\endif::[]
+
+https://www.libreoffice.org/discover/calc/[LibreOffice Calc] is a free and open source desktop application available on Windows, Mac and Linux.
+
+[#import-a-download]
+== Importing a GBIF download
+
+. Download the desired occurrences in either _Simple_ or _Darwin Core Archive_ format.
+. Unzip the downloaded file.
+. Choose _Data_ → _Get Data_ → _From File_ → _From Text/CSV_
+** For _Simple_ format, choose the unzipped file ending ".csv"
+** For _Darwin Core Archive_ format, choose the unzipped file called "occurrence.txt"
+** Set the _Character set_ to _Unicode (UTF-8)_
+** Check the separator is set to _Tab_ and nothing else
+. Click _OK_
+
+image::importing-libreoffice-download.png[]

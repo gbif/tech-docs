@@ -1,0 +1,68 @@
+= Importing GBIF data into QGIS
+\ifeval::["{env}" == "prod"]
+:page-unpublish:
+\endif::[]
+
+https://qgis.org/[QGIS] is a free and open source desktop GIS application, available on Windows, Mac and Linux.
+
+GBIF occurrence data can be imported in at least three ways.
+
+* <<import-a-download,Import a GBIF download>> when your GBIF query includes 20,000 or more occurrences
+* Use the community-made plugin for some queries returning up to around 20,000 occurrences
+* Use the Maps API for visualization only, without any analysis of the data
+
+GBIF basemaps can also <<basemaps,be imported>>.
+
+[#import-a-download]
+== Importing a GBIF download
+
+. Download the desired occurrences in either _Simple_ or _Darwin Core Archive_ format.
+. Unzip the downloaded file.
+. Choose _Layer_ → _Add Layer_ → _Add Delimited Text Layer…_
+** For _Simple_ format, choose the unzipped file ending ".csv"
+** For _Darwin Core Archive_ format, choose the unzipped file called "occurrence.txt"
+** Ensure the _Encoding_ is set to _UTF-8_
+** Set the _File Format_ to _Tab_ delimiters without quotes or escapes
+** The _Geometry Definition_ with the fields _decimalLongitude_ and _decimalLatitude_ should be filled in automatically
+. Click _Add_, then _Close_
+
+image::importing-qgis-download.png[]
+
+[#plugin]
+== Using the plugin
+
+_The https://plugins.qgis.org/plugins/qgisgbifapi/[GBIF Occurrences] plugin is developed and maintained by https://orcid.org/0000-0002-9503-4750[Nicolas Noé]._
+
+. Click _Plugins_ → _Manage and Install Plugins…_.
+. Search for "GBIF" and select and install the _GBIF Occurrences_ plugin.
+. Click _Vector_ → _GBIF Occurrences_ → _Load GBIF Occurrences_.
+** Fill in either a scientific name or a taxon key, and any other search filters.  (The easiest way to find a taxon key is to https://www.gbif.org/species/search[search the GBIF backbone taxonomy on the website] and copy the key (number) from the URL.)
+. Click _Load occurrences_
+
+The plugin is limited to retrieving 100,000 occurrence records, but numbers above around 20-30,000 will be slow to load.
+
+image::importing-qgis-plugin.png[]
+
+[#maps-api]
+== Visualizations with the Maps API
+
+_The xref:openapi:v2:maps.adoc[Maps API] is designed for visualization, it is used for all the maps on GBIF.org and can be embedded on other websites.  It is of limited use for analysis, but can be useful for preparing customized maps._
+
+. Refer to the xref:openapi:v2:maps.adoc[Maps API documentation] to find a suitable URL template, for example `https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?srs=EPSG:3875&taxonKey=6&bin=hex&hexPerTile=57&style=classic.poly` for all plants.
+. Choose _Layer_ → _Add Layer_ → _Add XYZ Layer…_
+** Create a _New_ connection, choose a name, and paste in the URL template.
+** Set the _Tile Resolution_ to _High (512x512 / 192 DPI)_
+** Click _OK_
+. Click _Add_
+
+[#basemaps]
+== Using the GBIF basemaps
+
+The https://tile.gbif.org/ui/[GBIF Basemaps] can also be added as a layer.
+
+. Choose _Layer_ → _Add Layer_ → _Add WMS/WMTS Layer…_
+. Choose _New_
+** Type a name, and use `https://gbif.link/wmts-base` as the URL
+** Click _OK_
+. Click _Connect_
+. Choose a layer matching the CRS you are using and the style you wish, then click _Add_.
