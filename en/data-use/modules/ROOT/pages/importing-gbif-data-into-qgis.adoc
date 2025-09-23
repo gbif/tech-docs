@@ -5,8 +5,8 @@ https://qgis.org/[QGIS] is a free and open source desktop GIS application, avail
 GBIF occurrence data can be imported in at least three ways.
 
 * <<import-a-download,Import a GBIF download>> when your GBIF query includes 20,000 or more occurrences
-* Use the community-made plugin for some queries returning up to around 20,000 occurrences
-* Use the Maps API for visualization only, without any analysis of the data
+* <<plugin,Use the community-made plugin>> for some queries returning up to around 20,000 occurrences
+* <<maps-api,Use the Maps API>> for visualization only, without any analysis of the data
 
 GBIF basemaps can also <<basemaps,be imported>>.
 

@@ -5,8 +5,8 @@ https://desktop.arcgis.com/[ArcGIS Desktop] is a desktop GIS application availab
 GBIF occurrence data can be imported in at least three ways.
 
 * <<import-a-download,Import a GBIF download>> when your GBIF query includes 20,000 or more occurrences
-* Use the official ESRI plugin for some queries returning up to around 20,000 occurrences
-* Use the Maps API for visualization only, without any analysis of the data
+* <<plugin,Use the official ESRI plugin>> for some queries returning up to around 20,000 occurrences
+* <<maps-api,Use the Maps API>> for visualization only, without any analysis of the data
 
 GBIF basemaps can also <<basemaps,be imported>>.
 
