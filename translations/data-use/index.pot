@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-23 12:06+0000\n"
+"POT-Creation-Date: 2025-09-23 12:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,14 +107,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/index.adoc:12
+#: en/data-use/modules/ROOT/pages/index.adoc:11
 msgid ""
-"\\ifeval::[\"{env}\" != \"prod\"] Data downloads are provided in text-base "
-"formats compatible with a wide range of software.  We have specific advice "
-"for loading data into spreadsheet software (xref:importing-gbif-data-into-"
-"libreoffice.adoc[LibreOffice], xref:importing-gbif-data-into-excel."
-"adoc[Excel]) and GIS software (xref:importing-gbif-data-into-qgis."
-"adoc[QGIS], xref:importing-gbif-data-into-arcgis.adoc[ArcGIS]).  \\endif::[]"
+"Data downloads are provided in text-based formats compatible with a wide "
+"range of software.  We have specific advice for loading data into "
+"spreadsheet software (xref:importing-gbif-data-into-libreoffice."
+"adoc[LibreOffice], xref:importing-gbif-data-into-excel.adoc[Excel]) and GIS "
+"software (xref:importing-gbif-data-into-qgis.adoc[QGIS], xref:importing-gbif-"
+"data-into-arcgis.adoc[ArcGIS])."
 msgstr ""
 
 #. type: Plain text

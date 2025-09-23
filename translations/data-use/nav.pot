@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-23 12:06+0000\n"
+"POT-Creation-Date: 2025-09-23 12:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/nav.adoc:4
-msgid "xref:download-formats.adoc[] \\ifeval::[\"{env}\" != \"prod\"]"
+msgid "xref:download-formats.adoc[]"
 msgstr ""
 
 #. type: Plain text
@@ -54,10 +54,8 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:9
-msgid ""
-"xref:importing-gbif-data-into-qgis.adoc[Importing into QGIS **Test**] "
-"\\endif::[]"
+#: en/data-use/modules/ROOT/nav.adoc:8
+msgid "xref:importing-gbif-data-into-qgis.adoc[Importing into QGIS **Test**]"
 msgstr ""
 
 #. type: Plain text
