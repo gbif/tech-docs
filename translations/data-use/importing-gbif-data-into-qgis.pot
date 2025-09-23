@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-23 12:06+0000\n"
+"POT-Creation-Date: 2025-09-23 12:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,22 +15,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:3
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:3
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:3
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:3
-msgid "\\ifeval::[\"{env}\" == \"prod\"]"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:5
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:5
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:5
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:5
-msgid "\\endif::[]"
-msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:9
@@ -114,7 +98,7 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:58
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:50
 msgid ""
-"_The xref:openapi:v2:maps.adoc[Maps API] is designed for visualization, it "
+"_The xref:v2@openapi::maps.adoc[Maps API] is designed for visualization, it "
 "is used for all the maps on GBIF.org and can be embedded on other websites.  "
 "It is of limited use for analysis, but can be useful for preparing "
 "customized maps._"
@@ -124,7 +108,7 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:60
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:52
 msgid ""
-"Refer to the xref:openapi:v2:maps.adoc[Maps API documentation] to find a "
+"Refer to the xref:v2@openapi::maps.adoc[Maps API documentation] to find a "
 "suitable URL template, for example `https://api.gbif.org/v2/map/occurrence/"
 "density/{z}/{x}/{y}@1x.png?"
 "srs=EPSG:3875&taxonKey=6&bin=hex&hexPerTile=57&style=classic.poly` for all "
