@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-23 12:15+0000\n"
+"POT-Creation-Date: 2025-09-23 12:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,49 +17,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:9
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:9
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:6
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:6
 msgid "GBIF occurrence data can be imported in at least three ways."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:11
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:11
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:8
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:8
 msgid ""
 "<<import-a-download,Import a GBIF download>> when your GBIF query includes "
 "20,000 or more occurrences"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:13
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:13
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:10
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:10
 msgid ""
 "Use the Maps API for visualization only, without any analysis of the data"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:15
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:15
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:12
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:12
 msgid "GBIF basemaps can also <<basemaps,be imported>>."
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:17
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:9
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:9
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:17
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:14
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:6
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:6
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:14
 #, no-wrap
 msgid "Importing a GBIF download"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:20
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:12
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:12
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:20
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:17
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:9
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:9
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:17
 msgid ""
 "Download the desired occurrences in either _Simple_ or _Darwin Core Archive_ "
 "format."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:18
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:10
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:10
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:18
+msgid "Unzip the downloaded file."
 msgstr ""
 
 #. type: Plain text
@@ -67,36 +75,28 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:13
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:13
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:21
-msgid "Unzip the downloaded file."
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:24
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:16
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:16
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:24
 msgid ""
 "For _Darwin Core Archive_ format, choose the unzipped file called "
 "\"occurrence.txt\""
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:30
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:32
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:27
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:29
 #, no-wrap
 msgid "Using the plugin"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:55
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:47
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:52
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:44
 #, no-wrap
 msgid "Visualizations with the Maps API"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:58
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:50
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:55
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:47
 msgid ""
 "_The xref:v2@openapi::maps.adoc[Maps API] is designed for visualization, it "
 "is used for all the maps on GBIF.org and can be embedded on other websites.  "
@@ -105,8 +105,8 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:60
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:52
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:57
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:49
 msgid ""
 "Refer to the xref:v2@openapi::maps.adoc[Maps API documentation] to find a "
 "suitable URL template, for example `https://api.gbif.org/v2/map/occurrence/"
@@ -116,37 +116,37 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:63
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:57
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:60
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:54
 msgid "Click _Add_"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:65
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:59
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:62
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:56
 #, no-wrap
 msgid "Using the GBIF basemaps"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:68
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:62
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:65
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:59
 msgid ""
 "The https://tile.gbif.org/ui/[GBIF Basemaps] can also be added as a layer."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:72
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:19
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:56
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:67
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:69
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:16
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:53
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:64
 msgid "Click _OK_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:15
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:15
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:23
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:12
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:12
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:20
 msgid "For _Simple_ format, choose the unzipped file ending \".csv\""
 msgstr ""
 
@@ -157,54 +157,54 @@ msgid "Importing GBIF data into QGIS"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:7
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:4
 msgid ""
 "https://qgis.org/[QGIS] is a free and open source desktop GIS application, "
 "available on Windows, Mac and Linux."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:12
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:9
 msgid ""
 "Use the community-made plugin for some queries returning up to around 20,000 "
 "occurrences"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:22
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:19
 msgid "Choose _Layer_ → _Add Layer_ → _Add Delimited Text Layer…_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:25
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:22
 msgid "Ensure the _Encoding_ is set to _UTF-8_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:26
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:23
 msgid "Set the _File Format_ to _Tab_ delimiters without quotes or escapes"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:27
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:24
 msgid ""
 "The _Geometry Definition_ with the fields _decimalLongitude_ and "
 "_decimalLatitude_ should be filled in automatically"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:28
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:25
 msgid "Click _Add_, then _Close_"
 msgstr ""
 
 #. type: Target for macro image
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:29
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:26
 #, no-wrap
 msgid "importing-qgis-download.png"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:35
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:32
 msgid ""
 "_The https://plugins.qgis.org/plugins/qgisgbifapi/[GBIF Occurrences] plugin "
 "is developed and maintained by https://orcid.org/0000-0002-9503-4750[Nicolas "
@@ -212,23 +212,23 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:37
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:34
 msgid "Click _Plugins_ → _Manage and Install Plugins…_."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:38
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:35
 msgid ""
 "Search for \"GBIF\" and select and install the _GBIF Occurrences_ plugin."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:39
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:36
 msgid "Click _Vector_ → _GBIF Occurrences_ → _Load GBIF Occurrences_."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:40
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:37
 msgid ""
 "Fill in either a scientific name or a taxon key, and any other search "
 "filters.  (The easiest way to find a taxon key is to https://www.gbif.org/"
@@ -237,61 +237,61 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:41
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:38
 msgid "Click _Load occurrences_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:43
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:40
 msgid ""
 "The plugin is limited to retrieving 100,000 occurrence records, but numbers "
 "above around 20-30,000 will be slow to load."
 msgstr ""
 
 #. type: Target for macro image
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:44
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:41
 #, no-wrap
 msgid "importing-qgis-plugin.png"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:53
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:50
 msgid "Choose _Layer_ → _Add Layer_ → _Add XYZ Layer…_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:54
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:51
 msgid ""
 "Create a _New_ connection, choose a name, and paste in the URL template."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:55
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:52
 msgid "Set the _Tile Resolution_ to _High (512x512 / 192 DPI)_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:64
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:61
 msgid "Choose _Layer_ → _Add Layer_ → _Add WMS/WMTS Layer…_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:65
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:62
 msgid "Choose _New_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:66
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:63
 msgid "Type a name, and use `https://gbif.link/wmts-base` as the URL"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:68
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:65
 msgid "Click _Connect_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:68
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:65
 msgid ""
 "Choose a layer matching the CRS you are using and the style you wish, then "
 "click _Add_."
