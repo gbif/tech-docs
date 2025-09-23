@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-23 12:53+0000\n"
+"POT-Creation-Date: 2025-09-23 15:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,7 +106,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:57
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:49
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:51
 msgid ""
 "Refer to the xref:v2@openapi::maps.adoc[Maps API documentation] to find a "
 "suitable URL template, for example `https://api.gbif.org/v2/map/occurrence/"
@@ -117,20 +117,20 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:60
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:54
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:56
 msgid "Click _Add_"
 msgstr ""
 
 #. type: Title ==
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:62
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:56
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:60
 #, no-wrap
 msgid "Using the GBIF basemaps"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:65
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:59
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:63
 msgid ""
 "The https://tile.gbif.org/ui/[GBIF Basemaps] can also be added as a layer."
 msgstr ""
@@ -138,8 +138,8 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:69
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:16
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:53
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:64
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:55
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:68
 msgid "Click _OK_"
 msgstr ""
 
@@ -255,43 +255,56 @@ msgid "importing-qgis-plugin.png"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:50
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:49
+msgid ""
+"_When using this API, QGIS only supports maps in Web Mercator `3875` "
+"projection._"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:52
 msgid "Choose _Layer_ → _Add Layer_ → _Add XYZ Layer…_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:51
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:53
 msgid ""
 "Create a _New_ connection, choose a name, and paste in the URL template."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:52
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:54
 msgid "Set the _Tile Resolution_ to _High (512x512 / 192 DPI)_"
 msgstr ""
 
+#. type: Target for macro image
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:57
+#, no-wrap
+msgid "importing-qgis-apitiles.png"
+msgstr ""
+
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:61
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:65
 msgid "Choose _Layer_ → _Add Layer_ → _Add WMS/WMTS Layer…_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:62
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:66
 msgid "Choose _New_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:63
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:67
 msgid "Type a name, and use `https://gbif.link/wmts-base` as the URL"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:65
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:69
 msgid "Click _Connect_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:65
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:69
 msgid ""
 "Choose a layer matching the CRS you are using and the style you wish, then "
 "click _Add_."
