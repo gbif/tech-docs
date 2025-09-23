@@ -1,11 +1,11 @@
 * Data downloads
 ** xref:download-formats.adoc[]
-\ifeval::["{env}" != "prod"]
+ifeval::["{env}" != "prod"]
 ** xref:importing-gbif-data-into-arcgis.adoc[Importing into ArcGIS **Test**]
 ** xref:importing-gbif-data-into-excel.adoc[Importing into Excel **Test**]
 ** xref:importing-gbif-data-into-libreoffice.adoc[Importing into LibreOffice **Test**]
 ** xref:importing-gbif-data-into-qgis.adoc[Importing into QGIS **Test**]
-\endif::[]
+endif::[]
 * Issues and flags
 ** xref:occurrence-issues-and-flags.adoc[]
 ** xref:checklist-issues-and-flags.adoc[]

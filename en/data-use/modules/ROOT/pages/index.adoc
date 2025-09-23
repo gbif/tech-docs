@@ -6,9 +6,9 @@ GBIF users can access the data they need in several ways, and each method genera
 
 The easiest option is to use the https://www.gbif.org/[GBIF website], which allows searching and browsing individual records, as well as requesting data downloads in the most common formats.
 
-\ifeval::["{env}" != "prod"]
-Data downloads are provided in text-base formats compatible with a wide range of software.  We have specific advice for loading data into spreadsheet software (xref:importing-gbif-data-into-libreoffice.adoc[LibreOffice], xref:importing-gbif-data-into-excel.adoc[Excel]) and GIS software (xref:importing-gbif-data-into-qgis.adoc[QGIS], xref:importing-gbif-data-into-arcgis.adoc[ArcGIS]).
-\endif::[]
+ifeval::["{env}" != "prod"]
+Data downloads are provided in text-based formats compatible with a wide range of software.  We have specific advice for loading data into spreadsheet software (xref:importing-gbif-data-into-libreoffice.adoc[LibreOffice], xref:importing-gbif-data-into-excel.adoc[Excel]) and GIS software (xref:importing-gbif-data-into-qgis.adoc[QGIS], xref:importing-gbif-data-into-arcgis.adoc[ArcGIS]).
+endif::[]
 
 For more structured access, consider using the GBIF API, either directly or using the **rgbif** or **pygbif** libraries.
 

@@ -1,7 +1,7 @@
 = Importing GBIF data into Microsoft Excel
-\ifeval::["{env}" == "prod"]
+ifeval::["{env}" == "prod"]
 :page-unpublish:
-\endif::[]
+endif::[]
 
 https://www.microsoft.com/en-us/microsoft-365/excel[QGIS] is a desktop and online Spreadsheet application, with the desktop version available on Windows and Mac.
 

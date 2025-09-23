@@ -1,7 +1,7 @@
 = Importing GBIF data into ArcGIS
-\ifeval::["{env}" == "prod"]
+ifeval::["{env}" == "prod"]
 :page-unpublish:
-\endif::[]
+endif::[]
 
 https://desktop.arcgis.com/[ArcGIS Desktop] is a desktop GIS application available on Windows.
 
