@@ -54,9 +54,9 @@ The plugin is limited to retrieving 100,000 occurrence records, but numbers abov
 [#maps-api]
 == Visualizations with the Maps API
 
-_The xref:openapi:v2:maps.adoc[Maps API] is designed for visualization, it is used for all the maps on GBIF.org and can be embedded on other websites.  It is of limited use for analysis, but can be useful for preparing customized maps._
+_The xref:v2@openapi::maps.adoc[Maps API] is designed for visualization, it is used for all the maps on GBIF.org and can be embedded on other websites.  It is of limited use for analysis, but can be useful for preparing customized maps._
 
-. Refer to the xref:openapi:v2:maps.adoc[Maps API documentation] to find a suitable URL template, for example `https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?srs=EPSG:3875&taxonKey=6&bin=hex&hexPerTile=57&style=classic.poly` for all plants.
+. Refer to the xref:v2@openapi::maps.adoc[Maps API documentation] to find a suitable URL template, for example `https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?srs=EPSG:3875&taxonKey=6&bin=hex&hexPerTile=57&style=classic.poly` for all plants.
 . Choose _Map_ → _Add Data From Path_
 ** Paste in the URL template.
 . Click _Add_
