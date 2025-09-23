@@ -1,0 +1,269 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2025-09-23 12:15+0000\n"
+"PO-Revision-Date: 2025-09-23 12:18\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /main/translations/data-use/importing-gbif-data-into-arcgis.pot\n"
+"X-Crowdin-File-ID: 44638\n"
+
+#. type: Title =
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:1
+#, no-wrap
+msgid "Importing GBIF data into ArcGIS"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:7
+msgid "https://desktop.arcgis.com/[ArcGIS Desktop] is a desktop GIS application available on Windows."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:9
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:9
+msgid "GBIF occurrence data can be imported in at least three ways."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:11
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:11
+msgid "<<import-a-download,Import a GBIF download>> when your GBIF query includes 20,000 or more occurrences"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:12
+msgid "Use the official ESRI plugin for some queries returning up to around 20,000 occurrences"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:13
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:13
+msgid "Use the Maps API for visualization only, without any analysis of the data"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:15
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:15
+msgid "GBIF basemaps can also <<basemaps,be imported>>."
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:17
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:9
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:9
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:17
+#, no-wrap
+msgid "Importing a GBIF download"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:20
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:12
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:12
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:20
+msgid "Download the desired occurrences in either _Simple_ or _Darwin Core Archive_ format."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:21
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:13
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:13
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:21
+msgid "Unzip the downloaded file."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:22
+msgid "Choose _Map_ → _XY Table To Point_"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:23
+msgid "For _Simple_ format, choose as _Input Table_ the unzipped file ending \".csv\""
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:24
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:16
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:16
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:24
+msgid "For _Darwin Core Archive_ format, choose the unzipped file called \"occurrence.txt\""
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:25
+msgid "The _X Field_ and _Y Field_ should be filled in automatically with _decimalLongitude_ and _decimalLatitude_"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:26
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:49
+msgid "Click _Run_"
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:27
+#, no-wrap
+msgid "importing-arcgis-desktop-download.png"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:30
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:32
+#, no-wrap
+msgid "Using the plugin"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:33
+msgid "_The https://gbif.maps.arcgis.com/home/item.html?id=927944e867624504bfd6c489b0d2aec7[Download Species Occurrence Points (GBIF)] plugin is developed and maintained by ESRI._"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:35
+msgid "From the _Catalog_, choose _Portal_ → _ArcGIS Online_."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:36
+msgid "Search for \"GBIF\" and select the _Download Species Occurrence Points (GBIF)_ toolbox."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:37
+msgid "Right click it and _Add to Project_"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:38
+msgid "You may need to confirm you wish the toolbox code to run"
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:39
+#, no-wrap
+msgid "importing-arcgis-desktop-plugin-install.png"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:42
+msgid "Return to the _Catalog_ and choose _Project_, then the GBIF toolbox."
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:43
+#, no-wrap
+msgid "importing-arcgis-desktop-plugin-open.png"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:46
+msgid "_Run_ the toolbox."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:47
+msgid "Provide a scientific name, and select or draw a study area"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:48
+msgid "Optionally, choose to _Generate and register DOI_"
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:50
+#, no-wrap
+msgid "importing-arcgis-desktop-plugin-use.png"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:53
+msgid "The plugin is limited to retrieving 100,000 occurrence records, but numbers above around 50,000 will be slow to load."
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:55
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:47
+#, no-wrap
+msgid "Visualizations with the Maps API"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:58
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:50
+msgid "_The xref:v2@openapi::maps.adoc[Maps API] is designed for visualization, it is used for all the maps on GBIF.org and can be embedded on other websites.  It is of limited use for analysis, but can be useful for preparing customized maps._"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:60
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:52
+msgid "Refer to the xref:v2@openapi::maps.adoc[Maps API documentation] to find a suitable URL template, for example `https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?srs=EPSG:3875&taxonKey=6&bin=hex&hexPerTile=57&style=classic.poly` for all plants."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:61
+msgid "Choose _Map_ → _Add Data From Path_"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:62
+msgid "Paste in the URL template."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:63
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:57
+msgid "Click _Add_"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:65
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:59
+#, no-wrap
+msgid "Using the GBIF basemaps"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:68
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:62
+msgid "The https://tile.gbif.org/ui/[GBIF Basemaps] can also be added as a layer."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:70
+msgid "Choose _Insert_ → _Server_ → _New WMTS Server_"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:71
+msgid "Und use `https://gbif.link/wmts-base` as the URL"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:72
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:19
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:56
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:67
+msgid "Click _OK_"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:73
+msgid "From the _Catalog_ (_Project_), Under _Servers_ add the base layer"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:73
+msgid "The style can be changed be right-clicking the layer and changing the property under _WMTS_."
+msgstr ""
+
