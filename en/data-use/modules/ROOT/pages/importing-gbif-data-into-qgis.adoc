@@ -45,12 +45,16 @@ image::importing-qgis-plugin.png[]
 
 _The xref:v2@openapi::maps.adoc[Maps API] is designed for visualization, it is used for all the maps on GBIF.org and can be embedded on other websites.  It is of limited use for analysis, but can be useful for preparing customized maps._
 
+_When using this API, QGIS only supports maps in Web Mercator `3875` projection._
+
 . Refer to the xref:v2@openapi::maps.adoc[Maps API documentation] to find a suitable URL template, for example `https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?srs=EPSG:3875&taxonKey=6&bin=hex&hexPerTile=57&style=classic.poly` for all plants.
 . Choose _Layer_ → _Add Layer_ → _Add XYZ Layer…_
 ** Create a _New_ connection, choose a name, and paste in the URL template.
 ** Set the _Tile Resolution_ to _High (512x512 / 192 DPI)_
 ** Click _OK_
 . Click _Add_
+
+image::importing-qgis-apitiles.png[]
 
 [#basemaps]
 == Using the GBIF basemaps
