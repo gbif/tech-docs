@@ -1,7 +1,4 @@
 = Importing GBIF data into LibreOffice Calc
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
 
 https://www.libreoffice.org/discover/calc/[LibreOffice Calc] is a free and open source desktop application available on Windows, Mac and Linux.
 

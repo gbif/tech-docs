@@ -1,7 +1,4 @@
 = Importing GBIF data into QGIS
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
 
 https://qgis.org/[QGIS] is a free and open source desktop GIS application, available on Windows, Mac and Linux.
 

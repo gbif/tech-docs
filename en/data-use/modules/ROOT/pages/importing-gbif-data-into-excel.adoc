@@ -1,9 +1,6 @@
 = Importing GBIF data into Microsoft Excel
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
 
-https://www.microsoft.com/en-us/microsoft-365/excel[QGIS] is a desktop and online Spreadsheet application, with the desktop version available on Windows and Mac.
+https://www.microsoft.com/en-us/microsoft-365/excel[Microsoft Excel] is a desktop and online Spreadsheet application, with the desktop version available on Windows and Mac.
 
 [#import-a-download]
 == Importing a GBIF download
@@ -18,4 +15,4 @@ https://www.microsoft.com/en-us/microsoft-365/excel[QGIS] is a desktop and onlin
 
 image::importing-excel-download.png[]
 
-#TODO: Check on a Mac#
+// TODO: Check on a Mac
