@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-26 16:44+0000\n"
+"POT-Creation-Date: 2025-09-23 12:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -360,7 +360,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/index.adoc:76
-#: en/data-use/modules/ROOT/nav.adoc:4
+#: en/data-use/modules/ROOT/nav.adoc:10
 #, no-wrap
 msgid "Issues and flags"
 msgstr ""
@@ -426,7 +426,6 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/index.adoc:94
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:58
 msgid ""
 "In the case of homonyms or similar spelled names, the service has no way to "
 "verify the potential matches, so such names will often get higher taxon "
@@ -442,7 +441,6 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/index.adoc:96
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:62
 msgid ""
 "Fuzzy name matching, matching to higher taxon or matching to no taxon are "
 "issue flags we assign to records."

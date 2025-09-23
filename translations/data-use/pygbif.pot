@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"POT-Creation-Date: 2025-09-23 12:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #. type: Title ==
 #: en/data-use/modules/ROOT/pages/citation.adoc:1
-#: en/data-use/modules/ROOT/pages/index.adoc:39
+#: en/data-use/modules/ROOT/pages/index.adoc:43
 #: en/data-use/modules/ROOT/pages/pygbif.adoc:59
 #, no-wrap
 msgid "Citation"
@@ -34,7 +34,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/citation.adoc:3
-#: en/data-use/modules/ROOT/pages/index.adoc:41
+#: en/data-use/modules/ROOT/pages/index.adoc:45
 #: en/data-use/modules/ROOT/pages/pygbif.adoc:62
 msgid ""
 "Under the terms of the GBIF data user agreement, users who download data "

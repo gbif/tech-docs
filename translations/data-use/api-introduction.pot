@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"POT-Creation-Date: 2025-09-23 12:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-introduction.adoc:4
-#: en/data-use/modules/ROOT/pages/index.adoc:24
+#: en/data-use/modules/ROOT/pages/index.adoc:28
 msgid ""
 "The GBIF API provides a programmatic way to query and publish data on GBIF."
 "org. It can be useful or necessary to use the API to"
@@ -32,14 +32,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-introduction.adoc:6
-#: en/data-use/modules/ROOT/pages/index.adoc:26
+#: en/data-use/modules/ROOT/pages/index.adoc:30
 #: en/openapi/modules/ROOT/pages/index.adoc:8
 msgid "make advanced queries, not supported by the website,"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-introduction.adoc:7
-#: en/data-use/modules/ROOT/pages/index.adoc:27
+#: en/data-use/modules/ROOT/pages/index.adoc:31
 #: en/openapi/modules/ROOT/pages/index.adoc:9
 msgid ""
 "include the results of GBIF queries in scripts, workflows or analyses, which "
@@ -48,7 +48,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-introduction.adoc:8
-#: en/data-use/modules/ROOT/pages/index.adoc:28
+#: en/data-use/modules/ROOT/pages/index.adoc:32
 #: en/openapi/modules/ROOT/pages/index.adoc:10
 msgid "embed GBIF data into other websites."
 msgstr ""
