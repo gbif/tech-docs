@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-09-23 12:06+0000\n"
-"PO-Revision-Date: 2025-09-23 12:18\n"
+"POT-Creation-Date: 2025-09-23 12:53+0000\n"
+"PO-Revision-Date: 2025-09-23 14:43\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar_SA\n"
@@ -16,37 +16,29 @@ msgstr ""
 "X-Crowdin-File: /main/translations/data-use/importing-gbif-data-into-excel.pot\n"
 "X-Crowdin-File-ID: 44640\n"
 
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:3
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:3
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:3
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:3
-msgid "\\ifeval::[\"{env}\" == \"prod\"]"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:5
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:5
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:5
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:5
-msgid "\\endif::[]"
-msgstr ""
-
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:17
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:9
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:9
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:17
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:14
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:6
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:6
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:14
 #, no-wrap
 msgid "Importing a GBIF download"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:20
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:12
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:12
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:20
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:17
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:9
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:9
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:17
 msgid "Download the desired occurrences in either _Simple_ or _Darwin Core Archive_ format."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:18
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:10
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:10
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:18
+msgid "Unzip the downloaded file."
 msgstr ""
 
 #. type: Plain text
@@ -54,14 +46,6 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:13
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:13
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:21
-msgid "Unzip the downloaded file."
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:24
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:16
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:16
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:24
 msgid "For _Darwin Core Archive_ format, choose the unzipped file called \"occurrence.txt\""
 msgstr ""
 
@@ -72,41 +56,36 @@ msgid "Importing GBIF data into Microsoft Excel"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:7
-msgid "https://www.microsoft.com/en-us/microsoft-365/excel[QGIS] is a desktop and online Spreadsheet application, with the desktop version available on Windows and Mac."
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:4
+msgid "https://www.microsoft.com/en-us/microsoft-365/excel[Microsoft Excel] is a desktop and online Spreadsheet application, with the desktop version available on Windows and Mac."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:14
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:14
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:11
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:11
 msgid "Choose _Data_ → _Get Data_ → _From File_ → _From Text/CSV_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:15
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:15
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:23
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:12
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:12
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:20
 msgid "For _Simple_ format, choose the unzipped file ending \".csv\""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:17
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:14
 msgid "Set the _File Origin_ to _65001: Unicode (UTF-8)_"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:18
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:15
 msgid "Click _Load_"
 msgstr ""
 
 #. type: Target for macro image
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:19
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:16
 #, no-wrap
 msgid "importing-excel-download.png"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:21
-msgid "#TODO: Check on a Mac#"
 msgstr ""
 
