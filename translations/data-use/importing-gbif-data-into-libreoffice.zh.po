@@ -1,0 +1,115 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2025-09-23 12:06+0000\n"
+"PO-Revision-Date: 2025-09-23 12:18\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /main/translations/data-use/importing-gbif-data-into-libreoffice.pot\n"
+"X-Crowdin-File-ID: 44642\n"
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:3
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:3
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:3
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:3
+msgid "\\ifeval::[\"{env}\" == \"prod\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:5
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:5
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:5
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:5
+msgid "\\endif::[]"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:17
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:9
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:9
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:17
+#, no-wrap
+msgid "Importing a GBIF download"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:20
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:12
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:12
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:20
+msgid "Download the desired occurrences in either _Simple_ or _Darwin Core Archive_ format."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:21
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:13
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:13
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:21
+msgid "Unzip the downloaded file."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:24
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:16
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:16
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:24
+msgid "For _Darwin Core Archive_ format, choose the unzipped file called \"occurrence.txt\""
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:72
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:19
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:56
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:67
+msgid "Click _OK_"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:14
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:14
+msgid "Choose _Data_ → _Get Data_ → _From File_ → _From Text/CSV_"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-excel.adoc:15
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:15
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:23
+msgid "For _Simple_ format, choose the unzipped file ending \".csv\""
+msgstr ""
+
+#. type: Title =
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:1
+#, no-wrap
+msgid "Importing GBIF data into LibreOffice Calc"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:7
+msgid "https://www.libreoffice.org/discover/calc/[LibreOffice Calc] is a free and open source desktop application available on Windows, Mac and Linux."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:17
+msgid "Set the _Character set_ to _Unicode (UTF-8)_"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:18
+msgid "Check the separator is set to _Tab_ and nothing else"
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-use/modules/ROOT/pages/importing-gbif-data-into-libreoffice.adoc:20
+#, no-wrap
+msgid "importing-libreoffice-download.png"
+msgstr ""
+
