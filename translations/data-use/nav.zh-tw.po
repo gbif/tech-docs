@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-09-23 12:10+0000\n"
-"PO-Revision-Date: 2025-09-23 12:18\n"
+"POT-Creation-Date: 2025-09-23 12:53+0000\n"
+"PO-Revision-Date: 2025-09-23 14:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -18,112 +18,112 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/index.adoc:76
-#: en/data-use/modules/ROOT/nav.adoc:10
+#: en/data-use/modules/ROOT/nav.adoc:8
 #, no-wrap
 msgid "Issues and flags"
 msgstr ""
 
 #. type: Title ==
 #: en/data-use/modules/ROOT/nav.adoc:2
-#: en/data-use/modules/ROOT/pages/index.adoc:17
+#: en/data-use/modules/ROOT/pages/index.adoc:15
 #, no-wrap
 msgid "Data downloads"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:4
+#: en/data-use/modules/ROOT/nav.adoc:3
 msgid "xref:download-formats.adoc[]"
 msgstr ""
 
 #. type: Plain text
+#: en/data-use/modules/ROOT/nav.adoc:4
+msgid "xref:importing-gbif-data-into-arcgis.adoc[Importing into ArcGIS]"
+msgstr ""
+
+#. type: Plain text
 #: en/data-use/modules/ROOT/nav.adoc:5
-msgid "xref:importing-gbif-data-into-arcgis.adoc[Importing into ArcGIS **Test**]"
+msgid "xref:importing-gbif-data-into-excel.adoc[Importing into Excel]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/nav.adoc:6
-msgid "xref:importing-gbif-data-into-excel.adoc[Importing into Excel **Test**]"
+msgid "xref:importing-gbif-data-into-libreoffice.adoc[Importing into LibreOffice]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/nav.adoc:7
-msgid "xref:importing-gbif-data-into-libreoffice.adoc[Importing into LibreOffice **Test**]"
+msgid "xref:importing-gbif-data-into-qgis.adoc[Importing into QGIS]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:8
-msgid "xref:importing-gbif-data-into-qgis.adoc[Importing into QGIS **Test**]"
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:11
+#: en/data-use/modules/ROOT/nav.adoc:9
 msgid "xref:occurrence-issues-and-flags.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:12
+#: en/data-use/modules/ROOT/nav.adoc:10
 msgid "xref:checklist-issues-and-flags.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:13
+#: en/data-use/modules/ROOT/nav.adoc:11
 msgid "API Usage"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:14
+#: en/data-use/modules/ROOT/nav.adoc:12
 msgid "xref:api-introduction.adoc[API Introduction]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:15
+#: en/data-use/modules/ROOT/nav.adoc:13
 msgid "xref:rgbif.adoc[rgbif]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:16
+#: en/data-use/modules/ROOT/nav.adoc:14
 msgid "xref:pygbif.adoc[pygbif]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:17
+#: en/data-use/modules/ROOT/nav.adoc:15
 msgid "xref:java.adoc[Java]"
 msgstr ""
 
 #. type: Title =
-#: en/data-use/modules/ROOT/nav.adoc:18
+#: en/data-use/modules/ROOT/nav.adoc:16
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:1
 #, no-wrap
 msgid "API Downloads"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:19
+#: en/data-use/modules/ROOT/nav.adoc:17
 msgid "xref:api-downloads.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:20
+#: en/data-use/modules/ROOT/nav.adoc:18
 msgid "xref:api-sql-downloads.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:21
+#: en/data-use/modules/ROOT/nav.adoc:19
 msgid "xref:api-sql-download-functions.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:22
+#: en/data-use/modules/ROOT/nav.adoc:20
 msgid "xref:data-cubes.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:23
+#: en/data-use/modules/ROOT/nav.adoc:21
 msgid "xref:cloud-services::index.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/nav.adoc:23
+#: en/data-use/modules/ROOT/nav.adoc:21
 msgid "xref:citation.adoc[Citation]"
 msgstr ""
 
