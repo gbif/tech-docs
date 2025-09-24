@@ -1,4 +1,7 @@
 = Taxonomy interpretation
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
 
 == Multiple taxonomy support
 
@@ -66,7 +69,7 @@ The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchName
 
 ==== Matching against different taxonomies
 
-The optional checklistKey parameter specifies the taxonomy to match against. 
+The optional checklistKey parameter specifies the taxonomy to match against.
 
 *Example matching request against the COL XR*
 ```bash
