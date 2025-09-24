@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-09-23 15:17+0000\n"
-"PO-Revision-Date: 2025-09-23 15:43\n"
+"POT-Creation-Date: 2025-09-24 15:41+0000\n"
+"PO-Revision-Date: 2025-09-24 15:42\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -96,7 +96,7 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-arcgis.adoc:57
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:51
-msgid "Refer to the xref:v2@openapi::maps.adoc[Maps API documentation] to find a suitable URL template, for example `https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?srs=EPSG:3875&taxonKey=6&bin=hex&hexPerTile=57&style=classic.poly` for all plants."
+msgid "Refer to the xref:v2@openapi::maps.adoc[Maps API documentation] to find a suitable URL template, for example `https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?srs=EPSG:3857&taxonKey=6&bin=hex&hexPerTile=57&style=classic.poly` for all plants."
 msgstr ""
 
 #. type: Plain text
@@ -223,7 +223,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/importing-gbif-data-into-qgis.adoc:49
-msgid "_When using this API, QGIS only supports maps in Web Mercator `3875` projection._"
+msgid "_When using this API, QGIS only supports maps in Web Mercator `3857` projection._"
 msgstr ""
 
 #. type: Plain text
