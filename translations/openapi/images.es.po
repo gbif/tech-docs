@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2025-10-01 15:11+0000\n"
+"PO-Revision-Date: 2025-10-01 15:26\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: /main/translations/openapi/images.pot\n"
+"X-Crowdin-File-ID: 44650\n"
+
+#. type: Title =
+#: en/openapi/modules/ROOT/pages/images.adoc:1
+#, no-wrap
+msgid "Occurrence image API"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/images.adoc:7
+msgid "GBIF run an image crop-and-resize server and cache to support display of occurrence images on www.gbif.org and other uses."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/images.adoc:9
+msgid "Note that occurrence images may be licensed under more restrictive terms than other occurrence data.  Refer to the relevant terms in the multimedia extensions, or contact the publisher of the dataset."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/images.adoc:10
+#, no-wrap
+msgid "Usage"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/images.adoc:13
+msgid "The server runs https://www.thumbor.org[Thumbor], so for general instructions on cropping, resizing and so on see the https://thumbor.readthedocs.io/[Thumbor documentation]."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/images.adoc:15
+msgid "To retrieve an occurrence image, use a URL of the form"
+msgstr ""
+
+#. type: delimited block -
+#: en/openapi/modules/ROOT/pages/images.adoc:18
+#, no-wrap
+msgid "https://api.gbif.org/v1/image/cache/occurrence/[gbifId]/media/[md5sum(identifier)]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/images.adoc:21
+msgid "where `[gbifId]` is the `key` of the occurrence, and `[md5sum(identifier)]` is the MD5 checksum in hexadecimal format of the `.media[].identifier` URL."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/images.adoc:23
+msgid "For example, the occurrence https://api.gbif.org/v1/occurrence/2005380410[2005380410] with media identifier `https://inaturalist-open-data.s3.amazonaws.com/photos/31610070/original.jpg` may be accessed (and optionally resized, cropped and so on) with URLs like"
+msgstr ""
+
+#. type: delimited block -
+#: en/openapi/modules/ROOT/pages/images.adoc:27
+#, no-wrap
+msgid "https://api.gbif.org/v1/image/cache/occurrence/2005380410/media/568639b65b65ddb9090d3d6ef1abce14\n"
+"https://api.gbif.org/v1/image/cache/200x/occurrence/2005380410/media/568639b65b65ddb9090d3d6ef1abce14\n"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/openapi/modules/ROOT/pages/images.adoc:29
+#, no-wrap
+msgid "Image example"
+msgstr ""
+
+#. type: Target for macro image
+#: en/openapi/modules/ROOT/pages/images.adoc:29
+#, no-wrap
+msgid "https://api.gbif.org/v1/image/cache/200x/occurrence/2005380410/media/568639b65b65ddb9090d3d6ef1abce14"
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/images.adoc:31
+#, no-wrap
+msgid "Limitations"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/images.adoc:34
+#, no-wrap
+msgid "*Please limit scripted usage of this API to a single HTTP connection.*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/images.adoc:35
+msgid "The maximum image resolution available through the server is 1200×1200px.  The JPEG quality of larger images is limited to 85.  For the highest resolution image, download from the publisher's server."
+msgstr ""
+
