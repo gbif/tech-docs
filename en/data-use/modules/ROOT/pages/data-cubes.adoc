@@ -128,7 +128,7 @@ and the minimum coordinate uncertainty and temporal uncertainty:
 [source,sql]
 ----
 MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters,
-MIN(GBIF_TemporalUncertainty(eventDate)) AS minTemporalUncertainty
+MIN(GBIF_TemporalUncertainty(eventDate, null)) AS minTemporalUncertainty
 ----
 
 === Add sampling bias expression
@@ -187,7 +187,7 @@ SELECT <1>
   -- Measurements <3>
   COUNT(*) AS occurrences, <4>
   MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters,
-  MIN(GBIF_TemporalUncertainty(eventDate)) AS minTemporalUncertainty,
+  MIN(GBIF_TemporalUncertainty(eventDate, null)) AS minTemporalUncertainty,
   -- Higher taxon measurement
   IF(ISNULL(familyKey), <1>
      NULL, <2>
