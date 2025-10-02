@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-23 12:53+0000\n"
+"POT-Creation-Date: 2025-10-02 12:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,27 +192,86 @@ msgstr ""
 #. type: Title ==
 #: en/openapi/modules/ROOT/pages/index.adoc:37
 #, no-wrap
+msgid "Rate limits"
+msgstr ""
+
+#. type: delimited block =
+#: en/openapi/modules/ROOT/pages/index.adoc:42
+msgid ""
+"If you are integrating the GBIF API into a website or app, we highly "
+"recommend you set the HTTP `User-Agent` to a URL or email address.  We can "
+"then contact you if there is a problem."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:45
+msgid ""
+"Many common API operations are able to sustain rapid querying, such as "
+"species matching, the geocode API or retrieving individual occurrences."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:47
+msgid ""
+"Frequent queries to search APIs may be rate limited, depending on our server "
+"load.  If this happens, you will receive an HTTP `429` error, and you should "
+"reduce your query rate and try again."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:49
+msgid ""
+"The most common cause of rate-limiting is users trying to retrieve "
+"occurrence records for thousands or tens of thousands of species/countries/"
+"datasets/locations.  A single xref:data-use::api-downloads.adoc[occurrence "
+"download query] accepts 100,000 parameters and should be used instead."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/index.adoc:50
+#, no-wrap
+msgid "Unsupported use"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:53
+msgid ""
+"API endpoints not listed in the documentation, or those marked "
+"\"experimental\", may be changed or removed without warning."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:55
+msgid ""
+"The GBIF website at https://www.gbif.org[www.GBIF.org] is not part of the "
+"public API.  Scripted use of www.GBIF.org, including scraping, bulk "
+"downloading of webpages or web page resources may be blocked without warning."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/index.adoc:56
+#, no-wrap
 msgid "Common operations"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:40
+#: en/openapi/modules/ROOT/pages/index.adoc:59
 msgid "The following details common cross-cutting parameters used in the API"
 msgstr ""
 
 #. type: Title ===
-#: en/openapi/modules/ROOT/pages/index.adoc:41
+#: en/openapi/modules/ROOT/pages/index.adoc:60
 #, no-wrap
 msgid "Paging"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:44
+#: en/openapi/modules/ROOT/pages/index.adoc:63
 msgid "For requests that support paging the following parameters are used:"
 msgstr ""
 
 #. type: Table
-#: en/openapi/modules/ROOT/pages/index.adoc:53
+#: en/openapi/modules/ROOT/pages/index.adoc:72
 #, no-wrap
 msgid ""
 "|Parameter |Details\n"
@@ -225,13 +284,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/openapi/modules/ROOT/pages/index.adoc:55
+#: en/openapi/modules/ROOT/pages/index.adoc:74
 #, no-wrap
 msgid "Repeatable parameters"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:58
+#: en/openapi/modules/ROOT/pages/index.adoc:77
 msgid ""
 "Many search parameters are repeatable, for example the country parameter in "
 "the occurrence search.  Repeating the parameter with different values will "
@@ -240,13 +299,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/openapi/modules/ROOT/pages/index.adoc:59
+#: en/openapi/modules/ROOT/pages/index.adoc:78
 #, no-wrap
 msgid "Range queries"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:62
+#: en/openapi/modules/ROOT/pages/index.adoc:81
 msgid ""
 "Some search parameters support range queries, for example the year parameter "
 "in the occurrence search. In general ranges are given as a single parameter "
@@ -255,25 +314,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:64
+#: en/openapi/modules/ROOT/pages/index.adoc:83
 msgid ""
 "In most cases, where a parameter can _either_ be repeated, _or_ used as a "
 "range, but not queried with multiple ranges."
 msgstr ""
 
 #. type: Title ===
-#: en/openapi/modules/ROOT/pages/index.adoc:65
+#: en/openapi/modules/ROOT/pages/index.adoc:84
 #, no-wrap
 msgid "Authentication"
 msgstr ""
 
 #. type: delimited block =
-#: en/openapi/modules/ROOT/pages/index.adoc:70
+#: en/openapi/modules/ROOT/pages/index.adoc:89
 msgid "Most use of the GBIF API does not require authentication."
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:73
+#: en/openapi/modules/ROOT/pages/index.adoc:92
 msgid ""
 "POST, PUT, DELETE and some GET requests require authentication. The GBIF API "
 "uses https://en.wikipedia.org/wiki/Basic_access_authentication[HTTP Basic "
@@ -282,7 +341,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:75
+#: en/openapi/modules/ROOT/pages/index.adoc:94
 msgid ""
 "For example, to issue a new download programmatically using curl with a xref:"
 "data-use::api-downloads.adoc[query filter as JSON] in a file called filter."
@@ -290,48 +349,19 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/openapi/modules/ROOT/pages/index.adoc:79
+#: en/openapi/modules/ROOT/pages/index.adoc:98
 #, no-wrap
 msgid "$ curl -i --user yourUserName:yourPassword -H \"Content-Type: application/json\" -X POST -d @filter.json https://api.gbif.org/v1/occurrence/download/request`\n"
 msgstr ""
 
 #. type: Title ===
-#: en/openapi/modules/ROOT/pages/index.adoc:81
-#, no-wrap
-msgid "Rate limits"
-msgstr ""
-
-#. type: delimited block =
-#: en/openapi/modules/ROOT/pages/index.adoc:86
-msgid ""
-"If you are integrating the GBIF API into a website or app, we recommend you "
-"set the HTTP `User-Agent` to a URL or email address.  We can then contact "
-"you if there is a problem."
-msgstr ""
-
-#. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:89
-msgid ""
-"Many common API operations are able to sustain rapid querying, such as "
-"species matching, the geocode API or retrieving individual occurrences."
-msgstr ""
-
-#. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:91
-msgid ""
-"Frequent queries to some search APIs may be rate limited, depending on our "
-"server load.  If this happens, you will receive an HTTP `429` error, and you "
-"should reduce your query rate and try again."
-msgstr ""
-
-#. type: Title ===
-#: en/openapi/modules/ROOT/pages/index.adoc:92
+#: en/openapi/modules/ROOT/pages/index.adoc:100
 #, no-wrap
 msgid "Enumerations"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:95
+#: en/openapi/modules/ROOT/pages/index.adoc:103
 msgid ""
 "Many parts of the GBIF API make use of enumerations, i.e. controlled "
 "vocabularies for specific topics. Often these are based on existing "
@@ -343,7 +373,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/openapi/modules/ROOT/pages/index.adoc:118
+#: en/openapi/modules/ROOT/pages/index.adoc:126
 #, no-wrap
 msgid ""
 "|Resource URL |Method |Response |Description\n"
@@ -370,18 +400,18 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/openapi/modules/ROOT/pages/index.adoc:120
+#: en/openapi/modules/ROOT/pages/index.adoc:128
 #, no-wrap
 msgid "Roadmap to v2"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:123
+#: en/openapi/modules/ROOT/pages/index.adoc:131
 msgid "Most of the GBIF API is currently at version 1 which means:"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:125
+#: en/openapi/modules/ROOT/pages/index.adoc:133
 msgid ""
 "The API is stable – we won't rename or remove any REST resources or response "
 "properties to ensure backwards compatibility, but we might add new resources "
@@ -389,7 +419,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:126
+#: en/openapi/modules/ROOT/pages/index.adoc:134
 msgid ""
 "Any bug fixes or additions will result in minor version changes which are "
 "not reflected in the API URL, only in the documentation and our Java client "
@@ -397,7 +427,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:127
+#: en/openapi/modules/ROOT/pages/index.adoc:135
 msgid ""
 "If and when the need for breaking changes arises we will document our intent "
 "here and on the mailing list, and give considerable warning before moving to "
@@ -405,12 +435,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:128
+#: en/openapi/modules/ROOT/pages/index.adoc:136
 msgid "The base URL includes the version as appropriate."
 msgstr ""
 
 #. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:129
+#: en/openapi/modules/ROOT/pages/index.adoc:137
 msgid ""
 "The Maps API is at version 2, with the same expectations (as far as is "
 "possible, xref:v1@openapi::maps.adoc[Maps API version 1] continues to work)."
