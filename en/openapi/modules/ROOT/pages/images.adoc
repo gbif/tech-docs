@@ -1,7 +1,4 @@
 = Occurrence image API
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
 
 GBIF run an image crop-and-resize server and cache to support display of occurrence images on www.gbif.org and other uses.
 

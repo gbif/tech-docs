@@ -2,6 +2,7 @@
 * xref:v1@openapi::registry-principal-methods.adoc[Registry API (Principal methods)]
 * xref:v1@openapi::species.adoc[Species API]
 * xref:v1@openapi::occurrence.adoc[Occurrence API]
+* xref:openapi::images.adoc[Occurrence Image API]
 * xref:v2@openapi::maps.adoc[Maps API]
 * xref:v1@openapi::literature.adoc[Literature API]
 * xref:v1@openapi::validator.adoc[Validator API]
