@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-17 13:49+0000\n"
-"PO-Revision-Date: 2025-02-17 15:04\n"
+"POT-Creation-Date: 2025-08-12 13:13+0000\n"
+"PO-Revision-Date: 2025-08-12 13:29\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -56,7 +56,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:18
-msgid "You should also create an account on GBIF-UAT.org which you can use for testing."
+msgid "You should also create an account on GBIF-Test.org which you can use for testing."
 msgstr ""
 
 #. type: Plain text
@@ -71,7 +71,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:24
-msgid "You can also test on GBIF-UAT.org using the username `ws_client_demo` and password `Demo123`.  This has permission to create datasets owned by https://www.gbif-uat.org/publisher/0a16da09-7719-40de-8d4f-56a15ed52fb6[Test Organization #1], which has a https://www.gbif-uat.org/installation/92d76df5-3de1-4c89-be03-7a17abad962a[Test HTTP installation]."
+msgid "You can also test on GBIF-Test.org using the username `ws_client_demo` and password `Demo123`.  This has permission to create datasets owned by https://www.gbif-test.org/publisher/0a16da09-7719-40de-8d4f-56a15ed52fb6[Test Organization #1], which has a https://www.gbif-test.org/installation/92d76df5-3de1-4c89-be03-7a17abad962a[Test HTTP installation]."
 msgstr ""
 
 #. type: Title ==
@@ -133,7 +133,7 @@ msgstr ""
 #. type: delimited block -
 #: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:53
 #, no-wrap
-msgid "curl -Ssf --user ws_client_demo:Demo123 -H \"Content-Type: application/json\" -X POST --data @dataset.json https://api.gbif-uat.org/v1/dataset | tr -d '\"' | tee dataset.registration\n"
+msgid "curl -Ssf --user ws_client_demo:Demo123 -H \"Content-Type: application/json\" -X POST --data @dataset.json https://api.gbif-test.org/v1/dataset | tr -d '\"' | tee dataset.registration\n"
 msgstr ""
 
 #. type: delimited block -
@@ -180,7 +180,7 @@ msgstr ""
 #. type: delimited block -
 #: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:76
 #, no-wrap
-msgid "curl -Ssf --user ws_client_demo:Demo123 -H \"Content-Type: application/json\" -X POST --data @endpoint.json https://api.gbif-uat.org/v1/dataset/$dataset/endpoint\n"
+msgid "curl -Ssf --user ws_client_demo:Demo123 -H \"Content-Type: application/json\" -X POST --data @endpoint.json https://api.gbif-test.org/v1/dataset/$dataset/endpoint\n"
 msgstr ""
 
 #. type: Title ==
@@ -197,12 +197,12 @@ msgstr ""
 #. type: delimited block -
 #: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:85
 #, no-wrap
-msgid "firefox https://registry.gbif-uat.org/dataset/$dataset\n"
+msgid "firefox https://registry.gbif-test.org/dataset/$dataset\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:88
-msgid "After 1-2 minutes the dataset metadata will be updated.  After a further 1-60 minutes, depending on the size of the dataset and the number of other datasets being processed, occurrence and/or checklist data should be retrieved from your system and shown on GBIF's system.  You can follow the progress under \"Crawling history\" and \"Ingestion history\" for your dataset, and see the length of the queue at https://registry.gbif-uat.org/monitoring/running-crawls[\"Running crawls\"] (https://registry.gbif-uat.org/monitoring/running-crawls[UAT version]) and https://registry.gbif-uat.org/monitoring/running-ingestions[\"Running ingestions\"] (https://registry.gbif-uat.org/monitoring/running-ingestions[UAT version]).  Here, \"crawling\" refers to GBIF's system downloading data from your server, and also tracks processing metadata and checklists.  \"Ingestion\" handles occurrence data."
+msgid "After 1-2 minutes the dataset metadata will be updated.  After a further 1-60 minutes, depending on the size of the dataset and the number of other datasets being processed, occurrence and/or checklist data should be retrieved from your system and shown on GBIF's system.  You can follow the progress under \"Crawling history\" and \"Ingestion history\" for your dataset, and see the length of the queue at https://registry.gbif-test.org/monitoring/running-crawls[\"Running crawls\"] (https://registry.gbif-test.org/monitoring/running-crawls[Test version]) and https://registry.gbif-test.org/monitoring/running-ingestions[\"Running ingestions\"] (https://registry.gbif-test.org/monitoring/running-ingestions[Test version]).  Here, \"crawling\" refers to GBIF's system downloading data from your server, and also tracks processing metadata and checklists.  \"Ingestion\" handles occurrence data."
 msgstr ""
 
 #. type: Title ==

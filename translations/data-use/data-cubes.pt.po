@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-24 12:20+0000\n"
-"PO-Revision-Date: 2025-04-16 14:18\n"
+"POT-Creation-Date: 2025-10-02 11:46+0000\n"
+"PO-Revision-Date: 2025-10-02 11:53\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -356,7 +356,7 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/data-cubes.adoc:132
 #, no-wrap
 msgid "MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters,\n"
-"MIN(GBIF_TemporalUncertainty(eventDate)) AS minTemporalUncertainty\n"
+"MIN(GBIF_TemporalUncertainty(eventDate, null)) AS minTemporalUncertainty\n"
 msgstr ""
 
 #. type: Title ===
@@ -448,7 +448,7 @@ msgid "SELECT <1>\n"
 "  -- Measurements <3>\n"
 "  COUNT(*) AS occurrences, <4>\n"
 "  MIN(COALESCE(coordinateUncertaintyInMeters, 1000)) AS minCoordinateUncertaintyInMeters,\n"
-"  MIN(GBIF_TemporalUncertainty(eventDate)) AS minTemporalUncertainty,\n"
+"  MIN(GBIF_TemporalUncertainty(eventDate, null)) AS minTemporalUncertainty,\n"
 "  -- Higher taxon measurement\n"
 "  IF(ISNULL(familyKey), <1>\n"
 "     NULL, <2>\n"
