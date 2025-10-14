@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-26 17:47+0000\n"
-"PO-Revision-Date: 2025-04-16 14:21\n"
+"POT-Creation-Date: 2025-10-02 12:32+0000\n"
+"PO-Revision-Date: 2025-10-02 13:04\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -43,30 +43,36 @@ msgstr ""
 #. type: Plain text
 #: en/openapi-v1/modules/ROOT/nav.adoc:6 en/openapi-v2/modules/ROOT/nav.adoc:6
 #: en/openapi/modules/ROOT/nav.adoc:6
-msgid "xref:v2@openapi::maps.adoc[Maps API]"
+msgid "xref:openapi::images.adoc[Occurrence Image API]"
 msgstr ""
 
 #. type: Plain text
 #: en/openapi-v1/modules/ROOT/nav.adoc:7 en/openapi-v2/modules/ROOT/nav.adoc:7
 #: en/openapi/modules/ROOT/nav.adoc:7
-msgid "xref:v1@openapi::literature.adoc[Literature API]"
+msgid "xref:v2@openapi::maps.adoc[Maps API]"
 msgstr ""
 
 #. type: Plain text
 #: en/openapi-v1/modules/ROOT/nav.adoc:8 en/openapi-v2/modules/ROOT/nav.adoc:8
 #: en/openapi/modules/ROOT/nav.adoc:8
+msgid "xref:v1@openapi::literature.adoc[Literature API]"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi-v1/modules/ROOT/nav.adoc:9 en/openapi-v2/modules/ROOT/nav.adoc:9
+#: en/openapi/modules/ROOT/nav.adoc:9
 msgid "xref:v1@openapi::validator.adoc[Validator API]"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi-v1/modules/ROOT/nav.adoc:9 en/openapi-v2/modules/ROOT/nav.adoc:9
-#: en/openapi/modules/ROOT/nav.adoc:9
+#: en/openapi-v1/modules/ROOT/nav.adoc:10
+#: en/openapi-v2/modules/ROOT/nav.adoc:10 en/openapi/modules/ROOT/nav.adoc:10
 msgid "xref:v1@openapi::vocabulary.adoc[Vocabulary API]"
 msgstr ""
 
 #. type: Plain text
-#: en/openapi-v1/modules/ROOT/nav.adoc:9 en/openapi-v2/modules/ROOT/nav.adoc:9
-#: en/openapi/modules/ROOT/nav.adoc:9
+#: en/openapi-v1/modules/ROOT/nav.adoc:10
+#: en/openapi-v2/modules/ROOT/nav.adoc:10 en/openapi/modules/ROOT/nav.adoc:10
 msgid "xref:openapi::analytics.adoc[Analytics and Data Trends]"
 msgstr ""
 
