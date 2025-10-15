@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-09 14:50+0000\n"
+"POT-Creation-Date: 2025-10-15 14:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,25 +16,15 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. == Data publishing FAQ
-#. * change occurrence IDs
-#. * citations
-#. == Other
-#. (Moved here from the main menu.)
-#. * DNA derived data
-#. type: Title =
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:1
-#, no-wrap
-msgid "LocalContexts – GBIF Pilot"
-msgstr ""
-
 #. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:3
 #: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:3
 #, no-wrap
 msgid "Scope"
 msgstr ""
 
 #. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:21
 #: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:9
 msgid ""
 "This pilot aims to promote the integration of *LocalContexts Notices* and "
@@ -47,6 +37,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:24
 #: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:12
 msgid ""
 "The main objective of this pilot is to demonstrate how a subset of GBIF "
@@ -54,6 +45,12 @@ msgid ""
 "[LocalContexts] identifiers (Notices, Labels, and Projects)*, and to explore "
 "how these identifiers can be obtained and visualized through the *GBIF API, "
 "IPT (Integrated Publishing Toolkit), and GBIF.org data portal.*"
+msgstr ""
+
+#. type: Title =
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:1
+#, no-wrap
+msgid "LocalContexts – GBIF Pilot"
 msgstr ""
 
 #. type: Plain text
