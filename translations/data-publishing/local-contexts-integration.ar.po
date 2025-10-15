@@ -1,0 +1,90 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2025-10-15 14:47+0000\n"
+"PO-Revision-Date: 2025-10-15 14:53\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar_SA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: ar\n"
+"X-Crowdin-File: /main/translations/data-publishing/local-contexts-integration.pot\n"
+"X-Crowdin-File-ID: 44682\n"
+
+#. == Data publishing FAQ
+#. * change occurrence IDs
+#. * citations
+#. == Other
+#. (Moved here from the main menu.)
+#. * DNA derived data
+#. type: Title =
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:1
+#, no-wrap
+msgid "LocalContexts – GBIF Integration"
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:3
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:3
+#, no-wrap
+msgid "Scope"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:7
+msgid "GBIF will integrate the Local Contexts (LC) API to access and retrieve LC identifiers and URLs associated with GBIF-mediated datasets. Through this integration, GBIF will ensure that Local Contexts Projects, Labels, and Notices are correctly linked and displayed across its data infrastructure, supporting the visibility of Indigenous data governance information.  Specifically, GBIF will use the LC API to get and maintain up-to-date LC identifiers and URLs that are referenced in published datasets. These data will then be surfaced through GBIF’s main delivery services: GBIF Data Portal: LC information will be displayed on dataset and occurrence pages, providing direct links to relevant Local Contexts Projects, Labels, or Notices."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:10
+msgid "GBIF API: LC identifiers and URLs will be accessible through GBIF’s public API for programmatic and third-party use."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:13
+msgid "GBIF Downloads: LC information will be included in data downloads, ensuring that any Local Contexts metadata remains connected to the dataset outside the GBIF platform."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:16
+msgid "In addition to API-based integration, GBIF will also consume self-contained datasets; that is, datasets that already include the relevant LC identifiers, metadata, and links within their published data. In such cases, GBIF will not need to access the LC API or related data services directly; instead, it will preserve and display the embedded LC information as part of its standard data publishing workflow."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:21
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:9
+msgid "This pilot aims to promote the integration of *LocalContexts Notices* and Labels within the https://www.gbif.org/[GBIF] data publishing framework.  This work focuses on engaging existing GBIF publishers to publish datasets in which the underlying data is explicitly connected to *Traditional Knowledge (TK)*, *Cultural Heritage*, or other Indigenous-related contexts linked to *geographic scope, species identification, specimen collection, and data use conditions.*"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:24
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:12
+msgid "The main objective of this pilot is to demonstrate how a subset of GBIF publishers can enrich their data with *https://localcontexts.org/[LocalContexts] identifiers (Notices, Labels, and Projects)*, and to explore how these identifiers can be obtained and visualized through the *GBIF API, IPT (Integrated Publishing Toolkit), and GBIF.org data portal.*"
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:26
+#, no-wrap
+msgid "Additional Information"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:30
+msgid "For more information on GBIF’s data architecture and external identifier management, see: 🔗 https://www.gbif.org/developer/summary"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:33
+msgid "For the Local Contexts API documentation, see: 🔗 https://localcontexts.org/api-documentation"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:35
+msgid "For addtional information about the Task Group on Indigenous Data Governance, see: 🔗 https://www.gbif.org/news/1Ke3Gk2USgdIW5OgDlBIKY/open-data-for-people-and-purpose-gbif-establishes-task-group-on-indigenous-data-governance"
+msgstr ""
+
