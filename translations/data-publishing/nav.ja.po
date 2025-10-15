@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-09-02 14:14+0000\n"
-"PO-Revision-Date: 2025-09-02 14:15\n"
+"POT-Creation-Date: 2025-10-15 14:47+0000\n"
+"PO-Revision-Date: 2025-10-15 14:53\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -47,7 +47,12 @@ msgid "xref:register-dataset-api.adoc[Register a dataset using the API]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:9
+#: en/data-publishing/modules/ROOT/nav.adoc:10
 msgid "xref:local-contexts-pilot.adoc[LocalContexts Pilot]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/nav.adoc:10
+msgid "xref:local-contexts-integration.adoc[LocalContexts Integration]"
 msgstr ""
 
