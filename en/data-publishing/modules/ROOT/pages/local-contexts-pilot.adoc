@@ -25,6 +25,10 @@ It is important to note that the effort of annotating data is undertaken solely 
 The annotations will serve as a proof of concept to test technical approaches, evaluate workflows, and demonstrate how LocalContexts metadata
 can be surfaced within the GBIF API and data portal. These practices should not be understood as a final or permanent requirement for GBIF publishers.
 
+NOTE: It is recommended that LocalContexts Projects be set to Public before they are added to GBIF. Public projects allow GBIF to retrieve project metadata via the
+LocalContexts API, reliably display Notices and Labels in the portal, and link directly to project landing pages without access errors.
+If a publisher requires restricted access for sensitive content, they should coordinate with the GBIF Data Products team to agree an alternative workflow
+(for example, dataset-level tagging or mediated access) that preserves access preferences while enabling the pilot integration.
 
 === Pilot Tasks
 This pilot will prioritize the following activities:
@@ -61,7 +65,7 @@ For the purposes of this pilot, and to maintain simplicity:
   . Value using LocalContexts API endpoint
 ----
 {
-  "local_contexts_project_id": "https://sandbox.localcontextshub.org/api/v2/projects/b23048f6-b832-4379-982a-7fe39a425ae8/"
+  "local_contexts_project_id": "https://localcontextshub.org/api/v2/projects/259854f7-b261-4c8c-8556-4b153deebc18/"
 }
 ----
 
@@ -69,7 +73,7 @@ For the purposes of this pilot, and to maintain simplicity:
 ----
 {
   ...
-  "local_contexts_project_id": "https://sandbox.localcontextshub.org/projects/b23048f6-b832-4379-982a-7fe39a425ae8"
+  "local_contexts_project_id": "https://localcontextshub.org/projects/259854f7-b261-4c8c-8556-4b153deebc18"
   ...
 }
 ----
@@ -78,7 +82,7 @@ For the purposes of this pilot, and to maintain simplicity:
 ----
 {
   ...
-  "local_contexts_project_id": "b23048f6-b832-4379-982a-7fe39a425ae8"
+  "local_contexts_project_id": "259854f7-b261-4c8c-8556-4b153deebc18"
   ...
 }
 ----
@@ -91,7 +95,7 @@ For the purposes of this pilot, and to maintain simplicity:
 {
   "namespace": "localcontexts",
   "name": "local_contexts_project_id",
-  "value": "https://sandbox.localcontextshub.org/api/v2/projects/b23048f6-b832-4379-982a-7fe39a425ae8/"
+  "value": "https://localcontextshub.org/api/v2/projects/259854f7-b261-4c8c-8556-4b153deebc18/"
 }
 ----
 
