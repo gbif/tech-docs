@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-10-15 14:47+0000\n"
-"PO-Revision-Date: 2025-10-15 14:53\n"
+"POT-Creation-Date: 2025-10-16 15:31+0000\n"
+"PO-Revision-Date: 2025-10-16 15:34\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -74,17 +74,32 @@ msgid "Additional Information"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:30
-msgid "For more information on GBIF’s data architecture and external identifier management, see: 🔗 https://www.gbif.org/developer/summary"
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:29
+msgid "For more information on GBIF’s data architecture and external identifier management, see:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:31
+msgid "🔗 https://www.gbif.org/developer/summary"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:33
-msgid "For the Local Contexts API documentation, see: 🔗 https://localcontexts.org/api-documentation"
+msgid "For the Local Contexts API documentation, see:"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:35
-msgid "For addtional information about the Task Group on Indigenous Data Governance, see: 🔗 https://www.gbif.org/news/1Ke3Gk2USgdIW5OgDlBIKY/open-data-for-people-and-purpose-gbif-establishes-task-group-on-indigenous-data-governance"
+msgid "🔗 https://localcontexts.org/api-documentation"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:37
+msgid "For addtional information about the Task Group on Indigenous Data Governance, see:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-integration.adoc:38
+msgid "🔗 https://www.gbif.org/news/1Ke3Gk2USgdIW5OgDlBIKY/open-data-for-people-and-purpose-gbif-establishes-task-group-on-indigenous-data-governance"
 msgstr ""
 
