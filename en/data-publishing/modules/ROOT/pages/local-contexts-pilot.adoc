@@ -25,7 +25,7 @@ It is important to note that the effort of annotating data is undertaken solely 
 The annotations will serve as a proof of concept to test technical approaches, evaluate workflows, and demonstrate how LocalContexts metadata
 can be surfaced within the GBIF API and data portal. These practices should not be understood as a final or permanent requirement for GBIF publishers.
 
-NOTE: It is recommended that LocalContexts Projects be set to Public before they are added to GBIF. Public projects allow GBIF to retrieve project metadata via the
+NOTE: It is recommended that LocalContexts Projects be set to *Public* before they are added to GBIF data. Public projects allow GBIF to retrieve project metadata via the
 LocalContexts API, reliably display Notices and Labels in the portal, and link directly to project landing pages without access errors.
 If a publisher requires restricted access for sensitive content, they should coordinate with the GBIF Data Products team to agree an alternative workflow
 (for example, dataset-level tagging or mediated access) that preserves access preferences while enabling the pilot integration.
