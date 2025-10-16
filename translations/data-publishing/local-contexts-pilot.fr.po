@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-10-15 14:47+0000\n"
-"PO-Revision-Date: 2025-10-15 14:53\n"
+"POT-Creation-Date: 2025-10-16 15:31+0000\n"
+"PO-Revision-Date: 2025-10-16 15:34\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -62,213 +62,218 @@ msgstr ""
 msgid "It is important to note that the effort of annotating data is undertaken solely for the purposes of this pilot.  The annotations will serve as a proof of concept to test technical approaches, evaluate workflows, and demonstrate how LocalContexts metadata can be surfaced within the GBIF API and data portal. These practices should not be understood as a final or permanent requirement for GBIF publishers."
 msgstr ""
 
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:32
+msgid "It is recommended that LocalContexts Projects be set to Public before they are added to GBIF. Public projects allow GBIF to retrieve project metadata via the LocalContexts API, reliably display Notices and Labels in the portal, and link directly to project landing pages without access errors.  If a publisher requires restricted access for sensitive content, they should coordinate with the GBIF Data Products team to agree an alternative workflow (for example, dataset-level tagging or mediated access) that preserves access preferences while enabling the pilot integration."
+msgstr ""
+
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:29
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:33
 #, no-wrap
 msgid "Pilot Tasks"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:31
-msgid "This pilot will prioritize the following activities:"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:33
-#, no-wrap
-msgid "*Engagement and Capacity Building*\n"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:34
-#, no-wrap
-msgid "Contact and support GBIF publishers in understanding and applying *LocalContexts Notices and Labels* in their dataset metadata.\n"
-msgstr ""
-
-#. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:35
-#, no-wrap
-msgid "Provide guidance on integrating the use of LocalContexts _identifiers_ within the GBIF publishing workflow (e.g., Darwin Core fields, Datasets metadata).\n"
+msgid "This pilot will prioritize the following activities:"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:37
 #, no-wrap
-msgid "*Technical Implementation*\n"
+msgid "*Engagement and Capacity Building*\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:38
 #, no-wrap
-msgid "Define and prototype a simple mechanism for exposing LocalContexts identifiers through the *GBIF API* and related infrastructure.\n"
+msgid "Contact and support GBIF publishers in understanding and applying *LocalContexts Notices and Labels* in their dataset metadata.\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:39
 #, no-wrap
-msgid "Ensure alignment with *metadata standards* and explore potential mappings within *Darwin Core and GBIF’s registry schema*.\n"
+msgid "Provide guidance on integrating the use of LocalContexts _identifiers_ within the GBIF publishing workflow (e.g., Darwin Core fields, Datasets metadata).\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:41
 #, no-wrap
-msgid "*Demonstration and Visualization*\n"
+msgid "*Technical Implementation*\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:42
 #, no-wrap
-msgid "Develop a *https://www.gbif.org/hosted-portals[Hosted Portal]* to showcase datasets and occurrence records annotated with LocalContexts identifiers.\n"
+msgid "Define and prototype a simple mechanism for exposing LocalContexts identifiers through the *GBIF API* and related infrastructure.\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:43
 #, no-wrap
+msgid "Ensure alignment with *metadata standards* and explore potential mappings within *Darwin Core and GBIF’s registry schema*.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:45
+#, no-wrap
+msgid "*Demonstration and Visualization*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:46
+#, no-wrap
+msgid "Develop a *https://www.gbif.org/hosted-portals[Hosted Portal]* to showcase datasets and occurrence records annotated with LocalContexts identifiers.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:47
+#, no-wrap
 msgid "Position this portal as both a demonstrator of technical feasibility and a central communication hub for the pilot, including documentation, FAQs, and updates on joint GBIF–Local Contexts efforts.\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:44
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:48
 #, no-wrap
 msgid "Technical Implementation"
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:46
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:50
 #, no-wrap
 msgid "Data Publishing"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:50
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:54
 msgid "The proposed implementation is to use the https://dwc.tdwg.org/terms/?utm_source=chatgpt.com#dwc:dynamicProperties[Darwin Core term `dynamicProperties`] as a *temporary* mechanism for publishing LocalContexts identifiers.  This term allows publishers to include additional measurements, facts, or assertions about a record that are not explicitly covered by other DwC terms."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:53
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:57
 msgid "The recommended (and expected) practice is to encode values using a key:value schema in a data interchange format such as *JSON*.  For the purposes of this pilot, and to maintain simplicity:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:55
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:59
 msgid "Only JSON-formatted values will be interpreted."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:60
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:64
 msgid "Only the `local_contexts_project_id` will initially be recognized by the GBIF data platform, though additional properties may be supported in the future.  This property may point either to the https://localcontexts.org/support/api-guide/v2/[*LocalContexts Hub API*] endpoint or to the corresponding *project landing page*, also the project id without any url schema can be provided.  In all cases, the GBIF portal will use the LocalContexts API to extract the relevant project metadata and provide a direct link to the project detail page in the *LocalContexts Web Portal*.  Examples:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:62
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:66
 msgid "Value using LocalContexts API endpoint"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:66
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:70
 #, no-wrap
 msgid "{\n"
-"  \"local_contexts_project_id\": \"https://sandbox.localcontextshub.org/api/v2/projects/b23048f6-b832-4379-982a-7fe39a425ae8/\"\n"
+"  \"local_contexts_project_id\": \"https://localcontextshub.org/api/v2/projects/259854f7-b261-4c8c-8556-4b153deebc18/\"\n"
 "}\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:69
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:73
 msgid "Value using a LocalContexts Project landing page"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:75
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:79
 #, no-wrap
 msgid "{\n"
 "  ...\n"
-"  \"local_contexts_project_id\": \"https://sandbox.localcontextshub.org/projects/b23048f6-b832-4379-982a-7fe39a425ae8\"\n"
+"  \"local_contexts_project_id\": \"https://localcontextshub.org/projects/259854f7-b261-4c8c-8556-4b153deebc18\"\n"
 "  ...\n"
 "}\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:78
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:82
 msgid "Value using a LocalContexts Project Id"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:84
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:88
 #, no-wrap
 msgid "{\n"
 "  ...\n"
-"  \"local_contexts_project_id\": \"b23048f6-b832-4379-982a-7fe39a425ae8\"\n"
+"  \"local_contexts_project_id\": \"259854f7-b261-4c8c-8556-4b153deebc18\"\n"
 "  ...\n"
 "}\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:90
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:94
 msgid "Additionally, datasets can be manually tagged in the *GBIF Registry* in cases where the publisher prefers to link the LocalContexts project identifier at the *dataset level* rather than annotating individual occurrence records.  This tagging will be manually applied by the *GBIF Data Products team* upon request from the data publisher.  Example values when tagging a dataset through the https://localcontexts.org/support/api-guide/v2/[MachineTag API]:"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:96
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:100
 #, no-wrap
 msgid "{\n"
 "  \"namespace\": \"localcontexts\",\n"
 "  \"name\": \"local_contexts_project_id\",\n"
-"  \"value\": \"https://sandbox.localcontextshub.org/api/v2/projects/b23048f6-b832-4379-982a-7fe39a425ae8/\"\n"
+"  \"value\": \"https://localcontextshub.org/api/v2/projects/259854f7-b261-4c8c-8556-4b153deebc18/\"\n"
 "}\n"
 msgstr ""
 
 #. type: Title ==
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:98
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:102
 #, no-wrap
 msgid "GBIF Pilot Hosted Portal on Indigenous Data Governance"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:102
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:106
 msgid "As a mechanism to promote and showcase the relevant information and mediated data, the coordinating group decided on the implementation of a https://www.gbif.org/hosted-portals[*GBIF Hosted Portal*] with, initially, the following components:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:104
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:108
 msgid "A general introduction to the joint effort of GBIF–LocalContexts."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:105
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:109
 msgid "Relevant information about the https://www.gbif.org/news/1Ke3Gk2USgdIW5OgDlBIKY/open-data-for-people-and-purpose-gbif-establishes-task-group-on-indigenous-data-governance?utm_source=chatgpt.com[Indigenous Data Governance Task Group]."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:106
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:110
 msgid "Optionally, relevant news and events."
 msgstr ""
 
 #. type: Block title
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:107
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:111
 #, no-wrap
 msgid "Data sections"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:109
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:113
 #, no-wrap
 msgid "*Dataset view*: lists the datasets related to this pilot. Datasets that have been tagged using machine tags will display the Notices and Labels, along with a link to the associated project landing page.\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:110
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:114
 #, no-wrap
 msgid "*Occurrence records view*: shows all records published through those datasets. Similar to datasets, occurrence records will provide a visualization of Notices and Labels, and a link to the associated project landing page.\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:111
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:115
 #, no-wrap
 msgid "*Publishers*: a list view of the data publishers that participated in this pilot.\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:111
+#: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:115
 #, no-wrap
 msgid "*Literature (optional)*: a list view of literature (scientific papers, articles, etc.) that cite the datasets involved in this pilot.\n"
 msgstr ""
