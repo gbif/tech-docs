@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-10-16 15:31+0000\n"
-"PO-Revision-Date: 2025-10-16 15:34\n"
+"POT-Creation-Date: 2025-10-16 15:36+0000\n"
+"PO-Revision-Date: 2025-10-16 17:03\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -64,7 +64,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/local-contexts-pilot.adoc:32
-msgid "It is recommended that LocalContexts Projects be set to Public before they are added to GBIF. Public projects allow GBIF to retrieve project metadata via the LocalContexts API, reliably display Notices and Labels in the portal, and link directly to project landing pages without access errors.  If a publisher requires restricted access for sensitive content, they should coordinate with the GBIF Data Products team to agree an alternative workflow (for example, dataset-level tagging or mediated access) that preserves access preferences while enabling the pilot integration."
+msgid "It is recommended that LocalContexts Projects be set to *Public* before they are added to GBIF data. Public projects allow GBIF to retrieve project metadata via the LocalContexts API, reliably display Notices and Labels in the portal, and link directly to project landing pages without access errors.  If a publisher requires restricted access for sensitive content, they should coordinate with the GBIF Data Products team to agree an alternative workflow (for example, dataset-level tagging or mediated access) that preserves access preferences while enabling the pilot integration."
 msgstr ""
 
 #. type: Title ===
