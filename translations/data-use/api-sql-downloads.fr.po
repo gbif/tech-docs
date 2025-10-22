@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-04-15 10:19+0000\n"
-"PO-Revision-Date: 2025-04-15 10:32\n"
+"POT-Creation-Date: 2025-10-22 19:23+0000\n"
+"PO-Revision-Date: 2025-10-22 19:30\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -402,7 +402,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:164
-msgid "Columns with numeric types must be filtered using numbers, not quoted string values — use `taxonkey IN (1234, 5687)` or `\"year\" >= 2020`."
+msgid "Columns with numeric types must be filtered using numbers, not quoted string values — use `\"year\" IN (2020, 2021)` or `startdayofyear >= 200`."
 msgstr ""
 
 #. type: Plain text
