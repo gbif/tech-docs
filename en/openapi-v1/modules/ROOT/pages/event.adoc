@@ -1,0 +1,12 @@
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
+
+= Event API
+
+include::ROOT::partial$under-construction.adoc[]
+
+:page-no-next: true
+:page-layout: swagger
+:page-openapi-url: /openapi/event.json
+
