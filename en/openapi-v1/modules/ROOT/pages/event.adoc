@@ -5,5 +5,3 @@ endif::[]
 :page-no-next: true
 :page-layout: swagger
 :page-openapi-url: /openapi/event.json
-
-include::ROOT::partial$under-construction.adoc[]
