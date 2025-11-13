@@ -60,6 +60,8 @@ for ws, url in urls.items():
             registry = json.loads(response.text)
         elif ws == 'occurrence-ws':
             occurrence = json.loads(response.text)
+        elif ws == 'event-ws':
+            event = json.loads(response.text)
         elif ws == 'metrics-ws':
             metrics = json.loads(response.text)
         elif ws == 'geocode-ws':
@@ -101,17 +103,11 @@ print("")
 # Special cases for registry and occurrence
 print("--- Moving some method-paths from Registry to Occurrence ---")
 
+toRemove = []
+
 movePrefixFromRegistryToOccurrence = [
     '/occurrence/download/'
 ]
-
-# Although these are @Hidden, they still end up being produced for some reason.
-removePrefixFromRegistry = [
-    '/event/download',
-    '/occurrence/download'
-]
-
-toRemove = []
 
 for path in registry["paths"]:
     for prefix in movePrefixFromRegistryToOccurrence:
@@ -120,9 +116,18 @@ for path in registry["paths"]:
             print("Added "+path+" to occurrence")
             toRemove.append(path)
             #json.dump(registry["paths"][path], sys.stdout, separators=(',', ':'), indent=indent)
-    for prefix in removePrefixFromRegistry:
-        if path.startswith(prefix):
-            toRemove.append(path)
+
+movePrefixFromRegistryToEvent = [
+    '/event/download/'
+]
+
+if event:
+    for path in registry["paths"]:
+        for prefix in movePrefixFromRegistryToEvent:
+            if path.startswith(prefix):
+                event["paths"][path] = registry["paths"][path]
+                print("Added "+path+" to event")
+                toRemove.append(path)
 
 # Schemas need duplicating
 registrySchemas = [
@@ -137,6 +142,8 @@ registrySchemas = [
     ]
 for schema in registrySchemas:
     occurrence['components']['schemas'][schema] = registry['components']['schemas'][schema]
+    if event:
+        event['components']['schemas'][schema] = registry['components']['schemas'][schema]
 
 for path in toRemove:
     if path in registry["paths"]:
@@ -151,20 +158,26 @@ print("")
 # Special cases for geocode (moving to occurrence)
 print("--- Moving some method-paths from Geocode to Occurrence ---")
 
-movePrefixFromGeocodeToOccurrence = [
+movePrefixFromGeocodeToOccurrenceAndEvent = [
     '/geocode/gadm/'
 ]
 
 for path in geocode["paths"]:
-    for prefix in movePrefixFromGeocodeToOccurrence:
+    for prefix in movePrefixFromGeocodeToOccurrenceAndEvent:
         if path.startswith(prefix):
             occurrence["paths"][path] = geocode["paths"][path]
             print("Added "+path+" to occurrence")
+            if event:
+                event["paths"][path] = geocode["paths"][path]
+                print("Added "+path+" to event")
+
 
 # Schemas need duplicating
 geocodeSchemas = ['GadmRegion', 'Region', 'Pageable', 'PagingResponseGadmRegion']
 for schema in geocodeSchemas:
     occurrence['components']['schemas'][schema] = geocode['components']['schemas'][schema]
+    if event:
+        event['components']['schemas'][schema] = geocode['components']['schemas'][schema]
 print("")
 
 # Special cases for metrics (moving to occurrence)
@@ -267,6 +280,10 @@ with open(output+"/registry.json", "w") as write_file:
 
 with open(output+"/occurrence.json", "w") as write_file:
     json.dump(occurrence, write_file, separators=(',', ':'), indent=indent)
+
+if event:
+    with open(output+"/event.json", "w") as write_file:
+        json.dump(event, write_file, separators=(',', ':'), indent=indent)
 
 with open(output+"/checklistbank.json", "w") as write_file:
     json.dump(checklistbank, write_file, separators=(',', ':'), indent=indent)
