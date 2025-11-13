@@ -121,13 +121,12 @@ movePrefixFromRegistryToEvent = [
     '/event/download/'
 ]
 
-if event:
-    for path in registry["paths"]:
-        for prefix in movePrefixFromRegistryToEvent:
-            if path.startswith(prefix):
-                event["paths"][path] = registry["paths"][path]
-                print("Added "+path+" to event")
-                toRemove.append(path)
+for path in registry["paths"]:
+    for prefix in movePrefixFromRegistryToEvent:
+        if path.startswith(prefix):
+            event["paths"][path] = registry["paths"][path]
+            print("Added "+path+" to event")
+            toRemove.append(path)
 
 # Schemas need duplicating
 registrySchemas = [
@@ -142,8 +141,7 @@ registrySchemas = [
     ]
 for schema in registrySchemas:
     occurrence['components']['schemas'][schema] = registry['components']['schemas'][schema]
-    if event:
-        event['components']['schemas'][schema] = registry['components']['schemas'][schema]
+    event['components']['schemas'][schema] = registry['components']['schemas'][schema]
 
 for path in toRemove:
     if path in registry["paths"]:
@@ -167,17 +165,15 @@ for path in geocode["paths"]:
         if path.startswith(prefix):
             occurrence["paths"][path] = geocode["paths"][path]
             print("Added "+path+" to occurrence")
-            if event:
-                event["paths"][path] = geocode["paths"][path]
-                print("Added "+path+" to event")
+            event["paths"][path] = geocode["paths"][path]
+            print("Added "+path+" to event")
 
 
 # Schemas need duplicating
 geocodeSchemas = ['GadmRegion', 'Region', 'Pageable', 'PagingResponseGadmRegion']
 for schema in geocodeSchemas:
     occurrence['components']['schemas'][schema] = geocode['components']['schemas'][schema]
-    if event:
-        event['components']['schemas'][schema] = geocode['components']['schemas'][schema]
+    event['components']['schemas'][schema] = geocode['components']['schemas'][schema]
 print("")
 
 # Special cases for metrics (moving to occurrence)
@@ -281,9 +277,8 @@ with open(output+"/registry.json", "w") as write_file:
 with open(output+"/occurrence.json", "w") as write_file:
     json.dump(occurrence, write_file, separators=(',', ':'), indent=indent)
 
-if event:
-    with open(output+"/event.json", "w") as write_file:
-        json.dump(event, write_file, separators=(',', ':'), indent=indent)
+with open(output+"/event.json", "w") as write_file:
+    json.dump(event, write_file, separators=(',', ':'), indent=indent)
 
 with open(output+"/checklistbank.json", "w") as write_file:
     json.dump(checklistbank, write_file, separators=(',', ':'), indent=indent)
