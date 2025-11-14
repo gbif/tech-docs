@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-11-14 11:30+0000\n"
+"POT-Creation-Date: 2025-11-14 13:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -521,7 +521,7 @@ msgid "Vocabulary issues"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:390
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:400
 #, no-wrap
 msgid ""
 "|Flag name | Definition | Terms | Example\n"
@@ -541,20 +541,30 @@ msgid ""
 "|_dwc:occurrenceStatus_\n"
 "|https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE[example]\n"
 "\n"
-"|*Era or erathem inferred from parent rank*\n"
-"|Era or erathem was inferred from a parent rank since the value was not provided by the publisher.\n"
+"|*Era or Erathem inferred*\n"
+"|Era or Erathem was inferred from a lower rank (System/Period, Series/Epoch, or Stage/Age) since the value provided by the publisher does not correspond to an Era or Erathem.\n"
 "|_dwc:earliestEraOrLowestErathem, dwc:latestEraOrHighestErathem_\n"
 "|https://www.gbif.org/occurrence/search?issue=ERA_OR_ERATHEM_INFERRED_FROM_PARENT_RANK[example]\n"
+"\n"
+"|*Period or System inferred*\n"
+"|Period or System was inferred from a lower rank (Series/Epoch or Stage/Age) since the value provided by the publisher does not correspond to a Period or System.\n"
+"|_dwc:earliestPeriodOrLowestSystem, dwc:latestPeriodOrHighestSystem_\n"
+"|https://www.gbif.org/occurrence/search?issue=EPOCH_OR_SERIES_INFERRED_FROM_PARENT_RANK[example]\n"
+"\n"
+"|*Epoch or Series*\n"
+"|Epoch or Series was inferred from a lower rank (Stage/Age) since the value provided by the publisher does not correspond to an Epoch or Series.\n"
+"|_dwc:earliestEpochOrLowestSeries, dwc:latestEpochOrHighestSeries_\n"
+"|https://www.gbif.org/occurrence/search?issue=PERIOD_OR_SYSTEM_INFERRED_FROM_PARENT_RANK[example]\n"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:394
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:404
 #, no-wrap
 msgid "GRSciColl issues"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:440
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:450
 #, no-wrap
 msgid ""
 "|Flag name | Definition | Terms | Example\n"
@@ -602,13 +612,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:442
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:452
 #, no-wrap
 msgid "Other issues"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:483
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:493
 #, no-wrap
 msgid ""
 "|Flag name | Definition | Terms | Example\n"
