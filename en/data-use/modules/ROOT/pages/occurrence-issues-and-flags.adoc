@@ -383,10 +383,20 @@ Reasons include:
 |https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE[example]
 
 ifeval::["{env}" != "prod"]
-|*Era or erathem inferred from parent rank*
-|Era or erathem was inferred from a parent rank since the value was not provided by the publisher.
+|*Era or Erathem inferred*
+|Era or Erathem was inferred from a lower rank (System/Period, Series/Epoch, or Stage/Age) since the value provided by the publisher does not correspond to an Era or Erathem.
 |_dwc:earliestEraOrLowestErathem, dwc:latestEraOrHighestErathem_
 |https://www.gbif.org/occurrence/search?issue=ERA_OR_ERATHEM_INFERRED_FROM_PARENT_RANK[example]
+
+|*Period or System inferred*
+|Period or System was inferred from a lower rank (Series/Epoch or Stage/Age) since the value provided by the publisher does not correspond to a Period or System.
+|_dwc:earliestPeriodOrLowestSystem, dwc:latestPeriodOrHighestSystem_
+|https://www.gbif.org/occurrence/search?issue=EPOCH_OR_SERIES_INFERRED_FROM_PARENT_RANK[example]
+
+|*Epoch or Series*
+|Epoch or Series was inferred from a lower rank (Stage/Age) since the value provided by the publisher does not correspond to an Epoch or Series.
+|_dwc:earliestEpochOrLowestSeries, dwc:latestEpochOrHighestSeries_
+|https://www.gbif.org/occurrence/search?issue=PERIOD_OR_SYSTEM_INFERRED_FROM_PARENT_RANK[example]
 endif::[]
 
 |===
