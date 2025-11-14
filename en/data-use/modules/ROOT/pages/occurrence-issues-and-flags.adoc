@@ -383,12 +383,11 @@ Reasons include:
 |https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE[example]
 
 ifeval::["{env}" != "prod"]
-endif::[]
-
 |*Era or erathem inferred from parent rank*
 |Era or erathem was inferred from a parent rank since the value was not provided by the publisher.
 |_dwc:earliestEraOrLowestErathem, dwc:latestEraOrHighestErathem_
 |https://www.gbif.org/occurrence/search?issue=ERA_OR_ERATHEM_INFERRED_FROM_PARENT_RANK[example]
+endif::[]
 
 |===
 
