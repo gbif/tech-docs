@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"POT-Creation-Date: 2025-11-14 11:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -521,7 +521,7 @@ msgid "Vocabulary issues"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:385
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:386
 #, no-wrap
 msgid ""
 "|Flag name | Definition | Terms | Example\n"
@@ -532,25 +532,34 @@ msgid ""
 "|https://www.gbif.org/occurrence/search?issue=BASIS_OF_RECORD_INVALID[example]\n"
 "\n"
 "|*Type status invalid*\n"
-"|The given type status is impossible to interpret or very different from the recommended vocabulary: https://rs.gbif.org/vocabulary/gbif/type_status\n"
+"|The given type status is impossible to interpret or very different from the recommended vocabulary: https://registry.gbif.org/vocabulary/TypeStatus\n"
 "|_dwc:typeStatus_\n"
 "|https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID[example]\n"
 "\n"
 "|*Occurrence status unparsable*\n"
-"|The given occurenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at or observation event.\n"
+"|The given occurrenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at or observation event.\n"
 "|_dwc:occurrenceStatus_\n"
 "|https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE[example]\n"
 "\n"
 msgstr ""
 
+#. type: Table
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:393
+msgid ""
+"|*Era or erathem inferred from parent rank* |Era or erathem was inferred "
+"from a parent rank since the value was not provided by the publisher.  |_dwc:"
+"earliestEraOrLowestErathem, dwc:latestEraOrHighestErathem_ |https://www.gbif."
+"org/occurrence/search?issue=ERA_OR_ERATHEM_INFERRED_FROM_PARENT_RANK[example]"
+msgstr ""
+
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:387
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:395
 #, no-wrap
 msgid "GRSciColl issues"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:433
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:441
 #, no-wrap
 msgid ""
 "|Flag name | Definition | Terms | Example\n"
@@ -598,13 +607,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:435
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:443
 #, no-wrap
 msgid "Other issues"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:476
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:484
 #, no-wrap
 msgid ""
 "|Flag name | Definition | Terms | Example\n"
