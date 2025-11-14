@@ -373,14 +373,22 @@ Reasons include:
 |https://www.gbif.org/occurrence/search?issue=BASIS_OF_RECORD_INVALID[example]
 
 |*Type status invalid*
-|The given type status is impossible to interpret or very different from the recommended vocabulary: https://rs.gbif.org/vocabulary/gbif/type_status
+|The given type status is impossible to interpret or very different from the recommended vocabulary: https://registry.gbif.org/vocabulary/TypeStatus
 |_dwc:typeStatus_
 |https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID[example]
 
 |*Occurrence status unparsable*
-|The given occurenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at or observation event.
+|The given occurrenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at or observation event.
 |_dwc:occurrenceStatus_
 |https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE[example]
+
+ifeval::["{env}" != "prod"]
+endif::[]
+
+|*Era or erathem inferred from parent rank*
+|Era or erathem was inferred from a parent rank since the value was not provided by the publisher.
+|_dwc:earliestEraOrLowestErathem, dwc:latestEraOrHighestErathem_
+|https://www.gbif.org/occurrence/search?issue=ERA_OR_ERATHEM_INFERRED_FROM_PARENT_RANK[example]
 
 |===
 
