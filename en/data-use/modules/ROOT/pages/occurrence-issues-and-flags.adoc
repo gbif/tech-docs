@@ -384,21 +384,84 @@ Reasons include:
 
 ifeval::["{env}" != "prod"]
 |*Era or Erathem inferred*
-|Era or Erathem was inferred from a lower rank (System/Period, Series/Epoch, or Stage/Age) since the value provided by the publisher does not correspond to an Era or Erathem.
+|The Era or Erathem was inferred from a lower rank (System/Period, Series/Epoch, or Stage/Age) since the value provided by the publisher does not correspond to an Era or Erathem.
 |_dwc:earliestEraOrLowestErathem, dwc:latestEraOrHighestErathem_
 |https://www.gbif.org/occurrence/search?issue=ERA_OR_ERATHEM_INFERRED_FROM_PARENT_RANK[example]
 
 |*Period or System inferred*
-|Period or System was inferred from a lower rank (Series/Epoch or Stage/Age) since the value provided by the publisher does not correspond to a Period or System.
+|The Period or System was inferred from a lower rank (Series/Epoch or Stage/Age) since the value provided by the publisher does not correspond to a Period or System.
 |_dwc:earliestPeriodOrLowestSystem, dwc:latestPeriodOrHighestSystem_
 |https://www.gbif.org/occurrence/search?issue=EPOCH_OR_SERIES_INFERRED_FROM_PARENT_RANK[example]
 
-|*Epoch or Series*
-|Epoch or Series was inferred from a lower rank (Stage/Age) since the value provided by the publisher does not correspond to an Epoch or Series.
+|*Epoch or Series inferred*
+|The Epoch or Series was inferred from a lower rank (Stage/Age) since the value provided by the publisher does not correspond to an Epoch or Series.
 |_dwc:earliestEpochOrLowestSeries, dwc:latestEpochOrHighestSeries_
 |https://www.gbif.org/occurrence/search?issue=PERIOD_OR_SYSTEM_INFERRED_FROM_PARENT_RANK[example]
-endif::[]
 
+|*Eon or Eonothem rank mismatch*
+|The Eon or Eonothem provided belongs to another rank.
+|_dwc:earliestEonOrLowestEonothem_, _dwc:latestEonOrHighestEonothem_
+| https://www.gbif.org/occurrence/search?issue=EON_OR_EONOTHEM_RANK_MISMATCH[example]
+
+| *Era or Erathem rank mismatch*
+| The Era or Erathem provided belongs to another rank.
+| _dwc:earliestEraOrLowestErathem_, _dwc:latestEraOrHighestErathem_
+| https://www.gbif.org/occurrence/search?issue=ERA_OR_ERATHEM_RANK_MISMATCH[example]
+
+| *Period or System rank mismatch*
+| The Period or System provided belongs to another rank.
+| _dwc:earliestPeriodOrLowestSystem_, _dwc:latestPeriodOrHighestSystem_
+| https://www.gbif.org/occurrence/search?issue=PERIOD_OR_SYSTEM_RANK_MISMATCH[example]
+
+| *Epoch or Series rank mismatch*
+| The Epoch or Series provided belongs to another rank.
+| _dwc:earliestEpochOrLowestSeries_, _dwc:latestEpochOrHighestSeries_
+| https://www.gbif.org/occurrence/search?issue=EPOCH_OR_SERIES_RANK_MISMATCH[example]
+
+| *Age or Stage rank mismatch*
+| The Age or Stage provided belongs to another rank.
+| _dwc:earliestAgeOrLowestStage_, _dwc:latestAgeOrHighestStage_
+| https://www.gbif.org/occurrence/search?issue=AGE_OR_STAGE_RANK_MISMATCH[example]
+
+| *Era or Erathem invalid range*
+| The era or erathem has to be earlier than the latest.
+| _dwc:earliestEraOrLowestErathem_, _dwc:latestEraOrHighestErathem_
+| https://www.gbif.org/occurrence/search?issue=ERA_OR_ERATHEM_INVALID_RANGE[example]
+
+| *Period or System invalid range*
+| The Period or System has to be earlier than the latest.
+| _dwc:earliestPeriodOrLowestSystem_, _dwc:latestPeriodOrHighestSystem_
+|  https://www.gbif.org/occurrence/search?issue=PERIOD_OR_SYSTEM_INVALID_RANGE[example]
+
+| *Epoch or Series invalid range*
+| The Epoch or Series has to be earlier than the latest.
+| _dwc:earliestEpochOrLowestSeries_, _dwc:latestEpochOrHighestSeries_
+| https://www.gbif.org/occurrence/search?issue=EPOCH_OR_SERIES_INVALID_RANGE[example]
+
+| *Age or Stage invalid range*
+| The Age or Stage has to be earlier than the latest.
+| _dwc:earliestAgeOrLowestStage_, _dwc:latestAgeOrHighestStage_
+| https://www.gbif.org/occurrence/search?issue=AGE_OR_STAGE_INVALID_RANGE[example]
+
+| *Eon and Era mismatch*
+| The Era or Erathem does not belong to the Eon or Eonothem.
+| _dwc:earliestEonOrLowestEonothem_, _dwc:latestEonOrHighestEonothem_, _dwc:earliestEraOrLowestErathem_, _dwc:latestEraOrHighestErathem_
+| https://www.gbif.org/occurrence/search?issue=EON_OR_EONOTHEM_AND_ERA_OR_ERATHEM_MISMATCH[example]
+
+| *Era and Period mismatch*
+| The Period or System does not belong to the Era or Erathem.
+| _dwc:earliestEraOrLowestErathem_, _dwc:latestEraOrHighestErathem_, _dwc:earliestPeriodOrLowestSystem_, _dwc:latestPeriodOrHighestSystem_
+| https://www.gbif.org/occurrence/search?issue=ERA_OR_ERATHEM_AND_PERIOD_OR_SYSTEM_MISMATCH[example]
+
+| *Period and Epoch mismatch*
+| The Epoch or Series does not belong to the Period or System.
+| _dwc:earliestPeriodOrLowestSystem_, _dwc:latestPeriodOrHighestSystem_, _dwc:earliestEpochOrLowestSeries_, _dwc:latestEpochOrHighestSeries_
+| https://www.gbif.org/occurrence/search?issue=PERIOD_OR_SYSTEM_AND_EPOCH_OR_SERIES_MISMATCH[example]
+
+| *Epoch and Age mismatch*
+| The Age or Stage does not belong to the Epoch or Series.
+| _dwc:earliestEpochOrLowestSeries_, _dwc:latestEpochOrHighestSeries_, _dwc:earliestAgeOrLowestStage_, _dwc:latestAgeOrHighestStage_
+| https://www.gbif.org/occurrence/search?issue=EPOCH_OR_SERIES_AND_AGE_OR_STAGE_MISMATCH[example]
 |===
 
 == GRSciColl issues
