@@ -72,6 +72,10 @@ for ws, url in urls.items():
             matchingwsgbif = json.loads(response.text)
         elif ws == 'occurrence-annotation-ws':
             occurrenceannotation = json.loads(response.text)
+        elif ws == 'vectortile-server':
+            maps = json.loads(response.text)
+        elif ws == 'event-vectortile-server':
+            event_maps = json.loads(response.text)
         else:
             openapi = json.loads(response.text)
             with open(filename, "w") as write_file:
@@ -175,6 +179,20 @@ for schema in geocodeSchemas:
     occurrence['components']['schemas'][schema] = geocode['components']['schemas'][schema]
     event['components']['schemas'][schema] = geocode['components']['schemas'][schema]
 print("")
+
+# Special cases for maps (moving to event maps to maps)
+print("--- Moving some method-paths from Event maps to Occurrence maps ---")
+
+movePrefixFromEventMapsToOccurrenceMaps = [
+    '/event/'
+]
+
+if (env != 'prod'):
+    for path in event_maps["paths"]:
+        for prefix in movePrefixFromEventMapsToOccurrenceMaps:
+            if path.startswith(prefix):
+                maps["paths"][path] = event_maps["paths"][path]
+                print("Added "+path+" to occurrence maps")
 
 # Special cases for metrics (moving to occurrence)
 # Metrics schema can be ignored.
@@ -375,6 +393,10 @@ registry['info']['description'] = "**This is a view of *principal methods only*,
 
 with open(output+"/registry-principal-methods.json", "w") as write_file:
     json.dump(registry, write_file, separators=(',', ':'), indent=indent)
+print("")
+
+with open(output+"/v2-maps.json", "w") as write_file:
+    json.dump(maps, write_file, separators=(',', ':'), indent=indent)
 print("")
 
 print("=== OpenAPI specification generation completed ===")
