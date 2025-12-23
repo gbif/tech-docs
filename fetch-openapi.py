@@ -183,25 +183,16 @@ print("")
 # Special cases for maps (moving to event maps to maps)
 print("--- Moving some method-paths from Event maps to Occurrence maps ---")
 
-movePrefixFromEventToOccurrenceMaps = [
+movePrefixFromEventMapsToOccurrenceMaps = [
     '/event/'
 ]
 
-for path in event_maps["paths"]:
-    for prefix in movePrefixFromEventToOccurrenceMaps:
-        if path.startswith(prefix):
-            maps["paths"][path] = event_maps["paths"][path]
-            print("Added "+path+" to occurrence maps")
-
-
-# Schemas need duplicating
-# eventMapsSchemas = ['GadmRegion', 'Region', 'Pageable', 'PagingResponseGadmRegion']
-# for schema in geocodeSchemas:
-#     occurrence['components']['schemas'][schema] = geocode['components']['schemas'][schema]
-#     event['components']['schemas'][schema] = geocode['components']['schemas'][schema]
-# print("")
-
-
+if (env != 'prod'):
+    for path in event_maps["paths"]:
+        for prefix in movePrefixFromEventMapsToOccurrenceMaps:
+            if path.startswith(prefix):
+                maps["paths"][path] = event_maps["paths"][path]
+                print("Added "+path+" to occurrence maps")
 
 # Special cases for metrics (moving to occurrence)
 # Metrics schema can be ignored.
