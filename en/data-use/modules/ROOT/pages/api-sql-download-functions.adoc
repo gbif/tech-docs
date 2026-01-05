@@ -228,7 +228,7 @@ GROUP BY kingdom, scientificName;
 
 *Additional resources*
 
-GeoPackage downloads of the grids at several resolutions are available for https://download.gbif.org/grids/EEA/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/functions/EeaGridGenerator.java[this Java code], which can be https://github.com/gbif/occurrence-cube/tree/master/grid-generator[customized (see instructions)] for generating other resolutions or more limited areas.
+GeoPackage downloads of the grids at several resolutions are available for https://download.gbif.org/grids/EEA/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/grids/EeaGridGenerator.java[this Java code], which can be https://github.com/gbif/occurrence-cube/tree/master/grid-generator[customized (see instructions)] for generating other resolutions or more limited areas.
 
 GeoPackage and ShapeFile downloads of the grids at several resolutions are also available for download at the https://www.eea.europa.eu/en/datahub/datahubitem-view/3c362237-daa4-45e2-8c16-aaadfb1a003b[European Environment Agency Datahub].  (See the 2013 and 2011 datasets for alternative resolutions.)
 
@@ -302,7 +302,7 @@ GROUP BY kingdom, scientificName;
 
 *Additional resources*
 
-GeoPackage downloads of the EQDGC grid at levels 0–7 are available for https://download.gbif.org/grids/EQDGC/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/functions/ExtendedQuarterDegreeGridGenerator.java[this Java code], which can be https://github.com/gbif/occurrence-cube/tree/master/grid-generator[customized (see instructions)] for generating other resolutions or more limited areas.
+GeoPackage downloads of the EQDGC grid at levels 0–7 are available for https://download.gbif.org/grids/EQDGC/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/grids/ExtendedQuarterDegreeGridGenerator.java[this Java code], which can be https://github.com/gbif/occurrence-cube/tree/master/grid-generator[customized (see instructions)] for generating other resolutions or more limited areas.
 
 Reference: https://doi.org/10.1111/j.1365-2028.2008.00997.x[Larsen R, Holmern T, Prager SD, Maliti H, Røskaft, E. (2009) Using the extended quarter degree grid cell system to unify mapping and sharing of biodiversity data. African Journal of Ecology, 47: 382-392.]
 
@@ -381,7 +381,7 @@ GROUP BY kingdom, scientificName;
 
 *Additional resources*
 
-GeoPackage downloads of a Degree-Minute-Second grid at 3600″ (1°), 1800 (30′), 900″ (15′), 600″ (10′), 300″ (5′), 150″ (2′30″), 60″ (1′) and 30″ (30″) are available for https://download.gbif.org/grids/DMS/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/functions/DmsGridGenerator.java[this Java code], which can be https://github.com/gbif/occurrence-cube/tree/master/grid-generator[customized (see instructions)] for generating other resolutions or more limited areas.
+GeoPackage downloads of a Degree-Minute-Second grid at 3600″ (1°), 1800 (30′), 900″ (15′), 600″ (10′), 300″ (5′), 150″ (2′30″), 60″ (1′) and 30″ (30″) are available for https://download.gbif.org/grids/DMS/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/grids/DmsGridGenerator.java[this Java code], which can be https://github.com/gbif/occurrence-cube/tree/master/grid-generator[customized (see instructions)] for generating other resolutions or more limited areas.
 
 [#GBIF_ISEA3HCode]
 === ISEA3H Grid-cell code `GBIF_ISEA3HCode`
