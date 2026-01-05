@@ -178,7 +178,7 @@ STRING GBIF_EEARGCode(INTEGER gridSize,
 
 *Parameters:*
 
-`gridSize`:: The _grid size_ in metres of the EEA Reference Grid.  Must be _25_, _100_, _250_, _1000_, _10000_, _50000_ or _100000_.
+`gridSize`:: The _grid size_ in metres of the EEA Reference Grid.  Standard values are _25_, _100_, _250_, _1000_, _10000_, _50000_ or _100000_.  Other values are also accepted, e.g. _2000_, _5000_.
 `latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
 `longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
 `coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`). Set to 0 to disable randomization.
@@ -197,6 +197,8 @@ The code for the cell of the EEA reference grid in which the randomized point fa
 |`100kmE43N32`|`100 000`|`52.0`|`10.0`|`1000.0`
 |`50kmE425N265`|`50 000`|`52.0`|`10.0`|`1000.0`
 |`10kmE432N321`|`10 000`|`52.0`|`10.0`|`1000.0`
+|`5kmE4320N3210`|`5 000`|`52.0`|`10.0`|`1000.0`
+|`2kmE4320N3210`|`2 000`|`52.0`|`10.0`|`1000.0`
 |`1kmE4321N3210`|`1 000`|`52.0`|`10.0`|`1000.0`
 |`250mE432100N321000`|`250`|`52.0`|`10.0`|`1000.0`
 |`100mE43210N32100`|`100`|`52.0`|`10.0`|`1000.0`
@@ -226,7 +228,9 @@ GROUP BY kingdom, scientificName;
 
 *Additional resources*
 
-GeoPackage and ShapeFile downloads of the grids at several resolutions are available for download at the https://www.eea.europa.eu/en/datahub/datahubitem-view/3c362237-daa4-45e2-8c16-aaadfb1a003b[European Environment Agency Datahub].  (See the 2013 and 2011 datasets for alternative resolutions.)
+GeoPackage downloads of the grids at several resolutions are available for https://download.gbif.org/grids/EEA/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/functions/EeaGridGenerator.java[this Java code], which can be https://github.com/gbif/occurrence-cube/tree/master/grid-generator[customized (see instructions)] for generating other resolutions or more limited areas.
+
+GeoPackage and ShapeFile downloads of the grids at several resolutions are also available for download at the https://www.eea.europa.eu/en/datahub/datahubitem-view/3c362237-daa4-45e2-8c16-aaadfb1a003b[European Environment Agency Datahub].  (See the 2013 and 2011 datasets for alternative resolutions.)
 
 Reference: https://sdi.eea.europa.eu/catalogue/srv/api/records/aac8379a-5c4e-445c-b2ef-23a6a2701ef0/attachments/eea_reference_grid_v1.pdf[About the EEA reference grid (PDF)].
 
@@ -298,7 +302,7 @@ GROUP BY kingdom, scientificName;
 
 *Additional resources*
 
-GeoPackage downloads of the EQDGC grid at levels 0–7 are available for https://download.gbif.org/grids/EQDGC/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/functions/ExtendedQuarterDegreeGridGenerator.java[this Java code].
+GeoPackage downloads of the EQDGC grid at levels 0–7 are available for https://download.gbif.org/grids/EQDGC/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/functions/ExtendedQuarterDegreeGridGenerator.java[this Java code], which can be https://github.com/gbif/occurrence-cube/tree/master/grid-generator[customized (see instructions)] for generating other resolutions or more limited areas.
 
 Reference: https://doi.org/10.1111/j.1365-2028.2008.00997.x[Larsen R, Holmern T, Prager SD, Maliti H, Røskaft, E. (2009) Using the extended quarter degree grid cell system to unify mapping and sharing of biodiversity data. African Journal of Ecology, 47: 382-392.]
 
@@ -307,8 +311,8 @@ See also: https://en.wikipedia.org/wiki/QDGC[Wikipedia: QDGC].
 [#GBIF_DMSGCode]
 === Degree-Minute-Second Grid-cell code, `GBIF_DMSGCode`
 
-.Degree-Minute-Second Grid cells at 15′ width on northern Madagascar
-image::eqdgc_example_madagascar.png[]
+.Degree-Minute-Second Grid cells at 15′ width on southern Croatia
+image::eqdgc_example_croatia.png[]
 
 *Function definition:*
 
@@ -329,13 +333,13 @@ STRING GBIF_DMSGCode(INTEGER resolution,
 
 The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
 
-A _resolution_ of _3600_ will give the 1° cell, e.g. `S01E010` — this is the same as <<GBIF_EQDGCode>> with level 0.
+A _resolution_ of _3600_ will give the 1° cell — this is the same cell as <<GBIF_EQDGCode>> with level 0, but with a different cell code format.
 
 The _resolution_ must be a divisor of 3600.  Useful values are _3600_ (1°), _1800_ (30′), _900_ (15′), _600_ (10′), _300_ (5′), _150_ (2′30″), _60_ (1′) and _30_ (30″).
 
 *Return value:*
 
-A code for the cell in the format `EXXXxxxxNYYyyyy` where `E` is either `E` or `W` and `N` is either `N` or `S`.  `XXX` is a value between 0 and 179, `YY` is between 0 and 89.  The fractional parts `xxxx` and `yyyy`, if present, are the coordinate of the corner of the square nearest to the origin.  The point 0°, 0° is defined to be `E000N00`.
+A code for the cell in the format `CRS4326RESrd-rm-rsLONxd-xm-xsLATyd-ym-ys` where `rd-rm-rs` is the grid resolution in degrees, minutes and seconds and `xd-xm-xs`, `yd-ym-ys` are the coordinates of the lower left corner of the grid cell, also in degrees, minutes and seconds.
 
 *Example grid resolutions and example values:*
 
@@ -344,14 +348,14 @@ A code for the cell in the format `EXXXxxxxNYYyyyy` where `E` is either `E` or `
 [cols=">,>,>,>,>"]
 |===
 |Result|_level_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_
-|`E010°N52°` (E010°N52°) | `3600` (1°) |`52.3`|`10.8127`|`1000.0`
-|`E010°45′N52°15′`(E010°45′N52°15′) | `900` (15′) |`52.3`|`10.8127`|`1000.0`
-|`E010°40′N52°10′`(E010°40′N52°10′) | `600` (10′) |`52.3`|`10.8127`|`1000.0`
-|`E010°45′N52°15′`(E010°45′N52°15′) | `300` (5′) |`52.3`|`10.8127`|`1000.0`
-|`E010°47′30″N52°17′30″`(E010°47′30″N52°17′30″) | `150` (2½′) |`52.3`|`10.8127`|`1000.0`
-|`E010°48′N52°18′`(E010°48′N52°18′) | `60` (1′) |`52.3`|`10.8127`|`1000.0`
-|`E010°48′30″N52°18′00″`(E010°48′30″N52°18′00″) | `30`|`52.3`|`10.8127`|`1000.0`
-|`E010°48′45″N52°18′00″`(E010°48′45″N52°18′00″) | `1`|`52.3`|`10.8127`|`1000.0`
+|`CRS4326RES1-0-0LON10-0-0LAT52-0-0`      | `3600` (1°) |`52.3` |`10.8127` |`1000.0`
+|`CRS4326RES0-15-0LON10-45-0LAT52-15-0`   | `900` (15′) |`52.3` |`10.8127` |`1000.0`
+|`CRS4326RES0-10-0LON10-40-0LAT52-10-0`   | `600` (10′) |`52.3` |`10.8127` |`1000.0`
+|`CRS4326RES0-5-0LON10-45-0LAT52-15-0`    | `300` (5′)  |`52.3` |`10.8127` |`1000.0`
+|`CRS4326RES0-2-30LON10-47-30LAT52-17-30` | `150` (2½′) |`52.3` |`10.8127` |`1000.0`
+|`CRS4326RES0-1-0LON10-48-0LAT52-17-0`    | `60` (1′)   |`52.3` |`10.8127` |`1000.0`
+|`CRS4326RES0-0-30LON10-48-30LAT52-17-30` | `30`        |`52.3` |`10.8127` |`1000.0`
+|`CRS4326RES0-0-1LON10-48-45LAT52-17-59 ` | `1`         |`52.3` |`10.8127` |`1000.0`
 |===
 
 *Example query:*
@@ -377,7 +381,7 @@ GROUP BY kingdom, scientificName;
 
 *Additional resources*
 
-GeoPackage downloads of a Degree-Minute-Second grid at 3600″ (1°), 1800 (30′), 900″ (15′), 600″ (10′), 300″ (5′), 150″ (2′30″), 60″ (1′) and 30″ (30″) are available for https://download.gbif.org/grids/DMS/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/functions/DmsGridGenerator.java[this Java code].
+GeoPackage downloads of a Degree-Minute-Second grid at 3600″ (1°), 1800 (30′), 900″ (15′), 600″ (10′), 300″ (5′), 150″ (2′30″), 60″ (1′) and 30″ (30″) are available for https://download.gbif.org/grids/DMS/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/functions/DmsGridGenerator.java[this Java code], which can be https://github.com/gbif/occurrence-cube/tree/master/grid-generator[customized (see instructions)] for generating other resolutions or more limited areas.
 
 [#GBIF_ISEA3HCode]
 === ISEA3H Grid-cell code `GBIF_ISEA3HCode`
