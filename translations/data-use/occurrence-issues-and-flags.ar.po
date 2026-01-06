@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2024-12-16 15:14+0000\n"
-"PO-Revision-Date: 2025-02-04 17:47\n"
+"POT-Creation-Date: 2025-12-10 12:55+0000\n"
+"PO-Revision-Date: 2025-12-10 13:14\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar_SA\n"
@@ -434,7 +434,7 @@ msgid "Vocabulary issues"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:385
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:465
 #, no-wrap
 msgid "|Flag name | Definition | Terms | Example\n\n"
 "|*Basis of record invalid*\n"
@@ -442,23 +442,87 @@ msgid "|Flag name | Definition | Terms | Example\n\n"
 "|_dwc:basisOfRecord_\n"
 "|https://www.gbif.org/occurrence/search?issue=BASIS_OF_RECORD_INVALID[example]\n\n"
 "|*Type status invalid*\n"
-"|The given type status is impossible to interpret or very different from the recommended vocabulary: https://rs.gbif.org/vocabulary/gbif/type_status\n"
+"|The given type status is impossible to interpret or very different from the recommended vocabulary: https://registry.gbif.org/vocabulary/TypeStatus\n"
 "|_dwc:typeStatus_\n"
 "|https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID[example]\n\n"
 "|*Occurrence status unparsable*\n"
-"|The given occurenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at or observation event.\n"
+"|The given occurrenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at or observation event.\n"
 "|_dwc:occurrenceStatus_\n"
 "|https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE[example]\n\n"
+"|*Era or Erathem inferred*\n"
+"|The Era or Erathem was inferred from a lower rank (System/Period, Series/Epoch, or Stage/Age) since the value provided by the publisher does not correspond to an Era or Erathem.\n"
+"|_dwc:earliestEraOrLowestErathem, dwc:latestEraOrHighestErathem_\n"
+"|https://www.gbif.org/occurrence/search?issue=ERA_OR_ERATHEM_INFERRED_FROM_PARENT_RANK[example]\n\n"
+"|*Period or System inferred*\n"
+"|The Period or System was inferred from a lower rank (Series/Epoch or Stage/Age) since the value provided by the publisher does not correspond to a Period or System.\n"
+"|_dwc:earliestPeriodOrLowestSystem, dwc:latestPeriodOrHighestSystem_\n"
+"|https://www.gbif.org/occurrence/search?issue=EPOCH_OR_SERIES_INFERRED_FROM_PARENT_RANK[example]\n\n"
+"|*Epoch or Series inferred*\n"
+"|The Epoch or Series was inferred from a lower rank (Stage/Age) since the value provided by the publisher does not correspond to an Epoch or Series.\n"
+"|_dwc:earliestEpochOrLowestSeries, dwc:latestEpochOrHighestSeries_\n"
+"|https://www.gbif.org/occurrence/search?issue=PERIOD_OR_SYSTEM_INFERRED_FROM_PARENT_RANK[example]\n\n"
+"|*Eon or Eonothem rank mismatch*\n"
+"|The Eon or Eonothem provided belongs to another rank.\n"
+"|_dwc:earliestEonOrLowestEonothem_, _dwc:latestEonOrHighestEonothem_\n"
+"| https://www.gbif.org/occurrence/search?issue=EON_OR_EONOTHEM_RANK_MISMATCH[example]\n\n"
+"| *Era or Erathem rank mismatch*\n"
+"| The Era or Erathem provided belongs to another rank.\n"
+"| _dwc:earliestEraOrLowestErathem_, _dwc:latestEraOrHighestErathem_\n"
+"| https://www.gbif.org/occurrence/search?issue=ERA_OR_ERATHEM_RANK_MISMATCH[example]\n\n"
+"| *Period or System rank mismatch*\n"
+"| The Period or System provided belongs to another rank.\n"
+"| _dwc:earliestPeriodOrLowestSystem_, _dwc:latestPeriodOrHighestSystem_\n"
+"| https://www.gbif.org/occurrence/search?issue=PERIOD_OR_SYSTEM_RANK_MISMATCH[example]\n\n"
+"| *Epoch or Series rank mismatch*\n"
+"| The Epoch or Series provided belongs to another rank.\n"
+"| _dwc:earliestEpochOrLowestSeries_, _dwc:latestEpochOrHighestSeries_\n"
+"| https://www.gbif.org/occurrence/search?issue=EPOCH_OR_SERIES_RANK_MISMATCH[example]\n\n"
+"| *Age or Stage rank mismatch*\n"
+"| The Age or Stage provided belongs to another rank.\n"
+"| _dwc:earliestAgeOrLowestStage_, _dwc:latestAgeOrHighestStage_\n"
+"| https://www.gbif.org/occurrence/search?issue=AGE_OR_STAGE_RANK_MISMATCH[example]\n\n"
+"| *Era or Erathem invalid range*\n"
+"| The era or erathem has to be earlier than the latest.\n"
+"| _dwc:earliestEraOrLowestErathem_, _dwc:latestEraOrHighestErathem_\n"
+"| https://www.gbif.org/occurrence/search?issue=ERA_OR_ERATHEM_INVALID_RANGE[example]\n\n"
+"| *Period or System invalid range*\n"
+"| The Period or System has to be earlier than the latest.\n"
+"| _dwc:earliestPeriodOrLowestSystem_, _dwc:latestPeriodOrHighestSystem_\n"
+"|  https://www.gbif.org/occurrence/search?issue=PERIOD_OR_SYSTEM_INVALID_RANGE[example]\n\n"
+"| *Epoch or Series invalid range*\n"
+"| The Epoch or Series has to be earlier than the latest.\n"
+"| _dwc:earliestEpochOrLowestSeries_, _dwc:latestEpochOrHighestSeries_\n"
+"| https://www.gbif.org/occurrence/search?issue=EPOCH_OR_SERIES_INVALID_RANGE[example]\n\n"
+"| *Age or Stage invalid range*\n"
+"| The Age or Stage has to be earlier than the latest.\n"
+"| _dwc:earliestAgeOrLowestStage_, _dwc:latestAgeOrHighestStage_\n"
+"| https://www.gbif.org/occurrence/search?issue=AGE_OR_STAGE_INVALID_RANGE[example]\n\n"
+"| *Eon and Era mismatch*\n"
+"| The Era or Erathem does not belong to the Eon or Eonothem.\n"
+"| _dwc:earliestEonOrLowestEonothem_, _dwc:latestEonOrHighestEonothem_, _dwc:earliestEraOrLowestErathem_, _dwc:latestEraOrHighestErathem_\n"
+"| https://www.gbif.org/occurrence/search?issue=EON_OR_EONOTHEM_AND_ERA_OR_ERATHEM_MISMATCH[example]\n\n"
+"| *Era and Period mismatch*\n"
+"| The Period or System does not belong to the Era or Erathem.\n"
+"| _dwc:earliestEraOrLowestErathem_, _dwc:latestEraOrHighestErathem_, _dwc:earliestPeriodOrLowestSystem_, _dwc:latestPeriodOrHighestSystem_\n"
+"| https://www.gbif.org/occurrence/search?issue=ERA_OR_ERATHEM_AND_PERIOD_OR_SYSTEM_MISMATCH[example]\n\n"
+"| *Period and Epoch mismatch*\n"
+"| The Epoch or Series does not belong to the Period or System.\n"
+"| _dwc:earliestPeriodOrLowestSystem_, _dwc:latestPeriodOrHighestSystem_, _dwc:earliestEpochOrLowestSeries_, _dwc:latestEpochOrHighestSeries_\n"
+"| https://www.gbif.org/occurrence/search?issue=PERIOD_OR_SYSTEM_AND_EPOCH_OR_SERIES_MISMATCH[example]\n\n"
+"| *Epoch and Age mismatch*\n"
+"| The Age or Stage does not belong to the Epoch or Series.\n"
+"| _dwc:earliestEpochOrLowestSeries_, _dwc:latestEpochOrHighestSeries_, _dwc:earliestAgeOrLowestStage_, _dwc:latestAgeOrHighestStage_\n"
+"| https://www.gbif.org/occurrence/search?issue=EPOCH_OR_SERIES_AND_AGE_OR_STAGE_MISMATCH[example]\n"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:387
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:467
 #, no-wrap
 msgid "GRSciColl issues"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:433
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:513
 #, no-wrap
 msgid "|Flag name | Definition | Terms | Example\n\n"
 "|*Ambiguous institution*\n"
@@ -496,13 +560,13 @@ msgid "|Flag name | Definition | Terms | Example\n\n"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:435
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:515
 #, no-wrap
 msgid "Other issues"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:476
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:556
 #, no-wrap
 msgid "|Flag name | Definition | Terms | Example\n\n"
 "|*Individual count invalid*\n"
