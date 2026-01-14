@@ -1,7 +1,4 @@
 = Taxonomy interpretation
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
 
 == Multiple taxonomy support
 
