@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-01-14 14:14+0000\n"
+"POT-Creation-Date: 2026-01-14 14:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:355
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:352
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:79
 #, no-wrap
 msgid "Occurrence download predicates"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:380
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:377
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:404
 msgid ""
 "Users can specify the taxonomy to be included in occurrence downloads by "
@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:407
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:404
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:431
 #, no-wrap
 msgid ""
