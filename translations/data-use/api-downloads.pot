@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-24 15:58+0000\n"
+"POT-Creation-Date: 2026-01-14 14:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:380
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:405
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:404
 msgid ""
 "Users can specify the taxonomy to be included in occurrence downloads by "
 "adding the `checklistKey` parameter to the download request. By default, the "
@@ -34,7 +34,7 @@ msgstr ""
 
 #. type: delimited block -
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:407
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:432
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:431
 #, no-wrap
 msgid ""
 "{\n"
@@ -687,20 +687,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:367
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:366
 #, no-wrap
 msgid "Predicate support for multiple taxonomies"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:370
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:369
 msgid ""
 "the `equals`, `in` support multiple taxonomies by adding a `checklistKey` "
 "property to the predicate."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:383
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:382
 #, no-wrap
 msgid ""
 "{\n"
@@ -716,7 +716,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:397
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:396
 #, no-wrap
 msgid ""
 "{\n"
@@ -732,19 +732,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:402
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:401
 #, no-wrap
 msgid "Downloads with a specific taxonomy"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:436
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:434
 #, no-wrap
 msgid "Verbatim extension data"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:439
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:437
 msgid ""
 "A download in Darwin Core Archive (`DWCA`) format includes three tables by "
 "default, as described in detail on xref::download-formats.adoc[Occurrence "
@@ -752,14 +752,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:441
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:439
 msgid ""
 "Additional Darwin Core extension data can also be included in the archive.  "
 "These data tables are not processed by GBIF; they are as-published."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:443
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:441
 msgid ""
 "The extension tables available for download are provided using https://api."
 "gbif.org/v1/occurrence/download/describe/dwca[this API call], under "
@@ -768,7 +768,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:456
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:454
 #, no-wrap
 msgid ""
 "{\n"
@@ -784,7 +784,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:458
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:456
 msgid ""
 "For descriptions of the extensions and their terms, see https://rs.gbif.org/"
 "extensions.html[GBIF Registered Extensions]."

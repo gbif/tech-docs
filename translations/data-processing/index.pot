@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-23 12:53+0000\n"
+"POT-Creation-Date: 2026-01-14 14:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -383,14 +383,14 @@ msgid "Taxonomy interpretation"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:84
+#: en/data-processing/modules/ROOT/pages/index.adoc:83
 msgid ""
 "See the xref:taxonomy-interpretation.adoc[Taxonomy interpretation] on how "
 "GBIF interprets and matches against multiple taxonomies."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:88
+#: en/data-processing/modules/ROOT/pages/index.adoc:86
 msgid ""
 "To facilitate searching and metric generation, all occurrence records are "
 "tied to a single global taxonomy, known as the https://www.gbif.org/dataset/"
@@ -403,13 +403,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:89
+#: en/data-processing/modules/ROOT/pages/index.adoc:87
 #, no-wrap
 msgid "Backbone matching"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:92
+#: en/data-processing/modules/ROOT/pages/index.adoc:90
 msgid ""
 "Every occurrence is assigned a `taxonKey` which points to the https://www."
 "gbif.org/composition/5H6q4htCV3xwevyc5Np7jO/data-use-club-practical-"
@@ -425,7 +425,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:94
+#: en/data-processing/modules/ROOT/pages/index.adoc:92
 msgid ""
 "In the case of homonyms or similar spelled names, the service has no way to "
 "verify the potential matches, so such names will often get higher taxon "
@@ -433,27 +433,27 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:95
+#: en/data-processing/modules/ROOT/pages/index.adoc:93
 msgid ""
 "In case a given scientific name is not (yet) part of the GBIF backbone, GBIF "
 "can at least match the record to some higher taxon, such as the genus."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:96
+#: en/data-processing/modules/ROOT/pages/index.adoc:94
 msgid ""
 "Fuzzy name matching, matching to higher taxon or matching to no taxon are "
 "issue flags we assign to records."
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:98
+#: en/data-processing/modules/ROOT/pages/index.adoc:96
 #, no-wrap
 msgid "Type status"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:100
+#: en/data-processing/modules/ROOT/pages/index.adoc:98
 msgid ""
 "The type status of a specimen is interpreted from `dwc:typeStatus` using the "
 "https://github.com/gbif/parsers/blob/master/src/main/java/org/gbif/common/"
