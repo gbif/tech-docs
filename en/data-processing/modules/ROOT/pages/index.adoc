@@ -79,9 +79,7 @@ GBIF flags records with various xref:data-use::checklist-issues-and-flags[issues
 
 === Taxonomy interpretation
 
-ifeval::["{env}" != "prod"]
 See the xref:taxonomy-interpretation.adoc[Taxonomy interpretation] on how GBIF interprets and matches against multiple taxonomies.
-endif::[]
 
 ifeval::["{env}" == "prod"]
 To facilitate searching and metric generation, all occurrence records are tied to a single global taxonomy, known as the https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF backbone]. GBIF builds this taxonomy multiple times per year, which is primarily based on the http://www.catalogueoflife.org/[Catalogue of Life]. Higher-level classification above the family level exclusively comes from the Catalogue of Life, while lower taxa can be added in an automated way from other taxonomic datasets available through the https://www.gbif.org/species[GBIF Checklist Bank].
