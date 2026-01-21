@@ -194,15 +194,15 @@ The code for the cell of the EEA reference grid in which the randomized point fa
 [cols=">,>,>,>,>"]
 |===
 |Result|_gridSize_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_
-|`100kmE43N32`|`100 000`|`52.0`|`10.0`|`1000.0`
-|`50kmE425N265`|`50 000`|`52.0`|`10.0`|`1000.0`
-|`10kmE432N321`|`10 000`|`52.0`|`10.0`|`1000.0`
-|`5kmE4320N3210`|`5 000`|`52.0`|`10.0`|`1000.0`
-|`2kmE4320N3210`|`2 000`|`52.0`|`10.0`|`1000.0`
-|`1kmE4321N3210`|`1 000`|`52.0`|`10.0`|`1000.0`
-|`250mE432100N321000`|`250`|`52.0`|`10.0`|`1000.0`
-|`100mE43210N32100`|`100`|`52.0`|`10.0`|`1000.0`
-|`25mE4321000N3210000`|`25`|`52.0`|`10.0`|`1000.0`
+|`100kmE51N29`|`100 000`|`48.99949`|`20.75808`|`1000.0`
+|`50kmE510N290`|`50 000`|`48.99949`|`20.75808`|`1000.0`
+|`10kmE510N293`|`10 000`|`48.99949`|`20.75808`|`1000.0`
+|`5kmE5105N2930`|`5 000`|`48.99949`|`20.75808`|`1000.0`
+|`2kmE5104N2932`|`2 000`|`48.99949`|`20.75808`|`1000.0`
+|`1kmE5105N2933`|`1 000`|`48.99949`|`20.75808`|`1000.0`
+|`250mE510500N293350`|`250`|`48.99949`|`20.75808`|`1000.0`
+|`100mE51052N29336`|`100`|`48.99949`|`20.75808`|`1000.0`
+|`25mE5105200N2933675`|`25`|`48.99949`|`20.75808`|`1000.0`
 |===
 
 *Example query:*
@@ -233,6 +233,78 @@ GeoPackage downloads of the grids at several resolutions are available for https
 GeoPackage and ShapeFile downloads of the grids at several resolutions are also available for download at the https://www.eea.europa.eu/en/datahub/datahubitem-view/3c362237-daa4-45e2-8c16-aaadfb1a003b[European Environment Agency Datahub].  (See the 2013 and 2011 datasets for alternative resolutions.)
 
 Reference: https://sdi.eea.europa.eu/catalogue/srv/api/records/aac8379a-5c4e-445c-b2ef-23a6a2701ef0/attachments/eea_reference_grid_v1.pdf[About the EEA reference grid (PDF)].
+
+[#GBIF_EuroStatCode]
+=== EuroStat Grid-cell code, `GBIF_EuroStatCode`
+
+.EuroStat Grid with 50km resolution
+image::eurostat_example_italy.png[]
+
+*Function definition:*
+
+[source,sql]
+----
+STRING GBIF_EuroStatCode(INTEGER gridSize,
+                         DOUBLE latitude,
+                         DOUBLE longitude,
+                         DOUBLE coordinateUncertaintyInMeters)
+----
+
+*Parameters:*
+
+`gridSize`:: The _grid size_ in metres of the EEA Reference Grid.  Standard values are _1000_, _2000_, _5000_, _10000_, _20000_, _50000_ or _100000_.  Other values are also accepted, e.g. _500_.
+`latitude`:: The latitude of the _point_ to grid (usually the `decimalLatitude` field)
+`longitude`:: The longitude of the _point_ to grid (usually the `decimalLongitude` field)
+`coordinateUncertaintyInMeters`:: The uncertainty radius to apply to the _point_ (usually used with a default value, for example `COALESCE(coordinateUncertaintyInMeters, 1000)`). Set to 0 to disable randomization.
+
+The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within a circle.
+
+*Return value:*
+
+The code for the cell of the EuroStat grid in which the randomized point falls.
+
+*Supported grid resolutions and example values:*
+
+[cols=">,>,>,>,>"]
+|===
+|Result|_gridSize_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_
+|`CRS3035RES100000mN2400000E4800000`|`100 000`|`45.28043`|`16.84088`|`1000.0`
+|`CRS3035RES50000mN2450000E4850000`|`50 000`|`45.28043`|`16.84088`|`1000.0`
+|`CRS3035RES20000mN2480000E4840000`|`20 000`|`45.28043`|`16.84088`|`1000.0`
+|`CRS3035RES10000mN2480000E4850000`|`10 000`|`45.28043`|`16.84088`|`1000.0`
+|`CRS3035RES5000mN2485000E4855000`|`5 000`|`45.28043`|`16.84088`|`1000.0`
+|`CRS3035RES2000mN2486000E4856000`|`2 000`|`45.28043`|`16.84088`|`1000.0`
+|`CRS3035RES1000mN2487000E4857000`|`1 000`|`45.28043`|`16.84088`|`1000.0`
+|===
+
+*Example query:*
+
+[source,sql]
+----
+SELECT
+  kingdom,
+  scientificName,
+  COUNT(*),
+  GBIF_EuroStatCode(
+    10000, <1>
+    decimalLatitude,
+    decimalLongitude,
+    COALESCE(coordinateUncertaintyInMeters, 1000) <2>
+  )
+FROM occurrence
+WHERE country = 'PL'
+GROUP BY kingdom, scientificName;
+----
+<1> Selection of grid size
+<2> Default to randomization within a 1000m radius if the occurrence does not have a published coordinate uncertainty.
+
+*Additional resources*
+
+GeoPackage downloads of the grids at several resolutions are available for https://download.gbif.org/grids/EuroStat/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/grids/EuroStatGridGenerator.java[this Java code], which can be https://github.com/gbif/occurrence-cube/tree/master/grid-generator[customized (see instructions)] for generating other resolutions or more limited areas.
+
+GeoPackage, CSV and Parquet downloads of the grids at several resolutions are also available for download at https://ec.europa.eu/eurostat/web/gisco/geodata/grids[Eurostat].
+
+Reference: https://www.eea.europa.eu/en/datahub/datahubitem-view/3c362237-daa4-45e2-8c16-aaadfb1a003b[Eurostat – Grids].
 
 [#GBIF_EQDGCode]
 === Extended Quarter-Degree Grid-cell code, `GBIF_EQDGCode`
@@ -270,13 +342,13 @@ The code for the cell of the Extended Quarter-Degree Grid in which the randomize
 [cols=">,>,>,>,>"]
 |===
 |Result|_level_|_latitude_|_longitude_|_coordinateUncertaintyInMeters_
-|`E010N52`|`0`|`52.3`|`10.3`|`1000.0`
-|`E010N52C`|`1`|`52.3`|`10.3`|`1000.0`
-|`E010N52CB`|`2`|`52.3`|`10.3`|`1000.0`
-|`E010N52CBC`|`3`|`52.3`|`10.3`|`1000.0`
-|`E010N52CBCC`|`4`|`52.3`|`10.3`|`1000.0`
-|`E010N52CBCCB`|`5`|`52.3`|`10.3`|`1000.0`
-|`E010N52CBCCBB`|`6`|`52.3`|`10.3`|`1000.0`
+|`W175S21`|`0`|`-21.34284`|`-175.03633`|`1000.0`
+|`W175S21B`|`1`|`-21.34284`|`-175.03633`|`1000.0`
+|`W175S21BD`|`2`|`-21.34284`|`-175.03633`|`1000.0`
+|`W175S21BDB`|`3`|`-21.34284`|`-175.03633`|`1000.0`
+|`W175S21BDBD`|`4`|`-21.34284`|`-175.03633`|`1000.0`
+|`W175S21BDBDA`|`5`|`-21.34284`|`-175.03633`|`1000.0`
+|`W175S21BDBDAD`|`6`|`-21.34284`|`-175.03633`|`1000.0`
 |===
 
 *Example query:*

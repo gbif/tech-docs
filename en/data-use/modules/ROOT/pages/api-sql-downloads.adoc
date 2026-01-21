@@ -107,6 +107,7 @@ And these functions for handling data types:
 As well as custom gridding functions:
 
 * `xref::api-sql-download-functions.adoc#GBIF_EEARGCode[GBIF_EEARGCode]`
+* `xref::api-sql-download-functions.adoc#GBIF_EuroStatCode[GBIF_EuroStatCode]`
 * `xref::api-sql-download-functions.adoc#GBIF_EQDGCode[GBIF_EQDGCode]`
 * `xref::api-sql-download-functions.adoc#GBIF_MGRSCode[GBIF_MGRSCode]`
 * `xref::api-sql-download-functions.adoc#GBIF_ISEA3HCode[GBIF_ISEA3HCode]`
