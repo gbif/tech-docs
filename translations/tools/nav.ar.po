@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-05 17:08+0000\n"
-"PO-Revision-Date: 2025-03-05 18:29\n"
+"POT-Creation-Date: 2025-08-12 13:13+0000\n"
+"PO-Revision-Date: 2025-08-12 13:29\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar_SA\n"
@@ -28,6 +28,6 @@ msgstr ""
 
 #. type: Plain text
 #: en/tools/modules/ROOT/nav.adoc:5
-msgid "xref:tools::rule-based-annotations.adoc[Rule-based annotations **UAT**]"
+msgid "xref:tools::rule-based-annotations.adoc[Rule-based annotations **Test**]"
 msgstr ""
 

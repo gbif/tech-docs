@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-05 17:08+0000\n"
-"PO-Revision-Date: 2025-03-05 18:29\n"
+"POT-Creation-Date: 2025-10-15 14:47+0000\n"
+"PO-Revision-Date: 2025-10-15 14:53\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -33,7 +33,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/nav.adoc:6
-msgid "xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations **UAT**]"
+msgid "xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations **Test**]"
 msgstr ""
 
 #. type: Plain text
@@ -42,7 +42,17 @@ msgid "xref:multimedia-publishing.adoc[Publishing multimedia]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:8
+#: en/data-publishing/modules/ROOT/nav.adoc:9
 msgid "xref:register-dataset-api.adoc[Register a dataset using the API]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/nav.adoc:10
+msgid "xref:local-contexts-pilot.adoc[LocalContexts Pilot]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/nav.adoc:10
+msgid "xref:local-contexts-integration.adoc[LocalContexts Integration]"
 msgstr ""
 

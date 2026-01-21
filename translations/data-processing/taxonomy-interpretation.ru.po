@@ -1,0 +1,716 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2025-08-29 07:00+0000\n"
+"PO-Revision-Date: 2025-08-29 07:08\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: /main/translations/data-processing/taxonomy-interpretation.pot\n"
+"X-Crowdin-File-ID: 44610\n"
+
+#. type: Title =
+#: en/data-processing/modules/ROOT/pages/index.adoc:80
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:1
+#, no-wrap
+msgid "Taxonomy interpretation"
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:3
+#, no-wrap
+msgid "Multiple taxonomy support"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:6
+msgid "To facilitate searching and metric generation, all occurrence records are matched to two taxonomies:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:8
+msgid "https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b[Catalogue of Life eXtended Release (COL XR)] - This is the primary taxonomy used by https://www.gbif.org/portal[GBIF]. Catalogue of Life is a global index of species, which aims to provide a comprehensive and authoritative list of the world's species. It is compiled from multiple taxonomic datasets and is updated regularly. The eXtended Release (COL XR) builds on the Base Release by programmatically integrating additional data sources. It integrates information from over 58,000 overlapping taxonomic and nomenclatural global, regional, national and management data sources (checklists) as well as originating from digitised literature available in Catalogue of Life's infrastructure https://www.checklistbank.org[ChecklistBank]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:10
+msgid "https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF backbone] - This is a taxonomy that, up until recently, GBIF has been building and integrating periodically. It is primarily based on an older version of http://www.catalogueoflife.org/[Catalogue of Life] with additional taxa added in an automated way from other taxonomic datasets. The build process has now been discontinued in favour of the eXtended release of the Catalogue of Life. The GBIF Backbone will no longer be updated, but will remain available for backwards compatibility. All GBIF Backbone identifiers will be preserved and supported in the API."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:11
+#, no-wrap
+msgid "API support"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:16
+msgid "The GBIF API allows searching and retrieving occurrence records using either taxonomy.  You can specify the taxonomy with the optional `checklistKey` query parameter.  If this parameter is not provided, the API defaults to the GBIF backbone taxonomy."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:18
+msgid "Valid values for this parameter are the dataset keys of the taxonomic datasets registered in GBIF."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:20
+msgid "Currently supported values include:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:22
+msgid "`checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b` for the Catalogue of Life eXtended Release"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:23
+msgid "`checklistKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c` for the GBIF backbone."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:25
+msgid "The following subsections will describe how the API supports multiple taxonomies."
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:27
+#, no-wrap
+msgid "Taxonomy matching"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:31
+msgid "For each occurrence record GBIF attempts to match that record to a taxon in each taxonomy.  Therefore, each occurrence is assigned taxonKeys that link to the corresponding taxon in both the GBIF Backbone and the Catalogue of Life."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:33
+msgid "These keys are retrieved by querying our https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[species match API], depending on whether the following Darwin Core fields were supplied by the data publisher with the occurrence record:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:35
+msgid "https://dwc.tdwg.org/list/#dwc_scientificName[scientificName]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:36
+msgid "https://dwc.tdwg.org/list/#dwc_taxonRank[taxonRank]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:37
+msgid "https://dwc.tdwg.org/list/#dwc_specificEpithet[specificEpithet]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:38
+msgid "https://dwc.tdwg.org/list/#dwc_infraspecificEpithet[infraspecificEpithet]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:39
+msgid "https://dwc.tdwg.org/list/#dwc_genericName[genericName]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:40
+msgid "https://dwc.tdwg.org/list/#dwc_genus[genus]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:41
+msgid "https://dwc.tdwg.org/list/#dwc_subtribe[subtribe]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:42
+msgid "https://dwc.tdwg.org/list/#dwc_tribe[tribe]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:43
+msgid "https://dwc.tdwg.org/list/#dwc_subfamily[subfamily]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:44
+msgid "https://dwc.tdwg.org/list/#dwc_family[family]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:45
+msgid "https://dwc.tdwg.org/list/#dwc_superfamily[superfamily]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:46
+msgid "https://dwc.tdwg.org/list/#dwc_order[order]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:47
+msgid "https://dwc.tdwg.org/list/#dwc_class[class]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:48
+msgid "https://dwc.tdwg.org/list/#dwc_phylum[phylum]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:49
+msgid "https://dwc.tdwg.org/list/#dwc_kingdom[kingdom]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:50
+msgid "https://dwc.tdwg.org/list/#scientificNameID[scientificNameID]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:51
+msgid "https://dwc.tdwg.org/list/#taxonID[taxonID]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:52
+msgid "https://dwc.tdwg.org/list/#taxonConceptID[taxonConceptID]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:54
+msgid "There are more details about parameters and response formats in the https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[API documentation]."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:56
+msgid "If the `scientificName` is not present in the published occurrence record, it will be assembled from the individual name parts if present: `genus`, `specificEpithet`, `genericName` and `infraspecificEpithet`. Having a higher classification qualifying the `scientificName` improves the accuracy of the taxonomic match in two ways, even if it is just the family or even the kingdom."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:58
+msgid "In the case of homonyms or similarly spelt names, the service has no way to verify the potential matches, so such names will often get higher taxon matches."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:60
+msgid "In case a given scientific name is not (yet) part of the taxonomy, GBIF can at least match the record to some higher taxon in that taxonomy, such as the genus."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:62
+msgid "Fuzzy name matching, matching to a higher taxon or matching to no taxon are issue xref:data-use:checklist-issues-and-flags.adoc[flags] we assign to records."
+msgstr ""
+
+#. type: Title ====
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:63
+#, no-wrap
+msgid "Identifier-based matching"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:66
+msgid "The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a xref:data-use:checklist-issues-and-flags.adoc[flag] will be issued in the response to indicate the inconsistency."
+msgstr ""
+
+#. type: Title ====
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:67
+#, no-wrap
+msgid "Matching against different taxonomies"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:70
+msgid "The optional checklistKey parameter specifies the taxonomy to match against."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:75
+#, no-wrap
+msgid "*Example matching request against the COL XR*\n"
+"```bash\n"
+"curl -s \"http://api.gbif.org/v2/species/match?scientificName=Acacia+acuminata&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b\"\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:77
+msgid "The version 2 response format that includes additional information such as the IUCN RedList category for the taxon if available."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:79
+#, no-wrap
+msgid "*Example response for a match against COL XR:*\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:177
+#, no-wrap
+msgid "{\n"
+"  \"usage\": {\n"
+"    \"key\": \"5WZLF\",\n"
+"    \"name\": \"Carcharodon carcharias (Linnaeus, 1758)\",\n"
+"    \"canonicalName\": \"Carcharodon carcharias\",\n"
+"    \"authorship\": \"(Linnaeus, 1758)\",\n"
+"    \"rank\": \"SPECIES\",\n"
+"    \"code\": \"ZOOLOGICAL\",\n"
+"    \"status\": \"ACCEPTED\",\n"
+"    \"genericName\": \"Carcharodon\",\n"
+"    \"specificEpithet\": \"carcharias\",\n"
+"    \"type\": \"SCIENTIFIC\",\n"
+"    \"formattedName\": \"<i>Carcharodon</i> <i>carcharias</i> (Linnaeus, 1758)\"\n"
+"  },\n"
+"  \"classification\": [\n"
+"    {\n"
+"      \"key\": \"CS5HF\",\n"
+"      \"name\": \"Eukaryota\",\n"
+"      \"rank\": \"DOMAIN\"\n"
+"    },\n"
+"    {\n"
+"      \"key\": \"N\",\n"
+"      \"name\": \"Animalia\",\n"
+"      \"rank\": \"KINGDOM\"\n"
+"    },\n"
+"    {\n"
+"      \"key\": \"CH2\",\n"
+"      \"name\": \"Chordata\",\n"
+"      \"rank\": \"PHYLUM\"\n"
+"    },\n"
+"    {\n"
+"      \"key\": \"8V4V3\",\n"
+"      \"name\": \"Vertebrata\",\n"
+"      \"rank\": \"SUBPHYLUM\"\n"
+"    },\n"
+"    {\n"
+"      \"key\": \"8V4V5\",\n"
+"      \"name\": \"Gnathostomata\",\n"
+"      \"rank\": \"INFRAPHYLUM\"\n"
+"    },\n"
+"    {\n"
+"      \"key\": \"8X6G5\",\n"
+"      \"name\": \"Chondrichthyes\",\n"
+"      \"rank\": \"PARVPHYLUM\"\n"
+"    },\n"
+"    {\n"
+"      \"key\": \"LB\",\n"
+"      \"name\": \"Elasmobranchii\",\n"
+"      \"rank\": \"CLASS\"\n"
+"    },\n"
+"    {\n"
+"      \"key\": \"3F5\",\n"
+"      \"name\": \"Lamniformes\",\n"
+"      \"rank\": \"ORDER\"\n"
+"    },\n"
+"    {\n"
+"      \"key\": \"CB2M7\",\n"
+"      \"name\": \"Lamnidae\",\n"
+"      \"rank\": \"FAMILY\"\n"
+"    },\n"
+"    {\n"
+"      \"key\": \"C973Q\",\n"
+"      \"name\": \"Carcharodon\",\n"
+"      \"rank\": \"GENUS\"\n"
+"    },\n"
+"    {\n"
+"      \"key\": \"5WZLF\",\n"
+"      \"name\": \"Carcharodon carcharias\",\n"
+"      \"rank\": \"SPECIES\"\n"
+"    }\n"
+"  ],\n"
+"  \"diagnostics\": {\n"
+"    \"matchType\": \"EXACT\",\n"
+"    \"confidence\": 99,\n"
+"    \"timeTaken\": 22,\n"
+"    \"timings\": {\n"
+"      \"nameNRank\": 0,\n"
+"      \"sciNameMatch\": 22,\n"
+"      \"nameParse\": 1,\n"
+"      \"luceneMatch\": 21\n"
+"    }\n"
+"  },\n"
+"  \"additionalStatus\": [\n"
+"    {\n"
+"      \"clbDatasetKey\": \"53131\",\n"
+"      \"datasetAlias\": \"IUCN\",\n"
+"      \"datasetKey\": \"19491596-35ae-4a91-9a98-85cf505f1bd3\",\n"
+"      \"status\": \"VULNERABLE\",\n"
+"      \"statusCode\": \"VU\",\n"
+"      \"sourceId\": \"3855\"\n"
+"    }\n"
+"  ],\n"
+"  \"synonym\": false,\n"
+"  \"left\": 1049700,\n"
+"  \"right\": 1049701\n"
+"}\n"
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:179
+#, no-wrap
+msgid "Occurrence search API"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:182
+msgid "The link:++https://techdocs.gbif.org/en/openapi/v1/occurrence#/Searching%20occurrences/searchOccurrence[Occurrence Search API] supports querying with either taxonomy by including the optional `checklistKey` parameter in the request."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:187
+msgid "Example: ```bash curl -s \"http://api.gbif.org/v1/occurrence/search?scientificName=Acacia+acuminata&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b\" ```"
+msgstr ""
+
+#. type: Title ====
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:189
+#, no-wrap
+msgid "Response format"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:192
+msgid "The link:++https://techdocs.gbif.org/en/openapi/v1/occurrence#/Searching%20occurrences/searchOccurrence[Occurrence Search API]++[Occurrence API] response has been extended to include the taxonomic information from multiple taxonomies. The `classifications` array contains the taxonomic information from all taxonomies that were matched to the occurrence record. _Note: the example response has been shortened for brevity._"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:344
+#, no-wrap
+msgid "{\n"
+"      \"key\": 5104646682,\n"
+"      \"datasetKey\": \"50c9509d-22c7-4a22-a47d-8c48425ef4a7\",\n"
+"      \"basisOfRecord\": \"HUMAN_OBSERVATION\",\n"
+"      \"occurrenceStatus\": \"PRESENT\",\n"
+"      \"classifications\": {\n"
+"        \"7ddf754f-d193-4cc9-b351-99906754a03b\": {\n"
+"          \"usage\": {\n"
+"            \"key\": \"BSJCX\",\n"
+"            \"name\": \"Acacia acuminata Benth.\",\n"
+"            \"rank\": \"SPECIES\",\n"
+"            \"code\": \"BOTANICAL\",\n"
+"            \"authorship\": \"Benth.\",\n"
+"            \"genericName\": \"Acacia\",\n"
+"            \"specificEpithet\": \"acuminata\",\n"
+"            \"formattedName\": \"<i>Acacia</i> <i>acuminata</i> Benth.\"\n"
+"          },\n"
+"          \"acceptedUsage\": {\n"
+"            \"key\": \"BSJCX\",\n"
+"            \"name\": \"Acacia acuminata Benth.\",\n"
+"            \"rank\": \"SPECIES\",\n"
+"            \"code\": \"BOTANICAL\",\n"
+"            \"authorship\": \"Benth.\",\n"
+"            \"genericName\": \"Acacia\",\n"
+"            \"specificEpithet\": \"acuminata\",\n"
+"            \"formattedName\": \"<i>Acacia</i> <i>acuminata</i> Benth.\"\n"
+"          },\n"
+"          \"taxonomicStatus\": \"ACCEPTED\",\n"
+"          \"classification\": [\n"
+"            {\n"
+"              \"key\": \"CS5HF\",\n"
+"              \"name\": \"Eukaryota\",\n"
+"              \"rank\": \"DOMAIN\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"P\",\n"
+"              \"name\": \"Plantae\",\n"
+"              \"rank\": \"KINGDOM\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"CMQ8S\",\n"
+"              \"name\": \"Pteridobiotina\",\n"
+"              \"rank\": \"SUBKINGDOM\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"TP\",\n"
+"              \"name\": \"Tracheophyta\",\n"
+"              \"rank\": \"PHYLUM\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"MG\",\n"
+"              \"name\": \"Magnoliopsida\",\n"
+"              \"rank\": \"CLASS\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"383\",\n"
+"              \"name\": \"Fabales\",\n"
+"              \"rank\": \"ORDER\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"623QT\",\n"
+"              \"name\": \"Fabaceae\",\n"
+"              \"rank\": \"FAMILY\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"C8VYK\",\n"
+"              \"name\": \"Acacia\",\n"
+"              \"rank\": \"GENUS\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"BYZSL\",\n"
+"              \"name\": \"Juliflorae\",\n"
+"              \"rank\": \"SECTION_BOTANY\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"BSJCX\",\n"
+"              \"name\": \"Acacia acuminata\",\n"
+"              \"rank\": \"SPECIES\"\n"
+"            }\n"
+"          ],\n"
+"          \"iucnRedListCategoryCode\": \"LC\",\n"
+"          \"issues\": [\n"
+"            \"TAXON_ID_NOT_FOUND\"\n"
+"          ]\n"
+"        },\n"
+"        \"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\": {\n"
+"          \"usage\": {\n"
+"            \"key\": \"2979180\",\n"
+"            \"name\": \"Acacia acuminata Benth.\",\n"
+"            \"rank\": \"SPECIES\",\n"
+"            \"authorship\": \"Benth.\",\n"
+"            \"genericName\": \"Acacia\",\n"
+"            \"specificEpithet\": \"acuminata\",\n"
+"            \"formattedName\": \"<i>Acacia</i> <i>acuminata</i> Benth.\"\n"
+"          },\n"
+"          \"acceptedUsage\": {\n"
+"            \"key\": \"2979180\",\n"
+"            \"name\": \"Acacia acuminata Benth.\",\n"
+"            \"rank\": \"SPECIES\",\n"
+"            \"authorship\": \"Benth.\",\n"
+"            \"genericName\": \"Acacia\",\n"
+"            \"specificEpithet\": \"acuminata\",\n"
+"            \"formattedName\": \"<i>Acacia</i> <i>acuminata</i> Benth.\"\n"
+"          },\n"
+"          \"taxonomicStatus\": \"ACCEPTED\",\n"
+"          \"classification\": [\n"
+"            {\n"
+"              \"key\": \"6\",\n"
+"              \"name\": \"Plantae\",\n"
+"              \"rank\": \"KINGDOM\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"7707728\",\n"
+"              \"name\": \"Tracheophyta\",\n"
+"              \"rank\": \"PHYLUM\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"220\",\n"
+"              \"name\": \"Magnoliopsida\",\n"
+"              \"rank\": \"CLASS\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"1370\",\n"
+"              \"name\": \"Fabales\",\n"
+"              \"rank\": \"ORDER\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"5386\",\n"
+"              \"name\": \"Fabaceae\",\n"
+"              \"rank\": \"FAMILY\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"2978223\",\n"
+"              \"name\": \"Acacia\",\n"
+"              \"rank\": \"GENUS\"\n"
+"            },\n"
+"            {\n"
+"              \"key\": \"2979180\",\n"
+"              \"name\": \"Acacia acuminata\",\n"
+"              \"rank\": \"SPECIES\"\n"
+"            }\n"
+"          ],\n"
+"          \"iucnRedListCategoryCode\": \"LC\",\n"
+"          \"issues\": [\n"
+"            \"TAXON_ID_NOT_FOUND\"\n"
+"          ]\n"
+"        }\n"
+"      }\n"
+"    }\n"
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:347
+#, no-wrap
+msgid "Occurrence download API"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:350
+msgid "The occurrence download API supports downloading occurrence records using either taxonomy."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:352
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:79
+#, no-wrap
+msgid "Occurrence download predicates"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:355
+msgid "The predicate search API includes the `checklistKey` parameter to specify the taxonomy to be used for filtering occurrence records."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:357
+msgid "Example:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:371
+#, no-wrap
+msgid "{\n"
+"  \"creator\": \"userName\",\n"
+"  \"sendNotification\": false,\n"
+"  \"format\": \"SIMPLE_CSV\",\n"
+"  \"predicate\": {\n"
+"      \"type\": \"equals\",\n"
+"      \"key\": \"TAXON_KEY\",\n"
+"      \"value\": \"5WZLF\",\n"
+"      \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\"\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#. type: Title ====
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:374
+#, no-wrap
+msgid "Occurrence download content"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:377
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:405
+msgid "Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. By default, the GBIF Backbone will be used if no `checklistKey` is supplied."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:404
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:432
+#, no-wrap
+msgid "{\n"
+"  \"creator\": \"userName\",\n"
+"  \"notificationAddresses\": [\n"
+"    \"userEmail@example.org\"\n"
+"  ],\n"
+"  \"sendNotification\": true,\n"
+"  \"format\": \"SIMPLE_CSV\",\n"
+"  \"predicate\": {\n"
+"    \"type\": \"and\",\n"
+"    \"predicates\": [\n"
+"      {\n"
+"        \"type\": \"equals\",\n"
+"        \"key\": \"BASIS_OF_RECORD\",\n"
+"        \"value\": \"PRESERVED_SPECIMEN\"\n"
+"      },\n"
+"      {\n"
+"        \"type\": \"in\",\n"
+"        \"key\": \"COUNTRY\",\n"
+"        \"values\": [ \"VC\", \"GD\" ]\n"
+"      }\n"
+"    ]\n"
+"  },\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\"\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:407
+msgid "For more information on the download API, see the https://techdocs.gbif.org/en/openapi/v1/occurrence#/Occurrence-downloads/requestDownload[API documentation]."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:409
+#, no-wrap
+msgid "Taxonomic indexes"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:412
+msgid "With every update of a taxonomy, *versioned docker containers* are created to support the species matching https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[API]. These containers are made available through the GBIF docker registry and can be used locally without depending on online services."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:414
+msgid "The docker container indexes are built from ChecklistBank, which provides the organized taxonomic data, names, and hierarchy."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:416
+msgid "In addition, *stable unique identifiers* for taxa from other taxonomic datasets such as https://www.checklistbank.org/dataset/2041/about[Dyntaxa], https://www.checklistbank.org/dataset/2006/about[IPNI], https://www.checklistbank.org/dataset/2144/about[ITIS], https://www.checklistbank.org/dataset/7888/about[UK Species Inventory] and https://www.checklistbank.org/dataset/2011/about[WoRMs] are retrieved from ChecklistBank and linked to taxa in the checklist (e.g. COL XR or GBIF Backbone)."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:418
+msgid "This enables matching using `scientificNameID`, `taxonID` or `taxonConceptID` fields if these identifiers are used by data publishers."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:420
+#, no-wrap
+msgid "*The IUCN RedList category* is also linked to taxa in the index. The IUCN RedList information is pulled from ChecklistBank when the docker containers are built and linked to the checklist  (e.g. COL XR or GBIF Backbone).\n"
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:422
+#, no-wrap
+msgid "Docker containers"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:425
+msgid "All available matching containers from the GBIF docker registry are listed https://docker.gbif.org/v2/matching-ws/tags/list[here]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:427
+msgid "The image tags are made up of several pieces of information:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:429
+msgid "`{taxonomy}-{architecture}-{checklistbank-datasetKey}-{date}-{time}`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:431
+msgid "Hence, the image `xcol-arm64-308651-20250516-145444` exposes the COL eXtended Release with datasetKey=308651 and was build on the 16th of May 2025."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:433
+msgid "You can also pull and run the latest COL XR like this:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:436
+msgid "```bash docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-amd64-latest"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:440
+msgid "# use arm64 image instead of amd64 on a mac with apple silicon docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-arm64-latest ```"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:443
+msgid "Once running, metadata about the indexed data can be retrieved:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:447
+msgid "```bash curl -s \"http://localhost:8080/v2/species/match/metadata\" ```"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:451
+msgid "Example query URL using local docker container: ```bash curl -s \"http://localhost:8080/v2/species/match?scientificName=Oenanthe&scientificNameAuthorship=L.&taxonRank=genus&kingdom=Plantae\" ```"
+msgstr ""
+
