@@ -76,6 +76,19 @@ This function returns `TRUE` if the _point_ is within the _polygon_.  It is equi
 
 *Notes:*
 
+[IMPORTANT]
+====
+The `GBIF_Within` function is slow! Please limit the amount of data processed by it using a basic bounding box query as shown. This will often reduce the download time by several hours.
+
+[source,sql]
+----
+WHERE
+  decimalLatitude >= 2.09 AND decimalLatitude <= 25.5 AND
+  decimalLongitude >= 87.22 AND decimalLongitude <= 100.87 AND
+  GBIF_Within('POLYGON (( <complex polygon within the box> ))', decimalLatitude, decimalLongitude) = TRUE
+----
+====
+
 If you have problems, first check your polygon with https://wktmap.com/[WKT Map] or https://arthur-e.github.io/Wicket/[Wicket] — ensure the points are ordered anti-clockwise, and are in longitude-latitude order, and form a closed loop with the first and last points equal. (A polygon with clockwise points represents the opposite: the whole world except the polygon.)
 
 *Example query:*
