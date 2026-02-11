@@ -21,6 +21,7 @@ The API is split into logical sections to ease understanding:
 * The xref:v1@openapi::registry-principal-methods.adoc[*Registry*] provides means to create, edit, update and search for information about the datasets, publishing organizations, networks and the means to access them (technical endpoints). The registered content controls what is crawled and indexed in the GBIF data portal, but as a shared API may also be used for other initiatives, including the Global Register of Scientific Collections (GRSciColl).
 * xref:v1@openapi::species.adoc[*Species*] provides services to discover and access information about species and higher taxa, and utility services for interpreting names and looking up the identifiers and complete scientific names used for species in the GBIF portal.
 * xref:v1@openapi::occurrence.adoc[*Occurrence*] provides access to occurrence information crawled and indexed by GBIF, search services to do real-time paged search and asynchronous download services to request large, batch downloads.
+* The xref:openapi::images.adoc[*Occurrence Image API*] provides low or medium resolution images linked to occurrences.
 * xref:v2@openapi::maps.adoc[*Maps*] provides services to show maps of GBIF-mobilized content.
 * xref:v1@openapi::literature.adoc[*Literature*] provides access to peer-reviewed papers and other literature indexed by GBIF, citing GBIF datasets and downloads.
 * xref:v1@openapi::validator.adoc[*Validator*] allows running data structure and quality checks against a dataset before publication to GBIF.
@@ -43,9 +44,9 @@ If you are integrating the GBIF API into a website or app, we highly recommend y
 
 Many common API operations are able to sustain rapid querying, such as species matching, the geocode API or retrieving individual occurrences.
 
-Frequent queries to search APIs may be rate limited, depending on our server load.  If this happens, you will receive an HTTP `429` error, and you should reduce your query rate and try again.
+*Rapid or numerous queries to search APIs may be rate limited*, depending on our server load.  If this happens, you will receive an `HTTP 429` error, and you should reduce your query rate or use the xref:data-use::api-downloads.adoc[download API].  The maximum rate changes depending on our server load; we do not guarantee any particular query rate will work.
 
-The most common cause of rate-limiting is users trying to retrieve occurrence records for thousands or tens of thousands of species/countries/datasets/locations.  A single xref:data-use::api-downloads.adoc[occurrence download query] accepts 100,000 parameters and should be used instead.
+The most common cause of rate-limiting is when retrieving occurrence records for thousands or tens of thousands of species/countries/datasets/locations.  *If a script will take more than 15 minutes using the occurrence search APIs it will be usually be faster and cause less load on our servers to xref:data-use::api-downloads.adoc[request a download] instead.*  This also allows for proper https://www.gbif.org/citation-guidelines[attribution and citation].  The download API accepts up to 100,000 search parameters, such as taxa or datasets.
 
 == Unsupported use
 

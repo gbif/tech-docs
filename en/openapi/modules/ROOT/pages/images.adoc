@@ -1,8 +1,8 @@
 = Occurrence image API
 
-GBIF run an image crop-and-resize server and cache to support display of occurrence images on www.gbif.org and other uses.
+GBIF run an image crop-and-resize server and cache to support display of occurrence images on www.GBIF.org and other uses.
 
-Note that occurrence images may be licensed under more restrictive terms than other occurrence data.  Refer to the relevant terms in the multimedia extensions, or contact the publisher of the dataset.
+Note that occurrence images may be licensed under more restrictive terms than other occurrence data.  Refer to the relevant terms in the multimedia extensions, and contact the publisher of the dataset for confirmation if necessary for your use.
 
 == Usage
 
