@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-10-06 17:27+0000\n"
-"PO-Revision-Date: 2025-10-06 17:35\n"
+"POT-Creation-Date: 2026-02-11 13:26+0000\n"
+"PO-Revision-Date: 2026-02-11 13:34\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -24,12 +24,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/openapi/modules/ROOT/pages/images.adoc:4
-msgid "GBIF run an image crop-and-resize server and cache to support display of occurrence images on www.gbif.org and other uses."
+msgid "GBIF run an image crop-and-resize server and cache to support display of occurrence images on www.GBIF.org and other uses."
 msgstr ""
 
 #. type: Plain text
 #: en/openapi/modules/ROOT/pages/images.adoc:6
-msgid "Note that occurrence images may be licensed under more restrictive terms than other occurrence data.  Refer to the relevant terms in the multimedia extensions, or contact the publisher of the dataset."
+msgid "Note that occurrence images may be licensed under more restrictive terms than other occurrence data.  Refer to the relevant terms in the multimedia extensions, and contact the publisher of the dataset for confirmation if necessary for your use."
 msgstr ""
 
 #. type: Title ==
