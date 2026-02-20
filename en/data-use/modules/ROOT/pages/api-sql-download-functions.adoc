@@ -317,7 +317,7 @@ GeoPackage downloads of the grids at several resolutions are available for https
 
 GeoPackage, CSV and Parquet downloads of the grids at several resolutions are also available for download at https://ec.europa.eu/eurostat/web/gisco/geodata/grids[Eurostat].
 
-Reference: https://www.eea.europa.eu/en/datahub/datahubitem-view/3c362237-daa4-45e2-8c16-aaadfb1a003b[Eurostat – Grids].
+Reference: https://ec.europa.eu/eurostat/web/gisco/geodata/grids[Eurostat – Grids] and https://inspire.ec.europa.eu/id/document/tg/su[INSPIRE Data Specification on Statistical Units – Technical Guidelines]
 
 [#GBIF_EQDGCode]
 === Extended Quarter-Degree Grid-cell code, `GBIF_EQDGCode`
@@ -397,7 +397,7 @@ See also: https://en.wikipedia.org/wiki/QDGC[Wikipedia: QDGC].
 === Degree-Minute-Second Grid-cell code, `GBIF_DMSGCode`
 
 .Degree-Minute-Second Grid cells at 15′ width on southern Croatia
-image::eqdgc_example_croatia.png[]
+image::dms_example_croatia.png[]
 
 *Function definition:*
 
@@ -424,7 +424,7 @@ The _resolution_ must be a divisor of 3600.  Useful values are _3600_ (1°), _18
 
 *Return value:*
 
-A code for the cell in the format `CRS4326RESrd-rm-rsLONxd-xm-xsLATyd-ym-ys` where `rd-rm-rs` is the grid resolution in degrees, minutes and seconds and `xd-xm-xs`, `yd-ym-ys` are the coordinates of the lower left corner of the grid cell, also in degrees, minutes and seconds.
+A code for the cell in the format `CRS4326RESrd-rm-rsLONxd-xm-xsLATyd-ym-ys` where `rd-rm-rs` is the grid resolution in degrees, minutes and seconds and `xd-xm-xs`, `yd-ym-ys` are the coordinates of the lower left corner of the grid cell, also in degrees, minutes and seconds.  This is the grid cell identifier scheme specified by https://inspire.ec.europa.eu/id/document/tg/su[INSPIRE Data Specification on Statistical Units – Technical Guidelines] (EuroStat).
 
 *Example grid resolutions and example values:*
 
@@ -440,7 +440,7 @@ A code for the cell in the format `CRS4326RESrd-rm-rsLONxd-xm-xsLATyd-ym-ys` whe
 |`CRS4326RES0-2-30LON10-47-30LAT52-17-30` | `150` (2½′) |`52.3` |`10.8127` |`1000.0`
 |`CRS4326RES0-1-0LON10-48-0LAT52-17-0`    | `60` (1′)   |`52.3` |`10.8127` |`1000.0`
 |`CRS4326RES0-0-30LON10-48-30LAT52-17-30` | `30`        |`52.3` |`10.8127` |`1000.0`
-|`CRS4326RES0-0-1LON10-48-45LAT52-17-59 ` | `1`         |`52.3` |`10.8127` |`1000.0`
+|`CRS4326RES0-0-1LON10-48-45LAT52-17-59`  | `1`         |`52.3` |`10.8127` |`1000.0`
 |===
 
 *Example query:*
@@ -467,6 +467,8 @@ GROUP BY kingdom, scientificName;
 *Additional resources*
 
 GeoPackage downloads of a Degree-Minute-Second grid at 3600″ (1°), 1800 (30′), 900″ (15′), 600″ (10′), 300″ (5′), 150″ (2′30″), 60″ (1′) and 30″ (30″) are available for https://download.gbif.org/grids/DMS/[download from GBIF].  These were generated using https://github.com/gbif/occurrence-cube/blob/master/grid-generator/src/main/java/org/gbif/occurrence/cube/grids/DmsGridGenerator.java[this Java code], which can be https://github.com/gbif/occurrence-cube/tree/master/grid-generator[customized (see instructions)] for generating other resolutions or more limited areas.
+
+Reference: https://ec.europa.eu/eurostat/web/gisco/geodata/grids[Eurostat – Grids] and https://inspire.ec.europa.eu/id/document/tg/su[INSPIRE Data Specification on Statistical Units – Technical Guidelines].
 
 [#GBIF_ISEA3HCode]
 === ISEA3H Grid-cell code `GBIF_ISEA3HCode`
