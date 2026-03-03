@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-01-21 16:12+0000\n"
+"POT-Creation-Date: 2026-03-03 10:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -251,9 +251,9 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:88
 msgid ""
-"`GROUP BY` queries are supported, as are basic SQL window functions (`OVER` "
-"and `PARTITION BY`). The group and partition filters (`HAVING` and "
-"`QUALIFY`) are not yet supported."
+"`GROUP BY` queries and `ORDER BY` are supported, as are basic SQL window "
+"functions (`OVER` and `PARTITION BY`). The group and partition filters "
+"(`HAVING` and `QUALIFY`) are not supported."
 msgstr ""
 
 #. type: Plain text
@@ -261,7 +261,7 @@ msgstr ""
 msgid ""
 "Most common SQL operators and functions are supported, such as `AND`, `OR`, "
 "`NOT`, `IS NULL`, `RAND()`, `ROUND(…)`, `LOWER(…)`, etc.  Note `BETWEEN` is "
-"not supported, use `>`, `>=`, `<` and `<=` instead."
+"not supported, use `>`, `pass:[>=]`, `<` and `pass:[<=]` instead."
 msgstr ""
 
 #. type: Plain text
