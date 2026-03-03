@@ -1,3 +1,7 @@
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
+
 = Events processing
 
 image::data-processing.png[align=center,320,192]
