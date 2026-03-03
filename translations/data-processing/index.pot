@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-01-14 14:14+0000\n"
+"POT-Creation-Date: 2026-03-03 13:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,13 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Title =
-#: en/data-processing/modules/ROOT/pages/index.adoc:1
-#, no-wrap
-msgid "GBIF Data Processing"
-msgstr ""
-
 #. type: Target for macro image
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:7
 #: en/data-processing/modules/ROOT/pages/index.adoc:3
 #, no-wrap
 msgid "data-processing.png"
@@ -40,10 +35,24 @@ msgstr ""
 #.  * UI improvements
 #.  * Software bugs
 #. type: Title ==
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:9
 #: en/data-processing/modules/ROOT/pages/index.adoc:5
 #: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:139
 #, no-wrap
 msgid "Introduction"
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:25
+#: en/data-processing/modules/ROOT/pages/index.adoc:23
+#, no-wrap
+msgid "Occurrence interpretation"
+msgstr ""
+
+#. type: Title =
+#: en/data-processing/modules/ROOT/pages/index.adoc:1
+#, no-wrap
+msgid "GBIF Data Processing"
 msgstr ""
 
 #. type: Plain text
@@ -125,12 +134,6 @@ msgid ""
 "occurrenceIDs to the new occurrenceIDs. A GBIF data blog post has been "
 "written on the topic of id stability https://data-blog.gbif.org/post/improve-"
 "identifier-stability/[here]."
-msgstr ""
-
-#. type: Title ==
-#: en/data-processing/modules/ROOT/pages/index.adoc:23
-#, no-wrap
-msgid "Occurrence interpretation"
 msgstr ""
 
 #. type: Plain text

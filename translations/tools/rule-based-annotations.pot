@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-12 13:13+0000\n"
+"POT-Creation-Date: 2026-03-03 13:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,6 +28,7 @@ msgstr ""
 #.  * UI improvements
 #.  * Software bugs
 #. type: Title ==
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:9
 #: en/data-processing/modules/ROOT/pages/index.adoc:5
 #: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:139
 #, no-wrap
