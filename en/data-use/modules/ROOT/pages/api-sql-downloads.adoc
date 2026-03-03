@@ -84,9 +84,9 @@ datasetkey	countrycode	COUNT(*)
 
 Only `SELECT` queries are supported, and only queries against a single table named `occurrence`.  `JOIN` queries and sub-queries are not allowed.  Selecting `*` is also not allowed, specify the columns you need.
 
-`GROUP BY` queries are supported, as are basic SQL window functions (`OVER` and `PARTITION BY`). The group and partition filters (`HAVING` and `QUALIFY`) are not yet supported.
+`GROUP BY` queries and `ORDER BY` are supported, as are basic SQL window functions (`OVER` and `PARTITION BY`). The group and partition filters (`HAVING` and `QUALIFY`) are not supported.
 
-Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT`, `IS NULL`, `RAND()`, `ROUND(…)`, `LOWER(…)`, etc.  Note `BETWEEN` is not supported, use `>`, `>=`, `<` and `<=` instead.
+Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT`, `IS NULL`, `RAND()`, `ROUND(…)`, `LOWER(…)`, etc.  Note `BETWEEN` is not supported, use `>`, `pass:[>=]`, `<` and `pass:[<=]` instead.
 
 Aggregate functions are also supported, for example `COUNT(…)`, `MIN(…)`, `MAX(…)`, `AVERAGE(…)`.
 
