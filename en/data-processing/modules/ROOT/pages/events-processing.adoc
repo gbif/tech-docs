@@ -1,0 +1,45 @@
+= Events processing
+
+image::data-processing.png[align=center,320,192]
+
+== Introduction
+
+Event records in GBIF go through a series of processing steps similar to those described in the xref:index.adoc[GBIF Data Processing] documentation but focusing on event data. Events processing differs in several key aspects:
+
+* Processing of the **Event Core** of the dataset.
+* Ignoring of certain occurrence-specific fields that are not applicable to events such as `dwc:basisOfRecord` or GRSciColl information. This data is interpreted during the occurrence interpretation only.
+* Event-specific extensions such as the Humboldt Extension are processed when available.
+
+However, issues, flags normalization processes and vocabularies are shared with the occurrence processing.
+
+== Event core interpretation
+
+Event records that are available in the standard verbatim form in an event core dataset are subjected to interpretation by GBIF. As in occurrences, interpreted terms are normalized to a limited controlled vocabulary and if a term is not interpreted by GBIF, it will be accepted simply as free text.
+
+Additionally, GBIF also computes the events hierarchy to provide the upstream lineage of each event.
+
+== Occurrence interpretation
+
+When occurrences are provided as extensions to events, they are processed through the occurrences workflow as usual and they are linked to the corresponding event by the `eventID`.
+
+Additionally, events processing also gathers some occurrence information to make searching events by occurrence data possible. At the moment, it's only possible to search events by taxonomic information provided in the occurrence extension.
+
+== Other interpretations
+
+As in occurrences, Event records include other information that describe other aspects related to the sampling events performed. These interpretation is common with occurrence records but only includes the following:
+
+* Identifiers
+* Location data
+* Temporal data
+* Multimedia extension
+
+As mentioned earlier, occurrence-specific fields such as `dwc:basisOfRecord` are not processed for events, as they are not applicable to sampling events.
+
+== Humboldt Extension
+
+When the Humboldt Extension is provided in an event dataset, GBIF processes and interprets it trying to normalize the values as in other interpretations. The interpreted data is searchable through the event API and can also be downloaded in a separate file when the dataset is downloaded.
+
+== Measurement or Fact and Extended Measurement or Fact extensions
+
+Even though these are extensions can also be linked to occurrences, it's worth mention that when they are provided in an event dataset, they are processed as part of the event interpretation when they are linked to the events and we make the `measurementType` and `measurementTypeID` terms available for searching and filtering.
+
