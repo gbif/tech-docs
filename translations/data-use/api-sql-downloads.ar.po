@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-01-21 16:12+0000\n"
-"PO-Revision-Date: 2026-01-21 16:17\n"
+"POT-Creation-Date: 2026-03-03 10:34+0000\n"
+"PO-Revision-Date: 2026-03-03 11:14\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar_SA\n"
@@ -198,12 +198,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:88
-msgid "`GROUP BY` queries are supported, as are basic SQL window functions (`OVER` and `PARTITION BY`). The group and partition filters (`HAVING` and `QUALIFY`) are not yet supported."
+msgid "`GROUP BY` queries and `ORDER BY` are supported, as are basic SQL window functions (`OVER` and `PARTITION BY`). The group and partition filters (`HAVING` and `QUALIFY`) are not supported."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:90
-msgid "Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT`, `IS NULL`, `RAND()`, `ROUND(…)`, `LOWER(…)`, etc.  Note `BETWEEN` is not supported, use `>`, `>=`, `<` and `<=` instead."
+msgid "Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT`, `IS NULL`, `RAND()`, `ROUND(…)`, `LOWER(…)`, etc.  Note `BETWEEN` is not supported, use `>`, `pass:[>=]`, `<` and `pass:[<=]` instead."
 msgstr ""
 
 #. type: Plain text
