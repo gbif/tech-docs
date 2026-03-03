@@ -5,6 +5,7 @@ output
 node_modules
 .history
 .vscode
+.idea
 
 # These are generated, and translated versions should be generated (later) so
 # ensure they won't get added for translation.
