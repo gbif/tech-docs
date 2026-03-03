@@ -122,7 +122,7 @@ for path in registry["paths"]:
             #json.dump(registry["paths"][path], sys.stdout, separators=(',', ':'), indent=indent)
 
 movePrefixFromRegistryToEvent = [
-    '/event/download/'
+    '/experimental/event/download/'
 ]
 
 for path in registry["paths"]:
@@ -184,7 +184,7 @@ print("")
 print("--- Moving some method-paths from Event maps to Occurrence maps ---")
 
 movePrefixFromEventMapsToOccurrenceMaps = [
-    '/event/'
+    '/experimental/event/'
 ]
 
 if (env != 'prod'):
