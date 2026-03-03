@@ -1,0 +1,9 @@
+= Taxon API
+ifeval::["{env}" != "prod"]
+:page-unpublish:
+endif::[]
+:description: The GBIF Taxon API
+:page-no-next: true
+:page-layout: swagger
+:page-openapi-url: /openapi/taxon.json
+:header: Taxon API
