@@ -20,7 +20,13 @@ The API is split into logical sections to ease understanding:
 
 * The xref:v1@openapi::registry-principal-methods.adoc[*Registry*] provides means to create, edit, update and search for information about the datasets, publishing organizations, networks and the means to access them (technical endpoints). The registered content controls what is crawled and indexed in the GBIF data portal, but as a shared API may also be used for other initiatives, including the Global Register of Scientific Collections (GRSciColl).
 * xref:v1@openapi::species.adoc[*Species*] provides services to discover and access information about species and higher taxa, and utility services for interpreting names and looking up the identifiers and complete scientific names used for species in the GBIF portal.
+ifeval::["{env}" != "prod"]
+* xref:v2@openapi::taxon.adoc[*Taxon*] provides #TODO# services to discover and access information about species and higher taxa, and utility services for interpreting names and looking up the identifiers and complete scientific names used for species in the GBIF portal. #TODO#
+endif::[]
 * xref:v1@openapi::occurrence.adoc[*Occurrence*] provides access to occurrence information crawled and indexed by GBIF, search services to do real-time paged search and asynchronous download services to request large, batch downloads.
+ifeval::["{env}" != "prod"]
+* xref:v1@openapi::event.adoc[*Event*] provides #TODO# #TODO#
+endif::[]
 * The xref:openapi::images.adoc[*Occurrence Image API*] provides low or medium resolution images linked to occurrences.
 * xref:v2@openapi::maps.adoc[*Maps*] provides services to show maps of GBIF-mobilized content.
 * xref:v1@openapi::literature.adoc[*Literature*] provides access to peer-reviewed papers and other literature indexed by GBIF, citing GBIF datasets and downloads.
