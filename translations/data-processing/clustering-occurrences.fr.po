@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2025-02-04 17:09+0000\n"
-"PO-Revision-Date: 2026-03-04 09:49\n"
+"PO-Revision-Date: 2026-03-04 12:46\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -35,71 +35,71 @@ msgstr "Il existe de nombreuses raisons valables pour lesquelles ces doublons ap
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:8
 msgid "This is why we released an experimental data-clustering feature aiming to identify potentially related records on GBIF. The goal was not only to detect potential duplicates but to also find interesting relationships, such as between typification records or records originating from Natural History collections, DNA-derived sequences and citations of materials examined when publishing taxonomic treatments in journal articles."
-msgstr "C'est pourquoi nous avons lancé une fonctionnalité expérimentale de regroupement des données visant à identifier sur GBIF les enregistrements potentiellement liés. Le but était non seulement de trouver les doublons potentiels, mais aussi de trouver des liens intéressants, par exemple entre les enregistrements de typification ou les enregistrements qui proviennent de collections d'histoire naturelle, les séquences dérivées de l'ADN et les citations de matériaux examinés lors de la publication de traitements taxonomiques dans des articles de revues."
+msgstr "C'est pourquoi nous avons lancé une fonctionnalité expérimentale de regroupement des données visant à identifier sur GBIF les enregistrements potentiellement rattachés. Le but était non seulement de trouver les doublons potentiels, mais aussi de trouver des liens intéressants, par exemple entre les enregistrements de typification ou les enregistrements qui proviennent de collections d'histoire naturelle, les séquences dérivées de l'ADN et les citations de matériaux examinés lors de la publication de traitements taxonomiques dans des articles de revues."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:10
 msgid "Records that have been included in a cluster can be found with the “is in cluster” filter in https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true[the occurrence search]. Each occurrence page belonging to a cluster will have a “CLUSTER” tab displaying the potentially related records (see a screenshot of https://www.gbif.org/occurrence/2871636339/cluster[this example] below)."
-msgstr ""
+msgstr "Les enregistrements inclus dans un groupe peuvent être trouvés avec le filtre « est dans le regroupement » dans https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true[la recherche d'occurrences]. Chaque page d'occurrence qui fait partie d'un groupe aura un onglet \"GROUPE\" qui affiche les enregistrements potentiellement rattachés (voir une capture d'écran de https://www.gbif.org/occurrence/2871636339/cluster[cet exemple] ci-dessous)."
 
 #. type: Target for macro image
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:11
 #, no-wrap
 msgid "example_cluster.png"
-msgstr ""
+msgstr "example_cluster.png"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:14
 msgid "You can read https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections[this news item] for more information and some exciting examples."
-msgstr ""
+msgstr "Vous pouvez lire https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections[cette nouvelle] pour plus d'informations et quelques exemples intéressants."
 
 #. type: Title ==
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:15
 #, no-wrap
 msgid "Clustering records"
-msgstr ""
+msgstr "Regroupements des enregistrements"
 
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:17
 #, no-wrap
 msgid "Step 1: Select candidates"
-msgstr ""
+msgstr "Étape 1 : Sélectionner les candidats"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:20
 msgid "Comparing nearly 2 billions records with each other is very resource intensive and quite impractical, so the first step of the data-clustering process is to select and group candidate records to compare."
-msgstr ""
+msgstr "La comparaison de presque 2 milliards d'enregistrements entre eux exige beaucoup de ressources et s'avère peu pratique. La première étape du processus de regroupement des données consiste donc à sélectionner et à grouper les enregistrements candidats à comparer."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:22
 msgid "The system first creates a series of \"hashes\" for each record based on specified fields. All records sharing a hash are candidates to compare against each other."
-msgstr ""
+msgstr "Premièrement, le système crée une série de « hachages » pour chaque enregistrement basé sur des champs spécifiés. Tous les enregistrements partageant un hachage sont susceptibles d'être comparés."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:24
 msgid "For example, one of the \"hashes\" used is based on the species key, rounded coordinates, year, month and day. This means that the records that share the same values for those fields will be grouped together in the candidate table for further inspection."
-msgstr ""
+msgstr "Par exemple, l'un des « hachages » utilisés est basé sur la clé d'espèce, les coordonnées arrondies, l'année, le mois et le jour. Cela signifie que les enregistrements qui partagent les mêmes valeurs pour ces champs seront regroupés dans le tableau des candidats pour un examen plus approfondi."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:26
 msgid "The fields used to identify and group the candidates are a subset of what is used later on for comparing them (see the table below). See https://github.com/gbif/clustering/blob/dev/src/main/java/org/gbif/clustering/Cluster.java[the source code] to check the details."
-msgstr ""
+msgstr "Les champs utilisés pour identifier et grouper les candidats sont un sous-ensemble de ce qui sera utilisé ultérieurement pour les comparer (voir le tableau ci-dessous). Voir https://github.com/gbif/clustering/blob/dev/src/main/java/org/gbif/clustering/Cluster.java[le code source] pour vérifier les détails."
 
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:27
 #, no-wrap
 msgid "Step 2: Compare and assess"
-msgstr ""
+msgstr "Étape 2 : Comparer et évaluer"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:30
 msgid "In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them."
-msgstr ""
+msgstr "Dans cette deuxième phase, le système comparera tous les enregistrements dans l'ensemble des candidats entre eux et générera des assertions. Les assertions sont examinées et l'algorithme décide s'il y a suffisamment de preuves dans les assertions pour créer un lien entre elles."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:32
 msgid "The table below summarizes how those assertions are made but for more details, check the https://github.com/gbif/clustering/blob/dev/src/main/java/org/gbif/clustering/parsers/OccurrenceRelationships.java[source code]."
-msgstr ""
+msgstr "Le tableau ci-dessous résume la manière dont ces assertions sont formulées, mais pour plus d'informations, vérifiez le https://github.com/gbif/clustering/blob/dev/src/main/java/org/gbif/clustering/parsers/OccurrenceRelationships.java[code source]."
 
 #. type: Table
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:58
@@ -129,13 +129,13 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:61
 msgid "The table below summarizes the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together."
-msgstr ""
+msgstr "Le tableau ci-dessous résume les combinaisons des assertions qui sont suffisants pour lier les enregistrements dans un groupe. Si un groupe d'occurrences partage les combinaisons des assertions pour une colonne donnée, elles seront regroupées."
 
 #. type: Block title
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:62
 #, no-wrap
 msgid "Combination of assertion conditions to create cluster"
-msgstr ""
+msgstr "Combinaison de conditions d'assertion pour créer un groupe"
 
 #. type: Table
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:90
@@ -161,7 +161,7 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:93
 msgid "Any group of occurrence associated with the assertion `Different date` or `Different country` will not be clustered together."
-msgstr ""
+msgstr "Tout groupe d'occurrences associé à l'assertion `Date différente` ou `Pays différent` ne sera pas regroupé."
 
 #. type: Title ==
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:94
