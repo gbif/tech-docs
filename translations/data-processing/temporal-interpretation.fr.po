@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2025-05-07 15:30+0000\n"
-"PO-Revision-Date: 2026-03-04 15:47\n"
+"PO-Revision-Date: 2026-03-04 17:18\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -31,37 +31,37 @@ msgstr "Analyse générale de la date et de l'heure"
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:6
 msgid "Dates and times published in Darwin Core should use the https://en.wikipedia.org/wiki/ISO_8601[ISO 8601-1:2019] standard.  A single day is represented in year-month-day (`YYYY-MM-DD`) format, for example `2023-09-18`.  A time can be added by adding `T` and the time in 24 hour format, for example `2023-09-18T13:27:00`."
-msgstr ""
+msgstr "Les dates et heures publiées dans Darwin Core devraient utiliser la norme https://en.wikipedia.org/wiki/ISO_8601[ISO 8601-1:2019]. Un seul jour est représenté au format année-mois-jour (`YYYY-MM-DD`), par exemple `2023-09-18`. Une heure peut être ajoutée en ajoutant `T` et l'heure au format 24 heures, par exemple `2023-09-18T13:27:00`."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:8
 msgid "Time zones may be provided: `2023-09-18T13:27:00Z` (UTC, GMT) and `2023-09-18T15:27:00+02:00` (Central European Summer Time) both represent the same point in time, but see below for how we handle time zone information."
-msgstr ""
+msgstr "Les fuseaux horaires peuvent être fournis `2023-09-18T13:27:00Z` (UTC, GMT) et `2023-09-18T15:27:00+02:00` (heure d'été d'Europe centrale) représentent tous deux le même moment dans le temps, mais voir ci-dessous pour savoir comment nous traitons les informations relatives aux fuseaux horaires."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:10
 msgid "Where the date is imprecise, and only known to month or year resolution, the day or month may be omitted.  `2023-09` means some time in September 2023, `2023` means some time in 2023."
-msgstr ""
+msgstr "Lorsque la date n'est pas précise, et que seuls le mois ou l'année sont connus, le jour ou le mois peuvent être omis.  `2023-09` signifie une date quelconque en septembre 2023, `2023` signifie une date quelconque en 2023."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:12
 msgid "An interval of time may be represented by separating two date-times with equal precision with `/`, for example `2023-09-05/2023-09-18` means some time between 5 September 2023 and 18 September 2023. `2023-01/2023-09` means January to September 2023, `2000/2023` covers 24 years from the start of 2000 to the end of 2023, and `2023-09-10T03:54:00/2023-09-18T13:27:30` is a range with the start and end precise to the second."
-msgstr ""
+msgstr "Un intervalle de temps peut être représenté en séparant deux date-heures avec une précision égale à l'aide de `/`, par exemple `2023-09-05/2023-09-18` signifie une date comprise entre le 5 septembre 2023 et le 18 septembre 2023. `2023-01/2023-09` signifie janvier à septembre 2023, `2000/2023` couvre une période de 24 ans du début de l'année 2000 à la fin de l'année 2023, et `2023-09-10T03:54:00/2023-09-18T13:27:30` est une plage dont le début et la fin sont précis à la seconde près."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:14
 msgid "ISO 8601-1:2019 includes an abbreviated form for date intervals, where date parts that are unchanged may be omitted.  To make parsing easier for API users we normalize this to the full form: `2023-09-05/18` becomes `2023-09-05/2023-09-18`, `2023-01/09` becomes `2023-01/2023-09` and so on."
-msgstr ""
+msgstr "La norme ISO 8601-1:2019 inclut une forme abrégée pour les intervalles de date, dans laquelle les parties de la date qui ne sont pas changées peuvent être omises. Pour faciliter l'analyse pour les utilisateurs de l'API, nous normalisons cela sous la forme complète : `2023-09-05/18` devient `2023-09-05/2023-09-18`, `2023-01/09` devient `2023-01/2023-09` etc."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:16
 msgid "GBIF's system only supports date-times representing intervals on some fields; see below."
-msgstr ""
+msgstr "Le système GBIF supporte seulement les date-heures qui représentent des intervalles dans certains champs ; voir ci-dessous."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:18
 msgid "Dates provided in other formats (`March 1986`, `13.03.1986`, `03/13/1986`, `13.III.1986`, `13 March 1986 to 5 April 1987` and so on) _may_ be interpreted, where we can do so without ambiguity, but these formats are not recommended.  Occurrences with dates we are unable to process will be flagged with the https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_INVALID[RECORDED_DATE_INVALID], https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_INVALID[IDENTIFIED_DATE_INVALID], https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_INVALID[GEOREFERENCED_DATE_INVALID] or https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_INVALID[MODIFIED_DATE_INVALID] issues.  Darwin Core includes a https://dwc.tdwg.org/terms/#dwc:verbatimEventDate[verbatimEventDate] field for recording the original date."
-msgstr ""
+msgstr "Les dates fournies dans d'autres formats (`March 1986`, `13.03.1986`, `03/13/1986`, `13.III.1986`, `13 March 1986 to 5 April 1987` etc.) _peuvent_ être interprétées, lorsque cela est possible sans ambiguïté, mais ces formats ne sont pas recommandés. Les occurrences dont les dates ne peuvent être traitées seront signalées par les problèmes https://www.gbif.org/occurrence/search?issue=RECORDED_DATE_INVALID[DATE_D'ENREGISTREMENT_NON_VALIDE], https://www.gbif.org/occurrence/search?issue=IDENTIFIED_DATE_INVALID[DATE_D'IDENTIFICATION_ NON_VALIDE], https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_INVALID[DATE_GÉORÉFÉRENCÉE_NON_VALIDE] ou https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_INVALID[DATE_DE_MODIFICATION_NON_VALIDE]. Darwin Core inclut un champ de https://dwc.tdwg.org/terms/#dwc:verbatimEventDate[verbatimEventDate] pour enregistrer la date originale."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:20
