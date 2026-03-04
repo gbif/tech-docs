@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2025-05-07 15:30+0000\n"
-"PO-Revision-Date: 2025-05-07 15:33\n"
+"PO-Revision-Date: 2026-03-04 15:47\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -20,13 +20,13 @@ msgstr ""
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:1
 #, no-wrap
 msgid "Date and time interpretation"
-msgstr ""
+msgstr "Interprétation de la date et de l'heure"
 
 #. type: Title ==
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:3
 #, no-wrap
 msgid "General date and time parsing"
-msgstr ""
+msgstr "Analyse générale de la date et de l'heure"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:6
@@ -72,52 +72,52 @@ msgstr ""
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:21
 #, no-wrap
 msgid "Occurrence recorded date"
-msgstr ""
+msgstr "Date d'enregistrement de l'occurrence"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:24
 msgid "Eight Darwin Core fields represent all or part of the date-time an occurrence was recorded:"
-msgstr ""
+msgstr "Huit champs Darwin Core représentent tout ou partie de la date et de l'heure auxquelles une occurrence a été enregistré :"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:26
 msgid "https://dwc.tdwg.org/terms/#dwc:eventDate[eventDate]"
-msgstr ""
+msgstr "https://dwc.tdwg.org/terms/#dwc:eventDate[eventDate]"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:27
 msgid "https://dwc.tdwg.org/terms/#dwc:eventTime[eventTime] — not interpreted"
-msgstr ""
+msgstr "https://dwc.tdwg.org/terms/#dwc:eventTime[eventTime] — pas interprété"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:28
 msgid "https://dwc.tdwg.org/terms/#dwc:year[year]"
-msgstr ""
+msgstr "https://dwc.tdwg.org/terms/#dwc:year[year]"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:29
 msgid "https://dwc.tdwg.org/terms/#dwc:month[month]"
-msgstr ""
+msgstr "https://dwc.tdwg.org/terms/#dwc:month[month]"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:30
 msgid "https://dwc.tdwg.org/terms/#dwc:day[day]"
-msgstr ""
+msgstr "https://dwc.tdwg.org/terms/#dwc:day[day]"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:31
 msgid "https://dwc.tdwg.org/terms/#dwc:startDayOfYear[startDayOfYear]"
-msgstr ""
+msgstr "https://dwc.tdwg.org/terms/#dwc:startDayOfYear[startDayOfYear]"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:32
 msgid "https://dwc.tdwg.org/terms/#dwc:endDayOfYear[endDayOfYear]"
-msgstr ""
+msgstr "https://dwc.tdwg.org/terms/#dwc:endDayOfYear[endDayOfYear]"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:33
 msgid "https://dwc.tdwg.org/terms/#dwc:verbatimEventDate[verbatimEventDate] — not used during interpretation"
-msgstr ""
+msgstr "https://dwc.tdwg.org/terms/#dwc:verbatimEventDate[verbatimEventDate] — pas utilisé pendant l'interprétation"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:36
