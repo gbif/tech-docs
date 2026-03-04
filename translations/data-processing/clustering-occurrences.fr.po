@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2025-02-04 17:09+0000\n"
-"PO-Revision-Date: 2026-03-04 12:46\n"
+"PO-Revision-Date: 2026-03-04 15:47\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -40,7 +40,7 @@ msgstr "C'est pourquoi nous avons lancé une fonctionnalité expérimentale de r
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:10
 msgid "Records that have been included in a cluster can be found with the “is in cluster” filter in https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true[the occurrence search]. Each occurrence page belonging to a cluster will have a “CLUSTER” tab displaying the potentially related records (see a screenshot of https://www.gbif.org/occurrence/2871636339/cluster[this example] below)."
-msgstr "Les enregistrements inclus dans un groupe peuvent être trouvés avec le filtre « est dans le regroupement » dans https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true[la recherche d'occurrences]. Chaque page d'occurrence qui fait partie d'un groupe aura un onglet \"GROUPE\" qui affiche les enregistrements potentiellement rattachés (voir une capture d'écran de https://www.gbif.org/occurrence/2871636339/cluster[cet exemple] ci-dessous)."
+msgstr "Les enregistrements inclus dans un groupe peuvent être trouvés avec le filtre « is in the cluster » dans https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true[la recherche d'occurrences]. Chaque page d'occurrence qui fait partie d'un groupe aura un onglet \"GROUPE\" qui affiche les enregistrements potentiellement rattachés (voir une capture d'écran de https://www.gbif.org/occurrence/2871636339/cluster[cet exemple] ci-dessous)."
 
 #. type: Target for macro image
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:11
@@ -161,68 +161,68 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:93
 msgid "Any group of occurrence associated with the assertion `Different date` or `Different country` will not be clustered together."
-msgstr "Tout groupe d'occurrences associé à l'assertion `Date différente` ou `Pays différent` ne sera pas regroupé."
+msgstr "Tout groupe d'occurrences associé à l'assertion `Different date` ou `Different country` ne sera pas regroupé."
 
 #. type: Title ==
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:94
 #, no-wrap
 msgid "Why are some occurrences not clustered?"
-msgstr ""
+msgstr "Pourquoi certaines occurrences ne sont-elles pas regroupées ?"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:97
 msgid "It is possible that some occurrences check one of the combinations of assertions but aren't shown as clustered yet. This could be the case for several reasons:"
-msgstr ""
+msgstr "Il est possible que certaines occurrences partagent l'une des combinaisons d'assertions, mais ne soient pas encore affichées comme regroupées. Cela peut s'expliquer par plusieurs raisons :"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:99
 msgid "The occurrences are newly published. Right now, the clustering process is quite resource intensive and doesn't run automatically. We need to trigger it manually. This means that it can take a few weeks before newly published occurrences get clustered."
-msgstr ""
+msgstr "Les occurrences viennent d'être publiées. En ce moment, le processus de regroupement exige beaucoup de ressources et ne s'exécute pas automatiquement. Nous devons le déclencher manuellement. Cela signifie qu'il peut s'écouler plusieurs semaines avant que les occurrences nouvellement publiées soient regroupées."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:100
 msgid "The \"duplicates\" come from the same dataset. The clustering algorithm only compares occurrences across datasets, not within datasets."
-msgstr ""
+msgstr "Les « doublons » proviennent du même ensemble de données. L'algorithme de regroupement compare uniquement les occurrences entre les ensembles de données, et non au sein d'un même ensemble de données."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:101
 msgid "There can be a delay between the moment the occurrences are clustered and the moment they become searchable with the \"is in cluster\" filter (this is due to some technical reasons a bit too long to explain in this post, but relate to updating the search indexes separately from the clustering table)"
-msgstr ""
+msgstr "Il peut y avoir un retard entre le moment où les occurrences sont regroupées et celui où elles deviennent consultables avec le filtre « is in cluster » (cela est dû à quelques raisons techniques trop longues à expliquer dans ce post, mais liées à la mise à jour des index de recherche séparément du tableau de regroupement)"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:103
 msgid "There could be other unforeseen reasons, and if in doubt, please contact us at helpdesk@gbif.org."
-msgstr ""
+msgstr "Il peut y avoir d'autres raisons imprévues. En cas de doute, veuillez nous contacter à l'adresse helpdesk@gbif.org."
 
 #. type: Title ==
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:104
 #, no-wrap
 msgid "Improve linkage"
-msgstr ""
+msgstr "Améliorer les liens"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:107
 msgid "If for one reason or another, you need to publish on GBIF occurrences for observations or specimens that you know are already on GBIF, how best to do it?"
-msgstr ""
+msgstr "Si, pour une raison ou une autre, vous devez publier sur GBIF des occurrences pour des observations ou des spécimens dont vous savez qu'ils figurent déjà sur GBIF, comment procéder au mieux ?"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:109
 msgid "Make sure that you reuse the same identifiers as much as possible, including the formating. Same catalogue numbers, occurrenceID, etc."
-msgstr ""
+msgstr "Assurez-vous que vous réutilisez les mêmes identifiants autant que possible, y compris la mise en forme. Les mêmes numéros de catalogue, occurrenceID, etc."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:110
 msgid "Use the link:https://dwc.tdwg.org/terms/#dwc:associatedOccurrences[associatedOccurrences,role=term] term and https://rs.tdwg.org/dwc/terms/ResourceRelationship[resource relationship extension]. These are not used during the clustering today, but are expected to be in the future, and are the correct way to communicate relationships within Darwin Core."
-msgstr ""
+msgstr "Utiliser le link:https://dwc.tdwg.org/terms/#dwc:associatedOccurrences[associatedOccurrences,role=term] terme et https://rs.tdwg.org/dwc/terms/ResourceRelationship[l'extension de la relation de ressources]. Ils ne sont pas utilisés aujourd'hui dans le cadre du regroupement, mais devraient l'être à l'avenir. Ils constituent aussi le moyen approprié pour communiquer les liens au sein de Darwin Core."
 
 #. type: Title ==
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:111
 #, no-wrap
 msgid "How to contribute"
-msgstr ""
+msgstr "Comment contribuer"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:113
 msgid "If you have suggestions to improve the clustering feature or questions on how it works, you are very welcome to use the feedback feature on this page."
-msgstr ""
+msgstr "Si vous avez des suggestions pour améliorer la fonctionnalité de regroupement ou des questions sur son fonctionnement, n'hésitez pas à utiliser la fonction feedback sur cette page."
 
