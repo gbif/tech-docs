@@ -128,4 +128,4 @@ We advise against using https://www.inaturalist.org[iNaturalist.org] to host the
 
 If publishers are publishing a dataset through an https://www.gbif.org/ipt[IPT], they can consider hosting multimedia files on the same server. The images can be stored in a `media` folder and shared using the web server (see https://ipt.gbif.org/media/[this example]). Publishers who are not publishing with their own IPT should contact their IPT administrator.
 
-> Note that GBIF-hosted IPTs do not offer mutlimedia file hosting.
+> Note that GBIF-hosted IPTs do not offer multimedia file hosting.
