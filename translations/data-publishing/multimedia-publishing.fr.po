@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-05 16:15+0000\n"
-"PO-Revision-Date: 2025-04-16 14:19\n"
+"POT-Creation-Date: 2026-03-06 12:32+0000\n"
+"PO-Revision-Date: 2026-03-06 12:42\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -389,7 +389,12 @@ msgid "We advise against using https://www.inaturalist.org[iNaturalist.org] to h
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:129
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:130
 msgid "If publishers are publishing a dataset through an https://www.gbif.org/ipt[IPT], they can consider hosting multimedia files on the same server. The images can be stored in a `media` folder and shared using the web server (see https://ipt.gbif.org/media/[this example]). Publishers who are not publishing with their own IPT should contact their IPT administrator."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:131
+msgid "Note that GBIF-hosted IPTs do not offer multimedia file hosting."
 msgstr ""
 
