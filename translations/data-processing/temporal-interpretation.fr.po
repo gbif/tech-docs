@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2025-05-07 15:30+0000\n"
-"PO-Revision-Date: 2026-03-04 18:59\n"
+"PO-Revision-Date: 2026-03-11 09:49\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -175,7 +175,7 @@ msgstr "| eventDate                               | year | month | day | startDa
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:66
 msgid "Note that time zone information is only retained where the time zone is `Z` (UTC).  In other cases, timezone information is wildly different across all data, and it is not possible to handle it consistently.  A record provided with eventDate `2023-01-13T09:32:00+01:00` (Copenhagen, Denmark) and another provided with `2023-01-13T09:32:00+14:00` (Line Islands, Kiribati) will both be interpreted to `2023-01-13T09:32:00`."
-msgstr ""
+msgstr "Notez que les informations relatives au fuseau horaire ne sont conservées que lorsque le fuseau horaire est `Z` (UTC). Dans d'autres cas, les informations relatives au fuseau horaire varient considérablement d'une donnée à l'autre, et il n'est pas possible de les traiter de manière cohérente. Un enregistrement fourni avec eventDate `2023-01-13T09:32:00+01:00` (Copenhague, Danemark) et un autre fourni avec `2023-01-13T09:32:00+14:00` (Îles de la Ligne, Kiribati) seront interprétés comme `2023-01-13T09:32:00`."
 
 #. type: Block title
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:68
@@ -187,17 +187,17 @@ msgstr "Conseils aux éditeurs"
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:71
 #, no-wrap
 msgid "*It is perfectly acceptable to provide only the eventDate field*, and thus allow GBIF's interpretation to fill in year, month, day, startDayOfYear and endDayOfYear.  Alternatively, providing only year, year+month, or year+month+day (depending on available data) is also fine.\n"
-msgstr ""
+msgstr "*Il est tout à fait acceptable de ne fournir que le champ eventDate*, laissant ainsi GBIF interpréter et remplir les champs year, month, day, startDayOfYear et endDayOfYear. Il est également possible de ne fournier que year, year+month, ou year+month+day (en fonction des données disponibles).\n"
 
 #. type: delimited block =
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:73
 msgid "Avoid providing incorrect or incomplete data — do not set the day (as part of the eventDate or as the day) to 0 or 1 if only the year or month is known."
-msgstr ""
+msgstr "Évitez de fournier des données incorrectes ou incomplètes — ne fixez pas le jour (dans le cadre de eventDate ou en tant que day) sur 0 ou 1 si vous ne connaissez que l'année ou le mois."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:76
 msgid "Publishing a combination of eventDate and/or year+month+day and/or year+startDayOfYear+endDayOfYear causes GBIF to calculate a consistent set of recorded date fields.  If you set more than one of these sets of fields, ensure they are consistent!"
-msgstr ""
+msgstr "La publication d'une combinaison de eventDate et/ou year+month+day et/ou year+startDayOfYear+endDayOfYear permet au GBIF de calculer un ensemble cohérent de champs de date enregistrés. Si vous fixez plusieurs de ces ensembles de champs, assurez-vous qu'ils sont cohérents !"
 
 #. type: Title ===
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:77
@@ -209,18 +209,18 @@ msgstr "Traitement des incohérences"
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:79
 #, no-wrap
 msgid "1. A year+month+day for a date within the eventDate range"
-msgstr ""
+msgstr "1. Un year+month+day pour une date comprise dans la plage eventDate"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:82
 msgid "This is accepted without an issue.  The precision of the eventDate is retained, and the year, month and day fields are blanked if the range extends over more than one year, month and/or day."
-msgstr ""
+msgstr "Ceci est accepté sans problème. La précision de eventDate est conservée, et les champs year, month et day sont laissés vides si la plage s'étend sur plus d'un an, un mois et/ou un jour."
 
 #. type: Block title
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:83
 #, no-wrap
 msgid "A year+month+day for a date within the eventDate range, with start/endDayOfYear"
-msgstr ""
+msgstr "Un year+month+day pour une date comprise dans la plage eventDate, avec start/endDayOfYear"
 
 #. type: Table
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:90
@@ -236,7 +236,7 @@ msgstr "|             | eventDate             | year | month | day | startDayOfY
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:92
 #, no-wrap
 msgid "A year+month+day for a date within the eventDate range"
-msgstr ""
+msgstr "Un year+month+day pour une date comprise dans la plage eventDate"
 
 #. type: Table
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:99
@@ -244,7 +244,9 @@ msgstr ""
 msgid "|             | eventDate             | year | month | day | startDayOfYear | endDayOfYear | issues\n\n"
 "| Published   | 2023-01-13/2023-02-03 | 2023 |    01 |  25 |                |              |\n"
 "| Interpreted | 2023-01-13/2023-02-03 | 2023 |       |     |             13 |           34 |\n"
-msgstr ""
+msgstr "|             | eventDate             | year | month | day | startDayOfYear | endDayOfYear | problèmes\n\n"
+"| Publié   | 2023-01-13/2023-02-03 | 2023 |    01 |  25 |             13 |           34 |\n"
+"| Interprété | 2023-01-13/2023-02-03 | 2023 |       |     |             13 |           34 |\n"
 
 #. type: Title ====
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:101
@@ -257,19 +259,19 @@ msgstr ""
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:104
 #, no-wrap
 msgid "Mismatching dates"
-msgstr ""
+msgstr "Incompatibilité des dates"
 
 #. type: Table
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:109
 #, no-wrap
 msgid "| Problem     |             | eventDate             | year | month | day | start{zwsp}Day{zwsp}Of{zwsp}Year | end{zwsp}Day{zwsp}Of{zwsp}Year | issues\n\n"
-msgstr ""
+msgstr "| Problème     |             | eventDate             | year | month | day | start{zwsp}Day{zwsp}Of{zwsp}Year | end{zwsp}Day{zwsp}Of{zwsp}Year | problèmes\n\n"
 
 #. type: Block title
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:109
 #, no-wrap
 msgid "2+h| Month and day are outside the eventDate interval"
-msgstr ""
+msgstr "2+h| Mois et jour sont en dehors de l'intervalle eventDate"
 
 #. type: Table
 #: en/data-processing/modules/ROOT/pages/temporal-interpretation.adoc:113
