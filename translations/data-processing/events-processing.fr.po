@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2026-03-03 13:14+0000\n"
-"PO-Revision-Date: 2026-03-11 15:33\n"
+"PO-Revision-Date: 2026-03-11 16:55\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -140,27 +140,27 @@ msgstr "Extension multimédia"
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/events-processing.adoc:41
 msgid "As mentioned earlier, occurrence-specific fields such as `dwc:basisOfRecord` are not processed for events, as they are not applicable to sampling events."
-msgstr ""
+msgstr "Comme mentionné précédemment, les champs spécifiques à l'occurrence tels que `dwc:basisOfRecord` ne sont pas traités pour les événements, car ils ne s'appliquent pas aux événements d'échantillonnage."
 
 #. type: Title ==
 #: en/data-processing/modules/ROOT/pages/events-processing.adoc:42
 #, no-wrap
 msgid "Humboldt Extension"
-msgstr ""
+msgstr "Extension Humboldt"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/events-processing.adoc:45
 msgid "When the Humboldt Extension is provided in an event dataset, GBIF processes and interprets it trying to normalize the values as in other interpretations. The interpreted data is searchable through the event API and can also be downloaded in a separate file when the dataset is downloaded."
-msgstr ""
+msgstr "Lorsque l'extension Humboldt est fournie dans un ensemble de données d'événements, le GBIF la traite et l'interprète en essayant de normaliser les valeurs comme dans d'autres interprétations. Les données interprétées peuvent être recherchées via l'API d'événements et peuvent également être téléchargées dans un fichier séparé lorsque l'ensemble de données est téléchargé."
 
 #. type: Title ==
 #: en/data-processing/modules/ROOT/pages/events-processing.adoc:46
 #, no-wrap
 msgid "Measurement or Fact and Extended Measurement or Fact extensions"
-msgstr ""
+msgstr "Extension de mesure ou extension de fait et mesure étendue ou extension de fait"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/events-processing.adoc:49
 msgid "Even though these are extensions can also be linked to occurrences, it's worth mention that when they are provided in an event dataset, they are processed as part of the event interpretation when they are linked to the events and we make the `measurementType` and `measurementTypeID` terms available for searching and filtering."
-msgstr ""
+msgstr "Même si ces extensions peuvent également être liées à des occurrences, il convient de mentionner que lorsqu'elles sont fournies dans un ensemble de données d'événements, elles sont traitées dans le cadre de l'interprétation des événements lorsqu'elles sont liées à ces derniers, et nous rendons les termes `measurementType` et `measurementTypeID` disponibles pour la recherche et le filtrage."
 
