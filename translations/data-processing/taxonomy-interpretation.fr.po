@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-08-29 07:00+0000\n"
-"PO-Revision-Date: 2025-08-29 07:08\n"
+"POT-Creation-Date: 2026-01-14 14:19+0000\n"
+"PO-Revision-Date: 2026-03-11 12:20\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -21,23 +21,23 @@ msgstr ""
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:1
 #, no-wrap
 msgid "Taxonomy interpretation"
-msgstr ""
+msgstr "Interprétation taxonomique"
 
 #. type: Title ==
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:3
 #, no-wrap
 msgid "Multiple taxonomy support"
-msgstr ""
+msgstr "Support de plusieurs taxonomies"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:6
 msgid "To facilitate searching and metric generation, all occurrence records are matched to two taxonomies:"
-msgstr ""
+msgstr "Afin de faciliter la recherche et la génération de mesures, tous les enregistrements d'occurrences sont mis en correspondance avec deux taxonomies :"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:8
 msgid "https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b[Catalogue of Life eXtended Release (COL XR)] - This is the primary taxonomy used by https://www.gbif.org/portal[GBIF]. Catalogue of Life is a global index of species, which aims to provide a comprehensive and authoritative list of the world's species. It is compiled from multiple taxonomic datasets and is updated regularly. The eXtended Release (COL XR) builds on the Base Release by programmatically integrating additional data sources. It integrates information from over 58,000 overlapping taxonomic and nomenclatural global, regional, national and management data sources (checklists) as well as originating from digitised literature available in Catalogue of Life's infrastructure https://www.checklistbank.org[ChecklistBank]."
-msgstr ""
+msgstr "https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b[Catalogue of Life eXtended Release (COL XR)] - Il s'agit de la taxonomie principale utilisée par le https://www.gbif.org/portal[GBIF]. Catalogue of Life est un index mondial des espèces qui vise à fournier une liste complète et faisant autorité des espèces existant dans le monde. Il est compilé à partir de multiples ensembles de données taxonomiques et est régulièrement mis à jour. Le eXtended Release (COL XR) s'appuie sur le Base Release en intégrant de manière programmatique des sources de données supplémentaires. Il intègre des informations provenant de plus de 58 000 sources de données taxonomiques et nomenclaturales mondiales, régionales, nationales et de gestion (listes de contrôle) qui se recoupent, ainsi que des données issues de la littérature numérisée disponible dans l'infrastructure du Catalogue of Life https://www.checklistbank.org[ChecklistBank]."
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:10
@@ -587,13 +587,13 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:377
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:405
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:404
 msgid "Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. By default, the GBIF Backbone will be used if no `checklistKey` is supplied."
 msgstr ""
 
 #. type: delimited block -
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:404
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:432
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:431
 #, no-wrap
 msgid "{\n"
 "  \"creator\": \"userName\",\n"
