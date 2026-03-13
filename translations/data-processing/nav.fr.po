@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-03-27 11:15+0000\n"
-"PO-Revision-Date: 2025-03-27 12:29\n"
+"POT-Creation-Date: 2026-03-03 13:14+0000\n"
+"PO-Revision-Date: 2026-03-11 12:20\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -19,15 +19,25 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/nav.adoc:2
 msgid "xref:clustering-occurrences.adoc[]"
-msgstr ""
+msgstr "xref:clustering-occurrences.adoc[]"
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:3
+#: en/data-processing/modules/ROOT/nav.adoc:4
 msgid "xref:temporal-interpretation.adoc[]"
-msgstr ""
+msgstr "xref:temporal-interpretation.adoc[]"
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:3
+#: en/data-processing/modules/ROOT/nav.adoc:5
 msgid "xref:vocabularies-interpretation.adoc[]"
-msgstr ""
+msgstr "xref:vocabularies-interpretation.adoc[]"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/nav.adoc:8
+msgid "xref:taxonomy-interpretation.adoc[]"
+msgstr "xref:taxonomy-interpretation.adoc[]"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/nav.adoc:9
+msgid "xref:events-processing.adoc[]"
+msgstr "xref:events-processing.adoc[]"
 
