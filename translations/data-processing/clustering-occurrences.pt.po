@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
-"PO-Revision-Date: 2025-02-04 17:50\n"
+"POT-Creation-Date: 2026-03-13 20:22+0000\n"
+"PO-Revision-Date: 2026-03-13 20:43\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -72,37 +72,42 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:22
-msgid "The system first creates a series of \"hashes\" for each record based on specified fields. All records sharing a hash are candidates to compare against each other."
+msgid "To help avoid dubious connections, only records matched to a species or a more specific rank in the taxonomic backbone are eligible for clustering. Similarly, records flagged as being matched to a higher taxon are excluded."
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:24
-msgid "For example, one of the \"hashes\" used is based on the species key, rounded coordinates, year, month and day. This means that the records that share the same values for those fields will be grouped together in the candidate table for further inspection."
+msgid "For the remaining eligible records, the system first creates a series of \"hashes\" based on specified fields. All records sharing a hash are candidates to compare against each other."
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:26
+msgid "For example, one of the \"hashes\" used is based on the species key, rounded coordinates, year, month and day. This means that the records that share the same values for those fields will be grouped together in the candidate table for further inspection."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:28
 msgid "The fields used to identify and group the candidates are a subset of what is used later on for comparing them (see the table below). See https://github.com/gbif/clustering/blob/dev/src/main/java/org/gbif/clustering/Cluster.java[the source code] to check the details."
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:27
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:29
 #, no-wrap
 msgid "Step 2: Compare and assess"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:30
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:32
 msgid "In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:32
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:34
 msgid "The table below summarizes how those assertions are made but for more details, check the https://github.com/gbif/clustering/blob/dev/src/main/java/org/gbif/clustering/parsers/OccurrenceRelationships.java[source code]."
 msgstr ""
 
 #. type: Table
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:58
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:60
 #, no-wrap
 msgid "| Assertion | Fields checked | Condition checked\n\n"
 "| Same specimen | `taxonKey`, `typeStatus` | same taxonKey between records and typeStatus is \"Holotype\" for both records\n"
@@ -127,18 +132,18 @@ msgid "| Assertion | Fields checked | Condition checked\n\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:61
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:63
 msgid "The table below summarizes the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together."
 msgstr ""
 
 #. type: Block title
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:62
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:64
 #, no-wrap
 msgid "Combination of assertion conditions to create cluster"
 msgstr ""
 
 #. type: Table
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:90
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:92
 #, no-wrap
 msgid "|Assertion                      | | | | | | | | | | | | | |\n\n"
 "|Same specimen                  |x| | | | | | | | | | | | |\n"
@@ -159,70 +164,70 @@ msgid "|Assertion                      | | | | | | | | | | | | | |\n\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:93
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:95
 msgid "Any group of occurrence associated with the assertion `Different date` or `Different country` will not be clustered together."
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:94
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:96
 #, no-wrap
 msgid "Why are some occurrences not clustered?"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:97
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:99
 msgid "It is possible that some occurrences check one of the combinations of assertions but aren't shown as clustered yet. This could be the case for several reasons:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:99
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:101
 msgid "The occurrences are newly published. Right now, the clustering process is quite resource intensive and doesn't run automatically. We need to trigger it manually. This means that it can take a few weeks before newly published occurrences get clustered."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:100
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:102
 msgid "The \"duplicates\" come from the same dataset. The clustering algorithm only compares occurrences across datasets, not within datasets."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:101
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:103
 msgid "There can be a delay between the moment the occurrences are clustered and the moment they become searchable with the \"is in cluster\" filter (this is due to some technical reasons a bit too long to explain in this post, but relate to updating the search indexes separately from the clustering table)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:103
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:105
 msgid "There could be other unforeseen reasons, and if in doubt, please contact us at helpdesk@gbif.org."
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:104
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:106
 #, no-wrap
 msgid "Improve linkage"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:107
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:109
 msgid "If for one reason or another, you need to publish on GBIF occurrences for observations or specimens that you know are already on GBIF, how best to do it?"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:109
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:111
 msgid "Make sure that you reuse the same identifiers as much as possible, including the formating. Same catalogue numbers, occurrenceID, etc."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:110
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:112
 msgid "Use the link:https://dwc.tdwg.org/terms/#dwc:associatedOccurrences[associatedOccurrences,role=term] term and https://rs.tdwg.org/dwc/terms/ResourceRelationship[resource relationship extension]. These are not used during the clustering today, but are expected to be in the future, and are the correct way to communicate relationships within Darwin Core."
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:111
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:113
 #, no-wrap
 msgid "How to contribute"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:113
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:115
 msgid "If you have suggestions to improve the clustering feature or questions on how it works, you are very welcome to use the feedback feature on this page."
 msgstr ""
 
