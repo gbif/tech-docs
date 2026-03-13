@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-13 20:15+0000\n"
+"POT-Creation-Date: 2026-03-13 20:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,7 +111,7 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:24
 msgid ""
-"For the remaining eligble records, the system first creates a series of "
+"For the remaining eligible records, the system first creates a series of "
 "\"hashes\" based on specified fields. All records sharing a hash are "
 "candidates to compare against each other."
 msgstr ""
