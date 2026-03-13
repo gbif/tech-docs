@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-04 17:09+0000\n"
+"POT-Creation-Date: 2026-03-13 20:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,13 +103,21 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:22
 msgid ""
-"The system first creates a series of \"hashes\" for each record based on "
-"specified fields. All records sharing a hash are candidates to compare "
-"against each other."
+"To help avoid dubious connections, only records matched to a species or a "
+"more specific rank in the taxonomic backbone are eligible for clustering. "
+"Similarly, records flagged as being matched to a higher taxon are excluded."
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:24
+msgid ""
+"For the remaining eligble records, the system first creates a series of "
+"\"hashes\" based on specified fields. All records sharing a hash are "
+"candidates to compare against each other."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:26
 msgid ""
 "For example, one of the \"hashes\" used is based on the species key, rounded "
 "coordinates, year, month and day. This means that the records that share the "
@@ -118,7 +126,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:26
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:28
 msgid ""
 "The fields used to identify and group the candidates are a subset of what is "
 "used later on for comparing them (see the table below). See https://github."
@@ -127,13 +135,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:27
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:29
 #, no-wrap
 msgid "Step 2: Compare and assess"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:30
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:32
 msgid ""
 "In this second phase, the system will compare all records in the candidate "
 "set to each other and generate assertions. The assertions are inspected and "
@@ -142,7 +150,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:32
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:34
 msgid ""
 "The table below summarizes how those assertions are made but for more "
 "details, check the https://github.com/gbif/clustering/blob/dev/src/main/java/"
@@ -150,7 +158,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:58
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:60
 #, no-wrap
 msgid ""
 "| Assertion | Fields checked | Condition checked\n"
@@ -178,7 +186,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:61
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:63
 msgid ""
 "The table below summarizes the combinations of assertions that are "
 "sufficient to link the records in a cluster. If a group of occurrences share "
@@ -187,13 +195,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:62
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:64
 #, no-wrap
 msgid "Combination of assertion conditions to create cluster"
 msgstr ""
 
 #. type: Table
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:90
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:92
 #, no-wrap
 msgid ""
 "|Assertion                      | | | | | | | | | | | | | |\n"
@@ -224,20 +232,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:93
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:95
 msgid ""
 "Any group of occurrence associated with the assertion `Different date` or "
 "`Different country` will not be clustered together."
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:94
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:96
 #, no-wrap
 msgid "Why are some occurrences not clustered?"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:97
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:99
 msgid ""
 "It is possible that some occurrences check one of the combinations of "
 "assertions but aren't shown as clustered yet. This could be the case for "
@@ -245,7 +253,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:99
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:101
 msgid ""
 "The occurrences are newly published. Right now, the clustering process is "
 "quite resource intensive and doesn't run automatically. We need to trigger "
@@ -254,14 +262,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:100
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:102
 msgid ""
 "The \"duplicates\" come from the same dataset. The clustering algorithm only "
 "compares occurrences across datasets, not within datasets."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:101
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:103
 msgid ""
 "There can be a delay between the moment the occurrences are clustered and "
 "the moment they become searchable with the \"is in cluster\" filter (this is "
@@ -270,20 +278,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:103
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:105
 msgid ""
 "There could be other unforeseen reasons, and if in doubt, please contact us "
 "at helpdesk@gbif.org."
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:104
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:106
 #, no-wrap
 msgid "Improve linkage"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:107
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:109
 msgid ""
 "If for one reason or another, you need to publish on GBIF occurrences for "
 "observations or specimens that you know are already on GBIF, how best to do "
@@ -291,14 +299,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:109
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:111
 msgid ""
 "Make sure that you reuse the same identifiers as much as possible, including "
 "the formating. Same catalogue numbers, occurrenceID, etc."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:110
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:112
 msgid ""
 "Use the link:https://dwc.tdwg.org/terms/#dwc:"
 "associatedOccurrences[associatedOccurrences,role=term] term and https://rs."
@@ -309,13 +317,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:111
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:113
 #, no-wrap
 msgid "How to contribute"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:113
+#: en/data-processing/modules/ROOT/pages/clustering-occurrences.adoc:115
 msgid ""
 "If you have suggestions to improve the clustering feature or questions on "
 "how it works, you are very welcome to use the feedback feature on this page."
