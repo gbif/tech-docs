@@ -20,7 +20,7 @@ Comparing nearly 2 billions records with each other is very resource intensive a
 
 To help avoid dubious connections, only records matched to a species or a more specific rank in the taxonomic backbone are eligible for clustering. Similarly, records flagged as being matched to a higher taxon are excluded.
 
-For the remaining eligble records, the system first creates a series of "hashes" based on specified fields. All records sharing a hash are candidates to compare against each other.
+For the remaining eligible records, the system first creates a series of "hashes" based on specified fields. All records sharing a hash are candidates to compare against each other.
 
 For example, one of the "hashes" used is based on the species key, rounded coordinates, year, month and day. This means that the records that share the same values for those fields will be grouped together in the candidate table for further inspection.
 
