@@ -28,7 +28,7 @@ Components:: The largest blocks of documentation.  Components we have include ht
 Versions:: Each component can optionally have one or more versions.  We should only declare versions where it makes sense to keep documentation for the old version accessible online.
 Modules:: https://docs.antora.org/antora/latest/module-directories/[Antora describes] modules as "primarily an organization tool for the writer". So far we haven't used them, so everything is using the default `ROOT` module.
 
-Each language has its own playbook.  Each playbook specifies which components and versions are part of the documentation.  See link:./tech-docs-en-playbook.yml[tech-docs-en-playbook.yml] for the English playbook.  The `content.sources` with a `url` of `.` are in this Git repository, and `HEAD` shows the current (i.e. main) branch is used to provide a single version.  The other components (`git@github.com…`) are from other Git repositories, and some have multiple versions shown in `branches`.
+Each language has its own playbook.  Each playbook specifies which components and versions are part of the documentation.  See link:./techdocs-en-playbook.yml[techdocs-en-playbook.yml] for the English playbook.  The `content.sources` with a `url` of `.` are in this Git repository, and `HEAD` shows the current (i.e. main) branch is used to provide a single version.  The other components (`git@github.com…`) are from other Git repositories, and some have multiple versions shown in `branches`.
 
 Determining how individual pages should be arranged into components (and potentially modules) is not clear.
 It may make translators' work easier if they can aim to translate entire components/modules.
@@ -155,7 +155,7 @@ To build English and Spanish and with the search function, and suitable for a we
 ----
 docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z --env HOME=/antora antora/antora:3.1.10 npm i @antora/lunr-extension @node-rs/jieba
 for lang in en es; do
-    docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z antora/antora:3.1.10 tech-docs-$lang-playbook.yml
+    docker run --rm -t --user $(id -u) --volume $PWD:/antora:Z antora/antora:3.1.10 techdocs-$lang-playbook.yml
 done
 ----
 
