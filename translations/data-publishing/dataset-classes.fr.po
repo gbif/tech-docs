@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2025-03-05 16:15+0000\n"
-"PO-Revision-Date: 2025-03-05 16:59\n"
+"PO-Revision-Date: 2026-04-08 12:52\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:1
 #, no-wrap
 msgid "Dataset classes"
-msgstr ""
+msgstr "Types de jeux de données"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/dataset-classes.adoc:4
