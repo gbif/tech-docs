@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-11-10 16:08+0000\n"
-"PO-Revision-Date: 2025-11-10 16:16\n"
+"POT-Creation-Date: 2025-11-11 11:04+0000\n"
+"PO-Revision-Date: 2026-04-08 12:53\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Crowdin-File-ID: 44724\n"
 
 #. type: Title =
-#: en/openapi-v1/modules/ROOT/pages/event.adoc:5
+#: en/openapi-v1/modules/ROOT/pages/event.adoc:1
 #, no-wrap
 msgid "Event API"
 msgstr ""
