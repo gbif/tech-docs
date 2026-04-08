@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2025-08-12 13:13+0000\n"
-"PO-Revision-Date: 2025-08-12 13:29\n"
+"PO-Revision-Date: 2026-04-08 12:52\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -42,7 +42,7 @@ msgstr ""
 #: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:11
 #, no-wrap
 msgid "Prerequisites"
-msgstr ""
+msgstr "Prérequis"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:14
@@ -187,7 +187,7 @@ msgstr ""
 #: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:78
 #, no-wrap
 msgid "Result"
-msgstr ""
+msgstr "Résultat"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/register-dataset-api.adoc:81
