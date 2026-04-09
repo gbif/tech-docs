@@ -1,6 +1,6 @@
 = Occurrence download formats
 
-Data downloads are available from GBIF in three primary formats:
+Data downloads are available from GBIF in four primary formats:
 
 * <<simple,*Simple*>>.  This format contains a selection of commonly used terms, after the data has been aligned to GBIF's taxonomic and geographic indices and structured vocabularies
 ** Downloads created on www.gbif.org or through the API using the format `SIMPLE_CSV` are produced in a tab-separated text format, suitable for use with spreadsheets and programming/scripting languages
@@ -11,6 +11,7 @@ Data downloads are available from GBIF in three primary formats:
 ** `verbatim.txt` contains the original, uninterpreted data, without modifications by GBIF's systems.
 ** optionally, additional verbatim Darwin Core Archive extensions.  The data are as-received from the publisher.  See https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of these — note not all of them are maintained by GBIF.
 * <<species-list,*Species List*>> (API: `SPECIES_LIST`).  This is a summary format containing the distinct list of species names returned by the filter.
+* <<cube,*Cube*>>.  This format allows you to aggregate occurrences by their taxonomic, temporal and/or spatial properties.
 
 The header row (first row) of all these files contain the short name of the terms they contain.  Most of the terms are defined by the https://dwc.tdwg.org/terms/[Darwin Core standard].  For example, the column `catalogNumber` contains data of the Darwin Core term https://rs.tdwg.org/dwc/terms/catalogNumber[http://rs.tdwg.org/dwc/terms/catalogNumber].
 
@@ -80,3 +81,12 @@ Species list downloads are a summary format containing the distinct list of spec
 The definitions marked with {gbif_source} are from GBIF, and may reflect the result of interpretation and data quality procedures applied by GBIF, or they may not be part of Darwin Core.
 
 include::partial$download-species-list-terms-table.adoc[]
+
+[#cube]
+== Cube downloads
+
+This download format allows you to aggregate occurrences by their taxonomic, temporal and/or spatial properties. For example, a data cube can be configured to aggregate occurrences by family, month and grid cell of the European Environment Agency reference grid (three dimensions) and count the number of occurrences (a measure) per combination. The result is a CSV file.
+
+Once configured, a SQL query will be created to generate the data cube. For more advanced use, it is possible to further customize the requested download by editing the SQL query.
+
+Read more about https://www.gbif.org/occurrence-cubes[occurrence cubes].
