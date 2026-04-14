@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-01-14 14:19+0000\n"
-"PO-Revision-Date: 2026-03-11 15:33\n"
+"POT-Creation-Date: 2026-04-14 09:18+0000\n"
+"PO-Revision-Date: 2026-04-14 13:00\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Crowdin-File-ID: 44610\n"
 
 #. type: Title =
-#: en/data-processing/modules/ROOT/pages/index.adoc:80
+#: en/data-processing/modules/ROOT/pages/index.adoc:81
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:1
 #, no-wrap
 msgid "Taxonomy interpretation"
