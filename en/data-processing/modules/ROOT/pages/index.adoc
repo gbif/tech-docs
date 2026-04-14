@@ -51,7 +51,8 @@ GBIF will use the interpreted coordinates to make various enrichments and proces
 
 ==== Country
 
-The publisher supplied dwc:country is interpreted as a https://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/Country.html[fixed enumeration] matching the https://www.iso.org/iso-3166-country-codes.html[current ISO countries]. When no country but coordinates are supplied, GBIF derives the country from the coordinates using our https://api.gbif.org/v1/geocode/reverse?lat=52.4121&lng=13.3121[reverse geocoding API]. If the coordinates disagrees with the supplied value, the record will get an appropriate data quality flag.
+The publisher supplied dwc:country is interpreted as a https://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/Country.html[fixed enumeration] matching the https://www.iso.org/iso-3166-country-codes.html[current ISO countries], only ISO 3166-1 Alpha-2 and Alpha-3 codes are supported. Principal divisions and subdivisions present in ISO 3166-2 are not available for this field.
+When no country but coordinates are supplied, GBIF derives the country from the coordinates using our https://api.gbif.org/v1/geocode/reverse?lat=52.4121&lng=13.3121[reverse geocoding API]. If the coordinates disagree with the supplied value, the record will get an appropriate data quality flag.
 
 ==== GADM (Database of Global Administrative Areas)
 
