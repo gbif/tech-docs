@@ -1,0 +1,166 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2026-03-03 13:14+0000\n"
+"PO-Revision-Date: 2026-03-11 16:55\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: fr\n"
+"X-Crowdin-File: /main/translations/data-processing/events-processing.pot\n"
+"X-Crowdin-File-ID: 44902\n"
+
+#. type: Title =
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:5
+#, no-wrap
+msgid "Events processing"
+msgstr "Traitement des événements"
+
+#. type: Target for macro image
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:7
+#: en/data-processing/modules/ROOT/pages/index.adoc:3
+#, no-wrap
+msgid "data-processing.png"
+msgstr "data-processing.png"
+
+#.  === Desired feedback
+#.  The current UI isn't meant to be a finished product. There are many missing features that we are well aware of. We appreciate feedback about the UI, and it is almost impossible to avoid, but we are much more interested in the qestions below.
+#.  Desired feedback during the pilot phase:
+#.  * Were there any rules that you wanted to make but could not?
+#.  * Do you think you will be able to use the rules you made to create an improved and useful dataset?
+#.  * Is there any controlled vocabulary that you would like to add?
+#.  * Was it clear what you were doing and why?
+#.  * Did you find the seeded rules useful?
+#.  Less interesting feedback but still appreciated:
+#.  * UI improvements
+#.  * Software bugs
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:9
+#: en/data-processing/modules/ROOT/pages/index.adoc:5
+#: en/tools/modules/ROOT/pages/rule-based-annotations.adoc:139
+#, no-wrap
+msgid "Introduction"
+msgstr "Introduction"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:12
+msgid "Event records in GBIF go through a series of processing steps similar to those described in the xref:index.adoc[GBIF Data Processing] documentation but focusing on event data. Events processing differs in several key aspects:"
+msgstr "Les enregistrements d'événements dans GBIF passent par une série d'étapes de traitement similaires à celles décrites dans la documentation xref:index.adoc[GBIF Data Processing], mais axées sur les données d'événements. Le traitement des événements diffère sur plusieurs aspects clés :"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:14
+msgid "Processing of the **Event Core** of the dataset."
+msgstr "Traitement du **Noyau de l'événement** de l'ensemble de données."
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:15
+msgid "Ignoring of certain occurrence-specific fields that are not applicable to events such as `dwc:basisOfRecord` or GRSciColl information. This data is interpreted during the occurrence interpretation only."
+msgstr "Ignorer certains champs spécifiques à l'occurrence qui ne s'appliquent pas aux événements, tels que `dwc:basisOfRecord` ou les informations GRSciColl. Ces données sont interprétées uniquement lors de l'interprétation de l'occurrence."
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:16
+msgid "Event-specific extensions such as the Humboldt Extension are processed when available."
+msgstr "Les extensions spécifiques à un événement, telles que l'extension Humboldt, sont traitées lorsqu'elles sont disponibles."
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:18
+msgid "However, issues, flags normalization processes and vocabularies are shared with the occurrence processing."
+msgstr "Cependant, les problèmes, les processus de normalisation des indicateurs et les vocabulaires sont partagés avec le traitement des occurrences."
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:19
+#, no-wrap
+msgid "Event core interpretation"
+msgstr "Interprétation du noyau de l'événement"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:22
+msgid "Event records that are available in the standard verbatim form in an event core dataset are subjected to interpretation by GBIF. As in occurrences, interpreted terms are normalized to a limited controlled vocabulary and if a term is not interpreted by GBIF, it will be accepted simply as free text."
+msgstr "Les enregistrements d'événements disponibles sous forme littérale standard dans un ensemble de données d'un noyau de l'événement sont soumis à l'interprétation du GBIF. Comme pour les occurrences, les termes interprétés sont normalisés selon un vocabulaire contrôlé limité et si un terme n'est pas interprété par le GBIF, il sera simplement accepté comme texte libre."
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:24
+msgid "Additionally, GBIF also computes the events hierarchy to provide the upstream lineage of each event."
+msgstr "De plus, GBIF calcule également la hiérarchie des événements afin de fournir la lignée en amont de chaque événement."
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:25
+#: en/data-processing/modules/ROOT/pages/index.adoc:23
+#, no-wrap
+msgid "Occurrence interpretation"
+msgstr "Interprétation d'occurrence"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:28
+msgid "When occurrences are provided as extensions to events, they are processed through the occurrences workflow as usual and they are linked to the corresponding event by the `eventID`."
+msgstr "Lorsque les occurrences sont fournies en tant qu'extensions d'événements, elles sont traitées comme d'habitude via le workflow des occurrences et sont liées à l'événement correspondant par l'identifiant `eventID`."
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:30
+msgid "Additionally, events processing also gathers some occurrence information to make searching events by occurrence data possible. At the moment, it's only possible to search events by taxonomic information provided in the occurrence extension."
+msgstr "De plus, le traitement des événements recueille également certaines informations sur les occurrences afin de permettre la recherche d'événements par données d'occurrence. Pour l'instant, il n'est possible de rechercher des événements qu'à partir des informations taxonomiques fournies dans l'extension d'occurrence."
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:31
+#, no-wrap
+msgid "Other interpretations"
+msgstr "Autres interprétations"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:34
+msgid "As in occurrences, Event records include other information that describe other aspects related to the sampling events performed. These interpretation is common with occurrence records but only includes the following:"
+msgstr "Comme dans les occurrences, les enregistrements d'événements comprennent d'autres informations qui décrivent d'autres aspects liés aux événements d'échantillonnage effectués. Cette interprétation est commune aux enregistrements d'occurrences, mais ne comprend que les éléments suivants :"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:36
+msgid "Identifiers"
+msgstr "Identifiants"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:37
+msgid "Location data"
+msgstr "Données de localisation"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:38
+msgid "Temporal data"
+msgstr "Données temporelles"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:39
+msgid "Multimedia extension"
+msgstr "Extension multimédia"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:41
+msgid "As mentioned earlier, occurrence-specific fields such as `dwc:basisOfRecord` are not processed for events, as they are not applicable to sampling events."
+msgstr "Comme mentionné précédemment, les champs spécifiques à l'occurrence tels que `dwc:basisOfRecord` ne sont pas traités pour les événements, car ils ne s'appliquent pas aux événements d'échantillonnage."
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:42
+#, no-wrap
+msgid "Humboldt Extension"
+msgstr "Extension Humboldt"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:45
+msgid "When the Humboldt Extension is provided in an event dataset, GBIF processes and interprets it trying to normalize the values as in other interpretations. The interpreted data is searchable through the event API and can also be downloaded in a separate file when the dataset is downloaded."
+msgstr "Lorsque l'extension Humboldt est fournie dans un ensemble de données d'événements, le GBIF la traite et l'interprète en essayant de normaliser les valeurs comme dans d'autres interprétations. Les données interprétées peuvent être recherchées via l'API d'événements et peuvent également être téléchargées dans un fichier séparé lorsque l'ensemble de données est téléchargé."
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:46
+#, no-wrap
+msgid "Measurement or Fact and Extended Measurement or Fact extensions"
+msgstr "Extension de mesure ou extension de fait et mesure étendue ou extension de fait"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/events-processing.adoc:49
+msgid "Even though these are extensions can also be linked to occurrences, it's worth mention that when they are provided in an event dataset, they are processed as part of the event interpretation when they are linked to the events and we make the `measurementType` and `measurementTypeID` terms available for searching and filtering."
+msgstr "Même si ces extensions peuvent également être liées à des occurrences, il convient de mentionner que lorsqu'elles sont fournies dans un ensemble de données d'événements, elles sont traitées dans le cadre de l'interprétation des événements lorsqu'elles sont liées à ces derniers, et nous rendons les termes `measurementType` et `measurementTypeID` disponibles pour la recherche et le filtrage."
+
