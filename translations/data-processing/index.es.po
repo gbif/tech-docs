@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-03-03 13:14+0000\n"
-"PO-Revision-Date: 2026-03-04 12:46\n"
+"POT-Creation-Date: 2026-04-14 09:18+0000\n"
+"PO-Revision-Date: 2026-04-14 09:34\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -188,128 +188,128 @@ msgid "Country"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:55
-msgid "The publisher supplied dwc:country is interpreted as a https://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/Country.html[fixed enumeration] matching the https://www.iso.org/iso-3166-country-codes.html[current ISO countries]. When no country but coordinates are supplied, GBIF derives the country from the coordinates using our https://api.gbif.org/v1/geocode/reverse?lat=52.4121&lng=13.3121[reverse geocoding API]. If the coordinates disagrees with the supplied value, the record will get an appropriate data quality flag."
+#: en/data-processing/modules/ROOT/pages/index.adoc:56
+msgid "The publisher supplied dwc:country is interpreted as a https://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/Country.html[fixed enumeration] matching the https://www.iso.org/iso-3166-country-codes.html[current ISO countries], only ISO 3166-1 Alpha-2 and Alpha-3 codes are supported. Principal divisions and subdivisions present in ISO 3166-2 are not available for this field.  When no country but coordinates are supplied, GBIF derives the country from the coordinates using our https://api.gbif.org/v1/geocode/reverse?lat=52.4121&lng=13.3121[reverse geocoding API]. If the coordinates disagree with the supplied value, the record will get an appropriate data quality flag."
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:56
+#: en/data-processing/modules/ROOT/pages/index.adoc:57
 #, no-wrap
 msgid "GADM (Database of Global Administrative Areas)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:59
+#: en/data-processing/modules/ROOT/pages/index.adoc:60
 msgid "https://gadm.org/[GADM] code at levels 0, 1, 2 and 3 are attached to all occurrence records with coordinates. This is an additional field and does not change or use `dwc:stateProvince`."
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:60
+#: en/data-processing/modules/ROOT/pages/index.adoc:61
 #, no-wrap
 msgid "Continent processing"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:63
+#: en/data-processing/modules/ROOT/pages/index.adoc:64
 msgid "GBIF `dwc:continent` processing is somewhat more complex than other fields. GBIF first attempts to parse the publisher supplied `dwc:continent` to a limited number of https://github.com/gbif/parsers/blob/ffab323e372ab0105e3a6f585d3ac491cbe5633a/src/main/resources/dictionaries/parse/continents.tsv[continent names]. If the supplied dwc:continent cannot be mapped or is left empty, an attempt is made to derive the https://github.com/gbif/continents[continent] from the publisher supplied coordinates. If coordinates are not available, GBIF will finally attempt to use the dwc:country and dwc:countryCode fields to assign the continent using a mapping from country or area to continent, which can be found in this https://github.com/gbif/pipelines/blob/585d39b9cb9d668afce9ead3abb12c6007f9431e/sdks/core/src/main/resources/country-continent-map.txt[mapping file]. Note that if the country or area in this final scenario spans more than one continent, then the field is https://www.gbif.org/occurrence/search?country=TR&has_coordinate=false&issue=CONTINENT_DERIVED_FROM_COUNTRY&occurrence_status=present[left blank]. Seas and oceans are not considered to be part of a continent in GBIF processing, and where the publisher provides a continent for a marine occurrence this is removed, and an issue flag added."
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/index.adoc:64
+#: en/data-processing/modules/ROOT/pages/index.adoc:65
 #, no-wrap
 msgid "Normalization"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:67
+#: en/data-processing/modules/ROOT/pages/index.adoc:68
 msgid "Often publisher supplied data is not sufficiently normalized to be useful for GBIF end users. For this reason GBIF will in certain instances, attempt to https://github.com/gbif/parsers[normalize the data] as much as possible. This is typically accomplished by using a mapping file from a publisher supplied value to a controlled vocabulary."
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:68
+#: en/data-processing/modules/ROOT/pages/index.adoc:69
 #, no-wrap
 msgid "Vocabulary server"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:71
+#: en/data-processing/modules/ROOT/pages/index.adoc:72
 msgid "To improve the transparency and flexibility of the mappings between publisher supplied values and controlled vocabularies, GBIF created the https://registry.gbif.org/vocabulary/search[vocabulary server]."
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:72
+#: en/data-processing/modules/ROOT/pages/index.adoc:73
 #, no-wrap
 msgid "Occurrence status processing"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:75
+#: en/data-processing/modules/ROOT/pages/index.adoc:76
 msgid "Occurrence status processing (whether an occurrence is ABSENT or PRESENT) is somewhat more complex than other fields. GBIF first attempts to parse the publisher supplied dwc:occurrenceStatus using a https://registry.gbif.org/vocabulary/OccurrenceStatus[controlled vocabulary]. If the supplied dwc:occurrenceStatus cannot be mapped or is left empty, GBIF assumes that record is PRESENT. If the publisher has supplied a valid `dwc:individualCount`, occurrence status will be inferred using the value of the count. If the individual count is zero, the record will be inferred to be ABSENT. Alternatively, if the `dwc:individualCount` is greater than zero, the record will be inferred to be PRESENT. However, `dwc:individualCount` will be ignored if the basis of record is equal to PRESERVED_SPECIMEN or FOSSIL_SPECIMEN, and GBIF will infer the occurrence status as PRESENT. xref:data-use::occurrence-issues-and-flags[Data quality flags] are applied when appropriate."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:76
+#: en/data-processing/modules/ROOT/pages/index.adoc:77
 #: en/data-use/modules/ROOT/nav.adoc:8
 #, no-wrap
 msgid "Issues and flags"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:79
+#: en/data-processing/modules/ROOT/pages/index.adoc:80
 msgid "GBIF flags records with various xref:data-use::checklist-issues-and-flags[issues] detected during data processing to help publishers improve data quality and inform users of potential problems. These flags do not always indicate errors—some simply highlight changes made by GBIF, such as normalized values or inferred values."
 msgstr ""
 
 #. type: Title =
-#: en/data-processing/modules/ROOT/pages/index.adoc:80
+#: en/data-processing/modules/ROOT/pages/index.adoc:81
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:1
 #, no-wrap
 msgid "Taxonomy interpretation"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:83
+#: en/data-processing/modules/ROOT/pages/index.adoc:84
 msgid "See the xref:taxonomy-interpretation.adoc[Taxonomy interpretation] on how GBIF interprets and matches against multiple taxonomies."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:86
+#: en/data-processing/modules/ROOT/pages/index.adoc:87
 msgid "To facilitate searching and metric generation, all occurrence records are tied to a single global taxonomy, known as the https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF backbone]. GBIF builds this taxonomy multiple times per year, which is primarily based on the http://www.catalogueoflife.org/[Catalogue of Life]. Higher-level classification above the family level exclusively comes from the Catalogue of Life, while lower taxa can be added in an automated way from other taxonomic datasets available through the https://www.gbif.org/species[GBIF Checklist Bank]."
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:87
+#: en/data-processing/modules/ROOT/pages/index.adoc:88
 #, no-wrap
 msgid "Backbone matching"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:90
+#: en/data-processing/modules/ROOT/pages/index.adoc:91
 msgid "Every occurrence is assigned a `taxonKey` which points to the https://www.gbif.org/composition/5H6q4htCV3xwevyc5Np7jO/data-use-club-practical-session-4-recording-and-resources[matching taxon] in the GBIF backbone. This key is retrieved by querying our https://www.gbif.org/developer/species#searching[taxon match service], submitting the `scientificName`, `taxonRank`, `genus`, `family` and all other higher verbatim classification. If the `scientificName` is not present it will be assembled from the individual name parts if present: `genus`, `specificEpithet` and `infraspecificEpithet`. Having a higher classification qualifying the `scientificName` improves the accuracy of the taxonomic match in two ways, even if it is just the family or even kingdom:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:92
+#: en/data-processing/modules/ROOT/pages/index.adoc:93
 msgid "In the case of homonyms or similar spelled names, the service has no way to verify the potential matches, so such names will often get higher taxon matches."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:93
+#: en/data-processing/modules/ROOT/pages/index.adoc:94
 msgid "In case a given scientific name is not (yet) part of the GBIF backbone, GBIF can at least match the record to some higher taxon, such as the genus."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:94
+#: en/data-processing/modules/ROOT/pages/index.adoc:95
 msgid "Fuzzy name matching, matching to higher taxon or matching to no taxon are issue flags we assign to records."
 msgstr ""
 
 #. type: Title ====
-#: en/data-processing/modules/ROOT/pages/index.adoc:96
+#: en/data-processing/modules/ROOT/pages/index.adoc:97
 #, no-wrap
 msgid "Type status"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:98
+#: en/data-processing/modules/ROOT/pages/index.adoc:99
 msgid "The type status of a specimen is interpreted from `dwc:typeStatus` using the https://github.com/gbif/parsers/blob/master/src/main/java/org/gbif/common/parsers/TypeStatusParser.java[TypeStatusParser] according to our https://registry.gbif.org/vocabulary/TypeStatus[type status vocabulary]."
 msgstr ""
 
