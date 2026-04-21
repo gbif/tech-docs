@@ -1,0 +1,48 @@
+ifeval::["{env}" == "prod"] 
+
+:page-unpublish: 
+
+endif::[] 
+
+  
+
+= Data standards 
+
+  
+
+include::ROOT::partial$under-construction.adoc[] 
+
+  
+
+=== Shared data standards are the main enabler for bringing together the hundreds of millions of primary biodiversity records in the GBIF index. 
+
+ 
+
+The data available through GBIF.org and its associated services is the result of the GBIF network of Participants and publishers applying shared rules and conventions to describe, record and structure thousands of different datasets drawn from hundreds of institutions around the world. Common standards are the main enabler for bringing together the hundreds of millions of primary biodiversity records in the GBIF index. 
+ 
+Within the biodiversity domain, the group most often responsible for developing and maintaining data standards is http://www.tdwg.org[Biodiversity Information Standards]. As an affiliate of the http://www.iubs.org/[International Union of Biological Science], this nonprofit scientific and educational association focuses on the development of standards for the exchange of biological and biodiversity data. Members of the biodiversity community generally refer to this group as *TDWG* (pronounced _tad-wig_)—a vestigial reminder of its earlier manifestation as the Taxonomic Databases Working Group. 
+ 
+== Commonly used standards 
+ 
+=== Darwin Core 
+ 
+The Darwin Core Standard (DwC) offers a stable, straightforward and flexible framework for compiling biodiversity data from varied and variable sources. The majority of the datasets shared through GBIF.org are published using the Darwin Core Archive format (DwC-A).    
+ 
+* https://www.gbif.org/darwin-core[What is Darwin Core, and why does it matter?
+* https://www.gbif.org/sampling-event-data[Introduction to sampling-event data]
+* https://manual.obis.org/darwin_core.html[The OBIS Manual - Darwin Core]
+* https://gcube.wiki.gcube-system.org/gcube/Darwin_Core_Terms[Darwin Core terms] (via Gcube Wiki) 
+ 
+=== EML: Ecological Metadata Language 
+ 
+Ecological Metadata Language, or *EML*, is a metadata standard that records information about ecological datasets in a series of modular and extensible XML document types. All of the descriptions of datasets in GBIF.org rely on 'metadata'—that is, the information about data—using the open-source EML standard, which is administered and maintained by https://knb.ecoinformatics.org[The Knowledge Network for Biocomplexity]. Each Darwin Core Archive includes as one of its components an EML file (written in XML format).  
+ 
+* https://ipt.gbif.org/manual/en/ipt/latest/gbif-metadata-profile[GBIF Metadata Profile: How-to Guide]
+* https://eml.ecoinformatics.org/[EML standard]
+ 
+=== BioCASe / ABCD 
+ 
+The http://www.biocase.org[Biological Collection Access Service], commonly referred to as *BioCASe*, is an international network linking biological collections data from natural history museums, botanical/zoological gardens and research institutions. BioCASe relies on the https://www.tdwg.org/standards/abcd/[Access to Biological Collections Data (ABCD) data exchange standard], which TDWG also administers. 
+ 
+* https://www.biocase.org/products/protocols/[BioCASe Protocol]
+* https://www.biocase.org/whats_biocase/gbif_downloads.cgi?view=2[User access of BioCASe data through GBIF.org]
