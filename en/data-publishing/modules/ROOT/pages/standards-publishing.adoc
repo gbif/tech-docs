@@ -14,9 +14,8 @@ include::ROOT::partial$under-construction.adoc[]
 
   
 
-=== Shared data standards are the main enabler for bringing together the hundreds of millions of primary biodiversity records in the GBIF index. 
+NOTE: Shared data standards are the main enabler for bringing together the hundreds of millions of primary biodiversity records in the GBIF index. 
 
- 
 
 The data available through GBIF.org and its associated services is the result of the GBIF network of Participants and publishers applying shared rules and conventions to describe, record and structure thousands of different datasets drawn from hundreds of institutions around the world. Common standards are the main enabler for bringing together the hundreds of millions of primary biodiversity records in the GBIF index. 
  
