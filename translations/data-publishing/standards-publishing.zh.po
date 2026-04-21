@@ -1,0 +1,135 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2026-04-21 12:05+0000\n"
+"PO-Revision-Date: 2026-04-21 12:18\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /main/translations/data-publishing/standards-publishing.pot\n"
+"X-Crowdin-File-ID: 45100\n"
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:2
+msgid "ifeval::[\"{env}\" == \"prod\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:6
+msgid "endif::[]"
+msgstr ""
+
+#. type: Title =
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:9
+#, no-wrap
+msgid "Data standards "
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:14
+msgid "include::ROOT::partial$under-construction.adoc[]"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:17
+#, no-wrap
+msgid "Shared data standards are the main enabler for bringing together the hundreds of millions of primary biodiversity records in the GBIF index. "
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:22
+msgid "The data available through GBIF.org and its associated services is the result of the GBIF network of Participants and publishers applying shared rules and conventions to describe, record and structure thousands of different datasets drawn from hundreds of institutions around the world. Common standards are the main enabler for bringing together the hundreds of millions of primary biodiversity records in the GBIF index."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:24
+msgid "Within the biodiversity domain, the group most often responsible for developing and maintaining data standards is http://www.tdwg.org[Biodiversity Information Standards]. As an affiliate of the http://www.iubs.org/[International Union of Biological Science], this nonprofit scientific and educational association focuses on the development of standards for the exchange of biological and biodiversity data. Members of the biodiversity community generally refer to this group as *TDWG* (pronounced _tad-wig_)—a vestigial reminder of its earlier manifestation as the Taxonomic Databases Working Group."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:25
+#, no-wrap
+msgid "Commonly used standards "
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:27
+#, no-wrap
+msgid "Darwin Core "
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:30
+#, no-wrap
+msgid "The Darwin Core Standard (DwC) offers a stable, straightforward and flexible framework for compiling biodiversity data from varied and variable sources. The majority of the datasets shared through GBIF.org are published using the Darwin Core Archive format (DwC-A).    \n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:32
+msgid "https://www.gbif.org/darwin-core[What is Darwin Core, and why does it matter?"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:33
+msgid "https://www.gbif.org/sampling-event-data[Introduction to sampling-event data]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:34
+msgid "https://manual.obis.org/darwin_core.html[The OBIS Manual - Darwin Core]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:35
+msgid "https://gcube.wiki.gcube-system.org/gcube/Darwin_Core_Terms[Darwin Core terms] (via Gcube Wiki)"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:36
+#, no-wrap
+msgid "EML: Ecological Metadata Language "
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:39
+msgid "Ecological Metadata Language, or *EML*, is a metadata standard that records information about ecological datasets in a series of modular and extensible XML document types. All of the descriptions of datasets in GBIF.org rely on 'metadata'—that is, the information about data—using the open-source EML standard, which is administered and maintained by https://knb.ecoinformatics.org[The Knowledge Network for Biocomplexity]. Each Darwin Core Archive includes as one of its components an EML file (written in XML format)."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:41
+msgid "https://ipt.gbif.org/manual/en/ipt/latest/gbif-metadata-profile[GBIF Metadata Profile: How-to Guide]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:42
+msgid "https://eml.ecoinformatics.org/[EML standard]"
+msgstr ""
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:43
+#, no-wrap
+msgid "BioCASe / ABCD "
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:46
+msgid "The http://www.biocase.org[Biological Collection Access Service], commonly referred to as *BioCASe*, is an international network linking biological collections data from natural history museums, botanical/zoological gardens and research institutions. BioCASe relies on the https://www.tdwg.org/standards/abcd/[Access to Biological Collections Data (ABCD) data exchange standard], which TDWG also administers."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:48
+msgid "https://www.biocase.org/products/protocols/[BioCASe Protocol]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:48
+msgid "https://www.biocase.org/whats_biocase/gbif_downloads.cgi?view=2[User access of BioCASe data through GBIF.org]"
+msgstr ""
+
