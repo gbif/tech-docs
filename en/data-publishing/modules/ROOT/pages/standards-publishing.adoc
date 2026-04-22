@@ -14,7 +14,7 @@ include::ROOT::partial$under-construction.adoc[]
 
   
 
-NOTE: Shared data standards are the main enabler for bringing together the hundreds of millions of primary biodiversity records in the GBIF index. 
+NOTE: Shared data standards make it possible to bring together the hundreds of millions of primary biodiversity records in the GBIF index. 
 
 
 The data available through GBIF.org and its associated services is the result of the GBIF network of Participants and publishers applying shared rules and conventions to describe, record and structure thousands of different datasets drawn from hundreds of institutions around the world. Common standards are the main enabler for bringing together the hundreds of millions of primary biodiversity records in the GBIF index. 
@@ -27,7 +27,7 @@ Within the biodiversity domain, the group most often responsible for developing 
  
 The Darwin Core Standard (DwC) offers a stable, straightforward and flexible framework for compiling biodiversity data from varied and variable sources. The majority of the datasets shared through GBIF.org are published using the Darwin Core Archive format (DwC-A).    
  
-* https://www.gbif.org/darwin-core[What is Darwin Core, and why does it matter?
+* https://www.gbif.org/darwin-core[What is Darwin Core, and why does it matter?]
 * https://www.gbif.org/sampling-event-data[Introduction to sampling-event data]
 * https://manual.obis.org/darwin_core.html[The OBIS Manual - Darwin Core]
 * https://gcube.wiki.gcube-system.org/gcube/Darwin_Core_Terms[Darwin Core terms] (via Gcube Wiki) 
