@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-04-21 12:22+0000\n"
+"POT-Creation-Date: 2026-04-22 11:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,8 +40,8 @@ msgstr ""
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:18
 msgid ""
-"Shared data standards are the main enabler for bringing together the "
-"hundreds of millions of primary biodiversity records in the GBIF index."
+"Shared data standards make it possible to bring together the hundreds of "
+"millions of primary biodiversity records in the GBIF index."
 msgstr ""
 
 #. type: Plain text
@@ -90,7 +90,8 @@ msgstr ""
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:31
 msgid ""
-"https://www.gbif.org/darwin-core[What is Darwin Core, and why does it matter?"
+"https://www.gbif.org/darwin-core[What is Darwin Core, and why does it "
+"matter?]"
 msgstr ""
 
 #. type: Plain text
