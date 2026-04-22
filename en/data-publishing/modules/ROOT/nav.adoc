@@ -1,4 +1,7 @@
 * xref:index.adoc[Introduction to data publishing in GBIF]
+ifeval::["{env}" != "prod"]
+* xref:standards-publishing.adoc[Data standards **Test**]
+endif::[]
 * xref:dataset-classes.adoc[Dataset classes]
 ** xref:data-quality-recommendations.adoc[Data quality recommendations]
 ifeval::["{env}" != "prod"]
