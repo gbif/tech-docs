@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-01-14 14:19+0000\n"
-"PO-Revision-Date: 2026-04-08 12:55\n"
+"POT-Creation-Date: 2026-04-23 07:21+0000\n"
+"PO-Revision-Date: 2026-04-23 07:36\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Crowdin-File-ID: 44610\n"
 
 #. type: Title =
-#: en/data-processing/modules/ROOT/pages/index.adoc:80
+#: en/data-processing/modules/ROOT/pages/index.adoc:81
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:1
 #, no-wrap
 msgid "Taxonomy interpretation"
@@ -208,7 +208,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:62
-msgid "Fuzzy name matching, matching to a higher taxon or matching to no taxon are issue xref:data-use:checklist-issues-and-flags.adoc[flags] we assign to records."
+msgid "Fuzzy name matching, matching to a higher taxon or matching to no taxon are issue https://techdocs.gbif.org/en/data-use/checklist-issues-and-flags[flags] we assign to records."
 msgstr ""
 
 #. type: Title ====
@@ -219,7 +219,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:66
-msgid "The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a xref:data-use:checklist-issues-and-flags.adoc[flag] will be issued in the response to indicate the inconsistency."
+msgid "The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a https://techdocs.gbif.org/en/data-use/checklist-issues-and-flags[flag] will be issued in the response to indicate the inconsistency."
 msgstr ""
 
 #. type: Title ====
