@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-10-15 14:47+0000\n"
-"PO-Revision-Date: 2025-10-15 14:53\n"
+"POT-Creation-Date: 2026-04-22 11:11+0000\n"
+"PO-Revision-Date: 2026-04-22 11:34\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -17,42 +17,47 @@ msgstr ""
 "X-Crowdin-File-ID: 43356\n"
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:2
+#: en/data-publishing/modules/ROOT/nav.adoc:3
 msgid "xref:index.adoc[Introduction to data publishing in GBIF]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:3
-msgid "xref:dataset-classes.adoc[Dataset classes]"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:5
-msgid "xref:data-quality-recommendations.adoc[Data quality recommendations]"
+#: en/data-publishing/modules/ROOT/nav.adoc:4
+msgid "xref:standards-publishing.adoc[Data standards **Test**]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/nav.adoc:6
-msgid "xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations **Test**]"
+msgid "xref:dataset-classes.adoc[Dataset classes]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/nav.adoc:8
-msgid "xref:multimedia-publishing.adoc[Publishing multimedia]"
+msgid "xref:data-quality-recommendations.adoc[Data quality recommendations]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/nav.adoc:9
+msgid "xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations **Test**]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/nav.adoc:11
+msgid "xref:multimedia-publishing.adoc[Publishing multimedia]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/nav.adoc:12
 msgid "xref:register-dataset-api.adoc[Register a dataset using the API]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:10
+#: en/data-publishing/modules/ROOT/nav.adoc:13
 msgid "xref:local-contexts-pilot.adoc[LocalContexts Pilot]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:10
+#: en/data-publishing/modules/ROOT/nav.adoc:13
 msgid "xref:local-contexts-integration.adoc[LocalContexts Integration]"
 msgstr ""
 
