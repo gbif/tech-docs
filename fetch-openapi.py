@@ -35,6 +35,8 @@ print("")
 
 def to_filename(ws):
     ws = ws.replace('-ws', '')
+    if (ws == 'vectortile-server-density'):
+        ws = 'v2-maps'
     if (ws == 'vectortile-server'):
         ws = 'v2-maps'
     if (ws == 'pipelines-validator'):
@@ -72,6 +74,8 @@ for ws, url in urls.items():
             matchingwsgbif = json.loads(response.text)
         elif ws == 'occurrence-annotation-ws':
             occurrenceannotation = json.loads(response.text)
+        elif ws == 'vectortile-server-density':
+            maps = json.loads(response.text)
         elif ws == 'vectortile-server':
             maps = json.loads(response.text)
         elif ws == 'event-vectortile-server':
