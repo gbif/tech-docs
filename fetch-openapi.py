@@ -60,6 +60,8 @@ for ws, url in urls.items():
     if response.status_code == 200:
         if ws == 'registry-ws':
             registry = json.loads(response.text)
+        elif ws == 'occurrence-ws-ws':
+            occurrence = json.loads(response.text)
         elif ws == 'occurrence-ws':
             occurrence = json.loads(response.text)
         elif ws == 'event-ws':
