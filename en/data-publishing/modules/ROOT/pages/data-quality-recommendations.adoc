@@ -185,7 +185,7 @@ Publishers who wish to share DNA reference libraries with GBIF must publish them
 |Required
 |Required
 
-|<<associatedSequences>> (accession number)
+|<<associatedSequences>> 
 |Required
 |Required
 
