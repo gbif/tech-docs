@@ -27,6 +27,16 @@ https://dwc.tdwg.org/terms/#occurrence[Occurrence^]
 https://dwc.tdwg.org/terms/#event[Event^]
 ====
 
+[NOTE.material]
+====
+https://dwc.tdwg.org/terms/#materialentity[MaterialEntity^]
+====
+
+[NOTE.identification]
+====
+https://dwc.tdwg.org/terms/#identification[Identification^]
+====
+
 IMPORTANT: All tables included in a Darwin Core Archive *must* include a unique identifier column
 
 NOTE: Data published with the support of one of the programmes or projects managed by GBIF (e.g. https://www.gbif.org/programme/82243[BID], https://www.gbif.org/programme/82629[BIFA], https://www.gbif.org/programme/82219[CESP], https://www.gbif.org/news/59knqJp4BWbh6gnFh7E8qR/gbif-advances-edna-data-integration-to-support-global-research-and-decision-making[SPLICE]) have stricter data quality requirements than data published outside of these programmes.
@@ -79,7 +89,7 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 .Data quality requirements for *occurrences*
 [%autowidth,stripes=hover]
 |===
-|Term |<<Status>> |Status funded GBIF programmes
+|Term |<<Status>> |Status GBIF managed programmes
 
 |<<occurrenceID>>
 |Required
@@ -156,19 +166,27 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 
 ifeval::["{env}" != "prod"]
 === Data quality requirements for DNA reference libraries
-Publishers who wish to share DNA reference libraries with GBIF should publish them as https://github.com/gbif/tech-docs/edit/main/en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc#data-quality-requirements-for-occurrences[occurrences] with the https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2024-07-11.xml[DNA-derived data extension]. 
+Publishers who wish to share DNA reference libraries with GBIF must publish them as https://github.com/gbif/tech-docs/edit/main/en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc#data-quality-requirements-for-occurrences[occurrences] with the https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2024-07-11.xml[DNA-derived data extension]. A DNA reference library is any curated or computationally assembled collection of taxonomically annotated DNA sequences, derived from physical specimens or other biological sources, used as a basis for identifying or classifying unknown biological material. 
 
 .Data quality requirements for *DNA reference libraries*
 [%autowidth,stripes=hover]
 |===
-|Term |<<Status>> |Status funded GBIF projects 
+|Term |<<Status>> |Status GBIF funded projects 
 
 |<<occurrenceID>>
 |Required
 |Required
 
-|https://dwc.tdwg.org/list/#dwc_associatedSequences[associatedSequences] (accession number)
-|Share if available
+|<<DNA_sequence>>
+|Required
+|Required
+
+|<<target_gene>>
+|Required
+|Required
+
+|<<associatedSequences>> (accession number)
+|Required
 |Required
 
 |<<basisOfRecord>>
@@ -176,7 +194,7 @@ Publishers who wish to share DNA reference libraries with GBIF should publish th
 |Required
 
 |<<scientificName>>
-|Strongly recommended
+|Required
 |Required
 
 |<<eventDate>>
@@ -184,11 +202,11 @@ Publishers who wish to share DNA reference libraries with GBIF should publish th
 |Required
 
 |<<taxonRank>>
-|Strongly recommended
+|Required
 |Required
 
 |<<kingdom>>
-|Strongly recommended
+|Required
 |Required
 
 |<<countryCode>>
@@ -211,30 +229,32 @@ Publishers who wish to share DNA reference libraries with GBIF should publish th
 |Strongly recommended
 |Strongly recommended
 
-|https://dwc.tdwg.org/list/#dwc_typeStatus[typeStatus]
+|<<typeStatus>>
 |Strongly recommended
 |Strongly recommended
 
-|https://dwc.tdwg.org/list/#dwc_catalogNumber[catalogeNumber]
+|<<catalogNumber>>
 |Share if available
 |Strongly recommended
 
-|https://dwc.tdwg.org/list/#dwc_higherClassification[higherClassification]
-|Share if available
+|<<higherClassification>>
+|Strongly recommended
 |Strongly recommended
 
 |<<country>>
-|Share if available
+|Strongly recommended
 |Strongly recommended
 
-|https://dwc.tdwg.org/list/#dwc_locality[locality]
+|<<locality>>
 |Share if available
 |Share if available
 
-|https://dwc.tdwg.org/list/#dwc_identifiedBy[identifiedBy]
+|<<identifiedBy>>
 |Share if available
 |Share if available
 |===
+
+endif::[]
 
 == Data quality requirements for sampling events
 
@@ -243,7 +263,7 @@ https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Sampling-event datasets]
 .Data quality requirements for *sampling events*
 [%autowidth,stripes=hover]
 |===
-|Term |<<Status>> |Status funded GBIF programmes
+|Term |<<Status>> |Status GBIF managed programmes
 
 |<<type>>
 |Required
@@ -393,10 +413,17 @@ When supplied, also add at least the language of the name, using ISO 639-1 langu
 
 '''
 
+=== {taxon} higherClassification [[higherClassification]]
+==== https://dwc.tdwg.org/terms/#dwc:higherClassification[_dwc:higherClassification]
+
+When supplied, also add at least the language of the name, using ISO 639-1 language codes.
+
+'''
+
 === {location} countryCode [[countryCode]]
 ==== https://dwc.tdwg.org/list/#dwc_countryCode[_dwc:countryCode_]
 
-A two-letter standard abbreviation for the country, territory or island of the occurrence locality. Information on the collection or observation locality (geographic reference) is essential for any record. The country code is the proposed minimum standard to supply this information. The format for this field follows the https://www.iso.org/iso-3166-country-codes.html[ISO 3166-1-alpha-2 standard] for country codes. Those are two-letter codes for each country, territory or island; lists can be found online. Publishers who wish to supply the country name, in addition, may add the appropriate element. In most cases, occurrences can be linked to a specific country, territory or island. In cases where it is not possible to supply a country code (e.g. marine data outside of coastal zones), geographical coordinates should be supplied instead.
+A two-letter standard abbreviation for the country, territory or island of the occurrence <<locality>>. Information on the collection or observation <<locality>> (geographic reference) is essential for any record. The country code is the proposed minimum standard to supply this information. The format for this field follows the https://www.iso.org/iso-3166-country-codes.html[ISO 3166-1-alpha-2 standard] for country codes. Those are two-letter codes for each country, territory or island; lists can be found online. Publishers who wish to supply the country name, in addition, may add the appropriate element. In most cases, occurrences can be linked to a specific country, territory or island. In cases where it is not possible to supply a country code (e.g. marine data outside of coastal zones), geographical coordinates should be supplied instead.
 
 '''
 
@@ -405,7 +432,7 @@ A two-letter standard abbreviation for the country, territory or island of the o
 
 The geographic latitude in decimal degrees. Where coordinate values are available <<decimalLongitude>> should be filled also. Valid values lie between `-90` and `90` incl. (latitude = 0 is the equator). Decimal coordinate values provide a geolocation of the occurrence that is much more informative than the country name alone, and that is stable over time (unlike the borders of countries). Many data use cases require coordinates if the data are to be of value or usable at all, for example, species distribution modelling or population studies in specific areas.
 
-Several issues concerning coordinates are encountered frequently. While the indexing process makes efforts to identify such cases and propose corrections, e.g. by plausibility-testing coordinates against country names, attention is needed already at the level of data preparation and publication. Such issues include transformation errors (resulting from e.g. conversion of degrees-minutes-seconds into decimal values), accidental swapping of values, either in the dataset or during the mapping process (latitude and longitude are reversed), or negation of values (transposition of locations from north to south, east to west or vice versa through the accidental or systematic loss or addition of minus-values). Additional points to keep in mind during data preparation are technical defaults (e.g. database settings substituting 0-values instead of unknown values resulting in records supplying lat/long as `0/0`); over-precision of data by automatic number-padding (`lat -17.79200000` where `lat -17.792` would be appropriate), or the need to blur coordinate precision e.g. the protection of sensitive species. Also note that gridded data, i.e. where coordinates represent centroids of grid cells in a field survey rather than the actual occurrence locality, may be better represented by publishing the dataset as event data rather than as occurrence records. Especially in such cases, it is essential also to supply the <<coordinateUncertaintyInMeters>>.
+Several issues concerning coordinates are encountered frequently. While the indexing process makes efforts to identify such cases and propose corrections, e.g. by plausibility-testing coordinates against country names, attention is needed already at the level of data preparation and publication. Such issues include transformation errors (resulting from e.g. conversion of degrees-minutes-seconds into decimal values), accidental swapping of values, either in the dataset or during the mapping process (latitude and longitude are reversed), or negation of values (transposition of locations from north to south, east to west or vice versa through the accidental or systematic loss or addition of minus-values). Additional points to keep in mind during data preparation are technical defaults (e.g. database settings substituting 0-values instead of unknown values resulting in records supplying lat/long as `0/0`); over-precision of data by automatic number-padding (`lat -17.79200000` where `lat -17.792` would be appropriate), or the need to blur coordinate precision e.g. the protection of sensitive species. Also note that gridded data, i.e. where coordinates represent centroids of grid cells in a field survey rather than the actual occurrence <<locality>>, may be better represented by publishing the dataset as event data rather than as occurrence records. Especially in such cases, it is essential also to supply the <<coordinateUncertaintyInMeters>>.
 
 '''
 
@@ -414,14 +441,14 @@ Several issues concerning coordinates are encountered frequently. While the inde
 
 The geographic longitude in decimal degrees. Where coordinate values are available <<decimalLatitude>> should be filled also. Valid values lie between  -180 and 180 incl. (longitude = 0 is the Greenwich Meridian). Decimal coordinate values provide a geolocation of the occurrence that is much more informative than the country name alone, and that is stable over time (unlike the borders of countries). Many data use cases require coordinates if the data are to be of value or usable at all, for example, species distribution modelling or population studies in specific areas.
 
-Several issues concerning coordinates are encountered frequently. While the indexing process makes efforts to identify such cases and propose corrections, e.g. by plausibility-testing coordinates against country names, attention is needed already at the level of data preparation and publication. Such issues include transformation errors (resulting from e.g. conversion of degrees-minutes-seconds into decimal values), accidental swapping of values, either in the dataset or during the mapping process (latitude and longitude are reversed), or negation of values (transposition of locations from north to south, east to west or vice versa through the accidental or systematic loss or addition of minus-values). Additional points to keep in mind during data preparation are technical defaults (e.g. database settings substituting 0-values instead of unknown values resulting in records supplying lat/long as `0/0`); over-precision of data by automatic number-padding (`lat -17.79200000` where `lat -17.792` would be appropriate), or the need to blur coordinate precision e.g. the protection of sensitive species. Also note that gridded data, i.e. where coordinates represent centroids of grid cells in a field survey rather than the actual occurrence locality, may be better represented by publishing the dataset as event data rather than as occurrence records. Especially in such cases, it is essential also to supply the <<coordinateUncertaintyInMeters>>.
+Several issues concerning coordinates are encountered frequently. While the indexing process makes efforts to identify such cases and propose corrections, e.g. by plausibility-testing coordinates against country names, attention is needed already at the level of data preparation and publication. Such issues include transformation errors (resulting from e.g. conversion of degrees-minutes-seconds into decimal values), accidental swapping of values, either in the dataset or during the mapping process (latitude and longitude are reversed), or negation of values (transposition of locations from north to south, east to west or vice versa through the accidental or systematic loss or addition of minus-values). Additional points to keep in mind during data preparation are technical defaults (e.g. database settings substituting 0-values instead of unknown values resulting in records supplying lat/long as `0/0`); over-precision of data by automatic number-padding (`lat -17.79200000` where `lat -17.792` would be appropriate), or the need to blur coordinate precision e.g. the protection of sensitive species. Also note that gridded data, i.e. where coordinates represent centroids of grid cells in a field survey rather than the actual occurrence <<locality>>, may be better represented by publishing the dataset as event data rather than as occurrence records. Especially in such cases, it is essential also to supply the <<coordinateUncertaintyInMeters>>.
 
 '''
 
 === {location} geodeticDatum [[geodeticDatum]]
 ==== https://dwc.tdwg.org/list/#dwc_geodeticDatum[_dwc:geodeticDatum_]
 
-The coordinate system and set of reference points upon which the geographic coordinates are based. Different geodetic systems exist, and the exact locality of a point depends on which reference system the coordinates refer to. This is why the system should always be explicitly named when known: depending on the geographic region, the datum shift between two systems can vary from zero to hundreds of meters for a given point. When no value is supplied, GBIF's indexing process assumes the reference system to be WGS 84 (World Geodetic System 1984, a global approximation at sea level and, i.e., base of GPS data); but the more frequently the geodetic datum can be supplied explicitly by data publishers, the more reliable the geographic representation of occurrences will become, e.g. through datum conversion. It is likewise important to explicitly document the lack of knowledge of the system used, as this increases confidence in data interpretation. Examples: `WGS84`; `EPSG:4326`; `unknown`.
+The coordinate system and set of reference points upon which the geographic coordinates are based. Different geodetic systems exist, and the exact <<locality>> of a point depends on which reference system the coordinates refer to. This is why the system should always be explicitly named when known: depending on the geographic region, the datum shift between two systems can vary from zero to hundreds of meters for a given point. When no value is supplied, GBIF's indexing process assumes the reference system to be WGS 84 (World Geodetic System 1984, a global approximation at sea level and, i.e., base of GPS data); but the more frequently the geodetic datum can be supplied explicitly by data publishers, the more reliable the geographic representation of occurrences will become, e.g. through datum conversion. It is likewise important to explicitly document the lack of knowledge of the system used, as this increases confidence in data interpretation. Examples: `WGS84`; `EPSG:4326`; `unknown`.
 
 '''
 
@@ -451,6 +478,12 @@ An alternative area description, specifying the location of the sample event in 
 
 '''
 
+=== {location} locality [[locality]]
+==== https://dwc.tdwg.org/list/#dwc_locality[_dwc:locality_]
+
+Less specific geographic information can be provided in other geographic terms (dwc:higherGeography, dwc:continent, dwc:country, dwc:stateProvince, dwc:county, dwc:municipality, dwc:waterBody, dwc:island, dwc:islandGroup). This term may contain information modified from the original to correct perceived errors or standardize the description.
+
+'''
 === {occurrence} occurrenceID [[occurrenceID]]
 ==== https://dwc.tdwg.org/list/#dwc_occurrenceID[_dwc:occurrenceID_]
 
@@ -491,6 +524,38 @@ To record the quantity type of a species occurrence. Use together with <<organis
 Note: this applies to associated occurrence data, not to the sample event itself. A qualifier for individual occurrence records, marking a taxon as either present or absent at a location during the sampling event. Since sample datasets document the sampling effort exerted during the event, it can often be valuable to not only document taxa as being present (observed, collected) at the location at the time, but also to record negative occurrences (absences) for taxa that could be reasonably expected, but were not encountered in the event. An example is a floristic survey that estimates the abundance or coverage of plants in a certain area, working from a list of species that were encountered on earlier surveys of that same region. Recommendation: use the standard values of either `present` or `absent` to mark individual occurrence records.
 
 '''
+
+=== {occurrence} catalogNumber [[catalogNumber]]
+==== https://dwc.tdwg.org/list/#dwc_catalogNumber[_dwc:catalogNumber_]
+
+An identifier (preferably unique) for the record within the dataset or collection.
+
+'''
+
+ifeval::["{env}" != "prod"]
+
+=== {material} associatedSequences [[associatedSequences]]
+==== https://dwc.tdwg.org/list/#dwc_associatedSequences[_dwc:associatedSequences_]
+
+A list (concatenated and separated) of identifiers (publication, accession number, global unique identifier, URI) of genetic sequence information associated with the dwc:MaterialEntity.
+
+'''
+
+=== {identification} typeStatus [[typeStatus]]
+==== https://dwc.tdwg.org/list/#dwc_typeStatus[_dwc:typeStatus_]
+
+The nomenclatural type status of a specimen or name. Please choose a value from the GBIF controlled vocabulary for https://registry.gbif.org/vocabulary/TypeStatus[type status].
+
+'''
+
+=== {identification} identifiedBy [[identifiedBy]]
+==== https://dwc.tdwg.org/list/#dwc_identifiedBy[_dwc:identifiedBy_]
+
+A list (concatenated and separated) of names of people, groups, or organizations who assigned the dwc:Taxon to the subject.
+
+'''
+
+endif::[]
 
 === {event} eventDate [[eventDate]]
 ==== https://dwc.tdwg.org/list/#dwc_eventDate[_dwc:eventDate_]
@@ -551,6 +616,22 @@ A cross-reference to the eventID of a broader event, e.g. a long-term monitoring
 The measure for the amount of effort that was expended during a sampling event. The amount of effort expended during a sampling event often influences the result. It included factors like the number of observers involved, or the total time spent collecting, the number of traps exposed over a certain amount of time, the total distance covered, and the mode of transport used, while surveying a plot, etc. Examples of sampling effort are `40 trap-nights`, `10 observer-hours`. While there is no controlled vocabulary, the recommendation is to keep this information brief and factual, giving users enough information to compare between sampling events.
 
 '''
+ifeval::["{env}" != "prod"]
+
+=== DNA_sequence [[DNA_sequence]]
+==== https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2024-07-11.xml#dna_sequence[_DNA_sequence_]
+
+A string representing nucleotide base pairs, based on IUPAC characters. 
+
+'''
+
+=== target_gene [[target_gene]]
+==== 	https://w3id.org/mixs/0000044[_mixs:target_gene_]
+
+Targeted gene or locus name for marker gene studies. Please use a value from https://registry.gbif.org/vocabulary/target_gene[GBIF's controlled vocabulary for target_gene].
+
+'''
+endif::[]
 
 == Status [[Status]]
 
