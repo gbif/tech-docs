@@ -2,7 +2,9 @@
 .doc .admonitionblock.nature td.icon,
 .doc .admonitionblock.location td.icon,
 .doc .admonitionblock.occurrence td.icon,
-.doc .admonitionblock.event td.icon {
+.doc .admonitionblock.event td.icon,
+.doc .admonitionblock.material td.icon,
+.doc .admonitionblock.identification td.icon {
     position: static;
     width: 90px;
     transform: none;
@@ -17,7 +19,9 @@
 .doc .admonitionblock.nature td.icon .icon-note,
 .doc .admonitionblock.location td.icon .icon-note,
 .doc .admonitionblock.occurrence td.icon .icon-note,
-.doc .admonitionblock.event td.icon .icon-note {
+.doc .admonitionblock.event td.icon .icon-note,
+.doc .admonitionblock.material td.icon .icon-note,
+.doc .admonitionblock.identification td.icon .icon-note {
     width: 75px;
     height: 75px;
 }
@@ -45,6 +49,16 @@
 .doc .admonitionblock.event td.icon .icon-note {
     background: radial-gradient(circle, #598046, #598046 66%, transparent 66%);
     content: url(../images/icons/delivery-service.svg);
+}
+
+.doc .admonitionblock.material td.icon .icon-note {
+    background: radial-gradient(circle, #598046, #598046 66%, transparent 66%);
+    content: url(../images/icons/materialentity.svg);
+}
+
+.doc .admonitionblock.identification td.icon .icon-note {
+    background: radial-gradient(circle, #598046, #598046 66%, transparent 66%);
+    content: url(../images/icons/identification.svg);
 }
 
 /* LAR style */
