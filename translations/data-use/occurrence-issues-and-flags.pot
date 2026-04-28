@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-12-10 12:55+0000\n"
+"POT-Creation-Date: 2026-04-28 10:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgid ""
 "from their analysis, or to apply their own data quality checks."
 msgstr ""
 
-#.  The definitive list of flags in in the API, and can be seen in the source code:
+#.  The definitive list of flags in the API, and can be seen in the source code:
 #.  https://github.com/gbif/gbif-api/blob/dev/src/main/java/org/gbif/api/vocabulary/OccurrenceIssue.java
 #.  Check for missing issues:
 #.  (for i in $(curl -Ss https://raw.githubusercontent.com/gbif/gbif-api/dev/src/main/java/org/gbif/api/vocabulary/OccurrenceIssue.java | grep -Po '^  \K([A-Z0-9_]{5,})'); do grep --quiet $i occurrence-issues-and-flags.adoc || echo "$i missing"; done) | grep -v -e COORDINATE_ACCURACY_INVALID -e COORDINATE_PRECISION_UNCERTAINTY_MISMATCH -e POSSIBLY_ON_LOAN
@@ -623,13 +623,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:467
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:468
 #, no-wrap
 msgid "GRSciColl issues"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:513
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:514
 #, no-wrap
 msgid ""
 "|Flag name | Definition | Terms | Example\n"
@@ -677,13 +677,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:515
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:516
 #, no-wrap
 msgid "Other issues"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:556
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:557
 #, no-wrap
 msgid ""
 "|Flag name | Definition | Terms | Example\n"
