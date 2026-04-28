@@ -619,7 +619,7 @@ The measure for the amount of effort that was expended during a sampling event. 
 ifeval::["{env}" != "prod"]
 
 === DNA_sequence [[DNA_sequence]]
-==== https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2024-07-11.xml#dna_sequence[_DNA_sequence_]
+==== https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2024-07-11.xml#DNA_sequence[_DNA_sequence_]
 
 A nucleotide sequence composed exclusively of uppercase IUPAC nucleotide characters (G, A, T, C, R, Y, M, K, S, W, H, B, V, D, N), provided in 5′–3′ orientation, with no gap characters, whitespace, quality scores, sequence descriptions, or identifiers. Intended for use in taxon identification and biodiversity assessment. The target gene or barcode locus from which the sequence is derived should be specified using the <<target_gene>> term. 
 
