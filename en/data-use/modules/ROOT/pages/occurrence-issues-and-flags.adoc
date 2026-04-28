@@ -2,7 +2,7 @@
 
 More than *60 issues and flags* have been created to deal with common data quality problems.  Data users may use these flags to exclude occurrences from their analysis, or to apply their own data quality checks.
 
-// The definitive list of flags in in the API, and can be seen in the source code:
+// The definitive list of flags in the API, and can be seen in the source code:
 // https://github.com/gbif/gbif-api/blob/dev/src/main/java/org/gbif/api/vocabulary/OccurrenceIssue.java
 
 // Check for missing issues:
@@ -462,6 +462,7 @@ ifeval::["{env}" != "prod"]
 | The Age or Stage does not belong to the Epoch or Series.
 | _dwc:earliestEpochOrLowestSeries_, _dwc:latestEpochOrHighestSeries_, _dwc:earliestAgeOrLowestStage_, _dwc:latestAgeOrHighestStage_
 | https://www.gbif.org/occurrence/search?issue=EPOCH_OR_SERIES_AND_AGE_OR_STAGE_MISMATCH[example]
+endif::[]
 |===
 
 == GRSciColl issues
