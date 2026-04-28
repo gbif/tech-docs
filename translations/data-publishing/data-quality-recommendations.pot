@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-04-28 10:55+0000\n"
+"POT-Creation-Date: 2026-04-28 11:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1493,7 +1493,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:625
-msgid "A string representing nucleotide base pairs, based on IUPAC characters."
+msgid ""
+"A nucleotide sequence string composed of uppercase IUPAC nucleotide "
+"characters (G, A, T, C, R, Y, M, K, S, W, H, B, V, D, N). The string must "
+"not include gap characters, whitespace, quality scores, sequence "
+"descriptions, or identifiers, and must be provided in the 5′–3′ orientation. "
+"The sequence is intended for use in taxon identification and biodiversity "
+"assessment.  The corresponding <<target_gene>> from which the sequence is "
+"derived must also be specified."
 msgstr ""
 
 #. type: Title ===
