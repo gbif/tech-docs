@@ -10,5 +10,5 @@ asciidoc:
     occurrence: image:ROOT:ROOT:icons/map.svg[Occurrence,24,24]
     taxon: image:ROOT:ROOT:icons/nature.svg[Taxon,24,24]
     location: image:ROOT:ROOT:icons/world-map.svg[Location,24,24]
-    material: image:ROOT:ROOT:icons/material.svg[Material,24,24]
+    material: image:ROOT:ROOT:icons/world-map.svg[Location,24,24]
     identification: image:ROOT:ROOT:icons/identification.svg[Identification,24,24]
