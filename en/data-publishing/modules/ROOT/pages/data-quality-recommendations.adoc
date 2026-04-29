@@ -414,7 +414,7 @@ When supplied, also add at least the language of the name, using ISO 639-1 langu
 '''
 
 === {taxon} higherClassification [[higherClassification]]
-==== https://dwc.tdwg.org/terms/#dwc:higherClassification[_dwc:higherClassification]
+==== https://dwc.tdwg.org/terms/#dwc:higherClassification[_dwc:higherClassification_]
 
 When supplied, also add at least the language of the name, using ISO 639-1 language codes.
 
