@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-04-14 09:18+0000\n"
-"PO-Revision-Date: 2026-04-14 13:00\n"
+"POT-Creation-Date: 2026-04-23 07:21+0000\n"
+"PO-Revision-Date: 2026-04-23 07:36\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -208,8 +208,8 @@ msgstr "Si un nom scientifique donné ne fait pas (encore) partie de la taxonomi
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:62
-msgid "Fuzzy name matching, matching to a higher taxon or matching to no taxon are issue xref:data-use:checklist-issues-and-flags.adoc[flags] we assign to records."
-msgstr "La correspondance approximative des noms, la correspondance avec un taxon supérieur ou l'absence de correspondance avec un taxon sont des problèmes xref:data-use:checklist-issues-and-flags.adoc[flags] que nous attribuons aux enregistrements."
+msgid "Fuzzy name matching, matching to a higher taxon or matching to no taxon are issue https://techdocs.gbif.org/en/data-use/checklist-issues-and-flags[flags] we assign to records."
+msgstr ""
 
 #. type: Title ====
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:63
@@ -219,8 +219,8 @@ msgstr "Correspondance basée sur l'identifiant"
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:66
-msgid "The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a xref:data-use:checklist-issues-and-flags.adoc[flag] will be issued in the response to indicate the inconsistency."
-msgstr "La https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] de l'API de correspondance des espèces support la recherche avec les champs d'identifiant `taxonID`, `scientificNameID` ou `taxonConceptID` comme paramètres de requête. Si un champ d'identifiant et un `scientificName` sont tous deux fournis, le champ d'identifiant sera utilisé en premier pour la correspondance. Une correspondance sera également effectuée à l'aide du `scientificName` et une comparaison sera effectuée entre les deux correspondances. Si elles ne concordent pas, un xref:data-use:checklist-issues-and-flags.adoc[flag] sera émis dans la réponse pour signaler l'incohérence."
+msgid "The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a https://techdocs.gbif.org/en/data-use/checklist-issues-and-flags[flag] will be issued in the response to indicate the inconsistency."
+msgstr ""
 
 #. type: Title ====
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:67
