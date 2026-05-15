@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-23 12:53+0000\n"
+"POT-Creation-Date: 2026-05-15 13:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #. type: Title ==
 #: en/cloud-services/modules/ROOT/pages/index.adoc:1
-#: en/data-use/modules/ROOT/pages/index.adoc:37
+#: en/data-use/modules/ROOT/pages/index.adoc:41
 #, no-wrap
 msgid "Cloud computing services"
 msgstr ""
@@ -32,7 +32,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-introduction.adoc:4
-#: en/data-use/modules/ROOT/pages/index.adoc:26
+#: en/data-use/modules/ROOT/pages/index.adoc:30
 msgid ""
 "The GBIF API provides a programmatic way to query and publish data on GBIF."
 "org. It can be useful or necessary to use the API to"
@@ -40,14 +40,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-introduction.adoc:6
-#: en/data-use/modules/ROOT/pages/index.adoc:28
+#: en/data-use/modules/ROOT/pages/index.adoc:32
 #: en/openapi/modules/ROOT/pages/index.adoc:8
 msgid "make advanced queries, not supported by the website,"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-introduction.adoc:7
-#: en/data-use/modules/ROOT/pages/index.adoc:29
+#: en/data-use/modules/ROOT/pages/index.adoc:33
 #: en/openapi/modules/ROOT/pages/index.adoc:9
 msgid ""
 "include the results of GBIF queries in scripts, workflows or analyses, which "
@@ -56,14 +56,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-introduction.adoc:8
-#: en/data-use/modules/ROOT/pages/index.adoc:30
+#: en/data-use/modules/ROOT/pages/index.adoc:34
 #: en/openapi/modules/ROOT/pages/index.adoc:10
 msgid "embed GBIF data into other websites."
 msgstr ""
 
 #. type: Title ==
 #: en/data-use/modules/ROOT/pages/citation.adoc:1
-#: en/data-use/modules/ROOT/pages/index.adoc:41
+#: en/data-use/modules/ROOT/pages/index.adoc:45
 #: en/data-use/modules/ROOT/pages/pygbif.adoc:59
 #, no-wrap
 msgid "Citation"
@@ -71,7 +71,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/citation.adoc:3
-#: en/data-use/modules/ROOT/pages/index.adoc:43
+#: en/data-use/modules/ROOT/pages/index.adoc:47
 #: en/data-use/modules/ROOT/pages/pygbif.adoc:62
 msgid ""
 "Under the terms of the GBIF data user agreement, users who download data "
@@ -153,21 +153,29 @@ msgid ""
 "download format, regardless of how it was created."
 msgstr ""
 
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:25
+msgid ""
+"If you make the same query twice for a Data download within 48 hours, the "
+"system will redirect you to the existing download page and it will have the "
+"same DOI."
+msgstr ""
+
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/index.adoc:23
+#: en/data-use/modules/ROOT/pages/index.adoc:27
 #, no-wrap
 msgid "API usage"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/index.adoc:32
+#: en/data-use/modules/ROOT/pages/index.adoc:36
 msgid ""
 "It can be accessed by any programming language, from a command-line terminal "
 "interface, or in some cases using a web browser."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/index.adoc:34
+#: en/data-use/modules/ROOT/pages/index.adoc:38
 msgid ""
 "See xref:api-introduction.adoc[] for general advice on using the API, "
 "including clients in R, Python and Java.  Detailed information on using the "
@@ -175,14 +183,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/index.adoc:36
+#: en/data-use/modules/ROOT/pages/index.adoc:40
 msgid ""
 "Complete reference documentation is in the xref:openapi::index.adoc[API "
 "Reference] section."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/index.adoc:40
+#: en/data-use/modules/ROOT/pages/index.adoc:44
 msgid ""
 "Each month, an export of GBIF occurrence data is uploaded to various cloud "
 "computing services.  These services allow users to query the data, integrate "
