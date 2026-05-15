@@ -1,0 +1,92 @@
+= GBIF API Usage Guidelines
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
+
+include::ROOT::partial$under-construction.adoc[]
+
+The GBIF API can handle relatively large volumes of requests, but the capacity is not unlimited.
+
+Many common API operations are able to sustain rapid querying, such as taxonomic name matching, the geocode API or retrieving individual occurrences.  Others, such as searching occurrences, have less capacity.
+
+Following these guidelines will avoid disrupting the service for yourself and others.
+
+[#general-advice]
+== General advice
+
+[#scripting]
+=== For scripting and analysis users
+
+*This includes users making scientific or other analyses with tools such as Python, R, Java, curl, OpenRefine, GIS tools, spreadsheets, etc.*
+
+* Do not make thousands of requests per day to the `/v1/occurrence/search`, `/v1/occurrence/count` or `/v2/maps/*/ad-hoc` APIs.
++
+This is the most common cause of rate-limiting or blocking. *If a script will take more than 15 minutes using the occurrence search APIs it will be usually be faster and cause less load on our servers to xref:data-use::api-downloads.adoc[request a download] instead.*  This also allows for proper https://www.gbif.org/citation-guidelines[attribution and citation].  The download API accepts up to 100,000 search parameters, such as taxa or datasets.
+
+* Do not set a fake User-Agent header
+
+* Avoid making requests in parallel or using multiple computers to make requests
+
+[#website-app]
+=== For website and app developers
+
+* You must <<identification,identify>> your website or app
+* Use caching to avoid unnecessary traffic
+* You must not <<rate-limits,overload our servers>>
+
+We do not guarantee any level of service for the API, and it is not possible to obtain an SLA.
+
+[#ai]
+=== For AI users and developers:
+
+* You must identify your app or tool
+* Bulk occurrence data must be retrieved from a https://www.gbif.org/occurrence-snapshots[cloud snapshot or monthly download]; these are updated monthly.
+* The complete https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF Backbone Taxonomy] is available for download from the https://hosted-datasets.gbif.org/datasets/backbone/README.html[GBIF Taxonomy Backbone Archive]
+* Cite your use of GBIF mediated data.
+
+[#identification]
+== Identification
+
+Scripting and analysis users can usually leave the `User-Agent` as set by the tool.
+
+Others users must include an identifying `User-Agent` string with the application or domain name, and optionally a version number. You should also include a company email address or a link to the company website where we can find contact information. If we cannot contact you in case of problems, you risk being blocked without warning.
+
+.Examples of valid User-Agents
+====
+"python-requests/00.11.22,pygbif/0.1.2" (running a script/analysis tool)
+"biodiversity.example.org developers@biodiversity.example.org" (website or app)
+"BiodiversityApp/0.9 github.com/biodiversityapp" (website or app)
+"ExampleAICrawler ai@example.net" (AI crawler)
+====
+
+In cases where this is not possible (e.g. image links or simple cross-origin requests in Javascript), the website must instead identify itself using an `Origin` (Javascript) or `Referer` (for image links) header.
+
+Company email addresses used in `User-Agent` headers are not considered personal data under the GDPR.
+
+[#attribution]
+== Attribution
+
+All open data require attribution as specified in the licence.
+
+See the https://www.gbif.org/citation-guidelines[citation guidelines].
+
+[#caching]
+== Caching
+
+Cache data locally, and avoid making repeated requests for the same data.
+
+[#rate-limits]
+== Rate limits
+
+Websites and mobile apps may use simple cross-origin Javascript requests, provided the site identifies itself as described above.
+
+Rapid or numerous queries to search APIs may be rate limited, depending on our server load. If this happens, you will receive an `HTTP 429` or `HTTP 503` error, and you should reduce your query rate or use the download API.
+
+The maximum rate changes depending on our server load; we do not guarantee any particular query rate will work. Rates are calculated per application, not per client — if you have a mobile app, this means the total traffic from all installations. For websites, this means the total for all servers and/or traffic coming directly from the browsers.  If you allow search engines to index your site, traffic they cause will also be counted.
+
+[#abuse]
+== Abuse
+
+Deliberate breach of these guidelines, including trying to circumvent traffic rate limiting measures and/or impersonating traffic from other clients, will result in a ban from use of our services. This includes fake or random strings as identification in the `User-Agent` header.
+
+The GBIF website at https://www.gbif.org[www.GBIF.org] is not part of the public API. Scripted use of www.GBIF.org, including scraping, bulk downloading of webpages or web page resources may be blocked without warning.
