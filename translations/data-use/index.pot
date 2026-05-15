@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-05-15 13:14+0000\n"
+"POT-Creation-Date: 2026-05-15 13:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -156,9 +156,8 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/index.adoc:25
 msgid ""
-"If you make the same query twice for a Data download within 48 hours, the "
-"system will redirect you to the existing download page and it will have the "
-"same DOI."
+"Submitting the same download query within 48 hours will return the previous "
+"download. The system will redirect you to the existing download page."
 msgstr ""
 
 #. type: Title ==
