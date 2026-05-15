@@ -20,6 +20,10 @@ See xref:api-downloads.adoc[] for creating a download directly through the API. 
 
 See xref:download-formats.adoc[] for details on the structure of each download format, regardless of how it was created.
 
+ifeval::["{env}" != "prod"]
+WARNING: If you make the same query twice for a Data download within 48 hours, the system will redirect you to the existing download page and it will have the same DOI.
+endif::[]
+
 == API usage
 
 The GBIF API provides a programmatic way to query and publish data on GBIF.org. It can be useful or necessary to use the API to
