@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-09-23 12:53+0000\n"
-"PO-Revision-Date: 2026-04-08 12:57\n"
+"POT-Creation-Date: 2026-05-15 13:26+0000\n"
+"PO-Revision-Date: 2026-05-15 13:36\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #. type: Title ==
 #: en/cloud-services/modules/ROOT/pages/index.adoc:1
-#: en/data-use/modules/ROOT/pages/index.adoc:37
+#: en/data-use/modules/ROOT/pages/index.adoc:41
 #, no-wrap
 msgid "Cloud computing services"
 msgstr ""
@@ -32,34 +32,34 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-introduction.adoc:4
-#: en/data-use/modules/ROOT/pages/index.adoc:26
+#: en/data-use/modules/ROOT/pages/index.adoc:30
 msgid "The GBIF API provides a programmatic way to query and publish data on GBIF.org. It can be useful or necessary to use the API to"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-introduction.adoc:6
-#: en/data-use/modules/ROOT/pages/index.adoc:28
+#: en/data-use/modules/ROOT/pages/index.adoc:32
 #: en/openapi/modules/ROOT/pages/index.adoc:8
 msgid "make advanced queries, not supported by the website,"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-introduction.adoc:7
-#: en/data-use/modules/ROOT/pages/index.adoc:29
+#: en/data-use/modules/ROOT/pages/index.adoc:33
 #: en/openapi/modules/ROOT/pages/index.adoc:9
 msgid "include the results of GBIF queries in scripts, workflows or analyses, which can then be repeated reliably and automatically,"
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-introduction.adoc:8
-#: en/data-use/modules/ROOT/pages/index.adoc:30
+#: en/data-use/modules/ROOT/pages/index.adoc:34
 #: en/openapi/modules/ROOT/pages/index.adoc:10
 msgid "embed GBIF data into other websites."
 msgstr ""
 
 #. type: Title ==
 #: en/data-use/modules/ROOT/pages/citation.adoc:1
-#: en/data-use/modules/ROOT/pages/index.adoc:41
+#: en/data-use/modules/ROOT/pages/index.adoc:45
 #: en/data-use/modules/ROOT/pages/pygbif.adoc:59
 #, no-wrap
 msgid "Citation"
@@ -67,7 +67,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/citation.adoc:3
-#: en/data-use/modules/ROOT/pages/index.adoc:43
+#: en/data-use/modules/ROOT/pages/index.adoc:47
 #: en/data-use/modules/ROOT/pages/pygbif.adoc:62
 msgid "Under the terms of the GBIF data user agreement, users who download data agree to cite a DOI. Please see GBIF’s https://www.gbif.org/citation-guidelines[citation guidelines]."
 msgstr ""
@@ -124,29 +124,34 @@ msgstr ""
 msgid "See xref:download-formats.adoc[] for details on the structure of each download format, regardless of how it was created."
 msgstr ""
 
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/index.adoc:25
+msgid "Submitting the same download query within 48 hours will return the previous download. The system will redirect you to the existing download page."
+msgstr ""
+
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/index.adoc:23
+#: en/data-use/modules/ROOT/pages/index.adoc:27
 #, no-wrap
 msgid "API usage"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/index.adoc:32
+#: en/data-use/modules/ROOT/pages/index.adoc:36
 msgid "It can be accessed by any programming language, from a command-line terminal interface, or in some cases using a web browser."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/index.adoc:34
+#: en/data-use/modules/ROOT/pages/index.adoc:38
 msgid "See xref:api-introduction.adoc[] for general advice on using the API, including clients in R, Python and Java.  Detailed information on using the API to make downloads is in the xref:api-downloads.adoc[] section."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/index.adoc:36
+#: en/data-use/modules/ROOT/pages/index.adoc:40
 msgid "Complete reference documentation is in the xref:openapi::index.adoc[API Reference] section."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/index.adoc:40
+#: en/data-use/modules/ROOT/pages/index.adoc:44
 msgid "Each month, an export of GBIF occurrence data is uploaded to various cloud computing services.  These services allow users to query the data, integrate it into workflows running on cloud or local systems and make more complex queries than are possible using the GBIF API.  See xref:cloud-services::index.adoc[] for more information."
 msgstr ""
 

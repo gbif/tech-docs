@@ -1,0 +1,234 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2026-05-15 15:38+0000\n"
+"PO-Revision-Date: 2026-05-15 16:50\n"
+"Last-Translator: \n"
+"Language-Team: Japanese\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /main/translations/openapi/usage.pot\n"
+"X-Crowdin-File-ID: 45105\n"
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/index.adoc:44
+#: en/openapi/modules/ROOT/pages/usage.adoc:79
+#, no-wrap
+msgid "Rate limits"
+msgstr ""
+
+#. type: Title =
+#: en/openapi/modules/ROOT/pages/usage.adoc:1
+#, no-wrap
+msgid "GBIF API Usage Guidelines"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:9
+msgid "The GBIF API can handle relatively large volumes of requests, but the capacity is not unlimited."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:11
+msgid "Many common API operations are able to sustain rapid querying, such as taxonomic name matching, the geocode API or retrieving individual occurrences.  Others, such as searching occurrences, have less capacity."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:13
+msgid "Following these guidelines will avoid disrupting the service for yourself and others."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/usage.adoc:15
+#, no-wrap
+msgid "General advice"
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/usage.adoc:18
+#, no-wrap
+msgid "For scripting and analysis users"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:21
+msgid "_This includes users making scientific or other analyses with tools such as Python, R, Java, curl, OpenRefine, GIS tools, spreadsheets, etc._"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:23
+msgid "Do not make thousands of requests per day to the `/v1/occurrence/search`, `/v1/occurrence/count` or `/v2/maps/*/ad-hoc` APIs."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:25
+msgid "This is the most common cause of rate-limiting or blocking. *If a script will take more than 15 minutes using the occurrence search APIs it will be usually be faster and cause less load on our servers to xref:data-use::api-downloads.adoc[request a download] instead.* This also allows for proper https://www.gbif.org/citation-guidelines[attribution and citation].  The download API accepts up to 100,000 search parameters, such as taxa or datasets."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:27
+msgid "Do not set a fake User-Agent header"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:29
+msgid "Avoid making requests in parallel or using multiple computers to make requests"
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/usage.adoc:31
+#, no-wrap
+msgid "For website and app developers"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:34
+msgid "You must <<identification,identify>> your website or app"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:35
+msgid "Use caching to avoid unnecessary traffic"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:36
+msgid "You must not <<rate-limits,overload our servers>>"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:38
+msgid "We do not guarantee any level of service for the API, and it is not possible to obtain an SLA."
+msgstr ""
+
+#. type: Title ===
+#: en/openapi/modules/ROOT/pages/usage.adoc:40
+#, no-wrap
+msgid "For AI developers"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:43
+msgid "You must identify your AI service"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:44
+msgid "Bulk occurrence data must be retrieved from a https://www.gbif.org/occurrence-snapshots[cloud snapshot or monthly download]."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:45
+msgid "The complete https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF Backbone Taxonomy] is available for download from the https://hosted-datasets.gbif.org/datasets/backbone/README.html[GBIF Taxonomy Backbone Archive]"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:46
+msgid "Cite your use of GBIF mediated data."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/usage.adoc:48
+#, no-wrap
+msgid "Identification"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:51
+msgid "Scripting and analysis users can usually leave the `User-Agent` as set by the tool."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:53
+msgid "Others users must include an identifying `User-Agent` string with the application or domain name, and optionally a version number. You should also include a company email address or a link to the company website where we can find contact information. If we cannot contact you in case of problems, you risk being blocked without warning."
+msgstr ""
+
+#. type: Block title
+#: en/openapi/modules/ROOT/pages/usage.adoc:54
+#, no-wrap
+msgid "Examples of valid User-Agents"
+msgstr ""
+
+#. type: delimited block -
+#: en/openapi/modules/ROOT/pages/usage.adoc:60
+#, no-wrap
+msgid "\"python-requests/00.11.22,pygbif/0.1.2\" (running a script/analysis tool)\n"
+"\"biodiversity.example.org developers@biodiversity.example.org\" (website or app)\n"
+"\"BiodiversityApp/0.9 github.com/biodiversityapp\" (website or app)\n"
+"\"ExampleAICrawler ai@example.net\" (AI crawler)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:63
+msgid "In cases where this is not possible (e.g. image links or simple cross-origin requests in Javascript), the website must instead identify itself using an `Origin` (Javascript) or `Referer` (for image links) header."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:65
+msgid "Company email addresses used in `User-Agent` headers are not considered personal data under the GDPR."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/usage.adoc:67
+#, no-wrap
+msgid "Attribution"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:70
+msgid "All open data require attribution as specified in the licence."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:72
+msgid "See the https://www.gbif.org/citation-guidelines[citation guidelines]."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/usage.adoc:74
+#, no-wrap
+msgid "Caching"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:77
+msgid "Cache data locally, and avoid making repeated requests for the same data."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:82
+msgid "Websites and mobile apps may use simple cross-origin Javascript requests, provided the site identifies itself as described above."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:84
+msgid "Rapid or numerous queries to search APIs may be rate limited, depending on our server load. If this happens, you will receive an `HTTP 429` or `HTTP 503` error, and you should reduce your query rate or use the download API."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:86
+msgid "The maximum rate changes depending on our server load; we do not guarantee any particular query rate will work. Rates are calculated per application, not per client — if you have a mobile app, this means the total traffic from all installations. For websites, this means the total for all servers and/or traffic coming directly from the browsers.  If you allow search engines to index your site, traffic they cause will also be counted."
+msgstr ""
+
+#. type: Title ==
+#: en/openapi/modules/ROOT/pages/usage.adoc:88
+#, no-wrap
+msgid "Abuse"
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:91
+msgid "Deliberate breach of these guidelines, including trying to circumvent traffic rate limiting measures and/or impersonating traffic from other clients, will result in a ban from use of our services. This includes fake or random strings as identification in the `User-Agent` header."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/usage.adoc:92
+msgid "The GBIF website at https://www.gbif.org[www.GBIF.org] is not part of the public API. Scripted use of www.GBIF.org, including scraping, bulk downloading of webpages or web page resources may be blocked without warning."
+msgstr ""
+
