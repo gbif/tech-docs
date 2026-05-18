@@ -27,7 +27,10 @@ The _measures_ of the cube will be
 
 == Generating a data cube using Microsoft Azure Databricks
 
-NOTE: This is a **prototype**, and the implementation may change throughout 2024.
+[NOTE]
+====
+This tutorial was written in early 2024.  Minor changes may be needed with the current version of DataBricks.
+====
 
 === Set up the Databricks cluster
 
@@ -37,7 +40,7 @@ Once the "Compute" cluster is created, add the cube functions library.
 
 . Choose "Compute", select your cluster and then "Libraries"
 . Click "Install new", "Maven" and use these parameters:
-** Coordinates: `org.gbif.occurrence:cube-hive:0.2.0`
+** Coordinates: `org.gbif.occurrence:cube-hive:1.0.2`
 ** Repository: `https://repository.gbif.org/content/repositories/releases`
 . Click "Install"
 
