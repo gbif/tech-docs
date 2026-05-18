@@ -17,43 +17,43 @@ Following these guidelines will avoid disrupting the service for yourself and ot
 [#scripting]
 === For scripting and analysis users
 
-_This includes users making scientific or other analyses with tools such as Python, R, Java, curl, OpenRefine, GIS tools, spreadsheets, etc._
+_This includes users making scientific or other analyses with tools such as Python, R, Java, curl, OpenRefine, GIS tools, spreadsheets, etc, and tasks such as data cleaning, name matching and so on._
 
-* Do not make thousands of requests per day to the `/v1/occurrence/search`, `/v1/occurrence/count` or `/v2/maps/*/ad-hoc` APIs.
+* Do not make tens of thousands of requests per day to the `/v1/occurrence/search`, `/v1/occurrence/count` or `/v2/maps/*/ad-hoc` APIs.
 +
 This is the most common cause of rate-limiting or blocking. *If a script will take more than 15 minutes using the occurrence search APIs it will be usually be faster and cause less load on our servers to xref:data-use::api-downloads.adoc[request a download] instead.*  This also allows for proper https://www.gbif.org/citation-guidelines[attribution and citation].  The download API accepts up to 100,000 search parameters, such as taxa or datasets.
 
-* Do not set a fake User-Agent header
+* Do not set a fake `User-Agent` header.
 
-* Avoid making requests in parallel or using multiple computers to make requests
+* Avoid making requests in parallel or using multiple computers to make requests.
 
 [#website-app]
 === For website and app developers
 
-* You must <<identification,identify>> your website or app
-* Use caching to avoid unnecessary traffic
-* You must not <<rate-limits,overload our servers>>
+* You must <<identification,identify>> your website or app.
+* Use caching to avoid unnecessary traffic.
+* You must not <<rate-limits,overload our servers>>.
 
-We do not guarantee any level of service for the API, and it is not possible to obtain an SLA.
+It is not possible to obtain an SLA for use of the GBIF API.
 
 [#ai]
 === For AI developers
 
-* You must identify your AI service
-* Bulk occurrence data must be retrieved from a https://www.gbif.org/occurrence-snapshots[cloud snapshot or monthly download].
-* The complete https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF Backbone Taxonomy] is available for download from the https://hosted-datasets.gbif.org/datasets/backbone/README.html[GBIF Taxonomy Backbone Archive]
-* Cite your use of GBIF mediated data.
+* You must <<identification,identify>> your AI service.
+* Bulk occurrence data *must* be retrieved from a https://www.gbif.org/occurrence-snapshots[cloud snapshot or monthly download].
+* The complete https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c[GBIF Backbone Taxonomy] is available for download from the https://hosted-datasets.gbif.org/datasets/backbone/README.html[GBIF Taxonomy Backbone Archive].
+* https://www.gbif.org/citation-guidelines[Cite your use] of GBIF mediated data.
 
 [#identification]
 == Identification
 
-Scripting and analysis users can usually leave the `User-Agent` as set by the tool.
+Scripting and analysis users can usually leave the `User-Agent` as set by the tool.  Please set one if the tool leaves this header empty.
 
 Others users must include an identifying `User-Agent` string with the application or domain name, and optionally a version number. You should also include a company email address or a link to the company website where we can find contact information. If we cannot contact you in case of problems, you risk being blocked without warning.
 
 .Examples of valid User-Agents
 ----
-"python-requests/00.11.22,pygbif/0.1.2" (running a script/analysis tool)
+"python-requests/00.11.22,pygbif/0.1.2" (default from a script/analysis tool)
 "biodiversity.example.org developers@biodiversity.example.org" (website or app)
 "BiodiversityApp/0.9 github.com/biodiversityapp" (website or app)
 "ExampleAICrawler ai@example.net" (AI crawler)
@@ -66,7 +66,7 @@ Company email addresses used in `User-Agent` headers are not considered personal
 [#attribution]
 == Attribution
 
-All open data require attribution as specified in the licence.
+Open data may require attribution as specified in the licence.
 
 See the https://www.gbif.org/citation-guidelines[citation guidelines].
 
@@ -75,6 +75,10 @@ See the https://www.gbif.org/citation-guidelines[citation guidelines].
 
 Cache data locally, and avoid making repeated requests for the same data.
 
+GBIF data is updated continually, but in aggregate many statistics or maps change slowly.
+
+To improve caching, limit the precision of coordinates in search queries. 4 decimal places is usually sufficient.
+
 [#rate-limits]
 == Rate limits
 
@@ -82,11 +86,11 @@ Websites and mobile apps may use simple cross-origin Javascript requests, provid
 
 Rapid or numerous queries to search APIs may be rate limited, depending on our server load. If this happens, you will receive an `HTTP 429` or `HTTP 503` error, and you should reduce your query rate or use the download API.
 
-The maximum rate changes depending on our server load; we do not guarantee any particular query rate will work. Rates are calculated per application, not per client — if you have a mobile app, this means the total traffic from all installations. For websites, this means the total for all servers and/or traffic coming directly from the browsers.  If you allow search engines to index your site, traffic they cause will also be counted.
+The maximum rate changes depending on our server load; we do not guarantee any particular query rate will work. Rates are calculated _per application_, not per client — if you have a mobile app, this means the total traffic from all installations. For websites, this means the total for all servers and/or traffic coming directly from the browsers.  If you allow search engines to index your site, traffic they cause will also be counted against your site.
 
 [#abuse]
 == Abuse
 
 Deliberate breach of these guidelines, including trying to circumvent traffic rate limiting measures and/or impersonating traffic from other clients, will result in a ban from use of our services. This includes fake or random strings as identification in the `User-Agent` header.
 
-The GBIF website at https://www.gbif.org[www.GBIF.org] is not part of the public API. Scripted use of www.GBIF.org, including scraping, bulk downloading of webpages or web page resources may be blocked without warning.
+The GBIF website at https://www.gbif.org[www.GBIF.org] and other GBIF websites including GBIF Hosted Portals are not part of the public API. Scripted use of websites, including scraping, bulk downloading of webpages or web page resources may be blocked without warning.
