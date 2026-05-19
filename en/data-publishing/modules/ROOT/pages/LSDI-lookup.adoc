@@ -1,0 +1,29 @@
+ifeval::["{env}" == "prod"] 
+
+:page-unpublish: 
+
+endif::[] 
+
+  
+
+= Processing of Taxonomic Identifiers in GBIF 
+
+  
+
+include::ROOT::partial$under-construction.adoc[] 
+
+
+The docker container indexes are built from ChecklistBank, which provides the organized taxonomic data, names, and hierarchy.
+
+In addition, stable unique identifiers for taxa from other taxonomic datasets such as Dyntaxa, IPNI, ITIS, UK Species Inventory and WoRMs are retrieved from ChecklistBank and linked to taxa in the checklist (e.g. COL XR or GBIF Backbone).
+
+This enables matching using scientificNameID, taxonID or taxonConceptID fields if these identifiers are used by data publishers.
+ 
+== Estable unique identifiers availables
+ 
+
+* Dyntaxa
+* IPNI
+* ITIS
+* UK Species Inventory 
+* WoRMS 
