@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-04-23 07:21+0000\n"
+"POT-Creation-Date: 2026-05-19 11:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -744,6 +744,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:414
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:17
 msgid ""
 "The docker container indexes are built from ChecklistBank, which provides "
 "the organized taxonomic data, names, and hierarchy."
