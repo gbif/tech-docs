@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-04-22 11:11+0000\n"
-"PO-Revision-Date: 2026-04-22 11:34\n"
+"POT-Creation-Date: 2026-05-19 11:47+0000\n"
+"PO-Revision-Date: 2026-05-19 11:56\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar_SA\n"
@@ -17,24 +17,27 @@ msgstr ""
 "X-Crowdin-File-ID: 45100\n"
 
 #. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:2
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:2
 msgid "ifeval::[\"{env}\" == \"prod\"]"
 msgstr ""
 
 #. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:6
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:6
 msgid "endif::[]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:14
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:14
+msgid "include::ROOT::partial$under-construction.adoc[]"
 msgstr ""
 
 #. type: Title =
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:9
 #, no-wrap
 msgid "Data standards "
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:14
-msgid "include::ROOT::partial$under-construction.adoc[]"
 msgstr ""
 
 #. type: Plain text

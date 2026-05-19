@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-04-23 07:21+0000\n"
-"PO-Revision-Date: 2026-04-23 07:36\n"
+"POT-Creation-Date: 2026-05-19 11:47+0000\n"
+"PO-Revision-Date: 2026-05-19 11:56\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -639,6 +639,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:414
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:17
 msgid "The docker container indexes are built from ChecklistBank, which provides the organized taxonomic data, names, and hierarchy."
 msgstr ""
 

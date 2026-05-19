@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-04-22 11:11+0000\n"
-"PO-Revision-Date: 2026-04-22 11:34\n"
+"POT-Creation-Date: 2026-05-19 11:47+0000\n"
+"PO-Revision-Date: 2026-05-19 11:56\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -47,17 +47,22 @@ msgid "xref:multimedia-publishing.adoc[Publishing multimedia]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:12
+#: en/data-publishing/modules/ROOT/nav.adoc:13
 msgid "xref:register-dataset-api.adoc[Register a dataset using the API]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:13
+#: en/data-publishing/modules/ROOT/nav.adoc:14
+msgid "xref:LSDI-lookup.adoc[Processing of Taxonomic Identifiers in GBIF **Test**]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/nav.adoc:16
 msgid "xref:local-contexts-pilot.adoc[LocalContexts Pilot]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/nav.adoc:13
+#: en/data-publishing/modules/ROOT/nav.adoc:16
 msgid "xref:local-contexts-integration.adoc[LocalContexts Integration]"
 msgstr ""
 

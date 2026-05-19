@@ -1,0 +1,89 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2026-05-19 11:47+0000\n"
+"PO-Revision-Date: 2026-05-19 11:56\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: pt-PT\n"
+"X-Crowdin-File: /main/translations/data-publishing/LSDI-lookup.pot\n"
+"X-Crowdin-File-ID: 45111\n"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:414
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:17
+msgid "The docker container indexes are built from ChecklistBank, which provides the organized taxonomic data, names, and hierarchy."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:2
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:2
+msgid "ifeval::[\"{env}\" == \"prod\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:6
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:6
+msgid "endif::[]"
+msgstr ""
+
+#. type: Title =
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:9
+#, no-wrap
+msgid "Processing of Taxonomic Identifiers in GBIF "
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:14
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:14
+msgid "include::ROOT::partial$under-construction.adoc[]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:19
+msgid "In addition, stable unique identifiers for taxa from other taxonomic datasets such as Dyntaxa, IPNI, ITIS, UK Species Inventory and WoRMs are retrieved from ChecklistBank and linked to taxa in the checklist (e.g. COL XR or GBIF Backbone)."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:21
+msgid "This enables matching using scientificNameID, taxonID or taxonConceptID fields if these identifiers are used by data publishers."
+msgstr ""
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:22
+#, no-wrap
+msgid "Estable unique identifiers availables"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:26
+msgid "Dyntaxa"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:27
+msgid "IPNI"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:28
+msgid "ITIS"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:29
+msgid "UK Species Inventory"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:29
+msgid "WoRMS"
+msgstr ""
+
