@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-05-19 11:47+0000\n"
+"POT-Creation-Date: 2026-05-20 12:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgid "endif::[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:14
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:13
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:14
 msgid "include::ROOT::partial$under-construction.adoc[]"
 msgstr ""
