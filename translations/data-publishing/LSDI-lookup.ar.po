@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-05-19 11:47+0000\n"
-"PO-Revision-Date: 2026-05-19 11:56\n"
+"POT-Creation-Date: 2026-05-20 12:02+0000\n"
+"PO-Revision-Date: 2026-05-20 12:33\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar_SA\n"
@@ -15,12 +15,6 @@ msgstr ""
 "X-Crowdin-Language: ar\n"
 "X-Crowdin-File: /main/translations/data-publishing/LSDI-lookup.pot\n"
 "X-Crowdin-File-ID: 45111\n"
-
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:414
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:17
-msgid "The docker container indexes are built from ChecklistBank, which provides the organized taxonomic data, names, and hierarchy."
-msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:2
@@ -41,49 +35,63 @@ msgid "Processing of Taxonomic Identifiers in GBIF "
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:14
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:13
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:14
 msgid "include::ROOT::partial$under-construction.adoc[]"
 msgstr ""
 
 #. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:15
+msgid "GBIF processes taxonomic identifiers that are provided on the DwC elements _scientificNameID_, _taxonID_ and _taxonConceptID_, when these identifiers belong to any of the identifier schemes available."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:17
+msgid "Currently the schemes available are:"
+msgstr ""
+
+#. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:19
-msgid "In addition, stable unique identifiers for taxa from other taxonomic datasets such as Dyntaxa, IPNI, ITIS, UK Species Inventory and WoRMs are retrieved from ChecklistBank and linked to taxa in the checklist (e.g. COL XR or GBIF Backbone)."
+msgid "https://artfakta.se/metadata/dyntaxa[Dyntaxa]: A taxonomic database of the names of Swedish organisms, contains information on current classification, recommended names and commonly used synonyms and misused names."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:20
+msgid "https://www.ipni.org/[IPNI]: The International Plant Names Index (IPNI) is a nomenclatural index of names of vascular plants published under the Code of Nomenclature for algae, fungi and plants (ICN)."
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:21
-msgid "This enables matching using scientificNameID, taxonID or taxonConceptID fields if these identifiers are used by data publishers."
+msgid "https://www.itis.gov/p[ITIS]: The Integrated Taxonomic Information System, an authoritative taxonomic information on plants, animals, fungi, and microbes of North America and the world."
 msgstr ""
 
-#. type: Title ==
+#. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:22
-#, no-wrap
-msgid "Estable unique identifiers availables"
+msgid "https://www.nhm.ac.uk/our-science/data/uk-species/index[UK Species Inventory]: A database of all UK wildlife, it provides the taxonomic foundation for most biological recording and analysis systems for the UK."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:26
-msgid "Dyntaxa"
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:23
+msgid "https://www.marinespecies.org/index.php[WoRMs]: The World Register of Marine Species (WoRMS) aim to provide an authoritative and comprehensive list of names of marine organisms, including information on synonymy."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:27
-msgid "IPNI"
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:25
+msgid "If both an identifier field and a _scientificName_ are provided, the identifier field will be used first for matching. A match will also be made using the scientificName and a comparison will be made between the two matches. If they do not agree, a https://techdocs.gbif.org/en/data-use/occurrence-issues-and-flags#taxonomic-issues[flag] will be issued in response to indicate the inconsistency, the possible flags are ‘Scientific name and ID inconsistent’."
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:28
-msgid "ITIS"
+msgid "If an identifier is provided and match the known pattern of the schemes available, but it is not found in the associated checklist a flag will be issued to indicate that it is missing, the possible flags are ‘Scientific name ID not found’, ‘Taxon concept ID not found’ and ‘Taxon ID not found’. This may indicate a poorly formatted identifier or may be caused by a newly created ID that isn’t yet known in the version of the published checklist."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:29
-msgid "UK Species Inventory"
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:31
+msgid "If an identifier is provided, but does not match the known pattern of the schemes available, a flag will be issued to indicate that it was ignored, the possible flags are ‘Taxon match scientific name ID ignored’, ‘Taxon match taxon concept ID ignored’ and ‘Taxon match taxon ID ignored’."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:29
-msgid "WoRMS"
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:33
+msgid "They detailed technical information about Taxonomic indexes is available on: https://techdocs.gbif.org/en/data-processing/taxonomy-interpretation#taxonomic-indexes[Taxonomy interpretation - Taxonomic indexes]"
 msgstr ""
 
