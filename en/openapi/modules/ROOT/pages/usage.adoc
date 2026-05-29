@@ -21,7 +21,7 @@ _This includes users making scientific or other analyses with tools such as Pyth
 
 * Do not make tens of thousands of requests per day to the `/v1/occurrence/search`, `/v1/occurrence/count` or `/v2/maps/*/ad-hoc` APIs.
 +
-This is the most common cause of rate-limiting or blocking. *If a script will take more than 15 minutes using the occurrence search APIs it will be usually be faster and cause less load on our servers to xref:data-use::api-downloads.adoc[request a download] instead.*  This also allows for proper https://www.gbif.org/citation-guidelines[attribution and citation].  The download API accepts up to 100,000 search parameters, such as taxa or datasets.
+This is the most common cause of rate-limiting or blocking. *If a script will take more than 15 minutes using the occurrence search APIs it will usually be faster and cause less load on our servers to xref:data-use::api-downloads.adoc[request a download] instead.*  This also allows for proper https://www.gbif.org/citation-guidelines[attribution and citation].  The download API accepts up to 100,000 search parameters, such as taxa or datasets.
 
 * Do not set a fake `User-Agent` header.
 
@@ -34,7 +34,7 @@ This is the most common cause of rate-limiting or blocking. *If a script will ta
 * Use caching to avoid unnecessary traffic.
 * You must not <<rate-limits,overload our servers>>.
 
-It is not possible to obtain an SLA for use of the GBIF API.
+The public GBIF API is provided without a service-level agreement (SLA). Clients should be designed to tolerate temporary rate limiting or service degradation.
 
 [#ai]
 === For AI developers
@@ -49,7 +49,7 @@ It is not possible to obtain an SLA for use of the GBIF API.
 
 Scripting and analysis users can usually leave the `User-Agent` as set by the tool.  Please set one if the tool leaves this header empty.
 
-Others users must include an identifying `User-Agent` string with the application or domain name, and optionally a version number. You should also include a company email address or a link to the company website where we can find contact information. If we cannot contact you in case of problems, you risk being blocked without warning.
+Other users must include an identifying `User-Agent` string with the application or domain name, and optionally a version number. You should also include a company or institution email address or a link to the website where we can find contact information. If we cannot contact you in case of problems, you risk being blocked without warning.
 
 .Examples of valid User-Agents
 ----
@@ -73,18 +73,18 @@ See the https://www.gbif.org/citation-guidelines[citation guidelines].
 [#caching]
 == Caching
 
-Cache data locally, and avoid making repeated requests for the same data.
+Cache data locally, and avoid making repeated requests for the same data.  Reuse search results instead of requesting them again.
 
 GBIF data is updated continually, but in aggregate many statistics or maps change slowly.
 
-To improve caching, limit the precision of coordinates in search queries. 4 decimal places is usually sufficient.
+To improve caching, limit the precision of coordinates in search queries. 4 decimal places is normally sufficient.
 
 [#rate-limits]
 == Rate limits
 
-Websites and mobile apps may use simple cross-origin Javascript requests, provided the site identifies itself as described above.
+Websites and mobile apps may use simple cross-origin JavaScript requests, provided the site identifies itself as described above.
 
-Rapid or numerous queries to search APIs may be rate limited, depending on our server load. If this happens, you will receive an `HTTP 429` or `HTTP 503` error, and you should reduce your query rate or use the download API.
+Rapid or numerous queries to search APIs may be rate limited, depending on our server load. If this happens, you will receive an `HTTP 429 Too Many Requests` or `HTTP 503 Service Unavailable` error, and you should reduce your query rate or use the download API.  Some `429` responses include a standard `Retry-After` header.
 
 The maximum rate changes depending on our server load; we do not guarantee any particular query rate will work. Rates are calculated _per application_, not per client — if you have a mobile app, this means the total traffic from all installations. For websites, this means the total for all servers and/or traffic coming directly from the browsers.  If you allow search engines to index your site, traffic they cause will also be counted against your site.
 
