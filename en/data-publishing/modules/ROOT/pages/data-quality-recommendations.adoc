@@ -255,9 +255,9 @@ Publishers who wish to share DNA reference libraries with GBIF must publish them
 |Share if available
 |===
 
-endif::[]
-
 ^*^ The publisher must provide either <<country>>, <<countryCode>> or coordinates (<<decimalLatitude>>, <<decimalLongitude>>), if known.
+
+endif::[]
 
 == Data quality requirements for sampling events
 
