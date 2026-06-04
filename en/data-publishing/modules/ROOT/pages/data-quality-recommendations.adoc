@@ -210,16 +210,16 @@ Publishers who wish to share DNA reference libraries with GBIF must publish them
 |Required
 
 |<<countryCode>>
-|Strongly recommended
-|Strongly recommended
+|Required*
+|Required*
 
 |<<decimalLatitude>>
-|Strongly recommended
-|Strongly recommended
+|Required*
+|Required*
 
 |<<decimalLongitude>>
-|Strongly recommended
-|Strongly recommended
+|Required*
+|Required*
 
 |<<geodeticDatum>>
 |Strongly recommended
@@ -242,8 +242,8 @@ Publishers who wish to share DNA reference libraries with GBIF must publish them
 |Strongly recommended
 
 |<<country>>
-|Strongly recommended
-|Strongly recommended
+|Required*
+|Required*
 
 |<<locality>>
 |Share if available
@@ -255,6 +255,8 @@ Publishers who wish to share DNA reference libraries with GBIF must publish them
 |===
 
 endif::[]
+
+^*^ The publisher must provide either <<country>>, <<countryCode>> or coordinates (<<decimalLatitude>>, <<decimalLongitude>>), if known.
 
 == Data quality requirements for sampling events
 
