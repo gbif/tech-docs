@@ -86,6 +86,10 @@ https://www.gbif.org/dataset/search?type=CHECKLIST[Checklist datasets] provide a
 
 https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the core of data published through GBIF, offering evidence of the occurrence of a species (or other taxon) at a particular place on a specified date.
 
+ifeval::["{env}" != "prod"]
+[[DSI-decision]]
+IMPORTANT: If occurrences in the dataset are based on DNA, it is required (where known) to share either <<country>>, <<countryCode>> or coordinates (<<decimalLatitude>>, <<decimalLongitude>>). 
+
 .Data quality requirements for *occurrences*
 [%autowidth,stripes=hover]
 |===
@@ -108,8 +112,8 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 |Required
 
 |<<countryCode>>
-|Strongly recommended
-|Strongly recommended
+|Strongly recommended*
+|Strongly recommended*
 
 |<<taxonRank>>
 |Strongly recommended
@@ -120,12 +124,12 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 |Strongly recommended
 
 |<<decimalLatitude>>
-|Strongly recommended
-|Strongly recommended
+|Strongly recommended*
+|Strongly recommended*
 
 |<<decimalLongitude>>
-|Strongly recommended
-|Strongly recommended
+|Strongly recommended*
+|Strongly recommended*
 
 |<<geodeticDatum>>
 |Strongly recommended
@@ -160,11 +164,12 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 |Share if available
 
 |<<country>>
-|Share if available
-|Share if available
+|Share if available*
+|Share if available*
 |===
 
-ifeval::["{env}" != "prod"]
+^*^ As specified in the xref:DSI-decision[information box above], publishers may be required to share one or more of these terms. 
+
 === Data quality requirements for DNA reference libraries
 Publishers who wish to share DNA reference libraries with GBIF must publish them as https://github.com/gbif/tech-docs/edit/main/en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc#data-quality-requirements-for-occurrences[occurrences] with the https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2024-07-11.xml[DNA-derived data extension]. A DNA reference library is any curated or computationally assembled collection of taxonomically annotated DNA sequences, derived from physical specimens or other biological sources, used as a basis for identifying or classifying unknown biological material. 
 
