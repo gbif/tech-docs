@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-06-04 14:25+0000\n"
+"POT-Creation-Date: 2026-06-04 14:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -367,7 +367,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:261
+#: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:259
 msgid ""
 "^*^ The publisher must provide either <<country>>, <<countryCode>> or "
 "coordinates (<<decimalLatitude>>, <<decimalLongitude>>), if known."
