@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-05-18 13:33+0000\n"
-"PO-Revision-Date: 2026-05-18 14:31\n"
+"POT-Creation-Date: 2026-05-29 13:42+0000\n"
+"PO-Revision-Date: 2026-05-29 13:52\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -68,7 +68,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/openapi/modules/ROOT/pages/usage.adoc:25
-msgid "This is the most common cause of rate-limiting or blocking. *If a script will take more than 15 minutes using the occurrence search APIs it will be usually be faster and cause less load on our servers to xref:data-use::api-downloads.adoc[request a download] instead.* This also allows for proper https://www.gbif.org/citation-guidelines[attribution and citation].  The download API accepts up to 100,000 search parameters, such as taxa or datasets."
+msgid "This is the most common cause of rate-limiting or blocking. *If a script will take more than 15 minutes using the occurrence search APIs it will usually be faster and cause less load on our servers to xref:data-use::api-downloads.adoc[request a download] instead.* This also allows for proper https://www.gbif.org/citation-guidelines[attribution and citation].  The download API accepts up to 100,000 search parameters, such as taxa or datasets."
 msgstr ""
 
 #. type: Plain text
@@ -104,7 +104,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/openapi/modules/ROOT/pages/usage.adoc:38
-msgid "It is not possible to obtain an SLA for use of the GBIF API."
+msgid "The public GBIF API is provided without a service-level agreement (SLA). Clients should be designed to tolerate temporary rate limiting or service degradation."
 msgstr ""
 
 #. type: Title ===
@@ -146,7 +146,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/openapi/modules/ROOT/pages/usage.adoc:53
-msgid "Others users must include an identifying `User-Agent` string with the application or domain name, and optionally a version number. You should also include a company email address or a link to the company website where we can find contact information. If we cannot contact you in case of problems, you risk being blocked without warning."
+msgid "Other users must include an identifying `User-Agent` string with the application or domain name, and optionally a version number. You should also include a company or institution email address or a link to the website where we can find contact information. If we cannot contact you in case of problems, you risk being blocked without warning."
 msgstr ""
 
 #. type: Block title
@@ -198,7 +198,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/openapi/modules/ROOT/pages/usage.adoc:77
-msgid "Cache data locally, and avoid making repeated requests for the same data."
+msgid "Cache data locally, and avoid making repeated requests for the same data.  Reuse search results instead of requesting them again."
 msgstr ""
 
 #. type: Plain text
@@ -208,17 +208,17 @@ msgstr ""
 
 #. type: Plain text
 #: en/openapi/modules/ROOT/pages/usage.adoc:81
-msgid "To improve caching, limit the precision of coordinates in search queries. 4 decimal places is usually sufficient."
+msgid "To improve caching, limit the precision of coordinates in search queries. 4 decimal places is normally sufficient."
 msgstr ""
 
 #. type: Plain text
 #: en/openapi/modules/ROOT/pages/usage.adoc:86
-msgid "Websites and mobile apps may use simple cross-origin Javascript requests, provided the site identifies itself as described above."
+msgid "Websites and mobile apps may use simple cross-origin JavaScript requests, provided the site identifies itself as described above."
 msgstr ""
 
 #. type: Plain text
 #: en/openapi/modules/ROOT/pages/usage.adoc:88
-msgid "Rapid or numerous queries to search APIs may be rate limited, depending on our server load. If this happens, you will receive an `HTTP 429` or `HTTP 503` error, and you should reduce your query rate or use the download API."
+msgid "Rapid or numerous queries to search APIs may be rate limited, depending on our server load. If this happens, you will receive an `HTTP 429 Too Many Requests` or `HTTP 503 Service Unavailable` error, and you should reduce your query rate or use the download API.  Some `429` responses include a standard `Retry-After` header."
 msgstr ""
 
 #. type: Plain text
