@@ -1,0 +1,144 @@
+= DNA sequence sanitisation
+
+GBIF sanitises the raw DNA/RNA sequences published in occurrence records before they are indexed and made searchable. The goal is to produce a normalised, comparable sequence together with a set of quality metrics, while keeping every transformation transparent and reproducible.
+
+Each occurrence sequence is passed through a fixed, ordered pipeline. Every step is deterministic and configurable, and the original raw sequence is never altered in the source data — only a cleaned copy is derived for indexing. The cleaned sequence is hashed (MD5) to produce a stable `nucleotideSequenceID` used to group identical sequences across records.
+
+== Pipeline stages
+
+The pipeline applies the following stages in order. Each stage takes the output of the previous stage as its input.
+
+[cols="1,3,3",options="header"]
+|===
+| Stage | Description | Example
+
+| A | Normalise whitespace and convert to upper case. All whitespace characters are removed and the sequence is upper-cased. | `"acgt acgt"` → `"ACGTACGT"`
+| B | Detect natural language. The sequence is checked for configured marker words (for example primer or read-merging labels). A match flags the record but does not modify the sequence. | `"ACGTUNMERGEDACGT"` → flagged
+| C | Remove gaps. Characters matching the gap pattern (`-` and `.`) are removed. | `"ACGT-ACGT..ACGT"` → `"ACGTACGTACGT"`
+| D | RNA to DNA conversion. Every `U` is replaced with `T`. | `"ACGU"` → `"ACGT"`
+| E | Question marks to N. Every `?` is replaced with `N`. | `"ACGT?ACGT"` → `"ACGTNACGT"`
+| F | Trim to anchors. Leading and trailing characters are removed until a run of valid nucleotide "anchor" characters is found at each end. | `"THISISMYGBIFSEQUENCEACGTACGTACGTNNNNNENDOFSEQUENCE"` → `"ACGTACGTACGT"`
+| G | Cap N-runs. Long runs of `N` are shortened to a fixed maximum length. | `"ACGTACGTNNNNNNNNNNNACGTACGT"` → `"ACGTACGTNNNNNACGTACGT"`
+|===
+
+=== Stage A — Normalise whitespace and case
+
+All whitespace (spaces, tabs, line breaks) is stripped from the raw sequence and the result is converted to upper case. If any whitespace was present, this is recorded and contributes to the `gapsOrWhitespaceRemoved` flag.
+
+=== Stage B — Detect natural language
+
+Some publishers embed descriptive text or laboratory labels (such as primer names or read-merging status) inside the sequence field. The sequence is tested against a configurable regular expression of marker words. If a marker is found, `naturalLanguageDetected` is set to `true`. This stage does not change the sequence, but a detected marker causes the record to be treated as invalid (see <<Validity>>).
+
+=== Stage C — Remove gaps
+
+Alignment gap characters — `-` and `.` — are removed. If any gap was present, this contributes to the `gapsOrWhitespaceRemoved` flag.
+
+=== Stage D — RNA to DNA conversion
+
+RNA sequences are normalised to DNA by replacing every `U` (uracil) with `T` (thymine), so that RNA and DNA representations of the same sequence collapse to a single form.
+
+=== Stage E — Question marks to N
+
+Question marks, sometimes used to denote an unknown base, are replaced with the IUPAC ambiguity code `N`.
+
+=== Stage F — Trim to anchors
+
+Sequences are frequently padded at the ends with non-nucleotide text, primer remnants, or ambiguous bases. This stage trims both ends back to a recognisable run of nucleotides:
+
+* *Front trim:* the sequence is scanned for the first run of at least `anchor_minrun` consecutive anchor characters (`anchor_chars`). Everything before that run is discarded. If no such run exists anywhere in the sequence, the sequence is considered unusable and is wiped to an empty string.
+* *Back trim:* the sequence is then scanned for the last such anchor run, and everything after it is discarded.
+
+If either end is trimmed (or the sequence is wiped), `endsTrimmed` is set to `true`.
+
+=== Stage G — Cap N-runs
+
+Long stretches of `N` carry no information and can dominate similarity comparisons. Any run of `N` of length `nrun_cap_from` or greater is reduced to `nrun_cap_to` characters. The number of runs that were shortened is reported as `nRunsCapped`.
+
+== Quality metrics
+
+All metrics are calculated on the final cleaned sequence (the output of stage G).
+
+[cols="2,1,4",options="header"]
+|===
+| Field | Type | Description
+
+| `sequence` | string | The final cleaned sequence. Set to `null` when the record is invalid.
+| `sequenceLength` | integer | Length of the cleaned sequence in bytes.
+| `nonIupacFraction` | float | Fraction of characters that are not valid IUPAC DNA codes.
+| `nonACGTNFraction` | float | Fraction of characters that are ambiguous IUPAC codes (anything other than A, C, G, T or N).
+| `nFraction` | float | Fraction of characters that are `N`.
+| `nRunsCapped` | integer | Number of N-runs that were shortened in stage G.
+| `gcContent` | float | GC content, calculated over A/C/G/T bases only.
+| `naturalLanguageDetected` | boolean | Whether natural-language marker words were found (stage B).
+| `endsTrimmed` | boolean | Whether either end of the sequence was trimmed (stage F).
+| `gapsOrWhitespaceRemoved` | boolean | Whether any whitespace (stage A) or gap characters (stage C) were removed.
+| `nucleotideSequenceID` | string | MD5 hash of the final cleaned sequence, used for indexing and grouping. `null` when the record is invalid.
+| `invalid` | boolean | Whether the record is considered invalid (see below).
+|===
+
+NOTE: The fraction metrics are `null` when the cleaned sequence is empty, and `gcContent` is `null` when the sequence contains no A/C/G/T bases.
+
+[#Validity]
+== Validity
+
+A record is flagged as `invalid` when either of the following is true:
+
+* `nonIupacFraction` is greater than `0` — the cleaned sequence still contains characters that are not valid IUPAC DNA codes, or
+* `naturalLanguageDetected` is `true` — natural-language marker words were found.
+
+When a record is invalid, both `sequence` and `nucleotideSequenceID` are set to `null`, so that unusable sequences are not indexed. The quality metrics are still reported, allowing the reason for invalidity to be inspected.
+
+== Configuration
+
+The pipeline is driven by a small set of configuration parameters, allowing the thresholds and character sets to be tuned without changing the logic.
+
+[source,yaml]
+----
+anchor_chars: "ACGTU"        # Valid anchor characters used when trimming ends
+anchor_minrun: 8             # Minimum consecutive anchors required to define an end
+gap_regex: "[-\\.]"          # Characters removed as gaps
+natural_language_regex: "REVERSE|REV|FWD|FORWARD|MERGED|UNMERGED"  # Marker words
+iupac_rna: "ACGTURYSWKMBDHVN"  # Valid IUPAC RNA codes
+iupac_dna: "ACGTRYSWKMBDHVN"   # Valid IUPAC DNA codes (used for nonIupacFraction)
+nrun_cap_from: 6             # Cap N-runs of this length or longer
+nrun_cap_to: 5               # ...down to this length
+----
+
+== Worked example
+
+Given the raw input `"ACGT-ACGT  NNNNNNNNNN ACGT"`:
+
+* Stage A removes the whitespace and upper-cases → `"ACGT-ACGTNNNNNNNNNNACGT"` (whitespace removed)
+* Stage C removes the gap → `"ACGTACGTNNNNNNNNNNACGT"` (gaps removed)
+* Stages D and E make no change (no `U` or `?`)
+* Stage F finds anchor runs at both ends and leaves the sequence unchanged
+* Stage G caps the run of ten `N` down to five → `"ACGTACGTNNNNNACGT"`
+
+The result has `sequenceLength` 17, `gcContent` 0.5, `nRunsCapped` 1, and `gapsOrWhitespaceRemoved` `true`.
+
+== Example API response
+
+The sanitised sequence and its metrics are delivered through the GBIF occurrence API as a `nucleotideSequence` array on each occurrence record. The array can also be used as a search filter, for example https://api.gbif.org/v1/occurrence/search?nucleotideSequence.invalid=false[`nucleotideSequence.invalid=false`] to return only records with at least one valid sequence.
+
+[source,json]
+----
+"nucleotideSequence": [
+  {
+    "nucleotideSequenceID": "a3ebee35f7fc2883cf68b22c9e9f6ca4",
+    "targetGene": "COI",
+    "sequence": "CGTTATATTTTTTATTAGGGAGATGATCTGCGATAATAGGGACGGCTATGAGAGTTTTAATTCGGGTGGAGTTGGGGAGAACGGGAAGATTAATCGGGGATGATCATTTATATAATGTTGTTGTGACTGCTCATGCTTTAGTGATGATTTTTTTTATAGTTATGCCTATCTTAATTGGGGGATTTGGAAATTGGCTGGTTCCTTTAATATTGGGTGCACCGGATATAGCTTTTCCTCGTATGAATAACTTAAGATTTTGGTTATTACCTTTTTCAATAATGTTGTTGTTAATGTCTTCTATAATTGAGACAGGAGTGGGGGCAGGGTGGACTATTTATCCGCCTTTAGCCGGGTTGGAGGGGCATGGAGGAGTAAGTATGGATTTAGCGATTTTTTCATTACACTTGGCTGGGGCTTCATCTATTATGGGGGCTATTAATTTTATTTGTACTATTTTAAACATACGAATAGAGGGAATGACTTTAGATAAGATTCCTTTGTTTGTTTGGTCAGTGCTTATTACTGCAGTCTTATTGTTATTGTCATTACCAGTATTGGCGGGGGCTATTACTATACTTTTGACTGATCGTAATTTTAATACATCTTTTTTTGATCCGGCAGGTGGAGGAGATCCTGTGTTGTTTCAACATTTATT",
+    "sequenceLength": 655,
+    "gcContent": 0.37251908396946565,
+    "nonIupacFraction": 0.0,
+    "nonACGTNFraction": 0.0,
+    "nFraction": 0.0,
+    "nRunsCapped": 0,
+    "naturalLanguageDetected": false,
+    "endsTrimmed": false,
+    "gapsOrWhitespaceRemoved": false,
+    "invalid": false
+  }
+]
+----
+
+NOTE: The `targetGene` field is not produced by the sanitisation pipeline. It is the interpreted value of the publisher-supplied target gene, normalised against the GBIF https://api.gbif.org/v1/vocabularies/target_gene[target gene vocabulary]. All other fields are as described above.

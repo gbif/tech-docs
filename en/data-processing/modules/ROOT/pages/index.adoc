@@ -97,3 +97,9 @@ endif::[]
 ==== Type status
 
 The type status of a specimen is interpreted from `dwc:typeStatus` using the https://github.com/gbif/parsers/blob/master/src/main/java/org/gbif/common/parsers/TypeStatusParser.java[TypeStatusParser] according to our https://registry.gbif.org/vocabulary/TypeStatus[type status vocabulary].
+
+ifeval::["{env}" != "prod"]
+=== DNA sequence sanitisation
+
+Occurrence records that carry DNA or RNA sequences have those sequences sanitised before indexing, producing a normalised sequence together with a set of quality metrics. See the xref:sequence-sanitisation.adoc[DNA sequence sanitisation] page for the cleaning pipeline and the metrics it reports.
+endif::[]
