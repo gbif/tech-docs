@@ -1,6 +1,6 @@
-= DNA sequence sanitisation
+= DNA sequence sanitization
 
-GBIF sanitises the raw DNA/RNA sequences published in occurrence records before they are indexed and made searchable. The goal is to produce a normalised, comparable sequence together with a set of quality metrics, while keeping every transformation transparent and reproducible.
+GBIF sanitizes the raw DNA/RNA sequences published in occurrence records before they are indexed and made searchable. The goal is to produce a normalised, comparable sequence together with a set of quality metrics, while keeping every transformation transparent and reproducible.
 
 Each occurrence sequence is passed through a fixed, ordered pipeline. Every step is deterministic and configurable, and the original raw sequence is never altered in the source data — only a cleaned copy is derived for indexing. The cleaned sequence is hashed (MD5) to produce a stable `nucleotideSequenceID` used to group identical sequences across records.
 
@@ -81,7 +81,7 @@ NOTE: The fraction metrics are `null` when the cleaned sequence is empty, and `g
 [#Validity]
 == Sequence flags and validity
 
-Sanitisation records a set of flags describing what happened during cleaning (for example whether the ends were trimmed or gaps removed) and whether the result is usable. A sequence is flagged `invalid` when, after cleaning, it still contains characters that are not valid IUPAC DNA codes (`nonIupacFraction` > 0) or when natural language is detected. Invalid sequences are not indexed: both `sequence` and `nucleotideSequenceID` are set to `null`, while the quality metrics are still reported so the reason can be inspected.
+Sanitization records a set of flags describing what happened during cleaning (for example whether the ends were trimmed or gaps removed) and whether the result is usable. A sequence is flagged `invalid` when, after cleaning, it still contains characters that are not valid IUPAC DNA codes (`nonIupacFraction` > 0) or when natural language is detected. Invalid sequences are not indexed: both `sequence` and `nucleotideSequenceID` are set to `null`, while the quality metrics are still reported so the reason can be inspected.
 
 The individual flags and their definitions are documented alongside GBIF's other occurrence flags — see xref:data-use::occurrence-issues-and-flags.adoc#sequence-issues[Sequence issues].
 
@@ -115,7 +115,7 @@ The result has `sequenceLength` 17, `gcContent` 0.5, `nRunsCapped` 1, and `gapsO
 
 == Example API response
 
-The sanitised sequence and its metrics are delivered through the GBIF occurrence API as a `nucleotideSequence` array on each occurrence record. The array can also be used as a search filter, for example https://api.gbif.org/v1/occurrence/search?nucleotideSequence.invalid=false[`nucleotideSequence.invalid=false`] to return only records with at least one valid sequence.
+The sanitized sequence and its metrics are delivered through the GBIF occurrence API as a `nucleotideSequence` array on each occurrence record. The array can also be used as a search filter, for example https://api.gbif.org/v1/occurrence/search?nucleotideSequence.invalid=false[`nucleotideSequence.invalid=false`] to return only records with at least one valid sequence.
 
 [source,json]
 ----
