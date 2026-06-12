@@ -43,12 +43,12 @@ Question marks, sometimes used to denote an unknown base, are replaced with the 
 
 === Stage F — Trim to anchors
 
-Sequences are frequently padded at the ends with non-nucleotide text, primer remnants, or ambiguous bases. This stage trims both ends back to a recognisable run of nucleotides:
+Sequences are sometimes padded at the ends with non-nucleotide text, primer remnants, or ambiguous bases. This stage trims both ends back to a recognisable run of nucleotides:
 
-* *Front trim:* the sequence is scanned for the first run of at least `anchor_minrun` consecutive anchor characters (`anchor_chars`). Everything before that run is discarded. If no such run exists anywhere in the sequence, the sequence is considered unusable and is wiped to an empty string.
-* *Back trim:* the sequence is then scanned for the last such anchor run, and everything after it is discarded.
+* *Front trim:* the sequence is scanned for the first run of at least `anchor_minrun` consecutive anchor characters (`anchor_chars`). Everything before that run is discarded. If no such run exists anywhere in the sequence, the sequence is considered unusable and is set to an empty string.
+* *Back trim:* the sequence is then scanned for the last anchor run, and everything after it is discarded.
 
-If either end is trimmed (or the sequence is wiped), `endsTrimmed` is set to `true`.
+If either end is trimmed (or the sequence is set to an empty string), `endsTrimmed` is set to `true`.
 
 === Stage G — Cap N-runs
 
@@ -104,7 +104,7 @@ nrun_cap_from: 6             # Cap N-runs of this length or longer
 nrun_cap_to: 5               # ...down to this length
 ----
 
-== Worked example
+== Example
 
 Given the raw input `"ACGT-ACGT  NNNNNNNNNN ACGT"`:
 
