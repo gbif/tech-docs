@@ -1,6 +1,6 @@
 * xref:clustering-occurrences.adoc[]
 ifeval::["{env}" != "prod"]
-* xref:sequence-sanitisation.adoc[]
+* xref:sequence-sanitization.adoc[]
 endif::[]
 * xref:temporal-interpretation.adoc[]
 ifeval::["{env}" != "prod"]
