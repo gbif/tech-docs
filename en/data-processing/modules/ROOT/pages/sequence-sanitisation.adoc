@@ -79,14 +79,11 @@ All metrics are calculated on the final cleaned sequence (the output of stage G)
 NOTE: The fraction metrics are `null` when the cleaned sequence is empty, and `gcContent` is `null` when the sequence contains no A/C/G/T bases.
 
 [#Validity]
-== Validity
+== Sequence flags and validity
 
-A record is flagged as `invalid` when either of the following is true:
+Sanitisation records a set of flags describing what happened during cleaning (for example whether the ends were trimmed or gaps removed) and whether the result is usable. A sequence is flagged `invalid` when, after cleaning, it still contains characters that are not valid IUPAC DNA codes (`nonIupacFraction` > 0) or when natural language is detected. Invalid sequences are not indexed: both `sequence` and `nucleotideSequenceID` are set to `null`, while the quality metrics are still reported so the reason can be inspected.
 
-* `nonIupacFraction` is greater than `0` — the cleaned sequence still contains characters that are not valid IUPAC DNA codes, or
-* `naturalLanguageDetected` is `true` — natural-language marker words were found.
-
-When a record is invalid, both `sequence` and `nucleotideSequenceID` are set to `null`, so that unusable sequences are not indexed. The quality metrics are still reported, allowing the reason for invalidity to be inspected.
+The individual flags and their definitions are documented alongside GBIF's other occurrence flags — see xref:data-use::occurrence-issues-and-flags.adoc#sequence-issues[Sequence issues].
 
 == Configuration
 
