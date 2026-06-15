@@ -107,23 +107,27 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 |Strongly recommended
 |Required
 
+|<<country>>
+|Conditionally required
+|Conditionally required
+
 |<<countryCode>>
-|Strongly recommended
-|Strongly recommended
+|Conditionally required
+|Conditionally required
+
+|<<decimalLatitude>>
+|Conditionally required
+|Conditionally required
+
+|<<decimalLongitude>>
+|Conditionally required
+|Conditionally required
 
 |<<taxonRank>>
 |Strongly recommended
 |Strongly recommended
 
 |<<kingdom>>
-|Strongly recommended
-|Strongly recommended
-
-|<<decimalLatitude>>
-|Strongly recommended
-|Strongly recommended
-
-|<<decimalLongitude>>
 |Strongly recommended
 |Strongly recommended
 
@@ -159,9 +163,6 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 |Share if available
 |Share if available
 
-|<<country>>
-|Share if available
-|Share if available
 |===
 
 
@@ -211,20 +212,20 @@ Publishers who wish to share DNA reference libraries with GBIF must publish them
 |Required
 
 |<<country>>
-|Required*
-|Required*
+|Conditionally required
+|Conditionally required
 
 |<<countryCode>>
-|Required*
-|Required*
+|Conditionally required
+|Conditionally required
 
 |<<decimalLatitude>>
-|Required*
-|Required*
+|Conditionally required
+|Conditionally required
 
 |<<decimalLongitude>>
-|Required*
-|Required*
+|Conditionally required
+|Conditionally required
 
 |<<geodeticDatum>>
 |Strongly recommended
@@ -254,8 +255,6 @@ Publishers who wish to share DNA reference libraries with GBIF must publish them
 |Share if available
 |Share if available
 |===
-
-^*^ The publisher must provide either <<country>>, <<countryCode>> or coordinates (<<decimalLatitude>>, <<decimalLongitude>>), if known.
 
 endif::[]
 
@@ -289,12 +288,12 @@ https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Sampling-event datasets]
 |Required
 
 |<<sampleSizeUnit>>
-| Strongly recommended
+|Strongly recommended
 |Required
 
 |<<countryCode>>
-|Strongly recommended
-|Strongly recommended
+|Conditionally required
+|Conditionally required
 
 |<<parentEventID>>
 |Strongly recommended
@@ -638,16 +637,22 @@ endif::[]
 
 == Status [[Status]]
 
-=== Required information
+=== Required 
 
-The terms constitute the minimum formal requirements for publishing an occurrence dataset. GBIF will not accept a dataset without these terms and will not index the records. While these items are mandatory for publishing the dataset, they are only the starting point. The usefulness of the published data will still be severely limited unless additional information is supplied.
+The terms constitute the minimum formal requirements for publishing an occurrence dataset. GBIF will not accept a dataset without these terms and will not index the records. While these items are mandatory for publishing the dataset, they are only the starting point. The usefulness of the published data will remain severely limited unless additional information is provided.
 
-=== Strongly recommended information
+=== Conditionally required 
+
+The term(s) may be required if certain conditions are met. For example:
+
+- At least one of either <<country>>, <<countryCode>> or coordinates (<<decimalLatitude>>, <<decimalLongitude>>) must be shared, if known, if the record is based on DNA evidence, to comply with the Convention on Biological Diversity https://www.cbd.int/doc/decisions/cop-16/cop-16-dec-02-en.pdf[decision] on digital sequence information (DSI) on genetic resources. 
+
+=== Strongly recommended 
 
 In addition to the mandatory terms, GBIF strongly recommends completing several more fields that help improve the usefulness of the dataset:
 
 * some information supports the integration into global data resources and prevents ambiguity, e.g. in matching scientific names that could apply to more than one organism (homonyms) to the correct place within the backbone taxonomy
-* more precise geo-location data (coordinates) significantly increase the usefulness of the data for a wide range of use cases
+* more precise geo-location data (coordinates) significantly increases the usefulness of the data for a wide range of use cases
 * additional qualifiers for some data elements, e.g. coordinates, support the interpretation of those elements and help users to better estimate their usefulness for a given data use case
 * some data redundancy supports quality control and error detection (e.g. testing country codes against coordinates where both are supplied)
 * last but not least, the richer the spectrum of available information of a dataset is, the more potential usage areas it becomes available for, meaning the dataset will be more widely accessible and used, and cited more often
