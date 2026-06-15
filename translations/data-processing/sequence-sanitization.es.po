@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-06-15 07:05+0000\n"
-"PO-Revision-Date: 2026-06-15 07:15\n"
+"POT-Creation-Date: 2026-06-15 09:50+0000\n"
+"PO-Revision-Date: 2026-06-15 10:35\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -301,6 +301,6 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:141
-msgid "The `targetGene` field is not produced by the sanitisation pipeline. It is the interpreted value of the publisher-supplied target gene, normalised against the GBIF https://api.gbif.org/v1/vocabularies/target_gene[target gene vocabulary]. All other fields are as described above."
+msgid "The `targetGene` field is not produced by the sanitisation pipeline. It is the interpreted value of the publisher-supplied target gene, normalised against the GBIF https://registry.gbif.org/vocabulary/target_gene[target gene vocabulary] (https://api.gbif.org/v1/vocabularies/target_gene[API]). All other fields are as described above."
 msgstr ""
 
