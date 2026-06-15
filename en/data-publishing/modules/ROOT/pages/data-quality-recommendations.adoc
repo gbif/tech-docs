@@ -210,6 +210,10 @@ Publishers who wish to share DNA reference libraries with GBIF must publish them
 |Required
 |Required
 
+|<<country>>
+|Required*
+|Required*
+
 |<<countryCode>>
 |Required*
 |Required*
@@ -241,10 +245,6 @@ Publishers who wish to share DNA reference libraries with GBIF must publish them
 |<<higherClassification>>
 |Strongly recommended
 |Strongly recommended
-
-|<<country>>
-|Required*
-|Required*
 
 |<<locality>>
 |Share if available
