@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-04-14 09:18+0000\n"
-"PO-Revision-Date: 2026-04-14 09:34\n"
+"POT-Creation-Date: 2026-06-15 07:05+0000\n"
+"PO-Revision-Date: 2026-06-15 07:15\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -309,7 +309,19 @@ msgid "Type status"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/index.adoc:99
+#: en/data-processing/modules/ROOT/pages/index.adoc:100
 msgid "The type status of a specimen is interpreted from `dwc:typeStatus` using the https://github.com/gbif/parsers/blob/master/src/main/java/org/gbif/common/parsers/TypeStatusParser.java[TypeStatusParser] according to our https://registry.gbif.org/vocabulary/TypeStatus[type status vocabulary]."
+msgstr ""
+
+#. type: Title =
+#: en/data-processing/modules/ROOT/pages/index.adoc:102
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:1
+#, no-wrap
+msgid "DNA sequence sanitization"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/index.adoc:105
+msgid "Occurrence records that carry DNA or RNA sequences have sequences sanitized before indexing, producing a normalised sequence together with a set of quality metrics. See the xref:sequence-sanitization.adoc[DNA sequence sanitization] page for the cleaning pipeline and the metrics it reports."
 msgstr ""
 
