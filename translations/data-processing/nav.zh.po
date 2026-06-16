@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-03-03 13:14+0000\n"
-"PO-Revision-Date: 2026-03-03 14:19\n"
+"POT-Creation-Date: 2026-06-15 07:05+0000\n"
+"PO-Revision-Date: 2026-06-15 07:15\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -17,27 +17,32 @@ msgstr ""
 "X-Crowdin-File-ID: 43352\n"
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:2
+#: en/data-processing/modules/ROOT/nav.adoc:3
 msgid "xref:clustering-occurrences.adoc[]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/nav.adoc:4
+msgid "xref:sequence-sanitization.adoc[]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/nav.adoc:7
 msgid "xref:temporal-interpretation.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:5
+#: en/data-processing/modules/ROOT/nav.adoc:8
 msgid "xref:vocabularies-interpretation.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:8
+#: en/data-processing/modules/ROOT/nav.adoc:11
 msgid "xref:taxonomy-interpretation.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:9
+#: en/data-processing/modules/ROOT/nav.adoc:12
 msgid "xref:events-processing.adoc[]"
 msgstr ""
 
