@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-06-15 09:50+0000\n"
+"POT-Creation-Date: 2026-06-16 10:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,13 @@ msgstr ""
 
 #. type: Title =
 #: en/data-processing/modules/ROOT/pages/index.adoc:102
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:1
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:3
 #, no-wrap
 msgid "DNA sequence sanitization"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:4
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:6
 msgid ""
 "GBIF sanitizes the raw DNA/RNA sequences published in occurrence records "
 "before they are indexed and made searchable. The goal is to produce a "
@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:6
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:8
 msgid ""
 "Each occurrence sequence is passed through a fixed, ordered pipeline. Every "
 "step is deterministic and configurable, and the original raw sequence is "
@@ -43,20 +43,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:7
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:9
 #, no-wrap
 msgid "Pipeline stages"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:10
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:12
 msgid ""
 "The pipeline applies the following stages in order. Each stage takes the "
 "output of the previous stage as its input."
 msgstr ""
 
 #. type: Table
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:22
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:24
 #, no-wrap
 msgid ""
 "| Stage | Description | Example\n"
@@ -71,13 +71,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:24
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:26
 #, no-wrap
 msgid "Stage A — Normalise whitespace and case"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:27
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:29
 msgid ""
 "All whitespace (spaces, tabs, line breaks) is stripped from the raw sequence "
 "and the result is converted to upper case. If any whitespace was present, "
@@ -85,13 +85,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:28
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:30
 #, no-wrap
 msgid "Stage B — Detect natural language"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:31
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:33
 msgid ""
 "Some publishers embed descriptive text or laboratory labels (such as primer "
 "names or read-merging status) inside the sequence field. The sequence is "
@@ -102,26 +102,26 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:32
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:34
 #, no-wrap
 msgid "Stage C — Remove gaps"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:35
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:37
 msgid ""
 "Alignment gap characters — `-` and `.` — are removed. If any gap was "
 "present, this contributes to the `gapsOrWhitespaceRemoved` flag."
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:36
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:38
 #, no-wrap
 msgid "Stage D — RNA to DNA conversion"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:39
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:41
 msgid ""
 "RNA sequences are normalised to DNA by replacing every `U` (uracil) with `T` "
 "(thymine), so that RNA and DNA representations of the same sequence collapse "
@@ -129,26 +129,26 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:40
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:42
 #, no-wrap
 msgid "Stage E — Question marks to N"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:43
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:45
 msgid ""
 "Question marks, sometimes used to denote an unknown base, are replaced with "
 "the IUPAC ambiguity code `N`."
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:44
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:46
 #, no-wrap
 msgid "Stage F — Trim to anchors"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:47
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:49
 msgid ""
 "Sequences are sometimes padded at the ends with non-nucleotide text, primer "
 "remnants, or ambiguous bases. This stage trims both ends back to a "
@@ -156,32 +156,32 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:49
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:51
 #, no-wrap
 msgid "*Front trim:* the sequence is scanned for the first run of at least `anchor_minrun` consecutive anchor characters (`anchor_chars`). Everything before that run is discarded. If no such run exists anywhere in the sequence, the sequence is considered unusable and is set to an empty string.\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:50
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:52
 #, no-wrap
 msgid "*Back trim:* the sequence is then scanned for the last anchor run, and everything after it is discarded.\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:52
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:54
 msgid ""
 "If either end is trimmed (or the sequence is set to an empty string), "
 "`endsTrimmed` is set to `true`."
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:53
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:55
 #, no-wrap
 msgid "Stage G — Cap N-runs"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:56
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:58
 msgid ""
 "Long stretches of `N` carry no information and can dominate similarity "
 "comparisons. Any run of `N` of length `nrun_cap_from` or greater is reduced "
@@ -190,20 +190,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:57
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:59
 #, no-wrap
 msgid "Quality metrics"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:60
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:62
 msgid ""
 "All metrics are calculated on the final cleaned sequence (the output of "
 "stage G)."
 msgstr ""
 
 #. type: Table
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:77
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:79
 #, no-wrap
 msgid ""
 "| Field | Type | Description\n"
@@ -223,20 +223,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:80
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:82
 msgid ""
 "The fraction metrics are `null` when the cleaned sequence is empty, and "
 "`gcContent` is `null` when the sequence contains no A/C/G/T bases."
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:82
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:84
 #, no-wrap
 msgid "Sequence flags and validity"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:85
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:87
 msgid ""
 "Sanitization records a set of flags describing what happened during cleaning "
 "(for example whether the ends were trimmed or gaps removed) and whether the "
@@ -249,7 +249,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:87
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:89
 msgid ""
 "The individual flags and their definitions are documented alongside GBIF's "
 "other occurrence flags — see xref:data-use::occurrence-issues-and-flags."
@@ -257,20 +257,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:88
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:90
 #, no-wrap
 msgid "Configuration"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:91
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:93
 msgid ""
 "The pipeline is driven by a small set of configuration parameters, allowing "
 "the thresholds and character sets to be tuned without changing the logic."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:102
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:104
 #, no-wrap
 msgid ""
 "anchor_chars: \"ACGTU\"        # Valid anchor characters used when trimming ends\n"
@@ -284,59 +284,59 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:104
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:106
 #, no-wrap
 msgid "Example"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:107
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:109
 msgid "Given the raw input `\"ACGT-ACGT NNNNNNNNNN ACGT\"`:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:109
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:111
 msgid ""
 "Stage A removes the whitespace and upper-cases → `\"ACGT-"
 "ACGTNNNNNNNNNNACGT\"` (whitespace removed)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:110
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:112
 msgid "Stage C removes the gap → `\"ACGTACGTNNNNNNNNNNACGT\"` (gaps removed)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:111
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:113
 msgid "Stages D and E make no change (no `U` or `?`)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:112
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:114
 msgid ""
 "Stage F finds anchor runs at both ends and leaves the sequence unchanged"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:113
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:115
 msgid "Stage G caps the run of ten `N` down to five → `\"ACGTACGTNNNNNACGT\"`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:115
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:117
 msgid ""
 "The result has `sequenceLength` 17, `gcContent` 0.5, `nRunsCapped` 1, and "
 "`gapsOrWhitespaceRemoved` `true`."
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:116
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:118
 #, no-wrap
 msgid "Example API response"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:119
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:121
 msgid ""
 "The sanitized sequence and its metrics are delivered through the GBIF "
 "occurrence API as a `nucleotideSequence` array on each occurrence record. "
@@ -347,7 +347,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:139
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:141
 #, no-wrap
 msgid ""
 "\"nucleotideSequence\": [\n"
@@ -370,7 +370,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:141
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:144
 msgid ""
 "The `targetGene` field is not produced by the sanitisation pipeline. It is "
 "the interpreted value of the publisher-supplied target gene, normalised "
