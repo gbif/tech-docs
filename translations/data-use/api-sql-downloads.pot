@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-04-09 11:24+0000\n"
+"POT-Creation-Date: 2026-06-17 10:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgid "A basic example using the _curl_ command to make the request:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:63
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:61
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:62
 msgid "You can then download the resulting file:"
 msgstr ""
