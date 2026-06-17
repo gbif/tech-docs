@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-01-14 14:19+0000\n"
-"PO-Revision-Date: 2026-04-08 12:55\n"
+"POT-Creation-Date: 2026-06-17 10:00+0000\n"
+"PO-Revision-Date: 2026-06-17 10:31\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -18,45 +18,9 @@ msgstr ""
 
 #. type: Title ==
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:352
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:79
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:80
 #, no-wrap
 msgid "Occurrence download predicates"
-msgstr ""
-
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:377
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:404
-msgid "Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. By default, the GBIF Backbone will be used if no `checklistKey` is supplied."
-msgstr ""
-
-#. type: delimited block -
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:404
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:431
-#, no-wrap
-msgid "{\n"
-"  \"creator\": \"userName\",\n"
-"  \"notificationAddresses\": [\n"
-"    \"userEmail@example.org\"\n"
-"  ],\n"
-"  \"sendNotification\": true,\n"
-"  \"format\": \"SIMPLE_CSV\",\n"
-"  \"predicate\": {\n"
-"    \"type\": \"and\",\n"
-"    \"predicates\": [\n"
-"      {\n"
-"        \"type\": \"equals\",\n"
-"        \"key\": \"BASIS_OF_RECORD\",\n"
-"        \"value\": \"PRESERVED_SPECIMEN\"\n"
-"      },\n"
-"      {\n"
-"        \"type\": \"in\",\n"
-"        \"key\": \"COUNTRY\",\n"
-"        \"values\": [ \"VC\", \"GD\" ]\n"
-"      }\n"
-"    ]\n"
-"  },\n"
-"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\"\n"
-"}\n"
 msgstr ""
 
 #. type: Title =
@@ -109,15 +73,13 @@ msgid "Put this in a file called `query.json`, replacing `userName` with your us
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:44
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:42
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
-"  \"notificationAddresses\": [\n"
-"    \"userEmail@example.org\"\n"
-"  ],\n"
+"  \"notificationAddresses\": [ \"userEmail@example.org\" ],\n"
 "  \"sendNotification\": true,\n"
 "  \"format\": \"SIMPLE_CSV\",\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"and\",\n"
 "    \"predicates\": [\n"
@@ -137,87 +99,88 @@ msgid "{\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:47
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:45
 msgid "`format` can be changed to one of `SIMPLE_CSV`, `DWCA` or `SPECIES_LIST`, see https://www.gbif.org/faq?question=download-formats[information about download formats]."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:49
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:47
 msgid "Then use this Curl command:"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:53
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:51
 #, no-wrap
 msgid "curl --include --user userName:PASSWORD --header \"Content-Type: application/json\" --data @query.json https://api.gbif.org/v1/occurrence/download/request\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:56
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:54
 msgid "A download key is returned. Querying that download key shows the download information, including the download link and DOI once the download is ready.  Run this repeatedly, until you see `SUCCEEDED`, replacing the key with the key for your download:"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:60
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:58
 #, no-wrap
 msgid "curl -Ss https://api.gbif.org/v1/occurrence/download/0001005-130906152512535\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:63
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:61
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:62
 msgid "You can then download the resulting file:"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:67
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:65
 #, no-wrap
 msgid "curl --location --remote-name https://api.gbif.org/occurrence/download/request/0001005-130906152512535.zip\n"
 msgstr ""
 
-#. type: Plain text
+#. type: delimited block =
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:70
 msgid "Downloads using predicates can also be made through the website at https://www.gbif.org/occurrence/download/request[create new download]."
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:72
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:73
 #, no-wrap
 msgid "Occurrence search parameters"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:75
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:76
 msgid "Most of the predicates below use a `key` which specifies the field to search on."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:77
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:78
 msgid "The keys are listed and described on the xref:v1@openapi::occurrence.adoc#/Searching%20occurrences/searchOccurrence[/occurrence/search API call], and in the https://gbif.github.io/gbif-api/apidocs/org/gbif/api/model/occurrence/search/OccurrenceSearchParameter.html[Java documentation].  Note they must be provided in `UPPER_CASE_WITH_UNDERSCORES` for the download APIs."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:82
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:83
 msgid "These are the supported predicates that can be combined to build download requests."
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:83
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:84
 #, no-wrap
 msgid "`equals`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:86
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:87
 msgid "Equality comparison.  Tests for exact equality of the term and the value, or case-sensitive equality if `matchCase` is set to `true`."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:98
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:100
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"equals\",\n"
 "    \"key\": \"BASIS_OF_RECORD\",\n"
@@ -227,17 +190,18 @@ msgid "{\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:101
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:116
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:103
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:119
 msgid "or"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:113
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:116
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"equals\",\n"
 "    \"key\": \"HAS_COORDINATE\",\n"
@@ -247,11 +211,12 @@ msgid "{\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:129
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:133
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"equals\",\n"
 "    \"key\": \"CATALOG_NUMBER\",\n"
@@ -262,81 +227,84 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:131
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:135
 #, no-wrap
 msgid "`and`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:134
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:138
 msgid "Logical conjuction, \"and\".  The sub-predicates must all be true."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:148
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:153
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"and\",\n"
 "    \"predicates\": [\n"
 "      { \"type\": \"equals\", \"key\": \"HAS_GEOSPATIAL_ISSUE\", \"value\": \"false\"},\n"
-"      { \"type\": \"equals\", \"key\": \"TAXON_KEY\", \"value\": \"2440447\"}\n"
+"      { \"type\": \"equals\", \"key\": \"TAXON_KEY\", \"value\": \"59R5F\", \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\" }\n"
 "    ]\n"
 "  }\n"
 "}\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:150
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:155
 #, no-wrap
 msgid "`or`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:153
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:158
 msgid "Logical disjunction, \"or\". At least one of the sub-predicates must be true."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:155
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:160
 msgid "When requesting many values of the same field (for example, multiple taxa or countries) the `in` predicate (just below) is more appropriate."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:169
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:175
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"or\",\n"
 "    \"predicates\": [\n"
 "      { \"type\": \"equals\", \"key\": \"HAS_GEOSPATIAL_ISSUE\", \"value\": \"false\"},\n"
-"      { \"type\": \"equals\", \"key\": \"TAXON_KEY\", \"value\": \"2440447\"}\n"
+"      { \"type\": \"equals\", \"key\": \"TAXON_KEY\", \"value\": \"59R5F\", \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\" }\n"
 "    ]\n"
 "  }\n"
 "}\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:171
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:177
 #, no-wrap
 msgid "`in`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:174
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:180
 msgid "Specify multiple values to be compared.  `\"matchCase\": true` can be added if required."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:186
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:193
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"in\",\n"
 "    \"key\": \"CATALOG_NUMBER\",\n"
@@ -346,22 +314,23 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:188
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:195
 #, no-wrap
 msgid "`lessThan`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:191
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:198
 msgid "Less than.  Returns occurrences with term values strictly less than the provided value."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:203
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:211
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"lessThan\",\n"
 "    \"key\": \"YEAR\",\n"
@@ -371,22 +340,23 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:205
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:213
 #, no-wrap
 msgid "`lessThanOrEquals`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:208
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:216
 msgid "Less than or equals.  Returns occurrences with term values less than or equal to the provided value."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:220
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:229
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"lessThanOrEquals\",\n"
 "    \"key\": \"ELEVATION\",\n"
@@ -396,22 +366,23 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:222
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:231
 #, no-wrap
 msgid "`greaterThan`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:225
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:234
 msgid "Greater than.  Returns occurrences with term values strictly greater than the provided value."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:237
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:247
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"greaterThan\",\n"
 "    \"key\": \"YEAR\",\n"
@@ -421,22 +392,23 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:239
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:249
 #, no-wrap
 msgid "`greaterThanOrEquals`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:242
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:252
 msgid "Greater than or equals. Returns occurrences with term values greater than or equal to the provided value"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:254
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:265
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"greaterThanOrEquals\",\n"
 "    \"key\": \"ELEVATION\",\n"
@@ -446,27 +418,28 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:256
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:267
 #, no-wrap
 msgid "`within`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:259
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:270
 msgid "Geospatial predicate that checks if the coordinates are inside a polygon."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:261
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:272
 msgid "The polygon should be specified in https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry[Well-known text (WKT)] format.  If you have problems, first check your polygon with https://arthur-e.github.io/Wicket/[Wicket] — ensure the points are ordered anti-clockwise.  (A polygon with clockwise points represents the opposite: the whole world _except_ the polygon.)"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:276
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:288
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"within\",\n"
 "    \"geometry\": \"POLYGON((-130.78125 51.179342,\n"
@@ -479,22 +452,23 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:278
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:290
 #, no-wrap
 msgid "`geoDistance`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:281
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:293
 msgid "Geospatial distance.  This predicate checks if coordinates are within a specified distance of a geographical coordinate.  The distance is specified with a unit, e.g. `5km` or `1250m`."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:294
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:307
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"geoDistance\",\n"
 "    \"latitude\": \"90\",\n"
@@ -505,22 +479,23 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:296
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:309
 #, no-wrap
 msgid "`not`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:299
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:312
 msgid "Logical negation.  Gives the opposite of the sub-predicate."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:314
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:328
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"not\",\n"
 "    \"predicate\": {\n"
@@ -533,22 +508,23 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:316
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:330
 #, no-wrap
 msgid "`like`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:319
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:333
 msgid "Search for a pattern. `?` matches exactly one character, `*` matches zero or more characters.  `\"matchCase\": true` can be added if required."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:331
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:346
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"like\",\n"
 "    \"key\": \"CATALOG_NUMBER\",\n"
@@ -558,22 +534,23 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:333
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:348
 #, no-wrap
 msgid "`isNull`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:336
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:351
 msgid "Has an empty (null) value."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:347
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:363
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"isNull\",\n"
 "    \"parameter\": \"CONTINENT\"\n"
@@ -582,22 +559,23 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:349
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:365
 #, no-wrap
 msgid "`isNotNull`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:352
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:368
 msgid "Has a non-empty value"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:363
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:380
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"isNotNull\",\n"
 "    \"parameter\":\"ISSUE\"\n"
@@ -606,22 +584,23 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:366
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:383
 #, no-wrap
 msgid "Predicate support for multiple taxonomies"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:369
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:386
 msgid "the `equals`, `in` support multiple taxonomies by adding a `checklistKey` property to the predicate."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:382
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:400
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"equals\",\n"
 "    \"key\": \"TAXON_KEY\",\n"
@@ -632,11 +611,12 @@ msgid "{\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:396
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:415
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
 "  \"notificationAddresses\": [\"userName@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
 "    \"type\": \"in\",\n"
 "    \"key\": \"TAXON_KEY\",\n"
@@ -647,34 +627,66 @@ msgid "{\n"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:401
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:420
 #, no-wrap
 msgid "Downloads with a specific taxonomy"
 msgstr ""
 
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:423
+msgid "Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. *If no `checklistKey` is supplied the obsolete GBIF Backbone Taxonomy will be used.* The `checklistKey` should be specified for the whole request (for the taxonomy used for output) as well as in taxonomic filters."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:438
+#, no-wrap
+msgid "{\n"
+"  \"notificationAddresses\": [\"userEmail@example.org\"],\n"
+"  \"sendNotification\": true,\n"
+"  \"format\": \"SIMPLE_CSV\",\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\" <1>\n"
+"  \"predicate\": {\n"
+"    \"type\": \"equals\",\n"
+"    \"key\": \"TAXON_KEY\",\n"
+"    \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\", <2>\n"
+"    \"value\": \"5WZLF\"\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:440
+msgid "Use the https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b[Catalogue of Life] for the output, i.e. `species`, `scientificName`, `taxonKey` etc columns"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:441
+msgid "Use the Catalogue of Life for filtering to taxon https://www.gbif.org/taxon/5WZLF[5WZLF (_Carcharodon carcharias_)]."
+msgstr ""
+
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:434
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:443
 #, no-wrap
 msgid "Verbatim extension data"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:437
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:446
 msgid "A download in Darwin Core Archive (`DWCA`) format includes three tables by default, as described in detail on xref::download-formats.adoc[Occurrence download formats]."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:439
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:448
 msgid "Additional Darwin Core extension data can also be included in the archive.  These data tables are not processed by GBIF; they are as-published."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:441
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:450
 msgid "The extension tables available for download are provided using https://api.gbif.org/v1/occurrence/download/describe/dwca[this API call], under `verbatimExtensions`.  They can be requested by adding a `verbatimExtensions` property to the download request:"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:454
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:463
 #, no-wrap
 msgid "{\n"
 "  \"format\": \"DWCA\",\n"
@@ -689,7 +701,7 @@ msgid "{\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:456
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:465
 msgid "For descriptions of the extensions and their terms, see https://rs.gbif.org/extensions.html[GBIF Registered Extensions]."
 msgstr ""
 
