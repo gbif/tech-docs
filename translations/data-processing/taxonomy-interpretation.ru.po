@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-05-19 11:47+0000\n"
-"PO-Revision-Date: 2026-05-19 11:56\n"
+"POT-Creation-Date: 2026-06-17 10:00+0000\n"
+"PO-Revision-Date: 2026-06-17 10:31\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -548,7 +548,7 @@ msgstr ""
 
 #. type: Title ==
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:352
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:79
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:80
 #, no-wrap
 msgid "Occurrence download predicates"
 msgstr ""
@@ -587,131 +587,115 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:377
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:404
 msgid "Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. By default, the GBIF Backbone will be used if no `checklistKey` is supplied."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:404
-#: en/data-use/modules/ROOT/pages/api-downloads.adoc:431
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:391
 #, no-wrap
 msgid "{\n"
-"  \"creator\": \"userName\",\n"
-"  \"notificationAddresses\": [\n"
-"    \"userEmail@example.org\"\n"
-"  ],\n"
+"  \"notificationAddresses\": [ \"userEmail@example.org\" ],\n"
 "  \"sendNotification\": true,\n"
 "  \"format\": \"SIMPLE_CSV\",\n"
+"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\",\n"
 "  \"predicate\": {\n"
-"    \"type\": \"and\",\n"
-"    \"predicates\": [\n"
-"      {\n"
-"        \"type\": \"equals\",\n"
-"        \"key\": \"BASIS_OF_RECORD\",\n"
-"        \"value\": \"PRESERVED_SPECIMEN\"\n"
-"      },\n"
-"      {\n"
-"        \"type\": \"in\",\n"
-"        \"key\": \"COUNTRY\",\n"
-"        \"values\": [ \"VC\", \"GD\" ]\n"
-"      }\n"
-"    ]\n"
-"  },\n"
-"  \"checklistKey\": \"7ddf754f-d193-4cc9-b351-99906754a03b\"\n"
+"    \"type\": \"equals\",\n"
+"    \"key\": \"COUNTRY\",\n"
+"    \"value\": \"AD\"\n"
+"  }\n"
 "}\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:407
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:394
 msgid "For more information on the download API, see the https://techdocs.gbif.org/en/openapi/v1/occurrence#/Occurrence-downloads/requestDownload[API documentation]."
 msgstr ""
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:409
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:396
 #, no-wrap
 msgid "Taxonomic indexes"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:412
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:399
 msgid "With every update of a taxonomy, *versioned docker containers* are created to support the species matching https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[API]. These containers are made available through the GBIF docker registry and can be used locally without depending on online services."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:414
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:17
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:401
 msgid "The docker container indexes are built from ChecklistBank, which provides the organized taxonomic data, names, and hierarchy."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:416
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:403
 msgid "In addition, *stable unique identifiers* for taxa from other taxonomic datasets such as https://www.checklistbank.org/dataset/2041/about[Dyntaxa], https://www.checklistbank.org/dataset/2006/about[IPNI], https://www.checklistbank.org/dataset/2144/about[ITIS], https://www.checklistbank.org/dataset/7888/about[UK Species Inventory] and https://www.checklistbank.org/dataset/2011/about[WoRMs] are retrieved from ChecklistBank and linked to taxa in the checklist (e.g. COL XR or GBIF Backbone)."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:418
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:405
 msgid "This enables matching using `scientificNameID`, `taxonID` or `taxonConceptID` fields if these identifiers are used by data publishers."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:420
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:407
 #, no-wrap
 msgid "*The IUCN RedList category* is also linked to taxa in the index. The IUCN RedList information is pulled from ChecklistBank when the docker containers are built and linked to the checklist  (e.g. COL XR or GBIF Backbone).\n"
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:422
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:409
 #, no-wrap
 msgid "Docker containers"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:425
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:412
 msgid "All available matching containers from the GBIF docker registry are listed https://docker.gbif.org/v2/matching-ws/tags/list[here]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:427
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:414
 msgid "The image tags are made up of several pieces of information:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:429
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:416
 msgid "`{taxonomy}-{architecture}-{checklistbank-datasetKey}-{date}-{time}`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:431
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:418
 msgid "Hence, the image `xcol-arm64-308651-20250516-145444` exposes the COL eXtended Release with datasetKey=308651 and was build on the 16th of May 2025."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:433
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:420
 msgid "You can also pull and run the latest COL XR like this:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:436
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:423
 msgid "```bash docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-amd64-latest"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:440
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:427
 msgid "# use arm64 image instead of amd64 on a mac with apple silicon docker run -d -p 8080:8080 --name colxr docker.gbif.org/matching-ws:xcol-arm64-latest ```"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:443
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:430
 msgid "Once running, metadata about the indexed data can be retrieved:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:447
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:434
 msgid "```bash curl -s \"http://localhost:8080/v2/species/match/metadata\" ```"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:451
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:438
 msgid "Example query URL using local docker container: ```bash curl -s \"http://localhost:8080/v2/species/match?scientificName=Oenanthe&scientificNameAuthorship=L.&taxonRank=genus&kingdom=Plantae\" ```"
 msgstr ""
 
