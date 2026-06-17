@@ -139,10 +139,6 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 |Strongly recommended
 |Strongly recommended
 
-|<<individualCount>>
-|Strongly recommended
-|Strongly recommended
-
 |<<organismQuantity>>
 |Strongly recommended
 |Strongly recommended
@@ -496,13 +492,6 @@ The occurrenceID in a dataset helps GBIF identify whether an occurrence record i
 An important part of GBIF data processing is to assign a stable gbifID each new record. This is a somewhat complex process that uses the occurrenceID, catalogNumber, collectionCode, and institutionCode in combination with the GBIF datasetKey to either mint a new identifier or reuse an existing one. When publishers do not supply an occurrenceID, GBIF processing will construct an identifier using the so-called triplet code (catalogNumber, collectionCode and institutionCode).
 
 If a previously published dataset alters more than 50% of its exsisting occurrenceIDs, it will get flagged by our link:https://github.com/gbif/ingestion-management/issues[ingestion management system]. Typically, a publisher will get an e-mail from GBIF within a day or two asking for a file mapping the old occurrenceIDs to the new occurrenceIDs. A GBIF data blog post has been written on the topic of id stability link:https://data-blog.gbif.org/post/improve-identifier-stability/[here].
-
-'''
-
-=== {occurrence} individualCount [[individualCount]]
-==== https://dwc.tdwg.org/list/#dwc_individualCount[_dwc:individualCount_]
-
-Use the `individualCount` field to capture the number of individuals for the species associated with the occurrence.
 
 '''
 
