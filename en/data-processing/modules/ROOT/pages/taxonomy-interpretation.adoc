@@ -378,28 +378,15 @@ Users can specify the taxonomy to be included in occurrence downloads by adding 
 [source,json]
 ----
 {
-  "creator": "userName",
-  "notificationAddresses": [
-    "userEmail@example.org"
-  ],
+  "notificationAddresses": [ "userEmail@example.org" ],
   "sendNotification": true,
   "format": "SIMPLE_CSV",
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
-    "type": "and",
-    "predicates": [
-      {
-        "type": "equals",
-        "key": "BASIS_OF_RECORD",
-        "value": "PRESERVED_SPECIMEN"
-      },
-      {
-        "type": "in",
-        "key": "COUNTRY",
-        "values": [ "VC", "GD" ]
-      }
-    ]
-  },
-  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
+    "type": "equals",
+    "key": "COUNTRY",
+    "value": "AD"
+  }
 }
 ----
 

@@ -19,12 +19,10 @@ Put this in a file called `query.json`, replacing `userName` with your username 
 [source,json]
 ----
 {
-  "creator": "userName",
-  "notificationAddresses": [
-    "userEmail@example.org"
-  ],
+  "notificationAddresses": [ "userEmail@example.org" ],
   "sendNotification": true,
   "format": "SIMPLE_CSV",
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "and",
     "predicates": [
@@ -66,7 +64,10 @@ You can then download the resulting file:
 curl --location --remote-name https://api.gbif.org/occurrence/download/request/0001005-130906152512535.zip
 ----
 
+[TIP]
+====
 Downloads using predicates can also be made through the website at https://www.gbif.org/occurrence/download/request[create new download].
+====
 
 [#searchparameters]
 == Occurrence search parameters
@@ -87,8 +88,9 @@ Equality comparison.  Tests for exact equality of the term and the value, or cas
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "equals",
     "key": "BASIS_OF_RECORD",
@@ -102,8 +104,9 @@ or
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "equals",
     "key": "HAS_COORDINATE",
@@ -117,8 +120,9 @@ or
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "equals",
     "key": "CATALOG_NUMBER",
@@ -135,13 +139,14 @@ Logical conjuction, "and".  The sub-predicates must all be true.
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "and",
     "predicates": [
       { "type": "equals", "key": "HAS_GEOSPATIAL_ISSUE", "value": "false"},
-      { "type": "equals", "key": "TAXON_KEY", "value": "2440447"}
+      { "type": "equals", "key": "TAXON_KEY", "value": "59R5F", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b" }
     ]
   }
 }
@@ -156,13 +161,14 @@ When requesting many values of the same field (for example, multiple taxa or cou
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "or",
     "predicates": [
       { "type": "equals", "key": "HAS_GEOSPATIAL_ISSUE", "value": "false"},
-      { "type": "equals", "key": "TAXON_KEY", "value": "2440447"}
+      { "type": "equals", "key": "TAXON_KEY", "value": "59R5F", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b" }
     ]
   }
 }
@@ -175,8 +181,9 @@ Specify multiple values to be compared.  `"matchCase": true` can be added if req
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "in",
     "key": "CATALOG_NUMBER",
@@ -192,8 +199,9 @@ Less than.  Returns occurrences with term values strictly less than the provided
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "lessThan",
     "key": "YEAR",
@@ -209,8 +217,9 @@ Less than or equals.  Returns occurrences with term values less than or equal to
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "lessThanOrEquals",
     "key": "ELEVATION",
@@ -226,8 +235,9 @@ Greater than.  Returns occurrences with term values strictly greater than the pr
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "greaterThan",
     "key": "YEAR",
@@ -243,8 +253,9 @@ Greater than or equals. Returns occurrences with term values greater than or equ
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "greaterThanOrEquals",
     "key": "ELEVATION",
@@ -262,8 +273,9 @@ The polygon should be specified in https://en.wikipedia.org/wiki/Well-known_text
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "within",
     "geometry": "POLYGON((-130.78125 51.179342,
@@ -282,8 +294,9 @@ Geospatial distance.  This predicate checks if coordinates are within a specifie
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "geoDistance",
     "latitude": "90",
@@ -300,8 +313,9 @@ Logical negation.  Gives the opposite of the sub-predicate.
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "not",
     "predicate": {
@@ -320,8 +334,9 @@ Search for a pattern. `?` matches exactly one character, `*` matches zero or mor
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "like",
     "key": "CATALOG_NUMBER",
@@ -337,8 +352,9 @@ Has an empty (null) value.
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "isNull",
     "parameter": "CONTINENT"
@@ -353,8 +369,9 @@ Has a non-empty value
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "isNotNull",
     "parameter":"ISSUE"
@@ -370,8 +387,9 @@ the `equals`, `in` support multiple taxonomies by adding a `checklistKey` proper
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "equals",
     "key": "TAXON_KEY",
@@ -384,8 +402,9 @@ the `equals`, `in` support multiple taxonomies by adding a `checklistKey` proper
 [source,json]
 ----
 {
-  "creator": "userName",
   "notificationAddresses": ["userName@example.org"],
+  "sendNotification": true,
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
     "type": "in",
     "key": "TAXON_KEY",
@@ -400,35 +419,25 @@ the `equals`, `in` support multiple taxonomies by adding a `checklistKey` proper
 [#downloadsTaxonomy]
 == Downloads with a specific taxonomy
 
-Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. By default, the GBIF Backbone will be used if no `checklistKey` is supplied.
+Users can specify the taxonomy to be included in occurrence downloads by adding the `checklistKey` parameter to the download request. *If no `checklistKey` is supplied the obsolete GBIF Backbone Taxonomy will be used.* The `checklistKey` should be specified for the whole request (for the taxonomy used for output) as well as in taxonomic filters.
 
 [source,json]
 ----
 {
-  "creator": "userName",
-  "notificationAddresses": [
-    "userEmail@example.org"
-  ],
+  "notificationAddresses": ["userEmail@example.org"],
   "sendNotification": true,
   "format": "SIMPLE_CSV",
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b" <1>
   "predicate": {
-    "type": "and",
-    "predicates": [
-      {
-        "type": "equals",
-        "key": "BASIS_OF_RECORD",
-        "value": "PRESERVED_SPECIMEN"
-      },
-      {
-        "type": "in",
-        "key": "COUNTRY",
-        "values": [ "VC", "GD" ]
-      }
-    ]
-  },
-  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
+    "type": "equals",
+    "key": "TAXON_KEY",
+    "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b", <2>
+    "value": "5WZLF"
+  }
 }
 ----
+<1> Use the https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b[Catalogue of Life] for the output, i.e. `species`, `scientificName`, `taxonKey` etc columns
+<2> Use the Catalogue of Life for filtering to taxon https://www.gbif.org/taxon/5WZLF[5WZLF (_Carcharodon carcharias_)].
 
 [#verbatimextensions]
 == Verbatim extension data
