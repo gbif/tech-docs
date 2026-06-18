@@ -291,6 +291,14 @@ https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Sampling-event datasets]
 |Conditionally required
 |Conditionally required
 
+|<<decimalLatitude>>
+|Conditionally required
+|Conditionally required
+
+|<<decimalLongitude>>
+|Conditionally required
+|Conditionally required
+
 |<<parentEventID>>
 |Strongly recommended
 |Strongly recommended
@@ -300,14 +308,6 @@ https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Sampling-event datasets]
 |Strongly recommended
 
 |<<locationID>>
-|Strongly recommended
-|Strongly recommended
-
-|<<decimalLatitude>>
-|Strongly recommended
-|Strongly recommended
-
-|<<decimalLongitude>>
 |Strongly recommended
 |Strongly recommended
 
