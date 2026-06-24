@@ -116,12 +116,12 @@ https://www.gbif.org/dataset/search?type=OCCURRENCE[Occurrence datasets] are the
 |Conditionally required
 
 |<<decimalLatitude>>
-|Conditionally required
-|Conditionally required
+|Strongly recommended
+|Strongly recommended
 
 |<<decimalLongitude>>
-|Conditionally required
-|Conditionally required
+|Strongly recommended
+|Strongly recommended
 
 |<<taxonRank>>
 |Strongly recommended
@@ -216,12 +216,12 @@ Publishers who wish to share DNA reference libraries with GBIF must publish them
 |Conditionally required
 
 |<<decimalLatitude>>
-|Conditionally required
-|Conditionally required
+|Strongly recommended
+|Strongly recommended
 
 |<<decimalLongitude>>
-|Conditionally required
-|Conditionally required
+|Strongly recommended
+|Strongly recommended
 
 |<<geodeticDatum>>
 |Strongly recommended
@@ -292,12 +292,12 @@ https://www.gbif.org/dataset/search?type=SAMPLING_EVENT[Sampling-event datasets]
 |Conditionally required
 
 |<<decimalLatitude>>
-|Conditionally required
-|Conditionally required
+|Strongly recommended
+|Strongly recommended
 
 |<<decimalLongitude>>
-|Conditionally required
-|Conditionally required
+|Strongly recommended
+|Strongly recommended
 
 |<<parentEventID>>
 |Strongly recommended
@@ -634,7 +634,7 @@ The terms constitute the minimum formal requirements for publishing an occurrenc
 
 The term(s) may be required if certain conditions are met. For example:
 
-- At least one of either <<country>>, <<countryCode>> or coordinates (<<decimalLatitude>>, <<decimalLongitude>>) must be shared, if known, if the record is based on DNA evidence, to comply with the Convention on Biological Diversity https://www.cbd.int/doc/decisions/cop-16/cop-16-dec-02-en.pdf[decision] on digital sequence information (DSI) on genetic resources. 
+- At least one of either <<country>> or <<countryCode>> must be shared, if known, if the record is based on DNA evidence. 
 
 === Strongly recommended 
 
