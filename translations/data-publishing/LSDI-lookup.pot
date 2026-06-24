@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-06-24 14:44+0000\n"
+"POT-Creation-Date: 2026-06-24 14:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,14 +113,14 @@ msgid "When there are identifiers present, the following issues could arise:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:26
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:27
 msgid ""
 "‘Scientific name and ID inconsistent’: When the information in "
 "_scientificName_ and any of the identifiers do not agree."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:27
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:28
 msgid ""
 "‘Scientific name ID not found’, ‘Taxon concept ID not found’ or ‘Taxon ID "
 "not found’: An identifier is provided and match the known pattern of the "
@@ -128,7 +128,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:28
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:29
 msgid ""
 "‘Taxon match scientific name ID ignored’, ‘Taxon match taxon concept ID "
 "ignored’ or ‘Taxon match taxon ID ignored’: An identifier is provided but "
@@ -136,7 +136,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:29
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:30
 msgid ""
 "‘Taxon match name and ID ambiguous‘: When the concept was found using any of "
 "the identifiers, but it differs from what would have been found if the "
@@ -144,7 +144,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:30
+#: en/data-publishing/modules/ROOT/pages/LSDI-lookup.adoc:31
 msgid ""
 "You can read the full description of the issues here: https://techdocs.gbif."
 "org/en/data-use/occurrence-issues-and-flags#taxonomic-issues[Taxonomic "
