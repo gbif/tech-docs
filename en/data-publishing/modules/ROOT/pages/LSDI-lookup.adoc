@@ -22,6 +22,7 @@ GBIF processes taxonomic identifiers that are provided on the DwC elements _scie
 When both an identifier field and a _scientificName_ are provided, the identifiers will be used first for matching, and if there is more than one identifier present, the information on _taxonID_ will take precedence. A match will also be made using the scientificName and a comparison will be made between the two matches. 
 
 When there are identifiers present, the following issues could arise:
+
 * ‘Scientific name and ID inconsistent’: When the information in _scientificName_ and any of the identifiers do not agree. 
 * ‘Scientific name ID not found’, ‘Taxon concept ID not found’ or ‘Taxon ID not found’: An identifier is provided and match the known pattern of the schemes available, but it is not found in the associated checklist.
 * ‘Taxon match scientific name ID ignored’, ‘Taxon match taxon concept ID ignored’ or ‘Taxon match taxon ID ignored’: An identifier is provided but does not match the known pattern of the schemes available. 
