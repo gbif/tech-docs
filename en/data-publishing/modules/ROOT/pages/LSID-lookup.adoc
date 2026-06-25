@@ -14,33 +14,33 @@ include::ROOT::partial$under-construction.adoc[]
 GBIF processes taxonomic identifiers that are provided on the DwC elements _scientificNameID_, _taxonID_ and _taxonConceptID_, when these identifiers belong to any of the identifier schemes available. The identifiers are retrieved from ChecklistBank and linked to taxa in the checklist. Currently, the schemes available are: 
 
 
-[%autowidth.stretch]
+[cols="1,2,1,1"]
 |===
 |Identifier scheme |Description |REGEX Format |Example
 
 |https://artfakta.se/metadata/dyntaxa[Dyntaxa]
 |A taxonomic database of the names of Swedish organisms, which contains information on current classification, recommended names and commonly used synonyms and misused names. 
-|^(?:dyntaxa\|artfakta\|urn:lsid:dyntaxa.se:Taxon):(\\\d+)
+|^(?:dyntaxa\|artfakta\|urn:lsid:dyntaxa.se:Taxon):(\\d+)
 |urn:lsid:dyntaxa.se:Taxon:106661
 
 |https://www.ipni.org/[IPNI]
 |The International Plant Names Index (IPNI) is a nomenclatural index of names of vascular plants published under the Code of Nomenclature for algae fungi and plants (ICN).
-|^(?:ipni\|urn:lsid:ipni.org:names):(\\\d+-[1-3])
+|^(?:ipni\|urn:lsid:ipni.org:names):(\\d+-[1-3])
 |urn:lsid:ipni.org:names:50959-2
 
 |https://www.itis.gov/p[ITIS]
 |The Integrated Taxonomic Information System, an authoritative taxonomic information on plants, animals, fungi, and microbes of North America and the world.
-|^(?:itis\|tsn:)(\\\d+)
+|^(?:itis\|tsn:)(\\d+)
 |tsn:80028
 
-|https://www.nhm.ac.uk/our-science/data/uk-species/index[UK Species Inventory]: 
+|https://www.nhm.ac.uk/our-science/data/uk-species/index[UK Species Inventory]
 |A database of all UK wildlife, which provides the taxonomic foundation for most biological recording and analysis systems for the UK.
-|^(?:uksi\|nhm):((?:NHMSYS\|NBNSYS)\\\d{10})
+|^(?:uksi\|nhm):((?:NHMSYS\|NBNSYS)\\d{10})
 |nhm:NBNSYS0000161229
 
-|https://www.marinespecies.org/index.php[WoRMs]: 
+|https://www.marinespecies.org/index.php[WoRMs]
 |The World Register of Marine Species (WoRMS) aims to provide an authoritative and comprehensive list of names of marine organisms, including information on synonymy.
-|^(?:marinespecies\|worms\|aphia\|urn:lsid:marinespecies.org:taxname):(\\\d+)
+|^(?:marinespecies\|worms\|aphia\|urn:lsid:marinespecies.org:taxname):(\\d+)
 |urn:lsid:marinespecies.org:taxname:538339
 
 |===
