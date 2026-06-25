@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-06-25 13:31+0000\n"
-"PO-Revision-Date: 2026-06-25 13:36\n"
+"POT-Creation-Date: 2026-06-25 14:01+0000\n"
+"PO-Revision-Date: 2026-06-25 14:36\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -46,7 +46,7 @@ msgid "GBIF processes taxonomic identifiers that are provided on the DwC element
 msgstr ""
 
 #. type: Table
-#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:46
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:48
 #, no-wrap
 msgid "|Identifier scheme |Description |REGEX Format |Example\n\n"
 "|https://artfakta.se/metadata/dyntaxa[Dyntaxa]\n"
@@ -71,13 +71,103 @@ msgid "|Identifier scheme |Description |REGEX Format |Example\n\n"
 "|urn:lsid:marinespecies.org:taxname:538339\n\n"
 msgstr ""
 
-#. type: Plain text
+#. type: Title =
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:50
+#, no-wrap
+msgid "list example"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:53
+msgid "https://artfakta.se/metadata/dyntaxa[Dyntaxa]: A taxonomic database of the names of Swedish organisms, which contains information on current classification, recommended names and commonly used synonyms and misused names. It should follow the format:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:55
+msgid "`+^(?:dyntaxa|artfakta|urn:lsid:dyntaxa.se:Taxon):(\\\\d+)`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:57
+#, no-wrap
+msgid "*Example*: urn:lsid:dyntaxa.se:Taxon:106661\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:58
+#, no-wrap
+msgid "https://www.ipni.org/[IPNI]: The International Plant Names Index (IPNI) is a nomenclatural index of names of vascular plants published under the Code of Nomenclature for algae, fungi and plants (ICN).  It should follow the format: \n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:60
+msgid "`+^(?:ipni|urn:lsid:ipni.org:names):(\\\\d+-[1-3])`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:62
+#, no-wrap
+msgid "*Example*: urn:lsid:ipni.org:names:50959-2\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:63
+#, no-wrap
+msgid "https://www.itis.gov/[ITIS]: The Integrated Taxonomic Information System, an authoritative taxonomic information on plants, animals, fungi, and microbes of North America and the world. It should follow the format: \n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:65
+msgid "`+^(?:itis|tsn:)(\\\\d+)`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:67
+#, no-wrap
+msgid "*Example*: tsn:80028\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:68
+#, no-wrap
+msgid "https://www.nhm.ac.uk/our-science/data/uk-species/index[UK Species Inventory]: A database of all UK wildlife, which provides the taxonomic foundation for most biological recording and analysis systems for the UK. It should follow the format: \n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:70
+msgid "`+^(?:uksi|nhm):((?:NHMSYS|NBNSYS)\\\\d{10})`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:72
+#, no-wrap
+msgid "*Example*: nhm:NBNSYS0000161229\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:73
+#, no-wrap
+msgid "https://www.marinespecies.org/index.php[WoRMS]: The World Register of Marine Species (WoRMS) aims to provide an authoritative and comprehensive list of names of marine organisms, including information on synonymy. It should follow the format: \n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:75
+msgid "`+^(?:marinespecies|worms|aphia|urn:lsid:marinespecies.org:taxname):(\\\\d+)`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:77
+#, no-wrap
+msgid "*Example*: urn:lsid:marinespecies.org:taxname:538339\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:80
 msgid "When both an identifier field and a _scientificName_ are provided, the identifiers will be used first for matching, and if there is more than one identifier present, the information on _taxonID_ will take precedence. A match will also be made using the _scientificName_, and a comparison will be made between the two matches."
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:51
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:81
 #, no-wrap
 msgid "https://techdocs.gbif.org/en/data-use/occurrence-issues-and-flags#taxonomic-issues[Taxonomic flags and issues] are assigned during https://techdocs.gbif.org/en/data-processing/taxonomy-interpretation#taxonomic-indexes[pipeline processing] if inconsistencies are detected in the applied identifiers.   \n"
 msgstr ""
