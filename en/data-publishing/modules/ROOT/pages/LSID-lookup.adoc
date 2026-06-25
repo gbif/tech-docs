@@ -47,6 +47,34 @@ GBIF processes taxonomic identifiers that are provided on the DwC elements _scie
 
 |===
 
+= list example
+
+* https://artfakta.se/metadata/dyntaxa[Dyntaxa]: A taxonomic database of the names of Swedish organisms, which contains information on current classification, recommended names and commonly used synonyms and misused names. It should follow the format:
++
+`+^(?:dyntaxa|artfakta|urn:lsid:dyntaxa.se:Taxon):(\\d+)`
++
+Example: urn:lsid:dyntaxa.se:Taxon:106661
+* https://www.ipni.org/[IPNI]: The International Plant Names Index (IPNI) is a nomenclatural index of names of vascular plants published under the Code of Nomenclature for algae, fungi and plants (ICN).  It should follow the format: 
++
+`+^(?:ipni|urn:lsid:ipni.org:names):(\\d+-[1-3])`
++
+Example: urn:lsid:ipni.org:names:50959-2
+* https://www.itis.gov/[ITIS]: The Integrated Taxonomic Information System, an authoritative taxonomic information on plants, animals, fungi, and microbes of North America and the world. It should follow the format: 
++
+`+^(?:itis|tsn:)(\\d+)`
++
+Example: tsn:80028
+* https://www.nhm.ac.uk/our-science/data/uk-species/index[UK Species Inventory]: A database of all UK wildlife, which provides the taxonomic foundation for most biological recording and analysis systems for the UK. It should follow the format: 
++
+`+^(?:uksi|nhm):((?:NHMSYS|NBNSYS)\\d{10})`
++
+Example: nhm:NBNSYS0000161229
+* https://www.marinespecies.org/index.php[WoRMS]: The World Register of Marine Species (WoRMS) aims to provide an authoritative and comprehensive list of names of marine organisms, including information on synonymy. It should follow the format: 
++
+`+^(?:marinespecies|worms|aphia|urn:lsid:marinespecies.org:taxname):(\\d+)`
++
+Example: urn:lsid:marinespecies.org:taxname:538339
+
 
 When both an identifier field and a _scientificName_ are provided, the identifiers will be used first for matching, and if there is more than one identifier present, the information on _taxonID_ will take precedence. A match will also be made using the _scientificName_, and a comparison will be made between the two matches. 
 
