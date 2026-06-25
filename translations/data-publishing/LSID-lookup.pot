@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-06-25 13:55+0000\n"
+"POT-Creation-Date: 2026-06-25 14:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,15 +105,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:57
-msgid "Example: urn:lsid:dyntaxa.se:Taxon:106661"
+#, no-wrap
+msgid "*Example*: urn:lsid:dyntaxa.se:Taxon:106661\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:58
-msgid ""
-"https://www.ipni.org/[IPNI]: The International Plant Names Index (IPNI) is a "
-"nomenclatural index of names of vascular plants published under the Code of "
-"Nomenclature for algae, fungi and plants (ICN).  It should follow the format:"
+#, no-wrap
+msgid "https://www.ipni.org/[IPNI]: The International Plant Names Index (IPNI) is a nomenclatural index of names of vascular plants published under the Code of Nomenclature for algae, fungi and plants (ICN).  It should follow the format: \n"
 msgstr ""
 
 #. type: Plain text
@@ -123,15 +122,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:62
-msgid "Example: urn:lsid:ipni.org:names:50959-2"
+#, no-wrap
+msgid "*Example*: urn:lsid:ipni.org:names:50959-2\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:63
-msgid ""
-"https://www.itis.gov/[ITIS]: The Integrated Taxonomic Information System, an "
-"authoritative taxonomic information on plants, animals, fungi, and microbes "
-"of North America and the world. It should follow the format:"
+#, no-wrap
+msgid "https://www.itis.gov/[ITIS]: The Integrated Taxonomic Information System, an authoritative taxonomic information on plants, animals, fungi, and microbes of North America and the world. It should follow the format: \n"
 msgstr ""
 
 #. type: Plain text
@@ -141,16 +139,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:67
-msgid "Example: tsn:80028"
+#, no-wrap
+msgid "*Example*: tsn:80028\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:68
-msgid ""
-"https://www.nhm.ac.uk/our-science/data/uk-species/index[UK Species "
-"Inventory]: A database of all UK wildlife, which provides the taxonomic "
-"foundation for most biological recording and analysis systems for the UK. It "
-"should follow the format:"
+#, no-wrap
+msgid "https://www.nhm.ac.uk/our-science/data/uk-species/index[UK Species Inventory]: A database of all UK wildlife, which provides the taxonomic foundation for most biological recording and analysis systems for the UK. It should follow the format: \n"
 msgstr ""
 
 #. type: Plain text
@@ -160,16 +156,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:72
-msgid "Example: nhm:NBNSYS0000161229"
+#, no-wrap
+msgid "*Example*: nhm:NBNSYS0000161229\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:73
-msgid ""
-"https://www.marinespecies.org/index.php[WoRMS]: The World Register of Marine "
-"Species (WoRMS) aims to provide an authoritative and comprehensive list of "
-"names of marine organisms, including information on synonymy. It should "
-"follow the format:"
+#, no-wrap
+msgid "https://www.marinespecies.org/index.php[WoRMS]: The World Register of Marine Species (WoRMS) aims to provide an authoritative and comprehensive list of names of marine organisms, including information on synonymy. It should follow the format: \n"
 msgstr ""
 
 #. type: Plain text
@@ -180,7 +174,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:77
-msgid "Example: urn:lsid:marinespecies.org:taxname:538339"
+#, no-wrap
+msgid "*Example*: urn:lsid:marinespecies.org:taxname:538339\n"
 msgstr ""
 
 #. type: Plain text
