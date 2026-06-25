@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2026-06-25 13:31+0000\n"
+"PO-Revision-Date: 2026-06-25 13:36\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: /main/translations/data-publishing/LSID-lookup.pot\n"
+"X-Crowdin-File-ID: 45145\n"
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:2
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:2
+msgid "ifeval::[\"{env}\" == \"prod\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:6
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:6
+msgid "endif::[]"
+msgstr ""
+
+#. type: Title =
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:9
+#, no-wrap
+msgid "Processing of Taxonomic Identifiers in GBIF "
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:13
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:14
+msgid "include::ROOT::partial$under-construction.adoc[]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:15
+msgid "GBIF processes taxonomic identifiers that are provided on the DwC elements _scientificNameID_, _taxonID_ and _taxonConceptID_, when these identifiers belong to any of the identifier schemes available. The identifiers are retrieved from ChecklistBank and linked to taxa in the checklist. Currently, the schemes available are:"
+msgstr ""
+
+#. type: Table
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:46
+#, no-wrap
+msgid "|Identifier scheme |Description |REGEX Format |Example\n\n"
+"|https://artfakta.se/metadata/dyntaxa[Dyntaxa]\n"
+"|A taxonomic database of the names of Swedish organisms, which contains information on current classification, recommended names and commonly used synonyms and misused names. \n"
+"|^(?:dyntaxa\\|artfakta\\|urn:lsid:dyntaxa.se:Taxon):(\\\\d+)\n"
+"|urn:lsid:dyntaxa.se:Taxon:106661\n\n"
+"|https://www.ipni.org/[IPNI]\n"
+"|The International Plant Names Index (IPNI) is a nomenclatural index of names of vascular plants published under the Code of Nomenclature for algae fungi and plants (ICN).\n"
+"|^(?:ipni\\|urn:lsid:ipni.org:names):(\\\\d+-[1-3])\n"
+"|urn:lsid:ipni.org:names:50959-2\n\n"
+"|https://www.itis.gov/[ITIS]\n"
+"|The Integrated Taxonomic Information System, an authoritative taxonomic information on plants, animals, fungi, and microbes of North America and the world.\n"
+"|^(?:itis\\|tsn:)(\\\\d+)\n"
+"|tsn:80028\n\n"
+"|https://www.nhm.ac.uk/our-science/data/uk-species/index[UK Species Inventory]\n"
+"|A database of all UK wildlife, which provides the taxonomic foundation for most biological recording and analysis systems for the UK.\n"
+"|^(?:uksi\\|nhm):((?:NHMSYS\\|NBNSYS)\\\\d{10})\n"
+"|nhm:NBNSYS0000161229\n\n"
+"|https://www.marinespecies.org/index.php[WoRMS]\n"
+"|The World Register of Marine Species (WoRMS) aims to provide an authoritative and comprehensive list of names of marine organisms, including information on synonymy.\n"
+"|^(?:marinespecies\\|worms\\|aphia\\|urn:lsid:marinespecies.org:taxname):(\\\\d+)\n"
+"|urn:lsid:marinespecies.org:taxname:538339\n\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:50
+msgid "When both an identifier field and a _scientificName_ are provided, the identifiers will be used first for matching, and if there is more than one identifier present, the information on _taxonID_ will take precedence. A match will also be made using the _scientificName_, and a comparison will be made between the two matches."
+msgstr ""
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:51
+#, no-wrap
+msgid "https://techdocs.gbif.org/en/data-use/occurrence-issues-and-flags#taxonomic-issues[Taxonomic flags and issues] are assigned during https://techdocs.gbif.org/en/data-processing/taxonomy-interpretation#taxonomic-indexes[pipeline processing] if inconsistencies are detected in the applied identifiers.   \n"
+msgstr ""
+
