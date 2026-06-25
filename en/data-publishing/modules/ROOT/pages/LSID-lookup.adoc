@@ -14,7 +14,7 @@ include::ROOT::partial$under-construction.adoc[]
 GBIF processes taxonomic identifiers that are provided on the DwC elements _scientificNameID_, _taxonID_ and _taxonConceptID_, when these identifiers belong to any of the identifier schemes available. The identifiers are retrieved from ChecklistBank and linked to taxa in the checklist. Currently, the schemes available are: 
 
 
-[cols="1,2,1,1"]
+[cols="1,5,2,2"]
 |===
 |Identifier scheme |Description |REGEX Format |Example
 
@@ -28,7 +28,7 @@ GBIF processes taxonomic identifiers that are provided on the DwC elements _scie
 |^(?:ipni\|urn:lsid:ipni.org:names):(\\d+-[1-3])
 |urn:lsid:ipni.org:names:50959-2
 
-|https://www.itis.gov/p[ITIS]
+|https://www.itis.gov/[ITIS]
 |The Integrated Taxonomic Information System, an authoritative taxonomic information on plants, animals, fungi, and microbes of North America and the world.
 |^(?:itis\|tsn:)(\\d+)
 |tsn:80028
@@ -38,7 +38,7 @@ GBIF processes taxonomic identifiers that are provided on the DwC elements _scie
 |^(?:uksi\|nhm):((?:NHMSYS\|NBNSYS)\\d{10})
 |nhm:NBNSYS0000161229
 
-|https://www.marinespecies.org/index.php[WoRMs]
+|https://www.marinespecies.org/index.php[WoRMS]
 |The World Register of Marine Species (WoRMS) aims to provide an authoritative and comprehensive list of names of marine organisms, including information on synonymy.
 |^(?:marinespecies\|worms\|aphia\|urn:lsid:marinespecies.org:taxname):(\\d+)
 |urn:lsid:marinespecies.org:taxname:538339
