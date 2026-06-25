@@ -14,7 +14,9 @@ include::ROOT::partial$under-construction.adoc[]
 GBIF processes taxonomic identifiers that are provided on the DwC elements _scientificNameID_, _taxonID_ and _taxonConceptID_, when these identifiers belong to any of the identifier schemes available. The identifiers are retrieved from ChecklistBank and linked to taxa in the checklist. Currently, the schemes available are: 
 
 
-[cols="12%,50%,20%,18%", options="header", width=100%]
+[.scrollable]
+--
+[%autowidth]
 |===
 |Identifier scheme |Description |REGEX Format |Example
 
