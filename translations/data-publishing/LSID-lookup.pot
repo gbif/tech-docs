@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-06-25 12:47+0000\n"
+"POT-Creation-Date: 2026-06-25 13:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,55 +50,41 @@ msgid ""
 "the schemes available are:"
 msgstr ""
 
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:17
+#. type: Table
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:46
+#, no-wrap
 msgid ""
-"https://artfakta.se/metadata/dyntaxa[Dyntaxa]: A taxonomic database of the "
-"names of Swedish organisms, which contains information on current "
-"classification, recommended names and commonly used synonyms and misused "
-"names. It should follow the format: `+^(?:dyntaxa|artfakta|urn:lsid:dyntaxa."
-"se:Taxon):(\\\\d+)`"
+"|Identifier scheme |Description |REGEX Format |Example\n"
+"\n"
+"|https://artfakta.se/metadata/dyntaxa[Dyntaxa]\n"
+"|A taxonomic database of the names of Swedish organisms, which contains information on current classification, recommended names and commonly used synonyms and misused names. \n"
+"|^(?:dyntaxa\\|artfakta\\|urn:lsid:dyntaxa.se:Taxon):(\\\\\\d+)\n"
+"|urn:lsid:dyntaxa.se:Taxon:106661\n"
+"\n"
+"|https://www.ipni.org/[IPNI]\n"
+"|The International Plant Names Index (IPNI) is a nomenclatural index of names of vascular plants published under the Code of Nomenclature for algae fungi and plants (ICN).\n"
+"|^(?:ipni\\|urn:lsid:ipni.org:names):(\\\\\\d+-[1-3])\n"
+"|urn:lsid:ipni.org:names:50959-2\n"
+"\n"
+"|https://www.itis.gov/p[ITIS]\n"
+"|The Integrated Taxonomic Information System, an authoritative taxonomic information on plants, animals, fungi, and microbes of North America and the world.\n"
+"|^(?:itis\\|tsn:)(\\\\\\d+)\n"
+"|tsn:80028\n"
+"\n"
+"|https://www.nhm.ac.uk/our-science/data/uk-species/index[UK Species Inventory]: \n"
+"|A database of all UK wildlife, which provides the taxonomic foundation for most biological recording and analysis systems for the UK.\n"
+"|^(?:uksi\\|nhm):((?:NHMSYS\\|NBNSYS)\\\\\\d{10})\n"
+"|nhm:NBNSYS0000161229\n"
+"\n"
+"|https://www.marinespecies.org/index.php[WoRMs]: \n"
+"|The World Register of Marine Species (WoRMS) aims to provide an authoritative and comprehensive list of names of marine organisms, including information on synonymy.\n"
+"|^(?:marinespecies\\|worms\\|aphia\\|urn:lsid:marinespecies.org:taxname):(\\\\\\d+)\n"
+"|urn:lsid:marinespecies.org:taxname:538339\n"
+"\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:18
-msgid ""
-"https://www.ipni.org/[IPNI]: The International Plant Names Index (IPNI) is a "
-"nomenclatural index of names of vascular plants published under the Code of "
-"Nomenclature for algae, fungi and plants (ICN).  It should follow the "
-"format: `+^(?:ipni|urn:lsid:ipni.org:names):(\\\\d+-[1-3])`"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:19
-msgid ""
-"https://www.itis.gov/p[ITIS]: The Integrated Taxonomic Information System, "
-"an authoritative taxonomic information on plants, animals, fungi, and "
-"microbes of North America and the world. It should follow the format: `+^(?:"
-"itis|tsn:)(\\\\d+)`"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:20
-msgid ""
-"https://www.nhm.ac.uk/our-science/data/uk-species/index[UK Species "
-"Inventory]: A database of all UK wildlife, which provides the taxonomic "
-"foundation for most biological recording and analysis systems for the UK. It "
-"should follow the format: `+^(?:uksi|nhm):((?:NHMSYS|NBNSYS)\\\\d{10})`"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:21
-msgid ""
-"https://www.marinespecies.org/index.php[WoRMs]: The World Register of Marine "
-"Species (WoRMS) aims to provide an authoritative and comprehensive list of "
-"names of marine organisms, including information on synonymy. It should "
-"follow the format: `+^(?:marinespecies|worms|aphia|urn:lsid:marinespecies."
-"org:taxname):(\\\\d+)`"
-msgstr ""
-
-#. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:23
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:50
 msgid ""
 "When both an identifier field and a _scientificName_ are provided, the "
 "identifiers will be used first for matching, and if there is more than one "
@@ -108,7 +94,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:24
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:51
 #, no-wrap
 msgid "https://techdocs.gbif.org/en/data-use/occurrence-issues-and-flags#taxonomic-issues[Taxonomic flags and issues] are assigned during https://techdocs.gbif.org/en/data-processing/taxonomy-interpretation#taxonomic-indexes[pipeline processing] if inconsistencies are detected in the applied identifiers.   \n"
 msgstr ""
