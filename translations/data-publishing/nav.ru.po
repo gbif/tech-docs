@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-05-19 11:47+0000\n"
-"PO-Revision-Date: 2026-05-19 11:56\n"
+"POT-Creation-Date: 2026-06-25 12:47+0000\n"
+"PO-Revision-Date: 2026-06-25 13:36\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -53,7 +53,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/nav.adoc:14
-msgid "xref:LSDI-lookup.adoc[Processing of Taxonomic Identifiers in GBIF **Test**]"
+msgid "xref:LSID-lookup.adoc[Processing of Taxonomic Identifiers in GBIF **Test**]"
 msgstr ""
 
 #. type: Plain text
