@@ -17,7 +17,7 @@ Further discussion of the options can be found in https://data-blog.gbif.org/pos
 
 === Dataset validator
 
-The dataset validator can be used to https://www.gbif.org/tools/data-validator/about[validate] zipped Darwin Core Archive datasets.
+The dataset validator can be used to https://tools.gbif.org/tools/data-validator/about[validate] zipped Darwin Core Archive datasets.
 
 === Species matching
 
