@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2025-02-17 13:06+0000\n"
-"PO-Revision-Date: 2025-02-17 13:21\n"
+"POT-Creation-Date: 2026-07-01 08:00+0000\n"
+"PO-Revision-Date: 2026-07-01 09:54\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -72,7 +72,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/index.adoc:21
-msgid "The dataset validator can be used to https://www.gbif.org/tools/data-validator/about[validate] zipped Darwin Core Archive datasets."
+msgid "The dataset validator can be used to https://tools.gbif.org/tools/data-validator/about[validate] zipped Darwin Core Archive datasets."
 msgstr ""
 
 #. type: Title ===
