@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-06-17 10:00+0000\n"
+"POT-Creation-Date: 2026-07-09 10:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Title ==
-#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:352
+#: en/data-processing/modules/ROOT/pages/taxonomy-interpretation.adoc:366
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:80
 #, no-wrap
 msgid "Occurrence download predicates"
