@@ -64,6 +64,20 @@ Fuzzy name matching, matching to a higher taxon or matching to no taxon are issu
 
 The https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames[version 2] of the species matching API supports searching with the identifier fields `taxonID`, `scientificNameID` or `taxonConceptID` as query parameters. If both an identifier field and a `scientificName` are provided, the identifier field will be used first for matching. A match will also be made using the `scientificName` and a comparison will be made between the two matches. If they do not agree, a https://techdocs.gbif.org/en/data-use/checklist-issues-and-flags[flag] will be issued in the response to indicate the inconsistency.
 
+Currently supported identifiers include identifiers sourced from the following taxonomic datasets:
+
+* International Plant Names Index (IPNI)
+** Example identifiers: `urn:lsid:ipni.org:names:2006-1`, `ipni:2006-1`
+* World Register of Marine Species
+** Example identifiers: `urn:lsid:marinespecies.org:taxname:105838`, `AphiaID:105838`
+* Dyntaxa. Svensk taxonomisk databas
+** Example identifier: `urn:lsid:dyntaxa.se:Taxon:103038`
+* The Integrated Taxonomic Information System
+** Example identifiers: `itis:179628`, `tsn:179628`
+* United Kingdom Species Inventory (UKSI)
+** Example identifiers: `NHMSYS0000530537`
+
+
 ==== Matching against different taxonomies
 
 The optional checklistKey parameter specifies the taxonomy to match against.
