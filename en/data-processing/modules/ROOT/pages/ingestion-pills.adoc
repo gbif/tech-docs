@@ -25,8 +25,7 @@ For event datasets, there are three different EVENT versions indexing, interpret
 - *EVENTS INTERPRETED TO INDEX*: Indexing of event data into search indexes.
 - *EVENTS HDFS VIEW*: Loading of event data into download infrastructure.
 
-. Not all steps will be present for every dataset, only the ones relevant for a particular origin and type.
-image::ingestion_steps.png[ingestion_steps,640,480]
+image::ingestion_steps.png[ingestion_steps,640,480, title="Not all steps will be present for every dataset, only the ones relevant for a particular origin and type."]
 
 NOTE: Not all steps will be present for every dataset, only the ones relevant for a particular origin and type.
 
@@ -39,8 +38,7 @@ Each one of these steps can be in six possible states:
 * FAILED: The process started but didn't go through because it encountered an error.
 * ABORTED: The job was interrupted or cancelled, usually refers to invalid identifiers.
 
-. Each state is represented by a different color, SUBMITTED: grey, RUNNING: green, QUEUED: yellow, COMPLETED: blue, FAILED: red, ABORTED: black.
-image::ingestion_states.png[ingestion_steps,640,480]
+image::ingestion_states.png[ingestion_steps,640,480, title="Each state is represented by a different color, SUBMITTED: grey, RUNNING: green, QUEUED: yellow, COMPLETED: blue, FAILED: red, ABORTED: black."]
 
 Finally, you can review the full results of the pipelines in the public ElasticSearch logs, where there is detailed information for each part of the process.
 
@@ -65,8 +63,7 @@ There are two additional options to modify the running of steps, those are:
 = MISSING PART
 The suggested comment when you are using any of those steps is:
 
-. Ingestion re run steps on the registry
-image::ingestion_run-steps.png[ingestion_steps,300,600]
+image::ingestion_run-steps.png[ingestion_steps,300,600, title="Ingestion re run steps on the registry"]
 
 === Ingestion of Checklists and Metadata-only datasets 
 
