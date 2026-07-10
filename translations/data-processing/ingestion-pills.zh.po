@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-07-09 14:21+0000\n"
-"PO-Revision-Date: 2026-07-09 15:48\n"
+"POT-Creation-Date: 2026-07-10 14:05+0000\n"
+"PO-Revision-Date: 2026-07-10 14:15\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -122,6 +122,14 @@ msgstr ""
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:27
 #, no-wrap
 msgid "*EVENTS HDFS VIEW*: Loading of event data into download infrastructure.\n"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:28
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:40
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:67
+#, no-wrap
+msgid "ingestion_steps"
 msgstr ""
 
 #. type: Target for macro image
