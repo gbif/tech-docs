@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-07-10 14:05+0000\n"
-"PO-Revision-Date: 2026-07-10 14:15\n"
+"POT-Creation-Date: 2026-07-10 14:35+0000\n"
+"PO-Revision-Date: 2026-07-10 15:38\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar_SA\n"
@@ -126,10 +126,17 @@ msgstr ""
 
 #. type: Positional ($1) AttributeList argument for macro 'image'
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:28
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:40
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:67
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:41
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:66
 #, no-wrap
 msgid "ingestion_steps"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:28
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:31
+#, no-wrap
+msgid "Not all steps will be present for every dataset, only the ones relevant for a particular origin and type."
 msgstr ""
 
 #. type: Target for macro image
@@ -139,54 +146,50 @@ msgid "ingestion_steps.png"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:30
-msgid "Not all steps will be present for every dataset, only the ones relevant for a particular origin and type."
-msgstr ""
-
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:32
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:33
 msgid "Each one of these steps can be in six possible states:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:34
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:35
 msgid "SUBMITTED: The process has been submitted but has not been executed yet."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:35
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:36
 msgid "RUNNING: The process is currently running in the pipeline."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:36
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:37
 msgid "QUEUED: The process is currently running in the pipeline."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:37
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:38
 msgid "COMPLETED: The process was successful."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:38
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:39
 msgid "FAILED: The process started but didn't go through because it encountered an error."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:39
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:40
 msgid "ABORTED: The job was interrupted or cancelled, usually refers to invalid identifiers."
 msgstr ""
 
-#. type: Target for macro image
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:40
+#. type: Named 'title' AttributeList argument for macro 'image'
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:41
 #, no-wrap
-msgid "ingestion_states.png"
+msgid "Each state is represented by a different color, SUBMITTED: grey, RUNNING: green, QUEUED: yellow, COMPLETED: blue, FAILED: red, ABORTED: black."
 msgstr ""
 
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:42
-msgid "Each state is represented by a different color, SUBMITTED: grey, RUNNING: green, QUEUED: yellow, COMPLETED: blue, FAILED: red, ABORTED: black."
+#. type: Target for macro image
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:41
+#, no-wrap
+msgid "ingestion_states.png"
 msgstr ""
 
 #. type: Plain text
@@ -271,30 +274,36 @@ msgstr ""
 msgid "The suggested comment when you are using any of those steps is:"
 msgstr ""
 
+#. type: Named 'title' AttributeList argument for macro 'image'
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:66
+#, no-wrap
+msgid "Ingestion re run steps on the registry"
+msgstr ""
+
 #. type: Target for macro image
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:67
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:66
 #, no-wrap
 msgid "ingestion_run-steps.png"
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:69
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:68
 #, no-wrap
 msgid "Ingestion of Checklists and Metadata-only datasets "
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:73
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:72
 msgid "Checklists and Metadata-only datasets do not have these steps, because those are specific for indexing occurrences. For checklist it will show ‘processStateChecklist: FINISHED’. If they are pills present for a checklist, it is because it has the occurrence extension and the pills relate to that extension."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:77
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:76
 msgid "For Metadata it will show “finishReason: NORMAL processStateOccurrence: EMPTY processStateChecklist: EMPTY”"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:78
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:77
 msgid "If there is a problem with one of those kind of datasets and the finishReason is: ABORT. You can review the full results of the pipelines in the Log option, that will redirect to the ElasticSearch results that have detailed information about ingestion."
 msgstr ""
 
