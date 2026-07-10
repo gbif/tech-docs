@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-07-09 14:21+0000\n"
+"POT-Creation-Date: 2026-07-10 14:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -129,6 +129,14 @@ msgstr ""
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:27
 #, no-wrap
 msgid "*EVENTS HDFS VIEW*: Loading of event data into download infrastructure.\n"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:28
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:40
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:67
+#, no-wrap
+msgid "ingestion_steps"
 msgstr ""
 
 #. type: Target for macro image
