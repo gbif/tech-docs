@@ -64,7 +64,7 @@ There are two additional options to modify the running of steps, those are:
 The suggested comment when you are using any of those steps is:
 
 
-image::ingestion_run-steps.png[ingestion_steps,640,480]
+image::ingestion_run-steps.png[ingestion_steps,150,300]
 
 === Ingestion of Checklists and Metadata-only datasets 
 
