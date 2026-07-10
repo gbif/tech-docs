@@ -25,7 +25,7 @@ For event datasets, there are three different EVENT versions indexing, interpret
 - *EVENTS INTERPRETED TO INDEX*: Indexing of event data into search indexes.
 - *EVENTS HDFS VIEW*: Loading of event data into download infrastructure.
 
-image::ingestion_steps.png[]
+image::ingestion_steps.png[ingestion_steps,640,480]
 NOTE: Not all steps will be present for every dataset, only the ones relevant for a particular origin and type.
 
 Each one of these steps can be in six possible states:
@@ -37,7 +37,7 @@ Each one of these steps can be in six possible states:
 * FAILED: The process started but didn't go through because it encountered an error.
 * ABORTED: The job was interrupted or cancelled, usually refers to invalid identifiers.
 
-image::ingestion_states.png[]
+image::ingestion_states.png[ingestion_steps,640,480]
 NOTE: Each state is represented by a different color, SUBMITTED: grey, RUNNING: green, QUEUED: yellow, COMPLETED: blue, FAILED: red, ABORTED: black.
 
 Finally, you can review the full results of the pipelines in the public ElasticSearch logs, where there is detailed information for each part of the process.
@@ -64,7 +64,7 @@ There are two additional options to modify the running of steps, those are:
 The suggested comment when you are using any of those steps is:
 
 
-image::ingestion_run-steps.png[]
+image::ingestion_run-steps.png[ingestion_steps,640,480]
 
 === Ingestion of Checklists and Metadata-only datasets 
 
