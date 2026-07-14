@@ -13,6 +13,11 @@ include::ROOT::partial$under-construction.adoc[]
 
 GBIF processes taxonomic identifiers that are provided on the DwC elements _scientificNameID_, _taxonID_ and _taxonConceptID_, when these identifiers belong to any of the identifier schemes available. The identifiers are retrieved from ChecklistBank and linked to taxa in the checklist. Currently, the schemes available are: 
 
+* https://www.catalogueoflife.org/[CoL]: The Catalogue of Life (COL) is the most comprehensive initiative to compile a single, integrated list of all known species worldwide. It relies on a global network of taxonomists and informaticians to ensure accuracy and completeness. It should follow the format:
++
+`+^col:([2-9BCDFGHJKLMNPQRSTVWXYZ]+)`
++
+*Example*: col:Z72V
 * https://artfakta.se/metadata/dyntaxa[Dyntaxa]: A taxonomic database of the names of Swedish organisms, which contains information on current classification, recommended names and commonly used synonyms and misused names. It should follow the format:
 +
 `+^(?:dyntaxa|artfakta|urn:lsid:dyntaxa.se:Taxon):(\\d+)`
