@@ -1,0 +1,292 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2026-07-17 13:22+0000\n"
+"PO-Revision-Date: 2026-07-17 14:27\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: /main/translations/data-processing/ingestion-steps.pot\n"
+"X-Crowdin-File-ID: 45149\n"
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:2
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:2
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:2
+msgid "ifeval::[\"{env}\" == \"prod\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:4
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:6
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:6
+msgid "endif::[]"
+msgstr ""
+
+#. type: Title =
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:5
+#, no-wrap
+msgid "Ingestion steps for Occurrence and Event datasets"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:8
+#: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:13
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:14
+msgid "include::ROOT::partial$under-construction.adoc[]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:10
+msgid "Occurrence and Event datasets go through a series of steps when they are crawled and ingested by GBIF. The status of these pills for each dataset can be seen in the https://registry.gbif.org/dataset/search[GBIF Registry], and can be used to learn the cause of a dataset failing ingestion. The steps, also known as pills are:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:12
+msgid "The ingestion steps for occurrences are:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:14
+#, no-wrap
+msgid "*XML TO VERBATIM*: Data coming from DIGIR/TAPIR endpoints is transformed to common internal verbatim format used by pipelines.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:15
+#, no-wrap
+msgid "*ABCD TO VERBATIM*: Data coming from ABCD format is transformed to common verbatim format used by pipelines.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:16
+#, no-wrap
+msgid "*DWCA TO VERBATIM*: Data coming from Darwin core archive format is transformed to common verbatim format used by pipelines.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:17
+#, no-wrap
+msgid "https://techdocs.gbif.org/en/data-processing/#occurrence-identifier[*VERBATIM TO IDENTIFIER*]: Checking that identifiers (occurrenceIDs and triplets) in the dataset are unique and for an already published dataset, it validates the number of identifiers that have been added/changed and fails the process if the number is above a threshold of 50%.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:18
+#, no-wrap
+msgid "https://techdocs.gbif.org/en/data-processing/#occurrence-interpretation[*VERBATIM TO INTERPRETATION*]: Data checking and enrichment, this step is responsible for persisting new identifiers (occurrenceID or triplet combinations).\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:19
+#, no-wrap
+msgid "*INTERPRETED TO INDEX*: Indexing of data into search indexes to support search tools and some mapping functionality.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:20
+#, no-wrap
+msgid "*HDFS VIEW*: Loading of data into download infrastructure to allow the data to be downloaded through the API.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:21
+#, no-wrap
+msgid "*FRAGMENTER*: Loading of verbatim data into a database to support API access.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:23
+msgid "For event datasets, there are three different EVENT versions indexing, interpretation and hdfsview steps, which do the same thing but for events:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:25
+#, no-wrap
+msgid "*EVENTS VERBATIM TO INTERPRETED*: Data checking and enrichment for events.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:26
+#, no-wrap
+msgid "*EVENTS INTERPRETED TO INDEX*: Indexing of event data into search indexes.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:27
+#, no-wrap
+msgid "*EVENTS HDFS VIEW*: Loading of event data into download infrastructure.\n"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:28
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:41
+#, no-wrap
+msgid "ingestion_steps"
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:28
+#, no-wrap
+msgid "ingestion_steps.png"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:31
+msgid "Not all steps will be present for every dataset, only the ones relevant for a particular origin and type."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:33
+msgid "Each one of these steps can be in six possible states:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:35
+msgid "SUBMITTED: The process has been submitted but has not been executed yet."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:36
+msgid "RUNNING: The process is currently running in the pipeline."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:37
+msgid "QUEUED: The process is currently running in the pipeline."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:38
+msgid "COMPLETED: The process was successful."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:39
+msgid "FAILED: The process started but didn't go through because it encountered an error."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:40
+msgid "ABORTED: The job was interrupted or cancelled, usually refers to invalid identifiers."
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:41
+#, no-wrap
+msgid "ingestion_states.png"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:44
+msgid "Each state is represented by a different color, SUBMITTED: grey, RUNNING: green, QUEUED: yellow, COMPLETED: blue, FAILED: red, ABORTED: black."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:46
+msgid "Finally, you can review the full results of the pipelines in the public ElasticSearch logs, where there is detailed information for each part of the process. You can access the logs using the 'Ingestion history' section on the Registry, for each attempt there is a 'Log' button that will take you to ElasticSearch."
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:47
+#, no-wrap
+msgid "Runing specific steps for a dataset"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:50
+msgid "Related to those steps, the registry can be used to run specific steps in the pipeline for a dataset, the available options and its equivalent steps are:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:52
+msgid "Converting the dataset: Equivalent to XML, ABDC or DWCA to verbatim steps."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:53
+msgid "Occurrence - main interpretation: Equivalent to run VERBATIM TO INTERPRETATION."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:54
+msgid "Occurrence - indexing: Equivalent to run INTERPRETED TO INDEX."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:55
+msgid "Occurrence - creating table files: Equivalent to run HDFS VIEW."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:56
+msgid "Saving raw data fragments: Equivalent to run FRAGMENTER."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:57
+msgid "Events - main interpretation: Equivalent to run EVENTS VERBATIM TO INTERPRETED."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:58
+msgid "Events - indexing: Equivalent to run EVENTS INTERPRETED TO INDEX."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:59
+msgid "Events - creating table files: Equivalent to run EVENTS HDFS VIEW."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:61
+msgid "There are two additional options to modify the running of steps, those are:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:63
+msgid "Use the latest successful attempt: Run the steps using the latest *successful* attempt instead of the last one."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:64
+msgid "Exclude event steps: Run the steps for occurrences only."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:66
+msgid "You need to leave a comment when using this option, it should follow the structure:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:68
+msgid "date(YYYY-MM-DD):Initials of person doing the ingestion: brief message of why this option is being used."
+msgstr ""
+
+#. type: Title ===
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:69
+#, no-wrap
+msgid "Ingestion of Checklists and Metadata-only datasets "
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:72
+msgid "Checklists and Metadata-only datasets do not have these steps, because those are specific for indexing occurrences. For checklist it will show ‘processStateChecklist: FINISHED’. If they are pills present for a checklist, it is because it has the occurrence extension and the pills relate to that extension."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:76
+msgid "For Metadata it will show “finishReason: NORMAL processStateOccurrence: EMPTY processStateChecklist: EMPTY”"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:77
+msgid "If there is a problem with one of those kind of datasets and the finishReason is: ABORT. You can review the full results of the pipelines in the Log option, that will redirect to the ElasticSearch results that have detailed information about ingestion."
+msgstr ""
+
