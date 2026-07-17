@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-07-17 14:07+0000\n"
+"POT-Creation-Date: 2026-07-17 14:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,6 @@ msgstr ""
 
 #. type: Title ==
 #: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:9
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:414
 #, no-wrap
 msgid "Background to the GBIF Metadata Profile"
 msgstr ""
@@ -634,30 +633,36 @@ msgstr ""
 msgid "Required metadata"
 msgstr ""
 
-#. type: Title =
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:412
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:411
 #, no-wrap
 msgid "Test of extracting thing directly"
 msgstr ""
 
 #. type: Plain text
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:417
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:414
 msgid ""
 "This metadata list is pulled dynamically from the live schema definition "
-"profile:"
+"profile and categorized automatically:"
 msgstr ""
 
 #. type: delimited block +
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:422
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:419
 #, no-wrap
 msgid ""
-"<div id=\"xsd-table-container\" style=\"margin: 20px 0; font-weight: bold; color: #666;\">\n"
-"  🔄 Loading metadata terms directly from the official GBIF schema...\n"
+"<div id=\"xsd-loading-status\" style=\"margin: 20px 0; font-weight: bold; color: #666;\">\n"
+"  🔄 Loading and grouping metadata terms directly from the official GBIF schema...\n"
 "</div>\n"
 msgstr ""
 
 #. type: delimited block +
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:426
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:421
+#, no-wrap
+msgid "<div id=\"xsd-grouped-tables-container\"></div>\n"
+msgstr ""
+
+#. type: delimited block +
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:425
 #, no-wrap
 msgid ""
 "<script>\n"
@@ -666,45 +671,117 @@ msgid ""
 msgstr ""
 
 #. type: delimited block +
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:435
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:440
+#, no-wrap
+msgid ""
+"  // Define your precise subsection buckets\n"
+"  const groups = {\n"
+"    \"Dataset (Resource)\": [],\n"
+"    \"Project\": [],\n"
+"    \"People and Organizations\": [],\n"
+"    \"KeywordSet (General Keywords)\": [],\n"
+"    \"Coverage\": [],\n"
+"    \"Taxonomic Coverage\": [],\n"
+"    \"Geographic Coverage\": [],\n"
+"    \"Temporal Coverage\": [],\n"
+"    \"Methods\": [],\n"
+"    \"Intellectual Property Rights\": [],\n"
+"    \"Additional Metadata + Natural Collections Description Data (NCD) Related\": []\n"
+"  };\n"
+msgstr ""
+
+#. type: delimited block +
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:444
+#, no-wrap
+msgid ""
+"  // Helper function to figure out where an element structurally belongs\n"
+"  function determineCategory(elem, name) {\n"
+"    let current = elem.parentElement;\n"
+msgstr ""
+
+#. type: delimited block +
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:450
+#, no-wrap
+msgid ""
+"    // 1. Walk up the XML tree to check parent layout context\n"
+"    while (current) {\n"
+"      const parentName = current.getAttribute(\"name\") || \"\";\n"
+"      const parentType = current.getAttribute(\"type\") || \"\";\n"
+"      const combinedContext = (parentName + \" \" + parentType).toLowerCase();\n"
+msgstr ""
+
+#. type: delimited block +
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:463
+#, no-wrap
+msgid ""
+"      if (combinedContext.includes(\"project\")) return \"Project\";\n"
+"      if ([\"creator\", \"contact\", \"metadataprovider\", \"associatedparty\", \"agent\", \"personnel\"].some(k => combinedContext.includes(k))) {\n"
+"        return \"People and Organizations\";\n"
+"      }\n"
+"      if (combinedContext.includes(\"taxonomic\")) return \"Taxonomic Coverage\";\n"
+"      if (combinedContext.includes(\"geographic\")) return \"Geographic Coverage\";\n"
+"      if (combinedContext.includes(\"temporal\")) return \"Temporal Coverage\";\n"
+"      if (combinedContext.includes(\"methods\") || combinedContext.includes(\"methodstep\")) return \"Methods\";\n"
+"      if (combinedContext.includes(\"keyword\")) return \"KeywordSet (General Keywords)\";\n"
+"      if (combinedContext.includes(\"coverage\") && !combinedContext.includes(\"geographic\") && !combinedContext.includes(\"temporal\") && !combinedContext.includes(\"taxonomic\")) {\n"
+"        return \"Coverage\";\n"
+"      }\n"
+msgstr ""
+
+#. type: delimited block +
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:466
+#, no-wrap
+msgid ""
+"      current = current.parentElement;\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block +
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:473
+#, no-wrap
+msgid ""
+"    // 2. Explicit direct name mapping fallback\n"
+"    const nameLower = name.toLowerCase();\n"
+"    if ([\"alternateidentifier\", \"title\", \"pubdate\", \"language\", \"abstract\", \"purpose\", \"maintenanceupdatefrequency\", \"shortname\"].includes(nameLower)) return \"Dataset (Resource)\";\n"
+"    if ([\"intellectualrights\"].includes(nameLower)) return \"Intellectual Property Rights\";\n"
+"    if ([\"keywordset\", \"keyword\", \"keywordthesaurus\"].includes(nameLower)) return \"KeywordSet (General Keywords)\";\n"
+"    if ([\"coverage\"].includes(nameLower)) return \"Coverage\";\n"
+msgstr ""
+
+#. type: delimited block +
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:477
+#, no-wrap
+msgid ""
+"    // Default bucket for physical elements and specialized collection identifiers\n"
+"    return \"Additional Metadata + Natural Collections Description Data (NCD) Related\";\n"
+"  }\n"
+msgstr ""
+
+#. type: delimited block +
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:487
 #, no-wrap
 msgid ""
 "  fetch(xsdUrl)\n"
 "    .then(response => {\n"
-"      if (!response.ok) throw new Error(\"Network response was not ok\");\n"
+"      if (!response.ok) throw new Error(\"Network configuration block or response failure\");\n"
 "      return response.text();\n"
 "    })\n"
 "    .then(xmlString => {\n"
 "      const parser = new DOMParser();\n"
 "      const xmlDoc = parser.parseFromString(xmlString, \"text/xml\");\n"
-msgstr ""
-
-#. type: delimited block +
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:438
-#, no-wrap
-msgid ""
-"      // Grabs all element nodes regardless of whether they use 'xs:' or 'xsd:' prefixes\n"
 "      const elements = xmlDoc.getElementsByTagNameNS(\"*\", \"element\");\n"
 msgstr ""
 
 #. type: delimited block +
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:443
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:490
 #, no-wrap
 msgid ""
-"      // Build an Antora-styled HTML table so it matches your theme perfectly\n"
-"      let html = '<table class=\"tableblock frame-all grid-all stretch\">';\n"
-"      html += '<thead><tr><th class=\"tableblock halign-left valign-top\">Field Name</th><th class=\"tableblock halign-left valign-top\">Description</th></tr></thead>';\n"
-"      html += '<tbody>';\n"
+"      const seenEntries = new Set();\n"
+"      let totalAssigned = 0;\n"
 msgstr ""
 
 #. type: delimited block +
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:445
-#, no-wrap
-msgid "      let elementCount = 0;\n"
-msgstr ""
-
-#. type: delimited block +
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:450
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:495
 #, no-wrap
 msgid ""
 "      for (let i = 0; i < elements.length; i++) {\n"
@@ -714,52 +791,89 @@ msgid ""
 msgstr ""
 
 #. type: delimited block +
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:455
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:500
 #, no-wrap
 msgid ""
 "        const docNode = elem.getElementsByTagNameNS(\"*\", \"documentation\")[0];\n"
 "        if (docNode && docNode.textContent) {\n"
-"          // Clean up spaces, newlines, and tabs\n"
 "          const description = docNode.textContent.trim().replace(/\\s+/g, ' ');\n"
+"          const targetGroup = determineCategory(elem, name);\n"
 msgstr ""
 
 #. type: delimited block +
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:463
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:505
 #, no-wrap
 msgid ""
-"          html += `<tr>`;\n"
-"          html += `<td class=\"tableblock halign-left valign-top\"><p class=\"tableblock\"><code>${name}</code></p></td>`;\n"
-"          html += `<td class=\"tableblock halign-left valign-top\"><p class=\"tableblock\">${description}</p></td>`;\n"
-"          html += `</tr>`;\n"
-"          elementCount++;\n"
+"          // Deduplicate definitions within the same category block\n"
+"          const uniqueKey = `${targetGroup}:${name}`;\n"
+"          if (seenEntries.has(uniqueKey)) continue;\n"
+"          seenEntries.add(uniqueKey);\n"
+msgstr ""
+
+#. type: delimited block +
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:511
+#, no-wrap
+msgid ""
+"          // Generate native Antora-styled table rows\n"
+"          const rowHtml = `<tr>\n"
+"            <td class=\"tableblock halign-left valign-top\" style=\"width: 30%;\"><p class=\"tableblock\"><code>${name}</code></p></td>\n"
+"            <td class=\"tableblock halign-left valign-top\"><p class=\"tableblock\">${description}</p></td>\n"
+"          </tr>`;\n"
+msgstr ""
+
+#. type: delimited block +
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:516
+#, no-wrap
+msgid ""
+"          groups[targetGroup].push(rowHtml);\n"
+"          totalAssigned++;\n"
 "        }\n"
 "      }\n"
 msgstr ""
 
 #. type: delimited block +
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:465
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:519
 #, no-wrap
-msgid "      html += '</tbody></table>';\n"
+msgid ""
+"      // Hide the loading warning\n"
+"      document.getElementById(\"xsd-loading-status\").style.display = \"none\";\n"
 msgstr ""
 
 #. type: delimited block +
-#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:484
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:524
 #, no-wrap
 msgid ""
-"      if (elementCount > 0) {\n"
-"        document.getElementById(\"xsd-table-container\").innerHTML = html;\n"
-"      } else {\n"
-"        throw new Error(\"No documented elements found\");\n"
+"      // Build grouped HTML outputs\n"
+"      let finalHtml = \"\";\n"
+"      for (const [groupName, rows] of Object.entries(groups)) {\n"
+"        if (rows.length === 0) continue; // Skip displaying empty groups cleanly\n"
+msgstr ""
+
+#. type: delimited block +
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:532
+#, no-wrap
+msgid ""
+"        finalHtml += `<h3 class=\"discrete\" style=\"margin-top: 2.5rem; color: #2d3748; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;\">${groupName}</h3>`;\n"
+"        finalHtml += '<table class=\"tableblock frame-all grid-all stretch\" style=\"margin-top: 1rem; margin-bottom: 1.5rem;\">';\n"
+"        finalHtml += '<thead><tr><th class=\"tableblock halign-left valign-top\">Field Name</th><th class=\"tableblock halign-left valign-top\">Description</th></tr></thead>';\n"
+"        finalHtml += '<tbody>';\n"
+"        finalHtml += rows.join('');\n"
+"        finalHtml += '</tbody></table>';\n"
 "      }\n"
+msgstr ""
+
+#. type: delimited block +
+#: en/data-publishing/modules/ROOT/pages/metadata-recommendations-and-requirements.adoc:545
+#, no-wrap
+msgid ""
+"      document.getElementById(\"xsd-grouped-tables-container\").innerHTML = finalHtml;\n"
 "    })\n"
 "    .catch(err => {\n"
-"      console.error(\"XSD Load Error:\", err);\n"
-"      // Clean fallback so the user still gets a helpful link if something goes wrong\n"
-"      document.getElementById(\"xsd-table-container\").innerHTML = `\n"
+"      console.error(\"XSD Processing Error:\", err);\n"
+"      document.getElementById(\"xsd-loading-status\").innerHTML = `\n"
 "        <div style=\"padding: 15px; background: #fff3cd; color: #856404; border: 1px solid #ffeeba; border-radius: 4px;\">\n"
-"          ⚠️ <strong>Note:</strong> Unable to load the terms inline automatically. \n"
-"          You can view the official live schema rules directly at the \n"
-"          <a href=\"${xsdUrl}\" target=\"_blank\" style=\"text-decoration: underline; color: #533f03;\">GBIF Profile Registry</a>.\n"
+"          ⚠️ <strong>Note:</strong> Grouped terms couldn't render directly. \n"
+"          Review the structural schema file directly at the <a href=\"${xsdUrl}\" target=\"_blank\" style=\"text-decoration: underline; color: #533f03;\">GBIF Profile Registry</a>.\n"
 "        </div>`;\n"
 "    });\n"
 "});\n"
