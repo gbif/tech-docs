@@ -40,11 +40,11 @@ Each one of these steps can be in six possible states:
 
 image::ingestion_states.png[ingestion_steps,640,480, title="Each state is represented by a different color, SUBMITTED: grey, RUNNING: green, QUEUED: yellow, COMPLETED: blue, FAILED: red, ABORTED: black."]
 
-Finally, you can review the full results of the pipelines in the public ElasticSearch logs, where there is detailed information for each part of the process.
+Finally, you can review the full results of the pipelines in the public ElasticSearch logs, where there is detailed information for each part of the process. You can access the logs using the 'Ingestion history' section on the Registry, for each attempt there is a 'Log' button that will take you to ElasticSearch.
 
-=== Re ingestion comments
+=== Runing specific steps for a dataset
 
-Related to those steps, the registry can be used to run specific steps in pipeline, and the available steps are:
+Related to those steps, the registry can be used to run specific steps in the pipeline for a dataset, the available options and its equivalent steps are:
 
 - Converting the dataset: Equivalent to XML, ABDC or DWCA to verbatim steps.
 - Occurrence - main interpretation: Equivalent to run VERBATIM TO INTERPRETATION.
@@ -60,13 +60,14 @@ There are two additional options to modify the running of steps, those are:
 - Use the latest successful attempt: Run the steps using the latest *successful* attempt instead of the last one.
 - Exclude event steps: Run the steps for occurrences only.
 
-= MISSING PART
-The suggested comment when you are using any of those steps is:
+You need to leave a comment when using this option, it should follow the structure:
+
+> date(YYYY-MM-DD):Initials of person doing the ingestion: brief message of why this option is being used.
+
 
 image::ingestion_run-steps.png[ingestion_steps,300,600, title="Ingestion re run steps on the registry"]
 
 === Ingestion of Checklists and Metadata-only datasets 
-
 
 Checklists and Metadata-only datasets do not have these steps, because those are specific for indexing occurrences. For checklist it will show ‘processStateChecklist: FINISHED’. If they are pills present for a checklist, it is because it has the occurrence extension and the pills relate to that extension.
 
