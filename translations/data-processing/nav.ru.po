@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-06-15 07:05+0000\n"
-"PO-Revision-Date: 2026-06-15 07:15\n"
+"POT-Creation-Date: 2026-07-17 13:02+0000\n"
+"PO-Revision-Date: 2026-07-17 13:08\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -44,5 +44,10 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/nav.adoc:12
 msgid "xref:events-processing.adoc[]"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/nav.adoc:15
+msgid "xref:ingestion-steps.adoc[]"
 msgstr ""
 
