@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-07-01 07:48+0000\n"
-"PO-Revision-Date: 2026-07-01 07:56\n"
+"POT-Creation-Date: 2026-07-17 13:15+0000\n"
+"PO-Revision-Date: 2026-07-17 14:28\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -17,21 +17,21 @@ msgstr ""
 "X-Crowdin-File-ID: 45100\n"
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:2
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:2
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:2
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:2
 msgid "ifeval::[\"{env}\" == \"prod\"]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:4
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:4
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:6
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:6
 msgid "endif::[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:8
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:8
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:13
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:14
 msgid "include::ROOT::partial$under-construction.adoc[]"
