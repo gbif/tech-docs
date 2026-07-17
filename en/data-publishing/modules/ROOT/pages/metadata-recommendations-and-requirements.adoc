@@ -408,41 +408,86 @@ The discussion concluded that the quantification should encompass all specimens,
 == Required metadata
 
 
+== Test of extracting thing directly
 
-= Test of extracting thing directly
-
-== Background to the GBIF Metadata Profile
-
-This metadata list is pulled dynamically from the live schema definition profile:
+This metadata list is pulled dynamically from the live schema definition profile and categorized automatically:
 
 ++++
-<div id="xsd-table-container" style="margin: 20px 0; font-weight: bold; color: #666;">
-  🔄 Loading metadata terms directly from the official GBIF schema...
+<div id="xsd-loading-status" style="margin: 20px 0; font-weight: bold; color: #666;">
+  🔄 Loading and grouping metadata terms directly from the official GBIF schema...
 </div>
+
+<div id="xsd-grouped-tables-container"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const xsdUrl = "https://rs.gbif.org/schema/eml-gbif-profile/1.3/eml-gbif-profile.xsd";
   
+  // Define your precise subsection buckets
+  const groups = {
+    "Dataset (Resource)": [],
+    "Project": [],
+    "People and Organizations": [],
+    "KeywordSet (General Keywords)": [],
+    "Coverage": [],
+    "Taxonomic Coverage": [],
+    "Geographic Coverage": [],
+    "Temporal Coverage": [],
+    "Methods": [],
+    "Intellectual Property Rights": [],
+    "Additional Metadata + Natural Collections Description Data (NCD) Related": []
+  };
+
+  // Helper function to figure out where an element structurally belongs
+  function determineCategory(elem, name) {
+    let current = elem.parentElement;
+    
+    // 1. Walk up the XML tree to check parent layout context
+    while (current) {
+      const parentName = current.getAttribute("name") || "";
+      const parentType = current.getAttribute("type") || "";
+      const combinedContext = (parentName + " " + parentType).toLowerCase();
+      
+      if (combinedContext.includes("project")) return "Project";
+      if (["creator", "contact", "metadataprovider", "associatedparty", "agent", "personnel"].some(k => combinedContext.includes(k))) {
+        return "People and Organizations";
+      }
+      if (combinedContext.includes("taxonomic")) return "Taxonomic Coverage";
+      if (combinedContext.includes("geographic")) return "Geographic Coverage";
+      if (combinedContext.includes("temporal")) return "Temporal Coverage";
+      if (combinedContext.includes("methods") || combinedContext.includes("methodstep")) return "Methods";
+      if (combinedContext.includes("keyword")) return "KeywordSet (General Keywords)";
+      if (combinedContext.includes("coverage") && !combinedContext.includes("geographic") && !combinedContext.includes("temporal") && !combinedContext.includes("taxonomic")) {
+        return "Coverage";
+      }
+      
+      current = current.parentElement;
+    }
+    
+    // 2. Explicit direct name mapping fallback
+    const nameLower = name.toLowerCase();
+    if (["alternateidentifier", "title", "pubdate", "language", "abstract", "purpose", "maintenanceupdatefrequency", "shortname"].includes(nameLower)) return "Dataset (Resource)";
+    if (["intellectualrights"].includes(nameLower)) return "Intellectual Property Rights";
+    if (["keywordset", "keyword", "keywordthesaurus"].includes(nameLower)) return "KeywordSet (General Keywords)";
+    if (["coverage"].includes(nameLower)) return "Coverage";
+    
+    // Default bucket for physical elements and specialized collection identifiers
+    return "Additional Metadata + Natural Collections Description Data (NCD) Related";
+  }
+
   fetch(xsdUrl)
     .then(response => {
-      if (!response.ok) throw new Error("Network response was not ok");
+      if (!response.ok) throw new Error("Network configuration block or response failure");
       return response.text();
     })
     .then(xmlString => {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlString, "text/xml");
-      
-      // Grabs all element nodes regardless of whether they use 'xs:' or 'xsd:' prefixes
       const elements = xmlDoc.getElementsByTagNameNS("*", "element");
       
-      // Build an Antora-styled HTML table so it matches your theme perfectly
-      let html = '<table class="tableblock frame-all grid-all stretch">';
-      html += '<thead><tr><th class="tableblock halign-left valign-top">Field Name</th><th class="tableblock halign-left valign-top">Description</th></tr></thead>';
-      html += '<tbody>';
-      
-      let elementCount = 0;
-      
+      const seenEntries = new Set();
+      let totalAssigned = 0;
+
       for (let i = 0; i < elements.length; i++) {
         const elem = elements[i];
         const name = elem.getAttribute("name");
@@ -450,33 +495,49 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const docNode = elem.getElementsByTagNameNS("*", "documentation")[0];
         if (docNode && docNode.textContent) {
-          // Clean up spaces, newlines, and tabs
           const description = docNode.textContent.trim().replace(/\s+/g, ' ');
+          const targetGroup = determineCategory(elem, name);
           
-          html += `<tr>`;
-          html += `<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${name}</code></p></td>`;
-          html += `<td class="tableblock halign-left valign-top"><p class="tableblock">${description}</p></td>`;
-          html += `</tr>`;
-          elementCount++;
+          // Deduplicate definitions within the same category block
+          const uniqueKey = `${targetGroup}:${name}`;
+          if (seenEntries.has(uniqueKey)) continue;
+          seenEntries.add(uniqueKey);
+          
+          // Generate native Antora-styled table rows
+          const rowHtml = `<tr>
+            <td class="tableblock halign-left valign-top" style="width: 30%;"><p class="tableblock"><code>${name}</code></p></td>
+            <td class="tableblock halign-left valign-top"><p class="tableblock">${description}</p></td>
+          </tr>`;
+          
+          groups[targetGroup].push(rowHtml);
+          totalAssigned++;
         }
       }
+
+      // Hide the loading warning
+      document.getElementById("xsd-loading-status").style.display = "none";
       
-      html += '</tbody></table>';
-      
-      if (elementCount > 0) {
-        document.getElementById("xsd-table-container").innerHTML = html;
-      } else {
-        throw new Error("No documented elements found");
+      // Build grouped HTML outputs
+      let finalHtml = "";
+      for (const [groupName, rows] of Object.entries(groups)) {
+        if (rows.length === 0) continue; // Skip displaying empty groups cleanly
+        
+        finalHtml += `<h3 class="discrete" style="margin-top: 2.5rem; color: #2d3748; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">${groupName}</h3>`;
+        finalHtml += '<table class="tableblock frame-all grid-all stretch" style="margin-top: 1rem; margin-bottom: 1.5rem;">';
+        finalHtml += '<thead><tr><th class="tableblock halign-left valign-top">Field Name</th><th class="tableblock halign-left valign-top">Description</th></tr></thead>';
+        finalHtml += '<tbody>';
+        finalHtml += rows.join('');
+        finalHtml += '</tbody></table>';
       }
+      
+      document.getElementById("xsd-grouped-tables-container").innerHTML = finalHtml;
     })
     .catch(err => {
-      console.error("XSD Load Error:", err);
-      // Clean fallback so the user still gets a helpful link if something goes wrong
-      document.getElementById("xsd-table-container").innerHTML = `
+      console.error("XSD Processing Error:", err);
+      document.getElementById("xsd-loading-status").innerHTML = `
         <div style="padding: 15px; background: #fff3cd; color: #856404; border: 1px solid #ffeeba; border-radius: 4px;">
-          ⚠️ <strong>Note:</strong> Unable to load the terms inline automatically. 
-          You can view the official live schema rules directly at the 
-          <a href="${xsdUrl}" target="_blank" style="text-decoration: underline; color: #533f03;">GBIF Profile Registry</a>.
+          ⚠️ <strong>Note:</strong> Grouped terms couldn't render directly. 
+          Review the structural schema file directly at the <a href="${xsdUrl}" target="_blank" style="text-decoration: underline; color: #533f03;">GBIF Profile Registry</a>.
         </div>`;
     });
 });
