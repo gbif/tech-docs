@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-07-01 07:48+0000\n"
-"PO-Revision-Date: 2026-07-01 07:56\n"
+"POT-Creation-Date: 2026-07-10 14:35+0000\n"
+"PO-Revision-Date: 2026-07-10 15:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -45,7 +45,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:10
-msgid "Occurrence and Event datasets go through a series of steps when they are crawled and ingested by GBIF. The status of these pills for each dataset can be seen in the https://registry.gbif.org/dataset/search*GBIF Registry, and can be used to learn the cause of a dataset failing ingestion. The steps, also known as pills are:"
+msgid "Occurrence and Event datasets go through a series of steps when they are crawled and ingested by GBIF. The status of these pills for each dataset can be seen in the https://registry.gbif.org/dataset/search[GBIF Registry], and can be used to learn the cause of a dataset failing ingestion. The steps, also known as pills are:"
 msgstr ""
 
 #. type: Plain text
@@ -56,31 +56,31 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:14
 #, no-wrap
-msgid "*XML TO VERBATIM*: Data coming from DIGIR/TAPIR endpoints is transformed to common internal verbatim format used by pipelines\n"
+msgid "*XML TO VERBATIM*: Data coming from DIGIR/TAPIR endpoints is transformed to common internal verbatim format used by pipelines.\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:15
 #, no-wrap
-msgid "*ABCD TO VERBATIM*: Data coming from ABCD format is transformed to common verbatim format used by pipelines\n"
+msgid "*ABCD TO VERBATIM*: Data coming from ABCD format is transformed to common verbatim format used by pipelines.\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:16
 #, no-wrap
-msgid "*DWCA TO VERBATIM*: Data coming from Darwin core archive format is transformed to common verbatim format used by pipelines\n"
+msgid "*DWCA TO VERBATIM*: Data coming from Darwin core archive format is transformed to common verbatim format used by pipelines.\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:17
 #, no-wrap
-msgid "*VERBATIM TO IDENTIFIER*: Checking that identifiers (occurrenceIDs and triplets) in the dataset are unique and for an already published dataset it validates the number of identifiers that have been added/changed and fails the process if the number is above a threshold of 50%.\n"
+msgid "https://techdocs.gbif.org/en/data-processing/#occurrence-identifier[*VERBATIM TO IDENTIFIER*]: Checking that identifiers (occurrenceIDs and triplets) in the dataset are unique and for an already published dataset, it validates the number of identifiers that have been added/changed and fails the process if the number is above a threshold of 50%.\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:18
 #, no-wrap
-msgid "*VERBATIM TO INTERPRETATION*: Data checking and enrichment, this step is responsible for persisting new identifiers (occurrenceID or triplet combinations.\n"
+msgid "https://techdocs.gbif.org/en/data-processing/#occurrence-interpretation[*VERBATIM TO INTERPRETATION*]: Data checking and enrichment, this step is responsible for persisting new identifiers (occurrenceID or triplet combinations).\n"
 msgstr ""
 
 #. type: Plain text
@@ -98,7 +98,7 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:21
 #, no-wrap
-msgid "*FRAGMENTER*: Loading of verbatim data into a database to support API access ,\n"
+msgid "*FRAGMENTER*: Loading of verbatim data into a database to support API access.\n"
 msgstr ""
 
 #. type: Plain text
@@ -109,130 +109,201 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:25
 #, no-wrap
-msgid "*EVENTS VERBATIM TO INTERPRETED*: Data checking and enrichment for events\n"
+msgid "*EVENTS VERBATIM TO INTERPRETED*: Data checking and enrichment for events.\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:26
 #, no-wrap
-msgid "*EVENTS INTERPRETED TO INDEX*: Indexing of event data into search indexes\n"
+msgid "*EVENTS INTERPRETED TO INDEX*: Indexing of event data into search indexes.\n"
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:27
 #, no-wrap
-msgid "*EVENTS HDFS VIEW*: Loading of event data into download infrastructure\n"
+msgid "*EVENTS HDFS VIEW*: Loading of event data into download infrastructure.\n"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:28
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:41
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:66
+#, no-wrap
+msgid "ingestion_steps"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:30
-msgid "Each one of these steps can be in three possible states:"
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:28
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:31
+#, no-wrap
+msgid "Not all steps will be present for every dataset, only the ones relevant for a particular origin and type."
 msgstr ""
 
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:32
-msgid "COMPLETED: The process was successful"
+#. type: Target for macro image
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:28
+#, no-wrap
+msgid "ingestion_steps.png"
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:33
-msgid "FAILED: The process started but didn't go through because it encountered an error"
+msgid "Each one of these steps can be in six possible states:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:34
-msgid "ABORTED: The job was interrupted or cancelled, usually refers to invalid identifiers."
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:35
+msgid "SUBMITTED: The process has been submitted but has not been executed yet."
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:36
+msgid "RUNNING: The process is currently running in the pipeline."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:37
+msgid "QUEUED: The process is currently running in the pipeline."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:38
+msgid "COMPLETED: The process was successful."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:39
+msgid "FAILED: The process started but didn't go through because it encountered an error."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:40
+msgid "ABORTED: The job was interrupted or cancelled, usually refers to invalid identifiers."
+msgstr ""
+
+#. type: Named 'title' AttributeList argument for macro 'image'
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:41
+#, no-wrap
+msgid "Each state is represented by a different color, SUBMITTED: grey, RUNNING: green, QUEUED: yellow, COMPLETED: blue, FAILED: red, ABORTED: black."
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:41
+#, no-wrap
+msgid "ingestion_states.png"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:44
 msgid "Finally, you can review the full results of the pipelines in the public ElasticSearch logs, where there is detailed information for each part of the process."
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:37
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:45
 #, no-wrap
 msgid "Re ingestion comments"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:40
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:48
 msgid "Related to those steps, the registry can be used to run specific steps in pipeline, and the available steps are:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:42
-msgid "Converting the dataset: Equivalent to XML, ABDC or DWCA to verbatim steps"
-msgstr ""
-
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:43
-msgid "Occurrence - main interpretation: Equivalent to re run VERBATIM TO INTERPRETATION"
-msgstr ""
-
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:44
-msgid "Occurrence - indexing: Equivalent to re run INTERPRETED TO INDEX"
-msgstr ""
-
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:45
-msgid "Occurrence - creating table files: Equivalent to run HDFS VIEW"
-msgstr ""
-
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:46
-msgid "Saving raw data fragments: Equivalent to run FRAGMENTER"
-msgstr ""
-
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:47
-msgid "Events - main interpretation:"
-msgstr ""
-
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:48
-msgid "Events - indexing:"
-msgstr ""
-
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:49
-msgid "Events - creating table files:"
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:50
+msgid "Converting the dataset: Equivalent to XML, ABDC or DWCA to verbatim steps."
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:51
-msgid "There are two additional options to modify the running of steps, those are:"
+msgid "Occurrence - main interpretation: Equivalent to run VERBATIM TO INTERPRETATION."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:52
+msgid "Occurrence - indexing: Equivalent to run INTERPRETED TO INDEX."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:53
+msgid "Occurrence - creating table files: Equivalent to run HDFS VIEW."
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:54
-msgid "Use the latest successful attempt: Run the steps using the latest attempt instead of a new one Exclude event steps: Run the steps without using events"
+msgid "Saving raw data fragments: Equivalent to run FRAGMENTER."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:55
+msgid "Events - main interpretation: Equivalent to run EVENTS VERBATIM TO INTERPRETED."
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:56
+msgid "Events - indexing: Equivalent to run EVENTS INTERPRETED TO INDEX."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:57
+msgid "Events - creating table files: Equivalent to run EVENTS HDFS VIEW."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:59
+msgid "There are two additional options to modify the running of steps, those are:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:61
+msgid "Use the latest successful attempt: Run the steps using the latest *successful* attempt instead of the last one."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:62
+msgid "Exclude event steps: Run the steps for occurrences only."
+msgstr ""
+
+#. type: Title =
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:63
+#, no-wrap
+msgid "MISSING PART"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:65
 msgid "The suggested comment when you are using any of those steps is:"
 msgstr ""
 
+#. type: Named 'title' AttributeList argument for macro 'image'
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:66
+#, no-wrap
+msgid "Ingestion re run steps on the registry"
+msgstr ""
+
+#. type: Target for macro image
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:66
+#, no-wrap
+msgid "ingestion_run-steps.png"
+msgstr ""
+
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:57
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:68
 #, no-wrap
 msgid "Ingestion of Checklists and Metadata-only datasets "
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:61
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:72
 msgid "Checklists and Metadata-only datasets do not have these steps, because those are specific for indexing occurrences. For checklist it will show ‘processStateChecklist: FINISHED’. If they are pills present for a checklist, it is because it has the occurrence extension and the pills relate to that extension."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:65
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:76
 msgid "For Metadata it will show “finishReason: NORMAL processStateOccurrence: EMPTY processStateChecklist: EMPTY”"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:66
+#: en/data-processing/modules/ROOT/pages/ingestion-pills.adoc:77
 msgid "If there is a problem with one of those kind of datasets and the finishReason is: ABORT. You can review the full results of the pipelines in the Log option, that will redirect to the ElasticSearch results that have detailed information about ingestion."
 msgstr ""
 
