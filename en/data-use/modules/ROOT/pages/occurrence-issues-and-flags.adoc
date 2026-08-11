@@ -520,7 +520,6 @@ endif::[]
 
 |===
 
-ifeval::["{env}" != "prod"]
 [#sequence-issues]
 == Sequence issues
 
@@ -561,7 +560,6 @@ These issues are raised during the sanitization of DNA and RNA sequences publish
 |https://www.gbif.org/occurrence/search?issue=NUCLEOTIDE_SEQUENCE_HIGH_AMBIGUITY[example]
 
 |===
-endif::[]
 
 == Other issues
 
