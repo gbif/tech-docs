@@ -19,24 +19,18 @@ The pipeline applies the following stages in order. Each stage takes the output 
 | Remove gaps | Characters matching the gap pattern (`-` and `.`) are removed. If any gap was present, this contributes to the `gapsOrWhitespaceRemoved` flag. | `"ACGT-ACGT..ACGT"` → `"ACGTACGTACGT"`
 | RNA to DNA conversion | RNA sequences are normalised to DNA by replacing every `U` (uracil) with `T` (thymine), so that RNA and DNA representations of the same sequence collapse to a single form. | `"ACGU"` → `"ACGT"`
 | Question marks to N | Question marks, sometimes used to denote an unknown base, are replaced with the IUPAC ambiguity code `N`. | `"ACGT?ACGT"` → `"ACGTNACGT"`
-| Trim to anchors | Leading and trailing characters are removed until a run of valid nucleotide "anchor" characters is found at each end. 
-* *Front trim:* the sequence is scanned for the first run of at least `anchor_minrun` consecutive anchor characters (`anchor_chars`). Everything before that run is discarded. If no such run exists anywhere in the sequence, the sequence is considered unusable and is set to an empty string.
-* *Back trim:* the sequence is then scanned for the last anchor run, and everything after it is discarded. If either end is trimmed (or the sequence is set to an empty string), `endsTrimmed` is set to `true`. | `"THISISMYGBIFSEQUENCEACGTACGTACGTNNNNNENDOFSEQUENCE"` → `"ACGTACGTACGT"`
+| Trim to anchors 
+
+a| Leading and trailing characters are removed until a run of valid nucleotide "anchor" characters is found at each end. 
+
+* *Front trim:* the sequence is scanned for the first run of at least `anchor_minrun` consecutive anchor characters (`anchor_chars`). Everything before that run is discarded. If no such run exists anywhere in the sequence, the sequence is considered unusable and is set to an empty string. 
+* *Back trim:* the sequence is then scanned for the last anchor run, and everything after it is discarded. 
+
+If either end is trimmed (or the sequence is set to an empty string), `endsTrimmed` is set to `true`. 
+
+| `"THISISMYGBIFSEQUENCEACGTACGTACGTNNNNNENDOFSEQUENCE"` → `"ACGTACGTACGT"`
 | Cap N-runs | Long stretches of `N` carry no information and can dominate similarity comparisons. Any run of `N` of length `nrun_cap_from` or greater is reduced to `nrun_cap_to` characters. The number of runs that were shortened is reported as `nRunsCapped`. | `"ACGTACGTNNNNNNNNNNNACGTACGT"` → `"ACGTACGTNNNNNACGTACGT"`
 |===
-
-=== Trim to anchors
-
-Sequences are sometimes padded at the ends with non-nucleotide text, primer remnants, or ambiguous bases. This stage trims both ends back to a recognisable run of nucleotides:
-
-* *Front trim:* the sequence is scanned for the first run of at least `anchor_minrun` consecutive anchor characters (`anchor_chars`). Everything before that run is discarded. If no such run exists anywhere in the sequence, the sequence is considered unusable and is set to an empty string.
-* *Back trim:* the sequence is then scanned for the last anchor run, and everything after it is discarded.
-
-If either end is trimmed (or the sequence is set to an empty string), `endsTrimmed` is set to `true`.
-
-=== Cap N-runs
-
-Long stretches of `N` carry no information and can dominate similarity comparisons. Any run of `N` of length `nrun_cap_from` or greater is reduced to `nrun_cap_to` characters. The number of runs that were shortened is reported as `nRunsCapped`.
 
 == Quality metrics
 
