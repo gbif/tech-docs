@@ -1,7 +1,7 @@
 = Occurrence download formats
 
 ifeval::["{env}" != "prod"]
-Data downloads are available from GBIF in five primary formats:
+Data downloads are available from GBIF in the following primary formats:
 endif::[]
 ifeval::["{env}" == "prod"]
 Data downloads are available from GBIF in four primary formats:
