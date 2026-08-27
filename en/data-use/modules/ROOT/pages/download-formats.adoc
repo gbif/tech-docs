@@ -97,7 +97,7 @@ ifeval::["{env}" != "prod"]
 [#fasta]
 == FASTA Archive downloads
 
-This format (API: `FASTA_ARCHIVE`) is a Darwin Core Archive download of occurrences carrying DNA or RNA sequences, with two extra files added: `sequences.fasta`, holding the sanitized sequences in https://en.wikipedia.org/wiki/FASTA_format[FASTA format], and `sequences.txt`, holding the quality metrics calculated for each of those sequences.
+The (API: `FASTA_ARCHIVE`) format is a Darwin Core Archive download of occurrences carrying DNA  sequences, with two extra files added: `sequences.fasta`, holding the sanitized sequences in https://en.wikipedia.org/wiki/FASTA_format[FASTA format], and `sequences.txt`, holding the quality metrics calculated for each of those sequences.
 
 The format is intended for occurrence searches restricted to records with sequences, typically together with a filter on target gene (the `nucleotideSequence.targetGene` search parameter).  Whatever filter you request, the download itself only ever includes occurrences with at least one sanitized sequence — records whose sequences are all missing or invalid are excluded from the whole archive, `occurrence.txt` and `verbatim.txt` included.
 
