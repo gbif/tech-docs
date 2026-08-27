@@ -1,11 +1,6 @@
 = Occurrence download formats
 
-ifeval::["{env}" != "prod"]
 Data downloads are available from GBIF in the following primary formats:
-endif::[]
-ifeval::["{env}" == "prod"]
-Data downloads are available from GBIF in four primary formats:
-endif::[]
 
 * <<simple,*Simple*>>.  This format contains a selection of commonly used terms, after the data has been aligned to GBIF's taxonomic and geographic indices and structured vocabularies
 ** Downloads created on www.gbif.org or through the API using the format `SIMPLE_CSV` are produced in a tab-separated text format, suitable for use with spreadsheets and programming/scripting languages
@@ -15,9 +10,7 @@ endif::[]
 ** `multimedia.txt` contains information on multimedia (images, audio, video) relating to the occurrences.
 ** `verbatim.txt` contains the original, uninterpreted data, without modifications by GBIF's systems.
 ** optionally, additional verbatim Darwin Core Archive extensions.  The data are as-received from the publisher.  See https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of these — note not all of them are maintained by GBIF.
-ifeval::["{env}" != "prod"]
 * <<fasta,*FASTA Archive*>> (API: `FASTA_ARCHIVE`).  This is a Darwin Core Archive download of occurrences with DNA or RNA sequences, with the sanitized sequences added in FASTA format, together with their quality metrics.
-endif::[]
 * <<species-list,*Species List*>> (API: `SPECIES_LIST`).  This is a summary format containing the distinct list of species names returned by the filter.
 * <<cube,*Cube*>>.  This format allows you to aggregate occurrences by their taxonomic, temporal and/or spatial properties.
 
@@ -41,9 +34,7 @@ Darwin Core Archive downloads from gbif.org contain the following files:
 `multimedia.txt`:: Occurrence multimedia data after interpretation by GBIF.  Described in detail <<dwca-multimedia,below>>.
 `verbatim.txt`:: Occurrence data without interpretation by GBIF.  Described in detail <<dwca-verbatim,below>>.
 `verbatim/*.txt`:: Occurrence extension data without interpretation by GBIF. See https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of these — note not all of them are maintained by GBIF.
-ifeval::["{env}" != "prod"]
 `dnaderiveddata.txt`:: Interpreted DNA sequence data, included when the DNA Derived Data extension is requested with `interpretedExtensions`.  It contains `gbifID`, `target_gene` and the sanitized `dna_sequence`; see xref:data-processing::sequence-sanitization.adoc[DNA sequence sanitization].
-endif::[]
 `meta.xml`:: The https://dwc.tdwg.org/text/[Darwin Core Archive metafile], describing the structure of the archive — the file formats, column names and their terms.
 `metadata.xml`:: Metadata about the download in https://eml.ecoinformatics.org/[Ecological Metadata Language (EML)].
 `rights.txt`:: Licence information for all the datasets with occurrences in the download.
@@ -93,7 +84,6 @@ The definitions marked with {gbif_source} are from GBIF, and may reflect the res
 
 include::partial$download-species-list-terms-table.adoc[]
 
-ifeval::["{env}" != "prod"]
 [#fasta]
 == FASTA Archive downloads
 
@@ -199,7 +189,6 @@ FASTA Archive Download of COI sequences from Insecta in Norway. GBIF.org (16 Mar
 ----
 
 The target gene, taxonomic and geographic parts of the sentence are taken from the filters of the download request, and each is left out when the request had no such filter.  Use this citation, together with the DOI of the download, when citing the archive; the dataset citations remain relevant if you use records from individual datasets.
-endif::[]
 
 [#cube]
 == Cube downloads
