@@ -187,7 +187,6 @@ gbifID	nucleotideSequenceID	target_gene	sequenceLength	gcContent	…	invalid
 5866098312	d3970a214c7ee0c97542bf907d4a148a	SSU_rRNA_12S_mitochondrial	80	0.3875	…	false
 ----
 
-The metrics are described in more detail in xref:data-processing::sequence-sanitization.adoc#quality-metrics[DNA sequence sanitization].
 
 [#fasta-citation]
 === Citation (`citations.txt`)
