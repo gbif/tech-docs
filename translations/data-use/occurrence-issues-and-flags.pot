@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-06-15 09:50+0000\n"
+"POT-Creation-Date: 2026-08-27 12:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -674,13 +674,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:525
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:524
 #, no-wrap
 msgid "Sequence issues"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:528
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:527
 msgid ""
 "These issues are raised during the sanitization of DNA and RNA sequences "
 "published in dataset records. Like the other issues on this page, they can "
@@ -691,7 +691,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:563
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:562
 #, no-wrap
 msgid ""
 "|Flag name | Definition | Terms | Example\n"
@@ -729,13 +729,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:566
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:564
 #, no-wrap
 msgid "Other issues"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:607
+#: en/data-use/modules/ROOT/pages/occurrence-issues-and-flags.adoc:605
 #, no-wrap
 msgid ""
 "|Flag name | Definition | Terms | Example\n"

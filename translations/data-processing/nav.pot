@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-07-17 13:02+0000\n"
+"POT-Creation-Date: 2026-08-27 12:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,36 +17,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:3
+#: en/data-processing/modules/ROOT/nav.adoc:2
 msgid "xref:clustering-occurrences.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:4
+#: en/data-processing/modules/ROOT/nav.adoc:3
 msgid "xref:sequence-sanitization.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:7
+#: en/data-processing/modules/ROOT/nav.adoc:5
 msgid "xref:temporal-interpretation.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:8
+#: en/data-processing/modules/ROOT/nav.adoc:6
 msgid "xref:vocabularies-interpretation.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:11
+#: en/data-processing/modules/ROOT/nav.adoc:9
 msgid "xref:taxonomy-interpretation.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:12
+#: en/data-processing/modules/ROOT/nav.adoc:10
 msgid "xref:events-processing.adoc[]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/nav.adoc:15
+#: en/data-processing/modules/ROOT/nav.adoc:13
 msgid "xref:ingestion-steps.adoc[]"
 msgstr ""
