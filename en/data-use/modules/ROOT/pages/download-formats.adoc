@@ -124,7 +124,7 @@ A FASTA Archive download contains the files of a <<dwca,Darwin Core Archive down
 <3> Specific to this format, described below.
 <4> Contains a citation for the download as a whole, described <<fasta-citation,below>>.
 
-The two sequence files are not described in `meta.xml`: standard Darwin Core Archive readers will see the archive as an ordinary occurrence download and ignore them.
+NOTE: The two sequence files are not described in `meta.xml`: standard Darwin Core Archive readers will see the archive as an ordinary occurrence download and ignore them.
 
 [#fasta-sequences-fasta]
 === Sequences (`sequences.fasta`)
