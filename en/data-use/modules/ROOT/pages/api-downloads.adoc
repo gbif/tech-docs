@@ -41,7 +41,12 @@ Put this in a file called `query.json`, replacing `userName` with your username 
 }
 ----
 
+ifeval::["{env}" != "prod"]
 `format` can be changed to one of `SIMPLE_CSV`, `DWCA`, `SPECIES_LIST` or `FASTA_ARCHIVE`, see xref::download-formats.adoc[Occurrence download formats].
+endif::[]
+ifeval::["{env}" == "prod"]
+`format` can be changed to one of `SIMPLE_CSV`, `DWCA` or `SPECIES_LIST`, see xref::download-formats.adoc[Occurrence download formats].
+endif::[]
 
 Then use this Curl command:
 
@@ -464,6 +469,7 @@ The extension tables available for download are provided using https://api.gbif.
 
 For descriptions of the extensions and their terms, see https://rs.gbif.org/extensions.html[GBIF Registered Extensions].
 
+ifeval::["{env}" != "prod"]
 [#interpretedextensions]
 == Interpreted extension data
 
@@ -483,7 +489,9 @@ Some extensions are also available in the form processed by GBIF.  These are req
 ----
 
 The DNA Derived Data extension is added to the archive as `dnaderiveddata.txt`, with the columns `gbifID`, `target_gene` and `dna_sequence`.  Unlike the verbatim table, the target gene is normalised against the GBIF https://registry.gbif.org/vocabulary/target_gene[target gene vocabulary] and the sequence is the sanitized one — see xref:data-processing::sequence-sanitization.adoc[DNA sequence sanitization].  The other terms of the extension are not repeated here; request the verbatim extension as well to get them as published.
+endif::[]
 
+ifeval::["{env}" != "prod"]
 [#fastadownloads]
 == FASTA Archive downloads
 
@@ -525,3 +533,4 @@ The format restricts the download to occurrences with at least one sanitized seq
 <1> Optional.  Adds the DNA Derived Data extension as published, including the MIxS terms and the original sequences.
 
 The `target_gene`, taxonomic and geographic filters of the request are also used to build the citation of the download, so a request phrased in these terms produces a citation describing what the archive contains.
+endif::[]
