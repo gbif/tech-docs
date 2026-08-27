@@ -157,7 +157,7 @@ An occurrence may have more than one sequence, for instance for different target
 [#fasta-sequences-txt]
 === Sequence metrics (`sequences.txt`)
 
-A tab-delimited file with one row per record in `sequences.fasta`, in the same order.  It repeats the identifiers from the FASTA header and adds the quality metrics produced by the sanitization pipeline, so that you can apply your own thresholds — on sequence length, ambiguity or GC content — without re-processing the sequences.
+A tab-delimited file with one row per record in `sequences.fasta`, in the same order.  It repeats the identifiers from the FASTA header and adds the quality metrics produced by the [sanitization pipeline](https://techdocs.gbif.org/en/data-processing/sequence-sanitization), so that you can apply your own thresholds — on sequence length, ambiguity or GC content — without re-processing the sequences.
 
 [cols="2,1,4",options="header"]
 |===
