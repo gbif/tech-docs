@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-06-24 12:55+0000\n"
+"POT-Creation-Date: 2026-09-16 10:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1536,8 +1536,9 @@ msgstr ""
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/data-quality-recommendations.adoc:638
 msgid ""
-"At least one of either <<country>> or <<countryCode>> must be shared, if "
-"known, if the record is based on DNA evidence."
+"Location information must be supplied, if known, at least at the country "
+"level (<<country>> or <<countryCode>>) when the record is based on DNA "
+"evidence."
 msgstr ""
 
 #. type: Title ===
