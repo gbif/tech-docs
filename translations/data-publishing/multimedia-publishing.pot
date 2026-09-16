@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-06 12:32+0000\n"
+"POT-Creation-Date: 2026-09-16 10:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -230,6 +230,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:55
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:130
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:172
 msgid "For example:"
 msgstr ""
 
