@@ -634,7 +634,7 @@ The terms constitute the minimum formal requirements for publishing an occurrenc
 
 The term(s) may be required if certain conditions are met. For example:
 
-- At least one of either <<country>> or <<countryCode>> must be shared, if known, if the record is based on DNA evidence. 
+- Location information must be supplied, if known, at least at the country level (<<country>> or <<countryCode>>) when the record is based on DNA evidence. 
 
 === Strongly recommended 
 
