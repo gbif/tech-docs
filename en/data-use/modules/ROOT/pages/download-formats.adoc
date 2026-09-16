@@ -1,6 +1,6 @@
 = Occurrence download formats
 
-Data downloads are available from GBIF in four primary formats:
+Data downloads are available from GBIF in the following primary formats:
 
 * <<simple,*Simple*>>.  This format contains a selection of commonly used terms, after the data has been aligned to GBIF's taxonomic and geographic indices and structured vocabularies
 ** Downloads created on www.gbif.org or through the API using the format `SIMPLE_CSV` are produced in a tab-separated text format, suitable for use with spreadsheets and programming/scripting languages
@@ -10,6 +10,7 @@ Data downloads are available from GBIF in four primary formats:
 ** `multimedia.txt` contains information on multimedia (images, audio, video) relating to the occurrences.
 ** `verbatim.txt` contains the original, uninterpreted data, without modifications by GBIF's systems.
 ** optionally, additional verbatim Darwin Core Archive extensions.  The data are as-received from the publisher.  See https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of these — note not all of them are maintained by GBIF.
+* <<fasta,*FASTA Archive*>> (API: `FASTA_ARCHIVE`).  This is a Darwin Core Archive download of occurrences with DNA or RNA sequences, with the sanitized sequences added in FASTA format, together with their quality metrics.
 * <<species-list,*Species List*>> (API: `SPECIES_LIST`).  This is a summary format containing the distinct list of species names returned by the filter.
 * <<cube,*Cube*>>.  This format allows you to aggregate occurrences by their taxonomic, temporal and/or spatial properties.
 
@@ -33,6 +34,7 @@ Darwin Core Archive downloads from gbif.org contain the following files:
 `multimedia.txt`:: Occurrence multimedia data after interpretation by GBIF.  Described in detail <<dwca-multimedia,below>>.
 `verbatim.txt`:: Occurrence data without interpretation by GBIF.  Described in detail <<dwca-verbatim,below>>.
 `verbatim/*.txt`:: Occurrence extension data without interpretation by GBIF. See https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of these — note not all of them are maintained by GBIF.
+`dnaderiveddata.txt`:: Interpreted DNA sequence data, included when the DNA Derived Data extension is requested with `interpretedExtensions`.  It contains `gbifID`, `target_gene` and the sanitized `dna_sequence`; see xref:data-processing::sequence-sanitization.adoc[DNA sequence sanitization].
 `meta.xml`:: The https://dwc.tdwg.org/text/[Darwin Core Archive metafile], describing the structure of the archive — the file formats, column names and their terms.
 `metadata.xml`:: Metadata about the download in https://eml.ecoinformatics.org/[Ecological Metadata Language (EML)].
 `rights.txt`:: Licence information for all the datasets with occurrences in the download.
@@ -81,6 +83,112 @@ Species list downloads are a summary format containing the distinct list of spec
 The definitions marked with {gbif_source} are from GBIF, and may reflect the result of interpretation and data quality procedures applied by GBIF, or they may not be part of Darwin Core.
 
 include::partial$download-species-list-terms-table.adoc[]
+
+[#fasta]
+== FASTA Archive downloads
+
+The (API: `FASTA_ARCHIVE`) format is a Darwin Core Archive download of occurrences carrying DNA  sequences, with two extra files added: `sequences.fasta`, holding the sanitized sequences in https://en.wikipedia.org/wiki/FASTA_format[FASTA format], and `sequences.txt`, holding the quality metrics calculated for each of those sequences.
+
+IMPORTANT: The format is intended for occurrence searches restricted to records with sequences, typically together with a filter on target gene (the `nucleotideSequence.targetGene` search parameter).  Whatever filter you request, the download itself only ever includes occurrences with at least one sanitized sequence — records whose sequences are all missing or invalid are excluded from the whole archive, `occurrence.txt` and `verbatim.txt` included.
+
+NOTE: This is version 1 of the format.  The layout of the archive and the contents of the two sequence files may change in future versions.
+
+A FASTA Archive download contains the files of a <<dwca,Darwin Core Archive download>>, plus the two sequence files:
+
+[source]
+----
+├── occurrence.txt               <1>
+├── verbatim.txt                 <1>
+├── multimedia.txt               <1>
+├── verbatim/dnaderiveddata.txt  <2>
+├── sequences.fasta              <3>
+├── sequences.txt                <3>
+├── dataset/*.xml                <1>
+├── meta.xml                     <1>
+├── metadata.xml                 <1>
+├── citations.txt                <4>
+└── rights.txt                   <1>
+----
+<1> As in any Darwin Core Archive download, see <<dwca,above>>.
+<2> The verbatim DNA Derived Data extension, present when it was requested with `verbatimExtensions`.  This holds the sequences and MIxS terms as published, before sanitization.
+<3> Specific to this format, described below.
+<4> Contains a citation for the download as a whole, described <<fasta-citation,below>>.
+
+NOTE: The two sequence files are not described in `meta.xml`: standard Darwin Core Archive readers will see the archive as an ordinary occurrence download and ignore them.
+
+[#fasta-sequences-fasta]
+=== Sequences (`sequences.fasta`)
+
+One FASTA record per sanitized sequence, with the sequence on a single line — it is not wrapped.  The header line has three parts, separated by `|`:
+
+[source]
+----
+>nucleotideSequenceID|gbifID|target_gene
+----
+
+For example:
+
+[source]
+----
+>e4346dfb13ca73687e6ca421e1608d54|5866098319|COI
+CTTATCAAGCATTACGGCCCATTCTGGGCCTGCAGTAGATTTGGCAATTTTTAGTCTACATATAGCAGGTGCG…
+>d3970a214c7ee0c97542bf907d4a148a|5866098312|SSU_rRNA_12S_mitochondrial
+CCATCGTGATAAATTCTTAGGTCATTACCAGTGCCAAATCTTGCTTCTACACCATCTACAAAATCTATGTTAC…
+----
+
+`nucleotideSequenceID`:: The MD5 hash of the sanitized sequence.  Identical sequences share the same identifier, so this can be used to group or deduplicate records across datasets.
+`gbifID`:: The GBIF identifier of the occurrence the sequence belongs to — the key to `occurrence.txt`, `verbatim.txt` and `sequences.txt`.
+`target_gene`:: The interpreted target gene, normalised against the GBIF https://registry.gbif.org/vocabulary/target_gene[target gene vocabulary].  Empty when the publisher supplied no value, or a value that could not be interpreted.
+
+The sequence written to the file is the *sanitized* sequence, not the sequence as published: whitespace and gaps are removed, RNA is converted to DNA, long runs of `N` are capped, and the ends are trimmed.  See xref:data-processing::sequence-sanitization.adoc[DNA sequence sanitization] for the full pipeline.  Sequences flagged as invalid by the sanitization — those containing characters that are not IUPAC codes, or natural-language text — are not included in this file.  The sequences as published are available in `verbatim/dnaderiveddata.txt`.
+
+An occurrence may have more than one sequence, for instance for different target genes.  Each of those sequences is a separate record in this file, and all sequences of an included occurrence are written, including sequences for genes other than the one filtered on.
+
+[#fasta-sequences-txt]
+=== Sequence metrics (`sequences.txt`)
+
+A tab-delimited file with one row per record in `sequences.fasta`, in the same order.  It repeats the identifiers from the FASTA header and adds the quality metrics produced by the [sanitization pipeline](https://techdocs.gbif.org/en/data-processing/sequence-sanitization), so that you can apply your own thresholds — on sequence length, ambiguity or GC content — without re-processing the sequences.
+
+[cols="2,1,4",options="header"]
+|===
+| Column | Type | Description
+
+| `gbifID` | long | The GBIF identifier of the occurrence; the key to `occurrence.txt` and `verbatim.txt`.
+| `nucleotideSequenceID` | string | MD5 hash of the sanitized sequence; the key to `sequences.fasta`.
+| `target_gene` | string | Interpreted target gene, from the GBIF https://registry.gbif.org/vocabulary/target_gene[target gene vocabulary].
+| `sequenceLength` | integer | Length of the sanitized sequence.
+| `gcContent` | float | GC content, calculated over A/C/G/T bases only.
+| `nonIupacFraction` | float | Fraction of characters that are not valid IUPAC DNA codes.
+| `nonACGTNFraction` | float | Fraction of characters that are ambiguous IUPAC codes (anything other than A, C, G, T or N).
+| `nFraction` | float | Fraction of characters that are `N`.
+| `nRunsCapped` | integer | Number of runs of `N` that were shortened during sanitization.
+| `naturalLanguageDetected` | boolean | Whether natural-language marker words were found in the published sequence.
+| `endsTrimmed` | boolean | Whether either end of the sequence was trimmed.
+| `gapsOrWhitespaceRemoved` | boolean | Whether any whitespace or gap characters were removed.
+| `invalid` | boolean | Whether the sequence was flagged as invalid.  Invalid sequences are not part of this download, so this is always `false`.
+|===
+
+For example:
+
+[source]
+----
+gbifID	nucleotideSequenceID	target_gene	sequenceLength	gcContent	…	invalid
+5866098319	e4346dfb13ca73687e6ca421e1608d54	COI	313	0.31309904153354634	…	false
+5866098312	d3970a214c7ee0c97542bf907d4a148a	SSU_rRNA_12S_mitochondrial	80	0.3875	…	false
+----
+
+
+[#fasta-citation]
+=== Citation (`citations.txt`)
+
+As with other downloads, `citations.txt` lists a citation for every dataset contributing occurrences to the download.  For FASTA Archive downloads it starts with an additional citation for the download as a whole, describing what the archive contains:
+
+[source]
+----
+FASTA Archive Download of COI sequences from Insecta in Norway. GBIF.org (16 March 2026). https://doi.org/10.15468/dl.xxxxx
+----
+
+The target gene, taxonomic and geographic parts of the sentence are taken from the filters of the download request, and each is left out when the request had no such filter.  Use this citation, together with the DOI of the download, when citing the archive; the dataset citations remain relevant if you use records from individual datasets.
 
 [#cube]
 == Cube downloads
