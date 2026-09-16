@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-03-06 12:32+0000\n"
-"PO-Revision-Date: 2026-03-06 12:42\n"
+"POT-Creation-Date: 2026-09-16 10:13+0000\n"
+"PO-Revision-Date: 2026-09-16 10:16\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -175,6 +175,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:55
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:130
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:172
 msgid "For example:"
 msgstr ""
 

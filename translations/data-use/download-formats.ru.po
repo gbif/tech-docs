@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-04-09 11:24+0000\n"
-"PO-Revision-Date: 2026-04-09 11:35\n"
+"POT-Creation-Date: 2026-09-16 10:31+0000\n"
+"PO-Revision-Date: 2026-09-16 11:50\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -17,15 +17,29 @@ msgstr ""
 "X-Crowdin-File-ID: 40566\n"
 
 #. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/multimedia-publishing.adoc:55
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:130
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:172
+msgid "For example:"
+msgstr ""
+
+#. type: Title ==
+#: en/data-use/modules/ROOT/pages/api-downloads.adoc:488
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:88
+#, no-wrap
+msgid "FASTA Archive downloads"
+msgstr ""
+
+#. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:127
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:22
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:23
 msgid "The definitions marked with {dwc_source} are from the Darwin Core standard."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:129
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:24
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:82
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:25
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:84
 msgid "The definitions marked with {gbif_source} are from GBIF, and may reflect the result of interpretation and data quality procedures applied by GBIF, or they may not be part of Darwin Core."
 msgstr ""
 
@@ -37,7 +51,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:4
-msgid "Data downloads are available from GBIF in four primary formats:"
+msgid "Data downloads are available from GBIF in the following primary formats:"
 msgstr ""
 
 #. type: Plain text
@@ -82,243 +96,449 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:14
-msgid "<<species-list,*Species List*>> (API: `SPECIES_LIST`).  This is a summary format containing the distinct list of species names returned by the filter."
+msgid "<<fasta,*FASTA Archive*>> (API: `FASTA_ARCHIVE`).  This is a Darwin Core Archive download of occurrences with DNA or RNA sequences, with the sanitized sequences added in FASTA format, together with their quality metrics."
 msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:15
+msgid "<<species-list,*Species List*>> (API: `SPECIES_LIST`).  This is a summary format containing the distinct list of species names returned by the filter."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:16
 msgid "<<cube,*Cube*>>.  This format allows you to aggregate occurrences by their taxonomic, temporal and/or spatial properties."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:17
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:18
 msgid "The header row (first row) of all these files contain the short name of the terms they contain.  Most of the terms are defined by the https://dwc.tdwg.org/terms/[Darwin Core standard].  For example, the column `catalogNumber` contains data of the Darwin Core term https://rs.tdwg.org/dwc/terms/catalogNumber[http://rs.tdwg.org/dwc/terms/catalogNumber]."
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:19
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:20
 #, no-wrap
 msgid "Simple download – Term definitions"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:28
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:29
 #, no-wrap
 msgid "DWCA downloads"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:31
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:32
 msgid "Darwin Core Archive downloads from gbif.org contain the following files:"
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:32
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:33
 #, no-wrap
 msgid "`occurrence.txt`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:33
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:34
 msgid "Occurrence data after interpretation by GBIF.  Described in detail <<dwca-interpreted,below>>."
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:33
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:34
 #, no-wrap
 msgid "`multimedia.txt`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:34
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:35
 msgid "Occurrence multimedia data after interpretation by GBIF.  Described in detail <<dwca-multimedia,below>>."
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:34
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:35
 #, no-wrap
 msgid "`verbatim.txt`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:35
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:36
 msgid "Occurrence data without interpretation by GBIF.  Described in detail <<dwca-verbatim,below>>."
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:35
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:36
 #, no-wrap
 msgid "`verbatim/*.txt`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:36
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:37
 msgid "Occurrence extension data without interpretation by GBIF. See https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of these — note not all of them are maintained by GBIF."
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:36
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:37
+#, no-wrap
+msgid "`dnaderiveddata.txt`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:38
+msgid "Interpreted DNA sequence data, included when the DNA Derived Data extension is requested with `interpretedExtensions`.  It contains `gbifID`, `target_gene` and the sanitized `dna_sequence`; see xref:data-processing::sequence-sanitization.adoc[DNA sequence sanitization]."
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:38
 #, no-wrap
 msgid "`meta.xml`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:37
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:39
 msgid "The https://dwc.tdwg.org/text/[Darwin Core Archive metafile], describing the structure of the archive — the file formats, column names and their terms."
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:37
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:39
 #, no-wrap
 msgid "`metadata.xml`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:38
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:40
 msgid "Metadata about the download in https://eml.ecoinformatics.org/[Ecological Metadata Language (EML)]."
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:38
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:40
 #, no-wrap
 msgid "`rights.txt`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:39
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:41
 msgid "Licence information for all the datasets with occurrences in the download."
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:39
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:41
 #, no-wrap
 msgid "`citations.txt`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:40
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:42
 msgid "Citations for all the datasets with occurrences in the download."
 msgstr ""
 
 #. type: Labeled list
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:40
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:42
 #, no-wrap
 msgid "`dataset/*.xml`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:41
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:43
 msgid "EML metadata for every dataset with occurrences in the download."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:43
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:45
 msgid "The data may be read without any special tools, including by spreadsheets such as Microsoft Excel and LibreOffice Calc (see the https://www.gbif.org/faq?question=what-is-inside-a-gbif-download-zip-file[FAQ]).  The `.txt` files are tab-delimited, and all files are in UTF-8 encoding with Unix-style (`\\n`) line endings."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:45
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:47
 msgid "There are libraries to read Darwin Core Archives in these programming languages:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:47
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:49
 msgid "Java — https://github.com/gbif/dwca-io[GBIF dwca-io]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:48
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:50
 msgid ".NET — https://github.com/pjoiner/DwC-A_dotnet[DwC-A_dotnet]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:49
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:51
 msgid "Python — https://python-dwca-reader.readthedocs.io/en/latest/[Python DWCA Reader]"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:50
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:52
 msgid "R — https://github.com/ropensci-archive/finch[finch] (NB: abandoned library)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:51
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:53
 msgid "Ruby — https://github.com/GlobalNamesArchitecture/dwc-archive[dwc-archive]"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:53
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:55
 #, no-wrap
 msgid "Interpreted term definitions (`occurrence.txt`)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:56
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:58
 msgid "This is the Darwin Core Archive _core_ entity, with row type https://rs.tdwg.org/dwc/terms/Occurrence[Occurrence].  Values are tab-delimited and in UTF-8 encoding."
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:60
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:62
 #, no-wrap
 msgid "Multimedia term definitions (`multimedia.txt`)"
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:65
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:67
 #, no-wrap
 msgid "Verbatim term definitions (`verbatim.txt`)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:67
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:69
 msgid "Data in this table is not modified by GBIF interpretation processes, except for conversion to Unicode and possible changes to whitespace (spaces, tabs, newlines etc)."
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:71
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:73
 #, no-wrap
 msgid "Verbatim extensions (`verbatim/*.txt`)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:73
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:75
 msgid "Data in these tables is not modified by GBIF interpretation processes, except for conversion to Unicode and possible changes to whitespace (spaces, tabs, newlines etc)."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:75
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:77
 msgid "See the https://rs.gbif.org/extensions.html[GBIF Registered Extensions] for documentation of the extensions."
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:77
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:79
 #, no-wrap
 msgid "Species list downloads – Term definitions"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:80
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:82
 msgid "Species list downloads are a summary format containing the distinct list of species names returned by the filter."
 msgstr ""
 
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:91
+msgid "The (API: `FASTA_ARCHIVE`) format is a Darwin Core Archive download of occurrences carrying DNA sequences, with two extra files added: `sequences.fasta`, holding the sanitized sequences in https://en.wikipedia.org/wiki/FASTA_format[FASTA format], and `sequences.txt`, holding the quality metrics calculated for each of those sequences."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:93
+msgid "The format is intended for occurrence searches restricted to records with sequences, typically together with a filter on target gene (the `nucleotideSequence.targetGene` search parameter).  Whatever filter you request, the download itself only ever includes occurrences with at least one sanitized sequence — records whose sequences are all missing or invalid are excluded from the whole archive, `occurrence.txt` and `verbatim.txt` included."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:95
+msgid "This is version 1 of the format.  The layout of the archive and the contents of the two sequence files may change in future versions."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:97
+msgid "A FASTA Archive download contains the files of a <<dwca,Darwin Core Archive download>>, plus the two sequence files:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:111
+#, no-wrap
+msgid "├── occurrence.txt               <1>\n"
+"├── verbatim.txt                 <1>\n"
+"├── multimedia.txt               <1>\n"
+"├── verbatim/dnaderiveddata.txt  <2>\n"
+"├── sequences.fasta              <3>\n"
+"├── sequences.txt                <3>\n"
+"├── dataset/*.xml                <1>\n"
+"├── meta.xml                     <1>\n"
+"├── metadata.xml                 <1>\n"
+"├── citations.txt                <4>\n"
+"└── rights.txt                   <1>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:113
+msgid "As in any Darwin Core Archive download, see <<dwca,above>>."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:114
+msgid "The verbatim DNA Derived Data extension, present when it was requested with `verbatimExtensions`.  This holds the sequences and MIxS terms as published, before sanitization."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:115
+msgid "Specific to this format, described below."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:116
+msgid "Contains a citation for the download as a whole, described <<fasta-citation,below>>."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:118
+msgid "The two sequence files are not described in `meta.xml`: standard Darwin Core Archive readers will see the archive as an ordinary occurrence download and ignore them."
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:120
+#, no-wrap
+msgid "Sequences (`sequences.fasta`)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:123
+msgid "One FASTA record per sanitized sequence, with the sequence on a single line — it is not wrapped.  The header line has three parts, separated by `|`:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:127
+#, no-wrap
+msgid ">nucleotideSequenceID|gbifID|target_gene\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:137
+#, no-wrap
+msgid ">e4346dfb13ca73687e6ca421e1608d54|5866098319|COI\n"
+"CTTATCAAGCATTACGGCCCATTCTGGGCCTGCAGTAGATTTGGCAATTTTTAGTCTACATATAGCAGGTGCG…\n"
+">d3970a214c7ee0c97542bf907d4a148a|5866098312|SSU_rRNA_12S_mitochondrial\n"
+"CCATCGTGATAAATTCTTAGGTCATTACCAGTGCCAAATCTTGCTTCTACACCATCTACAAAATCTATGTTAC…\n"
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:139
+#, no-wrap
+msgid "`nucleotideSequenceID`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:140
+msgid "The MD5 hash of the sanitized sequence.  Identical sequences share the same identifier, so this can be used to group or deduplicate records across datasets."
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:140
+#, no-wrap
+msgid "`gbifID`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:141
+msgid "The GBIF identifier of the occurrence the sequence belongs to — the key to `occurrence.txt`, `verbatim.txt` and `sequences.txt`."
+msgstr ""
+
+#. type: Labeled list
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:141
+#, no-wrap
+msgid "`target_gene`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:142
+msgid "The interpreted target gene, normalised against the GBIF https://registry.gbif.org/vocabulary/target_gene[target gene vocabulary].  Empty when the publisher supplied no value, or a value that could not be interpreted."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:144
+msgid "The sequence written to the file is the *sanitized* sequence, not the sequence as published: whitespace and gaps are removed, RNA is converted to DNA, long runs of `N` are capped, and the ends are trimmed.  See https://techdocs.gbif.org/en/data-processing/sequence-sanitization[DNA sequence sanitization] for the full pipeline.  Sequences flagged as invalid by the sanitization — those containing characters that are not IUPAC codes, or natural-language text — are not included in this file.  The sequences as published are available in `verbatim/dnaderiveddata.txt`."
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:146
+msgid "An occurrence may have more than one sequence, for instance for different target genes.  Each of those sequences is a separate record in this file, and all sequences of an included occurrence are written, including sequences for genes other than the one filtered on."
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:148
+#, no-wrap
+msgid "Sequence metrics (`sequences.txt`)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:151
+msgid "A tab-delimited file with one row per record in `sequences.fasta`, in the same order.  It repeats the identifiers from the FASTA header and adds the quality metrics produced by the https://techdocs.gbif.org/en/data-processing/sequence-sanitization[sanitization pipeline], so that you can apply your own thresholds — on sequence length, ambiguity or GC content — without re-processing the sequences."
+msgstr ""
+
+#. type: Table
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:169
+#, no-wrap
+msgid "| Column | Type | Description\n\n"
+"| `gbifID` | long | The GBIF identifier of the occurrence; the key to `occurrence.txt` and `verbatim.txt`.\n"
+"| `nucleotideSequenceID` | string | MD5 hash of the sanitized sequence; the key to `sequences.fasta`.\n"
+"| `target_gene` | string | Interpreted target gene, from the GBIF https://registry.gbif.org/vocabulary/target_gene[target gene vocabulary].\n"
+"| `sequenceLength` | integer | Length of the sanitized sequence.\n"
+"| `gcContent` | float | GC content, calculated over A/C/G/T bases only.\n"
+"| `nonIupacFraction` | float | Fraction of characters that are not valid IUPAC DNA codes.\n"
+"| `nonACGTNFraction` | float | Fraction of characters that are ambiguous IUPAC codes (anything other than A, C, G, T or N).\n"
+"| `nFraction` | float | Fraction of characters that are `N`.\n"
+"| `nRunsCapped` | integer | Number of runs of `N` that were shortened during sanitization.\n"
+"| `naturalLanguageDetected` | boolean | Whether natural-language marker words were found in the published sequence.\n"
+"| `endsTrimmed` | boolean | Whether either end of the sequence was trimmed.\n"
+"| `gapsOrWhitespaceRemoved` | boolean | Whether any whitespace or gap characters were removed.\n"
+"| `invalid` | boolean | Whether the sequence was flagged as invalid.  Invalid sequences are not part of this download, so this is always `false`.\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:178
+#, no-wrap
+msgid "gbifID\tnucleotideSequenceID\ttarget_gene\tsequenceLength\tgcContent\t…\tinvalid\n"
+"5866098319\te4346dfb13ca73687e6ca421e1608d54\tCOI\t313\t0.31309904153354634\t…\tfalse\n"
+"5866098312\td3970a214c7ee0c97542bf907d4a148a\tSSU_rRNA_12S_mitochondrial\t80\t0.3875\t…\tfalse\n"
+msgstr ""
+
+#. type: Title ===
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:182
+#, no-wrap
+msgid "Citation (`citations.txt`)"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:185
+msgid "As with other downloads, `citations.txt` lists a citation for every dataset contributing occurrences to the download.  For FASTA Archive downloads it starts with an additional citation for the download as a whole, describing what the archive contains:"
+msgstr ""
+
+#. type: delimited block -
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:189
+#, no-wrap
+msgid "FASTA Archive Download of COI sequences from Insecta in Norway. GBIF.org (16 March 2026). https://doi.org/10.15468/dl.xxxxx\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:192
+msgid "The target gene, taxonomic and geographic parts of the sentence are taken from the filters of the download request, and each is left out when the request had no such filter.  Use this citation, together with the DOI of the download, when citing the archive; the dataset citations remain relevant if you use records from individual datasets."
+msgstr ""
+
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:86
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:194
 #, no-wrap
 msgid "Cube downloads"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:89
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:197
 msgid "This download format allows you to aggregate occurrences by their taxonomic, temporal and/or spatial properties. For example, a data cube can be configured to aggregate occurrences by family, month and grid cell of the European Environment Agency reference grid (three dimensions) and count the number of occurrences (a measure) per combination. The result is a CSV file."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:91
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:199
 msgid "Once configured, a SQL query will be created to generate the data cube. For more advanced use, it is possible to further customize the requested download by editing the SQL query."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/download-formats.adoc:92
+#: en/data-use/modules/ROOT/pages/download-formats.adoc:200
 msgid "Read more about https://www.gbif.org/occurrence-cubes[occurrence cubes]."
 msgstr ""
 
