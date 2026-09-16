@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-09-16 10:13+0000\n"
-"PO-Revision-Date: 2026-09-16 10:16\n"
+"POT-Creation-Date: 2026-09-16 10:31+0000\n"
+"PO-Revision-Date: 2026-09-16 11:50\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -453,7 +453,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:144
-msgid "The sequence written to the file is the *sanitized* sequence, not the sequence as published: whitespace and gaps are removed, RNA is converted to DNA, long runs of `N` are capped, and the ends are trimmed.  See xref:data-processing::sequence-sanitization.adoc[DNA sequence sanitization] for the full pipeline.  Sequences flagged as invalid by the sanitization — those containing characters that are not IUPAC codes, or natural-language text — are not included in this file.  The sequences as published are available in `verbatim/dnaderiveddata.txt`."
+msgid "The sequence written to the file is the *sanitized* sequence, not the sequence as published: whitespace and gaps are removed, RNA is converted to DNA, long runs of `N` are capped, and the ends are trimmed.  See https://techdocs.gbif.org/en/data-processing/sequence-sanitization[DNA sequence sanitization] for the full pipeline.  Sequences flagged as invalid by the sanitization — those containing characters that are not IUPAC codes, or natural-language text — are not included in this file.  The sequences as published are available in `verbatim/dnaderiveddata.txt`."
 msgstr ""
 
 #. type: Plain text
@@ -469,7 +469,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:151
-msgid "A tab-delimited file with one row per record in `sequences.fasta`, in the same order.  It repeats the identifiers from the FASTA header and adds the quality metrics produced by the [sanitization pipeline](https://techdocs.gbif.org/en/data-processing/sequence-sanitization), so that you can apply your own thresholds — on sequence length, ambiguity or GC content — without re-processing the sequences."
+msgid "A tab-delimited file with one row per record in `sequences.fasta`, in the same order.  It repeats the identifiers from the FASTA header and adds the quality metrics produced by the https://techdocs.gbif.org/en/data-processing/sequence-sanitization[sanitization pipeline], so that you can apply your own thresholds — on sequence length, ambiguity or GC content — without re-processing the sequences."
 msgstr ""
 
 #. type: Table
