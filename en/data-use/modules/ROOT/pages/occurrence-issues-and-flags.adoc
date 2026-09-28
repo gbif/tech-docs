@@ -382,12 +382,10 @@ Reasons include:
 |_dwc:occurrenceStatus_
 |https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE[example]
 
-ifeval::["{env}" != "prod"]
 |*Target gene invalid*
 |The supplied target gene could not be matched against the GBIF https://registry.gbif.org/vocabulary/target_gene[target gene vocabulary] (https://api.gbif.org/v1/vocabularies/target_gene[API]).
 |_target_gene_
 |https://www.gbif.org/occurrence/search?issue=TARGET_GENE_INVALID[example]
-endif::[]
 
 ifeval::["{env}" != "prod"]
 |*Era or Erathem inferred*
