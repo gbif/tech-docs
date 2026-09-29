@@ -130,6 +130,181 @@ The definitions marked with {gbif_source} are from GBIF, and may reflect the res
 include::partial$download-sql-terms-table.adoc[]
 ====
 
+
+[#taxonomy-columns]
+=== Taxonomy columns
+
+The `occurrence` table contains the interpreted taxonomy for each occurrence based on Catalogue of Life, as well as the verbatim taxonomy.
+In addition, support for the GBIF backbone taxonomy is available through the `gbif_classification` prefixed columns, which are derived from the GBIF backbone taxonomy.
+
+The taxonomic columns populated with content from Catalogue of Life include:
+[cols="1,1,3", options="header"]
+|===
+| Column | Type | Description
+
+| taxonkey
+| STRING
+| The taxon key we have matched to for this record. This will differ from `acceptedtaxonkey` if the matched taxon is a synonym.
+
+| scientificname
+| STRING
+| The scientific name of the taxon we have matched to for this record.
+
+| acceptedtaxonkey
+| STRING
+| The taxon key of the accepted taxon for the match. This will be the same as `taxonkey` when the matched taxon is accepted, and will point to the accepted taxon when the match is a synonym.
+
+| acceptedscientificname
+| STRING
+| The scientific name of the accepted taxon. This may differ from `scientificname` when the matched taxon is a synonym.
+
+| genericname
+| STRING
+| The generic name of the matched taxon, typically the genus component of the scientific name.
+
+| specificepithet
+| STRING
+| The specific epithet of the matched taxon, excluding the genus and any infraspecific epithet.
+
+| infraspecificepithet
+| STRING
+| The infraspecific epithet of the matched taxon, for example the subspecies or variety epithet.
+
+| taxonrank
+| STRING
+| The taxonomic rank of the matched taxon, for example `SPECIES`, `GENUS`, or `FAMILY`.
+
+| kingdomkey
+| STRING
+| The taxon key for the kingdom in the classification of the matched taxon.
+
+| phylumkey
+| STRING
+| The taxon key for the phylum in the classification of the matched taxon.
+
+| classkey
+| STRING
+| The taxon key for the class in the classification of the matched taxon.
+
+| orderkey
+| STRING
+| The taxon key for the order in the classification of the matched taxon.
+
+| superfamilykey
+| STRING
+| The taxon key for the superfamily in the classification of the matched taxon.
+
+| familykey
+| STRING
+| The taxon key for the family in the classification of the matched taxon.
+
+| subfamilykey
+| STRING
+| The taxon key for the subfamily in the classification of the matched taxon.
+
+| tribekey
+| STRING
+| The taxon key for the tribe in the classification of the matched taxon.
+
+| subtribekey
+| STRING
+| The taxon key for the subtribe in the classification of the matched taxon.
+
+| genuskey
+| STRING
+| The taxon key for the genus in the classification of the matched taxon.
+
+| subgenuskey
+| STRING
+| The taxon key for the subgenus in the classification of the matched taxon.
+
+| specieskey
+| STRING
+| The taxon key for the species in the classification of the matched taxon.
+
+| kingdom
+| STRING
+| The scientific name of the kingdom in the classification of the matched taxon.
+
+| phylum
+| STRING
+| The scientific name of the phylum in the classification of the matched taxon.
+
+| class
+| STRING
+| The scientific name of the class in the classification of the matched taxon.
+
+| order
+| STRING
+| The scientific name of the order in the classification of the matched taxon.
+
+| superfamily
+| STRING
+| The scientific name of the superfamily in the classification of the matched taxon.
+
+| family
+| STRING
+| The scientific name of the family in the classification of the matched taxon.
+
+| subfamily
+| STRING
+| The scientific name of the subfamily in the classification of the matched taxon.
+
+| tribe
+| STRING
+| The scientific name of the tribe in the classification of the matched taxon.
+
+| subtribe
+| STRING
+| The scientific name of the subtribe in the classification of the matched taxon.
+
+| genus
+| STRING
+| The scientific name of the genus in the classification of the matched taxon.
+
+| subgenus
+| STRING
+| The scientific name of the subgenus in the classification of the matched taxon.
+
+| species
+| STRING
+| The scientific name of the species in the classification of the matched taxon.
+
+| iucnredlistcategory
+| STRING
+| The IUCN Red List category associated with the matched taxon, when available.
+
+| taxonkeys
+| ARRAY<STRING>
+| All taxon keys for the entire classification of the matched taxon, from kingdom to species. This includes the `taxonkey` for the matched taxon, and the `acceptedtaxonkey` for the accepted taxon. It also includes non-linnean ranks such as subfamily, tribe, and subtribe.
+
+| taxonomicissue
+| ARRAY<STRING>
+| Taxonomic issues identified while matching or resolving the taxon.
+
+| taxonomicstatus
+| STRING
+| The taxonomic status of the matched taxon, for example `ACCEPTED`, `SYNONYM`
+|===
+
+All of these fields are also available for the GBIF Backbone using the `occurrence.gbif_classification` prefix
+in SELECT and WHERE clauses.
+
+[source,sql]
+----
+SELECT
+  occurrence.gbif_classification.phylum,
+  occurrence.gbif_classification.class,
+  occurrence.gbif_classification."order",
+  occurrence.gbif_classification.family,
+  occurrence.gbif_classification.genus,
+  occurrence.gbif_classification.species,
+  occurrence.gbif_classification.taxonrank
+FROM occurrence
+WHERE occurrence.gbif_classification.kingdom = 'Animalia'
+----
+
+
 [IMPORTANT]
 .Quoting column names
 ====
