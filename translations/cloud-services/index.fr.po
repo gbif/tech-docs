@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-05-15 13:14+0000\n"
-"PO-Revision-Date: 2026-05-19 13:48\n"
+"POT-Creation-Date: 2026-05-20 06:54+0000\n"
+"PO-Revision-Date: 2026-10-21 14:47\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #. type: Title ==
 #: en/cloud-services/modules/ROOT/pages/index.adoc:1
-#: en/data-use/modules/ROOT/pages/index.adoc:41
+#: en/data-use/modules/ROOT/pages/index.adoc:39
 #, no-wrap
 msgid "Cloud computing services"
 msgstr ""
