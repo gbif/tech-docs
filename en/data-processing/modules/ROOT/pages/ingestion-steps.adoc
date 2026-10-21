@@ -62,9 +62,7 @@ There are two additional options to modify the running of steps, those are:
 - Use the latest successful attempt: Run the steps using the latest *successful* attempt instead of the last one.
 - Exclude event steps: Run the steps for occurrences only.
 
-You need to leave a comment when using this option, it should follow the structure:
-
-> date(YYYY-MM-DD):Initials of person doing the ingestion: brief message of why this option is being used.
+You need to leave a comment when using this option.
 
 === Ingestion of Checklists and Metadata-only datasets 
 
