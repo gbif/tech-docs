@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-07-17 13:22+0000\n"
-"PO-Revision-Date: 2026-07-17 14:27\n"
+"POT-Creation-Date: 2026-10-21 12:24+0000\n"
+"PO-Revision-Date: 2026-10-21 12:31\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -19,14 +19,12 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:2
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:2
-#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:2
 msgid "ifeval::[\"{env}\" == \"prod\"]"
 msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:4
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:6
-#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:6
 msgid "endif::[]"
 msgstr ""
 
@@ -39,7 +37,6 @@ msgstr ""
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:8
 #: en/data-publishing/modules/ROOT/pages/LSID-lookup.adoc:13
-#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:14
 msgid "include::ROOT::partial$under-construction.adoc[]"
 msgstr ""
 
@@ -261,32 +258,27 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:66
-msgid "You need to leave a comment when using this option, it should follow the structure:"
-msgstr ""
-
-#. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:68
-msgid "date(YYYY-MM-DD):Initials of person doing the ingestion: brief message of why this option is being used."
+msgid "You need to leave a comment when using this option."
 msgstr ""
 
 #. type: Title ===
-#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:69
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:67
 #, no-wrap
 msgid "Ingestion of Checklists and Metadata-only datasets "
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:72
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:70
 msgid "Checklists and Metadata-only datasets do not have these steps, because those are specific for indexing occurrences. For checklist it will show ‘processStateChecklist: FINISHED’. If they are pills present for a checklist, it is because it has the occurrence extension and the pills relate to that extension."
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:76
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:74
 msgid "For Metadata it will show “finishReason: NORMAL processStateOccurrence: EMPTY processStateChecklist: EMPTY”"
 msgstr ""
 
 #. type: Plain text
-#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:77
+#: en/data-processing/modules/ROOT/pages/ingestion-steps.adoc:75
 msgid "If there is a problem with one of those kind of datasets and the finishReason is: ABORT. You can review the full results of the pipelines in the Log option, that will redirect to the ElasticSearch results that have detailed information about ingestion."
 msgstr ""
 
