@@ -1,17 +1,4 @@
-ifeval::["{env}" == "prod"] 
-
-:page-unpublish: 
-
-endif::[] 
-
-  
-
 = Data standards 
-
-  
-
-include::ROOT::partial$under-construction.adoc[] 
-
   
 
 NOTE: Shared data standards make it possible to bring together the hundreds of millions of primary biodiversity records in the GBIF index. 
