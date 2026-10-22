@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2026-10-21 12:12+0000\n"
-"PO-Revision-Date: 2026-10-22 12:50\n"
+"PO-Revision-Date: 2026-10-22 14:46\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -20,12 +20,12 @@ msgstr ""
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:1
 #, no-wrap
 msgid "Data standards "
-msgstr ""
+msgstr "数据标准 "
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:5
 msgid "Shared data standards make it possible to bring together the hundreds of millions of primary biodiversity records in the GBIF index."
-msgstr ""
+msgstr "共享数据标准是将GBIF索引中数以亿计的原始生物多样性记录汇集起来的主要推动力。"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:8
@@ -68,52 +68,52 @@ msgstr "https://www.gbif.org/sampling-event-data[采样活动数据简介]"
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:20
 msgid "https://manual.obis.org/darwin_core.html[The OBIS Manual - Darwin Core]"
-msgstr ""
+msgstr "https://manual.obis.org/darwin_core.html[海洋生物多样性信息系统(OBIS) 手册 - 达尔文核心]"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:21
 msgid "https://gcube.wiki.gcube-system.org/gcube/Darwin_Core_Terms[Darwin Core terms] (via Gcube Wiki)"
-msgstr ""
+msgstr "https://gcube.wiki.gcube-system.org/gcube/Darwin_Core_Terms[达尔文核心术语] (通过Gcube Wiki)"
 
 #. type: Title ===
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:22
 #, no-wrap
 msgid "EML: Ecological Metadata Language "
-msgstr ""
+msgstr "EML：生态元数据语言 "
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:25
 msgid "Ecological Metadata Language, or *EML*, is a metadata standard that records information about ecological datasets in a series of modular and extensible XML document types. All of the descriptions of datasets in GBIF.org rely on 'metadata'—that is, the information about data—using the open-source EML standard, which is administered and maintained by https://knb.ecoinformatics.org[The Knowledge Network for Biocomplexity]. Each Darwin Core Archive includes as one of its components an EML file (written in XML format)."
-msgstr ""
+msgstr "生态元数据语言，或 *EML*，是一种元数据标准，它以一系列模块化和可扩展的XML文档类型记录有关生态数据集的信息。对GBIF.org中数据集的所有描述都依赖于“元数据”——即关于数据的信息——使用开源的EML标准，该标准由 https://knb.ecoinformatics.org[生物复杂性知识网络]管理和维护。每个达尔文核心档案都包含一个EML文件 (以XML格式编写) 作为其组分之一。"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:27
 msgid "https://ipt.gbif.org/manual/en/ipt/latest/gbif-metadata-profile[GBIF Metadata Profile: How-to Guide]"
-msgstr ""
+msgstr "https://ipt.gbif.org/manual/en/ipt/latest/gbif-metadata-profile[GBIF元数据配置文件：操作指南]"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:28
 msgid "https://eml.ecoinformatics.org/[EML standard]"
-msgstr ""
+msgstr "https://eml.ecoinformatics.org/[EML标准]"
 
 #. type: Title ===
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:29
 #, no-wrap
 msgid "BioCASe / ABCD "
-msgstr ""
+msgstr "BioCASe / ABCD "
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:32
 msgid "The http://www.biocase.org[Biological Collection Access Service], commonly referred to as *BioCASe*, is an international network linking biological collections data from natural history museums, botanical/zoological gardens and research institutions. BioCASe relies on the https://www.tdwg.org/standards/abcd/[Access to Biological Collections Data (ABCD) data exchange standard], which TDWG also administers."
-msgstr ""
+msgstr "http://www.biocase.org[生物标本库接入服务]，通常被称为 *BioCASe*，是一个连接出自自然历史博物馆、植物园/动物园和研究机构的生物标本数据的国际网络。BioCASe依赖于 http://www.tdwg.org/standards[生物标本数据获取 (ABCD) 数据交换标准]，该标准也由TDWG管理。"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:34
 msgid "https://www.biocase.org/products/protocols/[BioCASe Protocol]"
-msgstr ""
+msgstr "https://www.biocase.org/products/protocols/[BioCASe协议]"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:34
 msgid "https://www.biocase.org/whats_biocase/gbif_downloads.cgi?view=2[User access of BioCASe data through GBIF.org]"
-msgstr ""
+msgstr "https://www.biocase.org/whats_biocase/gbif_downloads.cgi?view=2[使用者通过GBIF.org获取BioCASe数据]"
 
