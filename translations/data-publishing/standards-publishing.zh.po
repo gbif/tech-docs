@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2026-10-21 12:12+0000\n"
-"PO-Revision-Date: 2026-10-21 12:32\n"
+"PO-Revision-Date: 2026-10-22 12:50\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -30,40 +30,40 @@ msgstr ""
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:8
 msgid "The data available through GBIF.org and its associated services is the result of the GBIF network of Participants and publishers applying shared rules and conventions to describe, record and structure thousands of different datasets drawn from hundreds of institutions around the world. Common standards are the main enabler for bringing together the hundreds of millions of primary biodiversity records in the GBIF index."
-msgstr ""
+msgstr "通过GBIF.org及其相关服务提供的数据，是GBIF参与者和发布者网络应用共享规则和惯例来描述、记录和结构化出自世界各地数百个机构的数千个不同数据集的结果。共同标准是汇集GBIF索引中数以亿计的原始生物多样性记录的主要推动力。"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:10
 msgid "Within the biodiversity domain, the group most often responsible for developing and maintaining data standards is http://www.tdwg.org[Biodiversity Information Standards]. As an affiliate of the http://www.iubs.org/[International Union of Biological Science], this nonprofit scientific and educational association focuses on the development of standards for the exchange of biological and biodiversity data. Members of the biodiversity community generally refer to this group as *TDWG* (pronounced _tad-wig_)—a vestigial reminder of its earlier manifestation as the Taxonomic Databases Working Group."
-msgstr ""
+msgstr "在生物多样性领域，最常负责制定和维护数据标准的团体是 http://www.tdwg.org[生物多样性信息标准]。作为 http://www.iubs.org/[国际生物科学联合会]的一个附属机构，这个非营利性的科学和教育协会专注于制定生物和生物多样性数据交换标准。生物多样性社区的成员通常将这个团体称为*TDWG* (发音为 _tad-wig_) ——这是对它早期的表现形式为分类学数据库工作组的一种残留记忆。"
 
 #. type: Title ==
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:11
 #, no-wrap
 msgid "Commonly used standards "
-msgstr ""
+msgstr "常用标准 "
 
 #. type: Title ===
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:13
 #, no-wrap
 msgid "Darwin Core "
-msgstr ""
+msgstr "达尔文核心 "
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:16
 #, no-wrap
 msgid "The Darwin Core Standard (DwC) offers a stable, straightforward and flexible framework for compiling biodiversity data from varied and variable sources. The majority of the datasets shared through GBIF.org are published using the Darwin Core Archive format (DwC-A).    \n"
-msgstr ""
+msgstr "达尔文核心标准 (DwC) 提供了一个稳定、直接和灵活的框架，用于汇编出自各种各样来源的生物多样性数据。通过GBIF.org共享的大多数数据集都是使用达尔文核心档案格式 (DwC-A) 发布的。    \n"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:18
 msgid "https://www.gbif.org/darwin-core[What is Darwin Core, and why does it matter?]"
-msgstr ""
+msgstr "https://www.gbif.org/darwin-core[什么是达尔文核心，为什么它很重要？]"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:19
 msgid "https://www.gbif.org/sampling-event-data[Introduction to sampling-event data]"
-msgstr ""
+msgstr "https://www.gbif.org/sampling-event-data[采样活动数据简介]"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:20
