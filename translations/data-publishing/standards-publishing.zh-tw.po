@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2026-10-21 12:12+0000\n"
-"PO-Revision-Date: 2026-10-21 12:32\n"
+"PO-Revision-Date: 2026-10-22 14:46\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -20,50 +20,50 @@ msgstr ""
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:1
 #, no-wrap
 msgid "Data standards "
-msgstr ""
+msgstr "資料標準 "
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:5
 msgid "Shared data standards make it possible to bring together the hundreds of millions of primary biodiversity records in the GBIF index."
-msgstr ""
+msgstr "共享的資料標準，使得推動彙整 GBIF 索引中數以億計的基礎生物多樣性資料成為可能。"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:8
 msgid "The data available through GBIF.org and its associated services is the result of the GBIF network of Participants and publishers applying shared rules and conventions to describe, record and structure thousands of different datasets drawn from hundreds of institutions around the world. Common standards are the main enabler for bringing together the hundreds of millions of primary biodiversity records in the GBIF index."
-msgstr ""
+msgstr "透過 GBIF.org 及其附屬服務公開的資料，都是 GBIF 會員網絡和資料發布者們經由共享的規則及慣例，從世界各地數以百計的機構獲取數以千計的資料集加以描述、紀錄、建構而成。而共享的資料標準，使得推動彙整 GBIF 索引中數以億計的基礎生物多樣性資料成為可能。"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:10
 msgid "Within the biodiversity domain, the group most often responsible for developing and maintaining data standards is http://www.tdwg.org[Biodiversity Information Standards]. As an affiliate of the http://www.iubs.org/[International Union of Biological Science], this nonprofit scientific and educational association focuses on the development of standards for the exchange of biological and biodiversity data. Members of the biodiversity community generally refer to this group as *TDWG* (pronounced _tad-wig_)—a vestigial reminder of its earlier manifestation as the Taxonomic Databases Working Group."
-msgstr ""
+msgstr "在生物多樣性的領域，主要負責開發及維護資料標準的是 http://www.tdwg.org[生物多樣性資訊標準] 組織。作為 http://www.iubs.org[國際生命科學聯盟] 的附屬機構，該非營利的科學及教育協會專注於開發生物及生物多樣性資料的交換標準。生物多樣性的社群成員一般將此組織稱為 *TDWG*（音同 _Tad-Wig_），因其前身為分類學資料庫工作小組（Taxonomic Databases Working Group）。"
 
 #. type: Title ==
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:11
 #, no-wrap
 msgid "Commonly used standards "
-msgstr ""
+msgstr "經常使用的標準規範 "
 
 #. type: Title ===
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:13
 #, no-wrap
 msgid "Darwin Core "
-msgstr ""
+msgstr "達爾文核心集（Darwin Core） "
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:16
 #, no-wrap
 msgid "The Darwin Core Standard (DwC) offers a stable, straightforward and flexible framework for compiling biodiversity data from varied and variable sources. The majority of the datasets shared through GBIF.org are published using the Darwin Core Archive format (DwC-A).    \n"
-msgstr ""
+msgstr "達爾文核心集標準（Darwin Core Standard, DwC）提供一個穩定、直觀及可塑的框架來編譯不同、多變來源的生物多樣性資料。絕大多數由 GBIF.org 分享的資料集都是以達爾文核心集檔案格式（Darwin Core Archive format, DwC-A）發布。    \n"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:18
 msgid "https://www.gbif.org/darwin-core[What is Darwin Core, and why does it matter?]"
-msgstr ""
+msgstr "https://www.gbif.org/darwin-core[什麼是達爾文核心集？它為何重要?]"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:19
 msgid "https://www.gbif.org/sampling-event-data[Introduction to sampling-event data]"
-msgstr ""
+msgstr "https://www.gbif.org/sampling-event-data[介紹：調查活動資料]"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:20
@@ -73,47 +73,47 @@ msgstr ""
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:21
 msgid "https://gcube.wiki.gcube-system.org/gcube/Darwin_Core_Terms[Darwin Core terms] (via Gcube Wiki)"
-msgstr ""
+msgstr "https://gcube.wiki.gcube-system.org/gcube/Darwin_Core_Terms[達爾文核心集辭彙] (連結至 Gcube 維基)"
 
 #. type: Title ===
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:22
 #, no-wrap
 msgid "EML: Ecological Metadata Language "
-msgstr ""
+msgstr "EML: 生態詮釋資料語言 "
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:25
 msgid "Ecological Metadata Language, or *EML*, is a metadata standard that records information about ecological datasets in a series of modular and extensible XML document types. All of the descriptions of datasets in GBIF.org rely on 'metadata'—that is, the information about data—using the open-source EML standard, which is administered and maintained by https://knb.ecoinformatics.org[The Knowledge Network for Biocomplexity]. Each Darwin Core Archive includes as one of its components an EML file (written in XML format)."
-msgstr ""
+msgstr "生態詮釋資料語言（Ecological Metadata Language, *EML*），是一種詮釋資料規範。 它使用一系列模組化、可擴展的 XML 文件類型來記錄生態資料集的資訊。GBIF.org 所有資料集的描述都依賴詮釋資料；也就是說，關於資料的資訊都使用此開源 EML 標準—它是由 https://knb.ecoinformatics.org[生物複雜性知識網絡] 所管理及維護。每個達爾文核心集資料檔案的組成部件中都包含一個 EML 文件（以XML 格式撰寫）。"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:27
 msgid "https://ipt.gbif.org/manual/en/ipt/latest/gbif-metadata-profile[GBIF Metadata Profile: How-to Guide]"
-msgstr ""
+msgstr "https://ipt.gbif.org/manual/en/ipt/latest/gbif-metadata-profile[GBIF 詮釋資料說明：導引手冊]"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:28
 msgid "https://eml.ecoinformatics.org/[EML standard]"
-msgstr ""
+msgstr "https://eml.ecoinformatics.org/[EML 標準]"
 
 #. type: Title ===
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:29
 #, no-wrap
 msgid "BioCASe / ABCD "
-msgstr ""
+msgstr "BioCASe / ABCD "
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:32
 msgid "The http://www.biocase.org[Biological Collection Access Service], commonly referred to as *BioCASe*, is an international network linking biological collections data from natural history museums, botanical/zoological gardens and research institutions. BioCASe relies on the https://www.tdwg.org/standards/abcd/[Access to Biological Collections Data (ABCD) data exchange standard], which TDWG also administers."
-msgstr ""
+msgstr "http://www.biocase.org[生物典藏存取服務]（Biological Collection Access Service），又稱 <strong x-id=\"1\">BioCASe</strong>，是一個連結國際間自然史典藏、動植物園、研究機構所有生物典藏資料的網絡。BioCASe 仰賴 http://www.tdwg.org/standards/[生物典藏資料取用交換標準] （Access to Biological Collections Data, ABCD），亦是由 TDWG 所管理。"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:34
 msgid "https://www.biocase.org/products/protocols/[BioCASe Protocol]"
-msgstr ""
+msgstr "https://www.biocase.org/products/protocols/[BioCASe 協定]"
 
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:34
 msgid "https://www.biocase.org/whats_biocase/gbif_downloads.cgi?view=2[User access of BioCASe data through GBIF.org]"
-msgstr ""
+msgstr "https://www.biocase.org/whats_biocase/gbif_downloads.cgi?view=2[透過 GBIF.org 取用 BioCASe 所發布資料的統計]"
 
