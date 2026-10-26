@@ -1,0 +1,119 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2026-10-21 12:12+0000\n"
+"PO-Revision-Date: 2026-10-22 14:59\n"
+"Last-Translator: \n"
+"Language-Team: Polish\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: pl\n"
+"X-Crowdin-File: /main/translations/data-publishing/standards-publishing.pot\n"
+"X-Crowdin-File-ID: 45100\n"
+
+#. type: Title =
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:1
+#, no-wrap
+msgid "Data standards "
+msgstr "Standardy zbiorów danych "
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:5
+msgid "Shared data standards make it possible to bring together the hundreds of millions of primary biodiversity records in the GBIF index."
+msgstr "Ujednolicone standardy są głównym czynnikiem umożliwiającym zebranie setek milionów podstawowych zapisów różnorodności biologicznej w indeksie GBIF."
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:8
+msgid "The data available through GBIF.org and its associated services is the result of the GBIF network of Participants and publishers applying shared rules and conventions to describe, record and structure thousands of different datasets drawn from hundreds of institutions around the world. Common standards are the main enabler for bringing together the hundreds of millions of primary biodiversity records in the GBIF index."
+msgstr "Dane dostępne za pośrednictwem GBIF.org i powiązanych z nią usług są wynikiem pracy członków i wydawców stosujących wspólne zasady i konwencje opisu, rejestracji i organizacji zbiorów danych pochodzących z setek instytucji na całym świecie. Ujednolicone standardy są głównym czynnikiem umożliwiającym zebranie setek milionów podstawowych zapisów różnorodności biologicznej w indeksie GBIF."
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:10
+msgid "Within the biodiversity domain, the group most often responsible for developing and maintaining data standards is http://www.tdwg.org[Biodiversity Information Standards]. As an affiliate of the http://www.iubs.org/[International Union of Biological Science], this nonprofit scientific and educational association focuses on the development of standards for the exchange of biological and biodiversity data. Members of the biodiversity community generally refer to this group as *TDWG* (pronounced _tad-wig_)—a vestigial reminder of its earlier manifestation as the Taxonomic Databases Working Group."
+msgstr "W dziedzinie różnorodności biologicznej, grupą odpowiedzialną za opracowywanie i utrzymywanie standardów danych jest http://www.tdwg.org[Biodiversity Information Standards]. Jako partner http://www.iubs.org/[International Union of Biological Sciences], to naukowe i edukacyjne stowarzyszenie non-profit koncentruje się na opracowaniu standardów wymiany danych w zakresie biologii i różnorodności biologicznej. Członkowie społeczności różnorodności biologicznej powszechnie odnoszą się do tej grupy jako *TDWG* (wymawiane _tad-łig_). Jest to pozostałość po jej wcześniejszym wcieleniu: \"Taxonomic Databases Working Group\"."
+
+#. type: Title ==
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:11
+#, no-wrap
+msgid "Commonly used standards "
+msgstr "Powszechnie stosowane standardy "
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:13
+#, no-wrap
+msgid "Darwin Core "
+msgstr "Darwin Core "
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:16
+#, no-wrap
+msgid "The Darwin Core Standard (DwC) offers a stable, straightforward and flexible framework for compiling biodiversity data from varied and variable sources. The majority of the datasets shared through GBIF.org are published using the Darwin Core Archive format (DwC-A).    \n"
+msgstr "Standardy Darwin Core (DwC) zapewniają stabilny, wszechstronny i prosty w użyciu szablon do gromadzenia danych o różnorodności biologicznej ze zróżnicowanych źródeł. Większość zbiorów danych udostępnionych za pośrednictwem GBIF.org jest publikowana przy użyciu formatu Darvin Core Archive (DwC-A).    \n"
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:18
+msgid "https://www.gbif.org/darwin-core[What is Darwin Core, and why does it matter?]"
+msgstr "https://www.gbif.org/darwin-core[Darwin Core i jego znaczenie]"
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:19
+msgid "https://www.gbif.org/sampling-event-data[Introduction to sampling-event data]"
+msgstr "https://www.gbif.org/sampling-event-data[Wstęp do danych uzyskanych podczas prac terenowych]"
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:20
+msgid "https://manual.obis.org/darwin_core.html[The OBIS Manual - Darwin Core]"
+msgstr "https://manual.obis.org/darwin_core.html[Podręcznik OBIS - Darwin Core]"
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:21
+msgid "https://gcube.wiki.gcube-system.org/gcube/Darwin_Core_Terms[Darwin Core terms] (via Gcube Wiki)"
+msgstr "https://gcube.wiki.gcube-system.org/gcube/Darwin_Core_Terms[terminologia Darwin Core] (via Gcube Wiki)"
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:22
+#, no-wrap
+msgid "EML: Ecological Metadata Language "
+msgstr "EML: Język Metadanych Ekologicznych "
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:25
+msgid "Ecological Metadata Language, or *EML*, is a metadata standard that records information about ecological datasets in a series of modular and extensible XML document types. All of the descriptions of datasets in GBIF.org rely on 'metadata'—that is, the information about data—using the open-source EML standard, which is administered and maintained by https://knb.ecoinformatics.org[The Knowledge Network for Biocomplexity]. Each Darwin Core Archive includes as one of its components an EML file (written in XML format)."
+msgstr "Język Metadanych Ekologicznych, lub *EML*, jest standardem metadanych, który rejestruje informacje o zbiorach danych ekologicznych w serii modularnych i rozszerzalnych dokumentów typu XML. Wszystkie opisy zbiorów danych w GBIF.org opierają się na \"metadanych\" - t.j. informacjach o danych. Używany jest open source standardu EML, zarządzanego i utrzymywanego przez https://knb.ecoinformatics.org[The Knowledge Network for Biocomplexity]. Każdy Darwin Core Archive zawiera plik EML (zapisany w formacie XML) jako jeden ze swoich elementów."
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:27
+msgid "https://ipt.gbif.org/manual/en/ipt/latest/gbif-metadata-profile[GBIF Metadata Profile: How-to Guide]"
+msgstr "https://ipt.gbif.org/manual/en/ipt/latest/gbif-metadata-profile[Poradnik: Profil Metadanych GBIF]"
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:28
+msgid "https://eml.ecoinformatics.org/[EML standard]"
+msgstr "https://eml.ecoinformatics.org/[Standard EML]"
+
+#. type: Title ===
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:29
+#, no-wrap
+msgid "BioCASe / ABCD "
+msgstr "BioCASe / ABCD "
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:32
+msgid "The http://www.biocase.org[Biological Collection Access Service], commonly referred to as *BioCASe*, is an international network linking biological collections data from natural history museums, botanical/zoological gardens and research institutions. BioCASe relies on the https://www.tdwg.org/standards/abcd/[Access to Biological Collections Data (ABCD) data exchange standard], which TDWG also administers."
+msgstr "http://www.biocase.org[Biological Collection Access Service], powszechnie znany pod nazwą *BioCASe*, jest międzynarodową siecią łączącą ośrodki badawcze ze zbiorami danych dotyczących różnorodności biologicznej pochodzących z muzeów historii naturalnej oraz ogrodów botanicznych i zoologicznych. BioCASe bazuje na stadardzie wymiany danych http://www.tdwg.org/standards/abcd/[\"Access to Biological Collections Data\" (ABCD)] administrowanym przez TDWG."
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:34
+msgid "https://www.biocase.org/products/protocols/[BioCASe Protocol]"
+msgstr "https://www.biocase.org/products/protocols/[Protokół BioCASe]"
+
+#. type: Plain text
+#: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:34
+msgid "https://www.biocase.org/whats_biocase/gbif_downloads.cgi?view=2[User access of BioCASe data through GBIF.org]"
+msgstr "https://www.biocase.org/whats_biocase/gbif_downloads.cgi?view=2[Dostęp użytkownika do danych BioCASe poprzez GBIF.org]"
+

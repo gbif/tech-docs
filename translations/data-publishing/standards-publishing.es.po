@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
 "POT-Creation-Date: 2026-10-21 12:12+0000\n"
-"PO-Revision-Date: 2026-10-21 14:43\n"
+"PO-Revision-Date: 2026-10-22 05:45\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -94,7 +94,7 @@ msgstr "https://ipt.gbif.org/manual/en/ipt/latest/gbif-metadata-profile[Perfil d
 #. type: Plain text
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:28
 msgid "https://eml.ecoinformatics.org/[EML standard]"
-msgstr "https://eml.ecoinformatics.org/[Estándar EML]"
+msgstr "https://eml.ecoinformatics.org[Estándar EML]"
 
 #. type: Title ===
 #: en/data-publishing/modules/ROOT/pages/standards-publishing.adoc:29

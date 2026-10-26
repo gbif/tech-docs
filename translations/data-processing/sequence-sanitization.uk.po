@@ -1,0 +1,227 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gbif-tech-docs\n"
+"POT-Creation-Date: 2026-08-27 12:51+0000\n"
+"PO-Revision-Date: 2026-10-22 14:59\n"
+"Last-Translator: \n"
+"Language-Team: Ukrainian\n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: gbif-tech-docs\n"
+"X-Crowdin-Project-ID: 746653\n"
+"X-Crowdin-Language: uk\n"
+"X-Crowdin-File: /main/translations/data-processing/sequence-sanitization.pot\n"
+"X-Crowdin-File-ID: 45133\n"
+
+#. type: Title =
+#: en/data-processing/modules/ROOT/pages/index.adoc:102
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:1
+#, no-wrap
+msgid "DNA sequence sanitization"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:4
+msgid "GBIF sanitizes the raw DNA/RNA sequences published in occurrence records before they are indexed and made searchable. The goal is to produce a normalised, comparable sequence together with a set of quality metrics, while keeping every transformation transparent and reproducible."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:6
+msgid "Each occurrence sequence is passed through a fixed, ordered pipeline. The original raw sequence is never altered in the source data — only a cleaned copy is derived for indexing. The cleaned sequence is hashed (MD5) to produce a stable `nucleotideSequenceID` used to group identical sequences across records."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:7
+#, no-wrap
+msgid "Pipeline stages"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:10
+msgid "The pipeline applies the following stages in order. Each stage takes the output of the previous stage as its input."
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:24
+#, no-wrap
+msgid "| Stage | Description | Example\n\n"
+"| Normalise whitespace and case | All whitespace characters are removed, and the sequence is upper-cased. If any whitespace was present, this is recorded and contributes to the `gapsOrWhitespaceRemoved` flag. | `\"acgt acgt\"` → `\"ACGTACGT\"`\n"
+"| Detect natural language | The sequence is checked for configured marker words (for example primer or read-merging labels). A match flags the record but does not modify the sequence (see <<Validity>>. | `\"ACGTUNMERGEDACGT\"` → flagged\n"
+"| Remove gaps | Characters matching the gap pattern (`-` and `.`) are removed. If any gap was present, this contributes to the `gapsOrWhitespaceRemoved` flag. | `\"ACGT-ACGT..ACGT\"` → `\"ACGTACGTACGT\"`\n"
+"| RNA to DNA conversion | RNA sequences are normalised to DNA by replacing every `U` (uracil) with `T` (thymine), so that RNA and DNA representations of the same sequence collapse to a single form. | `\"ACGU\"` → `\"ACGT\"`\n"
+"| Question marks to N | Question marks, sometimes used to denote an unknown base, are replaced with the IUPAC ambiguity code `N`. | `\"ACGT?ACGT\"` → `\"ACGTNACGT\"`\n"
+"| Trim to anchors \n\n"
+"a| Leading and trailing characters are removed until a run of valid nucleotide \"anchor\" characters is found at each end. \n\n"
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:25
+#, no-wrap
+msgid "*Front trim:* the sequence is scanned for the first run of at least `anchor_minrun` consecutive anchor characters (`anchor_chars`). Everything before that run is discarded. If no such run exists anywhere in the sequence, the sequence is considered unusable and is set to an empty string. \n"
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:31
+#, no-wrap
+msgid "*Back trim:* the sequence is then scanned for the last anchor run, and everything after it is discarded. \n\n"
+"If either end is trimmed (or the sequence is set to an empty string), `endsTrimmed` is set to `true`. \n\n"
+"| `\"THISISMYGBIFSEQUENCEACGTACGTACGTNNNNNENDOFSEQUENCE\"` → `\"ACGTACGTACGT\"`\n"
+"| Cap N-runs | Long stretches of `N` carry no information and can dominate similarity comparisons. Any run of `N` of length `nrun_cap_from` or greater is reduced to `nrun_cap_to` characters. The number of runs that were shortened is reported as `nRunsCapped`. | `\"ACGTACGTNNNNNNNNNNNACGTACGT\"` → `\"ACGTACGTNNNNNACGTACGT\"`\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:33
+#, no-wrap
+msgid "Quality metrics"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:36
+msgid "All metrics are calculated on the final cleaned sequence."
+msgstr ""
+
+#. type: Table
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:53
+#, no-wrap
+msgid "| Field | Type | Description\n\n"
+"| `sequence` | string | The final cleaned sequence. Set to `null` when the record is invalid.\n"
+"| `sequenceLength` | integer | Length of the cleaned sequence in bytes.\n"
+"| `nonIupacFraction` | float | Fraction of characters that are not valid IUPAC DNA codes.\n"
+"| `nonACGTNFraction` | float | Fraction of characters that are ambiguous IUPAC codes (anything other than A, C, G, T or N).\n"
+"| `nFraction` | float | Fraction of characters that are `N`.\n"
+"| `nRunsCapped` | integer | Number of N-runs that were shortened in the last stage.\n"
+"| `gcContent` | float | GC content, calculated over A/C/G/T bases only.\n"
+"| `naturalLanguageDetected` | boolean | Whether natural-language marker words were found.\n"
+"| `endsTrimmed` | boolean | Whether either end of the sequence was trimmed.\n"
+"| `gapsOrWhitespaceRemoved` | boolean | Whether any whitespace or gap characters were removed.\n"
+"| `nucleotideSequenceID` | string | MD5 hash of the final cleaned sequence, used for indexing and grouping. `null` when the record is invalid.\n"
+"| `invalid` | boolean | Whether the record is considered invalid (see below).\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:56
+msgid "The fraction metrics are `null` when the cleaned sequence is empty, and `gcContent` is `null` when the sequence contains no A/C/G/T bases."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:58
+#, no-wrap
+msgid "Sequence flags and validity"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:61
+msgid "Sanitization records a set of flags describing what happened during cleaning, for example, whether the ends were trimmed or gaps removed, and whether the result is usable. A sequence is flagged `invalid` when, after cleaning, it still contains characters that are not valid IUPAC DNA codes (`nonIupacFraction` > 0) or when natural language is detected. Invalid sequences are not indexed: both `sequence` and `nucleotideSequenceID` are set to `null`, while the quality metrics are still reported so the reason can be inspected."
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:63
+msgid "The individual flags and their definitions are documented alongside GBIF's other occurrence flags — see xref:data-use::occurrence-issues-and-flags.adoc#sequence-issues[Sequence issues]."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:64
+#, no-wrap
+msgid "Configuration"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:67
+msgid "The pipeline is driven by a small set of configuration parameters, allowing the thresholds and character sets to be tuned without changing the logic."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:78
+#, no-wrap
+msgid "anchor_chars: \"ACGTU\"        # Valid anchor characters used when trimming ends\n"
+"anchor_minrun: 8             # Minimum consecutive anchors required to define an end\n"
+"gap_regex: \"[-\\\\.]\"          # Characters removed as gaps\n"
+"natural_language_regex: \"REVERSE|REV|FWD|FORWARD|MERGED|UNMERGED\"  # Marker words\n"
+"iupac_rna: \"ACGTURYSWKMBDHVN\"  # Valid IUPAC RNA codes\n"
+"iupac_dna: \"ACGTRYSWKMBDHVN\"   # Valid IUPAC DNA codes (used for nonIupacFraction)\n"
+"nrun_cap_from: 6             # Cap N-runs of this length or longer\n"
+"nrun_cap_to: 5               # ...down to this length\n"
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:80
+#, no-wrap
+msgid "Example"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:83
+msgid "Given the raw input `\"ACGT-ACGT NNNNNNNNNN ACGT\"` the sanitization stages are as follows:"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:85
+msgid "Whitespace is removed → `\"ACGT-ACGTNNNNNNNNNNACGT\"`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:86
+msgid "Gaps are removed → `\"ACGTACGTNNNNNNNNNNACGT\"`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:87
+msgid "No `U` or `?` are detected, and the sequence is left unchanged"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:88
+msgid "Anchor runs are detected at both ends, and the sequence is left unchanged"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:89
+msgid "Caps the run of ten `N` down to five → `\"ACGTACGTNNNNNACGT\"`"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:91
+msgid "The result has `sequenceLength` 17, `gcContent` 0.5, `nRunsCapped` 1, and `gapsOrWhitespaceRemoved` `true`."
+msgstr ""
+
+#. type: Title ==
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:92
+#, no-wrap
+msgid "Example API response"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:95
+msgid "The sanitized sequence and its metrics are delivered through the GBIF occurrence API as a `nucleotideSequence` array on each occurrence record. The array can also be used as a search filter, for example https://api.gbif.org/v1/occurrence/search?nucleotideSequence.invalid=false[`nucleotideSequence.invalid=false`] to return only records with at least one valid sequence."
+msgstr ""
+
+#. type: delimited block -
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:115
+#, no-wrap
+msgid "\"nucleotideSequence\": [\n"
+"  {\n"
+"    \"nucleotideSequenceID\": \"a3ebee35f7fc2883cf68b22c9e9f6ca4\",\n"
+"    \"targetGene\": \"COI\",\n"
+"    \"sequence\": \"CGTTATATTTTTTATTAGGGAGATGATCTGCGATAATAGGGACGGCTATGAGAGTTTTAATTCGGGTGGAGTTGGGGAGAACGGGAAGATTAATCGGGGATGATCATTTATATAATGTTGTTGTGACTGCTCATGCTTTAGTGATGATTTTTTTTATAGTTATGCCTATCTTAATTGGGGGATTTGGAAATTGGCTGGTTCCTTTAATATTGGGTGCACCGGATATAGCTTTTCCTCGTATGAATAACTTAAGATTTTGGTTATTACCTTTTTCAATAATGTTGTTGTTAATGTCTTCTATAATTGAGACAGGAGTGGGGGCAGGGTGGACTATTTATCCGCCTTTAGCCGGGTTGGAGGGGCATGGAGGAGTAAGTATGGATTTAGCGATTTTTTCATTACACTTGGCTGGGGCTTCATCTATTATGGGGGCTATTAATTTTATTTGTACTATTTTAAACATACGAATAGAGGGAATGACTTTAGATAAGATTCCTTTGTTTGTTTGGTCAGTGCTTATTACTGCAGTCTTATTGTTATTGTCATTACCAGTATTGGCGGGGGCTATTACTATACTTTTGACTGATCGTAATTTTAATACATCTTTTTTTGATCCGGCAGGTGGAGGAGATCCTGTGTTGTTTCAACATTTATT\",\n"
+"    \"sequenceLength\": 655,\n"
+"    \"gcContent\": 0.37251908396946565,\n"
+"    \"nonIupacFraction\": 0.0,\n"
+"    \"nonACGTNFraction\": 0.0,\n"
+"    \"nFraction\": 0.0,\n"
+"    \"nRunsCapped\": 0,\n"
+"    \"naturalLanguageDetected\": false,\n"
+"    \"endsTrimmed\": false,\n"
+"    \"gapsOrWhitespaceRemoved\": false,\n"
+"    \"invalid\": false\n"
+"  }\n"
+"]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/data-processing/modules/ROOT/pages/sequence-sanitization.adoc:118
+msgid "The `targetGene` field is not produced by the sanitization pipeline. It is the interpreted value of the publisher-supplied target gene, normalised against the GBIF https://registry.gbif.org/vocabulary/target_gene[target gene vocabulary] (https://api.gbif.org/v1/vocabularies/target_gene[API]). All other fields are as described above."
+msgstr ""
+
