@@ -47,7 +47,6 @@ The first line of the output shows the result of the download request:
 * If the query is accepted the first line of output should be either `HTTP/1.1 201 Created` or `HTTP/2 201`, and a download key will be returned on the last line.
 * If the SQL is not valid, the first line of the output will be `HTTP/… 400 …`.  There may be useful information on the error at the end of the output.
 * `HTTP/… 401 …` means your username or password is incorrect
-* `HTTP/… 403 …` means your username does not have permission to use this prototype feature — contact helpdesk@gbif.org.
 
 TIP: SQL queries can also be submitted through the GBIF website, avoiding the use of _curl_ and allowing the website to handle authentication.  Start from link:https://www.gbif.org/occurrence/download/sql?sql=SELECT%20datasetKey,%20countryCode,%20COUNT(*)%20FROM%20occurrence%20WHERE%20continent%20%3D%20%27EUROPE%27%20GROUP%20BY%20datasetKey,%20countryCode[this SQL download query], which can be modified as you wish.  Running the query produced https://www.gbif.org/occurrence/download/0000379-240229165702484[this download] in February 2024.
 
