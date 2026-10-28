@@ -1,11 +1,5 @@
-ifeval::["{env}" == "prod"] 
-:page-unpublish: 
-endif::[] 
-  
 = Ingestion steps for Occurrence and Event datasets
   
-include::ROOT::partial$under-construction.adoc[] 
-
 Occurrence and Event datasets go through a series of steps when they are crawled and ingested by GBIF. The status of these pills for each dataset can be seen in the https://registry.gbif.org/dataset/search[GBIF Registry], and can be used to learn the cause of a dataset failing ingestion. The steps, also known as pills are:
   
 The ingestion steps for occurrences are:
@@ -45,6 +39,8 @@ NOTE: Each state is represented by a different color, SUBMITTED: grey, RUNNING: 
 Finally, you can review the full results of the pipelines in the public ElasticSearch logs, where there is detailed information for each part of the process. You can access the logs using the 'Ingestion history' section on the Registry, for each attempt there is a 'Log' button that will take you to ElasticSearch.
 
 === Runing specific steps for a dataset
+
+IMPORTANT: This function is only available to nodes with access to the registry
 
 Related to those steps, the registry can be used to run specific steps in the pipeline for a dataset, the available options and its equivalent steps are:
 
