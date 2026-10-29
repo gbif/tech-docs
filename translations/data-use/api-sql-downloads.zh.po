@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-09-29 12:07+0000\n"
-"PO-Revision-Date: 2026-09-29 12:34\n"
+"POT-Creation-Date: 2026-10-28 08:59+0000\n"
+"PO-Revision-Date: 2026-10-28 09:21\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:61
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:62
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:61
 msgid "You can then download the resulting file:"
 msgstr ""
 
@@ -141,39 +141,34 @@ msgid "`HTTP/… 401 …` means your username or password is incorrect"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:51
-msgid "`HTTP/… 403 …` means your username does not have permission to use this prototype feature — contact helpdesk@gbif.org."
-msgstr ""
-
-#. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:53
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:52
 msgid "SQL queries can also be submitted through the GBIF website, avoiding the use of _curl_ and allowing the website to handle authentication.  Start from link:https://www.gbif.org/occurrence/download/sql?sql=SELECT%20datasetKey,%20countryCode,%20COUNT(*)%20FROM%20occurrence%20WHERE%20continent%20%3D%20%27EUROPE%27%20GROUP%20BY%20datasetKey,%20countryCode[this SQL download query], which can be modified as you wish.  Running the query produced https://www.gbif.org/occurrence/download/0000379-240229165702484[this download] in February 2024."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:55
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:54
 msgid "Querying the download key from an accepted request shows the download information, including the download link and DOI once the download is ready.  Run this repeatedly, until you see `SUCCEEDED` — you will need to use your download key rather than the example:"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:59
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:58
 #, no-wrap
 msgid "curl -Ss https://api.gbif.org/v1/occurrence/download/0000379-240229165702484\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:66
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:65
 #, no-wrap
 msgid "curl --location --remote-name https://api.gbif.org/v1/occurrence/download/request/0000379-240229165702484.zip\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:69
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:68
 msgid "And see the result:"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:80
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:79
 #, no-wrap
 msgid "datasetkey\tcountrycode\tCOUNT(*)\n"
 "005eb8d8-ed94-41be-89cf-e3115a9058e4\tAD\t1\n"
@@ -186,169 +181,169 @@ msgid "datasetkey\tcountrycode\tCOUNT(*)\n"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:83
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:82
 #, no-wrap
 msgid "Supported SQL"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:86
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:85
 msgid "Only `SELECT` queries are supported, and only queries against a single table named `occurrence`.  `JOIN` queries and sub-queries are not allowed.  Selecting `*` is also not allowed, specify the columns you need."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:88
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:87
 msgid "`GROUP BY` queries and `ORDER BY` are supported, as are basic SQL window functions (`OVER` and `PARTITION BY`). The group and partition filters (`HAVING` and `QUALIFY`) are not supported."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:90
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:89
 msgid "Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT`, `IS NULL`, `RAND()`, `ROUND(…)`, `LOWER(…)`, etc.  Note `BETWEEN` is not supported, use `>`, `pass:[>=]`, `<` and `pass:[<=]` instead."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:92
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:91
 msgid "Aggregate functions are also supported, for example `COUNT(…)`, `MIN(…)`, `MAX(…)`, `AVERAGE(…)`."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:94
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:93
 msgid "These custom filtering functions are available:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:96
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:95
 msgid "`xref::api-sql-download-functions.adoc#GBIF_GeoDistance[GBIF_GeoDistance]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:97
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:96
 msgid "`xref::api-sql-download-functions.adoc#GBIF_Within[GBIF_Within]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:98
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:97
 msgid "`xref::api-sql-download-functions.adoc#GBIF_StringArrayContains[GBIF_StringArrayContains]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:99
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:98
 msgid "`xref::api-sql-download-functions.adoc#GBIF_StringArrayLike[GBIF_StringArrayLike]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:101
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:100
 msgid "And these functions for handling data types:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:103
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:102
 msgid "`xref::api-sql-download-functions.adoc#GBIF_TemporalUncertainty[GBIF_TemporalUncertainty]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:104
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:103
 msgid "`xref::api-sql-download-functions.adoc#GBIF_MillisecondsToISO8601[GBIF_MillisecondsToISO8601]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:105
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:104
 msgid "`xref::api-sql-download-functions.adoc#GBIF_SecondsToISO8601[GBIF_SecondsToISO8601]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:106
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:105
 msgid "`xref::api-sql-download-functions.adoc#GBIF_SecondsToLocalISO8601[GBIF_SecondsToLocalISO8601]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:108
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:107
 msgid "As well as custom gridding functions:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:110
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:109
 msgid "`xref::api-sql-download-functions.adoc#GBIF_EEARGCode[GBIF_EEARGCode]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:111
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:110
 msgid "`xref::api-sql-download-functions.adoc#GBIF_EuroStatCode[GBIF_EuroStatCode]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:112
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:111
 msgid "`xref::api-sql-download-functions.adoc#GBIF_EQDGCode[GBIF_EQDGCode]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:113
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:112
 msgid "`xref::api-sql-download-functions.adoc#GBIF_MGRSCode[GBIF_MGRSCode]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:114
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:113
 msgid "`xref::api-sql-download-functions.adoc#GBIF_ISEA3HCode[GBIF_ISEA3HCode]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:115
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:114
 msgid "`xref::api-sql-download-functions.adoc#GBIF_DMSGCode[GBIF_DMSGCode]`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:117
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:116
 msgid "See the xref:api-sql-download-functions.adoc[separate page on the available SQL functions]."
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:119
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:118
 #, no-wrap
 msgid "Available columns"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:122
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:121
 msgid "The `occurrence` table contains the interpreted data, the verbatim (as provided to GBIF) data, and some calculated columns useful for searching.  The full list of available columns is show below, and is also available through https://api.gbif.org/v1/occurrence/download/describe/sql[this API call] — the `name` field is the column name.  Note the `v_` prefix for the verbatim data columns."
 msgstr ""
 
 #. type: Block title
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:123
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:122
 #, no-wrap
 msgid "*Full list of available SQL column names* (click to expand)"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:127
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:126
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:23
 msgid "The definitions marked with {dwc_source} are from the Darwin Core standard."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:129
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:128
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:25
 #: en/data-use/modules/ROOT/pages/download-formats.adoc:84
 msgid "The definitions marked with {gbif_source} are from GBIF, and may reflect the result of interpretation and data quality procedures applied by GBIF, or they may not be part of Darwin Core."
 msgstr ""
 
 #. type: Title ===
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:135
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:134
 #, no-wrap
 msgid "Taxonomy columns"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:139
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:138
 msgid "The `occurrence` table contains the interpreted taxonomy for each occurrence based on Catalogue of Life, as well as the verbatim taxonomy.  In addition, support for the GBIF backbone taxonomy is available through the `gbif_classification` prefixed columns, which are derived from the GBIF backbone taxonomy."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:141
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:140
 msgid "The taxonomic columns populated with content from Catalogue of Life include:"
 msgstr ""
 
 #. type: Table
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:288
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:287
 #, no-wrap
 msgid "| Column | Type | Description\n\n"
 "| taxonkey\n"
@@ -462,12 +457,12 @@ msgid "| Column | Type | Description\n\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:292
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:291
 msgid "All of these fields are also available for the GBIF Backbone using the `occurrence.gbif_classification` prefix in SELECT and WHERE clauses."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:305
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:304
 #, no-wrap
 msgid "SELECT\n"
 "  occurrence.gbif_classification.phylum,\n"
@@ -482,106 +477,106 @@ msgid "SELECT\n"
 msgstr ""
 
 #. type: Block title
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:309
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:308
 #, no-wrap
 msgid "Quoting column names"
 msgstr ""
 
 #. type: delimited block =
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:312
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:311
 msgid "The SQL parser is strict, and column names that are also SQL keywords must be quoted. This affects the columns `\"year\"`, `\"month\"`, `\"day\"`, `\"order\"`, `\"group\"`, `\"language\"`, `\"references\"` and `\"member\"`.  They must be quoted even if qualified with the table name as in `occurrence.\"year\"` or `\"occurrence\".\"year\"`."
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:315
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:314
 #, no-wrap
 msgid "Query validation"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:318
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:317
 msgid "You can validate your queries using the validation API call."
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:322
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:321
 #, no-wrap
 msgid "curl --include --header \"Content-Type: application/json\" --data @query.json https://api.gbif.org/v1/occurrence/download/request/validate\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:325
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:324
 msgid "Your query will be returned if it is valid, and an error message with an explanation will be returned if it is invalid."
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:327
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:326
 #, no-wrap
 msgid "Troubleshooting"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:330
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:329
 msgid "Many GBIF APIs are tolerant of small differences in how they are queried — you can make an occurrence download query using the search parameter `taxonKey`, `taxon_key`, `TAXONKEY` and so on, and using the value `1`, `'1'`, `\"1\"`, `{nbsp}1`, `\"{nbsp}01\"` etc."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:332
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:331
 msgid "The SQL API is less forgiving, so some common parts of queries must be specified exactly as documented."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:334
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:333
 msgid "Within the SQL query itself:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:336
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:335
 msgid "If column names are quoted they must use double quotes and lowercase: `\"year\"`, `\"basisofrecord\"`.  It's only necessary to quote column names that are also SQL functions: `\"year\"`, `\"month\"`, `\"day\"`, `\"order\"`, `\"group\"`, `\"language\"`, `\"references\"` and `\"member\"`."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:337
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:336
 msgid "When column and function names aren't quoted, the letter case doesn't matter: `basisOfRecord`, `basisofrecord`, `gbif_eeargcode(…)`, `GBIF_EEARGCode(…)`."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:338
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:337
 msgid "String values use single quotes, like `basisOfRecord = 'HUMAN_OBSERVATION'`."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:339
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:338
 msgid "SQL comments (lines beginning `--{nbsp}`) cannot be included in queries."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:340
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:339
 msgid "Columns with numeric types must be filtered using numbers, not quoted string values — use `\"year\" IN (2020, 2021)` or `startdayofyear >= 200`."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:341
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:340
 msgid "Array values (including vocabulary lineages) should be converted to delimited strings, for example `CONCAT_WS(' | ', recordedByID)` and `CONCAT_WS(' | ', occurrence.lifestage.lineage)`."
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:343
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:342
 msgid "When converting the SQL query to JSON for submission to the API:"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:345
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:344
 msgid "JSON uses double quotes for attributes and values, so when the SQL is written values containing double quotes must have these escaped using `\\\"`"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:346
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:345
 msgid "Newlines, if used, should be replaced with either spaces ` ` or `\\n`"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:357
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:356
 #, no-wrap
 msgid "{\n"
 "  \"sendNotification\": true,\n"
@@ -594,43 +589,43 @@ msgid "{\n"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:360
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:359
 msgid "It can be convenient to work with neatly formatted SQL files, and convert them to JSON format automatically:"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:365
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:364
 #, no-wrap
 msgid "# Using jq\n"
 "grep -v -- '--' neat-query.sql | jq -R -s .\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:368
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:367
 #, no-wrap
 msgid "# Using Python\n"
 "grep -v -- '--' neat-query.sql | python3 -c 'import sys, json; print(json.dumps(sys.stdin.read()))'\n"
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:371
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:370
 #, no-wrap
 msgid "Further examples"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:374
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:373
 msgid "For a complete example of generating a data cube see the xref::data-cubes.adoc[] page."
 msgstr ""
 
 #. type: Title ==
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:376
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:375
 #, no-wrap
 msgid "Known issues"
 msgstr ""
 
 #. type: Plain text
-#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:378
+#: en/data-use/modules/ROOT/pages/api-sql-downloads.adoc:377
 msgid "Known faults with the system are tracked https://github.com/gbif/occurrence-cube/issues[on GitHub]."
 msgstr ""
 
