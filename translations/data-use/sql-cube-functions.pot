@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-26 14:59+0000\n"
+"POT-Creation-Date: 2026-10-29 12:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -244,8 +244,8 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:348
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:143
 msgid ""
-"A _level_ of _0_ will give the 1° cell, e.g. `S01E010`.  For quarter-"
-"degrees, use _level_ _2_, e.g. `S01E010AD`."
+"A _level_ of _0_ will give the 1° cell, e.g. `E010S01`.  For quarter-"
+"degrees, use _level_ _2_, e.g. `E010S01AD`."
 msgstr ""
 
 #. type: Plain text
