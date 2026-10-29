@@ -344,7 +344,7 @@ STRING GBIF_EQDGCode(INTEGER level,
 
 The _coordinateUncertaintyInMeters_ value is used to randomize the _point_ within the circle.
 
-A _level_ of _0_ will give the 1° cell, e.g. `S01E010`.  For quarter-degrees, use _level_ _2_, e.g. `S01E010AD`.
+A _level_ of _0_ will give the 1° cell, e.g. `E010S01`.  For quarter-degrees, use _level_ _2_, e.g. `E010S01AD`.
 
 *Return value:*
 
