@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-11-09 13:01+0000\n"
-"PO-Revision-Date: 2026-11-09 13:15\n"
+"POT-Creation-Date: 2026-11-09 14:14+0000\n"
+"PO-Revision-Date: 2026-11-09 14:32\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
@@ -58,7 +58,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:14
-msgid "A download request includes your username, email address, the download format, and a filter for the required data in the form of a <<predicates,predicate>>."
+msgid "A download request includes the download format and a filter for the required data in the form of a <<predicates,predicate>>."
 msgstr ""
 
 #. type: Plain text
@@ -69,7 +69,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:18
-msgid "Put this in a file called `query.json`, replacing `userName` with your username and `userEmail@example.org` with your email address:"
+msgid "Put this in a file called `query.json`:"
 msgstr ""
 
 #. type: delimited block -
