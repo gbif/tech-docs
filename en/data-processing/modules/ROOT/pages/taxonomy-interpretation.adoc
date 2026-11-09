@@ -372,7 +372,6 @@ Example:
 [source,json]
 ----
 {
-  "creator": "userName",
   "sendNotification": false,
   "format": "SIMPLE_CSV",
   "predicate": {

@@ -14,7 +14,7 @@ TIP: The GBIF website allows users to create xref::data-cubes.adoc[_species occu
 
 == Requesting an SQL occurrence download
 
-A download request includes your username, the download format, and the filter for the required data in the form of an SQL statement.
+A download request includes the download format and the filter for the required data in the form of an SQL statement.
 
 A basic example using the _curl_ command to make the request:
 
