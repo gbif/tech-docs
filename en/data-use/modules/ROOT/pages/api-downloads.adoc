@@ -19,7 +19,6 @@ Put this in a file called `query.json`, replacing `userName` with your username 
 [source,json]
 ----
 {
-  "notificationAddresses": [ "userEmail@example.org" ],
   "sendNotification": true,
   "format": "SIMPLE_CSV",
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
@@ -88,7 +87,6 @@ Equality comparison.  Tests for exact equality of the term and the value, or cas
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -104,7 +102,6 @@ or
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -120,7 +117,6 @@ or
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -139,7 +135,6 @@ Logical conjuction, "and".  The sub-predicates must all be true.
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -161,7 +156,6 @@ When requesting many values of the same field (for example, multiple taxa or cou
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -181,7 +175,6 @@ Specify multiple values to be compared.  `"matchCase": true` can be added if req
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -199,7 +192,6 @@ Less than.  Returns occurrences with term values strictly less than the provided
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -217,7 +209,6 @@ Less than or equals.  Returns occurrences with term values less than or equal to
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -235,7 +226,6 @@ Greater than.  Returns occurrences with term values strictly greater than the pr
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -253,7 +243,6 @@ Greater than or equals. Returns occurrences with term values greater than or equ
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -273,7 +262,6 @@ The polygon should be specified in https://en.wikipedia.org/wiki/Well-known_text
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -294,7 +282,6 @@ Geospatial distance.  This predicate checks if coordinates are within a specifie
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -313,7 +300,6 @@ Logical negation.  Gives the opposite of the sub-predicate.
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -334,7 +320,6 @@ Search for a pattern. `?` matches exactly one character, `*` matches zero or mor
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -352,7 +337,6 @@ Has an empty (null) value.
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -369,7 +353,6 @@ Has a non-empty value
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -387,7 +370,6 @@ the `equals`, `in` support multiple taxonomies by adding a `checklistKey` proper
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -402,7 +384,6 @@ the `equals`, `in` support multiple taxonomies by adding a `checklistKey` proper
 [source,json]
 ----
 {
-  "notificationAddresses": ["userName@example.org"],
   "sendNotification": true,
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
   "predicate": {
@@ -424,7 +405,6 @@ Users can specify the taxonomy to be included in occurrence downloads by adding 
 [source,json]
 ----
 {
-  "notificationAddresses": ["userEmail@example.org"],
   "sendNotification": true,
   "format": "SIMPLE_CSV",
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b" <1>
@@ -494,7 +474,6 @@ The format restricts the download to occurrences with at least one sanitized seq
 [source,json]
 ----
 {
-  "notificationAddresses": [ "userEmail@example.org" ],
   "sendNotification": true,
   "format": "FASTA_ARCHIVE",
   "predicate": {

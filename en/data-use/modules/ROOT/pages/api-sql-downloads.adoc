@@ -24,16 +24,12 @@ Put this in a file called (for example) `query.json`:
 ----
 {
   "sendNotification": true,
-  "notificationAddresses": [
-    "userEmail@example.org" <1>
-  ],
-  "format": "SQL_TSV_ZIP", <2>
-  "sql": "SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE continent = 'EUROPE' GROUP BY datasetKey, countryCode" <3>
+  "format": "SQL_TSV_ZIP", <1>
+  "sql": "SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE continent = 'EUROPE' GROUP BY datasetKey, countryCode" <2>
 }
 ----
-<1> Replace with your email address, or remove the `notificationAddresses` and `sendNotification` values
-<2> `format` must be `SQL_TSV_ZIP`.  More formats will be added later.
-<3> This query will count occurrences from Europe per dataset and country.
+<1> `format` must be `SQL_TSV_ZIP`.  More formats will be added later.
+<2> This query will count occurrences from Europe per dataset and country.
 
 Then use this _curl_ command:
 
@@ -347,9 +343,6 @@ When converting the SQL query to JSON for submission to the API:
 ----
 {
   "sendNotification": true,
-  "notificationAddresses": [
-    "userEmail@example.org"
-  ],
   "format": "SQL_TSV_ZIP",
   "sql": "SELECT DISTINCT \"year\" \n FROM occurrence \n WHERE \"year\" > 2000";
 }

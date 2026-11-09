@@ -392,7 +392,6 @@ Users can specify the taxonomy to be included in occurrence downloads by adding 
 [source,json]
 ----
 {
-  "notificationAddresses": [ "userEmail@example.org" ],
   "sendNotification": true,
   "format": "SIMPLE_CSV",
   "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
