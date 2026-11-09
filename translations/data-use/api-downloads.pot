@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-11-09 13:01+0000\n"
+"POT-Creation-Date: 2026-11-09 13:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,9 +69,8 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:14
 msgid ""
-"A download request includes your username, email address, the download "
-"format, and a filter for the required data in the form of a <<predicates,"
-"predicate>>."
+"A download request includes your username, the download format, and a filter "
+"for the required data in the form of a <<predicates,predicate>>."
 msgstr ""
 
 #. type: Plain text
@@ -84,7 +83,7 @@ msgstr ""
 #: en/data-use/modules/ROOT/pages/api-downloads.adoc:18
 msgid ""
 "Put this in a file called `query.json`, replacing `userName` with your "
-"username and `userEmail@example.org` with your email address:"
+"username:"
 msgstr ""
 
 #. type: delimited block -
