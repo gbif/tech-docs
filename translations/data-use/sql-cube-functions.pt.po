@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gbif-tech-docs\n"
-"POT-Creation-Date: 2026-02-20 14:05+0000\n"
-"PO-Revision-Date: 2026-04-08 12:55\n"
+"POT-Creation-Date: 2026-10-29 12:24+0000\n"
+"PO-Revision-Date: 2026-10-29 12:42\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -232,7 +232,7 @@ msgstr ""
 #. type: Plain text
 #: en/data-use/modules/ROOT/pages/api-sql-download-functions.adoc:348
 #: en/data-use/modules/b-cubed/pages/sql-cube-functions.adoc:143
-msgid "A _level_ of _0_ will give the 1° cell, e.g. `S01E010`.  For quarter-degrees, use _level_ _2_, e.g. `S01E010AD`."
+msgid "A _level_ of _0_ will give the 1° cell, e.g. `E010S01`.  For quarter-degrees, use _level_ _2_, e.g. `E010S01AD`."
 msgstr ""
 
 #. type: Plain text
