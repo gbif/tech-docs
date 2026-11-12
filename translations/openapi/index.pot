@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-11-12 12:50+0000\n"
+"POT-Creation-Date: 2026-11-12 13:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,21 +110,21 @@ msgstr ""
 #. type: Plain text
 #: en/openapi/modules/ROOT/pages/index.adoc:23
 msgid ""
-"xref:v1@openapi::species.adoc[*Species*] (deprecated, use *Taxon* instead) "
-"provides services to discover and access information about species and "
-"higher taxa, and utility services for interpreting names and looking up the "
-"identifiers and complete scientific names used for species in the GBIF "
-"portal."
-msgstr ""
-
-#. type: Plain text
-#: en/openapi/modules/ROOT/pages/index.adoc:24
-msgid ""
 "xref:v2@openapi::taxon.adoc[*Taxon*] provides access to taxa (name usages) "
 "from checklist datasets registered with GBIF and indexed by ChecklistBank, "
 "including scientific names, synonymy, vernacular names, distributions, "
 "media, references and measurements or facts. It replaces the deprecated "
 "Species API."
+msgstr ""
+
+#. type: Plain text
+#: en/openapi/modules/ROOT/pages/index.adoc:24
+msgid ""
+"xref:v1@openapi::species.adoc[*Species*] (deprecated, use *Taxon* instead) "
+"provides services to discover and access information about species and "
+"higher taxa, and utility services for interpreting names and looking up the "
+"identifiers and complete scientific names used for species in the GBIF "
+"portal."
 msgstr ""
 
 #. type: Plain text

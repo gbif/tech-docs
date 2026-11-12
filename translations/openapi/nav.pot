@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-11-12 12:50+0000\n"
+"POT-Creation-Date: 2026-11-12 13:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,13 +33,13 @@ msgstr ""
 #. type: Plain text
 #: en/openapi-v1/modules/ROOT/nav.adoc:4 en/openapi-v2/modules/ROOT/nav.adoc:4
 #: en/openapi/modules/ROOT/nav.adoc:4
-msgid "xref:v1@openapi::species.adoc[Species API]"
+msgid "xref:v2@openapi::taxon.adoc[Taxon API]"
 msgstr ""
 
 #. type: Plain text
 #: en/openapi-v1/modules/ROOT/nav.adoc:5 en/openapi-v2/modules/ROOT/nav.adoc:5
 #: en/openapi/modules/ROOT/nav.adoc:5
-msgid "xref:v2@openapi::taxon.adoc[Taxon API]"
+msgid "xref:v1@openapi::species.adoc[Species API (Deprecated)]"
 msgstr ""
 
 #. type: Plain text
