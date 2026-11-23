@@ -4,6 +4,7 @@
 ** xref:data-quality-recommendations.adoc[Data quality recommendations]
 ifeval::["{env}" != "prod"]
 ** xref:metadata-recommendations-and-requirements.adoc[Metadata requirements and recommendations **Test**]
+** xref:term-recommendations.adoc[Recommended terms by guide **Test**]
 endif::[]
 * xref:multimedia-publishing.adoc[Publishing multimedia]
 * xref:register-dataset-api.adoc[Register a dataset using the API]

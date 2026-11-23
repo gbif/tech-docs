@@ -1,0 +1,70 @@
+IRI,element,grouping,term_requirement
+http://rs.tdwg.org/dwc/terms/samplingProtocol,survey/sampling protocol,protocol_A,required
+http://rs.tdwg.org/eco/terms/protocolNames,survey/sampling protocol,protocol_B,required
+http://rs.tdwg.org/eco/terms/protocolDescriptions,survey/sampling protocol,protocol_B,required
+http://rs.tdwg.org/eco/terms/protocolReferences,survey/sampling protocol,protocol_B,recommended
+http://rs.tdwg.org/dwc/terms/Protocol,survey/sampling protocol,protocol_C,required
+http://rs.tdwg.org/dwc/terms/protocolID,survey/sampling protocol,protocol_C,required
+http://rs.tdwg.org/dwc/terms/protocolType,survey/sampling protocol,protocol_C,required
+http://rs.tdwg.org/dwc/terms/protocolReferences,survey/sampling protocol,protocol_C,recommended
+http://rs.tdwg.org/dwc/terms/protocolRemarks,survey/sampling protocol,protocol_D,recommended
+http://rs.tdwg.org/dwc/terms/protocolDescription,survey/sampling protocol,protocol_C,recommended
+http://rs.tdwg.org/dwc/terms/samplingEffort,sampling effort,effort_A,required
+http://rs.tdwg.org/eco/terms/isSamplingEffortReported,sampling effort,effort_B,required
+http://rs.tdwg.org/eco/terms/samplingEffortValue,sampling effort,effort_B,required
+http://rs.tdwg.org/eco/terms/samplingEffortUnit,sampling effort,effort_B,required
+http://rs.tdwg.org/eco/terms/samplingEffortProtocol,sampling effort,effort_B,recommended
+http://rs.tdwg.org/eco/terms/samplingPerformedBy,sampling effort,effort_B,recommended
+http://rs.tdwg.org/dwc/terms/verbatimEventDate,date & time,time_A,required
+http://rs.tdwg.org/dwc/terms/eventDate,date & time,time_B,required
+http://rs.tdwg.org/dwc/terms/year,date & time,time_C,required
+http://rs.tdwg.org/dwc/terms/month,date & time,time_C,recommended
+http://rs.tdwg.org/dwc/terms/day,date & time,time_C,recommended
+http://rs.tdwg.org/dwc/terms/eventTime,date & time,time_D,required
+http://rs.tdwg.org/eco/terms/eventDurationValue,date & time,time_E,required
+http://rs.tdwg.org/eco/terms/eventDurationUnit,date & time,time_E,required
+http://rs.tdwg.org/dwc/terms/locationID,location,location_A,required
+http://rs.tdwg.org/dwc/terms/countryCode,location,location_B,required
+http://rs.tdwg.org/dwc/terms/decimalLatitude,location,location_C,required
+http://rs.tdwg.org/dwc/terms/decimalLongitude,location,location_C,required
+http://rs.tdwg.org/dwc/terms/geodeticDatum,location,location_C,recommended
+http://rs.tdwg.org/dwc/terms/verbatimLatitude,location,location_D,required
+http://rs.tdwg.org/dwc/terms/verbatimLongitude,location,location_D,required
+http://rs.tdwg.org/dwc/terms/verbatimCoordinateSystem,location,location_D,recommended
+http://rs.tdwg.org/dwc/terms/siteNumber,location,location_E,required
+http://rs.tdwg.org/dwc/terms/higherGeographyID,location,location_F,required
+http://rs.tdwg.org/dwc/terms/higherGeography,location,location_G,required
+http://rs.tdwg.org/dwc/terms/continent,location,location_H,required
+http://rs.tdwg.org/dwc/terms/waterBody,location,location_I,required
+http://rs.tdwg.org/dwc/terms/islandGroup,location,location_J,required
+http://rs.tdwg.org/dwc/terms/island,location,location_K,required
+http://rs.tdwg.org/dwc/terms/country,location,location_L,required
+http://rs.tdwg.org/dwc/terms/stateProvince,location,location_M,required
+http://rs.tdwg.org/dwc/terms/county,location,location_N,required
+http://rs.tdwg.org/dwc/terms/municipality,location,location_O,required
+http://rs.tdwg.org/dwc/terms/locality,location,location_P,required
+http://rs.tdwg.org/dwc/terms/verbatimLocality,location,location_Q,required
+http://rs.tdwg.org/dwc/terms/minimumElevationInMeters,location,location_R,required
+http://rs.tdwg.org/dwc/terms/maximumElevationInMeters,location,location_R,required
+http://rs.tdwg.org/dwc/terms/verbatimElevation,location,location_S,required
+http://rs.tdwg.org/dwc/terms/verticalDatum,location,location_R,recommended
+http://rs.tdwg.org/dwc/terms/minimumDepthInMeters,location,location_T,required
+http://rs.tdwg.org/dwc/terms/maximumDepthInMeters,location,location_T,required
+http://rs.tdwg.org/dwc/terms/verbatimDepth,location,location_U,required
+http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters,location,location_V,required
+http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters,location,location_V,required
+http://rs.tdwg.org/dwc/terms/locationAccordingTo,location,location_W,required
+http://rs.tdwg.org/dwc/terms/locationRemarks,location,location_X,required
+http://rs.tdwg.org/dwc/terms/preferredSpatialRepresentation,location,location_Y,required
+http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters,location,location_Z,required
+http://rs.tdwg.org/dwc/terms/coordinatePrecision,location,location_ZA,required
+http://rs.tdwg.org/dwc/terms/pointRadiusSpatialFit,location,location_ZB,required
+http://rs.tdwg.org/dwc/terms/verbatimSRS,location,location_ZC,required
+http://rs.tdwg.org/dwc/terms/footprintWKT,location,location_ZD,required
+http://rs.tdwg.org/dwc/terms/footprintSRS,location,location_ZE,required
+http://rs.tdwg.org/dwc/terms/footprintSpatialFit,location,location_ZF,required
+http://rs.tdwg.org/dwc/terms/georeferencedBy,location,location_ZG,recommended
+http://rs.tdwg.org/dwc/terms/georeferencedDate,location,location_ZG,recommended
+http://rs.tdwg.org/dwc/terms/georeferenceProtocol,location,location_ZG,required
+http://rs.tdwg.org/dwc/terms/georeferenceSources,location,location_ZG,recommended
+http://rs.tdwg.org/dwc/terms/georeferenceRemarks,location,location_ZG,recommended

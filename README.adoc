@@ -81,6 +81,10 @@ There are three versions of the `openapi` Antora module, stored in link:en/opena
 
 It does mean links to the OpenAPI documentation need the version to be specified.  See link:en/openapi/modules/ROOT/nav.adoc[`nav.adoc`] for the current links.
 
+==== Recommended terms by guide
+
+The data is in link:supplemental_ui/data/term-recommendations[`supplemental_ui/data/term-recommendations/*.csv`]; the columns are explained at the end of link:en/data-publishing/modules/ROOT/pages/term-recommendations.adoc[`term-recommendations.adoc`].
+
 === Site theme
 
 The overall design of the site is controlled by a theme, https://github.com/gbif/tech-docs-theme[tech-docs-theme].  That sets the colours, fonts etc and adds the "Search docs" functionality.

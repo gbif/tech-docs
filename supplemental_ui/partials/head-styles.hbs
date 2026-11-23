@@ -1,6 +1,10 @@
     <link rel="stylesheet" href="{{{uiRootPath}}}/css/site.css">
     <link rel="stylesheet" href="{{{uiRootPath}}}/css/icons.css">
     <link rel="stylesheet" href="{{{uiRootPath}}}/css/special-pages.css">
+    {{#if page.attributes.termexplorer}}
+    <link rel="stylesheet" href="{{{uiRootPath}}}/css/term-explorer.css">
+    <script defer src="{{{uiRootPath}}}/js/term-explorer.js" data-data-url="{{{uiRootPath}}}/data/term-recommendations/" data-env="{{ env.env }}"></script>
+    {{/if}}
 
     <!-- Build environment: {{ env.env }} -->
 
