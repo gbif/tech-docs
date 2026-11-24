@@ -1,0 +1,46 @@
+ifeval::["{env}" == "prod"]
+:page-unpublish:
+endif::[]
+:page-termexplorer: true
+
+= Recommended terms by guide
+
+This page lists the Darwin Core and Humboldt Extension terms that GBIF data publishing guides require or recommend for each kind of information, such as location or date and time.
+
+Choose one or more guides and a recommendation level. Terms are grouped by information element.
+
+Options:: Often there is more than one way to provide an element. For example, a location can be given as coordinates or as a country. These alternatives are numbered as options, and option 1 is the preferred one. By default only the preferred option is shown; turn on *Show alternative options* to see all of them. Providing one option is enough.
+
+Sets of terms:: Some options consist of several terms, for example latitude and longitude. A term marked _optional_ is part of the set but not required within it.
+
+Linking:: The page address keeps your selection, so you can share a link to a specific view.
+
+++++
+<div id="term-explorer"><noscript>This tool needs JavaScript. The data is available as <a href="../_/data/term-recommendations/guides.csv">guides.csv</a> and <a href="../_/data/term-recommendations/terms.csv">terms.csv</a>.</noscript></div>
+++++
+
+////
+How to update the data shown on this page
+
+The explorer reads two CSV files. Edit them and open a pull request; no code change is needed.
+
+supplemental_ui/data/term-recommendations/guides.csv
+  guide    Name of the guide, shown as a choice on the page.
+  element  Information element, e.g. "location". Results are grouped by element.
+  level    required, recommended (or any other level; the choices are taken from the data).
+  option   Number. For the same guide + element + level, rows with the same option number
+           go together (all their groups apply). Different option numbers are alternatives;
+           option 1 is the preferred one.
+  group    Name of a set of terms in terms.csv (grouping column).
+
+supplemental_ui/data/term-recommendations/terms.csv
+  IRI               Full term IRI, e.g. http://rs.tdwg.org/dwc/terms/eventDate
+  element           Information element the term belongs to.
+  grouping          Name of the set of terms. One set can be used by many guides.
+  term_requirement  required or recommended, within that set (recommended is shown as "optional").
+
+Problems in the data (unknown groups, empty rows) are listed in a yellow box on the
+development site and in the browser console.
+
+The page logic is in supplemental_ui/js/term-explorer.js and supplemental_ui/css/term-explorer.css.
+////

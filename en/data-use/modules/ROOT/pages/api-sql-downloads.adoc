@@ -337,7 +337,7 @@ Within the SQL query itself:
 When converting the SQL query to JSON for submission to the API:
 
 . JSON uses double quotes for attributes and values, so when the SQL is written values containing double quotes must have these escaped using `\"`
-. Newlines, if used, should be replaced with either spaces ` ` or `\n`
+. Newlines, if used, should be replaced with either spaces or `\n`
 
 [source,json]
 ----

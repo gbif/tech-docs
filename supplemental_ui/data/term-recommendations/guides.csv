@@ -1,0 +1,49 @@
+﻿guide,element,level,option,group
+BID Sampling event dataset,survey/sampling protocol,required,1,protocol_A
+BID Sampling event dataset,sampling effort,required,1,effort_A
+BID Sampling event dataset,date & time,required,1,time_B
+BID Sampling event dataset,date & time,required,2,time_C
+BID Sampling event dataset,location,required,1,location_C
+BID Sampling event dataset,location,required,2,location_B
+BID Sampling event dataset,location,required,3,location_L
+BID Sampling event dataset,location,required,4,location_P
+BID Sampling event dataset,survey/sampling protocol,recommended,1,protocol_B
+BID Sampling event dataset,survey/sampling protocol,recommended,2,protocol_C
+BID Sampling event dataset,sampling effort,recommended,1,effort_B
+Survey and Monitoring,survey/sampling protocol,required,1,protocol_A
+Survey and Monitoring,sampling effort,required,1,effort_A
+Survey and Monitoring,date & time,required,1,time_B
+Survey and Monitoring,date & time,required,2,time_C
+Survey and Monitoring,location,required,1,location_C
+Survey and Monitoring,location,required,2,location_B
+Survey and Monitoring,location,required,3,location_L
+Survey and Monitoring,location,required,4,location_P
+Survey and Monitoring,survey/sampling protocol,recommended,1,protocol_B
+Survey and Monitoring,survey/sampling protocol,recommended,2,protocol_C
+Survey and Monitoring,sampling effort,recommended,1,effort_B
+Survey and Monitoring,date & time,recommended,1,time_B
+Survey and Monitoring,date & time,recommended,1,time_D
+Survey and Monitoring,date & time,recommended,1,time_E
+Survey and Monitoring,date & time,recommended,2,time_C
+Survey and Monitoring,date & time,recommended,2,time_D
+Survey and Monitoring,date & time,recommended,2,time_E
+Survey and Monitoring,location,recommended,1,location_A
+Survey and Monitoring,location,recommended,1,location_B
+Survey and Monitoring,location,recommended,1,location_C
+Survey and Monitoring,location,recommended,2,location_A
+Survey and Monitoring,location,recommended,2,location_B
+Survey and Monitoring,location,recommended,2,location_D
+ddPCR / qPCR,date & time,required,1,time_B
+ddPCR / qPCR,date & time,required,2,time_C
+ddPCR / qPCR,location,required,1,location_B
+ddPCR / qPCR,location,required,2,location_L
+ddPCR / qPCR,location,required,3,location_P
+ddPCR / qPCR,location,recommended,1,location_C
+ddPCR / qPCR,survey/sampling protocol,recommended,1,protocol_A
+metabarcoding (eDNA) and barcoding data,date & time,required,1,time_B
+metabarcoding (eDNA) and barcoding data,date & time,required,2,time_C
+metabarcoding (eDNA) and barcoding data,location,required,1,location_B
+metabarcoding (eDNA) and barcoding data,location,required,2,location_L
+metabarcoding (eDNA) and barcoding data,location,required,3,location_P
+metabarcoding (eDNA) and barcoding data,location,recommended,1,location_C
+metabarcoding (eDNA) and barcoding data,survey/sampling protocol,recommended,1,protocol_A
