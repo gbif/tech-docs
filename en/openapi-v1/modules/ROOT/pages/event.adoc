@@ -1,7 +1,4 @@
 = Event API
-ifeval::["{env}" == "prod"]
-:page-unpublish:
-endif::[]
 :page-no-next: true
 :page-layout: swagger
 :page-openapi-url: /openapi/event.json

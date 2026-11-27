@@ -193,12 +193,11 @@ movePrefixFromEventMapsToOccurrenceMaps = [
     '/experimental/event/'
 ]
 
-if (env != 'prod'):
-    for path in event_maps["paths"]:
-        for prefix in movePrefixFromEventMapsToOccurrenceMaps:
-            if path.startswith(prefix):
-                maps["paths"][path] = event_maps["paths"][path]
-                print("Added "+path+" to occurrence maps")
+for path in event_maps["paths"]:
+    for prefix in movePrefixFromEventMapsToOccurrenceMaps:
+        if path.startswith(prefix):
+            maps["paths"][path] = event_maps["paths"][path]
+            print("Added "+path+" to occurrence maps")
 
 # Special cases for metrics (moving to occurrence)
 # Metrics schema can be ignored.
